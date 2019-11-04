@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/*
+theme Name: BONE
+Author: tkskds
+Author URI: https://takasaki.work
+Description: NOTHING TO SAY
+Version: 1.0.0
+*/
+
+
+/* リセット */
+
+*,
+*::before,
+*::after {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+body{
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  color: #333;
+}
