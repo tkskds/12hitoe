@@ -7,10 +7,12 @@
 function sets_up(){
 
   /** 1 <head>タグを綺麗にする！ **/
-  head_clean_up();
+  // head_clean_up();
+  add_action('init', 'head_clean_up');
 
   /** 2 できること追加する！ **/
-  theme_support();
+  // theme_support();
+  add_action('init', 'theme_support');
 
   /** 3 カスタマイザーの項目追加 **/
   /** 4 ウィジェットの項目追加 **/

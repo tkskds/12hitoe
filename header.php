@@ -12,9 +12,9 @@
       <div class="header__inner">
         <!--フロント以外のページでは<h1>タグを使わない-->
         <?php
-          if (is_home()||is_front_page()){
+          if (is_home()||is_front_page()) {
             $title_tag_start = '<h1 class="site_title">'
-            $title_tag_end = '</h1>'
+            // $title_tag_end = '</h1>'
           }else{
             $title_tag_start = '<p class="site_title">'
             $title_tag_end = '</p>'
