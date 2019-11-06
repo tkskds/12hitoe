@@ -12,11 +12,14 @@ function sets_up(){
   /** 2 できること追加する！ **/
   theme_support();
 
-
+  /** 3 カスタマイザーの項目追加 **/
+  /** 4 ウィジェットの項目追加 **/
+  /** 5 CSSの切り替え **/
+  /** 6  **/
 
 
 }//END sets_up();
-add_action('init', 'sets_up');
+add_action('after_setup_theme', 'sets_up');
 
 
 //////////////////////////////
@@ -67,6 +70,10 @@ function theme_supports(){
   //タイトルタグをよしなに
   add_theme_support('title-tag');
 
+  //メニューの有効化
+  register_nav_menu( 'header_nav',  ' ヘッダーナビゲーション ' );
+  register_nav_menu( 'footer_nav',  ' フッターナビゲーション ' );
+
 
 }//END theme_supports();
 
@@ -74,8 +81,13 @@ function theme_supports(){
 
 //////////////////////////////
 //////////////////////////////
+
+
+
 //////////////////////////////
 //////////////////////////////
+
+
 //////////////////////////////
 //////////////////////////////
 //////////////////////////////
