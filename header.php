@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-    <link rel="stylesheet" href="<?php echo get_style_sheet_uri(); ?>">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <?php wp_head(); ?>
   </head>
 
@@ -12,13 +12,13 @@
       <div class="header__inner">
         <!--フロント以外のページでは<h1>タグを使わない-->
         <?php
-          if (is_home()||is_front_page()) {
-            $title_tag_start = '<h1 class="site_title">'
-            // $title_tag_end = '</h1>'
-          }else{
-            $title_tag_start = '<p class="site_title">'
-            $title_tag_end = '</p>'
-          }
+        if(is_home() || is_front_page()) {
+          $title_tag_start = '<h1 class="site-title">';
+          $title_tag_end = '</h1>';
+        } else {
+          $title_tag_start = '<p class="site-title">';
+          $title_tag_end =  '</p>';
+        }
         ?>
         <!--タイトルを画像に-->
         <div class="site_title_wrap">
@@ -37,21 +37,26 @@
           <?php echo $title_tag_end; ?>
         </div>
 
-        <!--スマホ用メニューボタン-->
-        <button type="button" id="nav_button" class="nav_button">
-          <i class="fas fa-bars"></i>
-        </button>
-
         <!--ナビメニュー-->
         <div id="header_nav_wrap" class="header_nav_wrap">
           <?php
-           wp_nav_menu(array(
-             'theme_location' => 'header_nav',
-             'container' => 'nav',
-             'container_class' => 'header_nav',
-             'container_id' => 'header_nav',
-             'fallback' => ''
-           ));
+            if (wp_is_mobile()){
+              wp_nav_menu(array(
+                'theme_location' => 'nav_header_sp',
+                'container' => 'nav',
+                'container_class' => 'nav_header_sp',
+                'container_id' => 'nav_header_sp',
+                'fallback' => ''
+              ));
+            } else {
+              wp_nav_menu(array(
+                'theme_location' => 'nav_header',
+                'container' => 'nav',
+                'container_class' => 'nav_header',
+                'container_id' => 'nav_header',
+                'fallback' => ''
+              ));
+            }
           ?>
         </div>
 
