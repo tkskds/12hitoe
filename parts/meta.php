@@ -106,7 +106,7 @@
     } else {
 
         $title = '';
-        $description = get_blog_info('description');
+        $description = get_bloginfo('description');
 
     }
 
