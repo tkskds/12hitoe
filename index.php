@@ -2,7 +2,7 @@
 <div class="container">
   <div class="contents">
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
-      <?php get_template_part('loop-content') ?>
+      <?php get_template_part('parts/loop') ?>
       <!--ここにカスタマイザーでどういうループを表示するか設定できる項目を追加する-->
       <!--ループ1 / ループ2　のセレクトボックス-->
       <!--カスタマイザーの項目を引数としてphpの条件分岐をする-->
