@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+  <head prefix="og: http://ogp.me/ns#">
     <?php get_template_part('parts/meta') ?>
     <?php wp_head(); ?>
   </head>
