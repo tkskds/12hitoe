@@ -1,5 +1,5 @@
 <?php
-//このファイル内では変数定義だけ
+//変数定義のあと、出力部分
 
   //投稿・固定ページ用 meta
   if (is_single() && !is_home() || is_page() && !is_front_page()){
@@ -150,3 +150,13 @@
   }
 
 ?>
+<title><?php echo $output_title; ?></title>
+<meta name="description" content="<?php echo $description; ?>">
+<meta name="keywords" content="<?php echo $keywords; ?>">
+<meta property="og:type" content="<?php echo $page_type; ?>">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="<?php echo $title; ?>">
+<meta property="og:url" content="<?php echo $page_url; ?>">
+<meta property="og:description" content="<?php echo $description; ?>">
+<meta property="og:image" content="<?php echo $ogp_img; ?>">
+<meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
