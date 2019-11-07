@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container">
   <div class="contents">
-    <?php if (have_posts()): the_post(); ?>
+    <?php if(have_posts()): the_post(); ?>
       <article <?php post_class('article_content'); ?>>
         <div class="article_meta_info">
           <!--カテゴリ-->
@@ -22,7 +22,7 @@
         <h1><?php the_title(); ?></h1>
         <!--アイキャッチ-->
         <div class="article_thumbnail">
-          <?php if (has_post_thumbnail()): ?>
+          <?php if( has_post_thumbnail()): ?>
             <?php the_post_thumbnail('large'); ?>
           <?php endif; ?>
         </div>
