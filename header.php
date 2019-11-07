@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <?php get_template_part('parts/meta') ?>
+    <title><?php echo $output_title; ?></title>
+    <meta name="description" content="<?php echo $description; ?>">
+    <meta name="keywords" content="<?php echo $keywords; ?>">
+    <meta property="og:type" content="<?php echo $page_type; ?>">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="<?php echo $title; ?>">
+    <meta property="og:url" content="<?php echo $page_url; ?>">
+    <meta property="og:description" content="<?php echo $description; ?>">
+    <meta property="og:image" content="<?php echo $ogp_img; ?>">
+    <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
     <?php wp_head(); ?>
   </head>
 

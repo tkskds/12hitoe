@@ -1,4 +1,6 @@
 <?php
+//このファイル内では変数定義だけ
+
   //投稿・固定ページ用 meta
   if (is_single() && !is_home() || is_page() && !is_front_page()){
 
