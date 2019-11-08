@@ -16,7 +16,7 @@
 
 
 <article <?php post_class('article_list'); ?>>
-  <div class="aricle_content_wrap">
+  <div class="container aricle_container">
     <a href="<?php the_permalink(); ?>">
       <!--カテゴリ（絶対値で自由に配置）-->
       <?php if (!is_category() && has_category()): ?>
