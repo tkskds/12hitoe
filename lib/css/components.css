@@ -1,0 +1,15 @@
+header, footer{
+  width: 100%;
+}
+
+header .header_container,
+footer .footer_container{
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.content{
+  width: 100%;
+  display: flex;
+}
