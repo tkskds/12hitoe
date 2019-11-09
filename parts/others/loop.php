@@ -14,6 +14,24 @@
 
  ?>
 
+<div class="card">
+ <div class="card-image waves-effect waves-block waves-light">
+   <?php if (has_post_thumbnail()): ?>
+     <?php the_post_thumbnail('medium', array( 'class' => 'activator' )); ?>
+   <?php else: ?>
+     <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="サムネイル画像">
+   <?php endif; ?>
+ </div>
+ <div class="card-content">
+   <span class="card-title activator grey-text text-darken-4"><?php the_title(); ?><i class="material-icons right">more_vert</i></span>
+   <p><a href="<?php the_permalink(); ?>">続きを読む</a></p>
+ </div>
+ <div class="card-reveal">
+   <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">CLOSE</i></span>
+   <p><?php the_excerpt(); ?></p>
+ </div>
+</div>
+
 
 <article <?php post_class('article_list'); ?>>
   <a href="<?php the_permalink(); ?>" class="container article_container">
