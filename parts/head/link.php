@@ -11,6 +11,12 @@
 
 
 
+<!--materialize-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
 <?php //ファビコンなど ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">

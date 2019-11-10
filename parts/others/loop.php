@@ -23,11 +23,16 @@
    <?php endif; ?>
  </div>
  <div class="card-content">
-   <span class="card-title activator grey-text text-darken-4"><?php the_title(); ?><i class="material-icons right">more_vert</i></span>
+   <span class="card-title activator grey-text text-darken-4">
+     <?php the_title(); ?>
+     <i class="material-icons right">more_vert</i>
+   </span>
    <p><a href="<?php the_permalink(); ?>">続きを読む</a></p>
  </div>
  <div class="card-reveal">
-   <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">CLOSE</i></span>
+   <span class="card-title grey-text text-darken-4">
+     <?php the_title(); ?>
+     <i class="material-icons right">close</i></span>
    <p><?php the_excerpt(); ?></p>
  </div>
 </div>
