@@ -57,12 +57,12 @@ function org_customizer($wp_customizer){
 
       $wp_customizer->add_section('site_bone', array(
         'priority' => 1,
-        'title' => '1:骨組みを設定しよう',
+        'title' => '1:骨組みの設定',
         'panel' => 'site_builder',
       ));
 
           $wp_customizer->add_setting('site_bone_type', array(
-            'default' => '',
+            'default' => 'value1',
             'type' => 'option',
             'transport'  => 'postMessage',
           ));
@@ -82,12 +82,12 @@ function org_customizer($wp_customizer){
           ));
       $wp_customizer->add_section('site_cssfw', array(
         'priority' => 2,
-        'title' => '2:デザインを選ぼう',
+        'title' => '2:デザインの設定',
         'panel' => 'site_builder',
       ));
 
           $wp_customizer->add_setting('site_cssfw_choice', array(
-            'default' => '',
+            'default' => 'value1',
             'type' => 'option',
             'transport'  => 'postMessage',
           ));
@@ -95,8 +95,8 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_cssfw_choice', array(
             'settings' => 'site_cssfw_choice',
             'label' => 'サイト全体の雰囲気',
-            'description' => '現在4種類から選べます。',
-            'section' => 'site_bone',
+            'description' => '現在6種類から選べます。',
+            'section' => 'site_cssfw',
             'type' => 'radio',
             'choices' => array(
               'value1' => 'フラットデザイン',

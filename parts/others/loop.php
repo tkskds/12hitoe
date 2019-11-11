@@ -14,6 +14,19 @@
 
  ?>
 
+<!--ブートストラップ-->
+
+ <div class="card" style="width: 18rem;">
+   <img src="..." class="card-img-top" alt="...">
+   <div class="card-body">
+     <h5 class="card-title">Card title</h5>
+     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+     <a href="#" class="btn btn-primary">Go somewhere</a>
+   </div>
+ </div>
+
+ <!--マテリアライズ-->
+
 <div class="card">
  <div class="card-image waves-effect waves-block waves-light">
    <?php if (has_post_thumbnail()): ?>
@@ -37,6 +50,8 @@
  </div>
 </div>
 
+
+<!--自分でマークアップする-->
 
 <article <?php post_class('article_list'); ?>>
   <a href="<?php the_permalink(); ?>" class="container article_container">
