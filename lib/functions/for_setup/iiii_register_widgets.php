@@ -5,6 +5,10 @@
 //////////////////////////////
 
 function register_widgets(){
+
+  /****************
+  // 通常のサイドバー
+  ****************/
   register_sidebar(array(
     'name'=>'サイドバー',
     'id' => 'side_widget',

@@ -1,15 +1,15 @@
 <?php
 
-require_once ('lib/functions/i_head_clean_up.php');
-require_once ('lib/functions/ii_theme_support.php');
-require_once ('lib/functions/iii_org_customizer.php');
-require_once ('lib/functions/iiii_register_widgets.php');
+require_once ('lib/functions/for_setup/i_head_clean_up.php');
+require_once ('lib/functions/for_setup/ii_theme_support.php');
+require_once ('lib/functions/for_setup/iii_org_customizer.php');
+require_once ('lib/functions/for_setup/iiii_register_widgets.php');
 
 
 //////////////////////////////
 //セットアップ内容
 //////////////////////////////
-function sets_up(){
+function setup(){
 
   /** 1 <head>タグを綺麗にする！ **/
   add_action('init', 'head_clean_up');
@@ -28,4 +28,4 @@ function sets_up(){
 
 
 }//END sets_up();
-add_action('after_setup_theme', 'sets_up');
+add_action('after_setup_theme', 'setup');

@@ -1,28 +1,13 @@
 <?php
 
 
-// MEMO
+// ======
+//  MEMO
+// ======
 //
-// ## 大見出し
-// $wp_customize->add_panel('変数', array(
-//     'priority' => 1,
-//     'title' => 'サイトの基本設定',
-// ));
+// ` 'transport' => 'postMessage' `を設定するとリアルタイムプレビューを無効
+// panel（フォルダ） >> section（フォルダ） >> label（ファイル）みたいなイメージ
 //
-// ## 小見出し
-// $wp_customizer->add_section('変数', array(
-//
-// ));
-//
-// ## 項目
-// $wp_customizer->add_settings('変数', array(
-//
-// ));
-//
-// ## 設定
-// $wp_customizer->add_controle('変数',array(
-//
-// ));
 
 
 
@@ -44,15 +29,18 @@ function org_customizer($wp_customizer){
         'panel' => 'site_conf',
       ));
 
-      $wp_customizer->add_section('meta_description', array(
-        'title' => 'サイトの説明文',
-
-      ));
-
       $wp_customizer->add_setting('meta_description', array(
         'default' => '',
         'type' => 'option',
         'transport'  => 'postMessage',
+      ));
+
+      $wp_customizer->add_control('meta_description', array(
+        'settings' => 'meta_description',
+        'label' => 'サイトの説明文',
+        'description' => '検索結果などに表示されます。（推奨100文字以内）',
+        'section' => 'title_tagline',
+        'type' => 'textarea',
       ));
 
 
@@ -63,6 +51,12 @@ function org_customizer($wp_customizer){
     'title' => 'STEP2【外観設定】',
     'description' => 'サイトの外観設定',
   ));
+
+  // サイト構造（コンポーネントの順番）
+  // ## example )
+  // - HEADER => NAV => ARTCILE LIST => ASIDE => FOOTER
+  // - NAV => ARTICLE LIST => FOOTER
+  // - DYNAMIC HEADER => ARTICLE => FOOTER
 
 
   // STEP3
