@@ -27,7 +27,7 @@ function org_customizer($wp_customizer){
   ));
 
       $wp_customizer->add_section('title_tagline', array(
-        'title' => '基本情報とロゴの設定<span style="color:red;">*</span>',
+        'title' => '基本情報とロゴの設定*',
         'panel' => 'site_conf',
       ));
 
@@ -39,7 +39,7 @@ function org_customizer($wp_customizer){
 
           $wp_customizer->add_control('meta_description', array(
             'settings' => 'meta_description',
-            'label' => 'サイトの説明文<span style="color:red;">*</span>',
+            'label' => 'サイトの説明文*',
             'description' => '検索結果などに表示されます。（推奨100文字以内）',
             'section' => 'title_tagline',
             'type' => 'textarea',
@@ -56,18 +56,57 @@ function org_customizer($wp_customizer){
   ));
 
       $wp_customizer->add_section('site_bone', array(
+        'priority' => 1,
         'title' => '1:骨組みを設定しよう',
-        'panel' => 'site_buider',
+        'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_control('site_bone_type', array(
-            'settings' => 'meta_description',
-            'label' => 'サイトの説明文*',
-            'description' => '検索結果などに表示されます。（推奨100文字以内）',
-            'section' => 'site_bone',
-            'type' => 'textarea',
+          $wp_customizer->add_setting('site_bone_type', array(
+            'default' => '',
+            'type' => 'option',
+            'transport'  => 'postMessage',
           ));
 
+          $wp_customizer->add_control('site_bone_type', array(
+            'settings' => 'site_bone_type',
+            'label' => 'トップページのタイプ',
+            'description' => '現在4種類から選べます。',
+            'section' => 'site_bone',
+            'type' => 'radio',
+            'choices' => array(
+              'value1' => '一般的なブログ/メディア（Nav/Main/Side/Footer）',
+              'value2' => '個性的なブログ/メディア（Nav/Main/Footer）',
+              'value3' => 'LP/販促用ページ風（DynamicNav/Main/Footer）',
+              'value4' => 'コーポレートサイト風（DynamicNav/Main/Footer）',
+            ),
+          ));
+      $wp_customizer->add_section('site_cssfw', array(
+        'priority' => 2,
+        'title' => '2:デザインを選ぼう',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customizer->add_setting('site_cssfw_choice', array(
+            'default' => '',
+            'type' => 'option',
+            'transport'  => 'postMessage',
+          ));
+
+          $wp_customizer->add_control('site_cssfw_choice', array(
+            'settings' => 'site_cssfw_choice',
+            'label' => 'サイト全体の雰囲気',
+            'description' => '現在4種類から選べます。',
+            'section' => 'site_bone',
+            'type' => 'radio',
+            'choices' => array(
+              'value1' => 'フラットデザイン',
+              'value2' => 'Googleライク（materialize）',
+              'value3' => 'Twitterライク（boostrap）',
+              'value4' => 'ガーリーデザイン',
+              'value5' => '個性派',
+              'value6' => 'コーポレートサイト向け',
+            ),
+          ));
 
 
 

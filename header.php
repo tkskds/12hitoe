@@ -7,8 +7,8 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <header id="header" class="header">
-      <div class="container header__container">
-        <?php get_template_part('parts/header/header_contents') ?>
-      </div>
-    </header>
+
+    <?php //カスタマイズ画面から選択した骨組みやFWによって呼び出す部分テンプレートを変更する ?>
+
+
+    <?php get_template_part('parts/header/header_contents_bs') ?>
