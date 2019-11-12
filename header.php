@@ -8,7 +8,20 @@
 
   <body <?php body_class(); ?>>
 
-    <?php //カスタマイズ画面から選択した骨組みやFWによって呼び出す部分テンプレートを変更する ?>
+<?php
 
+    //カスタマイズ画面から選択した骨組みやFWによって呼び出す部分テンプレートを変更する
+      $cssfw = get_option('site_cssfw_choice');
 
-    <?php get_template_part('parts/header/header_contents_bs') ?>
+      if ($cssfw == 'value1'){
+
+      }elseif ($cssfw == 'value2'){
+        get_template_part('parts/header/header_contents_mt');
+      }elseif ($cssfw == 'value3'){
+        get_template_part('parts/header/header_contents_bs');
+      }elseif ($cssfw == 'value4') {
+
+      }elseif ($cssfw == 'value5'){
+
+      }
+?>
