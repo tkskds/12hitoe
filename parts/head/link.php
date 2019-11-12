@@ -6,6 +6,7 @@
 <?php $cssfw = get_option('site_cssfw_choice');?>
 <?php if ($cssfw == 'value1') : ?>
 <?php elseif ($cssfw == 'value2') : ?>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/js/materialize.min.js">
 <?php elseif ($cssfw == 'value3') : ?>

@@ -64,7 +64,7 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_setting('site_bone_type', array(
             'default' => 'value1',
             'type' => 'option',
-            'transport'  => 'postMessage',
+            'transport'  => 'refresh',
           ));
 
           $wp_customizer->add_control('site_bone_type', array(
@@ -89,7 +89,7 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_setting('site_cssfw_choice', array(
             'default' => 'value1',
             'type' => 'option',
-            'transport'  => 'postMessage',
+            'transport'  => 'refresh',
           ));
 
           $wp_customizer->add_control('site_cssfw_choice', array(
@@ -99,12 +99,13 @@ function org_customizer($wp_customizer){
             'section' => 'site_cssfw',
             'type' => 'radio',
             'choices' => array(
-              'value1' => 'フラットデザイン',
-              'value2' => 'Googleライク（materialize）',
-              'value3' => 'Twitterライク（boostrap）',
-              'value4' => 'ガーリーデザイン',
+              'value1' => 'フラット',
+              'value2' => 'マテリアル',
+              'value3' => 'シンプル',
+              'value4' => 'ガーリー',
               'value5' => '個性派',
               'value6' => 'コーポレートサイト向け',
+              'value7' => '開発者向け',
             ),
           ));
 
