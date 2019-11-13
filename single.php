@@ -1,6 +1,7 @@
 <?php get_header(); ?>
   <div class="contents">
     <main id="main" class="main">
+      <div class="container main__container">
       <?php if(have_posts()): the_post(); ?>
         <article <?php post_class('article_content'); ?>>
           <div class="article_meta_info">
@@ -34,6 +35,7 @@
           </div>
         </article>
       <?php endif; ?>
+    </div>
     </main>
     <?php get_sidebar(); ?>
   </div>
