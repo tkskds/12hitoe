@@ -1,3 +1,4 @@
+
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
@@ -17,3 +18,12 @@
   <li><a href="collapsible.html">Javascript</a></li>
   <li><a href="mobile.html">Mobile</a></li>
 </ul>
+<script type="text/javascript">
+  //そのうち移動する
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
