@@ -12,6 +12,7 @@
       </div>
     </footer>
     <a href="#" id="go_to_top">↑</a>
+    <?php get_template_part('parts/footer/link_js') ?>
     <?php wp_footer(); ?>
   </body>
 </html>
