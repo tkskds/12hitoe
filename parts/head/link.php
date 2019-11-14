@@ -19,6 +19,27 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!--font-awesomeのスタイルシートの呼び出し-->
 
 <?php //GoogleFont呼び出し ?>
+<?php $fontTitle = get_option('site_font_title'); ?>
+<?php if ($fontTitle == 'value2'): ?>
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value3') : ?>
+  <link href="https://fonts.googleapis.com/css?family=Megrim&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value4') : ?>
+  <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value5') : ?>
+  <link href="https://fonts.googleapis.com/css?family=Iceland&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value6') : ?>
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value7') : ?>
+  <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+<?php elseif ($fontTitle == 'value8') : ?>
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+<?php elseif ($fontTitle == 'value9') : ?>
+  <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+<?php elseif ($fontTitle == 'value10') : ?>
+  <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+<?php endif ?>
+
 <?php $fontBody = get_option('site_font_body'); ?>
 <?php if ($fontBody ==  'value3' ): ?>
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">

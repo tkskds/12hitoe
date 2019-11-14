@@ -136,37 +136,18 @@ function org_customizer($wp_customizer){
             'type' => 'radio',
             'choices' => array(
                 'value1' => 'デフォルト',
-                'value2' => 'ゴシック（英語）',
-                'value3' => '明朝（英語）',
-                'value4' => '角ゴシック（英語）',
-                'value5' => '手書き風（英語）',
-                'value6' => 'ゴシック（日本）',
-                'value7' => '明朝（日本）',
-                'value8' => '手書き風（日本）',
+                'value2' => 'ポップ（英）',
+                'value3' => '個性的（英）',
+                'value4' => '残像（英）',
+                'value5' => '近未来（英）',
+                'value6' => '切り抜き（英）',
+                'value7' => '手書き風（英）',
+                'value8' => 'カクカク（日・英）',
+                'value9' => 'はんなり（日）',
+                'value10' => 'にくきゅう（日）'
             ),
-          ));
-          $wp_customizer->add_setting('site_font_menu', array(
-            'default' => 'value1',
-            'type' => 'option',
-            'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_menu', array(
-            'label' => 'サイトタイトルのフォント',
-            'description' => '現在10種類からお選びいただけます。（）内の言語にしか適用されません。',
-            'section' => 'site_font',
-            'type' => 'radio',
-            'choices' => array(
-                'value1' => 'デフォルト',
-                'value2' => 'ゴシック（英語）',
-                'value3' => '明朝（英語）',
-                'value4' => '角ゴシック（英語）',
-                'value5' => '手書き風（英語）',
-                'value6' => 'ゴシック（日本）',
-                'value7' => '明朝（日本）',
-                'value8' => '手書き風（日本）',
-            ),
-          ));
           $wp_customizer->add_setting('site_font_body', array(
             'default' => 'value1',
             'type' => 'option',
@@ -206,25 +187,42 @@ function org_customizer($wp_customizer){
 
 function add_customizerCSS(){
 
-
 //フォントの設定
-
-
   /*** タイトルフォントの設定 ***/
-  $fontTitle = get_theme_mod('site_font_title', 'value1');
+  $fontTitle = get_option('site_font_title');
+    if ($fontTitle == 'value2') {
+      $fontTitle = "'Luckiest Guy'";
+    } elseif ($fontTitle == 'value3') {
+      $fontTitle = "'Megrim'";
+    } elseif ($fontTitle == 'value4') {
+      $fontTitle = "'Faster One'";
+    } elseif ($fontTitle == 'value5') {
+      $fontTitle = "'Iceland'";
+    } elseif ($fontTitle == 'value6') {
+      $fontTitle = "'Londrina Outline'";
+    } elseif ($fontTitle == 'value7') {
+      $fontTitle = "'Caveat'";
+    } elseif ($fontTitle == 'value8') {
+      $fontTitle = '"Nico Moji"';
+    } elseif ($fontTitle == 'value9') {
+      $fontTitle = '"Hannari"';
+    } elseif ($fontTitle == 'value10') {
+      $fontTitle = '"Nikukyu"';
+    }
 
   /*** 本文フォントの設定 ****/
-  $fontBody =  get_theme_mod('site_font_body', 'value1');
+  $fontBody =  get_option('site_font_body');
     if ($fontBody == 'value2') {
-      $fontfamilybody = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif";
+      $fontBody = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif";
     } elseif ($fontBody == 'value3') {
-      $fontfamilybody = "'M PLUS Rounded 1c', sans-serif";
+      $fontBody = "'M PLUS Rounded 1c', sans-serif";
     } else {
-      $fontfamilybody = '';
+      $fontBody = '';
     }
   ?>
   <style>
-    body{font-family:<?php echo $fontfamilybody ?>}
+    .siteTitle{font-family:<?php echo $fontTitle ?>;}
+    body{font-family:<?php echo $fontBody ?>;}
   </style>
   <?php
 }//END add_customizerCSS()
