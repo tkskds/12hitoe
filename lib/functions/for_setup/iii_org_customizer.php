@@ -106,7 +106,7 @@ function org_customizer($wp_customizer){
 
           $wp_customizer->add_control('site_cssfw_choice', array(
             'label' => 'サイト全体の雰囲気',
-            'description' => '現在5種類から選べます。',
+            'description' => '現在4種類から選べます。',
             'section' => 'site_cssfw',
             'type' => 'radio',
             'choices' => array(
@@ -131,7 +131,7 @@ function org_customizer($wp_customizer){
 
           $wp_customizer->add_control('site_font_title', array(
             'label' => 'サイトタイトルのフォント',
-            'description' => '現在10種類からお選びいただけます。（）内の言語にしか適用されません。',
+            'description' => '現在10種類からお選びいただけます。[注意：（）内の言語にしか適用されません]',
             'section' => 'site_font',
             'type' => 'radio',
             'choices' => array(
@@ -156,7 +156,7 @@ function org_customizer($wp_customizer){
 
           $wp_customizer->add_control('site_font_body', array(
             'label' => '全体（記事本文）のフォント',
-            'description' => '現在5種類からお選びいただけます。',
+            'description' => '現在3種類からお選びいただけます。',
             'section' => 'site_font',
             'type' => 'radio',
             'choices' => array(
@@ -166,6 +166,55 @@ function org_customizer($wp_customizer){
             ),
           ));
 
+          $wp_customizer->add_setting('site_font_title_size', array(
+            'default' => '200',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_title_size', array(
+            'label' => 'サイトタイトルの文字サイズ',
+            'description' => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください',
+            'section' => 'site_font',
+            'type' => 'number',
+          ));
+
+          $wp_customizer->add_setting('site_font_pc_size', array(
+            'default' => '100',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_pc_size', array(
+            'label' => '【PC】サイトの文字サイズ',
+            'description' => '961px以上の画面幅で適用されます。',
+            'section' => 'site_font',
+            'type' => 'number',
+          ));
+          $wp_customizer->add_setting('site_font_tab_size', array(
+            'default' => '98',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_tab_size', array(
+            'label' => '【タブレット】サイトの文字サイズ',
+            'description' => '561〜960pxまでの画面幅で適用されます',
+            'section' => 'site_font',
+            'type' => 'number',
+          ));
+          $wp_customizer->add_setting('site_font_sp_size', array(
+            'default' => '95',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_sp_size', array(
+            'label' => '【スマホ】サイトの文字サイズ',
+            'description' => '320〜560pxまでの画面幅で適用されます。',
+            'section' => 'site_font',
+            'type' => 'number',
+          ));
 
 
   // サイト構造（コンポーネントの順番）
@@ -219,10 +268,19 @@ function add_customizerCSS(){
     } else {
       $fontBody = '';
     }
+
+  /*** サイトタイトルの文字サイズ ***/
+  $titleSize = get_option('site_font_title_size');
+  $pcSize = get_option('site_font_pc_size');
+  $tabSize = get_option('site_font_tab_size');
+  $spSize = get_option('site_font_sp_size');
   ?>
   <style>
-    .siteTitle{font-family:<?php echo $fontTitle ?>;}
     body{font-family:<?php echo $fontBody ?>;}
+    .siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
+    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>% !important;}}
+    @media (max-width:960px){body{font-size:<?php echo $tabSize ?>% !important;}}
+    @media (max-width:560px){body{font-size:<?php echo $spSize ?>% !important;}}
   </style>
   <?php
 }//END add_customizerCSS()
