@@ -2,10 +2,10 @@
   <div class="container header__container">
     <?php
     if(is_home() || is_front_page()) {
-      $title_tag_start = '<h1 class="site-title">';
+      $title_tag_start = '<h1 class="siteTitle">';
       $title_tag_end = '</h1>';
     } else {
-      $title_tag_start = '<p class="site-title">';
+      $title_tag_start = '<p class="siteTitle">';
       $title_tag_end =  '</p>';
     }
     ?>

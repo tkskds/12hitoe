@@ -105,7 +105,6 @@ function org_customizer($wp_customizer){
           ));
 
           $wp_customizer->add_control('site_cssfw_choice', array(
-            'settings' => 'site_cssfw_choice',
             'label' => 'サイト全体の雰囲気',
             'description' => '現在5種類から選べます。',
             'section' => 'site_cssfw',
@@ -114,8 +113,75 @@ function org_customizer($wp_customizer){
               'value1' => 'フラット',
               'value2' => 'マテリアル',
               'value3' => 'シンプル',
-              'value4' => 'ガーリー',
-              'value5' => '開発者・デザイナー向け（CSS適用なし）',
+              'value4' => '開発者・デザイナー向け（CSS適用なし）',
+            ),
+          ));
+
+      $wp_customizer->add_section('site_font',array(
+        'priority' => 3,
+        'title' => '3:フォントの設定',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customizer->add_setting('site_font_title', array(
+            'default' => 'value1',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_title', array(
+            'label' => 'サイトタイトルのフォント',
+            'description' => '現在10種類からお選びいただけます。（）内の言語にしか適用されません。',
+            'section' => 'site_font',
+            'type' => 'radio',
+            'choices' => array(
+                'value1' => 'デフォルト',
+                'value2' => 'ゴシック（英語）',
+                'value3' => '明朝（英語）',
+                'value4' => '角ゴシック（英語）',
+                'value5' => '手書き風（英語）',
+                'value6' => 'ゴシック（日本）',
+                'value7' => '明朝（日本）',
+                'value8' => '手書き風（日本）',
+            ),
+          ));
+          $wp_customizer->add_setting('site_font_menu', array(
+            'default' => 'value1',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_menu', array(
+            'label' => 'サイトタイトルのフォント',
+            'description' => '現在10種類からお選びいただけます。（）内の言語にしか適用されません。',
+            'section' => 'site_font',
+            'type' => 'radio',
+            'choices' => array(
+                'value1' => 'デフォルト',
+                'value2' => 'ゴシック（英語）',
+                'value3' => '明朝（英語）',
+                'value4' => '角ゴシック（英語）',
+                'value5' => '手書き風（英語）',
+                'value6' => 'ゴシック（日本）',
+                'value7' => '明朝（日本）',
+                'value8' => '手書き風（日本）',
+            ),
+          ));
+          $wp_customizer->add_setting('site_font_body', array(
+            'default' => 'value1',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_font_body', array(
+            'label' => '全体（記事本文）のフォント',
+            'description' => '現在5種類からお選びいただけます。',
+            'section' => 'site_font',
+            'type' => 'radio',
+            'choices' => array(
+                'value1' => 'デフォルト',
+                'value2' => 'きっちり',
+                'value3' => '柔らかい',
             ),
           ));
 
@@ -137,3 +203,30 @@ function org_customizer($wp_customizer){
   ));
 
 } //END org_customizer()
+
+function add_customizerCSS(){
+
+
+//フォントの設定
+
+
+  /*** タイトルフォントの設定 ***/
+  $fontTitle = get_theme_mod('site_font_title', 'value1');
+
+  /*** 本文フォントの設定 ****/
+  $fontBody =  get_theme_mod('site_font_body', 'value1');
+    if ($fontBody == 'value2') {
+      $fontfamilybody = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif";
+    } elseif ($fontBody == 'value3') {
+      $fontfamilybody = "'M PLUS Rounded 1c', sans-serif";
+    } else {
+      $fontfamilybody = '';
+    }
+  ?>
+  <style>
+    body{font-family:<?php echo $fontfamilybody ?>}
+  </style>
+  <?php
+}//END add_customizerCSS()
+
+add_action('wp_head', 'add_customizerCSS');
