@@ -70,15 +70,27 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_bone_type', array(
             'settings' => 'site_bone_type',
             'label' => 'トップページのタイプ',
-            'description' => '現在4種類から選べます。',
+            'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicNav:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
             'section' => 'site_bone',
             'type' => 'radio',
             'choices' => array(
-              'value1' => '一般的なブログ/メディア（Nav/Main/Side/Footer）',
-              'value2' => '個性的なブログ/メディア（Nav/Main/Footer）',
-              'value3' => 'LP/販促用ページ風（DynamicNav/Main/Footer）',
-              'value4' => 'コーポレートサイト風（DynamicNav/Main/Footer）',
+              'value1' => 'ノーマル（Nav/Main/Side/Footer）',
+              'value2' => 'インディビジュアル（Nav/Main/Footer）',
+              'value3' => 'ライクコーポレート（DynamicNav/Main/Side/Footer）',
+              'value4' => 'ライクランディング（DynamicNav/Footer）',
             ),
+          ));
+          $wp_customizer->add_setting('site_bone_sidebar', array(
+            'default' => false,
+            'type' => 'option',
+            'transport'  => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_bone_sidebar', array(
+            'label' => 'サイドバーを左側に表示',
+            'description' => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。',
+            'section' => 'site_bone',
+            'type' => 'checkbox',
           ));
       $wp_customizer->add_section('site_cssfw', array(
         'priority' => 2,
@@ -95,7 +107,7 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_cssfw_choice', array(
             'settings' => 'site_cssfw_choice',
             'label' => 'サイト全体の雰囲気',
-            'description' => '現在6種類から選べます。',
+            'description' => '現在5種類から選べます。',
             'section' => 'site_cssfw',
             'type' => 'radio',
             'choices' => array(
@@ -103,9 +115,7 @@ function org_customizer($wp_customizer){
               'value2' => 'マテリアル',
               'value3' => 'シンプル',
               'value4' => 'ガーリー',
-              'value5' => '個性派',
-              'value6' => 'コーポレートサイト向け',
-              'value7' => '開発者向け',
+              'value5' => '開発者・デザイナー向け（CSS適用なし）',
             ),
           ));
 

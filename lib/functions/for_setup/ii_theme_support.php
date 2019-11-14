@@ -21,7 +21,7 @@ function theme_supports(){
   //アイキャッチ画像使用可能に
   ****************/
   add_theme_support('post-thumbnails');
-  
+
   /****************
   //メニューを使用可能に
   ****************/
@@ -39,5 +39,9 @@ function theme_supports(){
   register_nav_menu( 'nav_header_sp',  'ヘッダーメニュー（スマホ）' );
   register_nav_menu( 'nav_footer',  'フッターナビゲーション（PC・スマホ共用）' );
 
-
+  /****************
+  //サイドバーの有効化
+  ****************/
+  register_sidebar();
+  
 }//END theme_supports();
