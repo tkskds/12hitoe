@@ -14,14 +14,12 @@
       $cssfw = get_option('site_cssfw_choice');
 
       if ($cssfw == 'value1'){
-
+        get_template_part('parts/header/header_contents');
       }elseif ($cssfw == 'value2'){
         get_template_part('parts/header/header_contents_mt');
       }elseif ($cssfw == 'value3'){
         get_template_part('parts/header/header_contents_bs');
-      }elseif ($cssfw == 'value4') {
-
-      }elseif ($cssfw == 'value5'){
-
+      }else{
+        //子テーマの特定ファイルを呼び出す関数
       }
 ?>
