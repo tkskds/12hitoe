@@ -1,7 +1,13 @@
+
 /*
-使用するCSSフレームワーク関係なしに使用するCSSはここに。
-EXAMPLE) .box, .author_box,
+====INDEX====
+- 共通
+- 記事一覧
+-
+
+=============
 */
+
 
 /*************** 共通 ***************/
 body{
@@ -21,4 +27,89 @@ nav a.siteTitle{
 .contentArea{
   max-width: 1200px;
   margin: 10px auto 0;
+}
+
+.main__container {
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+
+
+
+/**************** 記事一覧 *******************/
+
+.articleList1{
+  position: relative;
+  display: block;
+  max-width: 300px;
+  background: white;
+  margin: 0 auto 20px 0;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+}
+
+.articleList1 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.articleList1 .thumbnail{
+  width: 300px;
+  height: 180px;
+}
+
+.articleList1 .thumbnail time{
+  position: absolute;
+  font-size: 10px;
+  top: 15px;
+  right: 15px;
+  background: #e74c3c;
+  width: 50px;
+  height: 50px;
+  padding: 5px 0;
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.articleList1 .thumbnail time .day{
+  line-height: 1.1;
+  font-size: 2em;
+  display: block;
+  font-family: 'Fredoka One', cursive;
+}
+
+.articleList1 .thumbnail time .month{
+  font-family: 'Fredoka One', cursive;
+}
+
+.articleList1 .thumbnail img{
+  width: 300px;
+  height: 180px;
+}
+
+.articleList1 .content{
+  position: relative;
+}
+
+.articleList1 .content .category {
+  position: absolute;
+  font-size: .75em;
+  line-height: 30px;
+  top: -30px;
+  left: 0;
+  background: #e74c3c;
+  padding: 0 17px;
+  color: white;
+}
+
+.articleList1 .content .title{
+  font-size: 1.2em;
+  padding: .5em 1em 1.5em;
+  font-weight: bold;
 }

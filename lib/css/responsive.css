@@ -7,3 +7,10 @@
   }
 
 }
+
+
+@media(max-width:960px){
+  .articleList1{
+    margin: 0 auto 20px;
+  }
+}

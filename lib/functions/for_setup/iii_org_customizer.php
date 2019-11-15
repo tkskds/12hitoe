@@ -92,6 +92,19 @@ function org_customizer($wp_customizer){
             'section' => 'site_bone',
             'type' => 'checkbox',
           ));
+
+          $wp_customizer->add_setting('site_bone_sidebar_width', array(
+            'default' => 30,
+            'type' => 'option',
+            'transport'  => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_bone_sidebar_width', array(
+            'label' => 'サイドバーの横幅（デフォルト:30）',
+            'description' => 'サイドバーの横幅を設定できます',
+            'section' => 'site_bone',
+            'type' => 'number',
+          ));
       $wp_customizer->add_section('site_cssfw', array(
         'priority' => 2,
         'title' => '2:デザインの設定',
@@ -266,22 +279,22 @@ function org_customizer($wp_customizer){
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_articleList_card_columns',array(
-            'default' => '2',
-            'type' => 'option',
-            'transport' => 'refresh',
-          ));
-
-          $wp_customizer->add_control('site_articleList_card_columns',array(
-            'label' => '記事一覧のカラム',
-            'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => '1カラム',
-              'value2' => '2カラム',
-              'value3' => '3カラム',
-            ),
-          ));
+          // $wp_customizer->add_setting('site_articleList_card_columns',array(
+          //   'default' => '2',
+          //   'type' => 'option',
+          //   'transport' => 'refresh',
+          // ));
+          //
+          // $wp_customizer->add_control('site_articleList_card_columns',array(
+          //   'label' => '記事一覧のカラム',
+          //   'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
+          //   'type' => 'radio',
+          //   'choices' => array(
+          //     'value1' => '1カラム',
+          //     'value2' => '2カラム',
+          //     'value3' => '3カラム',
+          //   ),
+          // ));
 
           $wp_customizer->add_setting('site_articleList_card', array(
             'default' => 'value1',
@@ -322,6 +335,10 @@ function org_customizer($wp_customizer){
 } //END org_customizer()
 
 function add_customizerCSS(){
+
+//サイドバー
+  $sidebarLeft = get_option('site_bone_sidebar');
+  $sidebarWidth = get_option('site_bone_sidebar_width');
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -369,12 +386,13 @@ function add_customizerCSS(){
   <style>
     body{font-family:<?php echo $fontBody ?>;}
     nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
-    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>% !important;}}
-    @media (max-width:960px){body{font-size:<?php echo $tabSize ?>% !important;}}
-    @media (max-width:560px){body{font-size:<?php echo $spSize ?>% !important;}}
+    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}
+    @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
+    @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
     <?php if ($nav == true): ?>
     .nav-wrapper{max-width: 1200px;margin: auto;}
     <?php endif; ?>
+    .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
   </style>
   <?php
 }//END add_customizerCSS()

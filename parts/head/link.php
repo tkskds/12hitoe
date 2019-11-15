@@ -49,6 +49,11 @@
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 <?php endif ?>
 
+<?php $articleList = get_option('site_articleList_card'); ?>
+<?php if ($articleList == 'value1'): ?>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+<?php endif; ?>
+
 <?php //ファビコンなど ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
