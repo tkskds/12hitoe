@@ -70,14 +70,14 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_bone_type', array(
             'settings' => 'site_bone_type',
             'label' => 'トップページのタイプ',
-            'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicNav:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
+            'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicHeader:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
             'section' => 'site_bone',
             'type' => 'radio',
             'choices' => array(
               'value1' => 'ノーマル（Nav/Main/Side/Footer）',
               'value2' => 'インディビジュアル（Nav/Main/Footer）',
-              'value3' => 'ライクコーポレート（DynamicNav/Main/Side/Footer）',
-              'value4' => 'ライクランディング（DynamicNav/Footer）',
+              'value3' => 'ライクコーポレート（DynamicHeader/Main/Side/Footer）',
+              'value4' => 'ライクランディング（DynamicHeader/Features/Footer）',
             ),
           ));
           $wp_customizer->add_setting('site_bone_sidebar', array(

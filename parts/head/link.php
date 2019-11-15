@@ -1,6 +1,5 @@
-<?php //テーマスタイルシート呼び出し ?>
+<?php //リセットCSS ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
 
 <?php //CSSフレームワークの分岐 ?>
 <?php $cssfw = get_option('site_cssfw_choice');?>
@@ -14,6 +13,11 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/js/bootstrap.min.js">
 <?php endif; ?>
+
+<?php //共通CSS ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/articleDecoration.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/responsive.css">
 
 <?php //サードパーティ製css/js呼び出し ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!--font-awesomeのスタイルシートの呼び出し-->

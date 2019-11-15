@@ -2,3 +2,23 @@
 使用するCSSフレームワーク関係なしに使用するCSSはここに。
 EXAMPLE) .box, .author_box,
 */
+
+/*************** 共通 ***************/
+body{
+  font-size:16px;
+  font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
+  color:#333
+}
+
+.siteTitle,
+h1.siteTitle,
+p.siteTitle,
+nav a.siteTitle,{
+  font-size: 2em;
+  padding: 0 10px;
+}
+
+.contentArea{
+  max-width: 1200px;
+  margin: 10px auto 0;
+}

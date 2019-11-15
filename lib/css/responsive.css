@@ -1,0 +1,9 @@
+@media(min-width:961px){
+
+  .contentArea{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+  }
+
+}
