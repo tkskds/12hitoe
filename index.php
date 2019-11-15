@@ -8,7 +8,7 @@
                       echo 'col s12 l9';
                       }
                   ?> main">
-      <div class="container main__container">
+      <div class="main__container">
         <?php if(have_posts()): while(have_posts()): the_post(); ?>
           <?php get_template_part('parts/others/loop') ?>
         <?php endwhile; endif; ?>

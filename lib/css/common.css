@@ -13,7 +13,7 @@ body{
 .siteTitle,
 h1.siteTitle,
 p.siteTitle,
-nav a.siteTitle,{
+nav a.siteTitle{
   font-size: 2em;
   padding: 0 10px;
 }

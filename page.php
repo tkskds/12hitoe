@@ -8,7 +8,7 @@
                       echo 'col s12 l9';
                       }
                   ?> main">
-      <div class="container main__container">
+      <div class="main__container">
       <?php if(have_posts()): the_post(); ?>
         <article <?php post_class('article_content'); ?>>
           <div class="article_meta_info">
