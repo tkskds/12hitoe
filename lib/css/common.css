@@ -48,7 +48,7 @@ aside#aside{
   width: calc(50% - 20px);
   max-width: 520px;
   background: white;
-  margin: 0 5% 20px 0;
+  margin: 0 auto 20px;
   border-radius: 2px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);

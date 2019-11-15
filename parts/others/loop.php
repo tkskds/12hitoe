@@ -11,7 +11,7 @@ $articleList = get_option('site_articleList_card');
 <article <?php if ($articleList = 'value1') {post_class('articleList1');} ?>>
   <a href="<?php the_permalink(); ?>">
     <div class="thumbnail">
-      <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
+      <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="main__color">
         <span class="day"><?php echo get_the_date('d'); ?></span>
         <span class="month"><?php echo get_post_time('M'); ?></span>
       </time>
@@ -21,7 +21,7 @@ $articleList = get_option('site_articleList_card');
         <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
       <?php endif; ?>
       <?php if (!is_category() && has_category()): ?>
-        <div class="category">
+        <div class="category main__color">
           <?php
             $post_cat = get_the_category();
             echo $post_cat[0]->name;
