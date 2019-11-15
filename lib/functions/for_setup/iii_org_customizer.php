@@ -238,6 +238,7 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_nav_type',array(
             'label' => 'ナビメニューの設定',
             'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
+            'section' => 'site_nav',
             'type' => 'radio',
             'choices' => array(
               'value1' => 'デザイン1',
@@ -255,6 +256,7 @@ function org_customizer($wp_customizer){
           $wp_customizer->add_control('site_nav_width',array(
             'label' => 'ナビメニューの横幅に上限を設ける',
             'description' => 'コンテンツエリア（記事とサイドバーの部分）に設けている横幅とナビメニューの横幅を合わせます。',
+            'section' => 'site_nav',
             'type' => 'checkbox',
           ));
 
