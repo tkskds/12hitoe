@@ -1,4 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
+  <div class="nav-wrapper">
       <a class="navbar-brand siteTitle" href="<?php echo home_url(); ?>">Never expand</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,5 +29,5 @@
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form>
       </div>
-
+  </div>
 </nav>

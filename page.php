@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <div class="row">
+  <div class="row contentArea">
     <main id="main"
           class="<?php
                     //サイト構造がサイドバーを含むものならグリッドクラス付与

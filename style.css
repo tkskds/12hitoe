@@ -14,19 +14,45 @@ Version: 1.0.0
 
 */
 
+/*==INDEX===========
+- RESET
+- Common
+- Nav
+- Heading
+-
+
+===================*/
+
 /************** リセット **************/
 
 a,abbr,address,article,aside,audio,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,iframe,img,ins,label,legend,li,main,mark,nav,ol,p,pre,q,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,video{margin:0;padding:0;border:0}article,aside,footer,header,main,nav,section{display:block}*,:after,:before{font-size:100%;margin:0;padding:0;vertical-align:baseline;border:0;outline:0;background:transparent;box-sizing:border-box}html{font-size:1pc}
 
-/*色*/
+/*************** 共通 ***************/
 body{
   font-size:16px;
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333
 }
-
 h1.siteTitle,
-p.siteTitle{
+p.siteTitle,
+a.siteTitle{
   font-size: 2em;
+  padding: 0 10px;
 }
+
+.contentArea{
+  max-width: 1200px;
+  margin: 10px auto 0;
+}
+
+
+/************** ナビ周り **************/
+
+
+/************** 見出し **************/
+
+
+
+
+
 /*追加がある場合はこの下に記述（推奨：子テーマのstyle.css）*/

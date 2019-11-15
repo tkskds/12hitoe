@@ -217,6 +217,91 @@ function org_customizer($wp_customizer){
           ));
 
 
+      $wp_customizer->add_section('site_color',array(
+        'priority' => 4,
+        'title' => '4:色の設定',
+        'panel' => 'site_builder',
+      ));
+
+      $wp_customizer->add_section('site_nav',array(
+        'priority' => 5,
+        'title' => '5:ナビメニューの設定',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customizer->add_setting('site_nav_type',array(
+            'default' => '1',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_nav_type',array(
+            'label' => 'ナビメニューの設定',
+            'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
+            'type' => 'radio',
+            'choices' => array(
+              'value1' => 'デザイン1',
+              'value2' => 'デザイン2',
+              'value3' => 'デザイン3',
+            ),
+          ));
+
+          $wp_customizer->add_setting('site_nav_width',array(
+            'default' => false,
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_nav_width',array(
+            'label' => 'ナビメニューの横幅に上限を設ける',
+            'description' => 'コンテンツエリア（記事とサイドバーの部分）に設けている横幅とナビメニューの横幅を合わせます。',
+            'type' => 'checkbox',
+          ));
+
+      $wp_customizer->add_section('site_articleList',array(
+        'priority' => 6,
+        'title' => '6:記事一覧の設定',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customizer->add_setting('site_articleList_card_columns',array(
+            'default' => '2',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_articleList_card_columns',array(
+            'label' => '記事一覧のカラム',
+            'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
+            'type' => 'radio',
+            'choices' => array(
+              'value1' => '1カラム',
+              'value2' => '2カラム',
+              'value3' => '3カラム',
+            ),
+          ));
+
+          $wp_customizer->add_setting('site_articleList_card', array(
+            'default' => 'value1',
+            'type' => 'option',
+            'transport' => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_articleList_card', array(
+            'label' => '記事一覧のデザイン',
+            'description' => '現在4種類からお選びいただけます。',
+            'section' => 'site_articleList',
+            'type' => 'radio',
+            'choices' => array(
+                'value1' => '縦/長めカード',
+                'value2' => '横/長めカード',
+                'value3' => 'サムネイルの上に文字',
+                'value4' => 'カテゴリの乗り方がなんかいい感じ',
+            ),
+          ));
+
+
+
   // サイト構造（コンポーネントの順番）
   // ## example )
   // - HEADER => NAV => ARTCILE LIST => ASIDE => FOOTER
@@ -274,13 +359,20 @@ function add_customizerCSS(){
   $pcSize = get_option('site_font_pc_size');
   $tabSize = get_option('site_font_tab_size');
   $spSize = get_option('site_font_sp_size');
+
+
+  /*ナビメニューの横幅*/
+  $nav = get_option('site_nav_width');
   ?>
   <style>
     body{font-family:<?php echo $fontBody ?>;}
-    .siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
+    nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
     @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>% !important;}}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>% !important;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>% !important;}}
+    <?php if ($nav == true): ?>
+    .nav-wrapper{max-width: 1200px;margin: auto;}
+    <?php endif; ?>
   </style>
   <?php
 }//END add_customizerCSS()

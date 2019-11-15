@@ -1,35 +1,32 @@
-<header id="header" class="header">
-  <div class="container header__container">
-    <?php
-    if(is_home() || is_front_page()) {
-      $title_tag_start = '<h1 class="siteTitle">';
-      $title_tag_end = '</h1>';
-    } else {
-      $title_tag_start = '<p class="siteTitle">';
-      $title_tag_end =  '</p>';
-    }
-    ?>
+<?php
+if(is_home() || is_front_page()) {
+  $title_tag_start = '<h1 class="siteTitle">';
+  $title_tag_end = '</h1>';
+} else {
+  $title_tag_start = '<p class="siteTitle">';
+  $title_tag_end =  '</p>';
+}
+?>
 
-    <!--タイトルを画像に-->
-    <div class="site_title_wrap">
+<nav>
+  <div class="nav-wrapper">
+
+    <div class="site-title-wrapper">
       <?php echo $title_tag_start; ?>
       <a href="<?php echo home_url(); ?>">
         <img src="<?php echo get_template_directory_uri() ?>/images/title.png">
       </a>
       <?php echo $title_tag_end; ?>
-    </div>
-    <!--タイトルを文字に-->
-    <div class="site_title_wrap">
       <?php echo $title_tag_start; ?>
       <a href="<?php echo home_url(); ?>">
         <?php bloginfo('name'); ?>
       </a>
       <?php echo $title_tag_end; ?>
-    </div>
+    </div><!--END site_title_wrap-->
 
     <!--ナビメニュー-->
-    <div id="header_nav" class="header_nav">
-      <div class="container header_nav_container">
+    <ul>
+      <div class="nav-menu-wrapper">
         <?php
           if (wp_is_mobile()){
             wp_nav_menu(array(
@@ -50,6 +47,7 @@
           }
         ?>
       </div>
-    </div><!--ヘッダーナビ-->
+    </ul><!--ヘッダーナビ-->
+
   </div>
-</header>
+</nav>
