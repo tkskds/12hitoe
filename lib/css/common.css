@@ -26,7 +26,7 @@ nav a.siteTitle{
 
 .contentArea{
   max-width: 1200px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
 }
 
 .main__container {
@@ -37,7 +37,7 @@ nav a.siteTitle{
 }
 
 aside#aside{
-  min-width: 350px;
+  min-width: 300px;
 }
 
 
@@ -45,14 +45,21 @@ aside#aside{
 
 .articleList1{
   position: relative;
-  width: 45%;
+  width: calc(50% - 20px);
   max-width: 520px;
   background: white;
   margin: 0 5% 20px 0;
+  border-radius: 2px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   transition: all 0.3s linear 0s;
   -webkit-transition: all 0.3s linear 0s;
+}
+
+.articleList1:hover{
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 .articleList1 a{
@@ -63,6 +70,7 @@ aside#aside{
 .articleList1 .thumbnail{
   width: 100%;
   height: auto;
+  position: relative;
 }
 
 .articleList1 .thumbnail time{
@@ -92,27 +100,29 @@ aside#aside{
 }
 
 .articleList1 .thumbnail img{
-  width: 300px;
-  height: 180px;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
-.articleList1 .content{
-  position: relative;
-}
-
-.articleList1 .content .category {
+.articleList1 .thumbnail .category {
   position: absolute;
   font-size: .75em;
   line-height: 30px;
-  top: -30px;
+  bottom: 0;
   left: 0;
   background: #e74c3c;
   padding: 0 17px;
   color: white;
 }
 
+.articleList1 .content{
+  position: relative;
+}
+
 .articleList1 .content .title{
   font-size: 1.2em;
-  padding: .5em 10px 1.5em;
+  padding: .5em 17px 1.5em;
   font-weight: bold;
 }

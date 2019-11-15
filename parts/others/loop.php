@@ -20,8 +20,6 @@ $articleList = get_option('site_articleList_card');
       <?php else: ?>
         <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
       <?php endif; ?>
-    </div>
-    <div class="content">
       <?php if (!is_category() && has_category()): ?>
         <div class="category">
           <?php
@@ -30,6 +28,8 @@ $articleList = get_option('site_articleList_card');
           ?>
         </div>
       <?php endif; ?>
+    </div>
+    <div class="content">
       <p class="title"><?php the_title(); ?></p>
     </div>
   </a>
