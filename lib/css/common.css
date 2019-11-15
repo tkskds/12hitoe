@@ -36,16 +36,19 @@ nav a.siteTitle{
   -ms-flex-wrap: wrap;
 }
 
+aside#aside{
+  min-width: 350px;
+}
 
 
 /**************** 記事一覧 *******************/
 
 .articleList1{
   position: relative;
-  display: block;
-  max-width: 300px;
+  width: 45%;
+  max-width: 520px;
   background: white;
-  margin: 0 auto 20px 0;
+  margin: 0 5% 20px 0;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   transition: all 0.3s linear 0s;
@@ -58,8 +61,8 @@ nav a.siteTitle{
 }
 
 .articleList1 .thumbnail{
-  width: 300px;
-  height: 180px;
+  width: 100%;
+  height: auto;
 }
 
 .articleList1 .thumbnail time{
@@ -110,6 +113,6 @@ nav a.siteTitle{
 
 .articleList1 .content .title{
   font-size: 1.2em;
-  padding: .5em 1em 1.5em;
+  padding: .5em 10px 1.5em;
   font-weight: bold;
 }

@@ -21,6 +21,8 @@ function theme_supports(){
   //アイキャッチ画像使用可能に
   ****************/
   add_theme_support('post-thumbnails');
+  add_image_size('eyecatch', 520, 300, true );
+
 
   /****************
   //メニューを使用可能に
@@ -43,5 +45,5 @@ function theme_supports(){
   //サイドバーの有効化
   ****************/
   register_sidebar();
-  
+
 }//END theme_supports();
