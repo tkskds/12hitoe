@@ -5,7 +5,12 @@
     $btnLink = get_option('site_dyheader_button_link');
     $btn2 = get_option('site_dyheader_button2');
     $btn2Link = get_option('site_dyheader_button2_link');
+    $img = get_option('site_dyheader_img');
+    $nothome = get_option('site_dyheader_notTop');
 ?>
+
+<?php if ($nothome == false && !is_single() && is_home() || $nothome == false && !is_page() && is_front_page() ) : ?>
+<?php if ($nothome == true && is_single() || $nothome == true && is_page() ) : ?>
 
 <div id="dynamicHeader" class="dyheader">
   <div class="dyheader_container">
@@ -28,5 +33,13 @@
           <a href="<?php echo $btn2Link ?>" class="waves-effect waves-light btn"><?php echo $btn2 ?></a>
         <?php endif; ?>
       </div>
+      <?php if ($img != null) : ?>
+        <div class="dyheader_imgArea">
+          <img src="<?php echo $img; ?>" alt="ヘッダー画像">
+        </div>
+      <?php endif; ?>
   </div>
 </div>
+
+<?php endif; ?>
+<?php endif; ?>

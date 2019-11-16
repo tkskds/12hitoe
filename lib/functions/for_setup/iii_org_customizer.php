@@ -15,29 +15,29 @@
 // 3 カスタマイザー項目追加
 //////////////////////////////
 
-function org_customizer($wp_customizer){
+function org_customizer($wp_customize){
 
   /********
   // STEP1
   ********/
-  $wp_customizer->add_panel('site_conf', array(
+  $wp_customize->add_panel('site_conf', array(
     'priority' => 1,
     'title' => 'STEP1【基本設定】',
     'description' => 'サイトの基本設定です。SEOに有効に働く項目もあります。*は設定必須項目です。'
   ));
 
-      $wp_customizer->add_section('title_tagline', array(
+      $wp_customize->add_section('title_tagline', array(
         'title' => '基本情報とロゴの設定*',
         'panel' => 'site_conf',
       ));
 
-          $wp_customizer->add_setting('meta_description', array(
+          $wp_customize->add_setting('meta_description', array(
             'default' => '',
             'type' => 'option',
             'transport'  => 'postMessage',
           ));
 
-          $wp_customizer->add_control('meta_description', array(
+          $wp_customize->add_control('meta_description', array(
             'settings' => 'meta_description',
             'label' => 'サイトの説明文*',
             'description' => '検索結果などに表示されます。（推奨100文字以内）',
@@ -49,25 +49,25 @@ function org_customizer($wp_customizer){
   /********
   // STEP2
   ********/
-  $wp_customizer->add_panel('site_builder', array(
+  $wp_customize->add_panel('site_builder', array(
     'priority' => 2,
     'title' => 'STEP2【外観設定】',
     'description' => 'サイトの外観設定です。',
   ));
 
-      $wp_customizer->add_section('site_bone', array(
+      $wp_customize->add_section('site_bone', array(
         'priority' => 1,
         'title' => '1:骨組みの設定',
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_bone_type', array(
+          $wp_customize->add_setting('site_bone_type', array(
             'default' => 'value1',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_bone_type', array(
+          $wp_customize->add_control('site_bone_type', array(
             'label' => 'トップページのタイプ',
             'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicHeader:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
             'section' => 'site_bone',
@@ -80,94 +80,94 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-          $wp_customizer->add_setting('site_bone_content_area', array(
+          $wp_customize->add_setting('site_bone_content_area', array(
             'default' => 1200,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_bone_content_area', array(
+          $wp_customize->add_control('site_bone_content_area', array(
             'label' => 'コンテンツエリアの最大横幅',
             'description' => 'コンテンツ部分の最大横幅を設定します。（デフォルト:1200）',
             'section' => 'site_bone',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_bone_sidebar', array(
+          $wp_customize->add_setting('site_bone_sidebar', array(
             'default' => false,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_bone_sidebar', array(
+          $wp_customize->add_control('site_bone_sidebar', array(
             'label' => 'サイドバーを左側に表示',
             'description' => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。',
             'section' => 'site_bone',
             'type' => 'checkbox',
           ));
 
-          $wp_customizer->add_setting('site_bone_sidebar_width', array(
+          $wp_customize->add_setting('site_bone_sidebar_width', array(
             'default' => 30,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_bone_sidebar_width', array(
+          $wp_customize->add_control('site_bone_sidebar_width', array(
             'label' => 'サイドバーの横幅（デフォルト:30）',
             'description' => 'サイドバーの横幅を設定できます',
             'section' => 'site_bone',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_bone_priority', array(
+          $wp_customize->add_setting('site_bone_priority', array(
             'default' => false,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_bone_priority', array(
+          $wp_customize->add_control('site_bone_priority', array(
             'label' => 'ダイナミックヘッダーを画面最上部に表示',
             'description' => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます。（『トップページのタイプ』でコーポレートまたはランディングを選択した場合のみ適用）',
             'section' => 'site_bone',
             'type' => 'checkbox',
           ));
 
-      $wp_customizer->add_section('site_dyheader', array(
+      $wp_customize->add_section('site_dyheader', array(
         'priority' => 2,
         'title' => '2:ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_dyheader_text', array(
+          $wp_customize->add_setting('site_dyheader_text', array(
             'default' => "Let's enjoy self-expression!",
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_dyheader_text', array(
+          $wp_customize->add_control('site_dyheader_text', array(
             'label' => 'ヘッダー部分のテキスト',
             'section'  => 'site_dyheader',
             'type' => 'text',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_text_size', array(
+          $wp_customize->add_setting('site_dyheader_text_size', array(
             'default' => 200,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_dyheader_text_size', array(
+          $wp_customize->add_control('site_dyheader_text_size', array(
             'label' => 'ヘッダー部分のテキストサイズ',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_text_animation', array(
+          $wp_customize->add_setting('site_dyheader_text_animation', array(
             'default' => 'value1',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
-          $wp_customizer->add_control('site_dyheader_text_animation', array(
+          $wp_customize->add_control('site_dyheader_text_animation', array(
             'label' => 'テキストへ適用するアニメーション',
             'description' => '現在4種類から選択できます。',
             'section'  => 'site_dyheader',
@@ -181,109 +181,153 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-          $wp_customizer->add_setting('site_dyheader_button', array(
+          $wp_customize->add_setting('site_dyheader_button', array(
             'default' => '',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
-          $wp_customizer->add_control('site_dyheader_button', array(
+          $wp_customize->add_control('site_dyheader_button', array(
             'label' => 'ヘッダー部分のボタン',
             'description' => 'ヘッダー部分に適用されるCTA的に使用可能なボタンです。（空白の場合ボタンは表示されません。）',
             'section'  => 'site_dyheader',
             'type' => 'text',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_button_link', array(
+          $wp_customize->add_setting('site_dyheader_button_link', array(
             'default' => '#',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
-          $wp_customizer->add_control('site_dyheader_button_link', array(
+          $wp_customize->add_control('site_dyheader_button_link', array(
             'label' => 'ボタンのリンク先URL',
             'description' => 'リンク先のURLを入力してください。',
             'section'  => 'site_dyheader',
             'type' => 'text',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_button2', array(
+          $wp_customize->add_setting('site_dyheader_button2', array(
             'default' => '',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
-          $wp_customizer->add_control('site_dyheader_button2', array(
+          $wp_customize->add_control('site_dyheader_button2', array(
             'label' => 'ヘッダー部分のボタン2',
             'description' => 'もう一つボタンが必要な場合はこちらから。（空白の場合ボタンは表示されません。）',
             'section'  => 'site_dyheader',
             'type' => 'text',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_button2_link', array(
+          $wp_customize->add_setting('site_dyheader_button2_link', array(
             'default' => '#',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
-          $wp_customizer->add_control('site_dyheader_button2_link', array(
+
+          $wp_customize->add_control('site_dyheader_button2_link', array(
             'label' => 'ボタンのリンク先URL',
             'description' => '',
             'section'  => 'site_dyheader',
             'type' => 'text',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_width', array(
+          $wp_customize->add_setting('site_dyheader_img', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_img', array(
+      			'label' => 'ヘッダー部分の画像',
+            'description' => 'ヘッダー部分に画像を挿入します。',
+      			'section' => 'site_dyheader',
+        	)));
+
+          $wp_customize->add_setting('site_dyheader_img_position', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_dyheader_img_position', array(
+            'label' => 'ヘッダー部分の画像を左側へ移動',
+            'section' => 'site_dyheader',
+            'type' => 'checkbox',
+          ));
+
+          $wp_customize->add_setting('site_dyheader_width', array(
             'default' => 1200,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_dyheader_width', array(
+          $wp_customize->add_control('site_dyheader_width', array(
             'label' => 'ヘッダー部分の最大横幅',
             'description' => 'ヘッダー部分の最大横幅を設定できます。『1:骨組みの設定』で設定した数値と同じものがオススメです。（デフォルト:1200,最大3000）',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_height', array(
-            'default' => 30,
+          $wp_customize->add_setting('site_dyheader_height', array(
+            'default' => 40,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_dyheader_height', array(
+          $wp_customize->add_control('site_dyheader_height', array(
             'label' => 'ヘッダー部分の高さ',
-            'description' => 'ヘッダー部分の高さを調整できます（デフォルト:30,最大:100）',
+            'description' => 'ヘッダー部分の高さを調整できます（デフォルト:40,最大:100）',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_dyheader_margin-top', array(
+          $wp_customize->add_setting('site_dyheader_margin-top', array(
             'default' => 0,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_dyheader_margin-top', array(
+          $wp_customize->add_control('site_dyheader_margin-top', array(
             'label' => 'ヘッダー部分の上部の余白',
             'description' => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
 
+          $wp_customize->add_setting('site_dyheader_padding', array(
+            'default' => '20',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_dyheader_padding', array(
+            'label' => 'ヘッダー部分の余白',
+            'description' => 'ヘッダー部分の余白を調整できます（デフォルト:20）。',
+            'section' => 'site_dyheader',
+            'type' => 'number',
+          ));
+
+          $wp_customize->add_setting('site_dyheader_notTop', array(
+            'default' => false,
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_dyheader_notTop', array(
+            'label' => 'トップ（ホーム）画面以外でも表示',
+            'description' => '通常はトップページのみで表示するようになっているダイナミックヘッダーを記事ページやカテゴリページでも表示するようにします。',
+            'section' => 'site_dyheader',
+            'type' => 'checkbox',
+          ));
 
 
 
-      $wp_customizer->add_section('site_cssfw', array(
+      $wp_customize->add_section('site_cssfw', array(
         'priority' => 3,
         'title' => '3:デザインの設定',
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_cssfw_choice', array(
+          $wp_customize->add_setting('site_cssfw_choice', array(
             'default' => 'value1',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_cssfw_choice', array(
+          $wp_customize->add_control('site_cssfw_choice', array(
             'label' => 'サイト全体の雰囲気',
             'description' => '現在4種類から選べます。',
             'section' => 'site_cssfw',
@@ -296,19 +340,19 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-      $wp_customizer->add_section('site_font',array(
+      $wp_customize->add_section('site_font',array(
         'priority' => 4,
         'title' => '4:フォントの設定',
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_font_title', array(
+          $wp_customize->add_setting('site_font_title', array(
             'default' => 'value1',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_title', array(
+          $wp_customize->add_control('site_font_title', array(
             'label' => 'サイトタイトルのフォント',
             'description' => '現在10種類からお選びいただけます。[注意：（）内の言語にしか適用されません]',
             'section' => 'site_font',
@@ -327,13 +371,13 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-          $wp_customizer->add_setting('site_font_body', array(
+          $wp_customize->add_setting('site_font_body', array(
             'default' => 'value1',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_body', array(
+          $wp_customize->add_control('site_font_body', array(
             'label' => '全体（記事本文）のフォント',
             'description' => '現在3種類からお選びいただけます。',
             'section' => 'site_font',
@@ -345,50 +389,50 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-          $wp_customizer->add_setting('site_font_title_size', array(
+          $wp_customize->add_setting('site_font_title_size', array(
             'default' => '200',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_title_size', array(
+          $wp_customize->add_control('site_font_title_size', array(
             'label' => 'サイトタイトルの文字サイズ',
             'description' => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:200）',
             'section' => 'site_font',
             'type' => 'number',
           ));
 
-          $wp_customizer->add_setting('site_font_pc_size', array(
+          $wp_customize->add_setting('site_font_pc_size', array(
             'default' => '100',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_pc_size', array(
+          $wp_customize->add_control('site_font_pc_size', array(
             'label' => '【PC】サイトの文字サイズ',
             'description' => '961px以上の画面幅で適用されます。（デフォルト:100）',
             'section' => 'site_font',
             'type' => 'number',
           ));
-          $wp_customizer->add_setting('site_font_tab_size', array(
+          $wp_customize->add_setting('site_font_tab_size', array(
             'default' => '98',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_tab_size', array(
+          $wp_customize->add_control('site_font_tab_size', array(
             'label' => '【タブレット】サイトの文字サイズ',
             'description' => '561〜960pxまでの画面幅で適用されます。（デフォルト:98）',
             'section' => 'site_font',
             'type' => 'number',
           ));
-          $wp_customizer->add_setting('site_font_sp_size', array(
+          $wp_customize->add_setting('site_font_sp_size', array(
             'default' => '95',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_font_sp_size', array(
+          $wp_customize->add_control('site_font_sp_size', array(
             'label' => '【スマホ】サイトの文字サイズ',
             'description' => '320〜560pxまでの画面幅で適用されます。（デフォルト:95）',
             'section' => 'site_font',
@@ -396,25 +440,25 @@ function org_customizer($wp_customizer){
           ));
 
 
-      $wp_customizer->add_section('site_color',array(
+      $wp_customize->add_section('site_color',array(
         'priority' => 5,
         'title' => '5:色の設定',
         'panel' => 'site_builder',
       ));
 
-      $wp_customizer->add_section('site_nav',array(
+      $wp_customize->add_section('site_nav',array(
         'priority' => 6,
         'title' => '6:ナビメニューの設定',
         'panel' => 'site_builder',
       ));
 
-          $wp_customizer->add_setting('site_nav_type',array(
+          $wp_customize->add_setting('site_nav_type',array(
             'default' => '1',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_nav_type',array(
+          $wp_customize->add_control('site_nav_type',array(
             'label' => 'ナビメニューの設定',
             'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
             'section' => 'site_nav',
@@ -426,32 +470,32 @@ function org_customizer($wp_customizer){
             ),
           ));
 
-          $wp_customizer->add_setting('site_nav_width',array(
+          $wp_customize->add_setting('site_nav_width',array(
             'default' => false,
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_nav_width',array(
+          $wp_customize->add_control('site_nav_width',array(
             'label' => 'ナビメニューの横幅に上限を設ける',
             'description' => 'コンテンツエリア（記事とサイドバーの部分）に設けている横幅とナビメニューの横幅を合わせます。',
             'section' => 'site_nav',
             'type' => 'checkbox',
           ));
 
-      $wp_customizer->add_section('site_articleList',array(
+      $wp_customize->add_section('site_articleList',array(
         'priority' => 7,
         'title' => '7:記事一覧の設定',
         'panel' => 'site_builder',
       ));
 
-          // $wp_customizer->add_setting('site_articleList_card_columns',array(
+          // $wp_customize->add_setting('site_articleList_card_columns',array(
           //   'default' => '2',
           //   'type' => 'option',
           //   'transport' => 'refresh',
           // ));
           //
-          // $wp_customizer->add_control('site_articleList_card_columns',array(
+          // $wp_customize->add_control('site_articleList_card_columns',array(
           //   'label' => '記事一覧のカラム',
           //   'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
           //   'type' => 'radio',
@@ -462,13 +506,13 @@ function org_customizer($wp_customizer){
           //   ),
           // ));
 
-          $wp_customizer->add_setting('site_articleList_card', array(
+          $wp_customize->add_setting('site_articleList_card', array(
             'default' => 'value1',
             'type' => 'option',
             'transport' => 'refresh',
           ));
 
-          $wp_customizer->add_control('site_articleList_card', array(
+          $wp_customize->add_control('site_articleList_card', array(
             'label' => '記事一覧のデザイン',
             'description' => '現在4種類からお選びいただけます。',
             'section' => 'site_articleList',
@@ -492,7 +536,7 @@ function org_customizer($wp_customizer){
 
   // STEP3
 
-  $wp_customizer->add_panel('site_admin', array(
+  $wp_customize->add_panel('site_admin', array(
     'priority' => 3,
     'title' => 'STEP3【運営設定】',
     'description' => 'サイトの運営設定',
@@ -513,8 +557,11 @@ function add_customizerCSS(){
 //ダイナミックヘッダー
   $dyheaderFontSize = get_option('site_dyheader_text_size') ? get_option('site_dyheader_text_size') : '200';
   $dyheaderWidth = get_option('site_dyheader_width') ? get_option('site_dyheader_width') : '1200';
-  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '30';
+  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '40';
   $dyheaderMarginTop = get_option('site_dyheader_margin-top') ? get_option('site_dyheader_margin-top') : '0';
+  $dyheaderPadding = get_option('site_dyheader_padding') ? get_option('site_dyheader_padding') : '20';
+  $dyheaderImg = get_option('site_dyheader_img');
+  $dyheaderImgPosition = get_option('site_dyheader_img_position');
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -563,11 +610,17 @@ function add_customizerCSS(){
   <style>
     body{font-family:<?php echo $fontBody ?>;}
     nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
-    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}
+    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
     .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;}
-    .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;}
+    .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
+    <?php if ($dyheaderImg != null) : ?>
+    .dyheader_container{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;}
+    <?php if ($dyheaderImgPosition == true) : ?>
+    .dyheader_container{-ms-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
+    <?php endif; ?>
+    <?php endif; ?>
     .contentArea{max-width:<?php echo $contentArea ?>px;}
     <?php if ($nav == true): ?>
     .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
