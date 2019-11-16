@@ -503,17 +503,18 @@ function org_customizer($wp_customizer){
 function add_customizerCSS(){
 
 //コンテンツエリア横幅
-  $contentArea = get_option('site_bone_content_area');
+  $contentArea = get_option('site_bone_content_area') ? get_option('site_bone_content_area') : '1200';
+
 
 //サイドバー
   $sidebarLeft = get_option('site_bone_sidebar');
   $sidebarWidth = get_option('site_bone_sidebar_width');
 
 //ダイナミックヘッダー
-  $dyheaderFontSize = get_option('site_dyheader_text_size');
-  $dyheaderMarginTop = get_option('site_dyheader_margin-top');
-  $dyheaderWidth = get_option('site_dyheader_width');
-  $dyheaderHeight = get_option('site_dyheader_height');
+  $dyheaderFontSize = get_option('site_dyheader_text_size') ? get_option('site_dyheader_text_size') : '200';
+  $dyheaderWidth = get_option('site_dyheader_width') ? get_option('site_dyheader_width') : '1200';
+  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '30';
+  $dyheaderMarginTop = get_option('site_dyheader_margin-top') ? get_option('site_dyheader_margin-top') : '0';
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -549,14 +550,15 @@ function add_customizerCSS(){
     }
 
   /*** サイトの文字サイズ ***/
-  $titleSize = get_option('site_font_title_size');
-  $pcSize = get_option('site_font_pc_size');
-  $tabSize = get_option('site_font_tab_size');
-  $spSize = get_option('site_font_sp_size');
+  $titleSize = get_option('site_font_title_size') ? get_option('site_font_title_size') : '200';
+  $pcSize = get_option('site_font_pc_size') ? get_option('site_font_pc_size') : '100';
+  $tabSize = get_option('site_font_tab_size') ? get_option('site_font_tab_size') : '98';
+  $spSize = get_option('site_font_sp_size') ? get_option('site_font_sp_size') : '95';
 
 
   /*ナビメニューの横幅*/
   $nav = get_option('site_nav_width');
+
   ?>
   <style>
     body{font-family:<?php echo $fontBody ?>;}
@@ -565,7 +567,7 @@ function add_customizerCSS(){
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
     .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;}
-    .dyheader{max-width:<?php $dyheaderWidth ?>px;height:<?php $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>;}
+    .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;}
     .contentArea{max-width:<?php echo $contentArea ?>px;}
     <?php if ($nav == true): ?>
     .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
