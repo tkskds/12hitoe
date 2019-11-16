@@ -37,7 +37,7 @@ nav a.siteTitle{
 }
 
 aside#aside{
-  min-width: 300px;
+  min-width: 320px;
 }
 
 
@@ -123,6 +123,5 @@ aside#aside{
 
 .articleList1 .content .title{
   font-size: 1.2em;
-  padding: .5em 17px 1.5em;
-  font-weight: bold;
+  padding: 1em 17px;
 }

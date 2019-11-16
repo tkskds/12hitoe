@@ -10,15 +10,15 @@ Version: 1.0.0
 
 ======== MEMO =========
 
-## Break point
+## BreakPoint
 
-sp: ~ 560px
-tab: ~ 960px
-pc: 961px ~
+sp : 320 ~ 560px
+tab: 561 ~ 960px
+pc : 961 ~
 
 ## Loading
 
-<img src="xxx" loading="lazy">
+<img src="xxx" loading="lazy">  //ONLY chrome
 
 ## Design
 
@@ -29,7 +29,7 @@ pc: 961px ~
 
 */
 
-/************** リセット **************/
+/************** RESET **************/
 
 a,abbr,address,article,aside,audio,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,iframe,img,ins,label,legend,li,main,mark,nav,ol,p,pre,q,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,video{margin:0;padding:0;border:0}article,aside,footer,header,main,nav,section{display:block}*,:after,:before{font-size:100%;margin:0;padding:0;vertical-align:bottom;border:0;outline:0;background:transparent;box-sizing:border-box}html{font-size:1pc}
 
