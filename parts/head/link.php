@@ -15,9 +15,11 @@
 <?php endif; ?>
 
 <?php //共通CSS ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/articleDecoration.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/responsive.css">
+<?php if ($cssfw != 'value4'): ?>
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/articleDecoration.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/responsive.css">
+<?php endif; ?>
 
 <?php //サードパーティ製css/js呼び出し ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!--font-awesomeのスタイルシートの呼び出し-->

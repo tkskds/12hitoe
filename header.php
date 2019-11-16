@@ -16,9 +16,10 @@ $dyheader = get_option('site_bone_type');
 
 
     //ダイナミックヘッダー
+
       if ($dyheader == 'value3' && $priority == true ){
         get_template_part('parts/header/dynamic_header_contents');
-      } elseif ($dyheader == 'value4' ){
+      } elseif ($dyheader == 'value4' && $priority == true ){
         get_template_part('parts/header/dynamic_header_contents');
         // get_template_part('parts/header/features_header_contents');
       }
@@ -39,7 +40,7 @@ $dyheader = get_option('site_bone_type');
     //ダイナミックヘッダー
       if ($dyheader == 'value3' && $priority == false ){
         get_template_part('parts/header/dynamic_header_contents');
-      } elseif ($dyheader == 'value4' ){
+      } elseif ($dyheader == 'value4' && $priority == false ){
         get_template_part('parts/header/dynamic_header_contents');
         // get_template_part('parts/header/features_header_contents');
       }

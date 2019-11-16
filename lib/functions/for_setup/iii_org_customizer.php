@@ -194,7 +194,7 @@ function org_customizer($wp_customizer){
           ));
 
           $wp_customizer->add_setting('site_dyheader_button_link', array(
-            'default' => '',
+            'default' => '#',
             'type' => 'option',
             'transport'  => 'refresh',
           ));
@@ -509,8 +509,11 @@ function add_customizerCSS(){
   $sidebarLeft = get_option('site_bone_sidebar');
   $sidebarWidth = get_option('site_bone_sidebar_width');
 
-//ダイナミックヘッダーの文字サイズ
+//ダイナミックヘッダー
   $dyheaderFontSize = get_option('site_dyheader_text_size');
+  $dyheaderMarginTop = get_option('site_dyheader_margin-top');
+  $dyheaderWidth = get_option('site_dyheader_width');
+  $dyheaderHeight = get_option('site_dyheader_height');
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -561,10 +564,11 @@ function add_customizerCSS(){
     @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
-    .dyheader_textArea p{font-size:<?php $dyheaderFontSize ?>%;}
-    .contentArea{max-width:<?php $contentArea ?>px;}
+    .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;}
+    .dyheader{max-width:<?php $dyheaderWidth ?>px;height:<?php $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>;}
+    .contentArea{max-width:<?php echo $contentArea ?>px;}
     <?php if ($nav == true): ?>
-    .nav-wrapper{max-width:<?php $contentArea ?>px;margin: auto;}
+    .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
     <?php endif; ?>
     .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
   </style>
