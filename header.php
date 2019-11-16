@@ -10,8 +10,21 @@
 
 <?php
 
+$priority = get_option('site_bone_priority');
+$cssfw = get_option('site_cssfw_choice');
+$dyheader = get_option('site_bone_type');
+
+
+    //ダイナミックヘッダー
+      if ($dyheader == 'value3' && $priority == true ){
+        get_template_part('parts/header/dynamic_header_contents');
+      } elseif ($dyheader == 'value4' ){
+        get_template_part('parts/header/dynamic_header_contents');
+        // get_template_part('parts/header/features_header_contents');
+      }
+
+
     //カスタマイズ画面から選択した骨組みやFWによって呼び出す部分テンプレートを変更する
-      $cssfw = get_option('site_cssfw_choice');
       if ($cssfw == 'value1'){
         get_template_part('parts/header/header_contents');
       }elseif ($cssfw == 'value2'){
@@ -24,11 +37,14 @@
 
 
     //ダイナミックヘッダー
-      $dyheader = get_option('site_bone_type');
-      if ($dyheader == 'value3'){
+      if ($dyheader == 'value3' && $priority == false ){
         get_template_part('parts/header/dynamic_header_contents');
       } elseif ($dyheader == 'value4' ){
         get_template_part('parts/header/dynamic_header_contents');
         // get_template_part('parts/header/features_header_contents');
       }
+
+
+
+
 ?>

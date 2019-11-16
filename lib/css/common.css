@@ -2,6 +2,7 @@
 /*
 ====INDEX====
 - 共通
+- ダイナミックヘッダー
 - 記事一覧
 -
 
@@ -45,6 +46,10 @@ aside#aside{
 
 .dyheader{
   display: block;
+  max-width: 1200px;
+  margin: auto;
+  height: 30vh;
+  padding: 5%;
 }
 
 .dyheader_container{
@@ -52,7 +57,9 @@ aside#aside{
   display: -ms-flexbox;
 }
 
-
+.dyheader_textArea p{
+  font-size: 200%;
+}
 
 /**************** 記事一覧 *******************/
 

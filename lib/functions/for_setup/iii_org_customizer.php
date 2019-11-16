@@ -73,10 +73,10 @@ function org_customizer($wp_customizer){
             'section' => 'site_bone',
             'type' => 'radio',
             'choices' => array(
-              'value1' => 'ノーマル（Nav/Main/Side/Footer）',
-              'value2' => 'インディビジュアル（Nav/Main/Footer）',
-              'value3' => 'ライクコーポレート（DynamicHeader/Main/Side/Footer）',
-              'value4' => 'ライクランディング（DynamicHeader/Features/Footer）',
+              'value1' => 'メディア（Nav/Main/Side/Footer）',
+              'value2' => 'ワンカラム（Nav/Main/Footer）',
+              'value3' => 'コーポレート（Nav/DynamicHeader/Main/Side/Footer）',
+              'value4' => 'ランディング（Nav/DynamicHeader/Features/Footer）',
             ),
           ));
 
@@ -119,6 +119,19 @@ function org_customizer($wp_customizer){
             'type' => 'number',
           ));
 
+          $wp_customizer->add_setting('site_bone_priority', array(
+            'default' => false,
+            'type' => 'option',
+            'transport'  => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_bone_priority', array(
+            'label' => 'ダイナミックヘッダーを画面最上部に表示',
+            'description' => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます。（『トップページのタイプ』でコーポレートまたはランディングを選択した場合のみ適用）',
+            'section' => 'site_bone',
+            'type' => 'checkbox',
+          ));
+
       $wp_customizer->add_section('site_dyheader', array(
         'priority' => 2,
         'title' => '2:ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
@@ -135,6 +148,18 @@ function org_customizer($wp_customizer){
             'label' => 'ヘッダー部分のテキスト',
             'section'  => 'site_dyheader',
             'type' => 'text',
+          ));
+
+          $wp_customizer->add_setting('site_dyheader_text_size', array(
+            'default' => 200,
+            'type' => 'option',
+            'transport'  => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_dyheader_text_size', array(
+            'label' => 'ヘッダー部分のテキストサイズ',
+            'section'  => 'site_dyheader',
+            'type' => 'number',
           ));
 
           $wp_customizer->add_setting('site_dyheader_text_animation', array(
@@ -209,6 +234,7 @@ function org_customizer($wp_customizer){
             'type' => 'option',
             'transport'  => 'refresh',
           ));
+
           $wp_customizer->add_control('site_dyheader_width', array(
             'label' => 'ヘッダー部分の最大横幅',
             'description' => 'ヘッダー部分の最大横幅を設定できます。『1:骨組みの設定』で設定した数値と同じものがオススメです。（デフォルト:1200,最大3000）',
@@ -221,12 +247,27 @@ function org_customizer($wp_customizer){
             'type' => 'option',
             'transport'  => 'refresh',
           ));
+
           $wp_customizer->add_control('site_dyheader_height', array(
             'label' => 'ヘッダー部分の高さ',
             'description' => 'ヘッダー部分の高さを調整できます（デフォルト:30,最大:100）',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
+
+          $wp_customizer->add_setting('site_dyheader_margin-top', array(
+            'default' => 0,
+            'type' => 'option',
+            'transport'  => 'refresh',
+          ));
+
+          $wp_customizer->add_control('site_dyheader_margin-top', array(
+            'label' => 'ヘッダー部分の上部の余白',
+            'description' => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）',
+            'section'  => 'site_dyheader',
+            'type' => 'number',
+          ));
+
 
 
 
@@ -468,6 +509,9 @@ function add_customizerCSS(){
   $sidebarLeft = get_option('site_bone_sidebar');
   $sidebarWidth = get_option('site_bone_sidebar_width');
 
+//ダイナミックヘッダーの文字サイズ
+  $dyheaderFontSize = get_option('site_dyheader_text_size');
+
 //フォントの設定
   /*** タイトルフォントの設定 ***/
   $fontTitle = get_option('site_font_title');
@@ -501,7 +545,7 @@ function add_customizerCSS(){
       $fontBody = '';
     }
 
-  /*** サイトタイトルの文字サイズ ***/
+  /*** サイトの文字サイズ ***/
   $titleSize = get_option('site_font_title_size');
   $pcSize = get_option('site_font_pc_size');
   $tabSize = get_option('site_font_tab_size');
@@ -517,6 +561,7 @@ function add_customizerCSS(){
     @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
+    .dyheader_textArea p{font-size:<?php $dyheaderFontSize ?>%;}
     .contentArea{max-width:<?php $contentArea ?>px;}
     <?php if ($nav == true): ?>
     .nav-wrapper{max-width:<?php $contentArea ?>px;margin: auto;}

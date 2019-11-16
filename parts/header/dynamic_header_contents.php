@@ -9,23 +9,23 @@
 
 <div id="dynamicHeader" class="dyheader">
   <div class="dyheader_container">
-      <div>
-        <p class="<?php
+      <div class="dyheader_textArea">
+        <p<?php
          if ($txtAnime == 'value2'){
-          echo 'animation1';
+          echo 'class="animation1"';
         }elseif($txtAnime == 'value3'){
-          echo 'animation2';
+          echo 'class="animation2"';
         }elseif($txtAnime == 'value4'){
-          echo 'animation3';
+          echo 'class="animation3"';
         }elseif($txtAnime == 'value5'){
-          echo 'animation4';
+          echo 'class="animation4"';
         }
-        ?>"><?php echo $txt ?></p>
+        ?>><?php echo $txt ?></p>
         <?php if ($btn != null ): ?>
-          <a href="<?php echo $btnLink ?>"><?php echo $btn ?></a>
+          <a href="<?php echo $btnLink ?>" class="waves-effect waves-light btn"><?php echo $btn ?></a>
         <?php endif; ?>
         <?php if ($btn2 != null ): ?>
-          <a href="<?php echo $btn2Link ?>"><?php echo $btn2 ?></a>
+          <a href="<?php echo $btn2Link ?>" class="waves-effect waves-light btn"><?php echo $btn2 ?></a>
         <?php endif; ?>
       </div>
   </div>
