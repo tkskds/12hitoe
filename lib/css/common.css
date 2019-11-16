@@ -41,6 +41,19 @@ aside#aside{
 }
 
 
+/************* ダイナミックヘッダー ************/
+
+.dyheader{
+  display: block;
+}
+
+.dyheader_container{
+  display: flex;
+  display: -ms-flexbox;
+}
+
+
+
 /**************** 記事一覧 *******************/
 
 .articleList1{
