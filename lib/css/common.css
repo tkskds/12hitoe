@@ -37,7 +37,7 @@ nav a.siteTitle{
   -ms-flex-wrap: wrap;
 }
 
-aside#aside{
+.aside{
   min-width: 320px;
 }
 
@@ -49,9 +49,10 @@ aside#aside{
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  height: 40vh;
+  height: 50vh;
   min-height: 400px;
   padding: 20px;
+  overflow: hidden;
 }
 
 .dyheader_container{

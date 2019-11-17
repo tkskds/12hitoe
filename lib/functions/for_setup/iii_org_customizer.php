@@ -139,7 +139,6 @@ function org_customizer($wp_customize){
       ));
 
 
-
           $wp_customize->add_setting('site_dyheader_text', array(
             'default' => "Let's enjoy self-expression!",
             'type' => 'option',
@@ -164,10 +163,19 @@ function org_customizer($wp_customize){
             'type' => 'number',
           ));
 
+          $wp_customize->add_setting('site_dyheader_text_color', array(
+            'default' => '#333333',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_text_color', array(
+            'label' => 'ヘッダー部分のテキスト色',
+            'section'  => 'site_dyheader',
+          )));
+
           $wp_customize->add_setting('site_dyheader_text_animation', array(
             'default' => 'value1',
             'type' => 'option',
-            'transport'  => 'refresh',
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
             'label' => 'テキストへ適用するアニメーション',
@@ -242,6 +250,18 @@ function org_customizer($wp_customize){
       			'section' => 'site_dyheader',
         	)));
 
+          $wp_customize->add_setting('site_dyheader_img_width', array(
+            'default' => '100',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_dyheader_img_width', array(
+      			'label' => 'ヘッダー部分の画像のサイズ',
+            'description' => 'ヘッダー部分の画像のサイズの調整ができます。（デフォルト:100,最大:100）',
+      			'section' => 'site_dyheader',
+            'type' => '100',
+        	));
+
           $wp_customize->add_setting('site_dyheader_img_position', array(
             'type' => 'option',
           ));
@@ -289,14 +309,14 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_dyheader_height', array(
-            'default' => 40,
+            'default' => 50,
             'type' => 'option',
             'transport'  => 'refresh',
           ));
 
           $wp_customize->add_control('site_dyheader_height', array(
             'label' => 'ヘッダー部分の高さ',
-            'description' => 'ヘッダー部分の高さを調整できます（デフォルト:40,最大:100）',
+            'description' => 'ヘッダー部分の高さを調整できます（デフォルト:50,最大:100）',
             'section'  => 'site_dyheader',
             'type' => 'number',
           ));
@@ -571,6 +591,10 @@ function org_customizer($wp_customize){
 
 function add_customizerCSS(){
 
+
+//サイトの骨組み
+  $siteType = get_option('site_bone_type');
+
 //コンテンツエリア横幅
   $contentArea = get_option('site_bone_content_area') ? get_option('site_bone_content_area') : '1200';
 
@@ -581,14 +605,16 @@ function add_customizerCSS(){
 
 //ダイナミックヘッダー
   $dyheaderFontSize = get_option('site_dyheader_text_size') ? get_option('site_dyheader_text_size') : '200';
+  $dyheaderFontColor = get_option('site_dyheader_text_color');
   $dyheaderWidth = get_option('site_dyheader_width') ? get_option('site_dyheader_width') : '1200';
-  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '40';
+  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '50';
   $dyheaderMarginTop = get_option('site_dyheader_margin-top') ? get_option('site_dyheader_margin-top') : '0';
   $dyheaderPadding = get_option('site_dyheader_padding') ? get_option('site_dyheader_padding') : '20';
   $dyheaderImg = get_option('site_dyheader_img');
+  $dyheaderImgWidth = get_option('site_dyheader_img_width')  ? get_option('site_dyheader_img_width') : '100';
   $dyheaderImgPosition = get_option('site_dyheader_img_position');
   $dyheaderBkImg = get_option('site_dyheader_bkimg');
-  $dyheaderBkColor = get_option('site_dyheader_bkcolor') ? get_option('site_dyheader_bkcolor') : 'whitesmoke' ;
+  $dyheaderBkColor = get_option('site_dyheader_bkcolor');
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -640,17 +666,20 @@ function add_customizerCSS(){
     @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
+    <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
     .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
-      <?php if ($dyheaderBkImg != null) : ?>background-image:url("<?php echo $dyheaderBkImg ?>");<?php endif; ?>
+      <?php if ($dyheaderBkImg != null) : ?>background-image:url("<?php echo $dyheaderBkImg ?>");background-repeat: no-repeat;background-size: cover;<?php endif; ?>
     }
-    .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;}
+    .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;color:<?php echo $dyheaderFontColor ?>;}
     .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
     <?php if ($dyheaderImg != null) : ?>
     .dyheader_container{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;}
+    .dyheader_imgArea img{width:<?php echo $dyheaderImgWidth ?>%;}
     <?php if ($dyheaderImgPosition == true) : ?>
     .dyheader_container{-ms-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
-    <?php endif; ?>
-    <?php endif; ?>
+    <?php endif; //END imgを左側にするか ?>
+    <?php endif; //END imageがあるかどうか ?>
+    <?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
     .contentArea{max-width:<?php echo $contentArea ?>px;}
     <?php if ($nav == true): ?>
     .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
