@@ -1,4 +1,5 @@
 <?php
+    $dyheaderBkImg = get_option('site_dyheader_bkimg');
     $dyheaderBkImgFil = get_option('site_dyheader_bkimg_filter');
 
     $txt = get_option('site_dyheader_text');
@@ -14,17 +15,17 @@
 <?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
 <div id="dynamicHeader" class="dyheader
-<?php if($img != null && $dyheaderBkImgFil=='value2'){
+<?php if($dyheaderBkImg != null && $dyheaderBkImgFil=='value2'){
   echo'dyheaderBkImgFil1';
-}elseif($img != null && $dyheaderBkImgFil=='value3'){
+}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value3'){
   echo'dyheaderBkImgFil2';
-}elseif($img != null && $dyheaderBkImgFil=='value4'){
+}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value4'){
   echo'dyheaderBkImgFil3';
-}elseif($img != null && $dyheaderBkImgFil=='value5'){
+}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value5'){
   echo'dyheaderBkImgFil4';
-}elseif($img != null && $dyheaderBkImgFil=='value6'){
+}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value6'){
   echo'dyheaderBkImgFil5';
-}elseif($img != null && $dyheaderBkImgFil=='value7'){
+}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value7'){
   echo'dyheaderBkImgFil6';
 } ?>">
   <div class="dyheader_container">
