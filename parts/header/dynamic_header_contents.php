@@ -1,4 +1,6 @@
 <?php
+    $dyheaderBkImgFil = get_option('site_dyheader_bkimg_filter');
+
     $txt = get_option('site_dyheader_text');
     $txtAnime = get_option('site_dyheader_text_animation');
     $btn = get_option('site_dyheader_button');
@@ -11,7 +13,17 @@
 
 <?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
-<div id="dynamicHeader" class="dyheader">
+<div id="dynamicHeader" class="dyheader
+<?php if($dyheaderBkImgFil=='value2'){
+  echo'dyheaderBkImgFil1';
+}elseif($dyheaderBkImgFil=='value3'){
+  echo'dyheaderBkImgFil2';
+}elseif($dyheaderBkImgFil=='value4'){
+  echo'dyheaderBkImgFil3';
+}elseif($dyheaderBkImgFil=='value5'){
+  echo'dyheaderBkImgFil4';
+}elseif($dyheaderBkImgFil=='value6'){
+  echo'dyheaderBkImgFil5';} ?>">
   <div class="dyheader_container">
       <div class="dyheader_textArea">
         <p<?php

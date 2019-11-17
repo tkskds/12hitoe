@@ -282,6 +282,26 @@ function org_customizer($wp_customize){
             'section' => 'site_dyheader',
           )));
 
+          $wp_customize->add_setting('site_dyheader_bkimg_filter', array(
+            'default' => 'value1',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_dyheader_bkimg_filter', array(
+            'label' => 'ヘッダー部分の背景画像フィルター',
+            'description' => 'ヘッダーの背景画像にフィルターをかけることができます。文字が見づらい背景画像を使用する場合に有効です。',
+            'section' => 'site_dyheader',
+            'type' => 'select',
+            'choices' => array(
+              'value1' => 'フィルターなし',
+              'value2' => 'うっすら暗く',
+              'value3' => 'うっすら明るく',
+              'value4' => 'ドット',
+              'value5' => '斜線',
+              'value6' => 'ぼかし',
+            ),
+          ));
+
           $wp_customize->add_setting('site_dyheader_bkcolor', array(
             'default' => '#f1f2f3',
             'type' => 'option',
@@ -292,8 +312,6 @@ function org_customizer($wp_customize){
             'description' => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。',
             'section' => 'site_dyheader',
           )));
-
-
 
           $wp_customize->add_setting('site_dyheader_width', array(
             'default' => 1200,
@@ -668,7 +686,7 @@ function add_customizerCSS(){
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
     <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
     .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
-      <?php if ($dyheaderBkImg != null) : ?>background-image:url("<?php echo $dyheaderBkImg ?>");background-repeat: no-repeat;background-size: cover;<?php endif; ?>
+      <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat 0 0/cover;<?php endif; ?>
     }
     .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;color:<?php echo $dyheaderFontColor ?>;}
     .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}

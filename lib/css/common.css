@@ -45,6 +45,7 @@ nav a.siteTitle{
 /************* ダイナミックヘッダー ************/
 
 .dyheader{
+  position: relative;
   display: block;
   width: 100%;
   max-width: 1200px;
@@ -84,11 +85,54 @@ nav a.siteTitle{
 .dyheader_textArea p{
   font-size: 200%;
   margin-bottom: 1em;
+  z-index: 1;
+  position: relative;
 }
 
 .dyheader_imgArea img{
   max-width: 100%;
+  z-index: 1;
+  position: relative;
 }
+
+.dyheaderBkImgFil1::after,
+.dyheaderBkImgFil2::after,
+.dyheaderBkImgFil3::after,
+.dyheaderBkImgFil4::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.dyheaderBkImgFil1::after{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dyheaderBkImgFil2::after{
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dyheaderBkImgFil3::after{
+  background: url("/wp-content/themes/bone/images/dot.png") repeat;
+}
+.dyheaderBkImgFil4::after{
+  background: url("/wp-content/themes/bone/images/line.png") repeat;
+}
+
+.dyheaderBkImgFil5::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  bottom: -7px;
+  left: -7px;
+  background: inherit;
+  filter: blur(7px);
+}
+
 
 /**************** 記事一覧 *******************/
 
