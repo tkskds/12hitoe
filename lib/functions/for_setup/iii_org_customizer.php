@@ -298,7 +298,8 @@ function org_customizer($wp_customize){
               'value3' => 'うっすら明るく',
               'value4' => 'ドット',
               'value5' => '斜線',
-              'value6' => 'ぼかし',
+              'value6' => '罫線',
+              'valur7' => 'ボカシ'
             ),
           ));
 

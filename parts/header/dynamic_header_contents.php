@@ -23,7 +23,10 @@
 }elseif($dyheaderBkImgFil=='value5'){
   echo'dyheaderBkImgFil4';
 }elseif($dyheaderBkImgFil=='value6'){
-  echo'dyheaderBkImgFil5';} ?>">
+  echo'dyheaderBkImgFil5';
+}elseif($dyheaderBkImgFil=='value7'){
+  echo'dyheaderBkImgFil6';
+} ?>">
   <div class="dyheader_container">
       <div class="dyheader_textArea">
         <p<?php

@@ -98,7 +98,8 @@ nav a.siteTitle{
 .dyheaderBkImgFil1::after,
 .dyheaderBkImgFil2::after,
 .dyheaderBkImgFil3::after,
-.dyheaderBkImgFil4::after{
+.dyheaderBkImgFil4::after,
+.dyheaderBkImgFil5::after{
   content: "";
   position: absolute;
   top: 0;
@@ -115,14 +116,19 @@ nav a.siteTitle{
   background: rgba(255, 255, 255, 0.5);
 }
 
+/*修正の必要あり*/
+
 .dyheaderBkImgFil3::after{
-  background: url("/wp-content/themes/bone/images/dot.png") repeat;
+  background: url("/wp-content/themes/bone-master/images/dyheader_fil/dot.png") repeat;
 }
 .dyheaderBkImgFil4::after{
-  background: url("/wp-content/themes/bone/images/line.png") repeat;
+  background: url("/wp-content/themes/bone-master/images/dyheader_fil/line.png") repeat;
+}
+.dyheaderBkImgFil5::after{
+  background: url("/wp-content/themes/bone-master/images/dyheader_fil/ruledLine.png") repeat;
 }
 
-.dyheaderBkImgFil5::after {
+.dyheaderBkImgFil6::after {
   content: "";
   position: absolute;
   top: -7px;
