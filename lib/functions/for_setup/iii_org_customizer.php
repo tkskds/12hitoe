@@ -299,7 +299,7 @@ function org_customizer($wp_customize){
               'value4' => 'ドット',
               'value5' => '斜線',
               'value6' => '罫線',
-              'valur7' => 'ボカシ'
+              'value7' => 'ボカシ',
             ),
           ));
 

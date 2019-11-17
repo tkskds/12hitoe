@@ -12,6 +12,7 @@
     $nothome = get_option('site_dyheader_notTop');
 ?>
 
+// ホーム画面である or カスタマイザーの設定（ホーム画面以外でもダイナミックヘッダー表示）がONになってる
 <?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
 <div id="dynamicHeader" class="dyheader
@@ -28,6 +29,7 @@
 }elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value7'){
   echo'dyheaderBkImgFil6';
 } ?>">
+
   <div class="dyheader_container">
       <div class="dyheader_textArea">
         <p<?php
