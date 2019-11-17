@@ -14,17 +14,17 @@
 <?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
 <div id="dynamicHeader" class="dyheader
-<?php if($dyheaderBkImgFil=='value2'){
+<?php if($img != null && $dyheaderBkImgFil=='value2'){
   echo'dyheaderBkImgFil1';
-}elseif($dyheaderBkImgFil=='value3'){
+}elseif($img != null && $dyheaderBkImgFil=='value3'){
   echo'dyheaderBkImgFil2';
-}elseif($dyheaderBkImgFil=='value4'){
+}elseif($img != null && $dyheaderBkImgFil=='value4'){
   echo'dyheaderBkImgFil3';
-}elseif($dyheaderBkImgFil=='value5'){
+}elseif($img != null && $dyheaderBkImgFil=='value5'){
   echo'dyheaderBkImgFil4';
-}elseif($dyheaderBkImgFil=='value6'){
+}elseif($img != null && $dyheaderBkImgFil=='value6'){
   echo'dyheaderBkImgFil5';
-}elseif($dyheaderBkImgFil=='value7'){
+}elseif($img != null && $dyheaderBkImgFil=='value7'){
   echo'dyheaderBkImgFil6';
 } ?>">
   <div class="dyheader_container">
