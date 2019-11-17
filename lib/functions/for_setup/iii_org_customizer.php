@@ -138,6 +138,8 @@ function org_customizer($wp_customize){
         'panel' => 'site_builder',
       ));
 
+
+
           $wp_customize->add_setting('site_dyheader_text', array(
             'default' => "Let's enjoy self-expression!",
             'type' => 'option',
@@ -235,8 +237,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_img', array(
-      			'label' => 'ヘッダー部分の画像',
-            'description' => 'ヘッダー部分に画像を挿入します。',
+      			'label' => 'ヘッダー部分の画像（文字の隣）',
+            'description' => 'ヘッダー部分のテキストの隣に画像を挿入します。',
       			'section' => 'site_dyheader',
         	)));
 
@@ -249,6 +251,29 @@ function org_customizer($wp_customize){
             'section' => 'site_dyheader',
             'type' => 'checkbox',
           ));
+
+          $wp_customize->add_setting('site_dyheader_bkimg', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_bkimg', array(
+            'label' => 'ヘッダー部分の画像（背景）',
+            'description' => 'ヘッダー部分の背景に画像を挿入します。',
+            'section' => 'site_dyheader',
+          )));
+
+          $wp_customize->add_setting('site_dyheader_bkcolor', array(
+            'default' => '#f1f2f3',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_bkcolor', array(
+            'label' => 'ヘッダー部分の背景色',
+            'description' => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。',
+            'section' => 'site_dyheader',
+          )));
+
+
 
           $wp_customize->add_setting('site_dyheader_width', array(
             'default' => 1200,
@@ -562,6 +587,8 @@ function add_customizerCSS(){
   $dyheaderPadding = get_option('site_dyheader_padding') ? get_option('site_dyheader_padding') : '20';
   $dyheaderImg = get_option('site_dyheader_img');
   $dyheaderImgPosition = get_option('site_dyheader_img_position');
+  $dyheaderBkImg = get_option('site_dyheader_bkimg');
+  $dyheaderBkColor = get_option('site_dyheader_bkcolor') ? get_option('site_dyheader_bkcolor') : 'whitesmoke' ;
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -593,7 +620,7 @@ function add_customizerCSS(){
     } elseif ($fontBody == 'value3') {
       $fontBody = "'M PLUS Rounded 1c', sans-serif";
     } else {
-      $fontBody = '';
+      $fontBody = 'Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
     }
 
   /*** サイトの文字サイズ ***/
@@ -613,6 +640,9 @@ function add_customizerCSS(){
     @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
     @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
+    .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
+      <?php if ($dyheaderBkImg != null) : ?>background-image:url("<?php echo $dyheaderBkImg ?>");<?php endif; ?>
+    }
     .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;}
     .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
     <?php if ($dyheaderImg != null) : ?>

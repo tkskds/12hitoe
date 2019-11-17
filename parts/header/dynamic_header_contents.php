@@ -9,8 +9,7 @@
     $nothome = get_option('site_dyheader_notTop');
 ?>
 
-<?php if ($nothome == false && !is_single() && is_home() || $nothome == false && !is_page() && is_front_page() ) : ?>
-<?php if ($nothome == true && is_single() || $nothome == true && is_page() ) : ?>
+<?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
 <div id="dynamicHeader" class="dyheader">
   <div class="dyheader_container">
@@ -41,5 +40,4 @@
   </div>
 </div>
 
-<?php endif; ?>
 <?php endif; ?>

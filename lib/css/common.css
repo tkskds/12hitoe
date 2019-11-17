@@ -50,7 +50,7 @@ aside#aside{
   max-width: 1200px;
   margin: auto;
   height: 40vh;
-  min-height: 300px;
+  min-height: 400px;
   padding: 20px;
 }
 
@@ -82,7 +82,7 @@ aside#aside{
 
 .dyheader_textArea p{
   font-size: 200%;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 .dyheader_imgArea img{
