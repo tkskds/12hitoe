@@ -377,11 +377,38 @@ function org_customizer($wp_customize){
             'type' => 'checkbox',
           ));
 
+      $wp_customize->add_section('site_feature', array(
+        'priority' => 3,
+        'title' => '3:フューチャー部分（『1:骨組みの設定』で選択した場合のみ）',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customize->add_setting('site_feature_section1', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section1', array(
+            'label' => ''
+          ));
+
+          // section.flexbox
+          //   .f_ttl
+          //     p タイトル
+          //   .f_items
+          //     .f_item
+          //       .f_item_img
+          //       .f_item_ttl  色を選択できる
+          //       .f_item_description
+          //   .f_ttl 二個目以降あれば繰り返し
+          //   ==SNIP==
+          // section.flexbox 二個目以降あれば繰り返し
+          //   ==SNIP==
+
 
 
       $wp_customize->add_section('site_cssfw', array(
-        'priority' => 3,
-        'title' => '3:デザインの設定',
+        'priority' => 4,
+        'title' => '4:デザインの設定',
         'panel' => 'site_builder',
       ));
 
@@ -405,8 +432,8 @@ function org_customizer($wp_customize){
           ));
 
       $wp_customize->add_section('site_font',array(
-        'priority' => 4,
-        'title' => '4:フォントの設定',
+        'priority' => 5,
+        'title' => '5:フォントの設定',
         'panel' => 'site_builder',
       ));
 
@@ -505,14 +532,14 @@ function org_customizer($wp_customize){
 
 
       $wp_customize->add_section('site_color',array(
-        'priority' => 5,
-        'title' => '5:色の設定',
+        'priority' => 6,
+        'title' => '6:色の設定',
         'panel' => 'site_builder',
       ));
 
       $wp_customize->add_section('site_nav',array(
-        'priority' => 6,
-        'title' => '6:ナビメニューの設定',
+        'priority' => 7,
+        'title' => '7:ナビメニューの設定',
         'panel' => 'site_builder',
       ));
 
@@ -548,8 +575,8 @@ function org_customizer($wp_customize){
           ));
 
       $wp_customize->add_section('site_articleList',array(
-        'priority' => 7,
-        'title' => '7:記事一覧の設定',
+        'priority' => 8,
+        'title' => '8:記事一覧の設定',
         'panel' => 'site_builder',
       ));
 

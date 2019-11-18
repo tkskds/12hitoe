@@ -139,6 +139,39 @@ nav a.siteTitle{
   filter: blur(7px);
 }
 
+/**************** LP部分 *******************/
+
+.fadein {
+  opacity : 0.1;
+  transform : translate(0, 50px);
+  transition : all 500ms;
+  }
+
+.fadein .scrollin {
+  opacity : 1;
+  transform : translate(0, 0);
+  }
+
+.fadein:nth-of-type(2) {
+  -moz-transition-delay: 200ms;
+  -webkit-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  }
+
+.fadein:nth-of-type(3) {
+  -moz-transition-delay: 400ms;
+  -webkit-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  }
+
+.fadein:nth-of-type(4) {
+  -moz-transition-delay: 600ms;
+  -webkit-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
+  -ms-transition-delay: 600ms;
+  }
 
 /**************** 記事一覧 *******************/
 

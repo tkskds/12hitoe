@@ -9,11 +9,8 @@
     $btn2 = get_option('site_dyheader_button2');
     $btn2Link = get_option('site_dyheader_button2_link');
     $img = get_option('site_dyheader_img');
-    $nothome = get_option('site_dyheader_notTop');
 ?>
 
-// ホーム画面である or カスタマイザーの設定（ホーム画面以外でもダイナミックヘッダー表示）がONになってる
-<?php if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()): ?>
 
 <div id="dynamicHeader" class="dyheader
 <?php if($dyheaderBkImg != null && $dyheaderBkImgFil=='value2'){
@@ -57,5 +54,3 @@
       <?php endif; ?>
   </div>
 </div>
-
-<?php endif; ?>

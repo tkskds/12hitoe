@@ -13,11 +13,15 @@
 $priority = get_option('site_bone_priority');
 $cssfw = get_option('site_cssfw_choice');
 $dyheader = get_option('site_bone_type');
+$nothome = get_option('site_dyheader_notTop');
+s
 
-
-
+      //ナビメニューより先にダイナミックヘッダー呼び出す設定で、
       if ($dyheader == 'value3' && $priority == true || $dyheader == 'value4' && $priority == true  ){
-        get_template_part('parts/header/dynamic_header_contents');
+        // ホーム画面である or カスタマイザーの設定（ホーム画面以外でもダイナミックヘッダー表示）がONになってる
+        if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()){
+          get_template_part('parts/header/dynamic_header_contents');
+        }
       }
 
       if ($cssfw == 'value1'){
@@ -30,8 +34,12 @@ $dyheader = get_option('site_bone_type');
         //開発者用テンプレートを選択した場合は子テーマのCSSファイルを呼び出す
       }
 
+      //ナビメニューより先にダイナミックヘッダー呼び出す設定でなく、
       if ($dyheader == 'value3' && $priority == false || $dyheader == 'value4' && $priority == false ){
-        get_template_part('parts/header/dynamic_header_contents');
+        // ホーム画面である or カスタマイザーの設定（ホーム画面以外でもダイナミックヘッダー表示）がONになってる
+        if( is_home() || is_front_page() || $nothome == true && is_single() || $nothome == true && is_page()){
+          get_template_part('parts/header/dynamic_header_contents');
+        }
       }
 
 
