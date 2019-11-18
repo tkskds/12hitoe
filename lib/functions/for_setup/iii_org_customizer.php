@@ -673,6 +673,24 @@ function org_customizer($wp_customize){
         'panel' => 'site_builder',
       ));
 
+          $wp_customize->add_setting('site_color_nav_bk', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk', array(
+            'label' => 'ナビバーの背景色',
+            'section' => 'site_color'
+          )));
+
+          $wp_customize->add_setting('site_color_nav_font', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_font', array(
+            'label' => 'ナビバーの文字色',
+            'section' => 'site_color',
+          )));
+
       $wp_customize->add_section('site_nav',array(
         'priority' => 7,
         'title' => '7:ナビメニューの設定',
@@ -843,34 +861,43 @@ function add_customizerCSS(){
   /*ナビメニューの横幅*/
   $nav = get_option('site_nav_width');
 
+  /*色の設定*/
+  $nav_bk = get_option('site_color_nav_bk');
+  $nav_f = get_option('site_color_nav_font');
+
+
   ?>
-  <style>
-    body{font-family:<?php echo $fontBody ?>;}
-    nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
-    @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
-    @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
-    @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
-    <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
-    .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
-      <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat center/cover;<?php endif; ?>
-    }
-    .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;color:<?php echo $dyheaderFontColor ?>;}
-    .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
-    <?php if ($dyheaderImg != null) : ?>
-    .dyheader_container{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;}
-    .dyheader_imgArea img{width:<?php echo $dyheaderImgWidth ?>%;}
-    <?php if ($dyheaderImgPosition == true) : ?>
-    .dyheader_container{-ms-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
-    <?php endif; //END imgを左側にするか ?>
-    <?php endif; //END imageがあるかどうか ?>
-    <?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
-    .contentArea{max-width:<?php echo $contentArea ?>px;}
-    <?php if ($nav == true): ?>
-    .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
-    <?php endif; ?>
-    .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
-  </style>
-  <?php
+
+<style>
+body{font-family:<?php echo $fontBody ?>;}
+nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
+@media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
+@media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
+@media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
+<?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
+.dyheader{background-color:<?php echo $dyheaderBkColor ?>;
+  <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat center/cover;<?php endif; ?>
+}
+.dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;color:<?php echo $dyheaderFontColor ?>;}
+.dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
+<?php if ($dyheaderImg != null) : ?>
+.dyheader_container{-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;}
+.dyheader_imgArea img{width:<?php echo $dyheaderImgWidth ?>%;}
+<?php if ($dyheaderImgPosition == true) : ?>
+.dyheader_container{-ms-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
+<?php endif; //END imgを左側にするか ?>
+<?php endif; //END imageがあるかどうか ?>
+<?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
+.contentArea{max-width:<?php echo $contentArea ?>px;}
+<?php if ($nav == true): ?>
+.nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
+<?php endif; ?>
+.row .col.l3{width:<?php echo $sidebarWidth ?>%;}
+/*色*/
+nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_f ?>;}
+</style>
+
+<?php
 }//END add_customizerCSS()
 
 add_action('wp_head', 'add_customizerCSS');

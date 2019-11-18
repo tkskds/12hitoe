@@ -142,7 +142,8 @@ nav a.siteTitle{
 /**************** 特徴部分 *******************/
 
 .features h2,
-.features h3{
+.f_item p{
+  margin-top: 0;
   text-align: center;
 }
 
@@ -158,7 +159,13 @@ nav a.siteTitle{
 }
 
 .f_item{
-  width: 300px;
+  width: calc(100% / 3);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.f_item p{
+  font-size: 1.2em;
 }
 
 .fadein{

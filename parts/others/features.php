@@ -16,30 +16,32 @@
 
 
 <section class="features">
-  <h2 <?php if ($fadein == true){echo 'class="fadein"';} ?>>
-    <?php echo $title ?>
-  </h2>
-  <p><?php echo $description ?></p>
-  <div class="f_items">
-    <div class="f_item<?php if ($fadein == true){echo ' fadein';} ?>">
-      <?php if($item1Icn != null){ echo $item1Icn; } ?>
-      <?php if($item1Ttl != null){ echo "<h3>${item1Ttl}</h3>"; } ?>
-      <?php if($item1Dsc != null){ echo "<p>${item1Dsc}</p>"; } ?>
+  <div class="container">
+    <div class="f_ttl <?php if ($fadein == true){echo 'fadein';}?>">
+      <h2><?php echo $title ?></h2>
+      <p><?php echo $description ?></p>
     </div>
-    <?php if($item2Ttl != null): ?>
+    <div class="f_items">
       <div class="f_item<?php if ($fadein == true){echo ' fadein';} ?>">
-        <?php if($item2Icn != null){ echo $item2Icn; } ?>
-        <?php if($item2Ttl != null){ echo "<h3>${item2Ttl}</h3>"; } ?>
-        <?php if($item2Dsc != null){ echo "<p>${item2Dsc}</p>"; } ?>
+        <?php if($item1Icn != null){ echo $item1Icn; } ?>
+        <?php if($item1Ttl != null){ echo "<p>${item1Ttl}</p>"; } ?>
+        <?php if($item1Dsc != null){ echo "<span>${item1Dsc}</span>"; } ?>
       </div>
-    <?php endif; ?>
-    <?php if($item3Ttl != null): ?>
-      <div class="f_item<?php if ($fadein == true){echo ' fadein';} ?>">
-        <?php if($item3Icn != null){ echo $item3Icn; } ?>
-        <?php if($item3Ttl != null){ echo "<h3>${item3Ttl}</h3>"; } ?>
-        <?php if($item3Dsc != null){ echo "<p>${item3Dsc}</p>"; } ?>
-      </div>
-    <?php endif; ?>
+      <?php if($item2Ttl != null): ?>
+        <div class="f_item<?php if ($fadein == true){echo ' fadein';} ?>">
+          <?php if($item2Icn != null){ echo $item2Icn; } ?>
+          <?php if($item2Ttl != null){ echo "<p>${item2Ttl}</p>"; } ?>
+          <?php if($item2Dsc != null){ echo "<span>${item2Dsc}</span>"; } ?>
+        </div>
+      <?php endif; ?>
+      <?php if($item3Ttl != null): ?>
+        <div class="f_item<?php if ($fadein == true){echo ' fadein';} ?>">
+          <?php if($item3Icn != null){ echo $item3Icn; } ?>
+          <?php if($item3Ttl != null){ echo "<p>${item3Ttl}</p>"; } ?>
+          <?php if($item3Dsc != null){ echo "<span>${item3Dsc}</span>"; } ?>
+        </div>
+      <?php endif; ?>
+    </div>
   </div>
 </section>
 
