@@ -383,13 +383,128 @@ function org_customizer($wp_customize){
         'panel' => 'site_builder',
       ));
 
-          $wp_customize->add_setting('site_feature_section1', array(
+          $wp_customize->add_setting('site_feature_section_ttl', array(
+            'type' => 'option'
+          ));
+
+          $wp_customize->add_control('site_feature_section_ttl', array(
+            'label' => 'セクションのタイトル',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item1_icon', array(
+            'type' => 'option',
+            'default' => '<i class="fas fa-coins"></i>'
+          ));
+
+          $wp_customize->add_control('site_feature_section_item1_icon', array(
+            'label' => 'アイテム1のアイコン',
+            'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item1_ttl', array(
             'type' => 'option',
           ));
 
-          $wp_customize->add_control('site_feature_section1', array(
-            'label' => ''
+          $wp_customize->add_control('site_feature_section_item1_ttl', array(
+            'label' => 'アイテム1のタイトル',
+            'type' => 'text',
+            'section' => 'site_feature',
           ));
+
+          $wp_customize->add_setting('site_feature_section_item1_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section_item1_description', array(
+            'label' => 'アイテム1の説明文',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+          $wp_customize->add_setting('site_feature_section_item2_icon', array(
+            'type' => 'option',
+            'default' => '<i class="fas fa-coins"></i>'
+          ));
+
+          $wp_customize->add_control('site_feature_section_item2_icon', array(
+            'label' => 'アイテム1のアイコン',
+            'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item2_ttl', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section_item2_ttl', array(
+            'label' => 'アイテム1のタイトル',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item2_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section_item2_description', array(
+            'label' => 'アイテム1の説明文',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item3_icon', array(
+            'type' => 'option',
+            'default' => '<i class="fas fa-coins"></i>'
+          ));
+
+          $wp_customize->add_control('site_feature_section_item3_icon', array(
+            'label' => 'アイテム1のアイコン',
+            'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item3_ttl', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section_item3_ttl', array(
+            'label' => 'アイテム1のタイトル',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_item3_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section_item3_description', array(
+            'label' => 'アイテム1の説明文',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section2_bk_color', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_bk_color', array(
+            'label' => 'セクションの背景色',
+            'section' => 'site_feature',
+          )));
+
+          $wp_customize->add_setting('site_feature_section2_bk_img', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section2_bk_img', array(
+            'label' => 'セクションの背景画像',
+            'section' => 'site_feature',
+          )));
 
           // section.flexbox
           //   .f_ttl
@@ -542,6 +657,8 @@ function org_customizer($wp_customize){
         'title' => '7:ナビメニューの設定',
         'panel' => 'site_builder',
       ));
+
+      //背景の絶対位置化でダイナミックヘッダーと合成するオプションつける
 
           $wp_customize->add_setting('site_nav_type',array(
             'default' => '1',
@@ -714,7 +831,7 @@ function add_customizerCSS(){
     @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
     <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
     .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
-      <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat 0 0/cover;<?php endif; ?>
+      <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat center/cover;<?php endif; ?>
     }
     .dyheader_textArea p{font-size:<?php echo $dyheaderFontSize ?>%;color:<?php echo $dyheaderFontColor ?>;}
     .dyheader{max-width:<?php echo $dyheaderWidth ?>px;height:<?php echo $dyheaderHeight ?>vh;margin-top:<?php echo $dyheaderMarginTop ?>px;padding:<?php echo $dyheaderPadding ?>px;}
