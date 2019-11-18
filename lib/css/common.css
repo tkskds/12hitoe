@@ -139,18 +139,38 @@ nav a.siteTitle{
   filter: blur(7px);
 }
 
-/**************** LP部分 *******************/
+/**************** 特徴部分 *******************/
 
-.fadein {
-  opacity : 0.1;
-  transform : translate(0, 50px);
-  transition : all 500ms;
-  }
+.features h2,
+.features h3{
+  text-align: center;
+}
 
-.fadein .scrollin {
+.f_items{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.f_item{
+  width: 300px;
+}
+
+.fadein{
+  opacity : 0;
+  transform : translate(0, 30px);
+  transition : 1s ease-in;
+}
+
+.scrollin{
   opacity : 1;
   transform : translate(0, 0);
-  }
+}
 
 .fadein:nth-of-type(2) {
   -moz-transition-delay: 200ms;
@@ -172,6 +192,24 @@ nav a.siteTitle{
   -o-transition-delay: 600ms;
   -ms-transition-delay: 600ms;
   }
+
+.fadein:nth-of-type(5) {
+  -moz-transition-delay: 800ms;
+  -webkit-transition-delay: 800ms;
+  -o-transition-delay: 800ms;
+  -ms-transition-delay: 800ms;
+  }
+
+.fadein:nth-of-type(6) {
+  -moz-transition-delay: 1000ms;
+  -webkit-transition-delay: 1000ms;
+  -o-transition-delay: 1000ms;
+  -ms-transition-delay: 1000ms;
+  }
+
+/* 動作確認用 あとで削除 */
+footer#footer{height: 100vh;}
+
 
 /**************** 記事一覧 *******************/
 

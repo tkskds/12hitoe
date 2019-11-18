@@ -393,6 +393,16 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           ));
 
+          $wp_customize->add_setting('site_feature_section_description', array(
+            'type' => 'option'
+          ));
+
+          $wp_customize->add_control('site_feature_section_description', array(
+            'label' => 'セクションの説明文',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
           $wp_customize->add_setting('site_feature_section_item1_icon', array(
             'type' => 'option',
             'default' => '<i class="fas fa-coins"></i>'
@@ -430,7 +440,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item2_icon', array(
-            'label' => 'アイテム1のアイコン',
+            'label' => 'アイテム2のアイコン',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
             'type' => 'text',
             'section' => 'site_feature',
@@ -441,7 +451,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item2_ttl', array(
-            'label' => 'アイテム1のタイトル',
+            'label' => 'アイテム2のタイトル',
             'type' => 'text',
             'section' => 'site_feature',
           ));
@@ -451,7 +461,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item2_description', array(
-            'label' => 'アイテム1の説明文',
+            'label' => 'アイテム2の説明文',
             'type' => 'text',
             'section' => 'site_feature',
           ));
@@ -462,7 +472,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_icon', array(
-            'label' => 'アイテム1のアイコン',
+            'label' => 'アイテム3のアイコン',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
             'type' => 'text',
             'section' => 'site_feature',
@@ -473,7 +483,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_ttl', array(
-            'label' => 'アイテム1のタイトル',
+            'label' => 'アイテム3のタイトル',
             'type' => 'text',
             'section' => 'site_feature',
           ));
@@ -483,8 +493,19 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_description', array(
-            'label' => 'アイテム1の説明文',
+            'label' => 'アイテム3の説明文',
             'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section_animation', array(
+            'type' => 'option',
+            'default' => false,
+          ));
+
+          $wp_customize->add_control('site_feature_section_animation', array(
+            'label' => 'アイテム1〜3をフェードインのアニメーションで表示',
+            'type' => 'checkbox',
             'section' => 'site_feature',
           ));
 
