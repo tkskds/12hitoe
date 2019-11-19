@@ -15,7 +15,7 @@ function setup(){
   add_action('init', 'head_clean_up');
 
   /** 2 できること追加する！ **/
-  add_action('init', 'theme_support');
+  add_action('init', 'theme_supports');
 
   /** 3 オリジナルのカスタマイザー追加！ **/
   add_action('customize_register', 'org_customizer');

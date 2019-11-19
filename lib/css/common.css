@@ -11,10 +11,31 @@
 
 
 /*************** 共通 ***************/
+
 body{
   font-size:16px;
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
-  color:#333
+  color:#333;
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn{
+  from{
+    opacity: 0
+  }
+  to{
+    opacity: 1
+  }
 }
 
 .siteTitle,
@@ -39,6 +60,33 @@ nav a.siteTitle{
 
 .aside{
   min-width: 320px;
+}
+
+nav{
+  animation: fadeDown 1s ease-in both;
+  -webkit-animation: fadeDown 1s ease-in both;
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 

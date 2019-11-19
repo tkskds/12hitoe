@@ -25,7 +25,7 @@
 <div class="features">
 
   <section class="feature1">
-    <div class="container">
+    <div class="container featureContainer">
       <div class="f_ttl <?php if ($fadein == true){echo 'fadein';}?>">
         <h2><?php echo $title ?></h2>
         <p><?php echo $description ?></p>
@@ -58,7 +58,7 @@
 
   <?php if($sec2ttl!=null || $sec2dsc!=null): ?>
   <section class="feature2">
-    <div class="container">
+    <div class="container featureContainer">
       <?php if($sec2ttl!=null): ?>
         <h2<?php if ($fadein == true){echo ' class="fadein"';} ?>><?php echo $sec2ttl ?></h2>
       <?php endif; ?>
@@ -71,7 +71,7 @@
 
   <?php if($sec3ttl!=null || $sec3dsc!=null): ?>
   <section class="feature3">
-    <div class="container">
+    <div class="container featureContainer">
       <?php if($sec3ttl!=null): ?>
         <h2<?php if ($fadein == true){echo ' class="fadein"';} ?>><?php echo $sec3ttl ?></h2>
       <?php endif; ?>

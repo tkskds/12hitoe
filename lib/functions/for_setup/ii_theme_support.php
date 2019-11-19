@@ -37,9 +37,10 @@ function theme_supports(){
   /****************
   //メニューの有効化
   ****************/
-  register_nav_menu( 'nav_header',  'ヘッダーメニュー（PC）' );
-  register_nav_menu( 'nav_header_sp',  'ヘッダーメニュー（スマホ）' );
-  register_nav_menu( 'nav_footer',  'フッターナビゲーション（PC・スマホ共用）' );
+  register_nav_menu('nav_header', 'ヘッダーメニュー（PC）');
+  register_nav_menu('nav_header_sp', 'ヘッダーメニュー（スマホ）');
+  register_nav_menu('nav_footer', 'フッターメニュー（PC）');
+  register_nav_menu('nav_footer_sp', 'フッターメニュー（スマホ）');
 
   /****************
   //サイドバーの有効化

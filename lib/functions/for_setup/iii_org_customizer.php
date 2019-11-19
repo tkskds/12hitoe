@@ -596,7 +596,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section2_bk_color', array(
-            'default' => '#f1f1f1',
+            'default' => '#f9f9f9',
             'type' => 'option',
           ));
 
@@ -635,7 +635,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section3_bk_color', array(
-            'default' => '#f1f1f1',
+            'default' => '#f9f9f9',
             'type' => 'option',
           ));
 
@@ -937,9 +937,9 @@ function add_customizerCSS(){
   $featureIcon2Color = get_option('site_feature_section_item2_icon_color') ? get_option('site_feature_section_item2_icon_color') : '#E64A64';
   $featureIcon3Color = get_option('site_feature_section_item3_icon_color') ? get_option('site_feature_section_item3_icon_color') : '#ffcc00';
   $featureSec2BkImg = get_option('site_feature_section2_bk_img');
-  $featureSec2BkColor = get_option('site_feature_section2_bk_color') ? get_option('site_feature_section2_bk_color') : '#f1f1f1';
+  $featureSec2BkColor = get_option('site_feature_section2_bk_color') ? get_option('site_feature_section2_bk_color') : '#f9f9f9';
   $featureSec3BkImg = get_option('site_feature_section3_bk_img');
-  $featureSec3BkColor = get_option('site_feature_section3_bk_color') ? get_option('site_feature_section3_bk_color') : '#f1f1f1';
+  $featureSec3BkColor = get_option('site_feature_section3_bk_color') ? get_option('site_feature_section3_bk_color') : '#f9f9f9';
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -1025,6 +1025,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
 /*色*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_f ?>;}
+nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_f ?>;}
 </style>
 
 <?php
