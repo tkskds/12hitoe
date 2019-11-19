@@ -1,23 +1,30 @@
-
 <nav class="main__color">
   <div class="nav-wrapper">
-    <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle siteTitle__color">Logo</a>
+    <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle">
+      <?php bloginfo('name'); ?>
+    </a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
+      <?php
+          wp_nav_menu(array(
+            'theme_location' => 'nav_header',
+            'container' => 'ul',
+            'menu_class' => 'right hide-on-med-and-down',
+            'fallback' => ''
+          ));
+      ?>
   </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
-  <li><a href="mobile.html">Mobile</a></li>
-</ul>
+<?php
+  wp_nav_menu(array(
+    'theme_location' => 'nav_header_sp',
+    'container' => 'ul',
+    'menu_id' => 'mobile-demo',
+    'menu_class' => 'sidenav',
+    'fallback' => ''
+  ));
+?>
+
 <script type="text/javascript">
   //そのうち移動する
 </script>

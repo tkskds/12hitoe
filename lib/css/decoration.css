@@ -1,0 +1,13 @@
+.marker span {
+  /*上2行headで出力（色はメインカラーに合わせる）*/
+  background-image: -webkit-linear-gradient(left, #ffe653 50%, transparent 50%);
+  background-image: linear-gradient(to right, #ffe653 50%, transparent 50%);
+  background-position: 100% 0%;
+  background-size: 200% auto;
+  background-repeat: no-repeat;
+  -webkit-transition: background-position .5s ease-out;
+  transition: background-position .5s ease-out;
+}
+.marker:hover span {
+  background-position: 0% 0%;
+}

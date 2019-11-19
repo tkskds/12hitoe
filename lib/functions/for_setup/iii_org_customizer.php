@@ -8,11 +8,36 @@
 // ` 'transport' => 'postMessage' `を設定するとリアルタイムプレビューを無効
 // panel（フォルダ） >> section（フォルダ） >> label（ファイル）みたいなイメージ
 //
+// 3-1 タイプの登録
+// 3-2 カスタマイザー項目ついか
+// 3-3 設定した値の出力
+//
+// ======
+//  END
+// ======
 
+//////////////////////////////
+// 3-1 タイプの登録
+//////////////////////////////
+
+// 'type'で'textarea'の登録
+if (class_exists('WP_Customize_Control')){
+  class EX_Customize_Textarea_Control extends WP_Customize_Control{
+    public $type = 'textarea';
+    public function render_content(){
+      ?>
+      <label>
+        <span><?php echo esc_html($this->label); ?></span>
+        <textarea rows="8" style="width:100%;"><?php $this->link(); ?><?php echo esc_textarea($this->value()); ?></textarea>
+      </label>
+      <?php
+    }
+  }
+}
 
 
 //////////////////////////////
-// 3 カスタマイザー項目追加
+// 3-2 カスタマイザー項目追加
 //////////////////////////////
 
 function org_customizer($wp_customize){
@@ -383,6 +408,18 @@ function org_customizer($wp_customize){
         'panel' => 'site_builder',
       ));
 
+        $wp_customize->add_setting('site_feature_section_animation', array(
+          'type' => 'option',
+          'default' => false,
+        ));
+
+        $wp_customize->add_control('site_feature_section_animation', array(
+          'label' => 'フェードインのアニメーションを使用する',
+          'desscription' => 'フューチャー部分全体にjQueryのアニメーションを使用します。（サイトスピードが若干落ちます）',
+          'type' => 'checkbox',
+          'section' => 'site_feature',
+        ));
+
           $wp_customize->add_setting('site_feature_section_ttl', array(
             'type' => 'option'
           ));
@@ -398,14 +435,14 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_description', array(
-            'label' => 'セクションの説明文',
-            'type' => 'text',
+            'label' => 'セクションの説明文（HTML使用可能）',
+            'type' => 'textarea',
             'section' => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item1_icon', array(
             'type' => 'option',
-            'default' => '<i class="fas fa-coins"></i>'
+            'default' => '<i class="fas fa-shield-alt"></i>'
           ));
 
           $wp_customize->add_control('site_feature_section_item1_icon', array(
@@ -414,6 +451,16 @@ function org_customizer($wp_customize){
             'type' => 'text',
             'section' => 'site_feature',
           ));
+
+          $wp_customize->add_setting('site_feature_section_item1_icon_color', array(
+            'type' => 'option',
+            'default' => '#1C6ECD'
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item1_icon_color', array(
+            'label' => 'アイテム1のアイコン色',
+            'section' => 'site_feature',
+          )));
 
           $wp_customize->add_setting('site_feature_section_item1_ttl', array(
             'type' => 'option',
@@ -434,9 +481,10 @@ function org_customizer($wp_customize){
             'type' => 'text',
             'section' => 'site_feature',
           ));
+
           $wp_customize->add_setting('site_feature_section_item2_icon', array(
             'type' => 'option',
-            'default' => '<i class="fas fa-coins"></i>'
+            'default' => '<i class="fas fa-heartbeat"></i>'
           ));
 
           $wp_customize->add_control('site_feature_section_item2_icon', array(
@@ -445,6 +493,16 @@ function org_customizer($wp_customize){
             'type' => 'text',
             'section' => 'site_feature',
           ));
+
+          $wp_customize->add_setting('site_feature_section_item2_icon_color', array(
+            'type' => 'option',
+            'default' => '#E64A64'
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item2_icon_color', array(
+            'label' => 'アイテム2のアイコン色',
+            'section' => 'site_feature',
+          )));
 
           $wp_customize->add_setting('site_feature_section_item2_ttl', array(
             'type' => 'option',
@@ -478,6 +536,16 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           ));
 
+          $wp_customize->add_setting('site_feature_section_item3_icon_color', array(
+            'type' => 'option',
+            'default' => '#ffcc00'
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item3_icon_color', array(
+            'label' => 'アイテム3のアイコン色',
+            'section' => 'site_feature',
+          )));
+
           $wp_customize->add_setting('site_feature_section_item3_ttl', array(
             'type' => 'option',
           ));
@@ -498,49 +566,90 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           ));
 
-          $wp_customize->add_setting('site_feature_section_animation', array(
-            'type' => 'option',
-            'default' => false,
-          ));
-
-          $wp_customize->add_control('site_feature_section_animation', array(
-            'label' => 'アイテム1〜3をフェードインのアニメーションで表示',
-            'type' => 'checkbox',
-            'section' => 'site_feature',
-          ));
-
-          $wp_customize->add_setting('site_feature_section2_bk_color', array(
+          $wp_customize->add_setting('site_feature_section2_ttl', array(
             'type' => 'option',
           ));
 
-          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_bk_color', array(
-            'label' => 'セクションの背景色',
+          $wp_customize->add_control('site_feature_section2_ttl', array(
+            'label' => 'セクション2のタイトル',
+            'type' => 'text',
             'section' => 'site_feature',
-          )));
+          ));
+
+          $wp_customize->add_setting('site_feature_section2_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section2_description', array(
+            'label' => 'セクション2の本文',
+            'type' => 'textarea',
+            'section' => 'site_feature',
+          ));
 
           $wp_customize->add_setting('site_feature_section2_bk_img', array(
             'type' => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section2_bk_img', array(
-            'label' => 'セクションの背景画像',
+            'label' => 'セクション2の背景画像',
             'section' => 'site_feature',
           )));
 
-          // section.flexbox
-          //   .f_ttl
-          //     p タイトル
-          //   .f_items
-          //     .f_item
-          //       .f_item_img
-          //       .f_item_ttl  色を選択できる
-          //       .f_item_description
-          //   .f_ttl 二個目以降あれば繰り返し
-          //   ==SNIP==
-          // section.flexbox 二個目以降あれば繰り返し
-          //   ==SNIP==
+          $wp_customize->add_setting('site_feature_section2_bk_color', array(
+            'default' => '#f1f1f1',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_bk_color', array(
+            'label' => 'セクション2の背景色',
+            'section' => 'site_feature',
+          )));
+
+          $wp_customize->add_setting('site_feature_section3_ttl', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section3_ttl', array(
+            'label' => 'セクション3のタイトル',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section3_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section3_description', array(
+            'label' => 'セクション3の本文',
+            'type' => 'textarea',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section3_bk_img', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section3_bk_img', array(
+            'label' => 'セクション3の背景画像',
+            'section' => 'site_feature',
+          )));
+
+          $wp_customize->add_setting('site_feature_section3_bk_color', array(
+            'default' => '#f1f1f1',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_bk_color', array(
+            'label' => 'セクション3の背景色',
+            'section' => 'site_feature',
+          )));
+
+          // $wp_customize->add_setting('site_feature_section4_info')
 
 
+
+
+//　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
 
       $wp_customize->add_section('site_cssfw', array(
         'priority' => 4,
@@ -791,6 +900,11 @@ function org_customizer($wp_customize){
 
 } //END org_customizer()
 
+
+//////////////////////////////
+// 3-3 設定した値の出力
+//////////////////////////////
+
 function add_customizerCSS(){
 
 
@@ -817,6 +931,15 @@ function add_customizerCSS(){
   $dyheaderImgPosition = get_option('site_dyheader_img_position');
   $dyheaderBkImg = get_option('site_dyheader_bkimg');
   $dyheaderBkColor = get_option('site_dyheader_bkcolor');
+
+//フューチャー部分
+  $featureIcon1Color = get_option('site_feature_section_item1_icon_color') ? get_option('site_feature_section_item1_icon_color') : '#1C6ECD';
+  $featureIcon2Color = get_option('site_feature_section_item2_icon_color') ? get_option('site_feature_section_item2_icon_color') : '#E64A64';
+  $featureIcon3Color = get_option('site_feature_section_item3_icon_color') ? get_option('site_feature_section_item3_icon_color') : '#ffcc00';
+  $featureSec2BkImg = get_option('site_feature_section2_bk_img');
+  $featureSec2BkColor = get_option('site_feature_section2_bk_color') ? get_option('site_feature_section2_bk_color') : '#f1f1f1';
+  $featureSec3BkImg = get_option('site_feature_section3_bk_img');
+  $featureSec3BkColor = get_option('site_feature_section3_bk_color') ? get_option('site_feature_section3_bk_color') : '#f1f1f1';
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -888,6 +1011,13 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 <?php endif; //END imgを左側にするか ?>
 <?php endif; //END imageがあるかどうか ?>
 <?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
+<?php if ( $siteType == 'value4' ) : //フューチャーがあるかどうか ?>
+.f_item:nth-child(1) i{color:<?php echo $featureIcon1Color ?>;}
+.f_item:nth-child(2) i{color:<?php echo $featureIcon2Color ?>;}
+.f_item:nth-child(3) i{color:<?php echo $featureIcon3Color ?>;}
+.feature2{<?php if ($featureSec2BkImg != null) : ?>background:url("<?php echo $featureSec2BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec2BkColor ?>;}
+.feature3{<?php if ($featureSec3BkImg != null) : ?>background:url("<?php echo $featureSec3BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec3BkColor ?>;}
+<?php endif; //END フューチャーがあるかどうか ?>
 .contentArea{max-width:<?php echo $contentArea ?>px;}
 <?php if ($nav == true): ?>
 .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}

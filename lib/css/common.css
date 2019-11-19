@@ -141,10 +141,30 @@ nav a.siteTitle{
 
 /**************** 特徴部分 *******************/
 
+.features section{
+  padding: 20px 0;
+}
+
 .features h2,
 .f_item p{
   margin-top: 0;
+  margin-bottom: 1em;
   text-align: center;
+  font-weight: bold;
+}
+
+.features h2{
+  font-size: 2em;
+}
+
+.f_ttl,
+.f_items{
+  padding: 20px 0;
+}
+
+.f_ttl p,
+.f_item span{
+  color: #708090;
 }
 
 .f_items{
@@ -160,12 +180,19 @@ nav a.siteTitle{
 
 .f_item{
   width: calc(100% / 3);
-  min-width: 300px;
+  padding: 20px;
   max-width: 400px;
 }
 
+.f_item i{
+  font-size: 2.5em;
+  display: block;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
 .f_item p{
-  font-size: 1.2em;
+  font-size: 1.75em;
 }
 
 .fadein{
@@ -212,6 +239,34 @@ nav a.siteTitle{
   -webkit-transition-delay: 1000ms;
   -o-transition-delay: 1000ms;
   -ms-transition-delay: 1000ms;
+  }
+
+.fadein:nth-of-type(7) {
+  -moz-transition-delay: 1200ms;
+  -webkit-transition-delay: 1200ms;
+  -o-transition-delay: 1200ms;
+  -ms-transition-delay: 1200ms;
+  }
+
+.fadein:nth-of-type(8) {
+  -moz-transition-delay: 1400ms;
+  -webkit-transition-delay: 1400ms;
+  -o-transition-delay: 1400ms;
+  -ms-transition-delay: 1400ms;
+  }
+
+.fadein:nth-of-type(9) {
+  -moz-transition-delay: 1600ms;
+  -webkit-transition-delay: 1600ms;
+  -o-transition-delay: 1600ms;
+  -ms-transition-delay: 1600ms;
+  }
+
+.fadein:nth-of-type(10) {
+  -moz-transition-delay: 1800ms;
+  -webkit-transition-delay: 1800ms;
+  -o-transition-delay: 1800ms;
+  -ms-transition-delay: 1800ms;
   }
 
 /* 動作確認用 あとで削除 */
