@@ -1,6 +1,5 @@
 <?php
 
-
 // ======
 //  MEMO
 // ======
@@ -644,10 +643,127 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           )));
 
-          // $wp_customize->add_setting('site_feature_section4_info')
+          $wp_customize->add_setting('site_feature_q1', array(
+            'type' => 'option',
+          ));
 
+          $wp_customize->add_control('site_feature_q1', array(
+            'label' => '質問1',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
 
+          $wp_customize->add_setting('site_feature_a1', array(
+            'type' => 'option',
+          ));
 
+          $wp_customize->add_control('site_feature_a1', array(
+            'label' => '答え1',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_q2', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_q2', array(
+            'label' => '質問2',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_a2', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_a2', array(
+            'label' => '答え2',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_q3', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_q3', array(
+            'label' => '質問3',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_a3', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_a3', array(
+            'label' => '答え3',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_q4', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_q4', array(
+            'label' => '質問4',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_a4', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_a4', array(
+            'label' => '答え4',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_q5', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_q5', array(
+            'label' => '質問5',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_a5', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_a5', array(
+            'label' => '答え5',
+            'type' => 'text',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section5_info', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section5_info', array(
+            'label' => 'フリースペース（会社情報や商品情報など）',
+            'type' => 'textarea',
+            'section' => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section5_map', array(
+            'type' => 'option',
+            'default' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.2823422657766!2d139.77007871513112!3d35.71927413549223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e827551ab83%3A0x59f3effef9b46130!2z5p2x5Lqs6Jed6KGT5aSn5a2m!5e0!3m2!1sja!2sjp!4v1574213861441!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>',
+          ));
+
+          $wp_customize->add_control('site_feature_section5_map', array(
+            'label' => '地図',
+            'description' => 'GoogleMapの埋め込み機能を利用できます。',
+            'type' => 'textarea',
+            'section' => 'site_feature',
+          ));
 
 //　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
 

@@ -2,7 +2,7 @@
 
 require_once ('lib/functions/for_setup/i_head_clean_up.php');
 require_once ('lib/functions/for_setup/ii_theme_support.php');
-require_once ('lib/functions/for_setup/iii_org_customizer.php');
+require_once ('lib/functions/for_setup/iii_customizer.php');
 require_once ('lib/functions/for_setup/iiii_register_widgets.php');
 
 

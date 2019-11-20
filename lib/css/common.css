@@ -317,6 +317,76 @@ nav{
   -ms-transition-delay: 1800ms;
   }
 
+.feature_qa {
+	border-top: 1px solid #1b2538;
+}
+.feature_qa .feature_actab {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 1px;
+	color: #1b2538;
+}
+.feature_qa .feature_actab input {
+	position: absolute;
+	opacity: 0;
+}
+
+.feature_qa .feature_actab label {
+	font-weight: bold;
+	line-height: 1.6;
+	position: relative;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 1em 2em 1em 1em;
+	cursor: pointer;
+	border-bottom: 1px solid #1b2538;
+}
+
+.feature_qa .feature_actab label:hover {
+	color: #00838F;
+}
+
+.feature_qa .feature_actab .feature_actab-content {
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: max-height 0.5s ease;
+	transition: max-height 0.5s ease;
+	color: #ffffff;
+	background: rgba(0, 131, 143, 0.5);
+}
+.feature_qa .feature_actab .feature_actab-content p {
+	margin: 1em;
+}
+
+.feature_qa .feature_actab input:checked ~ label {
+	color: #00838F;
+}
+
+.feature_qa .feature_actab input:checked ~ .feature_actab-content {
+	max-height: 40em;
+}
+
+.feature_qa .feature_actab label::after {
+	line-height: 1.6;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: block;
+	width: 3em;
+	margin-top: -12.5px;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	text-align: center;
+}
+.feature_qa .feature_actab input[type=checkbox] + label::after {
+	content: 'BC';
+}
+.feature_qa .feature_actab input[type=checkbox]:checked + label::after {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
 /* 動作確認用 あとで削除 */
 footer#footer{height: 100vh;}
 

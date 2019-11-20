@@ -19,6 +19,16 @@
   $sec3dsc = get_option('site_feature_section3_description');
   $sec3bkImg = get_option('site_feature_section3_bk_img');
   $sec3bkColor = get_option('site_feature_section3_bk_color');
+  $sec4q1 = get_option('site_feature_q1');
+  $sec4a1 = get_option('site_feature_a1');
+  $sec4q2 = get_option('site_feature_q2');
+  $sec4q2 = get_option('site_feature_a2');
+  $sec4q3 = get_option('site_feature_q3');
+  $sec4q3 = get_option('site_feature_a3');
+  $sec4q4 = get_option('site_feature_q4');
+  $sec4q4 = get_option('site_feature_a4');
+  $sec4q5 = get_option('site_feature_q5');
+  $sec4q5 = get_option('site_feature_a5');
 
 ?>
 
@@ -81,6 +91,22 @@
     </div>
   </section>
   <?php endif; ?>
+
+  <?php if($sec4q1 != null): ?>
+    <section class="feature4">
+      <div class="container featureContainer">
+        <div class="feature_qa">
+          <div class="feature_actab">
+          <input id="feature_tabfour1" type="checkbox" name="tabs">
+          <label for="feature_tabfour1"><?php echo $sec4q1 ?></label>
+          	<div class="feature_actab-content">
+          	<p><?php echo $sec4a1 ?></p>
+          	</div>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+
 
 </div>
 
