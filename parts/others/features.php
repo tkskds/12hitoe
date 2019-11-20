@@ -22,13 +22,13 @@
   $sec4q1 = get_option('site_feature_q1');
   $sec4a1 = get_option('site_feature_a1');
   $sec4q2 = get_option('site_feature_q2');
-  $sec4q2 = get_option('site_feature_a2');
+  $sec4a2 = get_option('site_feature_a2');
   $sec4q3 = get_option('site_feature_q3');
-  $sec4q3 = get_option('site_feature_a3');
+  $sec4a3 = get_option('site_feature_a3');
   $sec4q4 = get_option('site_feature_q4');
-  $sec4q4 = get_option('site_feature_a4');
+  $sec4a4 = get_option('site_feature_a4');
   $sec4q5 = get_option('site_feature_q5');
-  $sec4q5 = get_option('site_feature_a5');
+  $sec4a5 = get_option('site_feature_a5');
 
 ?>
 
@@ -95,49 +95,52 @@
   <?php if($sec4q1 != null): ?>
     <section class="feature4">
       <div class="container featureContainer">
-        <div class="feature_actab">
-          <input id="feature_tabfour1" type="checkbox" name="tabs">
-          <label for="feature_tabfour1"><?php echo $sec4q1 ?></label>
-          	<div class="feature_actab-content">
-          	<p><?php echo $sec4a1 ?></p>
-          	</div>
+        <div class="feature_qanda <?php if ($fadein == true){echo ' fadein';} ?>">
+          <h2>よくある質問</h2>
+          <div class="feature_actab">
+            <input id="feature_tabfour1" type="checkbox" name="tabs">
+            <label for="feature_tabfour1"><?php echo $sec4q1 ?></label>
+            	<div class="feature_actab-content">
+            	<p><?php echo $sec4a1 ?></p>
+            	</div>
+          </div>
+          <?php if($sec4q2 != null): ?>
+            <div class="feature_actab">
+              <input id="feature_tabfour2" type="checkbox" name="tabs">
+              <label for="feature_tabfour2"><?php echo $sec4q2 ?></label>
+                <div class="feature_actab-content">
+                <p><?php echo $sec4a2 ?></p>
+                </div>
+            </div>
+          <?php endif; ?>
+          <?php if($sec4q3 != null): ?>
+            <div class="feature_actab">
+              <input id="feature_tabfour3" type="checkbox" name="tabs">
+              <label for="feature_tabfour3"><?php echo $sec4q3 ?></label>
+                <div class="feature_actab-content">
+                <p><?php echo $sec4a3 ?></p>
+                </div>
+            </div>
+          <?php endif; ?>
+          <?php if($sec4q4 != null): ?>
+            <div class="feature_actab">
+              <input id="feature_tabfour4" type="checkbox" name="tabs">
+              <label for="feature_tabfour4"><?php echo $sec4q4 ?></label>
+                <div class="feature_actab-content">
+                <p><?php echo $sec4a4 ?></p>
+                </div>
+            </div>
+          <?php endif; ?>
+          <?php if($sec4q5 != null): ?>
+            <div class="feature_actab">
+              <input id="feature_tabfour5" type="checkbox" name="tabs">
+              <label for="feature_tabfour5"><?php echo $sec4q5 ?></label>
+                <div class="feature_actab-content">
+                <p><?php echo $sec4a5 ?></p>
+                </div>
+            </div>
+          <?php endif; ?>
         </div>
-        <?php if($sec4q2 != null): ?>
-          <div class="feature_actab">
-            <input id="feature_tabfour2" type="checkbox" name="tabs">
-            <label for="feature_tabfour2"><?php echo $sec4q2 ?></label>
-              <div class="feature_actab-content">
-              <p><?php echo $sec4a2 ?></p>
-              </div>
-          </div>
-        <?php endif; ?>
-        <?php if($sec4q3 != null): ?>
-          <div class="feature_actab">
-            <input id="feature_tabfour3" type="checkbox" name="tabs">
-            <label for="feature_tabfour3"><?php echo $sec4q3 ?></label>
-              <div class="feature_actab-content">
-              <p><?php echo $sec4a3 ?></p>
-              </div>
-          </div>
-        <?php endif; ?>
-        <?php if($sec4q4 != null): ?>
-          <div class="feature_actab">
-            <input id="feature_tabfour4" type="checkbox" name="tabs">
-            <label for="feature_tabfour4"><?php echo $sec4q4 ?></label>
-              <div class="feature_actab-content">
-              <p><?php echo $sec4a4 ?></p>
-              </div>
-          </div>
-        <?php endif; ?>
-        <?php if($sec4q5 != null): ?>
-          <div class="feature_actab">
-            <input id="feature_tabfour5" type="checkbox" name="tabs">
-            <label for="feature_tabfour5"><?php echo $sec4q5 ?></label>
-              <div class="feature_actab-content">
-              <p><?php echo $sec4a5 ?></p>
-              </div>
-          </div>
-        <?php endif; ?>
       </div>
     </section>
   <?php endif; ?>

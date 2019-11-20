@@ -254,119 +254,122 @@ nav{
   transform : translate(0, 0);
 }
 
-.fadein:nth-of-type(2) {
+.fadein:nth-of-type(2){
   -moz-transition-delay: 200ms;
   -webkit-transition-delay: 200ms;
   -o-transition-delay: 200ms;
   -ms-transition-delay: 200ms;
 }
 
-.fadein:nth-of-type(3) {
+.fadein:nth-of-type(3){
   -moz-transition-delay: 400ms;
   -webkit-transition-delay: 400ms;
   -o-transition-delay: 400ms;
   -ms-transition-delay: 400ms;
 }
 
-.fadein:nth-of-type(4) {
+.fadein:nth-of-type(4){
   -moz-transition-delay: 600ms;
   -webkit-transition-delay: 600ms;
   -o-transition-delay: 600ms;
   -ms-transition-delay: 600ms;
 }
 
-.fadein:nth-of-type(5) {
+.fadein:nth-of-type(5){
   -moz-transition-delay: 800ms;
   -webkit-transition-delay: 800ms;
   -o-transition-delay: 800ms;
   -ms-transition-delay: 800ms;
 }
 
-.fadein:nth-of-type(6) {
+.fadein:nth-of-type(6){
   -moz-transition-delay: 1000ms;
   -webkit-transition-delay: 1000ms;
   -o-transition-delay: 1000ms;
   -ms-transition-delay: 1000ms;
 }
 
-.fadein:nth-of-type(7) {
+.fadein:nth-of-type(7){
   -moz-transition-delay: 1200ms;
   -webkit-transition-delay: 1200ms;
   -o-transition-delay: 1200ms;
   -ms-transition-delay: 1200ms;
 }
 
-.fadein:nth-of-type(8) {
+.fadein:nth-of-type(8){
   -moz-transition-delay: 1400ms;
   -webkit-transition-delay: 1400ms;
   -o-transition-delay: 1400ms;
   -ms-transition-delay: 1400ms;
 }
 
-.fadein:nth-of-type(9) {
+.fadein:nth-of-type(9){
   -moz-transition-delay: 1600ms;
   -webkit-transition-delay: 1600ms;
   -o-transition-delay: 1600ms;
   -ms-transition-delay: 1600ms;
 }
 
-.fadein:nth-of-type(10) {
+.fadein:nth-of-type(10){
   -moz-transition-delay: 1800ms;
   -webkit-transition-delay: 1800ms;
   -o-transition-delay: 1800ms;
   -ms-transition-delay: 1800ms;
 }
 
-.feature_actab {
+.feature_actab{
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	margin-bottom: 1px;
-	color: #1b2538;
 }
 
-.feature_actab input {
+.feature_actab input{
 	position: absolute;
 	opacity: 0;
 }
 
-.feature_actab label {
-	font-weight: bold;
+
+.feature_actab label,
+.feature_actab-content p{
+  color: #708090;
+}
+
+.feature_actab label{
+  font-size: 1em;
 	line-height: 1.6;
 	position: relative;
 	display: block;
-	margin: 0 0 0 0;
-	padding: 1em 2em 1em 1em;
+	padding: 1em 2.5em 1em 1em;
+  margin: 0;
 	cursor: pointer;
-	border-bottom: 1px solid #1b2538;
+  transition: all .5s;
+  -webkit-transition: all .5s;
 }
 
-.feature_actab label:hover {
-	color: #00838F;
+.feature_actab label:hover{
+	background: #f9f9f9;
 }
 
 .feature_actab .feature_actab-content {
-	overflow: hidden;
+	visibility: hidden;
+  opacity: 0;
 	max-height: 0;
-	-webkit-transition: max-height 0.5s ease;
-	transition: max-height 0.5s ease;
-	color: #ffffff;
-	background: rgba(0, 131, 143, 0.5);
+	transition: all .5s;
+  -webkit-transition: all .5s;
 }
 
 .feature_actab .feature_actab-content p {
 	margin: 1em;
 }
 
-.feature_actab input:checked ~ label {
-	color: #00838F;
-}
-
 .feature_actab input:checked ~ .feature_actab-content {
-	max-height: 40em;
+  visibility: visible;
+  opacity: 1;
+  max-height: 100vh;
 }
 
-.feature_actab label::after {
+.feature_actab label::after{
 	line-height: 1.6;
 	position: absolute;
 	top: 50%;
@@ -374,19 +377,20 @@ nav{
 	display: block;
 	width: 3em;
 	margin-top: -12.5px;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	transition: all .5s ease;
+  -webkit-transition: all .5s ease;
 	text-align: center;
 }
 
-.feature_actab input[type=checkbox] + label::after {
+.feature_actab input[type=checkbox] + label::after{
   font-family: "Font Awesome 5 Free";
+  font-weight: bold;
 	content: "\f107";
 }
 
-.feature_actab input[type=checkbox]:checked + label::after {
-	-webkit-transform: rotateX(180deg);
+.feature_actab input[type=checkbox]:checked + label::after{
 	transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
 }
 
 /* 動作確認用 あとで削除 */
