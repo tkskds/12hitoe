@@ -767,8 +767,21 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_feature_section6_bk_color', array(
             'type' => 'option',
+            'default' => '#1fb2aa',
           ));
 
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_bk_color', array(
+            'label' => 'セクション6の背景色',
+          )));
+
+          $wp_customize->add_setting('site_feature_section6_color', array(
+            'type' => 'option',
+            'default' => '#ffffff',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_color', array(
+            'label' => 'セクション6の文字色'
+          )));
 
 
 //　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
@@ -961,6 +974,56 @@ function org_customizer($wp_customize){
             'type' => 'checkbox',
           ));
 
+          $wp_customize->add_setting('site_nav_list1', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_list1', array(
+            'label' => 'テキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_list2', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_list2', array(
+            'label' => 'テキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_list3', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_list3', array(
+            'label' => 'テキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_list4', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_list4', array(
+            'label' => 'テキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_list5', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_list5', array(
+            'label' => 'テキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
       $wp_customize->add_section('site_articleList',array(
         'priority' => 8,
         'title' => '8:記事一覧の設定',
@@ -1105,6 +1168,11 @@ function add_customizerCSS(){
 
   /*ナビメニューの横幅*/
   $nav = get_option('site_nav_width');
+  $navEn1 = get_option('site_nav_list1');
+  $navEn2 = get_option('site_nav_list2');
+  $navEn3 = get_option('site_nav_list3');
+  $navEn4 = get_option('site_nav_list4');
+  $navEn5 = get_option('site_nav_list5');
 
   /*色の設定*/
   $nav_bk = get_option('site_color_nav_bk');
@@ -1144,6 +1212,11 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 <?php if ($nav == true): ?>
 .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php endif; ?>
+#topnav li:nth-of-type(1)::after{content:"<?php echo $navEn1 ?>";}
+#topnav li:nth-of-type(2)::after{content:"<?php echo $navEn2 ?>";}
+#topnav li:nth-of-type(3)::after{content:"<?php echo $navEn3 ?>";}
+#topnav li:nth-of-type(4)::after{content:"<?php echo $navEn4 ?>";}
+#topnav li:nth-of-type(5)::after{content:"<?php echo $navEn5 ?>";}
 .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
 /*色*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_f ?>;}

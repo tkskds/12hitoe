@@ -89,6 +89,20 @@ nav{
 	}
 }
 
+#topnav li{
+  position: relative;
+}
+
+#topnav li::after{
+  position: absolute;
+  font-size: .5em;
+  line-height: 1;
+  font-weight: bold;
+  top: calc(50% + 1em);
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 
 /************* ダイナミックヘッダー ************/
 
@@ -391,6 +405,11 @@ nav{
 .feature_actab input[type=checkbox]:checked + label::after{
 	transform: rotateX(180deg);
   -webkit-transform: rotateX(180deg);
+}
+
+.feature5 .featureContainer{
+  display: block;
+  text-align: center;
 }
 
 .feature5 h2{

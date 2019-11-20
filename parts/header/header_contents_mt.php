@@ -8,6 +8,7 @@
           wp_nav_menu(array(
             'theme_location' => 'nav_header',
             'container' => 'ul',
+            'menu_id' => 'topnav',
             'menu_class' => 'right hide-on-med-and-down',
             'fallback' => ''
           ));

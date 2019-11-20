@@ -150,13 +150,13 @@
     <section class="feature5">
       <div class="container featureContainer">
       <?php if($sec5info != null): ?>
-        <h2>INFO</h2>
         <div<?php if ($fadein == true){echo ' class="fadein"';} ?>>
-        <?php echo $sec5info ?>
-      </div>
+          <h2>INFO</h2>
+          <?php echo $sec5info ?>
+        </div>
       <?php endif; ?>
       <?php if($sec5map != null): ?>
-        <div<?php if ($fadein == true){echo ' class="fadein feature_map"';} ?>>
+        <div class="feature_map<?php if ($fadein == true){echo ' fadein';} ?>">
         <h2>MAP</h2>
           <?php echo $sec5map ?>
         </div>
