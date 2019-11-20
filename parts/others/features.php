@@ -29,7 +29,8 @@
   $sec4a4 = get_option('site_feature_a4');
   $sec4q5 = get_option('site_feature_q5');
   $sec4a5 = get_option('site_feature_a5');
-
+  $sec5info = get_option('site_feature_section5_info');
+  $sec5map = get_option('site_feature_section5_map');
 ?>
 
 <div class="features">
@@ -145,6 +146,24 @@
     </section>
   <?php endif; ?>
 
+  <?php if($sec5info != null || $sec5map != null): ?>
+    <section class="feature5">
+      <div class="container featureContainer">
+      <?php if($sec5info != null): ?>
+        <h2>INFO</h2>
+        <div<?php if ($fadein == true){echo ' class="fadein"';} ?>>
+        <?php echo $sec5info ?>
+      </div>
+      <?php endif; ?>
+      <?php if($sec5map != null): ?>
+        <div<?php if ($fadein == true){echo ' class="fadein feature_map"';} ?>>
+        <h2>MAP</h2>
+          <?php echo $sec5map ?>
+        </div>
+      <?php endif; ?>
+      </div>
+    </section>
+  <?php endif; ?>
 
 </div>
 

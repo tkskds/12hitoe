@@ -765,6 +765,12 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           ));
 
+          $wp_customize->add_setting('site_feature_section6_bk_color', array(
+            'type' => 'option',
+          ));
+
+
+
 //　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
 
       $wp_customize->add_section('site_cssfw', array(

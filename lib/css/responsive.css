@@ -25,5 +25,7 @@
   .f_item{
     width: 100%;
   }
-
+  .feature5 .container > div{
+    width: 100%;
+  }
 }

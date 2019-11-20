@@ -393,8 +393,20 @@ nav{
   -webkit-transform: rotateX(180deg);
 }
 
-/* 動作確認用 あとで削除 */
-footer#footer{height: 100vh;}
+.feature5 h2{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .5em;
+}
+
+.feature5 .container > div{
+  width: 50%;
+  display: inline-block;
+  margin: auto;
+}
+
+.feature5 .feature_map iframe{
+  width: 100%;
+}
 
 
 /**************** 記事一覧 *******************/
