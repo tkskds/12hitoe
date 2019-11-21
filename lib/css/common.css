@@ -540,15 +540,50 @@ article {
 }
 
 article h1{
-  font-size: 2.5em;
-  margin: 0 0 .5em;
+  font-size: 2em;
 }
 
 article h2{
-  font-size: 2em;
+  font-size: 1.5em;
 
 }
 
 article h3{
-  font-size: 1.2em;
+  font-size: 1.25em;
+}
+
+.article_meta_info{
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.article_meta_info,
+.article_title,
+.article_thumbnail,
+.article_content,
+.article_tag{
+  margin: 0 0 20px 0;
+}
+
+.article_date{
+  color: #2c3e50;
+}
+
+.article_date time::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  margin-right: .5em;
+}
+
+.article_content_type1 .article_date time::before{
+  content:"\f073";
+}
+.article_content_type2 .article_date time::before{
+  content:"あとで入れる";
+}
+.article_content_type3 .article_date time::before{
+  content:"あとで入れる";
+}
+.article_content_type4 .article_date time::before{
+  content:"あとで入れる";
 }

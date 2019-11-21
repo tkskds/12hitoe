@@ -34,4 +34,11 @@
   .article_container{
     padding: 10px;
   }
+  .article_meta_info,
+  .article_title,
+  .article_thumbnail,
+  .article_content,
+  .article_tag{
+    margin: 0 0 10px 0;
+  }
 }

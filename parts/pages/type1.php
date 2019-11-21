@@ -1,14 +1,13 @@
 <?php //シンプル（普通） ?>
 
 <?php if(have_posts()): the_post(); ?>
-  <article <?php post_class('article_content'); ?>>
+  <article <?php post_class('article_content article_content_type1'); ?>>
     <div class="article_container">
       <div class="article_meta_info">
         <!--投稿日-->
         <span class="article_date">
-          <i class="far fa-clock"></i>
           <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-            <?php echo get_the_date(); ?>
+            <?php echo get_post_time('Y/m/d'); ?>
           </time>
         </span>
       </div>
@@ -23,7 +22,9 @@
         <?php endif; ?>
       </div>
       <!--本文-->
-      <?php the_content(); ?>
+      <div class="articleArea">
+        <?php the_content(); ?>
+      </div>
     </div>
   </article>
 <?php endif; ?>
