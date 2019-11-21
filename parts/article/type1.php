@@ -1,7 +1,7 @@
 <?php //シンプル（普通） ?>
 
 <?php if(have_posts()): the_post(); ?>
-  <article <?php post_class('article_content article_content_type1'); ?>>
+  <article <?php post_class('articleType1'); ?>>
     <div class="article_container">
       <div class="article_meta_info">
           <!--投稿日-->

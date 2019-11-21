@@ -530,31 +530,21 @@ article {
   background: white;
 }
 
-.article_container{
-  padding: 20px;
-}
-
-.article_thumbnail img {
-  width: 100%;
-  height: auto;
+.artcile_container{
+  padding-top: 20px;
 }
 
 article h1{
   font-size: 2em;
+  margin: 0;
 }
 
 article h2{
   font-size: 1.5em;
-
 }
 
 article h3{
   font-size: 1.25em;
-}
-
-.article_meta_info{
-  padding: 3px;
-  margin-bottom: 20px;
 }
 
 .article_meta_info,
@@ -562,11 +552,17 @@ article h3{
 .article_thumbnail,
 .article_content,
 .article_tag{
+  position: relative;
+  padding: 0 20px;
   margin: 0 0 20px 0;
 }
 
 .article_date{
-  color: #2c3e50;
+  color: #708090;
+}
+
+.article_date{
+  padding: 3px;
 }
 
 .article_date time::before {
@@ -575,15 +571,22 @@ article h3{
   margin-right: .5em;
 }
 
-.article_content_type1 .article_date time::before{
+/*articleTypeごとに異なりそうなものはこの下に*/
+
+.articleType1 .article_date time::before{
   content:"\f073";
 }
-.article_content_type2 .article_date time::before{
+.articleType2 .article_date time::before{
   content:"あとで入れる";
 }
-.article_content_type3 .article_date time::before{
+.articleType3 .article_date time::before{
   content:"あとで入れる";
 }
-.article_content_type4 .article_date time::before{
+.articleType4 .article_date time::before{
   content:"あとで入れる";
+}
+
+
+.articleType1 .article_thumbnail{
+  padding: 0;
 }

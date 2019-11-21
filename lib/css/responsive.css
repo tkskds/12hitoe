@@ -4,9 +4,6 @@
     display:-ms-flexbox;
     display:flex;
   }
-  .article_container{
-    padding: 30px;
-  }
 }
 
 
@@ -31,14 +28,12 @@
   .feature5 .container > div{
     width: 100%;
   }
-  .article_container{
-    padding: 10px;
-  }
   .article_meta_info,
   .article_title,
   .article_thumbnail,
   .article_content,
   .article_tag{
+    padding: 0 10px;
     margin: 0 0 10px 0;
   }
 }
