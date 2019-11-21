@@ -1,13 +1,12 @@
+<?php
+  $sideOn = get_option('site_bone_type');
+
+
+ ?>
+
 <?php get_header(); ?>
   <div class="row contentArea">
-    <main id="main"
-          class="<?php
-                    //サイト構造がサイドバーを含むものならグリッドクラス付与
-                    $sideOn = get_option('site_bone_type');
-                    if ($sideOn == 'value1' || $sideOn == 'value3'){
-                      echo 'col s12 l9';
-                      }
-                  ?> main">
+    <main id="main" class="main<?php if ($sideOn == 'value1' || $sideOn == 'value3'){ echo ' col s12 l9';} ?>">
       <div class="main__container">
       <?php if(have_posts()): the_post(); ?>
         <article <?php post_class('article_content'); ?>>

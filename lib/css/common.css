@@ -104,6 +104,12 @@ nav{
   text-align: center;
 }
 
+main,
+.main_container,
+article{
+  width: 100%;
+}
+
 /************* ダイナミックヘッダー ************/
 
 .dyheader{
