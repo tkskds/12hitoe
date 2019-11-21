@@ -104,12 +104,6 @@ nav{
   text-align: center;
 }
 
-main,
-.main_container,
-article{
-  width: 100%;
-}
-
 /************* ダイナミックヘッダー ************/
 
 .dyheader{
@@ -517,4 +511,25 @@ article{
 .articleList1 .content .title{
   font-size: 1.2em;
   padding: 1em 17px;
+}
+
+
+
+/**************** 記事詳細 *******************/
+
+main,
+.main_container,
+article{
+  width: 100%;
+}
+
+article {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 5px;
+  background: white;
+}
+
+.article_container{
+  padding: 20px;
 }

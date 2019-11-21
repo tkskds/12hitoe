@@ -919,21 +919,43 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_nav_bk', array(
             'type' => 'option',
+            'default' => '#1fb2aa',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk', array(
             'label' => 'ナビバーの背景色',
-            'section' => 'site_color'
+            'section' => 'site_color',
           )));
 
-          $wp_customize->add_setting('site_color_nav_font', array(
+          $wp_customize->add_setting('site_color_nav_color', array(
             'type' => 'option',
+            'default' => '#ffffff'
           ));
 
-          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_font', array(
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_color', array(
             'label' => 'ナビバーの文字色',
             'section' => 'site_color',
           )));
+
+          $wp_customize->add_setting('site_color_body_color', array(
+            'type' => 'option',
+            'default' => '#f5f5f5',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
+            'label' => 'コンテンツエリア全体の背景',
+            'section' => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_color_body_color', array(
+            'type' => 'option',
+            'default' => '#2c3e50',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
+            'label' => 'コンテンツエリア全体の文字色',
+            'section' => 'site_color',
+          )));          
 
       $wp_customize->add_section('site_nav',array(
         'priority' => 7,
@@ -1110,37 +1132,36 @@ function add_customizerCSS(){
 
 
 //サイトの骨組み
-  $siteType = get_option('site_bone_type');
+  $siteType             = get_option('site_bone_type');
 
 //コンテンツエリア横幅
-  $contentArea = get_option('site_bone_content_area') ? get_option('site_bone_content_area') : '1200';
-
+  $contentArea          = get_option('site_bone_content_area') ? get_option('site_bone_content_area') : '1200';
 
 //サイドバー
-  $sidebarLeft = get_option('site_bone_sidebar');
-  $sidebarWidth = get_option('site_bone_sidebar_width');
+  $sidebarLeft          = get_option('site_bone_sidebar');
+  $sidebarWidth         = get_option('site_bone_sidebar_width');
 
 //ダイナミックヘッダー
-  $dyheaderFontSize = get_option('site_dyheader_text_size') ? get_option('site_dyheader_text_size') : '200';
-  $dyheaderFontColor = get_option('site_dyheader_text_color');
-  $dyheaderWidth = get_option('site_dyheader_width') ? get_option('site_dyheader_width') : '1200';
-  $dyheaderHeight = get_option('site_dyheader_height') ? get_option('site_dyheader_height') : '50';
-  $dyheaderMarginTop = get_option('site_dyheader_margin-top') ? get_option('site_dyheader_margin-top') : '0';
-  $dyheaderPadding = get_option('site_dyheader_padding') ? get_option('site_dyheader_padding') : '20';
-  $dyheaderImg = get_option('site_dyheader_img');
-  $dyheaderImgWidth = get_option('site_dyheader_img_width')  ? get_option('site_dyheader_img_width') : '100';
-  $dyheaderImgPosition = get_option('site_dyheader_img_position');
-  $dyheaderBkImg = get_option('site_dyheader_bkimg');
-  $dyheaderBkColor = get_option('site_dyheader_bkcolor');
+  $dyheaderFontSize     = get_option('site_dyheader_text_size')     ? get_option('site_dyheader_text_size')   : '200';
+  $dyheaderFontColor    = get_option('site_dyheader_text_color');
+  $dyheaderWidth        = get_option('site_dyheader_width')         ? get_option('site_dyheader_width')       : '1200';
+  $dyheaderHeight       = get_option('site_dyheader_height')        ? get_option('site_dyheader_height')      : '50';
+  $dyheaderMarginTop    = get_option('site_dyheader_margin-top')    ? get_option('site_dyheader_margin-top')  : '0';
+  $dyheaderPadding      = get_option('site_dyheader_padding')       ? get_option('site_dyheader_padding')     : '20';
+  $dyheaderImg          = get_option('site_dyheader_img');
+  $dyheaderImgWidth     = get_option('site_dyheader_img_width')     ? get_option('site_dyheader_img_width')   : '100';
+  $dyheaderImgPosition  = get_option('site_dyheader_img_position');
+  $dyheaderBkImg        = get_option('site_dyheader_bkimg');
+  $dyheaderBkColor      = get_option('site_dyheader_bkcolor');
 
 //フューチャー部分
-  $featureIcon1Color = get_option('site_feature_section_item1_icon_color') ? get_option('site_feature_section_item1_icon_color') : '#1C6ECD';
-  $featureIcon2Color = get_option('site_feature_section_item2_icon_color') ? get_option('site_feature_section_item2_icon_color') : '#E64A64';
-  $featureIcon3Color = get_option('site_feature_section_item3_icon_color') ? get_option('site_feature_section_item3_icon_color') : '#ffcc00';
-  $featureSec2BkImg = get_option('site_feature_section2_bk_img');
-  $featureSec2BkColor = get_option('site_feature_section2_bk_color') ? get_option('site_feature_section2_bk_color') : '#f9f9f9';
-  $featureSec3BkImg = get_option('site_feature_section3_bk_img');
-  $featureSec3BkColor = get_option('site_feature_section3_bk_color') ? get_option('site_feature_section3_bk_color') : '#f9f9f9';
+  $featureIcon1Color    = get_option('site_feature_section_item1_icon_color') ? get_option('site_feature_section_item1_icon_color') : '#1C6ECD';
+  $featureIcon2Color    = get_option('site_feature_section_item2_icon_color') ? get_option('site_feature_section_item2_icon_color') : '#E64A64';
+  $featureIcon3Color    = get_option('site_feature_section_item3_icon_color') ? get_option('site_feature_section_item3_icon_color') : '#ffcc00';
+  $featureSec2BkImg     = get_option('site_feature_section2_bk_img');
+  $featureSec2BkColor   = get_option('site_feature_section2_bk_color')        ? get_option('site_feature_section2_bk_color') : '#f9f9f9';
+  $featureSec3BkImg     = get_option('site_feature_section3_bk_img');
+  $featureSec3BkColor   = get_option('site_feature_section3_bk_color')        ? get_option('site_feature_section3_bk_color') : '#f9f9f9';
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -1176,14 +1197,14 @@ function add_customizerCSS(){
     }
 
   /*** サイトの文字サイズ ***/
-  $titleSize = get_option('site_font_title_size') ? get_option('site_font_title_size') : '200';
-  $pcSize = get_option('site_font_pc_size') ? get_option('site_font_pc_size') : '100';
-  $tabSize = get_option('site_font_tab_size') ? get_option('site_font_tab_size') : '98';
-  $spSize = get_option('site_font_sp_size') ? get_option('site_font_sp_size') : '95';
+  $titleSize  = get_option('site_font_title_size')  ? get_option('site_font_title_size') : '200';
+  $pcSize     = get_option('site_font_pc_size')     ? get_option('site_font_pc_size') : '100';
+  $tabSize    = get_option('site_font_tab_size')    ? get_option('site_font_tab_size') : '98';
+  $spSize     = get_option('site_font_sp_size')     ? get_option('site_font_sp_size') : '95';
 
 
   /*ナビメニューの横幅*/
-  $nav = get_option('site_nav_width');
+  $nav    = get_option('site_nav_width');
   $navEn1 = get_option('site_nav_list1');
   $navEn2 = get_option('site_nav_list2');
   $navEn3 = get_option('site_nav_list3');
@@ -1191,14 +1212,15 @@ function add_customizerCSS(){
   $navEn5 = get_option('site_nav_list5');
 
   /*色の設定*/
-  $nav_bk = get_option('site_color_nav_bk');
-  $nav_f = get_option('site_color_nav_font');
-
+  $nav_bk   = get_option('site_color_nav_bk')     ? get_option('site_color_nav_bk')     : '#1fb2aa';
+  $body_bk  = get_option('site_color_body_bk')    ? get_option('site_color_body_bk')    : '#f5f5f5';
+  $nav_c    = get_option('site_color_nav_color')  ? get_option('site_color_nav_color')  : '#ffffff';
+  $body_c   = get_option('site_color_body_color') ? get_option('site_color_body_color') : '#2c3e50';
 
   ?>
-
+<?php // カスタマイザーの値を<head>に出力 ?>
 <style>
-body{font-family:<?php echo $fontBody ?>;}
+body{font-family:<?php echo $fontBody ?>;color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
 nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
 @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
@@ -1234,9 +1256,14 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 #topnav li:nth-of-type(4)::after{content:"<?php echo $navEn4 ?>";}
 #topnav li:nth-of-type(5)::after{content:"<?php echo $navEn5 ?>";}
 .row .col.l3{width:<?php echo $sidebarWidth ?>%;}
-/*色*/
-nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_f ?>;}
-nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_f ?>;}
+/*****************************
+******************************
+色****************************
+******************************
+*****************************/
+nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
+nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
+
 </style>
 
 <?php
