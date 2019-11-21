@@ -1066,6 +1066,28 @@ function org_customizer($wp_customize){
             ),
           ));
 
+      $wp_customize->add_section('site_article_type', array(
+        'priority' => 9,
+        'label' => '記事ページのデザイン',
+        'panel' => 'site_builder',
+      ));
+
+          $wp_customize->add_setting('site_artcile_type' ,array(
+            'type' => 'option',
+            'default' => 'value1',
+          ));
+
+          $wp_customize->add_control('site_article_type', array(
+            'label' => '記事ページデザイン',
+            'type' => 'radio',
+            'choices' => array(
+              'value1' => 'デザイン1',
+              'value2' => 'デザイン2',
+              'value3' => 'デザイン3',
+              'value4' => 'デザイン4',
+            ),
+            'section' => 'site_article_type'
+          ));
 
 
   // サイト構造（コンポーネントの順番）
