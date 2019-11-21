@@ -1024,9 +1024,9 @@ function org_customizer($wp_customize){
             'section' => 'site_nav',
           ));
 
-      $wp_customize->add_section('site_articleList',array(
+      $wp_customize->add_section('site_article',array(
         'priority' => 8,
-        'title' => '8:記事一覧の設定',
+        'title' => '8:記事の設定',
         'panel' => 'site_builder',
       ));
 
@@ -1047,38 +1047,32 @@ function org_customizer($wp_customize){
           //   ),
           // ));
 
-          $wp_customize->add_setting('site_articleList_card', array(
-            'default' => 'value1',
+          $wp_customize->add_setting('site_article_list_type', array(
             'type' => 'option',
-            'transport' => 'refresh',
+            'default' => 'value1',
           ));
 
-          $wp_customize->add_control('site_articleList_card', array(
+          $wp_customize->add_control('site_article_list_type', array(
             'label' => '記事一覧のデザイン',
-            'description' => '現在4種類からお選びいただけます。',
-            'section' => 'site_articleList',
+            'description' => 'トップ画面で表示する記事一覧のデザイン。現在4種類からお選びいただけます。',
+            'section' => 'site_article',
             'type' => 'radio',
             'choices' => array(
-                'value1' => '縦/長めカード',
-                'value2' => '横/長めカード',
-                'value3' => 'サムネイルの上に文字',
-                'value4' => 'カテゴリの乗り方がなんかいい感じ',
+              'value1' => '縦/長めカード',
+              'value2' => '横/長めカード',
+              'value3' => 'サムネイルの上に文字',
+              'value4' => 'カテゴリの乗り方がなんかいい感じ',
             ),
           ));
 
-      $wp_customize->add_section('site_article_type', array(
-        'priority' => 9,
-        'label' => '記事ページのデザイン',
-        'panel' => 'site_builder',
-      ));
-
-          $wp_customize->add_setting('site_artcile_type' ,array(
+          $wp_customize->add_setting('site_article_type' ,array(
             'type' => 'option',
             'default' => 'value1',
           ));
 
           $wp_customize->add_control('site_article_type', array(
             'label' => '記事ページデザイン',
+            'description' => '記事詳細画面のデザイン設定。（固定ページにも同様のものが適用されます）',
             'type' => 'radio',
             'choices' => array(
               'value1' => 'デザイン1',
@@ -1086,7 +1080,7 @@ function org_customizer($wp_customize){
               'value3' => 'デザイン3',
               'value4' => 'デザイン4',
             ),
-            'section' => 'site_article_type'
+            'section' => 'site_article'
           ));
 
 
