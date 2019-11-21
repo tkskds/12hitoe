@@ -1,41 +1,24 @@
 <?php
   $sideOn = get_option('site_bone_type');
-
-
+  $articleType = get_option('site_article_type');
  ?>
 
 <?php get_header(); ?>
   <div class="row contentArea">
-    <main id="main" class="main<?php if ($sideOn == 'value1' || $sideOn == 'value3'){ echo ' col s12 l9';} ?>">
+    <main id="main" class="main <?php if ($sideOn == 'value1' || $sideOn == 'value3'){echo 'col s12 l9';}?>">
       <div class="main__container">
-      <?php if(have_posts()): the_post(); ?>
-        <article <?php post_class('article_content'); ?>>
-          <div class="article_meta_info">
-            <!--投稿日-->
-            <span class="article_date">
-              <i class="far fa-clock"></i>
-              <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                <?php echo get_the_date(); ?>
-              </time>
-            </span>
-          </div>
-          <!--タイトル-->
-          <h1><?php the_title(); ?></h1>
-          <!--アイキャッチ-->
-          <div class="article_thumbnail">
-            <?php if( has_post_thumbnail()): ?>
-              <?php the_post_thumbnail('large'); ?>
-            <?php endif; ?>
-          </div>
-          <!--本文-->
-          <?php the_content(); ?>
-          <!--タグ-->
-          <div class="article_tag">
-            <?php the_tags('<ul class="tag_list"><li></li></ul>'); ?>
-          </div>
-        </article>
-      <?php endif; ?>
-    </div>
+        <?php
+          if ($articleType == 'value1'){
+            get_template_part('parts/pages/type1');
+          }elseif($articleType == 'value2'){
+            get_template_part('parts/pages/type2');
+          }elseif($articleType == 'value3'){
+            get_template_part('parts/pages/type3');
+          }elseif($articleType == 'value4'){
+            get_template_part('parts/pages/type4');
+          }
+         ?>
+      </div>
     </main>
     <?php if ($sideOn == 'value1' || $sideOn == 'value3'){ get_sidebar(); } ?>
   </div>
