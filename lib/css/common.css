@@ -48,7 +48,7 @@ nav a.siteTitle{
 
 .contentArea{
   max-width: 1200px;
-  margin: 20px auto 0;
+  margin: auto;
 }
 
 .main__container {
@@ -532,4 +532,23 @@ article {
 
 .article_container{
   padding: 20px;
+}
+
+.article_thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+article h1{
+  font-size: 2.5em;
+  margin: 0 0 .5em;
+}
+
+article h2{
+  font-size: 2em;
+
+}
+
+article h3{
+  font-size: 1.2em;
 }

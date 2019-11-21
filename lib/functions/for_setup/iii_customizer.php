@@ -950,12 +950,13 @@ function org_customizer($wp_customize){
           $wp_customize->add_setting('site_color_body_color', array(
             'type' => 'option',
             'default' => '#2c3e50',
+            'default' => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
             'label' => 'コンテンツエリア全体の文字色',
             'section' => 'site_color',
-          )));          
+          )));
 
       $wp_customize->add_section('site_nav',array(
         'priority' => 7,

@@ -4,6 +4,9 @@
     display:-ms-flexbox;
     display:flex;
   }
+  .article_container{
+    padding: 30px;
+  }
 }
 
 
@@ -12,9 +15,6 @@
     margin: 0 auto 20px;
   }
   .f_item{
-    padding: 10px;
-  }
-  .article_container{
     padding: 10px;
   }
 }
@@ -30,5 +30,8 @@
   }
   .feature5 .container > div{
     width: 100%;
+  }
+  .article_container{
+    padding: 10px;
   }
 }
