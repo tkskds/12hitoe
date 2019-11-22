@@ -949,8 +949,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_body_color', array(
             'type' => 'option',
-            'default' => '#2c3e50',
-            'default' => '#1a2760',
+            'default' => '#2b546a',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
@@ -1228,7 +1227,7 @@ function add_customizerCSS(){
   $nav_bk   = get_option('site_color_nav_bk')     ? get_option('site_color_nav_bk')     : '#1fb2aa';
   $body_bk  = get_option('site_color_body_bk')    ? get_option('site_color_body_bk')    : '#f5f5f5';
   $nav_c    = get_option('site_color_nav_color')  ? get_option('site_color_nav_color')  : '#ffffff';
-  $body_c   = get_option('site_color_body_color') ? get_option('site_color_body_color') : '#2c3e50';
+  $body_c   = get_option('site_color_body_color') ? get_option('site_color_body_color') : '#2b546a';
 
   /*記事に関する設定*/
   $p_margin = get_option('site_article_p_margin') ? get_option('site_article_p_margin') : '0.5';
