@@ -104,6 +104,16 @@ nav{
   text-align: center;
 }
 
+input,
+textarea{
+  padding: .5em;
+}
+
+textarea{
+  background: #f9f9f9;
+  height: auto;
+}
+
 /************* ダイナミックヘッダー ************/
 
 .dyheader{
