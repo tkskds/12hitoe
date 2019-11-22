@@ -1106,6 +1106,18 @@ function org_customizer($wp_customize){
             'section' => 'site_article'
           ));
 
+          $wp_customize->add_setting('site_article_p_margin', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_p_margin', array(
+            'default' => 0.5,
+            'description' => 'pタグ下の余白を設定します。'
+            'type' => 'number',
+            'section' => 'site_article',
+          ));
+
+
 
   // サイト構造（コンポーネントの順番）
   // ## example )
@@ -1218,6 +1230,9 @@ function add_customizerCSS(){
   $nav_c    = get_option('site_color_nav_color')  ? get_option('site_color_nav_color')  : '#ffffff';
   $body_c   = get_option('site_color_body_color') ? get_option('site_color_body_color') : '#2c3e50';
 
+  /*記事に関する設定*/
+  $p_margin = get_option('site_article_p_margin') ? get_option('site_article_p_margin') : '0.5';
+
   ?>
 <?php // カスタマイザーの値を<head>に出力 ?>
 <style>
@@ -1264,6 +1279,13 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 *****************************/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
+
+/****************************
+*****************************
+記事****************************
+*****************************
+****************************/
+.article_content p{margin-bottom:<?php echo $p_margin ?>em;}
 
 </style>
 
