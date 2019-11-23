@@ -558,7 +558,7 @@ article{
 }
 
 article {
-  max-width: 800px;
+  max-width: 960px;
   margin: auto;
   border-radius: 5px;
   background: white;
@@ -574,7 +574,7 @@ article {
 
 .article_thumbnail img {
   width: 100%;
-  max-width: 760px;
+  max-width: 840px;
   height: auto;
 }
 
@@ -597,7 +597,7 @@ article h3{
 .article_content,
 .article_tag{
   position: relative;
-  padding: 0 20px;
+  padding: 0 60px;
   margin: 0 0 20px 0;
 }
 
@@ -617,6 +617,21 @@ article h3{
 
 .article_content p{
   margin-bottom: .5em;
+}
+
+.article_content ul,
+.article_content ul li{
+  margin-bottom: .75em;
+}
+
+.article_content ul li::before{
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  border-radius: 50%;
 }
 
 /*articleTypeごとに異なりそうなものはこの下に*/

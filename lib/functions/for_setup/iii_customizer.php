@@ -917,6 +917,38 @@ function org_customizer($wp_customize){
         'panel' => 'site_builder',
       ));
 
+
+
+          $wp_customize->add_setting('site_color_main', array(
+            'type' => 'option',
+            'default' => '#1fb2aa',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_main', array(
+            'label' => 'メインカラー',
+            'section' => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_color_sub', array(
+            'type' => 'option',
+            'default' => '#8ffff9',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_sub', array(
+            'label' => 'サブカラー',
+            'section' => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_color_acc', array(
+            'type' => 'option',
+            'default' => '#f69b61',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(
+            'label' => 'アクセントカラー',
+            'section' => 'site_color',
+          )));
+
           $wp_customize->add_setting('site_color_nav_bk', array(
             'type' => 'option',
             'default' => '#1fb2aa',
@@ -1106,12 +1138,13 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_article_p_margin', array(
+            'default' => 0.5,
             'type' => 'option',
           ));
 
           $wp_customize->add_control('site_article_p_margin', array(
-            'default' => 0.5,
-            'description' => 'pタグ下の余白を設定します。'
+            'label' => 'pタグ下の余白調整',
+            'description' => 'pタグ下の余白を設定します。',
             'type' => 'number',
             'section' => 'site_article',
           ));
@@ -1224,6 +1257,9 @@ function add_customizerCSS(){
   $navEn5 = get_option('site_nav_list5');
 
   /*色の設定*/
+  $main_c   = get_option('site_color_main')       ? get_option('site_color_main')       : '#1fb2aa';
+  $sub_c    = get_option('site_color_sub')        ? get_option('site_color_sub')        : '#8ffff9';
+  $acc_c    = get_option('site_color_acc')        ? get_option('site_color_acc')        : '#f69b61';
   $nav_bk   = get_option('site_color_nav_bk')     ? get_option('site_color_nav_bk')     : '#1fb2aa';
   $body_bk  = get_option('site_color_body_bk')    ? get_option('site_color_body_bk')    : '#f5f5f5';
   $nav_c    = get_option('site_color_nav_color')  ? get_option('site_color_nav_color')  : '#ffffff';
@@ -1276,6 +1312,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 色****************************
 ******************************
 *****************************/
+.article_content ul li::before{background:<?php echo $sub_c ?>;}
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
 
@@ -1285,7 +1322,6 @@ nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
 *****************************
 ****************************/
 .article_content p{margin-bottom:<?php echo $p_margin ?>em;}
-
 </style>
 
 <?php
