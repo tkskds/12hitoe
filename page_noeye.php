@@ -5,7 +5,6 @@
 */
 ?>
 
-<?php //シンプル（普通） ?>
 
 <?php if(have_posts()): the_post(); ?>
   <article <?php post_class('articleType1'); ?>>
