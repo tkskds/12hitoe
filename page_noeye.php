@@ -5,6 +5,34 @@
 */
 ?>
 
+<?php
+  $sideOn = get_option('site_bone_type');
+  $articleType = get_option('site_article_type');
+ ?>
+
+<?php get_header(); ?>
+  <div class="row contentArea">
+    <main id="main" class="main <?php if ($sideOn == 'value1' || $sideOn == 'value3'){echo 'col s12 l9';}?>">
+      <div class="main__container">
+        <?php
+          if ($articleType == 'value1'){
+            get_template_part('parts/pages/type1');
+          }elseif($articleType == 'value2'){
+            get_template_part('parts/pages/type2');
+          }elseif($articleType == 'value3'){
+            get_template_part('parts/pages/type3');
+          }elseif($articleType == 'value4'){
+            get_template_part('parts/pages/type4');
+          }
+         ?>
+      </div>
+    </main>
+    <?php if ($sideOn == 'value1' || $sideOn == 'value3'){ get_sidebar(); } ?>
+  </div>
+<?php get_footer(); ?>
+
+
+
 
 <?php if(have_posts()): the_post(); ?>
   <article <?php post_class('articleType1'); ?>>
@@ -20,14 +48,6 @@
       <!--タイトル-->
       <div class="article_title">
           <h1><?php the_title(); ?></h1>
-      </div>
-      <!--アイキャッチ-->
-      <div class="article_thumbnail">
-          <?php if (has_post_thumbnail()): ?>
-            <?php the_post_thumbnail('eyecatch', array('alt' => $ttl)); ?>
-          <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
-          <?php endif; ?>
       </div>
       <!--本文-->
       <div class="article_content">
