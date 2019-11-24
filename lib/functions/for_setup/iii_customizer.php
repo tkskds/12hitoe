@@ -989,6 +989,8 @@ function org_customizer($wp_customize){
             'section' => 'site_color',
           )));
 
+          $wp_customize->add_setting( 'site_color_')
+
       $wp_customize->add_section('site_nav',array(
         'priority' => 7,
         'title' => '7:ナビメニューの設定',
