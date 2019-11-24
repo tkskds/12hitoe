@@ -679,3 +679,16 @@ article h3{
 .articleType1 .article_thumbnail{
   padding: 0;
 }
+
+
+/**************** ショートコードに関するcss *******************/
+
+.sc_flexbox{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sc_cell{
+  padding: 1em;
+  flex-grow: 2;
+}

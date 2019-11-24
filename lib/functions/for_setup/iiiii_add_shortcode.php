@@ -19,20 +19,17 @@
 function add_shortcodes(){
 
 
-  add_shortcode('cell', 'columns_cell');
   add_shortcode('yoko', 'columns');
-
-
-  function columns_cell($atts, $content = null ){
-    return '<div class="cell">' . $content . '</div>';
-  }
+  add_shortcode('cell', 'columns_cell');
 
   function columns($atts, $content = null){
     $content = do_shortcode(shortcode_unautop($content));
-    return '<div class="flex_box">' . $content . '</div>';
+    return '<div class="sc_column">' . $content . '</div>';
   }
 
-
+  function columns_cell($atts, $content = null ){
+    return '<div class="sc_cell">' . $content . '</div>';
+  }
 
 //
 // function hogeFunc( $atts, $content = null ) {
