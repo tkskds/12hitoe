@@ -1,5 +1,20 @@
 <?php
 
+//================
+//      MEMO
+//================
+
+//ショートコード内でショートコードを使えるようにする↓
+// $content = do_shortcode(shortcode_unautop($content));
+
+
+
+//================
+//      END
+//================
+
+
+
 
 function add_shortcodes(){
 
@@ -9,10 +24,11 @@ function add_shortcodes(){
 
 
   function columns_cell($atts, $content = null ){
-    return '<div class="cell">' . $cotent . '</div>';
+    return '<div class="cell">' . $content . '</div>';
   }
 
   function columns($atts, $content = null){
+    $content = do_shortcode(shortcode_unautop($content));
     return '<div class="flex_box">' . $content . '</div>';
   }
 
