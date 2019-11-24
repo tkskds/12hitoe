@@ -89,11 +89,11 @@ nav{
 	}
 }
 
-#topnav li{
+#topnav li a{
   position: relative;
 }
 
-#topnav li::after{
+#topnav li a::after{
   position: absolute;
   font-size: .5em;
   line-height: 1;
@@ -104,7 +104,7 @@ nav{
   text-align: center;
 }
 
-#topnav ul li::after {
+#topnav li a::after {
   position: absolute;
   content: '';
 	top: 100%;
@@ -115,10 +115,10 @@ nav{
   background: white;
   transition: all 0.3s ease 0s;
 }
-#topnav ul li:hover {
+#topnav li a:hover {
   cursor: pointer;
 }
-#topnav ul li:hover::after {
+#topnav li a:hover::after {
   width: 100%;
 }
 
