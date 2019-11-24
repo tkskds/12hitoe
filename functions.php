@@ -4,6 +4,7 @@ require_once ('lib/functions/for_setup/i_head_clean_up.php');
 require_once ('lib/functions/for_setup/ii_theme_support.php');
 require_once ('lib/functions/for_setup/iii_customizer.php');
 require_once ('lib/functions/for_setup/iiii_register_widgets.php');
+require_once ('lib/functions/for_setup/iiiii_add_shortcode.php');
 
 
 //////////////////////////////
@@ -23,7 +24,8 @@ function setup(){
   /** 4 ウィジェット追加！ **/
   add_action('widgets_init', 'register_widgets');
 
-  /** 5  **/
+  /** 5 ショートコードの登録！ **/
+  add_action('init', 'add_shortcodes');
 
 
 }//END sets_up();
