@@ -634,21 +634,29 @@ article h3{
 }
 
 .article_content p{
-  margin-bottom: .5em;
+  line-height: 1.75;
+  margin-bottom: 1.5em;
 }
 
 .article_content ul,
 .article_content ul li{
-  margin-bottom: .75em;
+  margin-bottom: 1em;
+}
+
+.article_content li{
+  position: relative;
+  padding-left: calc(1em + 12px);
 }
 
 .article_content ul li::before{
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   content: "";
-  width: 1em;
-  height: 1em;
-  margin-right: .5em;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
