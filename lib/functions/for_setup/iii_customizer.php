@@ -130,18 +130,18 @@ function org_customizer($wp_customize){
             'type' => 'checkbox',
           ));
 
-          $wp_customize->add_setting('site_bone_sidebar_width', array(
-            'default' => 30,
-            'type' => 'option',
-            'transport'  => 'refresh',
-          ));
-
-          $wp_customize->add_control('site_bone_sidebar_width', array(
-            'label' => 'サイドバーの横幅（デフォルト:30）',
-            'description' => 'サイドバーの横幅を設定できます',
-            'section' => 'site_bone',
-            'type' => 'number',
-          ));
+          // $wp_customize->add_setting('site_bone_sidebar_width', array(
+          //   'default' => 30,
+          //   'type' => 'option',
+          //   'transport'  => 'refresh',
+          // ));
+          //
+          // $wp_customize->add_control('site_bone_sidebar_width', array(
+          //   'label' => 'サイドバーの横幅（デフォルト:30）',
+          //   'description' => 'サイドバーの横幅を設定できます',
+          //   'section' => 'site_bone',
+          //   'type' => 'number',
+          // ));
 
           $wp_customize->add_setting('site_bone_priority', array(
             'default' => false,
@@ -1185,7 +1185,6 @@ function add_customizerCSS(){
 
 //サイドバー
   $sidebarLeft          = get_option('site_bone_sidebar');
-  $sidebarWidth         = get_option('site_bone_sidebar_width');
 
 //ダイナミックヘッダー
   $dyheaderFontSize     = get_option('site_dyheader_text_size')     ? get_option('site_dyheader_text_size')   : '200';
@@ -1307,7 +1306,6 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 #topnav li:nth-of-type(3)::after{content:"<?php echo $navEn3 ?>";}
 #topnav li:nth-of-type(4)::after{content:"<?php echo $navEn4 ?>";}
 #topnav li:nth-of-type(5)::after{content:"<?php echo $navEn5 ?>";}
-.row .col.l3{width:<?php echo $sidebarWidth ?>%;}
 /*****************************
 ******************************
 色****************************

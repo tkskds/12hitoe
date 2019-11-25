@@ -56,6 +56,9 @@ nav a.siteTitle{
   display: -ms-flexbox;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .aside{
@@ -675,6 +678,9 @@ article h3{
   content:"あとで入れる";
 }
 
+.articleType1{
+  margin-top: 20px;
+}
 
 .articleType1 .article_thumbnail{
   padding: 0;
