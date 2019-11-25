@@ -11,7 +11,7 @@
         ?>
       </div>
     </footer>
-    <a href="#" id="go_to_top">↑</a>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     <?php get_template_part('parts/footer/link_js') ?>
     <?php wp_footer(); ?>
   </body>

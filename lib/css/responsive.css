@@ -11,10 +11,6 @@
   .articleList1{
     margin: 0 auto 20px;
   }
-  .articleList1:nth-of-type(1),
-  .articleList1:nth-of-type(2){
-    margin-top: 20px;
-  }
   .f_item{
     padding: 10px;
   }
@@ -36,6 +32,9 @@
   }
   .articleList1:nth-of-type(1){
     margin-top: 20px;
+  }
+  .articleList1:nth-of-type(2){
+    margin-top: 0;
   }
   .f_item{
     width: 100%;
