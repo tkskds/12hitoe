@@ -683,7 +683,7 @@ article h3{
 
 /**************** ショートコードに関するcss *******************/
 
-.sc_flexbox{
+.sc_column{
   display: flex;
   justify-content: space-evenly;
 }
