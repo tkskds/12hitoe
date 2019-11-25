@@ -1311,6 +1311,9 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 色****************************
 ******************************
 *****************************/
+.main__color{background:<?php echo $main_c ?>;}
+.sub__color{background:<?php echo $sub_c ?>;}
+.acc__color{background:<?php echo $acc_c ?>;}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
