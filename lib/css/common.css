@@ -158,10 +158,10 @@ input[type="submit"]{
 }
 
 .gototop {
-  position: absolute;
+  position: fixed;
   bottom: 60px;
   right: 60px;
-  scroll-behavior: smooth;
+  scroll-behavdior: smooth;
 }
 
 /************* ダイナミックヘッダー ************/
