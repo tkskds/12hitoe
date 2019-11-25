@@ -11,7 +11,7 @@
         ?>
       </div>
     </footer>
-    <a class="btn-floating btn-large waves-effect waves-light gototop acc__c"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light gototop acc__color"><i class="material-icons">add</i></a>
     <?php get_template_part('parts/footer/link_js') ?>
     <?php wp_footer(); ?>
   </body>

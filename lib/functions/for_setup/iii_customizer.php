@@ -1314,10 +1314,12 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .main__color{background:<?php echo $main_c ?>;}
 .sub__color{background:<?php echo $sub_c ?>;}
 .acc__color{background:<?php echo $acc_c ?>;}
+/*その他個別に設定すべきメイン.サブ.アクセントカラー*/
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
+.btn-floating:hover{background-color:<?php echo $acc_c ?>;}
+/*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
-
 /****************************
 *****************************
 記事****************************
