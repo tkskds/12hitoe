@@ -1311,9 +1311,9 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 色****************************
 ******************************
 *****************************/
-.main__color{background:<?php echo $main_c ?>;}
-.sub__color{background:<?php echo $sub_c ?>;}
-.acc__color{background:<?php echo $acc_c ?>;}
+.main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within{background:<?php echo $main_c ?>;}
+.sub__color,.sub_color:active,.sub_color:focus,.sub_color:hover,.sub_color:visited,.sub_color:focus-within{background:<?php echo $sub_c ?>;}
+.acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 /*その他個別に設定すべきメイン.サブ.アクセントカラー*/
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
