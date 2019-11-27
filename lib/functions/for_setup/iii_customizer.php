@@ -58,17 +58,26 @@ function org_customizer($wp_customize){
           $wp_customize->add_setting('meta_description', array(
             'default' => '',
             'type' => 'option',
-            'transport'  => 'postMessage',
           ));
 
           $wp_customize->add_control('meta_description', array(
-            'settings' => 'meta_description',
             'label' => 'サイトの説明文*',
             'description' => '検索結果などに表示されます。（推奨100文字以内）',
             'section' => 'title_tagline',
             'type' => 'textarea',
           ));
 
+          $wp_customize->add_setting('only_logo', array(
+            'default' => false,
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('only_logo', array(
+            'label' => 'タイトルテキストの非表示',
+            'description' => 'チェックするとタイトル部分がロゴ画像だけになります。',
+            'type' => 'checkbox',
+            'section' => 'title_tagline',
+          ));
 
   /********
   // STEP2

@@ -18,6 +18,12 @@ function theme_supports(){
   );
 
   /****************
+  //カスタマイザーからロゴ使用可能に
+  ****************/
+
+  add_theme_support('custom-logo');
+
+  /****************
   //アイキャッチ画像使用可能に
   ****************/
   add_theme_support('post-thumbnails');

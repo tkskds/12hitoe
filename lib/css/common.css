@@ -46,6 +46,18 @@ nav a.siteTitle{
   padding: 0 10px;
 }
 
+.siteTitle{
+  height: 100%;
+}
+
+.siteTitle img.custom-logo{
+  width: auto;
+  max-height: 100%;
+  max-width: 200px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
 .contentArea{
   max-width: 1200px;
   margin: auto;
