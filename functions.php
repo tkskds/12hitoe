@@ -1,15 +1,15 @@
 <?php
 
+//////////////////////////////
+//セットアップ内容
+//////////////////////////////
+
 require_once ('lib/functions/for_setup/i_head_clean_up.php');
 require_once ('lib/functions/for_setup/ii_theme_support.php');
 require_once ('lib/functions/for_setup/iii_customizer.php');
 require_once ('lib/functions/for_setup/iiii_register_widgets.php');
 require_once ('lib/functions/for_setup/iiiii_add_shortcode.php');
 
-
-//////////////////////////////
-//セットアップ内容
-//////////////////////////////
 function setup(){
 
   /** 1 <head>タグを綺麗にする！ **/
@@ -27,6 +27,18 @@ function setup(){
   /** 5 ショートコードの登録！ **/
   add_action('init', 'add_shortcodes');
 
+}
 
-}//END sets_up();
 add_action('after_setup_theme', 'setup');
+
+/////////////////////////////
+//管理画面から更新ができるように
+/////////////////////////////
+
+require      ('vendor/plugin-update-checker/plugin-update-checker.php');
+
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://takasaki.work/12hitoe/theme.json',
+    __FILE__,
+    'bone'
+);
