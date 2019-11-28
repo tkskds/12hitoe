@@ -15,8 +15,12 @@
 
   - vendor
 
-      3rd party files(materialize , FontAwesome, and so on)
+      3rd party files(Materialize , FontAwesome, and so on)
 
+
+## Caution
+
+  1. Dont Touch Dir Name( "12hitoe-master" )
 
 ## MEMO
 

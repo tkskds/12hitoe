@@ -253,13 +253,13 @@ input[type="submit"]{
 /*修正の必要あり*/
 
 .dyheaderBkImgFil3::after{
-  background: url("/wp-content/themes/bone-master/images/dyheader_fil/dot.png") repeat;
+  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/dot.png") repeat;
 }
 .dyheaderBkImgFil4::after{
-  background: url("/wp-content/themes/bone-master/images/dyheader_fil/line.png") repeat;
+  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/line.png") repeat;
 }
 .dyheaderBkImgFil5::after{
-  background: url("/wp-content/themes/bone-master/images/dyheader_fil/ruledLine.png") repeat;
+  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/ruledLine.png") repeat;
 }
 
 .dyheaderBkImgFil6::after {
