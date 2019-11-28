@@ -242,8 +242,6 @@ input[type="submit"]{
   background: rgba(255, 255, 255, 0.5);
 }
 
-/*修正の必要あり*/
-
 .dyheaderBkImgFil3::after{
   background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/dot.png") repeat;
 }
@@ -465,7 +463,9 @@ input[type="submit"]{
 
 .feature5 .container > div{
   width: 50%;
+  padding: 20px 0;
   display: inline-block;
+  vertical-align: top;
   margin: auto;
 }
 
