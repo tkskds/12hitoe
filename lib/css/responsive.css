@@ -30,6 +30,16 @@
 
 
 @media(max-width:560px){
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="password"],
+  textarea{
+    font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
+    transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
+  }
   .gototop {
     bottom: 10px;
     right: 10px;
