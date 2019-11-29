@@ -1,5 +1,5 @@
     <footer id="footer" class="footer">
-      <div class="container footer_container">
+      <div class="footer_container">
         <?php
           if(
             is_active_sidebar('footer_left_widget')||

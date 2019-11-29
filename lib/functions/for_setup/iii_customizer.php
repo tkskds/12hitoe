@@ -1291,6 +1291,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 <?php if ($nav == true): ?>
 .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php endif; ?>
+.footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 #topnav li:nth-of-type(1)::after{content:"<?php echo $navEn1 ?>";}
 #topnav li:nth-of-type(2)::after{content:"<?php echo $navEn2 ?>";}
 #topnav li:nth-of-type(3)::after{content:"<?php echo $navEn3 ?>";}
