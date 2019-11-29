@@ -704,12 +704,16 @@ article h3{
   padding: 20px;
 }
 
+.footer_widgets_wrap>div:last-of-type{
+  margin-right: 0; /*フッター(右)は右の余白なし*/
+}
+
 .footer_widgets_wrap>div>.widget{
   margin-bottom: 20px;
 }
 
-.footer_widgets_wrap>div:last-of-type{
-  margin-right: 0;
+.footer_widgets_wrap>div>.widget:last-of-type{
+  margin-bottom: 0; /*フッターウィジェット内の最後の子要素は下に余白とらない（既に取ってるため）*/
 }
 
 /**************** ショートコードに関するcss *******************/
