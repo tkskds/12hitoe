@@ -779,8 +779,19 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_color', array(
-            'label' => 'セクション6の文字色'
+            'label' => 'セクション6の文字色',
           )));
+
+
+          $wp_customize->add_setting('site_feature_section6_description', array(
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section6_description', array(
+            'label' => 'セクション6の本文',
+            'type' => 'textarea',
+            'section' => 'site_feature',
+          ));
 
 
 //　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
