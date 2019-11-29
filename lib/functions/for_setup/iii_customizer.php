@@ -1024,7 +1024,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list1', array(
-            'label' => 'テキスト',
+            'label' => 'メニューリストの下の英文字1',
             'type' => 'text',
             'section' => 'site_nav',
           ));
@@ -1034,7 +1034,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list2', array(
-            'label' => 'テキスト',
+            'label' => 'メニューリストの下の英文字2',
             'type' => 'text',
             'section' => 'site_nav',
           ));
@@ -1044,7 +1044,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list3', array(
-            'label' => 'テキスト',
+            'label' => 'メニューリストの下の英文字3',
             'type' => 'text',
             'section' => 'site_nav',
           ));
@@ -1054,7 +1054,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list4', array(
-            'label' => 'テキスト',
+            'label' => 'メニューリストの下の英文字4',
             'type' => 'text',
             'section' => 'site_nav',
           ));
@@ -1064,7 +1064,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list5', array(
-            'label' => 'テキスト',
+            'label' => 'メニューリストの下の英文字5',
             'type' => 'text',
             'section' => 'site_nav',
           ));
@@ -1292,11 +1292,11 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php endif; ?>
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
-#topnav li:nth-of-type(1)::after{content:"<?php echo $navEn1 ?>";}
-#topnav li:nth-of-type(2)::after{content:"<?php echo $navEn2 ?>";}
-#topnav li:nth-of-type(3)::after{content:"<?php echo $navEn3 ?>";}
-#topnav li:nth-of-type(4)::after{content:"<?php echo $navEn4 ?>";}
-#topnav li:nth-of-type(5)::after{content:"<?php echo $navEn5 ?>";}
+#topnav li:nth-of-type(1) a::after{content:"<?php echo $navEn1 ?>";}
+#topnav li:nth-of-type(2) a::after{content:"<?php echo $navEn2 ?>";}
+#topnav li:nth-of-type(3) a::after{content:"<?php echo $navEn3 ?>";}
+#topnav li:nth-of-type(4) a::after{content:"<?php echo $navEn4 ?>";}
+#topnav li:nth-of-type(5) a::after{content:"<?php echo $navEn5 ?>";}
 /*****************************
 ******************************
 色****************************
