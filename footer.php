@@ -7,9 +7,21 @@
             is_active_sidebar('footer_right_widget')) :
         ?>
           <div class="footer_widgets_wrap">
-            <?php if(is_active_sidebar('footer_left_widget')) dynamic_sidebar('footer_left_widget'); ?>
-            <?php if(is_active_sidebar('footer_center_widget')) dynamic_sidebar('footer_center_widget'); ?>
-            <?php if(is_active_sidebar('footer_right_widget')) dynamic_sidebar('footer_right_widget'); ?>
+            <?php if(is_active_sidebar('footer_left_widget')):?>
+              <div>
+                <?php echo dynamic_sidebar('footer_left_widget'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(is_active_sidebar('footer_center_widget')):?>
+              <div>
+                <?php echo dynamic_sidebar('footer_center_widget'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(is_active_sidebar('footer_right_widget')):?>
+              <div>
+                <?php echo dynamic_sidebar('footer_right_widget'); ?>
+              </div>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
         <?php

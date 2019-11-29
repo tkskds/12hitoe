@@ -58,6 +58,12 @@
     padding: 0 10px;
     margin: 0 0 10px 0;
   }
+  .footer_widgets_wrap {
+    display: block;
+  }
+  .footer_widgets_wrap>div{
+    margin-right: 0;
+  }
   .sc_column{
     display: block;
   }

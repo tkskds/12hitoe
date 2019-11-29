@@ -31,19 +31,19 @@ body{
 
 @keyframes fadeIn{
   from {
-    opacity: 0
+    opacity: 0;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeIn{
   from{
-    opacity: 0
+    opacity: 0;
   }
   to{
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -69,7 +69,7 @@ nav a.siteTitle{
 
 .contentArea{
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
 }
 
 .main__container {
@@ -595,7 +595,7 @@ article {
 
 .article_thumbnail img {
   width: 100%;
-  max-width: 840px;
+  max-width: 900px;
   height: auto;
 }
 
@@ -701,6 +701,11 @@ article h3{
   flex-grow: 2;
   min-width: 30%;
   margin-right: 3%;
+  padding: 20px;
+}
+
+.footer_widgets_wrap>div>.widget{
+  margin-bottom: 20px;
 }
 
 .footer_widgets_wrap>div:last-of-type{
