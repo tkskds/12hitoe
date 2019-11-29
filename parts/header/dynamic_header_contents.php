@@ -31,13 +31,13 @@
       <div class="dyheader_textArea">
         <p<?php
          if ($txtAnime == 'value2'){
-          echo 'class="animation1"';
+          echo ' class="dyHeaderTextMotion1"';
         }elseif($txtAnime == 'value3'){
-          echo 'class="animation2"';
+          echo ' class="dyHeaderTextMotion2"';
         }elseif($txtAnime == 'value4'){
-          echo 'class="animation3"';
+          echo ' class="dyHeaderTextMotion3"';
         }elseif($txtAnime == 'value5'){
-          echo 'class="animation4"';
+          echo ' class="dyHeaderTextMotion4"';
         }
         ?>><?php echo $txt ?></p>
         <?php if ($btn != null ): ?>

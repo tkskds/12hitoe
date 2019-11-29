@@ -271,6 +271,99 @@ input[type="submit"]{
   filter: blur(7px);
 }
 
+/*テキストアニメーション*/
+
+.dyHeaderTextMotion1{
+  animation: dyHeaderTextMotion1 4s ease-in 0s;
+  -webkit-animation: dyHeaderTextMotion1 4s ease-in 0s;
+}
+
+.dyHeaderTextMotion2{
+  position: relative;
+  overflow: hidden;
+}
+
+.dyHeaderTextMotion2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transform: scaleX(0);
+  animation: dyHeaderTextMotion2 1s cubic-bezier(0.77, 0, 0.175, 1) 1s;
+  -webkit-animation: dyHeaderTextMotion2 1s cubic-bezier(0.77, 0, 0.175, 1) 1s;
+}
+
+@keyframes dyHeaderTextMotion1 {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+  50% {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-keyframes dyHeaderTextMotion1 {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+  50% {
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes dyHeaderTextMotion2 {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+  45% {
+    transform: none;
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: none;
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+  }
+}
+
+@-webkit-keyframes dyHeaderTextMotion2 {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+  45% {
+    transform: none;
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: none;
+    transform-origin: 100% 0;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+  }
+}
+
 /****************         特徴部分        *******************/
 
 
@@ -326,8 +419,8 @@ input[type="submit"]{
 
 .fadein{
   opacity : 0;
-  -webkit-transform: translate(0, 30px);
-  transform : translate(0, 30px);
+  -webkit-transform: translate3d(0, 30px, 0);
+  transform : translate3d(0, 30px, 0);
   -webkit-transition: 1s ease-in;
   transition : 1s ease-in;
 }
@@ -335,8 +428,8 @@ input[type="submit"]{
 .scrollin{
   will-change: opacity, transform;
   opacity : 1;
-  -webkit-transform: translate(0,0);
-  transform : translate(0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform : translate3d(0, 0, 0);
 }
 
 .fadein:nth-of-type(2){
@@ -692,6 +785,28 @@ article h3{
 
 
 /****************         フッター        *******************/
+
+.nav_footer{
+  background: transparent;
+}
+
+.nav_footer ul{
+  display: block;
+  text-align: center;
+}
+
+.nav_footer ul li{
+  display: inline-block;
+  float: unset;
+}
+
+.nav_footer ul li a{
+  font-size: .75em;
+}
+
+.nav_footer ul li a:hover{
+  background-color: unset;
+}
 
 .footer_widgets_wrap {
   display: flex;
