@@ -31,6 +31,9 @@
   $sec4a5 = get_option('site_feature_a5');
   $sec5info = get_option('site_feature_section5_info');
   $sec5map = get_option('site_feature_section5_map');
+  $sec6dsc = get_option('site_feature_section6_description');
+  $sec6bkImg = get_option('site_feature_section6_bk_img');
+  $sec6bkColor = get_option('site_feature_section6_bk_color');
 ?>
 
 <div class="features">
@@ -163,6 +166,14 @@
       <?php endif; ?>
       </div>
     </section>
+  <?php endif; ?>
+
+  <?php if($sec6dsc!=null): ?>
+  <section class="feature6">
+    <div class="container featureContainer">
+      <?php echo $sec6dsc ?>
+    </div>
+  </section>
   <?php endif; ?>
 
 </div>
