@@ -1,23 +1,32 @@
 
 /*
 ====INDEX====
+
 - 共通
 - ダイナミックヘッダー
+- 特徴部分
 - 記事一覧
--
+- 記事詳細
+- サイドバー
+- フッター
+- ショートコードに関するCSS
 
 =============
 */
 
+/****************           共通          *******************/
 
-/*************** 共通 ***************/
+html{
+  -webkit-scroll-behavior: smooth; /* IE safari EDGE未対応 */
+  scroll-behavior: smooth; /* IE safari EDGE 未対応 */
+}
 
 body{
   font-size:16px;
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333;
-  animation: fadeIn 2s ease 0s 1 normal;
-  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+  animation: fadeIn 1s ease-in;
+  -webkit-animation: fadeIn 1s ease-in;
 }
 
 @keyframes fadeIn{
@@ -75,8 +84,8 @@ nav a.siteTitle{
 }
 
 nav{
-  animation: fadeDown 1s ease-in both;
-  -webkit-animation: fadeDown 1s ease-in both;
+  animation: fadeDown 2s ease-in;
+  -webkit-animation: fadeDown 2s ease-in;
 }
 
 @keyframes fadeDown {
@@ -173,7 +182,7 @@ input[type="submit"]{
   scroll-behavdior: smooth;
 }
 
-/************* ダイナミックヘッダー ************/
+/****************    ダイナミックヘッダー   *******************/
 
 .dyheader{
   position: relative;
@@ -263,7 +272,8 @@ input[type="submit"]{
   filter: blur(7px);
 }
 
-/**************** 特徴部分 *******************/
+/****************         特徴部分        *******************/
+
 
 .features section{
   padding: 20px 0;
@@ -325,6 +335,7 @@ input[type="submit"]{
 }
 
 .scrollin{
+  will-change: opacity, transform;
   opacity : 1;
   -webkit-transform: translate(0,0);
   transform : translate(0, 0);
@@ -473,8 +484,7 @@ input[type="submit"]{
   width: 100%;
 }
 
-
-/**************** 記事一覧 *******************/
+/****************         記事一覧        *******************/
 
 .articleList1{
   position: relative;
@@ -562,9 +572,7 @@ input[type="submit"]{
   padding: 1em 17px;
 }
 
-
-
-/**************** 記事詳細 *******************/
+/****************         記事詳細        *******************/
 
 main,
 .main_container,
@@ -683,6 +691,10 @@ article h3{
 .aside__container > div:nth-of-type(1) {
   margin-top: 20px;
 }
+
+
+/****************         フッター        *******************/
+
 
 
 /**************** ショートコードに関するcss *******************/
