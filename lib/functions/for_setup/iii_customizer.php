@@ -972,12 +972,12 @@ function org_customizer($wp_customize){
             'section' => 'site_color',
           )));
 
-          $wp_customize->add_setting('site_color_body_color', array(
+          $wp_customize->add_setting('site_color_body_bk', array(
             'type' => 'option',
             'default' => '#f5f5f5',
           ));
 
-          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_bk', array(
             'label' => 'コンテンツエリア全体の背景',
             'section' => 'site_color',
           )));
