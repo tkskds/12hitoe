@@ -1015,6 +1015,8 @@ function org_customizer($wp_customize){
               'value1' => 'デザイン1',
               'value2' => 'デザイン2',
               'value3' => 'デザイン3',
+              'value4' => 'デザイン4',
+              'value5' => 'デザイン5',
             ),
           ));
 
