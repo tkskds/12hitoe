@@ -800,8 +800,17 @@ article h3{
 
 
 /*ページネーション*/
-.pagination li span {
-  color: #444;
+.pagination{
+  display: block;
+  text-align: center;
+}
+
+.pagination li{
+  margin: 0 3px;
+}
+
+.pagination li span{
+  color: white;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0 10px;
