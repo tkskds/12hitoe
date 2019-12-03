@@ -120,6 +120,11 @@ nav h1 {
   margin: unset;
 }
 
+/*追加コンテンツ用*/
+.navbar-fixed {
+  min-height: 56px;
+  height: auto;
+}
 
 input[type="text"],
 input[type="tel"],
@@ -186,6 +191,10 @@ td{
   text-align: center;
   font-size: .3em;
   opacity: .8;
+}
+
+.sidenav li {
+  display: block;
 }
 
 li.sidenav-ttl {

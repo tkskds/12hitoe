@@ -25,7 +25,7 @@ if(is_home() || is_front_page()) {
 <nav<?php if($extend == true){echo ' class="nav-extended"';} ?>>
   <div class="nav-wrapper">
     <?php echo $title_tag_start; ?>
-    <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle">
+    <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle<?php if ($centering == true) { echo ' center'; } ?>">
       <?php if(has_custom_logo()): ?>
         <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo" />
       <?php endif; ?>
@@ -45,7 +45,7 @@ if(is_home() || is_front_page()) {
   </div>
   <?php if($extend == true): ?>
     <div class="nav-content">
-      <span class="nav-title"><?php echo $extend_text ?></span>
+      <span><?php echo $extend_text ?></span>
       <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="<?php echo $extend_uri ?>">
         <i class="material-icons">link</i>
       </a>
@@ -60,7 +60,7 @@ if(is_home() || is_front_page()) {
     'container' => 'ul',
     'menu_id' => 'mobile-demo',
     'menu_class' => 'sidenav',
-    'before' => '<li class="sidenav-ttl">MENU</li>',
+    // 'before' => '<li class="sidenav-ttl">MENU</li>',
     'fallback' => ''
   ));
 ?>

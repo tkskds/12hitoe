@@ -31,6 +31,15 @@ function setup(){
 
 add_action('after_setup_theme', 'setup');
 
+
+/////////////////////////////
+//テンプレート用の関数
+/////////////////////////////
+
+require      ('lib/functions/for_template/functions.php');
+
+
+
 /////////////////////////////
 //管理画面から更新ができるように
 /////////////////////////////
