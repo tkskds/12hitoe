@@ -11,9 +11,9 @@
 <?php
 
 $priority = get_option('site_bone_priority');
-$cssfw = get_option('site_cssfw_choice');
-$sitetype = get_option('site_bone_type');
-$nothome = get_option('site_dyheader_notTop');
+$cssfw    = get_option('site_cssfw_choice')  ? get_option('site_cssfw_choice') : 'value2' ;
+$sitetype = get_option('site_bone_type')     ? get_option('site_bone_type')    : 'value1' ;
+$nothome  = get_option('site_dyheader_notTop');
 
       //ナビメニューより先にダイナミックヘッダー呼び出す設定で、
       if ($sitetype == 'value3' && $priority == true || $sitetype == 'value4' && $priority == true ){

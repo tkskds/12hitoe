@@ -1,12 +1,11 @@
 <?php get_header(); ?>
-<?php $sitetype = get_option('site_bone_type'); ?>
-<?php if($sitetype != 'value4'): ?>
+<?php $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ; ?>
+<?php if($siteType != 'value4'): ?>
   <div class="row contentArea">
     <main id="main"
           class="<?php
                     //サイト構造がサイドバーを含むものならグリッドクラス付与
-                    $sideOn = get_option('site_bone_type');
-                    if ($sideOn == 'value1' || $sideOn == 'value3'){
+                    if ($siteType == 'value1' || $siteType == 'value3'){
                       echo 'col s12 l9';
                       }
                   ?> main">
@@ -24,7 +23,7 @@
         </div>
       </div>
     </main>
-    <?php if ($sideOn == 'value1' || $sideOn == 'value3'){ get_sidebar(); } ?>
+    <?php if ($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
 <?php endif; ?>
 <?php get_footer(); ?>

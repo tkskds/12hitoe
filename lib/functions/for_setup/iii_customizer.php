@@ -803,19 +803,17 @@ function org_customizer($wp_customize){
       ));
 
           $wp_customize->add_setting('site_cssfw_choice', array(
-            'default' => 'value1',
+            'default' => 'value2',
             'type' => 'option',
           ));
 
           $wp_customize->add_control('site_cssfw_choice', array(
             'label' => 'サイト全体の雰囲気',
-            'description' => '現在4種類から選べます。',
+            'description' => '現在2種類から選べます。',
             'type' => 'radio',
             'choices' => array(
-              'value1' => 'フラット',
+              'value1' => '開発者・デザイナー向け（CSS適用なし）',
               'value2' => 'マテリアル',
-              'value3' => 'シンプル',
-              'value4' => '開発者・デザイナー向け（CSS適用なし）',
             ),
             'section' => 'site_cssfw',
           ));
