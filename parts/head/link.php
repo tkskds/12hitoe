@@ -3,10 +3,9 @@
 
 <?php //CSSフレームワークの分岐 ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
-<?php if ($cssfw =! 'value1') : ?>
+<?php if ($cssfw != 'value1') : ?>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
-  <script src="<?php echo get_template_directory_uri(); ?>/vendor/materialize/js/materialize.js"></script>
 <?php endif; ?>
 
 <?php //共通CSS ?>
