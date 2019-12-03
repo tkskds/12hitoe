@@ -1,26 +1,28 @@
 <?php
 
-  $onlyLogo = get_option('only_logo');
-  $logo = get_theme_mod('custom_logo');
-  $logoUrl	 = wp_get_attachment_url( $logo );
+  $onlyLogo        = get_option('only_logo');
+  $logo            = get_theme_mod('custom_logo');
+  $logoUrl	       = wp_get_attachment_url( $logo );
 
 // ホーム画面ではサイトタイトルにh1、それ以外では記事タイトルにh1
 if(is_home() || is_front_page()) {
-
   $title_tag_start = '<h1>';
-  $title_tag_end = '</h1>';
-
+  $title_tag_end   = '</h1>';
 } else {
-
   $title_tag_start = '<p>';
-  $title_tag_end =  '</p>';
-
+  $title_tag_end   =  '</p>';
 }// END ishome()||is_front_page()
+
+  $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false ;
+  $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false ;
+  $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false ;
+  $extend_text     = get_option('site_nav_extended_text')   ? get_option('site_nav_extended_text')   : 'SAMPLE' ;
+  $extend_uri      = get_option('site_nav_extended_uri')    ? get_option('site_nav_extended_uri')    : 'https://takasaki.work/12hitoe' ;
 
  ?>
 
-
-<nav>
+<?php if ($fixed == true){ echo '<div class="navbar-fixed">'; } ?>
+<nav<?php if($extend == true){echo ' class="nav-extended"';} ?>>
   <div class="nav-wrapper">
     <?php echo $title_tag_start; ?>
     <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle">
@@ -41,7 +43,16 @@ if(is_home() || is_front_page()) {
           ));
       ?>
   </div>
+  <?php if($extend == true): ?>
+    <div class="nav-content">
+      <span class="nav-title"><?php echo $extend_text ?></span>
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="<?php echo $extend_uri ?>">
+        <i class="material-icons">link</i>
+      </a>
+    </div>
+  <?php endif; ?>
 </nav>
+<?php if ($fixed == true){ echo '</div>'; } ?>
 
 <?php
   wp_nav_menu(array(
@@ -49,7 +60,7 @@ if(is_home() || is_front_page()) {
     'container' => 'ul',
     'menu_id' => 'mobile-demo',
     'menu_class' => 'sidenav',
-    'before' => '<li class="sidenav-ttl"><i class="material-icons">apps</i>MENU</li>',
+    'before' => '<li class="sidenav-ttl">MENU</li>',
     'fallback' => ''
   ));
 ?>

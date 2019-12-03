@@ -999,25 +999,6 @@ function org_customizer($wp_customize){
 
       //背景の絶対位置化でダイナミックヘッダーと合成するオプションつける
 
-          $wp_customize->add_setting('site_nav_type',array(
-            'default' => 'value1',
-            'type' => 'option',
-          ));
-
-          $wp_customize->add_control('site_nav_type',array(
-            'label' => 'ナビメニューの設定',
-            'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
-            'section' => 'site_nav',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => 'デザイン1',
-              'value2' => 'デザイン2',
-              'value3' => 'デザイン3',
-              'value4' => 'デザイン4',
-              'value5' => 'デザイン5',
-            ),
-          ));
-
           $wp_customize->add_setting('site_nav_width',array(
             'default' => false,
             'type' => 'option',
@@ -1030,12 +1011,67 @@ function org_customizer($wp_customize){
             'section' => 'site_nav',
           ));
 
+          $wp_customize->add_setting('site_nav_centering_title', array(
+            'default' => false,
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_centering_title', array(
+            'label' => 'サイトタイトルを中央寄せにする',
+            'type' => 'checkbox',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_fixed_top', array(
+            'default' => false,
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_fixed_top', array(
+            'label' => 'ナビメニューをサイト上部に固定する',
+            'type' => 'checkbox',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_extended', array(
+            'default' => false,
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_extended', array(
+            'label' => 'ナビメニューにコンテンツを追加する',
+            'type' => 'checkbox',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_extended_text', array(
+            'default' => 'これはサンプルです',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_extended_text', array(
+            'label' => '追加するコンテンツのテキスト',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_extended_uri', array(
+            'default' => 'https://takasaki.work/12hitoe',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_extended_uri', array(
+            'label' => '追加するコンテンツのボタンリンク先（URL）',
+            'type' => 'text',
+            'section' => 'site_nav',
+          ));
+
           $wp_customize->add_setting('site_nav_list1', array(
             'type' => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list1', array(
-            'label' => 'メニューリストの下の英文字1',
+            'label' => 'メニューの下の英文字1',
             'type' => 'text',
             'section' => 'site_nav',
           ));
