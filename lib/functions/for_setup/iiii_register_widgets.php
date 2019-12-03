@@ -11,7 +11,7 @@ function register_widgets(){
   ****************/
   register_sidebar(array(
     'name'=>'サイドバー',
-    'id' => 'side-widget',
+    'id' => 'side_widget',
     'description' => '通常のサイドバーです。',
     'before_widget'=>'<div id="%1$s" class="widget %2$s">',
     'after_widget'=>'</div>',

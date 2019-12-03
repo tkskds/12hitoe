@@ -6,7 +6,7 @@
           class="<?php
                     //サイト構造がサイドバーを含むものならグリッドクラス付与
                     if ($siteType == 'value1' || $siteType == 'value3'){
-                      echo 'col s12 l9';
+                      echo 'col l9';
                       }
                   ?> main">
       <div class="main__container">

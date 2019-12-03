@@ -5,7 +5,7 @@
 
 <?php get_header(); ?>
   <div class="row contentArea">
-    <main id="main" class="main<?php if ($sideOn == 'value1' || $sideOn == 'value3'){echo ' col s12 l9';}?>">
+    <main id="main" class="main<?php if ($sideOn == 'value1' || $sideOn == 'value3'){echo ' col l9';}?>">
       <div class="main__container">
         <?php
           if ($articleType == 'value1'){
