@@ -10,10 +10,10 @@
 
 <?php
 
-$priority = get_option('site_bone_priority');
-$cssfw    = get_option('site_cssfw_choice')  ? get_option('site_cssfw_choice') : 'value2' ;
-$sitetype = get_option('site_bone_type')     ? get_option('site_bone_type')    : 'value1' ;
-$nothome  = get_option('site_dyheader_notTop');
+$priority = get_option('site_bone_priority')    ? get_option('site_bone_priority')   : false    ;
+$cssfw    = get_option('site_cssfw_choice')     ? get_option('site_cssfw_choice')    : 'value2' ;
+$sitetype = get_option('site_bone_type')        ? get_option('site_bone_type')       : 'value1' ;
+$nothome  = get_option('site_dyheader_notTop')  ? get_option('site_dyheader_notTop') : false    ;
 
       //ナビメニューより先にダイナミックヘッダー呼び出す設定で、
       if ($sitetype == 'value3' && $priority == true || $sitetype == 'value4' && $priority == true ){
@@ -23,14 +23,9 @@ $nothome  = get_option('site_dyheader_notTop');
         }
       }
 
-      if ($cssfw == 'value1'){
+      // CSSフレームワークが開発者向けのものでなければマテリアライズのを呼び出す
+      if ($cssfw != 'value1'){
         get_template_part('parts/header/header_contents');
-      }elseif ($cssfw == 'value2'){
-        get_template_part('parts/header/header_contents_mt');
-      }elseif ($cssfw == 'value3'){
-        get_template_part('parts/header/header_contents_bs');
-      }else{
-        //開発者用テンプレートを選択した場合は子テーマのCSSファイルを呼び出す
       }
 
       //ナビメニューより先にダイナミックヘッダー呼び出す設定でなく、

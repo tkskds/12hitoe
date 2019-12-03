@@ -111,6 +111,16 @@ nav{
 	}
 }
 
+/*トップページではナビメニューにh1タグを使用するため
+materializeのh1タグへのスタイルをリセット*/
+nav h1 {
+  font-size: unset;
+  line-height: unset;
+  font-weight: unset;
+  margin: unset;
+}
+
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
