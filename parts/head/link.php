@@ -3,16 +3,15 @@
 
 <?php //CSSフレームワークの分岐 ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
-<?php if ($cssfw == 'value2') : ?>
+<?php if ($cssfw =! 'value1') : ?>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/js/materialize.min.js">
+  <script src="<?php echo get_template_directory_uri(); ?>/vendor/materialize/js/materialize.js"></script>
 <?php endif; ?>
 
 <?php //共通CSS ?>
 <?php if ($cssfw != 'value1'): ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/articleDecoration.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/responsive.css">
 <?php endif; ?>
 
@@ -46,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 <?php endif ?>
 
-<?php $articleList = get_option('site_articleList_card'); ?>
+<?php $articleList = get_option('site_articleList_card') ? get_option('site_articleList_card') : 'value1' ; ?>
 <?php if ($articleList == 'value1'): ?>
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 <?php endif; ?>
