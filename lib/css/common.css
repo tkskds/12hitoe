@@ -799,6 +799,15 @@ article h3{
 }
 
 
+/*ページネーション*/
+.pagination li span {
+  color: #444;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
 /****************        サイドバー       *******************/
 
 /*最初の要素の上に20pxの余白*/

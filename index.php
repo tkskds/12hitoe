@@ -13,15 +13,8 @@
         <?php if(have_posts()): while(have_posts()): the_post(); ?>
           <?php get_template_part('parts/others/loop') ?>
         <?php endwhile; endif; ?>
-        <div class="pagination">
-          <?php echo paginate_links(array(
-            'type' => 'list',
-            'mid_size' => '1',
-            'prev_text' => '<i class="fas fa-angle-left"></i>',
-            'next_text' => '<i class="fas fa-angle-right"></i>'
-          )); ?>
-        </div>
       </div>
+      <?php m_pagination(); ?>
     </main>
     <?php if ($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
