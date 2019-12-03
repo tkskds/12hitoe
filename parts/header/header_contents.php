@@ -49,6 +49,7 @@ if(is_home() || is_front_page()) {
     'container' => 'ul',
     'menu_id' => 'mobile-demo',
     'menu_class' => 'sidenav',
+    'before' => '<li class="sidenav-ttl"><i class="material-icons">apps</i>MENU</li>',
     'fallback' => ''
   ));
 ?>

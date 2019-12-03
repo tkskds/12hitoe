@@ -188,6 +188,18 @@ td{
   opacity: .8;
 }
 
+li.sidenav-ttl {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  padding: .5em;
+  font-weight: bold;
+}
+
+li.sidenav-ttl i{
+  margin-right: .5em;
+}
+
 /****************    ダイナミックヘッダー   *******************/
 
 .dyheader{
