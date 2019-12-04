@@ -1,6 +1,9 @@
 <?php
 
-  $credit = get_option('site_footer_credit') ? get_option('site_footer_credit') : false;
+  $credit   = get_option('site_footer_credit')  ? get_option('site_footer_credit')  : false ;
+  $goToTop  = get_option('site_footer_gototop') ? get_option('site_footer_gototop') : false ;
+  $shareBtn = get_option('site_footer_share')   ? get_option('site_footer_share')   : false ;
+  $spfooter = get_option('site_footer_sp_menu') ? get_option('site_footer_sp_menu') : false ;
 
 ?>
 
@@ -52,7 +55,28 @@
         </div>
       </div>
     </footer>
-    <a href="#" class="btn-floating btn-large waves-effect waves-light gototop acc__color"><i class="material-icons">expand_less</i></a>
+    <?php if ($goToTop == true) : ?>
+      <a href="#" class="btn-floating btn-large waves-effect waves-light gototop acc__color">
+        <i class="material-icons">expand_less</i>
+      </a>
+    <?php endif; ?>
+    <?php if ($shareBtn == true) : ?>
+      <div class="fixed-action-btn">
+      <a class="btn-floating btn-large sub__color">
+        <i class="large material-icons">share</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="fab fa-line"></i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+      </ul>
+    </div>
+    <?php endif; ?>
+    <?php if ($spfooter == true && wp_is_mobile()) : ?>
+
+    <?php  endif; ?>
+
     <?php get_template_part('parts/footer/link_js') ?>
     <?php wp_footer(); ?>
   </body>

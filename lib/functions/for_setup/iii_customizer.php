@@ -1207,9 +1207,165 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_footer',array(
         'priority'        => 10,
-        'title'           => '10:記事の設定',
+        'title'           => '10:フッターの設定',
         'panel'           => 'site_builder',
       ));
+
+          $wp_customize->add_setting('site_footer_gototop', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_gototop', array(
+            'label'       => 'トップへ戻るボタンを表示する',
+            'description' => '詳しくはこちら',
+            'type'        => 'checkbox',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_share', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_share', array(
+            'label'       => 'シェアボタンを表示する',
+            'description' => '詳しくはこちら',
+            'type'        => 'checkbox',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu', array(
+            'label'       => 'スマホで独自フッターメニューを表示',
+            'description' => '詳しくはこちらの記事を参考にしてください。',
+            'type'        => 'checkbox',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li1_icon', array(
+            'default'     => '<i class="fas fa-bars"></i>',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li1_icon', array(
+            'label'       => '独自メニュー1のアイコン',
+            'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li1_ttl', array(
+            'default'     => 'よくある質問',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li1_ttl', array(
+            'label'       => '独自メニュー1のテキスト',
+            'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li2_icon', array(
+            'default'     => '<i class="fas fa-paper-plane"></i>',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li2_icon', array(
+            'label'       => '独自メニュー2のアイコン',
+            'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li2_ttl', array(
+            'default'     => 'Contact',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li2_ttl', array(
+            'label'       => '独自メニュー2のテキスト',
+            'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li3_icon', array(
+            'default'     => '<i class="fas fa-home"></i>',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li3_icon', array(
+            'label'       => '独自メニュー3のアイコン',
+            'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li3_ttl', array(
+            'default'     => 'HOME',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li3_ttl', array(
+            'label'       => '独自メニュー3のテキスト',
+            'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li4_icon', array(
+            'default'     => '<i class="fas fa-phone"></i>',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li4_icon', array(
+            'label'       => '独自メニュー4のアイコン',
+            'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li4_ttl', array(
+            'default'     => 'TEL',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li4_ttl', array(
+            'label'       => '独自メニュー4のテキスト',
+            'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li5_icon', array(
+            'default'     => '<i class="fas fa-question-circle"></i>',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li5_icon', array(
+            'label'       => '独自メニュー5のアイコン',
+            'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li5_ttl', array(
+            'default'     => 'Q&A',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li5_ttl', array(
+            'label'       => '独自メニュー5のテキスト',
+            'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
 
           $wp_customize->add_setting('site_footer_credit', array(
             'default'     => false,
@@ -1223,22 +1379,19 @@ function org_customizer($wp_customize){
             'section'     => 'site_footer',
           ));
 
-
-
-
   // サイト構造（コンポーネントの順番）
   // ## example )
   // - HEADER => NAV => ARTCILE LIST => ASIDE => FOOTER
   // - NAV => ARTICLE LIST => FOOTER
   // - DYNAMIC HEADER => ARTICLE => FOOTER
 
-
+  /********
   // STEP3
-
+  ********/
   $wp_customize->add_panel('site_admin', array(
-    'priority' => 3,
-    'title' => 'STEP3【運営設定】',
-    'description' => 'サイトの運営設定',
+    'priority'            => 3,
+    'title'               => 'STEP3【運営設定】',
+    'description'         => 'サイトの運営設定',
   ));
 
 } //END org_customizer()
@@ -1255,7 +1408,7 @@ function add_customizerCSS(){
   $siteType             = get_option('site_bone_type');
 
 //コンテンツエリア横幅
-  $contentArea          = get_option('site_bone_content_area') ? get_option('site_bone_content_area') : '1200';
+  $contentArea          = get_option('site_bone_content_area')      ? get_option('site_bone_content_area')    : '1200';
 
 //サイドバー
   $sidebarLeft          = get_option('site_bone_sidebar');
@@ -1318,19 +1471,19 @@ function add_customizerCSS(){
     }
 
   /*** サイトの文字サイズ ***/
-  $titleSize  = get_option('site_font_title_size')  ? get_option('site_font_title_size') : '200';
-  $pcSize     = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')    : '100';
-  $tabSize    = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')   : '98';
-  $spSize     = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')    : '95';
+  $titleSize            = get_option('site_font_title_size')  ? get_option('site_font_title_size') : '200';
+  $pcSize               = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')    : '100';
+  $tabSize              = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')   : '98';
+  $spSize               = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')    : '95';
 
 
   /*ナビメニューの横幅*/
-  $nav    = get_option('site_nav_width');
-  $navEn1 = get_option('site_nav_list1');
-  $navEn2 = get_option('site_nav_list2');
-  $navEn3 = get_option('site_nav_list3');
-  $navEn4 = get_option('site_nav_list4');
-  $navEn5 = get_option('site_nav_list5');
+  $nav                  = get_option('site_nav_width');
+  $navEn1               = get_option('site_nav_list1');
+  $navEn2               = get_option('site_nav_list2');
+  $navEn3               = get_option('site_nav_list3');
+  $navEn4               = get_option('site_nav_list4');
+  $navEn5               = get_option('site_nav_list5');
 
   /*色の設定*/
   $main_c   = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
