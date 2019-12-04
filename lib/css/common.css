@@ -810,7 +810,7 @@ article h3{
 }
 
 .pagination li span{
-  color: white;
+  color: #fff;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0 10px;
@@ -882,4 +882,94 @@ article h3{
 .sc_cell{
   padding: 1em;
   flex-grow: 2;
+}
+
+/****************       レスポンシブ      ****************************/
+
+@media(min-width:961px){
+  .contentArea{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+  }
+  /*2カラム時の左右のパディングを調整*/
+  .contentArea>.col:nth-child(1){
+    padding-left: 0;
+  }
+  .contentArea>.col:nth-child(2){
+    padding-right: 0;
+  }
+}
+
+
+@media(max-width:960px){
+  .gototop {
+    bottom: 30px;
+    right: 30px;
+  }
+  .articleList1{
+    margin: 0 auto 20px;
+  }
+  .f_item{
+    padding: 10px;
+  }
+  .article_meta_info,
+  .article_title,
+  .article_thumbnail,
+  .article_content,
+  .article_tag{
+    padding: 0 30px;
+    margin: 0 0 10px 0;
+  }
+}
+
+
+@media(max-width:560px){
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="password"],
+  textarea{
+    font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
+    transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
+  }
+  .gototop {
+    bottom: 10px;
+    right: 10px;
+  }
+  .articleList1{
+    width: 95%;
+    margin: 0 2.5% 20px;
+  }
+  .articleList1:nth-of-type(1){
+    margin-top: 20px;
+  }
+  .articleList1:nth-of-type(2){
+    margin-top: 0;
+  }
+  .f_item{
+    width: 100%;
+  }
+  .feature5 .container > div{
+    width: 100%;
+  }
+  .article_meta_info,
+  .article_title,
+  .article_thumbnail,
+  .article_content,
+  .article_tag{
+    padding: 0 10px;
+    margin: 0 0 10px 0;
+  }
+  .footer_widgets_wrap {
+    display: block;
+  }
+  .footer_widgets_wrap>div{
+    margin-right: 0;
+  }
+  .sc_column{
+    display: block;
+  }
 }
