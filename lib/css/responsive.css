@@ -4,6 +4,13 @@
     display:-ms-flexbox;
     display:flex;
   }
+  /*2カラム時の左右のパディングを調整*/
+  .contentArea>.col:nth-child(1){
+    padding-left: 0;
+  }
+  .contentArea>.col:nth-child(2){
+    padding-right: 0;
+  }
 }
 
 
