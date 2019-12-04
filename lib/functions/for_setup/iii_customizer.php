@@ -604,7 +604,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section2_bk_color', array(
-            'default' => '#f9f9f9',
+            'default' => '#212121',
             'type' => 'option',
           ));
 
@@ -653,7 +653,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section3_bk_color', array(
-            'default' => '#f9f9f9',
+            'default' => '#212121',
             'type' => 'option',
           ));
 
@@ -1261,9 +1261,11 @@ function add_customizerCSS(){
   $featureIcon2Color    = get_option('site_feature_section_item2_icon_color') ? get_option('site_feature_section_item2_icon_color') : '#E64A64';
   $featureIcon3Color    = get_option('site_feature_section_item3_icon_color') ? get_option('site_feature_section_item3_icon_color') : '#ffcc00';
   $featureSec2BkImg     = get_option('site_feature_section2_bk_img');
-  $featureSec2BkColor   = get_option('site_feature_section2_bk_color')        ? get_option('site_feature_section2_bk_color') : '#f9f9f9';
+  $featureSec3Color     = get_option('site_feature_section2_color')           ? get_option('site_feature_section2_color')           : '#f9f9f9';
+  $featureSec2BkColor   = get_option('site_feature_section2_bk_color')        ? get_option('site_feature_section2_bk_color')        : '#212121';
   $featureSec3BkImg     = get_option('site_feature_section3_bk_img');
-  $featureSec3BkColor   = get_option('site_feature_section3_bk_color')        ? get_option('site_feature_section3_bk_color') : '#f9f9f9';
+  $featureSec3Color     = get_option('site_feature_section3_color')           ? get_option('site_feature_section3_color')           : '#f9f9f9';
+  $featureSec3BkColor   = get_option('site_feature_section3_bk_color')        ? get_option('site_feature_section3_bk_color')        : '#212121';
 
 //フォントの設定
   /*** タイトルフォントの設定 ***/
@@ -1351,8 +1353,8 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .f_item:nth-child(1) i{color:<?php echo $featureIcon1Color ?>;}
 .f_item:nth-child(2) i{color:<?php echo $featureIcon2Color ?>;}
 .f_item:nth-child(3) i{color:<?php echo $featureIcon3Color ?>;}
-.feature2{<?php if ($featureSec2BkImg != null) : ?>background:url("<?php echo $featureSec2BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec2BkColor ?>;}
-.feature3{<?php if ($featureSec3BkImg != null) : ?>background:url("<?php echo $featureSec3BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec3BkColor ?>;}
+.feature2{<?php if ($featureSec2BkImg != null) : ?>background:url("<?php echo $featureSec2BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec2BkColor ?>;color:<?php echo $featureSec2Color ?>;}
+.feature3{<?php if ($featureSec3BkImg != null) : ?>background:url("<?php echo $featureSec3BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec3BkColor ?>;color:<?php echo $featureSec2Color ?>;}
 <?php endif; //END フューチャーがあるかどうか ?>
 .contentArea{max-width:<?php echo $contentArea ?>px;}
 <?php if ($nav == true): ?>
