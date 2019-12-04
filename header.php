@@ -7,6 +7,7 @@
   </head>
 
   <body <?php body_class(); ?>>
+    <div class="headerArea">
 
 <?php
 
@@ -40,5 +41,6 @@ $nothome  = get_option('site_dyheader_notTop')  ? get_option('site_dyheader_notT
       if( $sitetype == 'value4' && is_home() || $sitetype == 'value4' && is_front_page()) {
         get_template_part('parts/others/features');
       }
-
 ?>
+
+    </div>
