@@ -974,6 +974,9 @@ a.tohomelink i{
   .footer_sp_menu{
     display: none;
   }
+  .footerArea .navbar-fixed{
+    min-height: 0;
+  }
 }
 
 @media(max-width:560px){
