@@ -95,7 +95,7 @@
           <ul>
             <?php if ($li1icon != null) : ?>
               <li>
-                <a href="<?php echo $li1uri ?>">
+                <a href="<?php echo $li1uri ?>" class="waves-effect">
                   <?php echo $li1icon ?>
                   <span><?php echo $li1text ?></span>
                 </a>
@@ -103,7 +103,7 @@
             <?php endif; ?>
             <?php if ($li2icon != null) : ?>
               <li>
-                <a href="<?php echo $li2uri ?>">
+                <a href="<?php echo $li2uri ?>" class="waves-effect">
                   <?php echo $li2icon ?>
                   <span><?php echo $li2text ?></span>
                 </a>
@@ -111,7 +111,7 @@
             <?php endif; ?>
             <?php if ($li3icon != null) : ?>
               <li>
-                <a href="<?php echo $li3uri ?>">
+                <a href="<?php echo $li3uri ?>" class="waves-effect">
                   <?php echo $li3icon ?>
                   <span><?php echo $li3text ?></span>
                 </a>
@@ -119,7 +119,7 @@
             <?php endif; ?>
             <?php if ($li4icon != null) : ?>
               <li>
-                <a href="<?php echo $li4uri ?>">
+                <a href="<?php echo $li4uri ?>" class="waves-effect">
                   <?php echo $li4icon ?>
                   <span><?php echo $li4text ?></span>
                 </a>
@@ -127,7 +127,7 @@
             <?php endif; ?>
             <?php if ($li5icon != null) : ?>
               <li>
-                <a href="<?php echo $li5uri ?>">
+                <a href="<?php echo $li5uri ?>" class="waves-effect">
                   <?php echo $li5icon ?>
                   <span><?php echo $li5text ?></span>
                 </a>

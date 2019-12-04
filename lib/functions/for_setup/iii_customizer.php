@@ -1526,13 +1526,13 @@ function add_customizerCSS(){
     }
 
   /*** サイトの文字サイズ ***/
-  $titleSize            = get_option('site_font_title_size')  ? get_option('site_font_title_size') : '200';
-  $pcSize               = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')    : '100';
-  $tabSize              = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')   : '98';
-  $spSize               = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')    : '95';
+  $titleSize            = get_option('site_font_title_size')  ? get_option('site_font_title_size')  : '200';
+  $pcSize               = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')     : '100';
+  $tabSize              = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')    : '98';
+  $spSize               = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')     : '95';
 
 
-  /*ナビメニューの横幅*/
+  /*** ナビメニューの横幅 ***/
   $nav                  = get_option('site_nav_width');
   $navEn1               = get_option('site_nav_list1');
   $navEn2               = get_option('site_nav_list2');
@@ -1540,7 +1540,7 @@ function add_customizerCSS(){
   $navEn4               = get_option('site_nav_list4');
   $navEn5               = get_option('site_nav_list5');
 
-  /*色の設定*/
+  /*** 色の設定 ***/
   $main_c   = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
   $sub_c    = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
   $acc_c    = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff5757';
@@ -1551,8 +1551,13 @@ function add_customizerCSS(){
   $foot_bk  = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
   $foot_c   = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
 
-  /*記事に関する設定*/
-  $p_margin = get_option('site_article_p_margin') ? get_option('site_article_p_margin') : '0.5';
+  /*** 記事に関する設定 ***/
+  $p_margin = get_option('site_article_p_margin')       ? get_option('site_article_p_margin')       : '0.5';
+
+  /*** フッターに関する設定 ***/
+  $spOrgNav = get_option('site_footer_sp_menu')         ? get_option('site_footer_sp_menu')         : false;
+  $footShr  = get_option('site_footer_share')           ? get_option('site_footer_share')           : false;
+  $footTop  = get_option('site_footer_gototop')         ? get_option('site_footer_gototop')         : false;
 
   ?>
 <?php // カスタマイザーの値を<head>に出力 ?>
@@ -1562,6 +1567,11 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
 @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
 @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
+/*****************************
+******************************
+ダイナミックヘッダーとフューチャー**
+******************************
+*****************************/
 <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
 .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
   <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat center/cover;<?php endif; ?>
@@ -1612,10 +1622,21 @@ footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c 
 a.tohomelink{color:<?php echo $foot_c ?>;}
 /****************************
 *****************************
-記事****************************
+記事**************************
 *****************************
 ****************************/
 .article_content p{margin-bottom:<?php echo $p_margin ?>em;}
+/*****************************
+******************************
+フッター***********************
+******************************
+*****************************/
+<?php if($spOrgNav == true) : ?>
+.gototop,.fixed-action-btn{bottom: 60px;}
+<?php endif; ?>
+<?php if($footTop == true && $footShr == true) : ?>
+.fixed-action-btn{margin-bottom:61px;}
+<?php endif; ?>
 </style>
 
 <?php

@@ -174,9 +174,8 @@ td{
 
 .gototop {
   position: fixed;
-  bottom: 60px;
-  right: 60px;
-  scroll-behavdior: smooth;
+  bottom: 23px;
+  right: 23px;
 }
 
 /****************         ナビバー        *******************/
@@ -915,7 +914,7 @@ a.tohomelink i{
 }
 
 .footer_sp_menu ul li a span{
-  font-size: .75em;
+  font-size: .5em;
   line-height: 1;
   position: absolute;
   right: 0;
@@ -955,10 +954,6 @@ a.tohomelink i{
 
 
 @media(max-width:960px){
-  .gototop {
-    bottom: 30px;
-    right: 30px;
-  }
   .articleList1{
     margin: 0 auto 20px;
   }
@@ -975,6 +970,11 @@ a.tohomelink i{
   }
 }
 
+@media(min-width:601px){
+  .footer_sp_menu{
+    display: none;
+  }
+}
 
 @media(max-width:560px){
   input[type="text"],
@@ -986,10 +986,6 @@ a.tohomelink i{
   textarea{
     font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
     transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
-  }
-  .gototop {
-    bottom: 10px;
-    right: 10px;
   }
   .articleList1{
     width: 95%;
