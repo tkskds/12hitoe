@@ -593,6 +593,16 @@ function org_customizer($wp_customize){
             'section' => 'site_feature',
           )));
 
+          $wp_customize->add_setting('site_feature_section2_color', array(
+            'default' => '#f9f9f9',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_color', array(
+            'label' => 'セクション2の文字色',
+            'section' => 'site_feature',
+          )));
+
           $wp_customize->add_setting('site_feature_section2_bk_color', array(
             'default' => '#f9f9f9',
             'type' => 'option',
@@ -629,6 +639,16 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section3_bk_img', array(
             'label' => 'セクション3の背景画像',
+            'section' => 'site_feature',
+          )));
+
+          $wp_customize->add_setting('site_feature_section3_color', array(
+            'default' => '#f9f9f9',
+            'type' => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_color', array(
+            'label' => 'セクション3の文字色',
             'section' => 'site_feature',
           )));
 
