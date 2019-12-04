@@ -1,3 +1,9 @@
+<?php
+
+  $credit = get_option('site_footer_credit') ? get_option('site_footer_credit') : false;
+
+?>
+
     <footer id="footer" class="footer page-footer">
       <div class="footer_container container">
         <?php
@@ -38,7 +44,11 @@
       <div class="footer-copyright">
         <div class="container">
           <span>©<?php echo date('Y'); ?></span><span><?php echo bloginfo('name'); ?></span>
-          <a class="grey-text text-lighten-4 right" href="https://takasaki.work/12hitoe">CreatedBy12hitoe</a>
+          <?php if ($credit == false) : ?>
+            <a class="grey-text text-lighten-4 right" href="https://takasaki.work/12hitoe">
+              CreatedBy12hitoe
+            </a>
+          <?php endif; ?>
         </div>
       </div>
     </footer>

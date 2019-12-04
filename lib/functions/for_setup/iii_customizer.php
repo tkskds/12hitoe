@@ -47,1188 +47,1182 @@ function org_customizer($wp_customize){
   // STEP1
   ********/
   $wp_customize->add_panel('site_conf', array(
-    'priority' => 1,
-    'title' => 'STEP1【基本設定】',
-    'description' => 'サイトの基本設定です。SEOに有効に働く項目もあります。*は設定必須項目です。'
+    'priority'            => 1,
+    'title'               => 'STEP1【基本設定】',
+    'description'         => 'サイトの基本設定です。SEOに有効に働く項目もあります。*は設定必須項目です。'
   ));
 
       $wp_customize->add_section('title_tagline', array(
-        'title' => '基本情報とロゴの設定*',
-        'panel' => 'site_conf',
+        'title'           => '基本情報とロゴの設定*',
+        'panel'           => 'site_conf',
       ));
 
           $wp_customize->add_setting('meta_description', array(
-            'default' => '',
-            'type' => 'option',
+            'default'     => '',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('meta_description', array(
-            'label' => 'サイトの説明文',
+            'label'       => 'サイトの説明文',
             'description' => '検索結果などに表示されます。（推奨100文字以内）',
-            'type' => 'textarea',
-            'section' => 'title_tagline',
+            'type'        => 'textarea',
+            'section'     => 'title_tagline',
           ));
 
           $wp_customize->add_setting('only_logo', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('only_logo', array(
-            'label' => 'タイトルテキストの非表示',
+            'label'       => 'タイトルテキストの非表示',
             'description' => 'チェックするとタイトル部分がロゴ画像だけになります。',
-            'type' => 'checkbox',
-            'section' => 'title_tagline',
+            'type'        => 'checkbox',
+            'section'     => 'title_tagline',
           ));
 
   /********
   // STEP2
   ********/
   $wp_customize->add_panel('site_builder', array(
-    'priority' => 2,
-    'title' => 'STEP2【外観設定】',
-    'description' => 'サイトの外観設定です。',
+    'priority'            => 2,
+    'title'               => 'STEP2【外観設定】',
+    'description'         => 'サイトの外観設定です。',
   ));
 
       $wp_customize->add_section('site_bone', array(
-        'priority' => 1,
-        'title' => '1:骨組みの設定',
-        'panel' => 'site_builder',
+        'priority'        => 1,
+        'title'           => '1:骨組みの設定',
+        'panel'           => 'site_builder',
       ));
 
           $wp_customize->add_setting('site_bone_type', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_bone_type', array(
-            'label' => 'トップページのタイプ',
+            'label'       => 'トップページのタイプ',
             'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicHeader:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => 'メディア（Nav/Main/Side/Footer）',
-              'value2' => 'ワンカラム（Nav/Main/Footer）',
-              'value3' => 'コーポレート（Nav/DynamicHeader/Main/Side/Footer）',
-              'value4' => 'ランディング（Nav/DynamicHeader/Features/Footer）',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'メディア（Nav/Main/Side/Footer）',
+              'value2'    => 'ワンカラム（Nav/Main/Footer）',
+              'value3'    => 'コーポレート（Nav/DynamicHeader/Main/Side/Footer）',
+              'value4'    => 'ランディング（Nav/DynamicHeader/Features/Footer）',
             ),
-            'section' => 'site_bone',
+            'section'     => 'site_bone',
           ));
 
           $wp_customize->add_setting('site_bone_content_area', array(
-            'default' => 1200,
-            'type' => 'option',
+            'default'     => 1200,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_bone_content_area', array(
-            'label' => 'コンテンツエリアの最大横幅',
+            'label'       => 'コンテンツエリアの最大横幅',
             'description' => 'コンテンツ部分の最大横幅を設定します。（デフォルト:1200）',
-            'type' => 'number',
-            'section' => 'site_bone',
+            'type'        => 'number',
+            'section'     => 'site_bone',
           ));
 
           $wp_customize->add_setting('site_bone_sidebar', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_bone_sidebar', array(
-            'label' => 'サイドバーを左側に表示',
+            'label'       => 'サイドバーを左側に表示',
             'description' => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。',
-            'type' => 'checkbox',
-            'section' => 'site_bone',
+            'type'        => 'checkbox',
+            'section'     => 'site_bone',
           ));
 
-          // $wp_customize->add_setting('site_bone_sidebar_width', array(
-          //   'default' => 30,
-          //   'type' => 'option',
-          //   'transport'  => 'refresh',
-          // ));
-          //
-          // $wp_customize->add_control('site_bone_sidebar_width', array(
-          //   'label' => 'サイドバーの横幅（デフォルト:30）',
-          //   'description' => 'サイドバーの横幅を設定できます',
-          //   'section' => 'site_bone',
-          //   'type' => 'number',
-          // ));
-
           $wp_customize->add_setting('site_bone_priority', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_bone_priority', array(
-            'label' => 'ダイナミックヘッダーを画面最上部に表示',
+            'label'       => 'ダイナミックヘッダーを画面最上部に表示',
             'description' => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます。（『トップページのタイプ』でコーポレートまたはランディングを選択した場合のみ適用）',
-            'type' => 'checkbox',
-            'section' => 'site_bone',
+            'type'        => 'checkbox',
+            'section'     => 'site_bone',
           ));
 
       $wp_customize->add_section('site_dyheader', array(
-        'priority' => 2,
-        'title' => '2:ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
-        'panel' => 'site_builder',
+        'priority'        => 2,
+        'title'           => '2:ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
+        'panel'           => 'site_builder',
       ));
 
 
           $wp_customize->add_setting('site_dyheader_text', array(
-            'default' => "Let's enjoy self-expression!",
-            'type' => 'option',
+            'default'     => "Let's enjoy self-expression!",
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_text', array(
-            'label' => 'ヘッダー部分のテキスト',
-            'type' => 'text',
-            'section'  => 'site_dyheader',
+            'label'       => 'ヘッダー部分のテキスト',
+            'type'        => 'text',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_text_size', array(
-            'default' => 200,
-            'type' => 'option',
+            'default'     => 200,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_text_size', array(
-            'label' => 'ヘッダー部分のテキストサイズ',
-            'type' => 'number',
-            'section'  => 'site_dyheader',
+            'label'       => 'ヘッダー部分のテキストサイズ',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_text_color', array(
-            'default' => '#333333',
-            'type' => 'option',
+            'default'     => '#333333',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_text_color', array(
-            'label' => 'ヘッダー部分のテキスト色',
-            'section'  => 'site_dyheader',
+            'label'       => 'ヘッダー部分のテキスト色',
+            'section'     => 'site_dyheader',
           )));
 
           $wp_customize->add_setting('site_dyheader_text_animation', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
-            'label' => 'テキストへ適用するアニメーション',
+            'label'       => 'テキストへ適用するアニメーション',
             'description' => '現在4種類から選択できます。',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => 'アニメーションなし',
-              'value2' => 'フェードイン',
-              'value3' => 'タイプライター',
-              'value4' => 'ズームイン',
-              'value5' => 'キラキラ',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => 'フェードイン',
+              'value3'    => 'タイプライター',
+              'value4'    => 'ズームイン',
+              'value5'    => 'キラキラ',
             ),
-            'section'  => 'site_dyheader',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_button', array(
-            'default' => '',
-            'type' => 'option',
+            'default'     => '',
+            'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button', array(
-            'label' => 'ヘッダー部分のボタン',
+            'label'       => 'ヘッダー部分のボタン',
             'description' => 'ヘッダー部分に適用されるCTA的に使用可能なボタンです。（空白の場合ボタンは表示されません。）',
-            'type' => 'text',
-            'section'  => 'site_dyheader',
+            'type'        => 'text',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_button_link', array(
-            'default' => '#',
-            'type' => 'option',
+            'default'     => '#',
+            'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button_link', array(
-            'label' => 'ボタンのリンク先URL',
+            'label'       => 'ボタンのリンク先URL',
             'description' => 'リンク先のURLを入力してください。',
-            'section'  => 'site_dyheader',
-            'type' => 'text',
+            'section'     => 'site_dyheader',
+            'type'        => 'text',
           ));
 
           $wp_customize->add_setting('site_dyheader_button2', array(
-            'default' => '',
-            'type' => 'option',
+            'default'     => '',
+            'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button2', array(
-            'label' => 'ヘッダー部分のボタン2',
+            'label'       => 'ヘッダー部分のボタン2',
             'description' => 'もう一つボタンが必要な場合はこちらから。（空白の場合ボタンは表示されません。）',
-            'type' => 'text',
-            'section'  => 'site_dyheader',
+            'type'        => 'text',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_button2_link', array(
-            'default' => '#',
-            'type' => 'option',
+            'default'     => '#',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_button2_link', array(
-            'label' => 'ボタンのリンク先URL',
+            'label'       => 'ボタンのリンク先URL',
             'description' => '',
-            'type' => 'text',
-            'section'  => 'site_dyheader',
+            'type'        => 'text',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_img', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_img', array(
-      			'label' => 'ヘッダー部分の画像（文字の隣）',
+      			'label'       => 'ヘッダー部分の画像（文字の隣）',
             'description' => 'ヘッダー部分のテキストの隣に画像を挿入します。',
-      			'section' => 'site_dyheader',
+      			'section'     => 'site_dyheader',
         	)));
 
           $wp_customize->add_setting('site_dyheader_img_width', array(
-            'default' => 100,
-            'type' => 'option',
+            'default'     => 100,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_img_width', array(
-      			'label' => 'ヘッダー部分の画像のサイズ',
+      			'label'       => 'ヘッダー部分の画像のサイズ',
             'description' => 'ヘッダー部分の画像のサイズの調整ができます。（デフォルト:100,最大:100）',
-            'type' => 'number',
-            'section' => 'site_dyheader',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
         	));
 
           $wp_customize->add_setting('site_dyheader_img_position', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_img_position', array(
-            'label' => 'ヘッダー部分の画像を左側へ移動',
-            'type' => 'checkbox',
-            'section' => 'site_dyheader',
+            'label'       => 'ヘッダー部分の画像を左側へ移動',
+            'type'        => 'checkbox',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_bkimg', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_bkimg', array(
-            'label' => 'ヘッダー部分の画像（背景）',
+            'label'       => 'ヘッダー部分の画像（背景）',
             'description' => 'ヘッダー部分の背景に画像を挿入します。',
-            'section' => 'site_dyheader',
+            'section'     => 'site_dyheader',
           )));
 
           $wp_customize->add_setting('site_dyheader_bkimg_filter', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_bkimg_filter', array(
-            'label' => 'ヘッダー部分の背景画像フィルター',
+            'label'       => 'ヘッダー部分の背景画像フィルター',
             'description' => 'ヘッダーの背景画像にフィルターをかけることができます。文字が見づらい背景画像を使用する場合に有効です。',
-            'type' => 'select',
-            'choices' => array(
-              'value1' => 'フィルターなし',
-              'value2' => 'うっすら暗く',
-              'value3' => 'うっすら明るく',
-              'value4' => 'ドット',
-              'value5' => '斜線',
-              'value6' => '罫線',
-              'value7' => 'ボカシ',
+            'type'        => 'select',
+            'choices'     => array(
+              'value1'    => 'フィルターなし',
+              'value2'    => 'うっすら暗く',
+              'value3'    => 'うっすら明るく',
+              'value4'    => 'ドット',
+              'value5'    => '斜線',
+              'value6'    => '罫線',
+              'value7'    => 'ボカシ',
             ),
-            'section' => 'site_dyheader',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_bkcolor', array(
-            'default' => '#f1f2f3',
-            'type' => 'option',
+            'default'     => '#f1f2f3',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_bkcolor', array(
-            'label' => 'ヘッダー部分の背景色',
+            'label'       => 'ヘッダー部分の背景色',
             'description' => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。',
-            'section' => 'site_dyheader',
+            'section'     => 'site_dyheader',
           )));
 
           $wp_customize->add_setting('site_dyheader_width', array(
-            'default' => 1200,
-            'type' => 'option',
+            'default'     => 1200,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_width', array(
-            'label' => 'ヘッダー部分の最大横幅',
+            'label'       => 'ヘッダー部分の最大横幅',
             'description' => 'ヘッダー部分の最大横幅を設定できます。『1:骨組みの設定』で設定した数値と同じものがオススメです。（デフォルト:1200,最大3000）',
-            'type' => 'number',
-            'section'  => 'site_dyheader',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_height', array(
-            'default' => 50,
-            'type' => 'option',
+            'default'     => 50,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_height', array(
-            'label' => 'ヘッダー部分の高さ',
+            'label'       => 'ヘッダー部分の高さ',
             'description' => 'ヘッダー部分の高さを調整できます（デフォルト:50,最大:100）',
-            'type' => 'number',
-            'section'  => 'site_dyheader',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_margin-top', array(
-            'default' => 0,
-            'type' => 'option',
+            'default'     => 0,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_margin-top', array(
-            'label' => 'ヘッダー部分の上部の余白',
+            'label'       => 'ヘッダー部分の上部の余白',
             'description' => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）',
-            'type' => 'number',
-            'section'  => 'site_dyheader',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_padding', array(
-            'default' => '20',
-            'type' => 'option',
+            'default'     => 20,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_padding', array(
-            'label' => 'ヘッダー部分の余白',
+            'label'       => 'ヘッダー部分の余白',
             'description' => 'ヘッダー部分の余白を調整できます（デフォルト:20）。',
-            'type' => 'number',
-            'section' => 'site_dyheader',
+            'type'        => 'number',
+            'section'     => 'site_dyheader',
           ));
 
           $wp_customize->add_setting('site_dyheader_notTop', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_dyheader_notTop', array(
-            'label' => 'トップ（ホーム）画面以外でも表示',
+            'label'       => 'トップ（ホーム）画面以外でも表示',
             'description' => '通常はトップページのみで表示するようになっているダイナミックヘッダーを記事ページやカテゴリページでも表示するようにします。',
-            'type' => 'checkbox',
-            'section' => 'site_dyheader',
+            'type'        => 'checkbox',
+            'section'     => 'site_dyheader',
           ));
 
       $wp_customize->add_section('site_feature', array(
-        'priority' => 3,
-        'title' => '3:フューチャー部分（『1:骨組みの設定』で選択した場合のみ）',
-        'panel' => 'site_builder',
+        'priority'        => 3,
+        'title'           => '3:フューチャー部分（『1:骨組みの設定』で選択した場合のみ）',
+        'panel'           => 'site_builder',
       ));
 
-        $wp_customize->add_setting('site_feature_section_animation', array(
-          'type' => 'option',
-          'default' => false,
-        ));
+          $wp_customize->add_setting('site_feature_section_animation', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
 
-        $wp_customize->add_control('site_feature_section_animation', array(
-          'label' => 'フェードインのアニメーションを使用する',
-          'desscription' => 'フューチャー部分全体にjQueryのアニメーションを使用します。（サイトスピードが若干落ちます）',
-          'type' => 'checkbox',
-          'section' => 'site_feature',
-        ));
+          $wp_customize->add_control('site_feature_section_animation', array(
+            'label'       => 'フェードインのアニメーションを使用する',
+            'description' => 'フューチャー部分全体にjQueryのアニメーションを使用します。（サイトスピードが若干落ちます）',
+            'type'        => 'checkbox',
+            'section'     => 'site_feature',
+          ));
 
           $wp_customize->add_setting('site_feature_section_ttl', array(
-            'type' => 'option'
+            'type'        => 'option'
           ));
 
           $wp_customize->add_control('site_feature_section_ttl', array(
-            'label' => 'セクションのタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'セクションのタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_description', array(
-            'type' => 'option'
+            'type'        => 'option'
           ));
 
           $wp_customize->add_control('site_feature_section_description', array(
-            'label' => 'セクションの説明文（HTML使用可能）',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'label'       => 'セクションの説明文（HTML使用可能）',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item1_icon', array(
-            'default' => '<i class="fas fa-shield-alt"></i>',
-            'type' => 'option',
+            'default'     => '<i class="fas fa-shield-alt"></i>',
+            'type'        => 'option',
 
           ));
 
           $wp_customize->add_control('site_feature_section_item1_icon', array(
-            'label' => 'アイテム1のアイコン',
+            'label'       => 'アイテム1のアイコン',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item1_icon_color', array(
-            'type' => 'option',
-            'default' => '#1C6ECD'
+            'default'     => '#1C6ECD',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item1_icon_color', array(
-            'label' => 'アイテム1のアイコン色',
-            'section' => 'site_feature',
+            'label'       => 'アイテム1のアイコン色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section_item1_ttl', array(
-            'type' => 'option',
+            'default'     => 'SAMPLE1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item1_ttl', array(
-            'label' => 'アイテム1のタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム1のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item1_description', array(
-            'type' => 'option',
+            'default'     => 'SAMPLE1の説明文です。',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item1_description', array(
-            'label' => 'アイテム1の説明文',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム1の説明文',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item2_icon', array(
-            'type' => 'option',
-            'default' => '<i class="fas fa-heartbeat"></i>'
+            'default'     => '<i class="fas fa-heartbeat"></i>',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item2_icon', array(
-            'label' => 'アイテム2のアイコン',
+            'label'       => 'アイテム2のアイコン',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item2_icon_color', array(
-            'type' => 'option',
-            'default' => '#E64A64'
+            'default'     => '#E64A64',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item2_icon_color', array(
-            'label' => 'アイテム2のアイコン色',
-            'section' => 'site_feature',
+            'label'       => 'アイテム2のアイコン色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section_item2_ttl', array(
-            'type' => 'option',
+            'defalut'     => 'SAMPLE2',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item2_ttl', array(
-            'label' => 'アイテム2のタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム2のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item2_description', array(
-            'type' => 'option',
+            'defalut'     => 'SAMPLE2の説明文です',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item2_description', array(
-            'label' => 'アイテム2の説明文',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム2の説明文',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item3_icon', array(
-            'type' => 'option',
-            'default' => '<i class="fas fa-coins"></i>'
+            'type'        => 'option',
+            'default'     => '<i class="fas fa-coins"></i>'
           ));
 
           $wp_customize->add_control('site_feature_section_item3_icon', array(
-            'label' => 'アイテム3のアイコン',
+            'label'       => 'アイテム3のアイコン',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item3_icon_color', array(
-            'type' => 'option',
-            'default' => '#ffcc00'
+            'default'     => '#ffcc00',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item3_icon_color', array(
-            'label' => 'アイテム3のアイコン色',
-            'section' => 'site_feature',
+            'label'       => 'アイテム3のアイコン色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section_item3_ttl', array(
-            'type' => 'option',
+            'defalut'     => 'SAMPLE3',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item3_ttl', array(
-            'label' => 'アイテム3のタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム3のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item3_description', array(
-            'type' => 'option',
+            'default'     => 'SAMPLE3の説明文です。',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item3_description', array(
-            'label' => 'アイテム3の説明文',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'アイテム3の説明文',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section2_ttl', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section2_ttl', array(
-            'label' => 'セクション2のタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'セクション2のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section2_description', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section2_description', array(
-            'label' => 'セクション2の本文',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'label'       => 'セクション2の本文',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section2_bk_img', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section2_bk_img', array(
-            'label' => 'セクション2の背景画像',
-            'section' => 'site_feature',
+            'label'       => 'セクション2の背景画像',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section2_color', array(
-            'default' => '#f9f9f9',
-            'type' => 'option',
+            'default'     => '#f9f9f9',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_color', array(
-            'label' => 'セクション2の文字色',
-            'section' => 'site_feature',
+            'label'       => 'セクション2の文字色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section2_bk_color', array(
-            'default' => '#212121',
-            'type' => 'option',
+            'default'     => '#212121',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_bk_color', array(
-            'label' => 'セクション2の背景色',
-            'section' => 'site_feature',
+            'label'       => 'セクション2の背景色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section3_ttl', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section3_ttl', array(
-            'label' => 'セクション3のタイトル',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => 'セクション3のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section3_description', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section3_description', array(
-            'label' => 'セクション3の本文',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'label'       => 'セクション3の本文',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section3_bk_img', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section3_bk_img', array(
-            'label' => 'セクション3の背景画像',
-            'section' => 'site_feature',
+            'label'       => 'セクション3の背景画像',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section3_color', array(
-            'default' => '#f9f9f9',
-            'type' => 'option',
+            'default'     => '#f9f9f9',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_color', array(
-            'label' => 'セクション3の文字色',
-            'section' => 'site_feature',
+            'label'       => 'セクション3の文字色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_section3_bk_color', array(
-            'default' => '#212121',
-            'type' => 'option',
+            'default'     => '#212121',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_bk_color', array(
-            'label' => 'セクション3の背景色',
-            'section' => 'site_feature',
+            'label'       => 'セクション3の背景色',
+            'section'     => 'site_feature',
           )));
 
           $wp_customize->add_setting('site_feature_q1', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q1', array(
-            'label' => '質問1',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '質問1',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_a1', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_a1', array(
-            'label' => '答え1',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '答え1',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_q2', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q2', array(
-            'label' => '質問2',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '質問2',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_a2', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_a2', array(
-            'label' => '答え2',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '答え2',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_q3', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q3', array(
-            'label' => '質問3',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '質問3',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_a3', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_a3', array(
-            'label' => '答え3',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '答え3',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_q4', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q4', array(
-            'label' => '質問4',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '質問4',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_a4', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_a4', array(
-            'label' => '答え4',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '答え4',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_q5', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q5', array(
-            'label' => '質問5',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '質問5',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_a5', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_a5', array(
-            'label' => '答え5',
-            'type' => 'text',
-            'section' => 'site_feature',
+            'label'       => '答え5',
+            'type'        => 'text',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section5_info', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section5_info', array(
-            'label' => 'フリースペース（会社情報や商品情報など）',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'label'       => 'フリースペース（会社情報や商品情報など）',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section5_map', array(
-            'type' => 'option',
-            'default' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.2823422657766!2d139.77007871513112!3d35.71927413549223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e827551ab83%3A0x59f3effef9b46130!2z5p2x5Lqs6Jed6KGT5aSn5a2m!5e0!3m2!1sja!2sjp!4v1574213861441!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>',
+            'default'     => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.2823422657766!2d139.77007871513112!3d35.71927413549223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e827551ab83%3A0x59f3effef9b46130!2z5p2x5Lqs6Jed6KGT5aSn5a2m!5e0!3m2!1sja!2sjp!4v1574213861441!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section5_map', array(
-            'label' => '地図',
+            'label'       => '地図',
             'description' => 'GoogleMapの埋め込み機能を利用できます。',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section6_bk_color', array(
-            'type' => 'option',
-            'default' => '#1fb2aa',
+            'type'        => 'option',
+            'default'     => '#1fb2aa',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_bk_color', array(
-            'label' => 'セクション6の背景色',
+            'label'       => 'セクション6の背景色',
           )));
 
           $wp_customize->add_setting('site_feature_section6_color', array(
-            'type' => 'option',
-            'default' => '#ffffff',
+            'type'        => 'option',
+            'default'     => '#ffffff',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_color', array(
-            'label' => 'セクション6の文字色',
+            'label'       => 'セクション6の文字色',
           )));
 
 
           $wp_customize->add_setting('site_feature_section6_description', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section6_description', array(
-            'label' => 'セクション6の本文',
-            'type' => 'textarea',
-            'section' => 'site_feature',
+            'label'       => 'セクション6の本文',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
           ));
 
-
-//　よくある質問（5個/空白であれば出力なし） & コンタクト（お問い合わせ）CTAエリア &
-
       $wp_customize->add_section('site_cssfw', array(
-        'priority' => 4,
-        'title' => '4:デザインの設定',
-        'panel' => 'site_builder',
+        'priority'        => 4,
+        'title'           => '4:デザインの設定',
+        'panel'           => 'site_builder',
       ));
 
           $wp_customize->add_setting('site_cssfw_choice', array(
-            'default' => 'value2',
-            'type' => 'option',
+            'default'     => 'value2',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_cssfw_choice', array(
-            'label' => 'サイト全体の雰囲気',
+            'label'       => 'サイト全体の雰囲気',
             'description' => '現在2種類から選べます。',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => '開発者・デザイナー向け（CSS適用なし）',
-              'value2' => 'マテリアル',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => '開発者・デザイナー向け（CSS適用なし）',
+              'value2'    => 'マテリアル',
             ),
-            'section' => 'site_cssfw',
+            'section'     => 'site_cssfw',
           ));
 
       $wp_customize->add_section('site_font',array(
-        'priority' => 5,
-        'title' => '5:フォントの設定',
-        'panel' => 'site_builder',
+        'priority'        => 5,
+        'title'           => '5:フォントの設定',
+        'panel'           => 'site_builder',
       ));
 
           $wp_customize->add_setting('site_font_title', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_title', array(
-            'label' => 'サイトタイトルのフォント',
+            'label'       => 'サイトタイトルのフォント',
             'description' => '現在10種類からお選びいただけます。[注意：（）内の言語にしか適用されません]',
-            'type' => 'radio',
-            'choices' => array(
-                'value1' => 'デフォルト',
-                'value2' => 'ポップ（英）',
-                'value3' => '個性的（英）',
-                'value4' => '残像（英）',
-                'value5' => '近未来（英）',
-                'value6' => '切り抜き（英）',
-                'value7' => '手書き風（英）',
-                'value8' => 'カクカク（日・英）',
-                'value9' => 'はんなり（日）',
+            'type'        => 'radio',
+            'choices'     => array(
+                'value1'  => 'デフォルト',
+                'value2'  => 'ポップ（英）',
+                'value3'  => '個性的（英）',
+                'value4'  => '残像（英）',
+                'value5'  => '近未来（英）',
+                'value6'  => '切り抜き（英）',
+                'value7'  => '手書き風（英）',
+                'value8'  => 'カクカク（日・英）',
+                'value9'  => 'はんなり（日）',
                 'value10' => 'にくきゅう（日）'
             ),
-            'section' => 'site_font',
+            'section'     => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_body', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_body', array(
-            'label' => '全体（記事本文）のフォント',
+            'label'       => '全体（記事本文）のフォント',
             'description' => '現在3種類からお選びいただけます。',
-            'type' => 'radio',
-            'choices' => array(
-                'value1' => 'デフォルト',
-                'value2' => 'きっちり',
-                'value3' => '柔らかい',
+            'type'        => 'radio',
+            'choices'     => array(
+                'value1'  => 'デフォルト',
+                'value2'  => 'きっちり',
+                'value3'  => '柔らかい',
             ),
-            'section' => 'site_font',
+            'section'     => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_title_size', array(
-            'default' => 200,
-            'type' => 'option',
+            'default'     => 200,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_title_size', array(
-            'label' => 'サイトタイトルの文字サイズ',
+            'label'       => 'サイトタイトルの文字サイズ',
             'description' => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:200）',
-            'type' => 'number',
-            'section' => 'site_font',
+            'type'        => 'number',
+            'section'     => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_pc_size', array(
-            'default' => 100,
-            'type' => 'option',
+            'default'     => 100,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_pc_size', array(
-            'label' => '【PC】サイトの文字サイズ',
+            'label'       => '【PC】サイトの文字サイズ',
             'description' => '961px以上の画面幅で適用されます。（デフォルト:100）',
-            'type' => 'number',
-            'section' => 'site_font',
+            'type'        => 'number',
+            'section'     => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_tab_size', array(
-            'default' => 98,
-            'type' => 'option',
+            'default'     => 98,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_tab_size', array(
-            'label' => '【タブレット】サイトの文字サイズ',
+            'label'       => '【タブレット】サイトの文字サイズ',
             'description' => '561〜960pxまでの画面幅で適用されます。（デフォルト:98）',
-            'type' => 'number',
-            'section' => 'site_font',
+            'type'        => 'number',
+            'section'     => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_sp_size', array(
-            'default' => 95,
-            'type' => 'option',
+            'default'     => 95,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_font_sp_size', array(
-            'label' => '【スマホ】サイトの文字サイズ',
+            'label'       => '【スマホ】サイトの文字サイズ',
             'description' => '320〜560pxまでの画面幅で適用されます。（デフォルト:95）',
-            'section' => 'site_font',
-            'type' => 'number',
+            'section'     => 'site_font',
+            'type'        => 'number',
           ));
 
 
       $wp_customize->add_section('site_color',array(
-        'priority' => 6,
-        'title' => '6:色の設定',
-        'description' => '各パーツごとに色が設定できます。使い方の詳細や上手な使い方はこちら。',
-        'panel' => 'site_builder',
+        'priority'        => 6,
+        'title'           => '6:色の設定',
+        'description'     => '各パーツごとに色が設定できます。使い方の詳細や上手な使い方はこちら。',
+        'panel'           => 'site_builder',
       ));
 
           $wp_customize->add_setting('site_color_main', array(
-            'type' => 'option',
-            'default' => '#1a2760',
+            'type'        => 'option',
+            'default'     => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_main', array(
-            'label' => 'メインカラー',
-            'section' => 'site_color',
+            'label'       => 'メインカラー',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_sub', array(
-            'type' => 'option',
-            'default' => '#3bb3fa',
+            'type'        => 'option',
+            'default'     => '#3bb3fa',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_sub', array(
-            'label' => 'サブカラー',
-            'section' => 'site_color',
+            'label'       => 'サブカラー',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_acc', array(
-            'type' => 'option',
-            'default' => '#ff5757',
+            'type'        => 'option',
+            'default'     => '#ff5757',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(
-            'label' => 'アクセントカラー',
-            'section' => 'site_color',
+            'label'       => 'アクセントカラー',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_nav_bk', array(
-            'type' => 'option',
-            'default' => '#1a2760',
+            'type'        => 'option',
+            'default'     => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk', array(
-            'label' => 'ナビバーの背景色',
-            'section' => 'site_color',
+            'label'       => 'ナビバーの背景色',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_nav_color', array(
-            'type' => 'option',
-            'default' => '#ffffff'
+            'type'        => 'option',
+            'default'     => '#ffffff'
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_color', array(
-            'label' => 'ナビバーの文字色',
-            'section' => 'site_color',
+            'label'       => 'ナビバーの文字色',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_body_bk', array(
-            'type' => 'option',
-            'default' => '#f5f5f5',
+            'type'        => 'option',
+            'default'     => '#f5f5f5',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_bk', array(
-            'label' => 'コンテンツエリア全体の背景',
-            'section' => 'site_color',
+            'label'       => 'コンテンツエリア全体の背景',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_body_color', array(
-            'type' => 'option',
-            'default' => '#2b546a',
+            'type'        => 'option',
+            'default'     => '#2b546a',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
-            'label' => 'コンテンツエリア全体の文字色',
-            'section' => 'site_color',
+            'label'       => 'コンテンツエリア全体の文字色',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_footer_bk_color', array(
-            'type' => 'option',
-            'default' => '#1a2760',
+            'type'        => 'option',
+            'default'     => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_bk_color', array(
-            'label' => 'フッターの背景色',
-            'section' => 'site_color',
+            'label'       => 'フッターの背景色',
+            'section'     => 'site_color',
           )));
 
           $wp_customize->add_setting('site_color_footer_color', array(
-            'type' => 'option',
-            'default' => '#ffffff',
+            'type'        => 'option',
+            'default'     => '#ffffff',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_color', array(
-            'label' => 'フッターの文字色',
-            'section' => 'site_color',
+            'label'       => 'フッターの文字色',
+            'section'     => 'site_color',
           )));
 
-
-
-
       $wp_customize->add_section('site_nav',array(
-        'priority' => 7,
-        'title' => '7:ナビメニューの設定',
-        'panel' => 'site_builder',
+        'priority'        => 7,
+        'title'           => '7:ナビメニューの設定',
+        'panel'           => 'site_builder',
       ));
 
-      //背景の絶対位置化でダイナミックヘッダーと合成するオプションつける
-
           $wp_customize->add_setting('site_nav_width',array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_width',array(
-            'label' => 'ナビメニューの横幅に上限を設ける',
+            'label'       => 'ナビメニューの横幅に上限を設ける',
             'description' => 'コンテンツエリア（記事とサイドバーの部分）に設けている横幅とナビメニューの横幅を合わせます。',
-            'type' => 'checkbox',
-            'section' => 'site_nav',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_centering_title', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_centering_title', array(
-            'label' => 'サイトタイトルを中央寄せにする',
-            'type' => 'checkbox',
-            'section' => 'site_nav',
+            'label'       => 'サイトタイトルを中央寄せにする',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_fixed_top', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_fixed_top', array(
-            'label' => 'ナビメニューをサイト上部に固定する',
-            'type' => 'checkbox',
-            'section' => 'site_nav',
+            'label'       => 'ナビメニューをサイト上部に固定する',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_extended', array(
-            'default' => false,
-            'type' => 'option',
+            'default'     => false,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_extended', array(
-            'label' => 'ナビメニューにコンテンツを追加する',
-            'type' => 'checkbox',
-            'section' => 'site_nav',
+            'label'       => 'ナビメニューにコンテンツを追加する',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_extended_text', array(
-            'default' => 'これはサンプルです',
-            'type' => 'option',
+            'default'     => 'これはサンプルです',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_extended_text', array(
-            'label' => '追加するコンテンツのテキスト',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => '追加するコンテンツのテキスト',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_extended_uri', array(
-            'default' => 'https://takasaki.work/12hitoe',
-            'type' => 'option',
+            'default'     => 'https://takasaki.work/12hitoe',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_extended_uri', array(
-            'label' => '追加するコンテンツのボタンリンク先（URL）',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => '追加するコンテンツのボタンリンク先（URL）',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_list1', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list1', array(
-            'label' => 'メニューの下の英文字1',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => 'メニューの下の英文字1',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_list2', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list2', array(
-            'label' => 'メニューリストの下の英文字2',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => 'メニューリストの下の英文字2',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_list3', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list3', array(
-            'label' => 'メニューリストの下の英文字3',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => 'メニューリストの下の英文字3',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_list4', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list4', array(
-            'label' => 'メニューリストの下の英文字4',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => 'メニューリストの下の英文字4',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
           $wp_customize->add_setting('site_nav_list5', array(
-            'type' => 'option',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_nav_list5', array(
-            'label' => 'メニューリストの下の英文字5',
-            'type' => 'text',
-            'section' => 'site_nav',
+            'label'       => 'メニューリストの下の英文字5',
+            'type'        => 'text',
+            'section'     => 'site_nav',
           ));
 
       $wp_customize->add_section('site_article',array(
-        'priority' => 8,
-        'title' => '8:記事の設定',
-        'panel' => 'site_builder',
+        'priority'        => 8,
+        'title'           => '8:記事の設定',
+        'panel'           => 'site_builder',
       ));
 
-          // $wp_customize->add_setting('site_articleList_card_columns',array(
-          //   'default' => '2',
-          //   'type' => 'option',
-          //   'transport' => 'refresh',
-          // ));
-          //
-          // $wp_customize->add_control('site_articleList_card_columns',array(
-          //   'label' => '記事一覧のカラム',
-          //   'description' => '1〜3の中で選択して下さい。[注意：選択している組み合わせによっては上手く機能しない可能性もあります]',
-          //   'type' => 'radio',
-          //   'choices' => array(
-          //     'value1' => '1カラム',
-          //     'value2' => '2カラム',
-          //     'value3' => '3カラム',
-          //   ),
-          // ));
-
           $wp_customize->add_setting('site_article_list_type', array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_article_list_type', array(
-            'label' => '記事一覧のデザイン',
+            'label'       => '記事一覧のデザイン',
             'description' => 'トップ画面で表示する記事一覧のデザイン。現在4種類からお選びいただけます。',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => '縦/長めカード',
-              'value2' => '横/長めカード',
-              'value3' => 'サムネイルの上に文字',
-              'value4' => 'カテゴリの乗り方がなんかいい感じ',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => '縦/長めカード',
+              'value2'    => '横/長めカード',
+              'value3'    => 'サムネイルの上に文字',
+              'value4'    => 'カテゴリの乗り方がなんかいい感じ',
             ),
-            'section' => 'site_article',
+            'section'     => 'site_article',
           ));
 
           $wp_customize->add_setting('site_article_type' ,array(
-            'default' => 'value1',
-            'type' => 'option',
+            'default'     => 'value1',
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_article_type', array(
-            'label' => '記事ページデザイン',
+            'label'       => '記事ページデザイン',
             'description' => '記事詳細画面のデザイン設定。（固定ページにも同様のものが適用されます）',
-            'type' => 'radio',
-            'choices' => array(
-              'value1' => 'デザイン1',
-              'value2' => 'デザイン2',
-              'value3' => 'デザイン3',
-              'value4' => 'デザイン4',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+              'value4'    => 'デザイン4',
             ),
-            'section' => 'site_article'
+            'section'     => 'site_article'
           ));
 
           $wp_customize->add_setting('site_article_p_margin', array(
-            'default' => 0.5,
-            'type' => 'option',
+            'default'     => 0.5,
+            'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_article_p_margin', array(
-            'label' => 'pタグ下の余白調整',
+            'label'       => 'pタグ下の余白調整',
             'description' => 'pタグ下の余白を設定します。',
-            'type' => 'number',
-            'section' => 'site_article',
+            'type'        => 'number',
+            'section'     => 'site_article',
           ));
+
+
+      $wp_customize->add_section('site_decoration',array(
+        'priority'        => 9,
+        'title'           => '9:記事装飾の設定',
+        'panel'           => 'site_builder',
+      ));
+
+      $wp_customize->add_section('site_footer',array(
+        'priority'        => 10,
+        'title'           => '10:記事の設定',
+        'panel'           => 'site_builder',
+      ));
+
+          $wp_customize->add_setting('site_footer_credit', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_credit', array(
+            'label'       => 'フッターで12hitoeへのリンクを非表示にする',
+            'description' => '',
+            'type'        => 'checkbox',
+            'section'     => 'site_footer',
+          ));
+
 
 
 
