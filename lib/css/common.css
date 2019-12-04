@@ -888,6 +888,42 @@ a.tohomelink i{
   margin-left: -.5em;
 }
 
+/*SPフッターメニュー*/
+
+.navbar-fixed .footer_sp_menu{
+  bottom: 0;
+}
+
+.footer_sp_menu ul {
+  display: flex;
+}
+
+.footer_sp_menu ul li{
+  flex-grow: 2;
+}
+
+.footer_sp_menu ul li a{
+  position: relative;
+  height: 56px;
+  padding: 0;
+  text-align: center;
+}
+
+.footer_sp_menu ul li a i{
+  line-height: 56px;
+  width: 100%;
+}
+
+.footer_sp_menu ul li a span{
+  font-size: .75em;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 /**************** ショートコードに関するcss *******************/
 
 .sc_column{
