@@ -13,6 +13,9 @@
 - ショートコードに関するCSS
 - レスポンシブ
 
+項目名で検索かけると修正が便利
+そのうち、common.min.css作成
+
 =============
 */
 
@@ -871,6 +874,18 @@ article h3{
 
 .footer_widgets_wrap>div>.widget:last-of-type{
   margin-bottom: 0; /*フッターウィジェット内の最後の子要素は下に余白とらない（既に取ってるため）*/
+}
+
+a.tohomelink {
+  font-size: 1.5em;
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+a.tohomelink i{
+  margin-right: .5em;
+  margin-left: -.5em;
 }
 
 /**************** ショートコードに関するcss *******************/

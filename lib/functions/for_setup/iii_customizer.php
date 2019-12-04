@@ -937,12 +937,13 @@ function org_customizer($wp_customize){
       $wp_customize->add_section('site_color',array(
         'priority' => 6,
         'title' => '6:色の設定',
+        'description' => '各パーツごとに色が設定できます。使い方の詳細や上手な使い方はこちら。',
         'panel' => 'site_builder',
       ));
 
           $wp_customize->add_setting('site_color_main', array(
             'type' => 'option',
-            'default' => '#1fb2aa',
+            'default' => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_main', array(
@@ -952,7 +953,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_sub', array(
             'type' => 'option',
-            'default' => '#8ffff9',
+            'default' => '#3bb3fa',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_sub', array(
@@ -962,7 +963,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_acc', array(
             'type' => 'option',
-            'default' => '#f69b61',
+            'default' => '#ff5757',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(
@@ -972,7 +973,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_nav_bk', array(
             'type' => 'option',
-            'default' => '#1fb2aa',
+            'default' => '#1a2760',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk', array(
@@ -1009,6 +1010,28 @@ function org_customizer($wp_customize){
             'label' => 'コンテンツエリア全体の文字色',
             'section' => 'site_color',
           )));
+
+          $wp_customize->add_setting('site_color_footer_bk_color', array(
+            'type' => 'option',
+            'default' => '#1a2760',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_bk_color', array(
+            'label' => 'フッターの背景色',
+            'section' => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_color_footer_color', array(
+            'type' => 'option',
+            'default' => '#ffffff',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_color', array(
+            'label' => 'フッターの文字色',
+            'section' => 'site_color',
+          )));
+
+
 
 
       $wp_customize->add_section('site_nav',array(
@@ -1302,9 +1325,9 @@ function add_customizerCSS(){
 
   /*** サイトの文字サイズ ***/
   $titleSize  = get_option('site_font_title_size')  ? get_option('site_font_title_size') : '200';
-  $pcSize     = get_option('site_font_pc_size')     ? get_option('site_font_pc_size') : '100';
-  $tabSize    = get_option('site_font_tab_size')    ? get_option('site_font_tab_size') : '98';
-  $spSize     = get_option('site_font_sp_size')     ? get_option('site_font_sp_size') : '95';
+  $pcSize     = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')    : '100';
+  $tabSize    = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')   : '98';
+  $spSize     = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')    : '95';
 
 
   /*ナビメニューの横幅*/
@@ -1316,13 +1339,15 @@ function add_customizerCSS(){
   $navEn5 = get_option('site_nav_list5');
 
   /*色の設定*/
-  $main_c   = get_option('site_color_main')       ? get_option('site_color_main')       : '#1fb2aa';
-  $sub_c    = get_option('site_color_sub')        ? get_option('site_color_sub')        : '#8ffff9';
-  $acc_c    = get_option('site_color_acc')        ? get_option('site_color_acc')        : '#f69b61';
-  $nav_bk   = get_option('site_color_nav_bk')     ? get_option('site_color_nav_bk')     : '#1fb2aa';
-  $body_bk  = get_option('site_color_body_bk')    ? get_option('site_color_body_bk')    : '#f5f5f5';
-  $nav_c    = get_option('site_color_nav_color')  ? get_option('site_color_nav_color')  : '#ffffff';
-  $body_c   = get_option('site_color_body_color') ? get_option('site_color_body_color') : '#2b546a';
+  $main_c   = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
+  $sub_c    = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
+  $acc_c    = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff5757';
+  $nav_bk   = get_option('site_color_nav_bk')           ? get_option('site_color_nav_bk')           : '#1a2760';
+  $nav_c    = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
+  $body_bk  = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
+  $body_c   = get_option('site_color_body_color')       ? get_option('site_color_body_color')       : '#2b546a';
+  $foot_bk  = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
+  $foot_c   = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
 
   /*記事に関する設定*/
   $p_margin = get_option('site_article_p_margin') ? get_option('site_article_p_margin') : '0.5';
@@ -1381,6 +1406,8 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 /*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
+footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
+a.tohomelink{color:<?php echo $foot_c ?>;}
 /****************************
 *****************************
 記事****************************

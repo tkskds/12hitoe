@@ -1,5 +1,5 @@
-    <footer id="footer" class="footer">
-      <div class="footer_container">
+    <footer id="footer" class="footer page-footer">
+      <div class="footer_container container">
         <?php
           if(
             is_active_sidebar('footer_left_widget')||
@@ -24,6 +24,7 @@
             <?php endif; ?>
           </div>
         <?php endif; ?>
+        <a href="<?php echo home_url(); ?>" class="tohomelink"><i class="fas fa-home"></i>HOME</a>
         <?php
           wp_nav_menu(array(
             'theme_location' => 'nav_footer',
@@ -33,6 +34,12 @@
             'fallback_cb' => ''
           ));
         ?>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span>©<?php echo date('Y'); ?></span><span><?php echo bloginfo('name'); ?></span>
+          <a class="grey-text text-lighten-4 right" href="https://takasaki.work/12hitoe">CreatedBy12hitoe</a>
+        </div>
       </div>
     </footer>
     <a href="#" class="btn-floating btn-large waves-effect waves-light gototop acc__color"><i class="material-icons">expand_less</i></a>
