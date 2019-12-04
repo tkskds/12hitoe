@@ -1,39 +1,39 @@
 <?php
-  $title = get_option('site_feature_section_ttl');
-  $description = get_option('site_feature_section_description');
-  $fadein = get_option('site_feature_section_animation');
-  $item1Icn = get_option('site_feature_section_item1_icon') ? get_option('site_feature_section_item1_icon') : '<i class="fas fa-shield-alt"></i>';
-  $item1Ttl = get_option('site_feature_section_item1_ttl');
-  $item1Dsc = get_option('site_feature_section_item1_description');
-  $item2Icn = get_option('site_feature_section_item2_icon') ? get_option('site_feature_section_item2_icon') : '<i class="fas fa-heartbeat"></i>';
-  $item2Ttl = get_option('site_feature_section_item2_ttl');
-  $item2Dsc = get_option('site_feature_section_item2_description');
-  $item3Icn = get_option('site_feature_section_item3_icon') ? get_option('site_feature_section_item3_icon') : '<i class="fas fa-coins"></i>';
-  $item3Ttl = get_option('site_feature_section_item3_ttl');
-  $item3Dsc = get_option('site_feature_section_item3_description');
-  $sec2ttl = get_option('site_feature_section2_ttl');
-  $sec2dsc = get_option('site_feature_section2_description');
-  $sec2bkImg = get_option('site_feature_section2_bk_img');
-  $sec2bkColor = get_option('site_feature_section2_bk_color');
-  $sec3ttl = get_option('site_feature_section3_ttl');
-  $sec3dsc = get_option('site_feature_section3_description');
-  $sec3bkImg = get_option('site_feature_section3_bk_img');
-  $sec3bkColor = get_option('site_feature_section3_bk_color');
-  $sec4q1 = get_option('site_feature_q1');
-  $sec4a1 = get_option('site_feature_a1');
-  $sec4q2 = get_option('site_feature_q2');
-  $sec4a2 = get_option('site_feature_a2');
-  $sec4q3 = get_option('site_feature_q3');
-  $sec4a3 = get_option('site_feature_a3');
-  $sec4q4 = get_option('site_feature_q4');
-  $sec4a4 = get_option('site_feature_a4');
-  $sec4q5 = get_option('site_feature_q5');
-  $sec4a5 = get_option('site_feature_a5');
-  $sec5info = get_option('site_feature_section5_info');
-  $sec5map = get_option('site_feature_section5_map');
-  $sec6dsc = get_option('site_feature_section6_description');
-  $sec6bkImg = get_option('site_feature_section6_bk_img');
-  $sec6bkColor = get_option('site_feature_section6_bk_color');
+  $title        = get_option('site_feature_section_ttl');
+  $description  = get_option('site_feature_section_description');
+  $fadein       = get_option('site_feature_section_animation');
+  $item1Icn     = get_option('site_feature_section_item1_icon')         ? get_option('site_feature_section_item1_icon') : '<i class="fas fa-shield-alt"></i>';
+  $item1Ttl     = get_option('site_feature_section_item1_ttl');
+  $item1Dsc     = get_option('site_feature_section_item1_description');
+  $item2Icn     = get_option('site_feature_section_item2_icon')         ? get_option('site_feature_section_item2_icon') : '<i class="fas fa-heartbeat"></i>';
+  $item2Ttl     = get_option('site_feature_section_item2_ttl');
+  $item2Dsc     = get_option('site_feature_section_item2_description');
+  $item3Icn     = get_option('site_feature_section_item3_icon')         ? get_option('site_feature_section_item3_icon') : '<i class="fas fa-coins"></i>';
+  $item3Ttl     = get_option('site_feature_section_item3_ttl');
+  $item3Dsc     = get_option('site_feature_section_item3_description');
+  $sec2ttl      = get_option('site_feature_section2_ttl');
+  $sec2dsc      = get_option('site_feature_section2_description');
+  $sec2bkImg    = get_option('site_feature_section2_bk_img');
+  $sec2bkColor  = get_option('site_feature_section2_bk_color');
+  $sec3ttl      = get_option('site_feature_section3_ttl');
+  $sec3dsc      = get_option('site_feature_section3_description');
+  $sec3bkImg    = get_option('site_feature_section3_bk_img');
+  $sec3bkColor  = get_option('site_feature_section3_bk_color');
+  $sec4q1       = get_option('site_feature_q1');
+  $sec4a1       = get_option('site_feature_a1');
+  $sec4q2       = get_option('site_feature_q2');
+  $sec4a2       = get_option('site_feature_a2');
+  $sec4q3       = get_option('site_feature_q3');
+  $sec4a3       = get_option('site_feature_a3');
+  $sec4q4       = get_option('site_feature_q4');
+  $sec4a4       = get_option('site_feature_a4');
+  $sec4q5       = get_option('site_feature_q5');
+  $sec4a5       = get_option('site_feature_a5');
+  $sec5info     = get_option('site_feature_section5_info');
+  $sec5map      = get_option('site_feature_section5_map');
+  $sec6dsc      = get_option('site_feature_section6_description');
+  $sec6bkImg    = get_option('site_feature_section6_bk_img');
+  $sec6bkColor  = get_option('site_feature_section6_bk_color');
 ?>
 
 <div class="features">
@@ -81,20 +81,20 @@
       <?php endif; ?>
     </div>
   </section>
-  <?php endif; ?>
+<?php endif; //END sec2 ?>
 
   <?php if($sec3ttl!=null || $sec3dsc!=null): ?>
   <section class="feature3">
     <div class="container featureContainer">
       <?php if($sec3ttl!=null): ?>
         <h2<?php if ($fadein == true){echo ' class="fadein"';} ?>><?php echo $sec3ttl ?></h2>
-      <?php endif; ?>
+      <?php endif; //END sec3ttl ?>
       <?php if($sec3dsc!=null): ?>
         <p<?php if ($fadein == true){echo ' class="fadein"';} ?>><?php echo $sec3dsc ?></p>
-      <?php endif; ?>
+      <?php endif; //END sec3dec ?>
     </div>
   </section>
-  <?php endif; ?>
+<?php endif; //END sec3 ?>
 
   <?php if($sec4q1 != null): ?>
     <section class="feature4">
@@ -116,7 +116,7 @@
                 <p><?php echo $sec4a2 ?></p>
                 </div>
             </div>
-          <?php endif; ?>
+          <?php endif; //END Q2 ?>
           <?php if($sec4q3 != null): ?>
             <div class="feature_actab">
               <input id="feature_tabfour3" type="checkbox" name="tabs">
@@ -125,7 +125,7 @@
                 <p><?php echo $sec4a3 ?></p>
                 </div>
             </div>
-          <?php endif; ?>
+          <?php endif; //END Q3 ?>
           <?php if($sec4q4 != null): ?>
             <div class="feature_actab">
               <input id="feature_tabfour4" type="checkbox" name="tabs">
@@ -134,7 +134,7 @@
                 <p><?php echo $sec4a4 ?></p>
                 </div>
             </div>
-          <?php endif; ?>
+          <?php endif; //END Q4 ?>
           <?php if($sec4q5 != null): ?>
             <div class="feature_actab">
               <input id="feature_tabfour5" type="checkbox" name="tabs">
@@ -143,11 +143,11 @@
                 <p><?php echo $sec4a5 ?></p>
                 </div>
             </div>
-          <?php endif; ?>
+          <?php endif; //END Q5 ?>
         </div>
       </div>
     </section>
-  <?php endif; ?>
+  <?php endif; //END sec4 ?>
 
   <?php if($sec5info != null || $sec5map != null): ?>
     <section class="feature5">
@@ -166,7 +166,7 @@
       <?php endif; ?>
       </div>
     </section>
-  <?php endif; ?>
+  <?php endif; //END sec5 ?>
 
   <?php if($sec6dsc!=null): ?>
   <section class="feature6">
@@ -174,10 +174,6 @@
       <?php echo $sec6dsc ?>
     </div>
   </section>
-  <?php endif; ?>
+<?php endif; //END sec6 ?>
 
 </div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/lib/js/fadein.js"></script>

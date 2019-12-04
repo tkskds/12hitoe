@@ -4,20 +4,20 @@
   $goToTop    = get_option('site_footer_gototop')             ? get_option('site_footer_gototop')          : false ;
   $shareBtn   = get_option('site_footer_share')               ? get_option('site_footer_share')            : false ;
   $spfooter   = get_option('site_footer_sp_menu')             ? get_option('site_footer_sp_menu')          : false ;
-  $li1icon    = get_option('site_footer_sp_menu_li1_icon')    ? get_option('site_footer_sp_menu_li1_icon') : '' ;
-  $li1text    = get_option('site_footer_sp_menu_li1_ttl')     ? get_option('site_footer_sp_menu_li1_ttl')  : '' ;
+  $li1icon    = get_option('site_footer_sp_menu_li1_icon')    ? get_option('site_footer_sp_menu_li1_icon') : '<i class="fas fa-bars"></i>' ;
+  $li1text    = get_option('site_footer_sp_menu_li1_ttl')     ? get_option('site_footer_sp_menu_li1_ttl')  : 'MENU' ;
   $li1uri     = get_option('site_footer_sp_menu_li1_uri')     ? get_option('site_footer_sp_menu_li1_uri')  : '#';
-  $li2icon    = get_option('site_footer_sp_menu_li2_icon')    ? get_option('site_footer_sp_menu_li2_icon') : '' ;
-  $li2text    = get_option('site_footer_sp_menu_li2_ttl')     ? get_option('site_footer_sp_menu_li2_ttl')  : '' ;
+  $li2icon    = get_option('site_footer_sp_menu_li2_icon')    ? get_option('site_footer_sp_menu_li2_icon') : '<i class="fas fa-paper-plane"></i>' ;
+  $li2text    = get_option('site_footer_sp_menu_li2_ttl')     ? get_option('site_footer_sp_menu_li2_ttl')  : 'CONTACT' ;
   $li2uri     = get_option('site_footer_sp_menu_li2_uri')     ? get_option('site_footer_sp_menu_li2_uri')  : '#';
-  $li3icon    = get_option('site_footer_sp_menu_li3_icon')    ? get_option('site_footer_sp_menu_li3_icon') : '' ;
-  $li3text    = get_option('site_footer_sp_menu_li3_ttl')     ? get_option('site_footer_sp_menu_li3_ttl')  : '' ;
+  $li3icon    = get_option('site_footer_sp_menu_li3_icon')    ? get_option('site_footer_sp_menu_li3_icon') : '<i class="fas fa-home"></i>' ;
+  $li3text    = get_option('site_footer_sp_menu_li3_ttl')     ? get_option('site_footer_sp_menu_li3_ttl')  : 'HOME' ;
   $li3uri     = get_option('site_footer_sp_menu_li3_uri')     ? get_option('site_footer_sp_menu_li3_uri')  : '#';
-  $li4icon    = get_option('site_footer_sp_menu_li4_icon')    ? get_option('site_footer_sp_menu_li4_icon') : '' ;
-  $li4text    = get_option('site_footer_sp_menu_li4_ttl')     ? get_option('site_footer_sp_menu_li4_ttl')  : '' ;
+  $li4icon    = get_option('site_footer_sp_menu_li4_icon')    ? get_option('site_footer_sp_menu_li4_icon') : '<i class="fas fa-phone"></i>' ;
+  $li4text    = get_option('site_footer_sp_menu_li4_ttl')     ? get_option('site_footer_sp_menu_li4_ttl')  : 'TEL' ;
   $li4uri     = get_option('site_footer_sp_menu_li4_uri')     ? get_option('site_footer_sp_menu_li4_uri')  : '#';
-  $li5icon    = get_option('site_footer_sp_menu_li5_icon')    ? get_option('site_footer_sp_menu_li5_icon') : '' ;
-  $li5text    = get_option('site_footer_sp_menu_li5_ttl')     ? get_option('site_footer_sp_menu_li5_ttl')  : '' ;
+  $li5icon    = get_option('site_footer_sp_menu_li5_icon')    ? get_option('site_footer_sp_menu_li5_icon') : '<i class="fas fa-question-circle"></i>' ;
+  $li5text    = get_option('site_footer_sp_menu_li5_ttl')     ? get_option('site_footer_sp_menu_li5_ttl')  : 'Q&A' ;
   $li5uri     = get_option('site_footer_sp_menu_li5_uri')     ? get_option('site_footer_sp_menu_li5_uri')  : '#';
 
 

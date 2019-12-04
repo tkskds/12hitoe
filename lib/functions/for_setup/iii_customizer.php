@@ -1260,7 +1260,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_footer_sp_menu_li1_ttl', array(
-            'default'     => 'よくある質問',
+            'default'     => 'MENU',
             'type'        => 'option',
           ));
 
