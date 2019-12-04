@@ -1,9 +1,25 @@
 <?php
 
-  $credit   = get_option('site_footer_credit')  ? get_option('site_footer_credit')  : false ;
-  $goToTop  = get_option('site_footer_gototop') ? get_option('site_footer_gototop') : false ;
-  $shareBtn = get_option('site_footer_share')   ? get_option('site_footer_share')   : false ;
-  $spfooter = get_option('site_footer_sp_menu') ? get_option('site_footer_sp_menu') : false ;
+  $credit     = get_option('site_footer_credit')              ? get_option('site_footer_credit')           : false ;
+  $goToTop    = get_option('site_footer_gototop')             ? get_option('site_footer_gototop')          : false ;
+  $shareBtn   = get_option('site_footer_share')               ? get_option('site_footer_share')            : false ;
+  $spfooter   = get_option('site_footer_sp_menu')             ? get_option('site_footer_sp_menu')          : false ;
+  $li1icon    = get_option('site_footer_sp_menu_li1_icon')    ? get_option('site_footer_sp_menu_li1_icon') : '' ;
+  $li1text    = get_option('site_footer_sp_menu_li1_ttl')     ? get_option('site_footer_sp_menu_li1_ttl')  : '' ;
+  $li1uri     = get_option('site_footer_sp_menu_li1_uri')     ? get_option('site_footer_sp_menu_li1_uri')  : '#';
+  $li2icon    = get_option('site_footer_sp_menu_li2_icon')    ? get_option('site_footer_sp_menu_li2_icon') : '' ;
+  $li2text    = get_option('site_footer_sp_menu_li2_ttl')     ? get_option('site_footer_sp_menu_li2_ttl')  : '' ;
+  $li2uri     = get_option('site_footer_sp_menu_li2_uri')     ? get_option('site_footer_sp_menu_li2_uri')  : '#';
+  $li3icon    = get_option('site_footer_sp_menu_li3_icon')    ? get_option('site_footer_sp_menu_li3_icon') : '' ;
+  $li3text    = get_option('site_footer_sp_menu_li3_ttl')     ? get_option('site_footer_sp_menu_li3_ttl')  : '' ;
+  $li3uri     = get_option('site_footer_sp_menu_li3_uri')     ? get_option('site_footer_sp_menu_li3_uri')  : '#';
+  $li4icon    = get_option('site_footer_sp_menu_li4_icon')    ? get_option('site_footer_sp_menu_li4_icon') : '' ;
+  $li4text    = get_option('site_footer_sp_menu_li4_ttl')     ? get_option('site_footer_sp_menu_li4_ttl')  : '' ;
+  $li4uri     = get_option('site_footer_sp_menu_li4_uri')     ? get_option('site_footer_sp_menu_li4_uri')  : '#';
+  $li5icon    = get_option('site_footer_sp_menu_li5_icon')    ? get_option('site_footer_sp_menu_li5_icon') : '' ;
+  $li5text    = get_option('site_footer_sp_menu_li5_ttl')     ? get_option('site_footer_sp_menu_li5_ttl')  : '' ;
+  $li5uri     = get_option('site_footer_sp_menu_li5_uri')     ? get_option('site_footer_sp_menu_li5_uri')  : '#';
+
 
 ?>
 
@@ -74,7 +90,52 @@
     </div>
     <?php endif; ?>
     <?php if ($spfooter == true && wp_is_mobile()) : ?>
-
+      <div class="navbar-fixed">
+        <nav class="footer_sp_menu">
+          <ul>
+            <?php if ($li1icon != null) : ?>
+              <li>
+                <a href="<?php echo $li1uri ?>">
+                  <?php echo $li1icon ?>
+                  <span><?php echo $li1text ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if ($li2icon != null) : ?>
+              <li>
+                <a href="<?php echo $li2uri ?>">
+                  <?php echo $li2icon ?>
+                  <span><?php echo $li2text ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if ($li3icon != null) : ?>
+              <li>
+                <a href="<?php echo $li3uri ?>">
+                  <?php echo $li3icon ?>
+                  <span><?php echo $li3text ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if ($li4icon != null) : ?>
+              <li>
+                <a href="<?php echo $li4uri ?>">
+                  <?php echo $li4icon ?>
+                  <span><?php echo $li4text ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+            <?php if ($li5icon != null) : ?>
+              <li>
+                <a href="<?php echo $li5uri ?>">
+                  <?php echo $li5icon ?>
+                  <span><?php echo $li5text ?></span>
+                </a>
+              </li>
+            <?php endif; ?>
+          </ul>
+        </nav>
+      </div>
     <?php  endif; ?>
 
     <?php get_template_part('parts/footer/link_js') ?>

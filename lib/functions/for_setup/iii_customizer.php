@@ -1271,6 +1271,17 @@ function org_customizer($wp_customize){
             'section'     => 'site_footer',
           ));
 
+          $wp_customize->add_setting('site_footer_sp_menu_li1_uri', array(
+            'default'     => '#',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li1_uri', array(
+            'label'       => '独自メニュー1のリンク先',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
           $wp_customize->add_setting('site_footer_sp_menu_li2_icon', array(
             'default'     => '<i class="fas fa-paper-plane"></i>',
             'type'        => 'option',
@@ -1291,6 +1302,17 @@ function org_customizer($wp_customize){
           $wp_customize->add_control('site_footer_sp_menu_li2_ttl', array(
             'label'       => '独自メニュー2のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li2_uri', array(
+            'default'     => '#',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li2_uri', array(
+            'label'       => '独自メニュー2のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
@@ -1319,6 +1341,17 @@ function org_customizer($wp_customize){
             'section'     => 'site_footer',
           ));
 
+          $wp_customize->add_setting('site_footer_sp_menu_li3_uri', array(
+            'default'     => '#',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li3_uri', array(
+            'label'       => '独自メニュー3のリンク先',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
           $wp_customize->add_setting('site_footer_sp_menu_li4_icon', array(
             'default'     => '<i class="fas fa-phone"></i>',
             'type'        => 'option',
@@ -1343,6 +1376,17 @@ function org_customizer($wp_customize){
             'section'     => 'site_footer',
           ));
 
+          $wp_customize->add_setting('site_footer_sp_menu_li4_uri', array(
+            'default'     => '#',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li4_uri', array(
+            'label'       => '独自メニュー4のリンク先',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
           $wp_customize->add_setting('site_footer_sp_menu_li5_icon', array(
             'default'     => '<i class="fas fa-question-circle"></i>',
             'type'        => 'option',
@@ -1363,6 +1407,17 @@ function org_customizer($wp_customize){
           $wp_customize->add_control('site_footer_sp_menu_li5_ttl', array(
             'label'       => '独自メニュー5のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
+            'type'        => 'text',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_li5_uri', array(
+            'default'     => '#',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_li5_uri', array(
+            'label'       => '独自メニュー5のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
