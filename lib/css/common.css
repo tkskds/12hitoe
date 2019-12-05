@@ -401,6 +401,7 @@ li.sidenav-ttl {
 
 .features h2{
   font-size: 2em;
+  padding-top: 20px;
 }
 
 .feature_qanda h2::before {
@@ -699,11 +700,15 @@ article{
   width: 100%;
 }
 
-article {
+article{
   max-width: 960px;
   margin: 20px auto;
   border-radius: 5px;
   background: white;
+}
+
+article.notFound{
+  margin-top: 0;
 }
 
 .article_container{
@@ -731,6 +736,10 @@ article h2{
 
 article h3{
   font-size: 1.25em;
+}
+
+article h4{
+  font-size: 1.2em;
 }
 
 .article_meta_info,
@@ -828,8 +837,9 @@ h4.search_result_ttl {
   font-size: 1.5em;
   line-height: 1.2;
   position: relative;
-  margin: 20px 0;
-  padding-left: 25px;
+  margin: 20px auto 10px;
+  padding: 0 10px 0 45px;
+  max-width: 960px;
 }
 
 h4.search_result_ttl::before {
@@ -838,7 +848,7 @@ h4.search_result_ttl::before {
   font-weight: bold;
   position: absolute;
   height: 1em;
-  left: 0;
+  left: 10px;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -1006,6 +1016,9 @@ a.tohomelink i{
   .article_tag{
     padding: 0 30px;
     margin: 0 0 10px 0;
+  }
+  .aside{
+    width: 100%;
   }
 }
 
