@@ -1,6 +1,6 @@
 <?php
-  $sideOn = get_option('site_bone_type');
-  $articleType = get_option('site_article_type');
+  $sideOn      = get_option('site_bone_type')     ? get_option('site_bone_type')    : 'value1' ;
+  $articleType = get_option('site_article_type')  ? get_option('site_article_type') : 'value1' ;
  ?>
 
 <?php get_header(); ?>

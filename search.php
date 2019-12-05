@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-<?php $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ; ?>
-<?php if($siteType != 'value4'): ?>
   <div class="row contentArea">
     <main id="main"
           class="<?php
@@ -21,5 +19,4 @@
     </main>
     <?php if ($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
-<?php endif; ?>
 <?php get_footer(); ?>

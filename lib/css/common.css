@@ -26,10 +26,10 @@
 html{
   -webkit-scroll-behavior: smooth; /* IE safari EDGE未対応 */
   scroll-behavior: smooth; /* IE safari EDGE 未対応 */
+  font-size:16px;
 }
 
 body{
-  font-size:16px;
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333;
   animation: fadeIn 1s ease-in;
@@ -388,7 +388,7 @@ li.sidenav-ttl {
 
 
 .features section{
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .features h2,
@@ -401,6 +401,14 @@ li.sidenav-ttl {
 
 .features h2{
   font-size: 2em;
+}
+
+.feature_qanda h2::before {
+  content: "FAQ";
+  display: block;
+  line-height: 1;
+  font-size: .5em;
+  margin-bottom: 1em;
 }
 
 .f_ttl,
@@ -817,13 +825,23 @@ article h3{
 /****************         記事装飾        *******************/
 
 h4.search_result_ttl {
-  margin: 20px auto 10px;
+  font-size: 1.5em;
+  line-height: 1.2;
+  position: relative;
+  margin: 20px 0;
+  padding-left: 25px;
 }
 
 h4.search_result_ttl::before {
   font-family: "Font Awesome 5 Free";
   content: "\f002";
   font-weight: bold;
+  position: absolute;
+  height: 1em;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
 
