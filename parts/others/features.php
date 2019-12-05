@@ -98,53 +98,63 @@
 
   <?php if($sec4q1 != null): ?>
     <section class="feature4">
-      <div class="container featureContainer">
-        <div class="feature_qanda <?php if ($fadein == true){echo ' fadein';} ?>">
-          <h2>よくある質問</h2>
-          <div class="feature_actab">
-            <input id="feature_tabfour1" type="checkbox" name="tabs">
-            <label for="feature_tabfour1"><?php echo $sec4q1 ?></label>
-            	<div class="feature_actab-content">
-            	<p><?php echo $sec4a1 ?></p>
-            	</div>
-          </div>
+      <div class="container featureContainer<?php if ($fadein == true){echo ' fadein';} ?>">
+        <h2>よくある質問</h2>
+        <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                <i class="fas fa-question-circle"></i>
+                <?php echo $sec4q1 ?>
+              </div>
+              <div class="collapsible-body">
+                <span><?php echo $sec4a1 ?></span>
+              </div>
+            </li>
           <?php if($sec4q2 != null): ?>
-            <div class="feature_actab">
-              <input id="feature_tabfour2" type="checkbox" name="tabs">
-              <label for="feature_tabfour2"><?php echo $sec4q2 ?></label>
-                <div class="feature_actab-content">
-                <p><?php echo $sec4a2 ?></p>
-                </div>
-            </div>
+            <li>
+              <div class="collapsible-header">
+                <i class="fas fa-question-circle"></i>
+                <?php echo $sec4q2 ?>
+              </div>
+              <div class="collapsible-body">
+                <span><?php echo $sec4a2 ?></span>
+              </div>
+            </li>
           <?php endif; //END Q2 ?>
           <?php if($sec4q3 != null): ?>
-            <div class="feature_actab">
-              <input id="feature_tabfour3" type="checkbox" name="tabs">
-              <label for="feature_tabfour3"><?php echo $sec4q3 ?></label>
-                <div class="feature_actab-content">
-                <p><?php echo $sec4a3 ?></p>
-                </div>
-            </div>
+            <li>
+              <div class="collapsible-header">
+                <i class="fas fa-question-circle"></i>
+                <?php echo $sec4q3 ?>
+              </div>
+              <div class="collapsible-body">
+                <span><?php echo $sec4a3 ?></span>
+              </div>
+            </li>
           <?php endif; //END Q3 ?>
           <?php if($sec4q4 != null): ?>
-            <div class="feature_actab">
-              <input id="feature_tabfour4" type="checkbox" name="tabs">
-              <label for="feature_tabfour4"><?php echo $sec4q4 ?></label>
-                <div class="feature_actab-content">
-                <p><?php echo $sec4a4 ?></p>
-                </div>
-            </div>
+            <li>
+              <div class="collapsible-header">
+                <i class="fas fa-question-circle"></i>
+                <?php echo $sec4q4 ?>
+              </div>
+              <div class="collapsible-body">
+                <span><?php echo $sec4a4 ?></span>
+              </div>
+            </li>
           <?php endif; //END Q4 ?>
           <?php if($sec4q5 != null): ?>
-            <div class="feature_actab">
-              <input id="feature_tabfour5" type="checkbox" name="tabs">
-              <label for="feature_tabfour5"><?php echo $sec4q5 ?></label>
-                <div class="feature_actab-content">
-                <p><?php echo $sec4a5 ?></p>
-                </div>
-            </div>
+            <li>
+              <div class="collapsible-header">
+                <i class="fas fa-question-circle"></i>
+                <?php echo $sec4q5 ?>
+              </div>
+              <div class="collapsible-body">
+                <span><?php echo $sec4a5 ?></span>
+              </div>
+            </li>
           <?php endif; //END Q5 ?>
-        </div>
+        </ul>
       </div>
     </section>
   <?php endif; //END sec4 ?>
