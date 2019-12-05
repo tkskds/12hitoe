@@ -8,9 +8,11 @@
 - 特徴部分
 - 記事一覧
 - 記事詳細
+- 記事装飾（見出しなど）
 - サイドバー
 - フッター
-- ショートコードに関するCSS
+- ウィジェット
+- ショートコード
 - レスポンシブ
 
 項目名で検索かけると修正が便利
@@ -812,6 +814,19 @@ article h3{
   line-height: 30px;
 }
 
+/****************         記事装飾        *******************/
+
+h4.search_result_ttl {
+  margin: 20px auto 10px;
+}
+
+h4.search_result_ttl::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: bold;
+}
+
+
 /****************        サイドバー       *******************/
 
 /*最初の要素の上に20pxの余白*/
@@ -927,11 +942,16 @@ a.tohomelink i{
   text-align: center;
 }
 
-.footerArea .modal .search_form_wrap{
+
+/****************      ウィジェット       *******************/
+
+/*** 検索窓 ***/
+.search_form_wrap{
   display: flex;
 }
 
-/**************** ショートコードに関するcss *******************/
+
+/****************      ショートコード     *******************/
 
 .sc_column{
   display: flex;
@@ -950,13 +970,6 @@ a.tohomelink i{
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
-  }
-  /*2カラム時の左右のパディングを調整*/
-  .contentArea>.col:nth-child(1){
-    padding-left: 0;
-  }
-  .contentArea>.col:nth-child(2){
-    padding-right: 0;
   }
 }
 

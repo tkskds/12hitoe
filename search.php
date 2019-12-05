@@ -9,7 +9,7 @@
                       echo 'col l9';
                       }
                   ?> main">
-      <h1><?php the_search_query(); ?> の検索結果</h1>
+      <h4 class="search_result_ttl">「<?php the_search_query(); ?>」の検索結果</h4>
       <div class="main__container">
         <?php if (have_posts() && get_search_query()) : while (have_posts()) : the_post();?>
           <?php get_template_part('parts/others/loop') ?>
