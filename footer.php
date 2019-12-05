@@ -51,13 +51,13 @@
             </div>
           <?php endif; //END フッターウィジェット ?>
           <a href="<?php echo home_url(); ?>" class="tohomelink"><i class="fas fa-home"></i>HOME</a>
-          <?php
+          <?php // フッターメニュー
             wp_nav_menu(array(
               'theme_location' => 'nav_footer',
               'container' => 'nav',
               'container_id' => 'nav_footer',
               'container_class' => 'nav_footer',
-              'fallback_cb' => ''
+              'fallback_cb' => '',
             ));
           ?>
         </div>
@@ -96,40 +96,40 @@
       <?php if ($spfooter == true && wp_is_mobile()) : ?>
         <div class="navbar-fixed">
           <nav class="footer_sp_menu">
-            <?php if($menuDesign == 'value1') : ?>
+            <?php if($menuDesign == 'value1') : //オリジナルフッターメニューデザイン1 ?>
               <ul>
                 <li>
                   <a href="#" data-target="mobile-demo" class="waves-effect sidenav-trigger">
-                    <i class="material-icons">menu</i>
+                    <i class="material-icons">list</i>
                   </a>
                 </li>
                 <li>
                   <a href="#modalSearch" class="waves-effect modal-trigger">
-
+                    <i class="material-icons">search</i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-
+                  <a href="#" class="waves-effect fixed-action-btn">
+                    <i class="material-icons">share</i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-
+                  <a href="#" class="waves-effect">
+                    <i class="material-icons">expand_less</i>
                   </a>
                 </li>
               </ul>
               <div id="modalSearch" class="modal">
                 <div class="modal-content">
-                  <h4>Modal Header</h4>
-                  <p>A bunch of text</p>
+                  <h4>Search!</h4>
+                  <?php get_search_form(); ?>
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
+                  <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
                 </div>
               </div>
             <?php endif; //END $menuDesign == value1 ?>
-            <?php if($menuDesign == 'value2') : ?>
+            <?php if($menuDesign == 'value2') : //オリジナルフッターメニューデザイン2 ?>
             <ul>
               <?php if ($li1icon != null) : ?>
                 <li>

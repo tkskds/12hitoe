@@ -276,15 +276,7 @@ li.sidenav-ttl {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.dyheaderBkImgFil3::after{
-  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/dot.png") repeat;
-}
-.dyheaderBkImgFil4::after{
-  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/line.png") repeat;
-}
-.dyheaderBkImgFil5::after{
-  background: url("/wp-content/themes/12hitoe-master/images/dyheader_fil/ruledLine.png") repeat;
-}
+/*dyheaderBkImgFil3~5はhead内にて出力（画像使用にphpコード必要なため）*/
 
 .dyheaderBkImgFil6::after {
   content: "";

@@ -195,14 +195,12 @@ function org_customizer($wp_customize){
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
             'label'       => 'テキストへ適用するアニメーション',
-            'description' => '現在4種類から選択できます。',
+            'description' => '現在2種類から選択できます。',
             'type'        => 'radio',
             'choices'     => array(
               'value1'    => 'アニメーションなし',
-              'value2'    => 'フェードイン',
-              'value3'    => 'タイプライター',
-              'value4'    => 'ズームイン',
-              'value5'    => 'キラキラ',
+              'value2'    => 'フェードイン（下から上）',
+              'value3'    => 'ラインが走る',
             ),
             'section'     => 'site_dyheader',
           ));
@@ -1601,6 +1599,9 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .dyheader_container{-ms-flex-wrap: wrap-reverse;flex-wrap: wrap-reverse;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
 <?php endif; //END imgを左側にするか ?>
 <?php endif; //END imageがあるかどうか ?>
+.dyheaderBkImgFil3::after{background: url("<?php echo get_template_directory_uri(); ?>/images/dyheader_fil/dot.png") repeat;}
+.dyheaderBkImgFil4::after{background: url("<?php echo get_template_directory_uri(); ?>/images/dyheader_fil/line.png") repeat;}
+.dyheaderBkImgFil5::after{background: url("<?php echo get_template_directory_uri(); ?>/images/dyheader_fil/ruledLine.png") repeat;}
 <?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
 <?php if ( $siteType == 'value4' ) : //フューチャーがあるかどうか ?>
 .f_item:nth-child(1) i{color:<?php echo $featureIcon1Color ?>;}
