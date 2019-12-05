@@ -109,7 +109,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="waves-effect fixed-action-btn">
+                  <a href="#modalShare" class="waves-effect modal-trigger">
                     <i class="material-icons">share</i>
                   </a>
                 </li>
@@ -123,6 +123,14 @@
                 <div class="modal-content">
                   <h4>Search!</h4>
                   <?php get_search_form(); ?>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
+                </div>
+              </div>
+              <div id="modalShare" class="modal">
+                <div class="modal-content">
+                  <h4>Share!</h4>
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
