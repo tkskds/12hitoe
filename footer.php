@@ -4,6 +4,7 @@
   $goToTop    = get_option('site_footer_gototop')             ? get_option('site_footer_gototop')          : false ;
   $shareBtn   = get_option('site_footer_share')               ? get_option('site_footer_share')            : false ;
   $spfooter   = get_option('site_footer_sp_menu')             ? get_option('site_footer_sp_menu')          : false ;
+  $menuDesign = get_option('site_footer_sp_menu_design')      ? get_option('site_footer_sp_menu_design')   : 'value1' ;
   $li1icon    = get_option('site_footer_sp_menu_li1_icon')    ? get_option('site_footer_sp_menu_li1_icon') : '<i class="fas fa-bars"></i>' ;
   $li1text    = get_option('site_footer_sp_menu_li1_ttl')     ? get_option('site_footer_sp_menu_li1_ttl')  : 'MENU' ;
   $li1uri     = get_option('site_footer_sp_menu_li1_uri')     ? get_option('site_footer_sp_menu_li1_uri')  : '#';
@@ -25,7 +26,7 @@
     <div class="footerArea">
       <footer id="footer" class="footer page-footer">
         <div class="footer_container container">
-          <?php
+          <?php // フッターウィジェット
             if(
               is_active_sidebar('footer_left_widget')||
               is_active_sidebar('footer_center_widget')||
@@ -48,7 +49,7 @@
                 </div>
               <?php endif; ?>
             </div>
-          <?php endif; ?>
+          <?php endif; //END フッターウィジェット ?>
           <a href="<?php echo home_url(); ?>" class="tohomelink"><i class="fas fa-home"></i>HOME</a>
           <?php
             wp_nav_menu(array(
@@ -71,11 +72,13 @@
           </div>
         </div>
       </footer>
+      <?php // TOPへ戻るボタン ?>
       <?php if ($goToTop == true) : ?>
-        <a href="#" class="btn-floating btn-large waves-effect waves-light gototop acc__color">
+        <a href="#" class="btn-floating btn-large waves-effect gototop acc__color">
           <i class="material-icons">expand_less</i>
         </a>
-      <?php endif; ?>
+      <?php endif; //END TOPへ戻るボタン ?>
+      <?php // SHAREボタン ?>
       <?php if ($shareBtn == true) : ?>
         <div class="fixed-action-btn">
         <a class="btn-floating btn-large sub__color">
@@ -88,10 +91,45 @@
           <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
         </ul>
       </div>
-      <?php endif; ?>
+    <?php endif; //END SHAREボタン ?>
+      <?php // オリジナルSPフッターメニュー ?>
       <?php if ($spfooter == true && wp_is_mobile()) : ?>
         <div class="navbar-fixed">
           <nav class="footer_sp_menu">
+            <?php if($menuDesign == 'value1') : ?>
+              <ul>
+                <li>
+                  <a href="#" data-target="mobile-demo" class="waves-effect sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#modalSearch" class="waves-effect modal-trigger">
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+
+                  </a>
+                </li>
+              </ul>
+              <div id="modalSearch" class="modal">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
+                </div>
+              </div>
+            <?php endif; //END $menuDesign == value1 ?>
+            <?php if($menuDesign == 'value2') : ?>
             <ul>
               <?php if ($li1icon != null) : ?>
                 <li>
@@ -134,9 +172,10 @@
                 </li>
               <?php endif; ?>
             </ul>
+          <?php endif; //END $menuDesign == value2  ?>
           </nav>
         </div>
-      <?php  endif; ?>
+      <?php endif; //END オリジナルSPフッターメニュー ?>
     </div>
     <?php get_template_part('parts/footer/link_js') ?>
     <?php wp_footer(); ?>

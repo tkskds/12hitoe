@@ -1,17 +1,12 @@
 <?php //リセットCSS ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
-<?php //CSSフレームワークの分岐 ?>
+<?php //CSSフレームワークの分岐 （materialize.css/common.css呼び出し） ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
 <?php if ($cssfw != 'value1') : ?>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
-<?php endif; ?>
-
-<?php //共通CSS ?>
-<?php if ($cssfw != 'value1'): ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/responsive.css">
 <?php endif; ?>
 
 <?php //サードパーティ製css/js呼び出し ?>

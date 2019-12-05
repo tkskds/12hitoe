@@ -1242,8 +1242,24 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_footer_sp_menu', array(
             'label'       => 'スマホで独自フッターメニューを表示',
-            'description' => '詳しくはこちらの記事を参考にしてください。',
+            'description' => '詳しくはこちら',
             'type'        => 'checkbox',
+            'section'     => 'site_footer',
+          ));
+
+          $wp_customize->add_setting('site_footer_sp_menu_design', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_footer_sp_menu_design', array(
+            'label'       => '独自フッターメニューのデザイン',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+            ),
             'section'     => 'site_footer',
           ));
 
@@ -1253,7 +1269,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li1_icon', array(
-            'label'       => '独自メニュー1のアイコン',
+            'label'       => '独自フッターメニュー1のアイコン',
             'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1265,7 +1281,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li1_ttl', array(
-            'label'       => '独自メニュー1のテキスト',
+            'label'       => '独自フッターメニュー1のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1277,7 +1293,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li1_uri', array(
-            'label'       => '独自メニュー1のリンク先',
+            'label'       => '独自フッターメニュー1のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
@@ -1288,7 +1304,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li2_icon', array(
-            'label'       => '独自メニュー2のアイコン',
+            'label'       => '独自フッターメニュー2のアイコン',
             'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1300,7 +1316,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li2_ttl', array(
-            'label'       => '独自メニュー2のテキスト',
+            'label'       => '独自フッターメニュー2のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1312,7 +1328,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li2_uri', array(
-            'label'       => '独自メニュー2のリンク先',
+            'label'       => '独自フッターメニュー2のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
@@ -1323,7 +1339,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li3_icon', array(
-            'label'       => '独自メニュー3のアイコン',
+            'label'       => '独自フッターメニュー3のアイコン',
             'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1335,7 +1351,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li3_ttl', array(
-            'label'       => '独自メニュー3のテキスト',
+            'label'       => '独自フッターメニュー3のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1347,7 +1363,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li3_uri', array(
-            'label'       => '独自メニュー3のリンク先',
+            'label'       => '独自フッターメニュー3のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
@@ -1358,7 +1374,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li4_icon', array(
-            'label'       => '独自メニュー4のアイコン',
+            'label'       => '独自フッターメニュー4のアイコン',
             'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1370,7 +1386,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li4_ttl', array(
-            'label'       => '独自メニュー4のテキスト',
+            'label'       => '独自フッターメニュー4のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1382,7 +1398,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li4_uri', array(
-            'label'       => '独自メニュー4のリンク先',
+            'label'       => '独自フッターメニュー4のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));
@@ -1393,7 +1409,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li5_icon', array(
-            'label'       => '独自メニュー5のアイコン',
+            'label'       => '独自フッターメニュー5のアイコン',
             'descriptin'  => '空白にするとその他の項目の大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1405,7 +1421,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li5_ttl', array(
-            'label'       => '独自メニュー5のテキスト',
+            'label'       => '独自フッターメニュー5のテキスト',
             'descriptin'  => '空白にするとアイコンの大きさが自動的に調整されます。',
             'type'        => 'text',
             'section'     => 'site_footer',
@@ -1417,7 +1433,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_footer_sp_menu_li5_uri', array(
-            'label'       => '独自メニュー5のリンク先',
+            'label'       => '独自フッターメニュー5のリンク先',
             'type'        => 'text',
             'section'     => 'site_footer',
           ));

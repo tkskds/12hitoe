@@ -7,13 +7,9 @@
 //ショートコード内でショートコードを使えるようにする↓
 // $content = do_shortcode(shortcode_unautop($content));
 
-
-
 //================
 //      END
 //================
-
-
 
 
 function add_shortcodes(){
