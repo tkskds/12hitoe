@@ -119,7 +119,7 @@
                   </a>
                 </li>
               </ul>
-              <div id="modalSearch" class="modal">
+              <div id="modalSearch" class="modal bottom-sheet">
                 <div class="modal-content">
                   <h4>Search!</h4>
                   <?php get_search_form(); ?>
@@ -128,7 +128,7 @@
                   <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
                 </div>
               </div>
-              <div id="modalShare" class="modal">
+              <div id="modalShare" class="modal bottom-sheet">
                 <div class="modal-content">
                   <h4>Share!</h4>
                 </div>

@@ -1,4 +1,6 @@
-<form method="get" action="<?php echo home_url('/'); ?>" >
-<input name="s" type="text">
-　
-<input type="image" src="<?php bloginfo('template_url'); ?>/images/search.png">
+<form method="get" action="<?php bloginfo('url'); ?>">
+	<div class="input-field search_form_wrap">
+	  <input id="s" name="s" type="text" placeholder="検索キーワード" required>
+		<button type="submit"><i class="material-icons">search</i></button>
+	</div>
+</form>

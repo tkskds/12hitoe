@@ -919,6 +919,18 @@ a.tohomelink i{
   margin: 0;
 }
 
+.footerArea .modal{
+  color: #333;
+}
+
+.footerArea .modal .modal-footer{
+  text-align: center;
+}
+
+.footerArea .modal .search_form_wrap{
+  display: flex;
+}
+
 /**************** ショートコードに関するcss *******************/
 
 .sc_column{
