@@ -532,6 +532,20 @@ li.sidenav-ttl {
   text-decoration: none;
 }
 
+.articleList1:nth-of-type(1),
+.articleList1:nth-of-type(2),
+.articleList2:nth-of-type(1),
+.articleList2:nth-of-type(2),
+.articleList3:nth-of-type(1),
+.articleList3:nth-of-type(2),
+.articleList4:nth-of-type(1),
+.articleList4:nth-of-type(2),
+.articleList5:nth-of-type(1),
+.articleList5:nth-of-type(2),
+.articleList6:nth-of-type(1),
+.articleList6:nth-of-type(2){
+  margin-top: 20px;
+}
 
 .articleList1{
   position: relative;
@@ -551,11 +565,6 @@ li.sidenav-ttl {
   transform: translateY(-2px);
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-}
-
-.articleList1:nth-of-type(1),
-.articleList1:nth-of-type(2){
-  margin-top: 20px;
 }
 
 .articleList1 .thumbnail{
@@ -899,8 +908,18 @@ h4.search_result_ttl::before {
 }
 
 .aside h4.sidebar_title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
+}
+
+.aside h4.sidebar_title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #ECECEC;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
+  -webkit-background-size: 5px 5px;
 }
 
 /****************         フッター        *******************/
@@ -1021,6 +1040,17 @@ a.tohomelink i{
 /*** 検索窓 ***/
 .search_form_wrap{
   display: flex;
+}
+
+/*デフォルトで用意されているウィジェットのaタグ色*/
+.widget_recent_comments a,
+.widget_recent_entries a,
+.widget_categories a,
+.widget_tag_cloud a,
+.widget_calendar a,
+.widget_archive a,
+.widget_meta a {
+  color: unset;
 }
 
 
