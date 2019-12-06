@@ -1,22 +1,21 @@
 <?php
 
 $ttl         = get_the_title();
-$artcileList = get_option('site_articleList_card') ? get_option('site_articleList_card') : 'value1' ;
-
-function addCardTypeClass($e){
-  switch ($e) :
-    case 'value1' : post_class('articleList1') ; break ;
-    case 'value2' : post_class('articleList2') ; break ;
-    case 'value3' : post_class('articleList3') ; break ;
-    case 'value4' : post_class('articleList4') ; break ;
-    case 'value5' : post_class('articleList5') ; break ;
-    case 'value6' : post_class('articleList6') ; break ;
-  endswitch ;
-}
+$articleList = get_option('site_article_list_type') ? get_option('site_article_list_type') : 'value1' ;
 
 ?>
 
-<article <?php addCardTypeClass($artcileList) ?>>
+<article
+<?php
+  switch ($articleList):
+    case 'value1' : post_class('articleList1'); break ;
+    case 'value2' : post_class('articleList2'); break ;
+    case 'value3' : post_class('articleList3'); break ;
+    case 'value4' : post_class('articleList4'); break ;
+    case 'value5' : post_class('articleList5'); break ;
+    case 'value6' : post_class('articleList6'); break ;
+  endswitch;
+?>>
   <a href="<?php the_permalink(); ?>">
     <div class="thumbnail">
       <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">

@@ -1289,10 +1289,12 @@ function org_customizer($wp_customize){
             'description' => 'トップ画面で表示する記事一覧のデザイン。現在4種類からお選びいただけます。',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => '縦/長めカード',
-              'value2'    => '横/長めカード',
-              'value3'    => 'サムネイルの上に文字',
-              'value4'    => 'カテゴリの乗り方がなんかいい感じ',
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+              'value4'    => 'デザイン4',
+              'value5'    => 'デザイン5',
+              'value6'    => 'デザイン6',
             ),
             'section'     => 'site_article',
           ));
