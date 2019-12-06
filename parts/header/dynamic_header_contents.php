@@ -1,50 +1,46 @@
 <?php
-    $dyheaderBkImg = get_option('site_dyheader_bkimg');
-    $dyheaderBkImgFil = get_option('site_dyheader_bkimg_filter');
+    $dyheaderBkImg    = get_option('site_dyheader_bkimg');
+    $dyheaderBkImgFil = get_option('site_dyheader_bkimg_filter')   ? get_option('site_dyheader_bkimg_filter')   : 'value1' ;
 
-    $txt = get_option('site_dyheader_text');
-    $txtAnime = get_option('site_dyheader_text_animation');
-    $btn = get_option('site_dyheader_button');
-    $btnLink = get_option('site_dyheader_button_link');
-    $btn2 = get_option('site_dyheader_button2');
-    $btn2Link = get_option('site_dyheader_button2_link');
-    $img = get_option('site_dyheader_img');
+    $txt              = get_option('site_dyheader_text');
+    $txtAnime         = get_option('site_dyheader_text_animation') ? get_option('site_dyheader_text_animation') : 'value0' ;
+    $btn              = get_option('site_dyheader_button');
+    $btnLink          = get_option('site_dyheader_button_link');
+    $btn2             = get_option('site_dyheader_button2');
+    $btn2Link         = get_option('site_dyheader_button2_link');
+    $img              = get_option('site_dyheader_img');
 ?>
 
 
 <div id="dynamicHeader" class="dyheader
-<?php if($dyheaderBkImg != null && $dyheaderBkImgFil=='value2'){
-  echo'dyheaderBkImgFil1';
-}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value3'){
-  echo'dyheaderBkImgFil2';
-}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value4'){
-  echo'dyheaderBkImgFil3';
-}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value5'){
-  echo'dyheaderBkImgFil4';
-}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value6'){
-  echo'dyheaderBkImgFil5';
-}elseif($dyheaderBkImg != null && $dyheaderBkImgFil=='value7'){
-  echo'dyheaderBkImgFil6';
-} ?>">
+<?php if($dyheaderBkImg != null) :
+        switch ($dyheaderBkImgFil) :
+          case 'value2': echo' dyheaderBkImgFil1' ; break ;
+          case 'value3': echo' dyheaderBkImgFil2' ; break ;
+          case 'value4': echo' dyheaderBkImgFil3' ; break ;
+          case 'value5': echo' dyheaderBkImgFil4' ; break ;
+          case 'value6': echo' dyheaderBkImgFil5' ; break ;
+          case 'value7': echo' dyheaderBkImgFil6' ; break ;
+        endswitch;
+      endif;
+?>">
 
   <div class="dyheader_container">
       <div class="dyheader_textArea">
-        <p<?php
-         if ($txtAnime == 'value2'){
-          echo ' class="dyHeaderTextMotion1"';
-        }elseif($txtAnime == 'value3'){
-          echo ' class="dyHeaderTextMotion2"';
-        }elseif($txtAnime == 'value4'){
-          echo ' class="dyHeaderTextMotion3"';
-        }elseif($txtAnime == 'value5'){
-          echo ' class="dyHeaderTextMotion4"';
-        }
+        <p
+        <?php
+        switch ($txtAnime) :
+          case 'value1': echo ' class="dyHeaderTextMotion1"' ; break ;
+          case 'value2': echo ' class="dyHeaderTextMotion2"' ; break ;
+          case 'value3': echo ' class="dyHeaderTextMotion3"' ; break ;
+          case 'value4': echo ' class="dyHeaderTextMotion4"' ; break ;
+        endswitch;
         ?>><?php echo $txt ?></p>
         <?php if ($btn != null ): ?>
-          <a href="<?php echo $btnLink ?>" class="waves-effect waves-light btn"><?php echo $btn ?></a>
+          <a href="<?php echo $btnLink ?>" class="waves-effect btn"><?php echo $btn ?></a>
         <?php endif; ?>
         <?php if ($btn2 != null ): ?>
-          <a href="<?php echo $btn2Link ?>" class="waves-effect waves-light btn"><?php echo $btn2 ?></a>
+          <a href="<?php echo $btn2Link ?>" class="waves-effect btn"><?php echo $btn2 ?></a>
         <?php endif; ?>
       </div>
       <?php if ($img != null) : ?>

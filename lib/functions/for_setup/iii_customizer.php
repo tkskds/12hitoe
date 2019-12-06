@@ -190,17 +190,19 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_dyheader_text_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value0',
             'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
             'label'       => 'テキストへ適用するアニメーション',
-            'description' => '現在2種類から選択できます。',
+            'description' => '現在4種類から選択できます。',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => 'フェードイン（下から上）',
-              'value3'    => 'ラインが走る',
+              'value0'    => 'アニメーションなし',
+              'value1'    => 'フェードイン（下から上）',
+              'value2'    => 'ラインが走る',
+              'value3'    => 'ズーム',
+              'value4'    => 'フラッシュ',
             ),
             'section'     => 'site_dyheader',
           ));
