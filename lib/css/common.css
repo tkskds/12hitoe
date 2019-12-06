@@ -522,6 +522,17 @@ li.sidenav-ttl {
 
 /****************         記事一覧        *******************/
 
+.articleList1 a,
+.articleList2 a,
+.articleList3 a,
+.articleList4 a,
+.articleList5 a,
+.articleList6 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+
 .articleList1{
   position: relative;
   width: calc(50% - 20px);
@@ -545,11 +556,6 @@ li.sidenav-ttl {
 .articleList1:nth-of-type(1),
 .articleList1:nth-of-type(2){
   margin-top: 20px;
-}
-
-.articleList1 a{
-  color: inherit;
-  text-decoration: none;
 }
 
 .articleList1 .thumbnail{
@@ -604,17 +610,22 @@ li.sidenav-ttl {
   position: relative;
 }
 
-.articleList1 .content .title{
-  font-size: 1.2em;
-  padding: 1em 17px;
-}
-
 .articleList2 {
   position: relative;
   width: calc(50% - 20px);
   max-width: 520px;
   background: white;
   margin: 0 auto 20px;
+  border-radius: 0;
+}
+
+.articleList2 .thumbnail{
+  position: relative;
+}
+
+.articleList2 .thumbnail img{
+  width: 100%;
+  height: auto;
 }
 
 .articleList2 .thumbnail time {
@@ -623,7 +634,6 @@ li.sidenav-ttl {
   top: -10px;
   right: -10px;
   width: 70px;
-  height: 50px;
   padding: 5px 0;
   color: white;
   text-align: center;
@@ -641,11 +651,17 @@ li.sidenav-ttl {
   color: white;
 }
 
+.articleList1 .content .title,
+.articleList2 .content .title{
+  font-size: 1.2em;
+  padding: 1em 17px;
+}
+
 .articleList3{
   position: relative;
   width: calc(50% - 20px);
   max-width: 520px;
-  margin: 0 10px;
+  margin: 0 auto 20px;
 }
 
 .articleList3 a{
@@ -657,7 +673,7 @@ li.sidenav-ttl {
 
 .articleList3 .thumbnail img{
   width: 100px;
-  height: auto;
+  height: 70px;
 }
 
 .articleList3 time{
@@ -671,13 +687,13 @@ li.sidenav-ttl {
   font-size: .75em;
   top: -5px;
   left: -6px;
-  background: tomato;
   color: white;
   display: inline-block;
   height: 25px;
   line-height: 25px;
   padding: 0 20px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.39);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
 .articleList3 .category::before{
@@ -686,12 +702,12 @@ li.sidenav-ttl {
   left: 0;
   content: "";
   border: 3px solid transparent;
-  border-top-color: tomato;
-  border-right-color: tomato;
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
 }
 
 .articleList3 .content{
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 
@@ -1211,7 +1227,12 @@ a.tohomelink i{
 
 
 @media(max-width:960px){
-  .articleList1{
+  .articleList1,
+  .articleList2,
+  .articleList3,
+  .articleList4,
+  .articleList5,
+  .articleList6{
     margin: 0 auto 20px;
   }
   .f_item{
@@ -1250,14 +1271,29 @@ a.tohomelink i{
     font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
     transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
   }
-  .articleList1{
+  .articleList1,
+  .articleList2,
+  .articleList3,
+  .articleList4,
+  .articleList5,
+  .articleList6{
     width: 95%;
     margin: 0 2.5% 20px;
   }
-  .articleList1:nth-of-type(1){
+  .articleList1:nth-of-type(1),
+  .articleList2:nth-of-type(1),
+  .articleList3:nth-of-type(1),
+  .articleList4:nth-of-type(1),
+  .articleList5:nth-of-type(1),
+  .articleList6:nth-of-type(1){
     margin-top: 20px;
   }
-  .articleList1:nth-of-type(2){
+  .articleList1:nth-of-type(2),
+  .articleList2:nth-of-type(2),
+  .articleList3:nth-of-type(2),
+  .articleList4:nth-of-type(2),
+  .articleList5:nth-of-type(2),
+  .articleList6:nth-of-type(2){
     margin-top: 0;
   }
   .f_item{

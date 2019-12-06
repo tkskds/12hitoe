@@ -18,10 +18,18 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 ?>>
   <a href="<?php the_permalink(); ?>">
     <div class="thumbnail">
-      <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
-        <span class="day"><?php echo get_the_date('d'); ?></span>
-        <span class="month"><?php echo get_post_time('M'); ?></span>
-      </time>
+      <?php if ($articleList == 'value1' || $articleList == 'value2' ) : ?>
+        <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
+          <span class="day"><?php echo get_the_date('d'); ?></span>
+          <span class="month"><?php echo get_post_time('M'); ?></span>
+        </time>
+      <?php endif; ?>
+      <?php if ($articleList == 'value3' || $articleList == 'value4' ) : ?>
+        <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
+          <span class="day"><?php echo get_the_date('d'); ?></span>
+          <span class="month"><?php echo get_post_time('M'); ?></span>
+        </time>
+      <?php endif; ?>
       <?php if (has_post_thumbnail()): ?>
         <?php the_post_thumbnail('eyecatch', array('alt' => $ttl)); ?>
       <?php else: ?>

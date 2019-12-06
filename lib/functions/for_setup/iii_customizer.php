@@ -1783,6 +1783,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 /*その他個別に設定すべきメイン.サブ.アクセントカラー*/
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
+.articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
 /*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
