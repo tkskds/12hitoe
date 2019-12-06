@@ -402,6 +402,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -410,7 +411,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -579,6 +579,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -587,7 +588,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -653,6 +653,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -661,7 +662,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -725,6 +725,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',            ),
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -733,7 +734,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',            ),
             'section'     => 'site_feature',
           ));
 
@@ -848,6 +848,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -856,7 +857,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -894,6 +894,7 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
+              'value0'    => 'アニメーションなし',
               'value1'    => '少し下からフェードイン',
               'value2'    => '大きくしたからフェードイン',
               'value3'    => '少し上からフェードダウン',
@@ -902,7 +903,6 @@ function org_customizer($wp_customize){
               'value6'    => '大きく左からフェードイン',
               'value7'    => '少し右からフェードイン',
               'value8'    => '大きく右からフェードイン',
-              'value9'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
