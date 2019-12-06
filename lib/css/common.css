@@ -34,8 +34,8 @@ html{
 body{
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333;
-  animation: fadeIn 500ms ease-in;
   -webkit-animation: fadeIn 500ms ease-in;
+  animation: fadeIn 500ms ease-in;
 }
 
 
@@ -76,8 +76,8 @@ nav a.siteTitle{
 }
 
 .headerArea nav{
-  animation: fadeDown 1000ms ease-in;
   -webkit-animation: fadeDown 1000ms ease-in;
+  animation: fadeDown 1000ms ease-in;
 }
 
 /*トップページではナビメニューにh1タグを使用するため
@@ -257,8 +257,8 @@ li.sidenav-ttl {
 /*テキストアニメーション*/
 
 .dyHeaderTextMotion1{
-  animation: dyHeaderTextMotion1 2000ms ease-in 0s;
   -webkit-animation: dyHeaderTextMotion1 2000ms ease-in 0s;
+  animation: dyHeaderTextMotion1 2000ms ease-in 0s;
 }
 
 .dyHeaderTextMotion2{
@@ -274,9 +274,10 @@ li.sidenav-ttl {
   width: 100%;
   height: 100%;
   background: #ffffff;
+  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  animation: dyHeaderTextMotion2 1000ms cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
   -webkit-animation: dyHeaderTextMotion2 1000ms cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
+  animation: dyHeaderTextMotion2 1000ms cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
 }
 
 /****************         特徴部分        *******************/
@@ -464,13 +465,13 @@ li.sidenav-ttl {
 	content: "\f107";
   position: absolute;
   right: 1em;
-  transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 #feature4 .active .collapsible-header::after{
-	transform: rotateX(180deg);
   -webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
 #feature5 .featureContainer{
@@ -504,16 +505,17 @@ li.sidenav-ttl {
   background: white;
   margin: 0 auto 20px;
   border-radius: 2px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s linear 0s;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
 }
 
 .articleList1:hover{
+  -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 .articleList1:nth-of-type(1),
@@ -871,6 +873,11 @@ a.tohomelink i{
   text-align: center;
 }
 
+.footerArea .modal-content h4{
+  color: #545454;
+  text-align: center;
+}
+
 
 /****************      ウィジェット       *******************/
 
@@ -894,61 +901,54 @@ a.tohomelink i{
 
 /****************      アニメーション     *******************/
 
-@keyframes fadeIn{
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0); /* will-change */
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @-webkit-keyframes fadeIn{
   0%{
     opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
   100%{
     opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes fadeDown{
-	0%{
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	100%{
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); /* will-change */
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @-webkit-keyframes fadeDown{
 	0%{
 		opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
 		transform: translate3d(0, -20%, 0);
 	}
 	100%{
 		opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 	}
 }
 
-@keyframes dyHeaderTextMotion1 {
+@keyframes fadeDown{
 	0%{
 		opacity: 0;
-		transform: translate3d(0, 20%, 0);
+    -webkit-transform: translate3d(0, -20%, 0);
+		transform: translate3d(0, -20%, 0);
 	}
-  50%{
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
-	100% {
+	100%{
 		opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 	}
 }
@@ -956,20 +956,42 @@ a.tohomelink i{
 @-webkit-keyframes dyHeaderTextMotion1 {
 	0%{
 		opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
 		transform: translate3d(0, 20%, 0);
 	}
   50%{
 		opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
 		transform: translate3d(0, 20%, 0); /* bodyとnavのアニメーション時間考慮して少し遅らせる */
 	}
 	100%{
 		opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 	}
 }
 
-@keyframes dyHeaderTextMotion2{
+@keyframes dyHeaderTextMotion1 {
+	0%{
+		opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+		transform: translate3d(0, 20%, 0);
+	}
+  50%{
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
+  }
+	100% {
+		opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-keyframes dyHeaderTextMotion2{
   0%{
+    -webkit-transform: scale(0);
     transform: scaleX(0);
     transform-origin: 0 0;
   }
@@ -982,13 +1004,15 @@ a.tohomelink i{
     transform-origin: 100% 0;
   }
   100%{
+    -webkit-transform: scaleX(0);
     transform: scaleX(0);
     transform-origin: 100% 0;
   }
 }
 
-@-webkit-keyframes dyHeaderTextMotion2{
+@keyframes dyHeaderTextMotion2{
   0%{
+    -webkit-transform: scaleX(0);
     transform: scaleX(0);
     transform-origin: 0 0;
   }
@@ -1001,8 +1025,33 @@ a.tohomelink i{
     transform-origin: 100% 0;
   }
   100%{
+    -webkit-transform: scaleX(0);
     transform: scaleX(0);
     transform-origin: 100% 0;
+  }
+}
+
+@-webkit-keyframes dyHeaderTextMotion3{
+  0%{
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50%{
+    opacity: 1;
+  }
+}
+
+@keyframes dyHeaderTextMotion3{
+  0%{
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50%{
+    opacity: 1;
   }
 }
 
