@@ -20,6 +20,19 @@ function register_widgets(){
     ));
 
   /****************
+  // 固定サイドバー
+  ****************/
+  register_sidebar(array(
+    'name'=>'サイドバー',
+    'id' => 'fixed_side_widget',
+    'description' => 'スクロールに追従する固定サイドバーです。',
+    'before_widget'=>'<div id="%1$s" class="fixed_side_widget %2$s">',
+    'after_widget'=>'</div>',
+    'before_title' => '<h4 class="sidebar_title">',
+    'after_title' => '</h4>',
+    ));
+
+  /****************
   // フッター左
   ****************/
   register_sidebar(array(

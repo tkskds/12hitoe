@@ -4,4 +4,3 @@
   <script src="<?php echo get_template_directory_uri(); ?>/lib/js/materialize.js"></script>
 <?php endif; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/vendor/delighters/min/delighters.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/lib/js/fadein.js"></script>

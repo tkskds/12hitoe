@@ -51,6 +51,6 @@ function theme_supports(){
   /****************
   //サイドバーの有効化
   ****************/
-  register_sidebar();
+  // register_sidebar();
 
 }//END theme_supports();
