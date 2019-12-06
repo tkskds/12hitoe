@@ -1,4 +1,5 @@
 <?php
+  $sec1anime    = get_option('site_feature_section_animation')          ? get_option('site_feature_section_animation')  : 'value1' ;
   $title        = get_option('site_feature_section_ttl');
   $description  = get_option('site_feature_section_description');
   $fadein       = get_option('site_feature_section_animation');
@@ -11,14 +12,17 @@
   $item3Icn     = get_option('site_feature_section_item3_icon')         ? get_option('site_feature_section_item3_icon') : '<i class="fas fa-coins"></i>';
   $item3Ttl     = get_option('site_feature_section_item3_ttl');
   $item3Dsc     = get_option('site_feature_section_item3_description');
+  $sec2anime    = get_option('site_feature_section2_animation')         ? get_option('site_feature_section2_animation') : 'value1' ;
   $sec2ttl      = get_option('site_feature_section2_ttl');
   $sec2dsc      = get_option('site_feature_section2_description');
   $sec2bkImg    = get_option('site_feature_section2_bk_img');
   $sec2bkColor  = get_option('site_feature_section2_bk_color');
+  $sec3anime    = get_option('site_feature_section3_animation')         ? get_option('site_feature_section3_animation') : 'value1' ;
   $sec3ttl      = get_option('site_feature_section3_ttl');
   $sec3dsc      = get_option('site_feature_section3_description');
   $sec3bkImg    = get_option('site_feature_section3_bk_img');
   $sec3bkColor  = get_option('site_feature_section3_bk_color');
+  $sec4anime    = get_option('site_feature_section4_animation')         ? get_option('site_feature_section4_animation') : 'value1' ;
   $sec4q1       = get_option('site_feature_q1');
   $sec4a1       = get_option('site_feature_a1');
   $sec4q2       = get_option('site_feature_q2');
@@ -29,8 +33,10 @@
   $sec4a4       = get_option('site_feature_a4');
   $sec4q5       = get_option('site_feature_q5');
   $sec4a5       = get_option('site_feature_a5');
+  $sec5anime    = get_option('site_feature_section5_animation')         ? get_option('site_feature_section5_animation') : 'value1' ;
   $sec5info     = get_option('site_feature_section5_info');
   $sec5map      = get_option('site_feature_section5_map');
+  $sec6anime    = get_option('site_feature_section6_animation')         ? get_option('site_feature_section6_animation') : 'value1' ;
   $sec6dsc      = get_option('site_feature_section6_description');
   $sec6bkImg    = get_option('site_feature_section6_bk_img');
   $sec6bkColor  = get_option('site_feature_section6_bk_color');
@@ -40,7 +46,7 @@
 
   <section class="feature1">
     <div class="container featureContainer">
-      <div class="f_ttl <?php if ($fadein == true){echo 'fadein';}?>">
+      <div class="f_ttl"<?php if($sec1anime != 'value1'){echo ' data-delighter';}?>>
         <h2><?php echo $title ?></h2>
         <p><?php echo $description ?></p>
       </div>

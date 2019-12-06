@@ -53,11 +53,11 @@
           <a href="<?php echo home_url(); ?>" class="tohomelink"><i class="fas fa-home"></i>HOME</a>
           <?php // フッターメニュー
             wp_nav_menu(array(
-              'theme_location' => 'nav_footer',
-              'container' => 'nav',
-              'container_id' => 'nav_footer',
+              'theme_location'  => 'nav_footer',
+              'container'       => 'nav',
+              'container_id'    => 'nav_footer',
               'container_class' => 'nav_footer',
-              'fallback_cb' => '',
+              'fallback_cb'     => '',
             ));
           ?>
         </div>
@@ -121,7 +121,7 @@
               </ul>
               <div id="modalSearch" class="modal bottom-sheet">
                 <div class="modal-content">
-                  <h4>Search!</h4>
+                  <h4>Search</h4>
                   <?php get_search_form(); ?>
                 </div>
                 <div class="modal-footer">
@@ -130,7 +130,7 @@
               </div>
               <div id="modalShare" class="modal bottom-sheet">
                 <div class="modal-content">
-                  <h4>Share!</h4>
+                  <h4>Share</h4>
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>

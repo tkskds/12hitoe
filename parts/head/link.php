@@ -44,6 +44,12 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 <?php endif; ?>
 
+<?php //jQueryを使用しない ?>
+<?php $jQueryON = get_option('site_head_jquery') ? get_option('site_head_jquery') : false ?>
+<?php if ($jQueryON == true) : ?>
+  <?php wp_deregister_script('jquery');?>
+<?php endif; ?>
+
 <?php //ファビコンなど ?>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">

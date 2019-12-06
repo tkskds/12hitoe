@@ -103,13 +103,13 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_bone_type', array(
             'label'       => 'トップページのタイプ',
-            'description' => '現在4種類から選べます。（Nav:ヘッダー部分。Main:記事一覧部分。DynamicHeader:宣伝などに使える部分。Side:サイドバー部分。Footer:フッター部分。）',
+            'description' => '現在4種類から選べます。詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'メディア（Nav/Main/Side/Footer）',
-              'value2'    => 'ワンカラム（Nav/Main/Footer）',
-              'value3'    => 'コーポレート（Nav/DynamicHeader/Main/Side/Footer）',
-              'value4'    => 'ランディング（Nav/DynamicHeader/Features/Footer）',
+              'value1'    => 'デザイン1（Nav/Main/Side/Footer）',
+              'value2'    => 'デザイン2（Nav/Main/Footer）',
+              'value3'    => 'デザイン3（Nav/DynamicHeader/Main/Side/Footer）',
+              'value4'    => 'デザイン4（Nav/DynamicHeader/Features/Footer）',
             ),
             'section'     => 'site_bone',
           ));
@@ -391,14 +391,20 @@ function org_customizer($wp_customize){
       ));
 
           $wp_customize->add_setting('site_feature_section_animation', array(
-            'default'     => false,
+            'default'     => 'value1',
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_animation', array(
-            'label'       => 'フェードインのアニメーションを使用する',
-            'description' => 'フューチャー部分全体にjQueryのアニメーションを使用します。（サイトスピードが若干落ちます）',
-            'type'        => 'checkbox',
+            'label'       => 'セクション1にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+              'value4'    => '様々な方向からフェードイン',
+            ),
             'section'     => 'site_feature',
           ));
 
@@ -407,7 +413,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_ttl', array(
-            'label'       => 'セクションのタイトル',
+            'label'       => 'タイトル（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -417,7 +423,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_description', array(
-            'label'       => 'セクションの説明文（HTML使用可能）',
+            'label'       => '説明文（セクション1）',
+            'description' => 'HTMLを使用することも可能です。',
             'type'        => 'textarea',
             'section'     => 'site_feature',
           ));
@@ -429,7 +436,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item1_icon', array(
-            'label'       => 'アイテム1のアイコン',
+            'label'       => 'アイテム1のアイコン（セクション1）',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
             'type'        => 'text',
             'section'     => 'site_feature',
@@ -441,7 +448,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item1_icon_color', array(
-            'label'       => 'アイテム1のアイコン色',
+            'label'       => 'アイテム1のアイコン色（セクション1）',
             'section'     => 'site_feature',
           )));
 
@@ -451,7 +458,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item1_ttl', array(
-            'label'       => 'アイテム1のタイトル',
+            'label'       => 'アイテム1のタイトル（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -462,7 +469,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item1_description', array(
-            'label'       => 'アイテム1の説明文',
+            'label'       => 'アイテム1の説明文（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -473,7 +480,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item2_icon', array(
-            'label'       => 'アイテム2のアイコン',
+            'label'       => 'アイテム2のアイコン（セクション1）',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
             'type'        => 'text',
             'section'     => 'site_feature',
@@ -485,7 +492,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item2_icon_color', array(
-            'label'       => 'アイテム2のアイコン色',
+            'label'       => 'アイテム2のアイコン色（セクション1）',
             'section'     => 'site_feature',
           )));
 
@@ -495,18 +502,18 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item2_ttl', array(
-            'label'       => 'アイテム2のタイトル',
+            'label'       => 'アイテム2のタイトル（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
 
           $wp_customize->add_setting('site_feature_section_item2_description', array(
-            'defalut'     => 'SAMPLE2の説明文です',
+            'defalut'     => 'SAMPLE2の説明文です。',
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section_item2_description', array(
-            'label'       => 'アイテム2の説明文',
+            'label'       => 'アイテム2の説明文（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -517,7 +524,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_icon', array(
-            'label'       => 'アイテム3のアイコン',
+            'label'       => 'アイテム3のアイコン（セクション1）',
             'description' => '<i class="fas fa-coins"></i>のようなコードを貼り付けてください。',
             'type'        => 'text',
             'section'     => 'site_feature',
@@ -529,7 +536,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section_item3_icon_color', array(
-            'label'       => 'アイテム3のアイコン色',
+            'label'       => 'アイテム3のアイコン色（セクション1）',
             'section'     => 'site_feature',
           )));
 
@@ -539,7 +546,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_ttl', array(
-            'label'       => 'アイテム3のタイトル',
+            'label'       => 'アイテム3のタイトル（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -550,8 +557,25 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_item3_description', array(
-            'label'       => 'アイテム3の説明文',
+            'label'       => 'アイテム3の説明文（セクション1）',
             'type'        => 'text',
+            'section'     => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section2_animation', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section2_animation', array(
+            'label'       => 'セクション2にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+            ),
             'section'     => 'site_feature',
           ));
 
@@ -560,7 +584,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section2_ttl', array(
-            'label'       => 'セクション2のタイトル',
+            'label'       => 'タイトル（セクション2）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -570,7 +594,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section2_description', array(
-            'label'       => 'セクション2の本文',
+            'label'       => '本文（セクション2）',
+            'description' => 'HTMLを使用することもできます。',
             'type'        => 'textarea',
             'section'     => 'site_feature',
           ));
@@ -580,7 +605,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section2_bk_img', array(
-            'label'       => 'セクション2の背景画像',
+            'label'       => '背景画像（セクション2）',
             'section'     => 'site_feature',
           )));
 
@@ -590,7 +615,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_color', array(
-            'label'       => 'セクション2の文字色',
+            'label'       => '文字色（セクション2）',
             'section'     => 'site_feature',
           )));
 
@@ -600,16 +625,34 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section2_bk_color', array(
-            'label'       => 'セクション2の背景色',
+            'label'       => '背景色（セクション2）',
+            'description' => '画像がある場合は画像が優先されます。透過している画像を使用した場合は色も適用されます。',
             'section'     => 'site_feature',
           )));
+
+          $wp_customize->add_setting('site_feature_section3_animation', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section3_animation', array(
+            'label'       => 'セクション3にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+            ),
+            'section'     => 'site_feature',
+          ));
 
           $wp_customize->add_setting('site_feature_section3_ttl', array(
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_section3_ttl', array(
-            'label'       => 'セクション3のタイトル',
+            'label'       => 'タイトル（セクション3）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -619,7 +662,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section3_description', array(
-            'label'       => 'セクション3の本文',
+            'label'       => '本文（セクション3）',
             'type'        => 'textarea',
             'section'     => 'site_feature',
           ));
@@ -629,7 +672,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_feature_section3_bk_img', array(
-            'label'       => 'セクション3の背景画像',
+            'label'       => '背景画像（セクション3）',
             'section'     => 'site_feature',
           )));
 
@@ -639,7 +682,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_color', array(
-            'label'       => 'セクション3の文字色',
+            'label'       => '文字色（セクション3）',
             'section'     => 'site_feature',
           )));
 
@@ -649,16 +692,34 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section3_bk_color', array(
-            'label'       => 'セクション3の背景色',
+            'label'       => '背景色（セクション3）',
             'section'     => 'site_feature',
           )));
+
+          $wp_customize->add_setting('site_feature_section4_animation', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section4_animation', array(
+            'label'       => 'セクション4にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+            ),
+            'section'     => 'site_feature',
+          ));
 
           $wp_customize->add_setting('site_feature_q1', array(
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_feature_q1', array(
-            'label'       => '質問1',
+            'label'       => '質問1（セクション4）',
+            'description' => '空白にした場合、セクション4は表示されません。詳しくはこちら',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -668,7 +729,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_a1', array(
-            'label'       => '答え1',
+            'label'       => '答え1（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -678,7 +739,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_q2', array(
-            'label'       => '質問2',
+            'label'       => '質問2（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -688,7 +749,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_a2', array(
-            'label'       => '答え2',
+            'label'       => '答え2（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -698,7 +759,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_q3', array(
-            'label'       => '質問3',
+            'label'       => '質問3（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -708,7 +769,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_a3', array(
-            'label'       => '答え3',
+            'label'       => '答え3（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -718,7 +779,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_q4', array(
-            'label'       => '質問4',
+            'label'       => '質問4（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -728,7 +789,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_a4', array(
-            'label'       => '答え4',
+            'label'       => '答え4（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -738,7 +799,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_q5', array(
-            'label'       => '質問5',
+            'label'       => '質問5（セクション4）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -748,8 +809,25 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_a5', array(
-            'label'       => '答え5',
+            'label'       => '答え5（セクション4）',
             'type'        => 'text',
+            'section'     => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section5_animation', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section5_animation', array(
+            'label'       => 'セクション5にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+            ),
             'section'     => 'site_feature',
           ));
 
@@ -758,7 +836,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section5_info', array(
-            'label'       => 'フリースペース（会社情報や商品情報など）',
+            'label'       => 'フリースペース（セクション5）',
+            'description' => '会社情報や商品情報など',
             'type'        => 'textarea',
             'section'     => 'site_feature',
           ));
@@ -770,7 +849,34 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section5_map', array(
             'label'       => '地図',
-            'description' => 'GoogleMapの埋め込み機能を利用できます。',
+            'description' => 'GoogleMapの埋め込み機能を利用できます。詳しくはこちら',
+            'type'        => 'textarea',
+            'section'     => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section6_animation', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section6_animation', array(
+            'label'       => 'セクション6にアニメーションを使用',
+            'description' => '詳しくはこちら',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アニメーションなし',
+              'value2'    => '少し下からフェードイン',
+              'value3'    => '大きくしたからフェードイン',
+            ),
+            'section'     => 'site_feature',
+          ));
+
+          $wp_customize->add_setting('site_feature_section6_description', array(
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_feature_section6_description', array(
+            'label'       => '本文（セクション6）',
             'type'        => 'textarea',
             'section'     => 'site_feature',
           ));
@@ -781,7 +887,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_bk_color', array(
-            'label'       => 'セクション6の背景色',
+            'label'       => '背景色（セクション6）',
           )));
 
           $wp_customize->add_setting('site_feature_section6_color', array(
@@ -790,19 +896,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_feature_section6_color', array(
-            'label'       => 'セクション6の文字色',
+            'label'       => '文字色（セクション6）',
           )));
-
-
-          $wp_customize->add_setting('site_feature_section6_description', array(
-            'type'        => 'option',
-          ));
-
-          $wp_customize->add_control('site_feature_section6_description', array(
-            'label'       => 'セクション6の本文',
-            'type'        => 'textarea',
-            'section'     => 'site_feature',
-          ));
 
       $wp_customize->add_section('site_cssfw', array(
         'priority'        => 4,
@@ -1462,6 +1557,24 @@ function org_customizer($wp_customize){
     'title'               => 'STEP3【運営設定】',
     'description'         => 'サイトの運営設定',
   ));
+
+      $wp_customize->add_section('site_article',array(
+        'priority'        => 1,
+        'title'           => '1:ページスピード高速化設定',
+        'panel'           => 'site_admin',
+      ));
+
+          $wp_customize->add_setting('site_head_jquery', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_head_jquery', array(
+            'label'       => 'jQueryを使用しない',
+            'description' => 'jQueryを読み込まないことでサイトスピードの向上が測れます。詳しくはこちら',
+            'type'        => 'checkbox',
+            'section'     => 'site_head_jquery',
+          ));
 
 } //END org_customizer()
 
