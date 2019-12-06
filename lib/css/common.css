@@ -464,7 +464,7 @@ li.sidenav-ttl {
   font-weight: bold;
 	content: "\f107";
   position: absolute;
-  right: 1em;
+  right: 0;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
@@ -472,6 +472,10 @@ li.sidenav-ttl {
 #feature4 .active .collapsible-header::after{
   -webkit-transform: rotateX(180deg);
 	transform: rotateX(180deg);
+}
+
+#feature4 .collapsible-body{
+  padding: 1rem;
 }
 
 #feature5 .featureContainer{
