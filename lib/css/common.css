@@ -341,25 +341,62 @@ li.sidenav-ttl {
   font-size: 1.75em;
 }
 
-.delighter{
+/* delighterは親クラスやコンテナ、ラップに使用しちゃダメ（下記コード的に） */
+
+.d_anime1 .delighter,
+.d_anime2 .delighter,
+.d_anime3 .delighter,
+.d_anime4 .delighter,
+.d_anime5 .delighter,
+.d_anime6 .delighter,
+.d_anime7 .delighter,
+.d_anime8 .delighter{
   opacity: 0;
+  -webkit-transition: 1s ease-in-out;
+  transition : 1s ease-in-out;
 }
 
 .d_anime1 .delighter{
   -webkit-transform: translate3d(0, 30px, 0);
   transform : translate3d(0, 30px, 0);
-  -webkit-transition: 1s ease-in-out;
-  transition : 1s ease-in-out;
 }
 
 .d_anime2 .delighter{
-  -webkit-transform: translate3d(0, 100vh, 0);
-  transform : translate3d(0, 100vh, 0);
-  -webkit-transition: 1s ease-in-out;
-  transition : 1s ease-in-out;
+  -webkit-transform: translate3d(0, 200px, 0);
+  transform : translate3d(0, 200px, 0);
 }
 
-.delighter.started.ended{
+.d_anime3 .delighter{
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform : translate3d(0, -30px, 0);
+}
+
+.d_anime4 .delighter{
+  -webkit-transform: translate3d(0, -200px, 0);
+  transform : translate3d(0, -200px, 0);
+}
+
+.d_anime5 .delighter{
+  -webkit-transform: translate3d(-30px, 0, 0);
+  transform : translate3d(-30px, 0, 0);
+}
+
+.d_anime6 .delighter{
+  -webkit-transform: translate3d(-200px, 0, 0);
+  transform : translate3d(-200px, 0, 0);
+}
+
+.d_anime7 .delighter{
+  -webkit-transform: translate3d(30px, 0, 0);
+  transform : translate3d(30px, 0, 0);
+}
+
+.d_anime8 .delighter{
+  -webkit-transform: translate3d(200px, 0, 0);
+  transform : translate3d(200px, 0, 0);
+}
+
+.delighter.started{
   will-change: opacity, transform;
   opacity : 1;
   -webkit-transform: translate3d(0, 0, 0);
@@ -411,17 +448,17 @@ li.sidenav-ttl {
   transition-delay: 1800ms;
 }
 
-.feature4 .collapsible{
+#feature4 .collapsible{
   box-shadow: none;
   border: none;
 }
 
-.feature4 .collapsible-header{
+#feature4 .collapsible-header{
   position: relative;
   background: transparent;
 }
 
-.feature4 .collapsible-header::after{
+#feature4 .collapsible-header::after{
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
 	content: "\f107";
@@ -431,22 +468,22 @@ li.sidenav-ttl {
   -webkit-transition: all .5s ease-in-out;
 }
 
-.feature4 .active .collapsible-header::after{
+#feature4 .active .collapsible-header::after{
 	transform: rotateX(180deg);
   -webkit-transform: rotateX(180deg);
 }
 
-.feature5 .featureContainer{
+#feature5 .featureContainer{
   display: block;
   text-align: center;
 }
 
-.feature5 h2{
+#feature5 h2{
   border-bottom: 1px solid #ccc;
   margin-bottom: .5em;
 }
 
-.feature5 .container > div{
+#feature5 .container > div{
   width: 50%;
   padding: 20px 0;
   display: inline-block;
@@ -454,7 +491,7 @@ li.sidenav-ttl {
   margin: auto;
 }
 
-.feature5 .feature_map iframe{
+#feature5 .feature_map iframe{
   width: 100%;
 }
 
@@ -1023,7 +1060,7 @@ a.tohomelink i{
   .f_item{
     width: 100%;
   }
-  .feature5 .container > div{
+  #feature5 .container > div{
     width: 100%;
   }
   .article_meta_info,
