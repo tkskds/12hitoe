@@ -13,10 +13,12 @@
 - フッター
 - ウィジェット
 - ショートコード
+- アニメーション
 - レスポンシブ
 
 項目名で検索かけると修正が便利
 そのうち、common.min.css作成
+style.cssに移すまである
 
 =============
 */
@@ -32,27 +34,10 @@ html{
 body{
   font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333;
-  animation: fadeIn 1s ease-in;
-  -webkit-animation: fadeIn 1s ease-in;
+  animation: fadeIn 500ms ease-in;
+  -webkit-animation: fadeIn 500ms ease-in;
 }
 
-@keyframes fadeIn{
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeIn{
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
 
 .siteTitle,
 h1.siteTitle,
@@ -90,31 +75,9 @@ nav a.siteTitle{
   min-width: 320px;
 }
 
-nav{
-  animation: fadeDown 2s ease-in;
-  -webkit-animation: fadeDown 2s ease-in;
-}
-
-@keyframes fadeDown {
-	from {
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-@-webkit-keyframes fadeDown {
-	from {
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+.headerArea nav{
+  animation: fadeDown 1000ms ease-in;
+  -webkit-animation: fadeDown 1000s ease-in;
 }
 
 /*トップページではナビメニューにh1タグを使用するため
@@ -294,8 +257,8 @@ li.sidenav-ttl {
 /*テキストアニメーション*/
 
 .dyHeaderTextMotion1{
-  animation: dyHeaderTextMotion1 3s ease-in 0s;
-  -webkit-animation: dyHeaderTextMotion1 3s ease-in 0s;
+  animation: dyHeaderTextMotion1 2000ms ease-in 0s;
+  -webkit-animation: dyHeaderTextMotion1 2000ms ease-in 0s;
 }
 
 .dyHeaderTextMotion2{
@@ -312,76 +275,8 @@ li.sidenav-ttl {
   height: 100%;
   background: #ffffff;
   transform: scaleX(0);
-  animation: dyHeaderTextMotion2 1s cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
-  -webkit-animation: dyHeaderTextMotion2 1s cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
-}
-
-@keyframes dyHeaderTextMotion1 {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 20%, 0);
-	}
-  50% {
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
-	100% {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-@-webkit-keyframes dyHeaderTextMotion1 {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 20%, 0);
-	}
-  50% {
-		opacity: 0;
-		transform: translate3d(0, 20%, 0);
-	}
-	100% {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-@keyframes dyHeaderTextMotion2 {
-  0% {
-    transform: scaleX(0);
-    transform-origin: 0 0;
-  }
-  45% {
-    transform: none;
-    transform-origin: 0 0;
-  }
-  50% {
-    transform: none;
-    transform-origin: 100% 0;
-  }
-  100% {
-    transform: scaleX(0);
-    transform-origin: 100% 0;
-  }
-}
-
-@-webkit-keyframes dyHeaderTextMotion2 {
-  0% {
-    transform: scaleX(0);
-    transform-origin: 0 0;
-  }
-  45% {
-    transform: none;
-    transform-origin: 0 0;
-  }
-  50% {
-    transform: none;
-    transform-origin: 100% 0;
-  }
-  100% {
-    transform: scaleX(0);
-    transform-origin: 100% 0;
-  }
+  animation: dyHeaderTextMotion2 1000ms cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
+  -webkit-animation: dyHeaderTextMotion2 1000ms cubic-bezier(0.77, 0, 0.175, 1) 1500ms;
 }
 
 /****************         特徴部分        *******************/
@@ -940,7 +835,117 @@ a.tohomelink i{
   flex-grow: 2;
 }
 
-/****************       レスポンシブ      ****************************/
+/****************      アニメーション     *******************/
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown{
+	0%{
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	100%{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-keyframes fadeDown{
+	0%{
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	100%{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes dyHeaderTextMotion1 {
+	0%{
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+  50%{
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-keyframes dyHeaderTextMotion1 {
+	0%{
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+  50%{
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+	100%{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes dyHeaderTextMotion2{
+  0%{
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+  45%{
+    transform: none;
+    transform-origin: 0 0;
+  }
+  50%{
+    transform: none;
+    transform-origin: 100% 0;
+  }
+  100%{
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+  }
+}
+
+@-webkit-keyframes dyHeaderTextMotion2{
+  0%{
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+  45%{
+    transform: none;
+    transform-origin: 0 0;
+  }
+  50%{
+    transform: none;
+    transform-origin: 100% 0;
+  }
+  100%{
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+  }
+}
+
+/****************       レスポンシブ      *******************/
 
 @media(min-width:961px){
   .contentArea{
