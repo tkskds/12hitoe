@@ -26,8 +26,8 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
       <?php endif; ?>
       <?php if ($articleList == 'value3' || $articleList == 'value4' ) : ?>
         <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-          <span class="day"><?php echo get_the_date('d'); ?></span>
-          <span class="month"><?php echo get_post_time('M'); ?></span>
+          <i class="fas fa-calendar-alt"></i>
+          <span><?php the_time(get_option('date_format')); ?></span>
         </time>
       <?php endif; ?>
       <?php if (has_post_thumbnail()): ?>

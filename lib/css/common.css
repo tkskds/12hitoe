@@ -678,8 +678,11 @@ li.sidenav-ttl {
 
 .articleList3 time{
   position: absolute;
-  bottom: 0;
-  right: 0;
+  font-size: .5em;
+  line-height: 1;
+  color: #778899;
+  bottom: 10px;
+  right: 10px;
 }
 
 .articleList3 .category{
