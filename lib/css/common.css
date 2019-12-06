@@ -609,6 +609,92 @@ li.sidenav-ttl {
   padding: 1em 17px;
 }
 
+.articleList2 {
+  position: relative;
+  width: calc(50% - 20px);
+  max-width: 520px;
+  background: white;
+  margin: 0 auto 20px;
+}
+
+.articleList2 .thumbnail time {
+  position: absolute;
+  font-size: 10px;
+  top: -10px;
+  right: -10px;
+  width: 70px;
+  height: 50px;
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+}
+
+.articleList2 .thumbnail .category {
+  position: absolute;
+  font-size: .75em;
+  line-height: 30px;
+  bottom: 10px;
+  left: 10px;
+  padding: 0 17px;
+  color: white;
+}
+
+.articleList3{
+  position: relative;
+  width: calc(50% - 20px);
+  max-width: 520px;
+  margin: 0 10px;
+}
+
+.articleList3 a{
+  display: flex;
+  padding: 10px;
+  height: 90px;
+  background: white;
+}
+
+.articleList3 .thumbnail img{
+  width: 100px;
+  height: auto;
+}
+
+.articleList3 time{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.articleList3 .category{
+  position: absolute;
+  font-size: .75em;
+  top: -5px;
+  left: -6px;
+  background: tomato;
+  color: white;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 20px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.39);
+}
+
+.articleList3 .category::before{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  border: 3px solid transparent;
+  border-top-color: tomato;
+  border-right-color: tomato;
+}
+
+.articleList3 .content{
+  margin-left: 20px;
+}
+
+
 /****************         記事詳細        *******************/
 
 main,

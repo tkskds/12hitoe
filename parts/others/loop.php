@@ -1,14 +1,22 @@
 <?php
-$ttl = get_the_title();
-$cssfw = get_option('site_cssfw_choice');
-$articleList = get_option('site_articleList_card');
-// if (『記事一覧に抜粋を表示する』チェックボックスがON){
-//   $bassui = the_excerpt();
-// }else{
-//   $bassui = ''
-// }endif;
+
+$ttl         = get_the_title();
+$artcileList = get_option('site_articleList_card') ? get_option('site_articleList_card') : 'value1' ;
+
+function addCardTypeClass($e){
+  switch ($e) :
+    case 'value1' : post_class('articleList1') ; break ;
+    case 'value2' : post_class('articleList2') ; break ;
+    case 'value3' : post_class('articleList3') ; break ;
+    case 'value4' : post_class('articleList4') ; break ;
+    case 'value5' : post_class('articleList5') ; break ;
+    case 'value6' : post_class('articleList6') ; break ;
+  endswitch ;
+}
+
 ?>
-<article <?php if ($articleList = 'value1') {post_class('articleList1');} ?>>
+
+<article <?php addCardTypeClass($artcileList) ?>>
   <a href="<?php the_permalink(); ?>">
     <div class="thumbnail">
       <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
