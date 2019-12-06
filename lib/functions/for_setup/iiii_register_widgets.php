@@ -26,7 +26,7 @@ function register_widgets(){
     'name'=>'固定サイドバー',
     'id' => 'fixed_side_widget',
     'description' => 'スクロールに追従する固定サイドバーです。',
-    'before_widget'=>'<div id="%1$s" class="fixed_side_widget %2$s">',
+    'before_widget'=>'<div id="%1$s" class="widget %2$s">',
     'after_widget'=>'</div>',
     'before_title' => '<h4 class="sidebar_title">',
     'after_title' => '</h4>',
