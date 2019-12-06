@@ -391,7 +391,7 @@ function org_customizer($wp_customize){
       ));
 
           $wp_customize->add_setting('site_feature_section_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -400,10 +400,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
-              'value4'    => '様々な方向からフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -563,7 +562,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_feature_section2_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -572,9 +571,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -631,7 +630,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section3_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -640,9 +639,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -697,7 +696,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section4_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -706,9 +705,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -815,7 +814,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_feature_section5_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -824,9 +823,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));
@@ -855,7 +854,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_feature_section6_animation', array(
-            'default'     => 'value1',
+            'default'     => 'value3',
             'type'        => 'option',
           ));
 
@@ -864,9 +863,9 @@ function org_customizer($wp_customize){
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
-              'value1'    => 'アニメーションなし',
-              'value2'    => '少し下からフェードイン',
-              'value3'    => '大きくしたからフェードイン',
+              'value1'    => '少し下からフェードイン',
+              'value2'    => '大きくしたからフェードイン',
+              'value3'    => 'アニメーションなし',
             ),
             'section'     => 'site_feature',
           ));

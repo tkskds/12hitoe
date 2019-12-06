@@ -77,7 +77,7 @@ nav a.siteTitle{
 
 .headerArea nav{
   animation: fadeDown 1000ms ease-in;
-  -webkit-animation: fadeDown 1000s ease-in;
+  -webkit-animation: fadeDown 1000ms ease-in;
 }
 
 /*トップページではナビメニューにh1タグを使用するため
@@ -341,62 +341,72 @@ li.sidenav-ttl {
   font-size: 1.75em;
 }
 
-.fadein{
-  opacity : 0;
-  -webkit-transform: translate3d(0, 30px, 0);
-  transform : translate3d(0, 30px, 0);
-  -webkit-transition: 1s ease-in;
-  transition : 1s ease-in;
+.delighter{
+  opacity: 0;
 }
 
-.scrollin{
+.d_anime1 .delighter{
+  -webkit-transform: translate3d(0, 30px, 0);
+  transform : translate3d(0, 30px, 0);
+  -webkit-transition: 1s ease-in-out;
+  transition : 1s ease-in-out;
+}
+
+.d_anime2 .delighter{
+  -webkit-transform: translate3d(0, 100vh, 0);
+  transform : translate3d(0, 100vh, 0);
+  -webkit-transition: 1s ease-in-out;
+  transition : 1s ease-in-out;
+}
+
+.delighter.started.ended{
   will-change: opacity, transform;
   opacity : 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform : translate3d(0, 0, 0);
 }
 
-.fadein:nth-of-type(2){
+.delighter:nth-of-type(2){
   -webkit-transition-delay: 200ms;
   transition-delay: 200ms;
 }
 
-.fadein:nth-of-type(3){
+.delighter:nth-of-type(3){
   -webkit-transition-delay: 400ms;
   transition-delay: 400ms;
 }
 
-.fadein:nth-of-type(4){
+.delighter:nth-of-type(4){
   -webkit-transition-delay: 600ms;
   transition-delay: 600ms;
 }
 
-.fadein:nth-of-type(5){
+.delighter:nth-of-type(5){
   -webkit-transition-delay: 800ms;
   transition-delay: 800ms;
 }
 
-.fadein:nth-of-type(6){
+.delighter:nth-of-type(6){
   -webkit-transition-delay: 1000ms;
   transition-delay: 1000ms;
 }
 
-.fadein:nth-of-type(7){
+.delighter:nth-of-type(7){
   -webkit-transition-delay: 1200ms;
   transition-delay: 1200ms;
 }
 
-.fadein:nth-of-type(8){
+.delighter:nth-of-type(8){
   -webkit-transition-delay: 1400ms;
   transition-delay: 1400ms;
 }
 
-.fadein:nth-of-type(9){
+.delighter:nth-of-type(9){
   -webkit-transition-delay: 1600ms;
   transition-delay: 1600ms;
 }
 
-.fadein:nth-of-type(10){
+.delighter:nth-of-type(10){
   -webkit-transition-delay: 1800ms;
   transition-delay: 1800ms;
 }
@@ -840,18 +850,22 @@ a.tohomelink i{
 @keyframes fadeIn{
   0% {
     opacity: 0;
+    transform: translate3d(0, 0, 0); /* will-change */
   }
   100% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @-webkit-keyframes fadeIn{
   0%{
     opacity: 0;
+    transform: translate3d(0, 0, 0);
   }
   100%{
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -899,7 +913,7 @@ a.tohomelink i{
 	}
   50%{
 		opacity: 0;
-		transform: translate3d(0, 20%, 0);
+		transform: translate3d(0, 20%, 0); /* bodyとnavのアニメーション時間考慮して少し遅らせる */
 	}
 	100%{
 		opacity: 1;
