@@ -1,8 +1,9 @@
 <?php
 
 
-add_filter('nav_menu_css_class' , 'active_nav_class' , 10 , 2);
-add_filter('nav_menu_css_class' , 'sp_menu_classes'  , 10 , 3);
+add_filter('widget_tag_cloud_args', 'tag_font_size');
+add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3);
 
 
 /////////////////////
@@ -12,16 +13,17 @@ add_filter('nav_menu_css_class' , 'sp_menu_classes'  , 10 , 3);
 function m_pagination() {
   global $wp_query;
   if ( $wp_query->max_num_pages <= 1 ) return;
-  $big = 999999999;
+  $big   = 999999999;
   $pages = paginate_links(array(
-    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-    'format' => '?paged=%#%',
-    'current' => max( 1, get_query_var('paged') ),
-    'total' => $wp_query->max_num_pages,
-    'type'  => 'array',
-    'prev_text' => '<i class="material-icons">chevron_left</i>',
-     'next_text' => '<i class="material-icons">chevron_right</i>'
+    'base'        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'format'      => '?paged=%#%',
+    'current'     => max( 1, get_query_var('paged') ),
+    'total'       => $wp_query->max_num_pages,
+    'type'        => 'array',
+    'prev_text'   => '<i class="material-icons">chevron_left</i>',
+     'next_text'  => '<i class="material-icons">chevron_right</i>'
   ));
+
   if(is_array($pages)){
     $paged = (get_query_var('paged') == 0) ? 1 : get_query_var('paged');
     echo '<ul class="pagination">';
@@ -31,6 +33,20 @@ function m_pagination() {
     echo '</ul>';
   }
   return $classes;
+}
+
+/////////////////////
+// タグの大きさ統一
+/////////////////////
+
+function tag_font_size($args) {
+  $org_args = array(
+    'smallest'  => 14,
+    'largest'   => 14,
+    'number'    => 50,
+    'unit'      => px,
+  );
+  return $org_args;
 }
 
 /////////////////////
