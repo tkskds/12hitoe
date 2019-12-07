@@ -1305,6 +1305,7 @@ function org_customizer($wp_customize){
               'value4'    => 'デザイン4',
               'value5'    => 'デザイン5',
               'value6'    => 'デザイン6',
+              'value7'    => 'デザイン7',
             ),
             'section'     => 'site_article',
           ));
