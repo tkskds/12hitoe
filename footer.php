@@ -1,5 +1,8 @@
 <?php
 
+  $onlyLogo   = get_option('only_logo');
+  $logo       = get_theme_mod('custom_logo');
+  $logoUrl	  = wp_get_attachment_url( $logo );
   $credit     = get_option('site_footer_credit')              ? get_option('site_footer_credit')           : false ;
   $goToTop    = get_option('site_footer_gototop')             ? get_option('site_footer_gototop')          : false ;
   $shareBtn   = get_option('site_footer_share')               ? get_option('site_footer_share')            : false ;
@@ -50,7 +53,12 @@
               <?php endif; ?>
             </div>
           <?php endif; //END フッターウィジェット ?>
-          <a href="<?php echo home_url(); ?>" class="tohomelink"><i class="fas fa-home"></i>HOME</a>
+          <a href="<?php echo home_url(); ?>" class="tohomelink">
+            <?php if(has_custom_logo()): ?>
+              <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo" />
+            <?php endif; ?>
+            <?php if ($onlyLogo == false) { bloginfo('name'); } ?>
+          </a>
           <?php // フッターメニュー
             wp_nav_menu(array(
               'theme_location'  => 'nav_footer',

@@ -532,6 +532,7 @@ li.sidenav-ttl {
   text-decoration: none;
 }
 
+/*リストの上2記事は上に余白とる（サイドバーの高さと合わせるため）*/
 .articleList1:nth-of-type(1),
 .articleList1:nth-of-type(2),
 .articleList2:nth-of-type(1),
@@ -545,6 +546,16 @@ li.sidenav-ttl {
 .articleList6:nth-of-type(1),
 .articleList6:nth-of-type(2){
   margin-top: 20px;
+}
+
+/*2カラムで最後が1記事になったときに中央寄せなるの防ぐ*/
+.articleList1:nth-child(2n+1):last-child,
+.articleList2:nth-child(2n+1):last-child,
+.articleList3:nth-child(2n+1):last-child,
+.articleList4:nth-child(2n+1):last-child,
+.articleList5:nth-child(2n+1):last-child,
+.articleList6:nth-child(2n+1):last-child{
+  margin-left: 10px;
 }
 
 .articleList1{
@@ -722,6 +733,12 @@ li.sidenav-ttl {
   margin-left: 10px;
 }
 
+/*文字数多い記事だとtime部分と重複するためやや文字小さく
+560px以下ではワンカラムになって重複可能性ないから戻してもいいかも
+ただ、ユーザーに文字を大きくされたら詰むので修正の必要あり*/
+.articleList3 .content .title{
+  font-size: .85em;
+}
 
 /****************         記事詳細        *******************/
 
@@ -847,6 +864,7 @@ article h4{
 /*ページネーション*/
 .pagination{
   display: block;
+  margin: 10px;
   text-align: center;
 }
 
@@ -905,11 +923,7 @@ h4.search_result_ttl::before {
 
 .aside .widget{
   padding: 10px;
-}
-
-.aside h4.sidebar_title {
-  font-size: 1.2em;
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 .aside h4.sidebar_title::after {
@@ -1036,6 +1050,12 @@ a.tohomelink i{
 
 
 /****************      ウィジェット       *******************/
+
+h4.sidebar_title,
+h4.footer_w_title {
+  font-size: 1.2em;
+  margin: 0;
+}
 
 /*** 検索窓 ***/
 .search_form_wrap{

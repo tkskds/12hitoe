@@ -1116,7 +1116,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_bk', array(
-            'label'       => 'コンテンツエリア全体の背景',
+            'label'       => 'コンテンツエリア全体の背景色',
             'section'     => 'site_color',
           )));
 
@@ -1127,6 +1127,16 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
             'label'       => 'コンテンツエリア全体の文字色',
+            'section'     => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_color_widget_bk', array(
+            'type'        => 'option',
+            'default'     => '#ffffff',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_widget_bk', array(
+            'label'       => 'サイドバーのウィジェット背景色',
             'section'     => 'site_color',
           )));
 
@@ -1713,6 +1723,7 @@ function add_customizerCSS(){
   $nav_c    = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
   $body_bk  = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
   $body_c   = get_option('site_color_body_color')       ? get_option('site_color_body_color')       : '#2b546a';
+  $side_bk  = get_option('site_color_widget_bk')        ? get_option('site_color_widget_bk')        : '#ffffff';
   $foot_bk  = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
   $foot_c   = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
 
@@ -1787,6 +1798,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 /*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
+.aside .widget{background:<?php echo $side_bk ?>;}
 footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
 a.tohomelink{color:<?php echo $foot_c ?>;}
 /****************************
