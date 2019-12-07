@@ -12,10 +12,17 @@
   - parts
 
       部分テンプレート各種。基本的にindex.phpやheader.phpなどはここからカスタマイザーの値に合わせて部品を取り出す。
+      ../functions/for_setupではheadクリーナーやテーマサポート、カスタマイザーの設定、ウィジェット・ショートコードの登録を、
+      ../functions/for_templateではテンプレート用のアレコレを行う。
 
   - vendor
 
       materialize、delighter.js、plugin-update-checkerなど外部ベンダー提供のプラグインやライブラリ。サードパーティはここに。
+
+## 仕様
+  
+  1. materializeベース
+  2. カスタマイザーの値に合わせてHTML構成する
 
 ## Caution
 
