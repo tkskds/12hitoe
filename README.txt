@@ -1,22 +1,21 @@
 
-## DirDescription
+## ディレクトリ構成
 
   - images
 
-      filters in DynamicHeader, NotFound images, favicon, default thumbnail and so on...
-
+      ダイナミックヘッダーに使用するフィルター、404ページで使うアイキャッチ画像、アイキャッチが未設定の時に出力されるデフォルトのアイキャッチ画像など
+      
   - lib
 
-      original CSS/JS/functions(php) files
+      独自のCSS/JS/PHPファイル。
 
   - parts
 
-      component files
+      部分テンプレート各種。基本的にindex.phpやheader.phpなどはここからカスタマイザーの値に合わせて部品を取り出す。
 
   - vendor
 
-      3rd party files(Materialize , FontAwesome, and so on)
-
+      materialize、delighter.js、plugin-update-checkerなど外部ベンダー提供のプラグインやライブラリ。サードパーティはここに。
 
 ## Caution
 
