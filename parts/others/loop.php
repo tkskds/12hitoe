@@ -80,7 +80,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 <?php elseif($articleList == 'value7') : //materializeデザインの記事リスト ?>
 
   <article class="articleList7 card">
-    <div class="card-image waves-effect waves-block">
+    <div class="card-image waves-effect waves-block thumbnail">
       <?php if (has_post_thumbnail()): ?>
         <?php the_post_thumbnail('eyecatch', array(
           'alt'    => $ttl,

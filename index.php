@@ -9,7 +9,7 @@
                       echo 'col l9';
                       }
                   ?> main">
-      <div class="main__container artcileList_wrap">
+      <div class="main__container articleList_wrap">
         <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <?php get_template_part('parts/others/loop') ?>
         <?php endwhile; endif; ?>
