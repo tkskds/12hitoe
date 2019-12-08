@@ -1,7 +1,7 @@
 <?php
 
 // article    > .tumbnail / .content
-// .thumbnail > time/ img / .category
+// .thumbnail > time / img / .category
 
 $ttl         = get_the_title();
 $articleList = get_option('site_article_list_type') ? get_option('site_article_list_type') : 'value1' ;
@@ -24,45 +24,55 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
   ?>>
     <a href="<?php the_permalink(); ?>">
 
-      <div class="thumbnail"><?php // time / img / .category ?>
 
-        <?php // time ?>
-        <?php if ($articleList == 'value1' || $articleList == 'value2' ) : ?>
-          <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
-            <span class="day"><?php echo get_the_date('d'); ?></span>
-            <span class="month"><?php echo get_post_time('M'); ?></span>
-          </time>
-        <?php elseif ($articleList == 'value3') : ?>
-          <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
-            <i class="fas fa-calendar-alt"></i>
-            <span><?php the_time(get_option('date_format')); ?></span>
-          </time>
-        <?php else : ?>
-          <time datetime="<?php echo get_the_date('Y-m-d'); ?>"></time>
-        <?php endif; //END time ?>
 
-        <?php // img ?>
-        <?php if (has_post_thumbnail()): ?>
-          <?php the_post_thumbnail('eyecatch', array('alt' => $ttl)); ?>
-        <?php else: ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
-        <?php endif; ?>
+      <?php if($articleList != 'value5'): //デザイン5以外ではアイキャッチ出力 ?>
+        <div class="thumbnail"><?php // アイキャッチ部分 ?>
 
-        <?php // .category ?>
-        <?php if (!is_category() && has_category()): ?>
-          <div class="category acc__color">
-            <?php
-              $post_cat = get_the_category();
-              echo $post_cat[0]->name;
-            ?>
-          </div>
-        <?php endif; //END .category ?>
+          <?php // time ?>
+          <?php if ($articleList == 'value1' || $articleList == 'value2' ) : ?>
+            <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
+              <span class="day"><?php echo get_the_date('d'); ?></span>
+              <span class="month"><?php echo get_post_time('M'); ?></span>
+            </time>
+          <?php elseif ($articleList == 'value3') : ?>
+            <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
+              <i class="fas fa-calendar-alt"></i>
+              <span><?php the_time(get_option('date_format')); ?></span>
+            </time>
+          <?php else : ?>
+            <time datetime="<?php echo get_the_date('Y-m-d'); ?>"></time>
+          <?php endif; //END time ?>
 
-      </div>
+          <?php // img ?>
+          <?php if (has_post_thumbnail()): ?>
+            <?php the_post_thumbnail('eyecatch', array('alt' => $ttl)); ?>
+          <?php else: ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
+          <?php endif; ?>
 
-      <div class="content">
-        <p class="title"><?php the_title(); ?></p>
-      </div>
+          <?php // .category ?>
+          <?php if (!is_category() && has_category()): ?>
+            <?php if($articleList == 'value1' || $articleList == 'value2' || $articleList == 'value3') : //デザイン1~3でのみカテゴリ表示 ?>
+              <div class="category acc__color">
+                <?php
+                  $post_cat = get_the_category();
+                  echo $post_cat[0]->name;
+                ?>
+              </div>
+            <?php endif; //END デザイン1~3でのみカテゴリ表示 ?>
+          <?php endif; //END .category ?>
+
+        </div><?php //END .thumbnail ?>
+      <?php endif; ?>
+
+      <?php if($articleList != 'value4') : //デザイン4以外では.content表示 ?>
+
+        <div class="content"><?php // タイトル部分 ?>
+          <p class="title"><?php the_title(); ?></p>
+        </div>
+        
+      <?php endif; //END デザイン4以外では.content表示 ?>
 
     </a>
   </article>

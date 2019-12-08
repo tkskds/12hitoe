@@ -522,48 +522,37 @@ li.sidenav-ttl {
 
 /****************         記事一覧        *******************/
 
-.articleList1 a,
-.articleList2 a,
-.articleList3 a,
-.articleList4 a,
-.articleList5 a,
-.articleList6 a{
+/* indexでの共通記事スタイル */
+.artcileList_wrap article{
+  position: relative;
+  width: calc(50% - 20px);
+  max-width: 520px;
+  margin: 0 auto 20px;
+}
+
+.artcileList_wrap article a{
   color: inherit;
   text-decoration: none;
 }
 
+.articleList_wrap article .thumbnail img{
+  width: 100%;
+  height: auto;
+}
+
 /*リストの上2記事は上に余白とる（サイドバーの高さと合わせるため）*/
-.articleList1:nth-of-type(1),
-.articleList1:nth-of-type(2),
-.articleList2:nth-of-type(1),
-.articleList2:nth-of-type(2),
-.articleList3:nth-of-type(1),
-.articleList3:nth-of-type(2),
-.articleList4:nth-of-type(1),
-.articleList4:nth-of-type(2),
-.articleList5:nth-of-type(1),
-.articleList5:nth-of-type(2),
-.articleList6:nth-of-type(1),
-.articleList6:nth-of-type(2){
+.artcileList_wrap article:nth-of-type(1),
+.artcileList_wrap article:nth-of-type(2){
   margin-top: 20px;
 }
 
 /*2カラムで最後が1記事になったときに中央寄せなるの防ぐ*/
-.articleList1:nth-child(2n+1):last-child,
-.articleList2:nth-child(2n+1):last-child,
-.articleList3:nth-child(2n+1):last-child,
-.articleList4:nth-child(2n+1):last-child,
-.articleList5:nth-child(2n+1):last-child,
-.articleList6:nth-child(2n+1):last-child{
+.artcileList_wrap article:nth-child(2n+1):last-child{
   margin-left: 10px;
 }
 
+/*タイプごとの異なるスタイル*/
 .articleList1{
-  position: relative;
-  width: calc(50% - 20px);
-  max-width: 520px;
-  background: white;
-  margin: 0 auto 20px;
   border-radius: 2px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -610,8 +599,6 @@ li.sidenav-ttl {
 }
 
 .articleList1 .thumbnail img{
-  width: 100%;
-  height: auto;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
@@ -630,22 +617,8 @@ li.sidenav-ttl {
   position: relative;
 }
 
-.articleList2 {
-  position: relative;
-  width: calc(50% - 20px);
-  max-width: 520px;
-  background: white;
-  margin: 0 auto 20px;
-  border-radius: 0;
-}
-
 .articleList2 .thumbnail{
   position: relative;
-}
-
-.articleList2 .thumbnail img{
-  width: 100%;
-  height: auto;
 }
 
 .articleList2 .thumbnail time {
@@ -675,13 +648,6 @@ li.sidenav-ttl {
 .articleList2 .content .title{
   font-size: 1.2em;
   padding: 1em 17px;
-}
-
-.articleList3{
-  position: relative;
-  width: calc(50% - 20px);
-  max-width: 520px;
-  margin: 0 auto 20px;
 }
 
 .articleList3 a{
