@@ -535,7 +535,7 @@ li.sidenav-ttl {
   text-decoration: none;
 }
 
-.articleList_wrap article .thumbnail,
+.articleList_wrap article:not(.articleList3) .thumbnail,
 .articleList_wrap article .content{
   position: relative;
 }
@@ -955,8 +955,13 @@ a.tohomelink i{
 
 /*SPフッターメニュー*/
 
+.navbar-fixed{
+  width: 100%;
+}
+
 .navbar-fixed .footer_sp_menu{
   bottom: 0;
+  width: 100%;
 }
 
 .footer_sp_menu ul {
