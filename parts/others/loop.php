@@ -9,7 +9,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 ?>
 
 <?php //materializeのcomponentカード以外は下のコード ?>
-<?php if ($artcileList != 'value7' ) : ?>
+<?php if ($articleList != 'value7' ) : ?>
 
   <article
   <?php
@@ -71,7 +71,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
         <div class="content"><?php // タイトル部分 ?>
           <p class="title"><?php the_title(); ?></p>
         </div>
-        
+
       <?php endif; //END デザイン4以外では.content表示 ?>
 
     </a>

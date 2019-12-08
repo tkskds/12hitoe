@@ -41,11 +41,12 @@ function m_pagination() {
 
 function tag_font_size($args) {
   $org_args = array(
-    'smallest'  => 14,
-    'largest'   => 14,
+    'smallest'  => 100,
+    'largest'   => 100,
     'number'    => 50,
-    'unit'      => px,
+    'unit'      => '%',
   );
+  $args     = wp_parse_args($args, $org_args);
   return $org_args;
 }
 
