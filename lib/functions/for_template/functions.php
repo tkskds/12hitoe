@@ -39,15 +39,19 @@ function m_pagination() {
 // タグの大きさ統一
 /////////////////////
 
-function tag_font_size($args) {
+function tag_font_size($args){
   $org_args = array(
     'smallest'  => 100,
     'largest'   => 100,
-    'number'    => 50,
     'unit'      => '%',
+    'number'    => 50,
+    'format'    => 'list',
+    'separator' => "\n",
+    'orderby'   => 'count',
+    'order'     => 'DESC'
   );
-  $args     = wp_parse_args($args, $org_args);
-  return $org_args;
+  $args = wp_parse_args($args, $org_args);
+  return $args;
 }
 
 /////////////////////
