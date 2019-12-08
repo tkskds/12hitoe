@@ -535,6 +535,12 @@ li.sidenav-ttl {
   text-decoration: none;
 }
 
+.articleList_wrap article .thumbnail,
+.articleList_wrap article .content{
+  position: relative;
+}
+
+
 .articleList_wrap article .thumbnail img{
   width: 100%;
   height: auto;
@@ -552,7 +558,7 @@ li.sidenav-ttl {
 }
 
 /*タイプごとの異なるスタイル*/
-.articleList1{
+.articleList_wrap .articleList1{
   border-radius: 2px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -560,20 +566,14 @@ li.sidenav-ttl {
   transition: all 0.3s linear 0s;
 }
 
-.articleList1:hover{
+.articleList_wrap .articleList1:hover{
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
-.articleList1 .thumbnail{
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
-.articleList1 .thumbnail time{
+.articleList_wrap .articleList1 .thumbnail time{
   position: absolute;
   font-size: 10px;
   top: 15px;
@@ -587,23 +587,23 @@ li.sidenav-ttl {
   text-transform: uppercase;
 }
 
-.articleList1 .thumbnail time .day{
+.articleList_wrap .articleList1 .thumbnail time .day{
   line-height: 1.1;
   font-size: 2em;
   display: block;
   font-family: 'Fredoka One', cursive;
 }
 
-.articleList1 .thumbnail time .month{
+.articleList_wrap .articleList1 .thumbnail time .month{
   font-family: 'Fredoka One', cursive;
 }
 
-.articleList1 .thumbnail img{
+.articleList_wrap .articleList1 .thumbnail img{
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.articleList1 .thumbnail .category {
+.articleList_wrap .articleList1 .thumbnail .category {
   position: absolute;
   font-size: .75em;
   line-height: 30px;
@@ -613,15 +613,7 @@ li.sidenav-ttl {
   color: white;
 }
 
-.articleList1 .content{
-  position: relative;
-}
-
-.articleList2 .thumbnail{
-  position: relative;
-}
-
-.articleList2 .thumbnail time {
+.articleList_wrap .articleList2 .thumbnail time {
   position: absolute;
   font-size: 10px;
   top: -10px;
@@ -634,7 +626,7 @@ li.sidenav-ttl {
   border-bottom: 3px solid;
 }
 
-.articleList2 .thumbnail .category {
+.articleList_wrap .articleList2 .thumbnail .category {
   position: absolute;
   font-size: .75em;
   line-height: 30px;
@@ -644,25 +636,25 @@ li.sidenav-ttl {
   color: white;
 }
 
-.articleList1 .content .title,
-.articleList2 .content .title{
+.articleList_wrap .articleList1 .content .title,
+.articleList_wrap .articleList2 .content .title{
   font-size: 1.2em;
   padding: 1em 17px;
 }
 
-.articleList3 a{
+.articleList_wrap .articleList3 a{
   display: flex;
   padding: 10px;
   height: 90px;
   background: white;
 }
 
-.articleList3 .thumbnail img{
+.articleList_wrap .articleList3 .thumbnail img{
   width: 100px;
   height: 70px;
 }
 
-.articleList3 time{
+.articleList_wrap .articleList3 time{
   position: absolute;
   font-size: .5em;
   line-height: 1;
@@ -671,7 +663,7 @@ li.sidenav-ttl {
   right: 10px;
 }
 
-.articleList3 .category{
+.articleList_wrap .articleList3 .category{
   position: absolute;
   font-size: .75em;
   top: -5px;
@@ -685,7 +677,7 @@ li.sidenav-ttl {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
-.articleList3 .category::before{
+.articleList_wrap .articleList3 .category::before{
   position: absolute;
   top: 25px;
   left: 0;
@@ -695,14 +687,14 @@ li.sidenav-ttl {
   filter: brightness(0.7);
 }
 
-.articleList3 .content{
+.articleList_wrap .articleList3 .content{
   margin-left: 10px;
 }
 
 /*文字数多い記事だとtime部分と重複するためやや文字小さく
 560px以下ではワンカラムになって重複可能性ないから戻してもいいかも
 ただ、ユーザーに文字を大きくされたら詰むので修正の必要あり*/
-.articleList3 .content .title{
+.articleList_wrap .articleList3 .content .title{
   font-size: .85em;
 }
 
@@ -1239,19 +1231,13 @@ h4.footer_w_title {
 @media(min-width:961px){
   .contentArea{
     display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
   }
 }
 
 
 @media(max-width:960px){
-  .articleList1,
-  .articleList2,
-  .articleList3,
-  .articleList4,
-  .articleList5,
-  .articleList6{
+  .articleList_wrap article:not(.articleList7){
     margin: 0 auto 20px;
   }
   .f_item{
@@ -1290,29 +1276,14 @@ h4.footer_w_title {
     font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
     transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
   }
-  .articleList1,
-  .articleList2,
-  .articleList3,
-  .articleList4,
-  .articleList5,
-  .articleList6{
+  .articleList_wrap article{
     width: 95%;
     margin: 0 2.5% 20px;
   }
-  .articleList1:nth-of-type(1),
-  .articleList2:nth-of-type(1),
-  .articleList3:nth-of-type(1),
-  .articleList4:nth-of-type(1),
-  .articleList5:nth-of-type(1),
-  .articleList6:nth-of-type(1){
+  .articleList_wrap article:nth-of-type(1),{
     margin-top: 20px;
   }
-  .articleList1:nth-of-type(2),
-  .articleList2:nth-of-type(2),
-  .articleList3:nth-of-type(2),
-  .articleList4:nth-of-type(2),
-  .articleList5:nth-of-type(2),
-  .articleList6:nth-of-type(2){
+  .articleList_wrap article:nth-of-type(2){
     margin-top: 0;
   }
   .f_item{
