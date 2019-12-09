@@ -92,7 +92,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_bone', array(
         'priority'        => 1,
-        'title'           => '1:骨組みの設定',
+        'title'           => '1.全体/トップページの設定',
         'panel'           => 'site_builder',
       ));
 
@@ -102,7 +102,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_bone_type', array(
-            'label'       => 'トップページのタイプ',
+            'label'       => '1-1.トップページのタイプ',
             'description' => '現在4種類から選べます。詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
@@ -120,7 +120,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_bone_content_area', array(
-            'label'       => 'コンテンツエリアの最大横幅',
+            'label'       => '1-2.コンテンツエリアの最大横幅',
             'description' => 'コンテンツ部分の最大横幅を設定します。（デフォルト:1200）',
             'type'        => 'number',
             'section'     => 'site_bone',
@@ -132,7 +132,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_bone_sidebar', array(
-            'label'       => 'サイドバーを左側に表示',
+            'label'       => '1-3.サイドバーを左側に表示',
             'description' => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。',
             'type'        => 'checkbox',
             'section'     => 'site_bone',
@@ -144,7 +144,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_bone_priority', array(
-            'label'       => 'ダイナミックヘッダーを画面最上部に表示',
+            'label'       => '1-4.ダイナミックヘッダーを画面最上部に表示',
             'description' => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます。（『トップページのタイプ』でコーポレートまたはランディングを選択した場合のみ適用）',
             'type'        => 'checkbox',
             'section'     => 'site_bone',
@@ -152,7 +152,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_dyheader', array(
         'priority'        => 2,
-        'title'           => '2:ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
+        'title'           => '2.ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
         'panel'           => 'site_builder',
       ));
 
@@ -163,7 +163,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_text', array(
-            'label'       => 'ヘッダー部分のテキスト',
+            'label'       => '2-1.ヘッダー部分のテキスト',
             'type'        => 'text',
             'section'     => 'site_dyheader',
           ));
@@ -174,7 +174,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_text_size', array(
-            'label'       => 'ヘッダー部分のテキストサイズ',
+            'label'       => '2-2.ヘッダー部分のテキストサイズ',
             'type'        => 'number',
             'section'     => 'site_dyheader',
           ));
@@ -185,7 +185,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_text_color', array(
-            'label'       => 'ヘッダー部分のテキスト色',
+            'label'       => '2-3.ヘッダー部分のテキスト色',
             'section'     => 'site_dyheader',
           )));
 
@@ -194,7 +194,7 @@ function org_customizer($wp_customize){
             'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
-            'label'       => 'テキストへ適用するアニメーション',
+            'label'       => '2-4.テキストへ適用するアニメーション',
             'description' => '現在4種類から選択できます。',
             'type'        => 'radio',
             'choices'     => array(
@@ -212,7 +212,7 @@ function org_customizer($wp_customize){
             'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button', array(
-            'label'       => 'ヘッダー部分のボタン',
+            'label'       => '2-5.ヘッダー部分のボタン',
             'description' => 'ヘッダー部分に適用されるCTA的に使用可能なボタンです。（空白の場合ボタンは表示されません。）',
             'type'        => 'text',
             'section'     => 'site_dyheader',
@@ -223,7 +223,7 @@ function org_customizer($wp_customize){
             'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button_link', array(
-            'label'       => 'ボタンのリンク先URL',
+            'label'       => '2-6.ボタンのリンク先URL',
             'description' => 'リンク先のURLを入力してください。',
             'section'     => 'site_dyheader',
             'type'        => 'text',
@@ -234,7 +234,7 @@ function org_customizer($wp_customize){
             'type'        => 'option',
           ));
           $wp_customize->add_control('site_dyheader_button2', array(
-            'label'       => 'ヘッダー部分のボタン2',
+            'label'       => '2-7.ヘッダー部分のボタン2',
             'description' => 'もう一つボタンが必要な場合はこちらから。（空白の場合ボタンは表示されません。）',
             'type'        => 'text',
             'section'     => 'site_dyheader',
@@ -246,7 +246,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_button2_link', array(
-            'label'       => 'ボタンのリンク先URL',
+            'label'       => '2-8.ボタンのリンク先URL',
             'description' => '',
             'type'        => 'text',
             'section'     => 'site_dyheader',
@@ -257,7 +257,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_img', array(
-      			'label'       => 'ヘッダー部分の画像（文字の隣）',
+      			'label'       => '2-9.ヘッダー部分の画像（文字の隣）',
             'description' => 'ヘッダー部分のテキストの隣に画像を挿入します。',
       			'section'     => 'site_dyheader',
         	)));
@@ -268,7 +268,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_img_width', array(
-      			'label'       => 'ヘッダー部分の画像のサイズ',
+      			'label'       => '2-10.ヘッダー部分の画像のサイズ',
             'description' => 'ヘッダー部分の画像のサイズの調整ができます。（デフォルト:100,最大:100）',
             'type'        => 'number',
             'section'     => 'site_dyheader',
@@ -279,7 +279,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_img_position', array(
-            'label'       => 'ヘッダー部分の画像を左側へ移動',
+            'label'       => '2-11.ヘッダー部分の画像を左側へ移動',
             'type'        => 'checkbox',
             'section'     => 'site_dyheader',
           ));
@@ -289,7 +289,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_bkimg', array(
-            'label'       => 'ヘッダー部分の画像（背景）',
+            'label'       => '2-12.ヘッダー部分の画像（背景）',
             'description' => 'ヘッダー部分の背景に画像を挿入します。',
             'section'     => 'site_dyheader',
           )));
@@ -300,7 +300,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_bkimg_filter', array(
-            'label'       => 'ヘッダー部分の背景画像フィルター',
+            'label'       => '2-13.ヘッダー部分の背景画像フィルター',
             'description' => 'ヘッダーの背景画像にフィルターをかけることができます。文字が見づらい背景画像を使用する場合に有効です。',
             'type'        => 'select',
             'choices'     => array(
@@ -321,7 +321,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_bkcolor', array(
-            'label'       => 'ヘッダー部分の背景色',
+            'label'       => '2-14.ヘッダー部分の背景色',
             'description' => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。',
             'section'     => 'site_dyheader',
           )));
@@ -332,7 +332,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_width', array(
-            'label'       => 'ヘッダー部分の最大横幅',
+            'label'       => '2-15.ヘッダー部分の最大横幅',
             'description' => 'ヘッダー部分の最大横幅を設定できます。『1:骨組みの設定』で設定した数値と同じものがオススメです。（デフォルト:1200,最大3000）',
             'type'        => 'number',
             'section'     => 'site_dyheader',
@@ -344,7 +344,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_height', array(
-            'label'       => 'ヘッダー部分の高さ',
+            'label'       => '2-16.ヘッダー部分の高さ',
             'description' => 'ヘッダー部分の高さを調整できます（デフォルト:50,最大:100）',
             'type'        => 'number',
             'section'     => 'site_dyheader',
@@ -356,7 +356,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_margin-top', array(
-            'label'       => 'ヘッダー部分の上部の余白',
+            'label'       => '2-17.ヘッダー部分の上部の余白',
             'description' => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）',
             'type'        => 'number',
             'section'     => 'site_dyheader',
@@ -368,7 +368,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_padding', array(
-            'label'       => 'ヘッダー部分の余白',
+            'label'       => '2-18.ヘッダー部分の余白',
             'description' => 'ヘッダー部分の余白を調整できます（デフォルト:20）。',
             'type'        => 'number',
             'section'     => 'site_dyheader',
@@ -380,7 +380,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_dyheader_notTop', array(
-            'label'       => 'トップ（ホーム）画面以外でも表示',
+            'label'       => '2-19.トップ（ホーム）画面以外でも表示',
             'description' => '通常はトップページのみで表示するようになっているダイナミックヘッダーを記事ページやカテゴリページでも表示するようにします。',
             'type'        => 'checkbox',
             'section'     => 'site_dyheader',
@@ -388,7 +388,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_feature', array(
         'priority'        => 3,
-        'title'           => '3:フューチャー部分（『1:骨組みの設定』で選択した場合のみ）',
+        'title'           => '3.フューチャー部分（『1:骨組みの設定』で選択した場合のみ）',
         'panel'           => 'site_builder',
       ));
 
@@ -398,7 +398,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_animation', array(
-            'label'       => 'セクション1にアニメーションを使用',
+            'label'       => '3-1.セクション1にアニメーションを使用',
             'description' => '詳しくはこちら',
             'type'        => 'radio',
             'choices'     => array(
@@ -420,7 +420,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_feature_section_ttl', array(
-            'label'       => 'タイトル（セクション1）',
+            'label'       => '3-2.タイトル（セクション1）',
             'type'        => 'text',
             'section'     => 'site_feature',
           ));
@@ -937,7 +937,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_cssfw', array(
         'priority'        => 4,
-        'title'           => '4:デザインの設定',
+        'title'           => '4.デザインの設定',
         'panel'           => 'site_builder',
       ));
 
@@ -959,7 +959,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_font',array(
         'priority'        => 5,
-        'title'           => '5:フォントの設定',
+        'title'           => '5.フォントの設定',
         'panel'           => 'site_builder',
       ));
 
@@ -1055,7 +1055,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_color',array(
         'priority'        => 6,
-        'title'           => '6:色の設定',
+        'title'           => '6.色の設定',
         'description'     => '各パーツごとに色が設定できます。使い方の詳細や上手な使い方はこちら。',
         'panel'           => 'site_builder',
       ));
@@ -1162,7 +1162,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_nav',array(
         'priority'        => 7,
-        'title'           => '7:ナビメニューの設定',
+        'title'           => '7.ナビメニューの設定',
         'panel'           => 'site_builder',
       ));
 
@@ -1285,7 +1285,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_article',array(
         'priority'        => 8,
-        'title'           => '8:記事の設定',
+        'title'           => '8.記事の設定',
         'panel'           => 'site_builder',
       ));
 
@@ -1343,13 +1343,13 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_decoration',array(
         'priority'        => 9,
-        'title'           => '9:記事装飾の設定',
+        'title'           => '9.記事装飾の設定',
         'panel'           => 'site_builder',
       ));
 
       $wp_customize->add_section('site_footer',array(
         'priority'        => 10,
-        'title'           => '10:フッターの設定',
+        'title'           => '10.フッターの設定',
         'panel'           => 'site_builder',
       ));
 
@@ -1590,6 +1590,56 @@ function org_customizer($wp_customize){
             'description' => '',
             'type'        => 'checkbox',
             'section'     => 'site_footer',
+          ));
+
+      $wp_customize->add_section('site_widgets',array(
+        'priority'        => 11,
+        'title'           => '11.サイドバーの設定',
+        'panel'           => 'site_builder',
+      ));
+
+          $wp_customize->add_setting('site_widgets_design',array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_widgets_design',array(
+            'label'       => 'サイドバーのデザイン',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+            ),
+            'section'     => 'site_widgets',
+          ));
+
+          $wp_customize->add_setting('site_widgets_h_icon',array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_widgets_h_icon',array(
+            'label'       => 'ウィジェットタイトル前にアイコンを使用',
+            'type'        => 'checkbox',
+          ));
+
+
+      $wp_customize->add_section('site_anime',array(
+        'priority'        => 12,
+        'title'           => '12.アニメーションの設定',
+        'panel'           => 'site_builder',
+      ));
+
+          $wp_customize->add_setting('site_anime_body',array(
+            'default'     => true,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_anime_body',array(
+            'label'       => '全体をふわっと表示',
+            'type'        => 'checkbox',
+            'section'     => 'site_anime',
           ));
 
   // サイト構造（コンポーネントの順番）
