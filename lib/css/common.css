@@ -77,12 +77,9 @@ aside#aside{
   margin: 20px auto;
 }
 
-.indexPage{
-  padding: 10px;
-}
-
+.indexPage,
 .showPage{
-  
+  padding: 10px;
 }
 
 .main__container {
@@ -1312,7 +1309,7 @@ h4.footer_w_title {
     display:-webkit-box;
     display:flex;
   }
-  .articleList_wrap article:nth-child(even){
+  main.columns .articleList_wrap article:nth-child(even){
     margin-right: 20px;
   }
 }

@@ -2,13 +2,7 @@
 <?php $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ; ?>
 <?php if($siteType != 'value4'): ?>
   <div class="row contentArea indexPage">
-    <main id="main"
-          class="<?php
-                    //サイト構造がサイドバーを含むものならグリッドクラス付与
-                    if ($siteType == 'value1' || $siteType == 'value3'){
-                      echo 'col l9';
-                      }
-                  ?> main">
+    <main id="main" class="main<?php if ($siteType == 'value1' || $siteType == 'value3'){ echo 'columns col l9';}?>">
       <div class="main__container articleList_wrap">
         <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <?php get_template_part('parts/others/loop') ?>
