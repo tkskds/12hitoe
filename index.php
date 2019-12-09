@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ; ?>
 <?php if($siteType != 'value4'): ?>
-  <div class="row contentArea">
+  <div class="row contentArea indexPage">
     <main id="main"
           class="<?php
                     //サイト構造がサイドバーを含むものならグリッドクラス付与

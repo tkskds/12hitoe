@@ -67,9 +67,18 @@ nav a.siteTitle{
   vertical-align: middle;
 }
 
+main#main,
+aside#aside{
+  padding: 0;
+}
+
 .contentArea{
   max-width: 1200px;
   margin: 20px auto;
+}
+
+.indexPage{
+  padding: 10px;
 }
 
 .main__container {
@@ -931,10 +940,19 @@ h4.search_result_ttl::before {
   margin-bottom: 20px;
 }
 
+.aside .widget_custom_html{
+  padding: 0;
+}
+
+.aside h4.sidebar_title{
+  padding: .5em .5em .5em 0;
+}
+
 .aside h4.sidebar_title::after {
   content: "";
   display: block;
   width: 100%;
+  margin-top: 10px;
   height: 5px;
   background-color: #ECECEC;
   background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
@@ -1072,6 +1090,10 @@ h4.footer_w_title {
   display: flex;
 }
 
+.widget_categories ul li{
+  padding: 0 10px 10px 10px;
+}
+
 /*デフォルトで用意されているウィジェットのaタグ色*/
 .widget_recent_comments a,
 .widget_recent_entries a,
@@ -1081,6 +1103,7 @@ h4.footer_w_title {
 .widget_archive a,
 .widget_meta a {
   color: unset;
+  display: block;
 }
 
 
@@ -1284,6 +1307,9 @@ h4.footer_w_title {
   .contentArea{
     display:-webkit-box;
     display:flex;
+  }
+  .articleList_wrap article:nth-child(even){
+    margin-right: 20px;
   }
 }
 
