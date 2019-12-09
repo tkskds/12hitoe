@@ -70,6 +70,18 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 
         <div class="content"><?php // タイトル部分 ?>
           <p class="title"><?php the_title(); ?></p>
+          <?php if($articleList == 'value5' || $articleList == 'value6') : ?>
+            <div class="content_info">
+              <span>
+                <?php
+                  $post_cat = get_the_category();
+                  echo $post_cat[0]->name;
+                ?>
+              </span>
+              <span>・</span>
+              <span><?php the_time(get_option('date_format')); ?></span>
+            </div>
+          <?php endif; ?>
         </div>
 
       <?php endif; //END デザイン4以外では.content表示 ?>

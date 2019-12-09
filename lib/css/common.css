@@ -548,12 +548,12 @@ li.sidenav-ttl {
 
 /*リストの上2記事は上に余白とる（サイドバーの高さと合わせるため）*/
 .articleList_wrap article:nth-of-type(1),
-.articleList_wrap article:nth-of-type(2){
+.articleList_wrap article:not(.articleList5):nth-of-type(2){
   margin-top: 20px;
 }
 
 /*2カラムで最後が1記事になったときに中央寄せなるの防ぐ*/
-.articleList_wrap article:nth-child(2n+1):last-child{
+.articleList_wrap article:not(.articleList5):nth-child(2n+1):last-child{
   margin-left: 10px;
 }
 
@@ -696,6 +696,53 @@ li.sidenav-ttl {
 ただ、ユーザーに文字を大きくされたら詰むので修正の必要あり*/
 .articleList_wrap .articleList3 .content .title{
   font-size: .85em;
+}
+
+/*リスト4は特に記述の必要なし*/
+
+/*リスト5は常にワンカラム*/
+.articleList_wrap .articleList5{
+  width: 100%;
+  margin: 0 auto 40px;
+}
+
+.articleList_wrap .articleList5,
+.articleList_wrap .articleList6{
+  background: transparent;
+}
+
+.articleList_wrap .articleList5 .content .title{
+  padding-bottom: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+
+.articleList_wrap .articleList5 .content_info{
+  position: absolute;
+  bottom: 0;
+}
+
+.articleList_wrap .articleList5 .content_info,
+.articleList_wrap .articleList6 .content_info{
+  font-size: .5em;
+  color: slategray;
+}
+
+.articleList_wrap .articleList6 .thumbnail{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.articleList_wrap .articleList6 .content .title,
+.articleList_wrap .articleList6 .content .content_info{
+  margin: auto;
+}
+
+.articleList_wrap .articleList6 .thumbnail img,
+.articleList_wrap .articleList6 .content .title,
+.articleList_wrap .articleList6 .content .content_info{
+  width: 75%;
 }
 
 /****************         記事詳細        *******************/
@@ -1242,7 +1289,7 @@ h4.footer_w_title {
 
 
 @media(max-width:960px){
-  .articleList_wrap article:not(.articleList7){
+  .articleList_wrap article:not(.articleList5):not(.articleList7){
     margin: 0 auto 20px;
   }
   .f_item{
