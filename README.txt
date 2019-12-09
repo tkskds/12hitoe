@@ -23,9 +23,10 @@
   1. materializeベース
   2. カスタマイザーの値に合わせてHTML構成する
 
-## Caution
+## Caution!
 
-  1. Dont Touch Dir Name( "12hitoe-master" )
+  1. dont touch DIR NAME
+  2. check mail box
 
 ## MEMO
 
@@ -39,6 +40,6 @@
       ┈▏┈┈╰╯╯╯┈▕┈┈
       ╭▏┈▕▏┗╮▎┈▕╮┈
       ╰▏┈┈┈┏╯┈┈▕╯┈
-      ┈▏┈╲▂▂▂╱┈▕┈┈
+      ┈▏┈╲▂▂▂╱┈▕┈┈  < u wanna play?
       ┈╲┈┈┈┈┈┈┈╱┈┈
       ┈┈▔▔▏┈▕▔▔┈┈┈

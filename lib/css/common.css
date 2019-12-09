@@ -63,8 +63,13 @@ nav a.siteTitle{
   width: auto;
   max-height: 100%;
   max-width: 200px;
-  padding: 5px;
+  padding: 10px;
   vertical-align: middle;
+}
+
+.tohomelink img.custom-logo{
+  width: auto;
+  max-width: 100px;
 }
 
 main#main,
@@ -111,6 +116,10 @@ nav h1 {
 .navbar-fixed {
   min-height: 56px;
   height: auto;
+}
+
+select{
+  display: block;
 }
 
 input[type="text"],
@@ -879,7 +888,7 @@ article h4{
 /*ページネーション*/
 .pagination{
   display: block;
-  margin: 10px;
+  margin: 30px 0;
   text-align: center;
 }
 
@@ -1091,8 +1100,30 @@ h4.footer_w_title {
   display: flex;
 }
 
-.widget_categories ul li{
+.widget_categories ul li,
+.widget_archive ul li,
+.widget_meta ul li{
   padding: 0 10px 10px 10px;
+}
+
+.widget_tag_cloud ul li{
+  display: inline-block;
+  position: relative;
+  padding: 0 10px 0 15px;
+  font-size: 80%;
+}
+
+.widget_tag_cloud ul li a{
+  line-height: 25px;
+}
+
+.widget_tag_cloud ul li a::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f292";
+  font-size: .85em;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
 /*デフォルトで用意されているウィジェットのaタグ色*/
@@ -1104,7 +1135,8 @@ h4.footer_w_title {
 .widget_archive a,
 .widget_meta a {
   color: unset;
-  display: block;
+  /* display: block; // blockにすると後から付属するカウント数が二段になってしまう  */
+  width: 100%;
 }
 
 
@@ -1309,7 +1341,7 @@ h4.footer_w_title {
     display:-webkit-box;
     display:flex;
   }
-  main.columns .articleList_wrap article:nth-child(even){
+  main.columns .articleList_wrap article:not(.articleList5):nth-child(even){
     margin-right: 20px;
   }
 }
