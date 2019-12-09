@@ -1,10 +1,12 @@
+TEST COMMIT FROM WINDOWS
+
 
 ## ディレクトリ構成
 
   - images
 
       ダイナミックヘッダーに使用するフィルター、404ページで使うアイキャッチ画像、アイキャッチが未設定の時に出力されるデフォルトのアイキャッチ画像など
-      
+
   - lib
 
       独自のCSS/JS/PHPファイル。
@@ -20,7 +22,7 @@
       materialize、delighter.js、plugin-update-checkerなど外部ベンダー提供のプラグインやライブラリ。サードパーティはここに。
 
 ## 仕様
-  
+
   1. materializeベース
   2. カスタマイザーの値に合わせてHTML構成する
 
@@ -35,7 +37,7 @@
       1. EDIT version in stylesheet
       2. EDIT version in json(../12hitoe/) file
       3. COMP
-      
+
 ▕▔▔▔▔▔▔▔╲
 ▕╮╭┻┻╮╭┻┻╮╭▕╮╲
 ▕╯┃╭╮┃┃╭╮┃╰▕╯╭▏
