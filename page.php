@@ -4,7 +4,7 @@
  ?>
 
 <?php get_header(); ?>
-  <div class="row contentArea">
+  <div class="row contentArea showPage">
     <main id="main" class="main <?php if ($sideOn == 'value1' || $sideOn == 'value3'){echo 'col l9';}?>">
       <div class="main__container articleShow_wrap">
         <?php

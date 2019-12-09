@@ -81,6 +81,10 @@ aside#aside{
   padding: 10px;
 }
 
+.showPage{
+  
+}
+
 .main__container {
   display: flex;
   flex-wrap: wrap;
