@@ -23,8 +23,8 @@ function m_pagination() {
     'current'     => max( 1, get_query_var('paged') ),
     'total'       => $wp_query->max_num_pages,
     'type'        => 'array',
-    'prev_text'   => '<i class="material-icons">chevron_left</i>',
-     'next_text'  => '<i class="material-icons">chevron_right</i>'
+    'prev_text'   => '<i class="fas fa-angle-left"></i>',
+     'next_text'  => '<i class="fas fa-angle-right"></i>',
   ));
 
   if(is_array($pages)){
