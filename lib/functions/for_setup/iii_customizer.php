@@ -1200,6 +1200,18 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           ));
 
+          $wp_customize->add_setting('site_nav_fixed_top_anime',array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_fixed_top_anime',array(
+            'label'       => 'ナビメニューの固定に伴うアニメーション',
+            'description' => 'ナビメニューをサイト上部に固定する際に背景色を白色にし、内部のロゴやメニューボタンが小さくなります。',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
+          ));
+
           $wp_customize->add_setting('site_nav_extended', array(
             'default'     => false,
             'type'        => 'option',
