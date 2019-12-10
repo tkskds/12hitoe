@@ -932,6 +932,11 @@ article h4{
   line-height: 30px;
 }
 
+.pagination li i {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
 /****************         記事装飾        *******************/
 
 h4.search_result_ttl {
@@ -1053,6 +1058,10 @@ a.tohomelink i{
   margin-left: -.5em;
 }
 
+.footerArea .btn-large i {
+  font-size: 1rem;
+}
+
 /*SPフッターメニュー*/
 
 .navbar-fixed{
@@ -1110,7 +1119,6 @@ a.tohomelink i{
   color: #545454;
   text-align: center;
 }
-
 
 /****************      ウィジェット       *******************/
 
