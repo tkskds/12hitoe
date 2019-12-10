@@ -108,14 +108,14 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">
         <?php the_title(); ?>
-        <i class="material-icons right">more_vert</i>
+        <i class="fas fa-ellipsis-v"></i>
       </span>
       <p><a href="#">This is a link</a></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">
         <?php the_title(); ?>
-        <i class="material-icons right">close</i>
+        <i class="fas fa-times"></i>
       </span>
       <p>
         <?php //記事のディスクリプション ?>

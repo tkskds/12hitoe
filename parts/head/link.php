@@ -1,10 +1,11 @@
 <?php //リセットCSS ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//use.fontawesome.com">
 
 <?php //CSSフレームワークの分岐 （materialize.css/common.css呼び出し） ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
 <?php if ($cssfw != 'value1') : ?>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
 <?php endif; ?>

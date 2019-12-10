@@ -490,6 +490,31 @@ li.sidenav-ttl {
   transition-delay: 1800ms;
 }
 
+.delighter:nth-of-type(11){
+  -webkit-transition-delay: 2000ms;
+  transition-delay: 2000ms;
+}
+
+.delighter:nth-of-type(12){
+  -webkit-transition-delay: 2200ms;
+  transition-delay: 2200ms;
+}
+
+.delighter:nth-of-type(13){
+  -webkit-transition-delay: 2400ms;
+  transition-delay: 2400ms;
+}
+
+.delighter:nth-of-type(14){
+  -webkit-transition-delay: 2600ms;
+  transition-delay: 2600ms;
+}
+
+.delighter:nth-of-type(15){
+  -webkit-transition-delay: 2800ms;
+  transition-delay: 2800ms;
+}
+
 #feature4 .collapsible{
   box-shadow: none;
   border: none;
@@ -733,6 +758,7 @@ li.sidenav-ttl {
 }
 
 .articleList_wrap .articleList5 .content .title{
+  font-size: 1.2em;
   padding-bottom: 20px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -948,22 +974,17 @@ h4.search_result_ttl::before {
 }
 
 .aside .widget{
-  padding: 10px;
   margin-bottom: 20px;
 }
 
-.aside .widget_custom_html{
-  padding: 0;
-}
-
 .aside h4.sidebar_title{
-  padding: .5em .5em .5em 0;
+  padding: .5em;
 }
 
 .aside h4.sidebar_title::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 80%;
   margin-top: 10px;
   height: 5px;
   background-color: #ECECEC;
@@ -1137,13 +1158,13 @@ h4.footer_w_title {
   left: 0;
 }
 
-.widget_tag_cloud ul li a span.tag-link-count {
+.widget_tag_cloud ul li a .tag-link-count{
   background: whitesmoke;
   position: absolute;
   width: 20px;
   height: 20px;
   line-height: 20px;
-  right: 10px;
+  right: 5px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -1151,6 +1172,7 @@ h4.footer_w_title {
   border-radius: 50%;
 }
 
+.widget_archive label,
 .widget_categories form label{
   display: none;
 }
@@ -1172,16 +1194,19 @@ h4.footer_w_title {
   margin: auto;
 }
 
-.widget_categories form select{
+.widget_archive select,
+.widget_categories select{
   -webkit-appearance: none;
   appearance: none;
 }
 
+.widget_archive li,
 .widget_categories li.cat-item{
   position: relative;
 }
 
-.widget_categories span.post-count {
+.widget_archive span.post-count,
+.widget_categories span.post-count{
   position: absolute;
   width: 30px;
   line-height: 30px;
@@ -1189,10 +1214,6 @@ h4.footer_w_title {
   text-align: center;
   right: 1em;
   background: whitesmoke;
-}
-
-.widget_categories li:hover ~ .widget_categories span.post-count {
-  background: white;
 }
 
 /*デフォルトで用意されているウィジェットのaタグ色*/
@@ -1207,15 +1228,20 @@ h4.footer_w_title {
   display: block;
 }
 
-.widget_categories form select,
-.widget_categories li{
+.widget_categories select,
+.widget_categories li,
+.widget_archive select,
+.widget_archive li{
 -webkit-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
 }
 
-.widget_categories form select:hover,
-.widget_categories li:hover{
+.widget_categories select:hover,
+.widget_categories li:hover,
+.widget_archive select:hover,
+.widget_archive li:hover{
 background: whitesmoke;
+cursor: pointer;
 }
 
 
@@ -1422,6 +1448,9 @@ background: whitesmoke;
   }
   main.columns .articleList_wrap article:not(.articleList5):nth-child(even){
     margin-right: 20px;
+  }
+  .showPage main#main, .showPage aside#aside{
+    margin: 0 10px;
   }
 }
 

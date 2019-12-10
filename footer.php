@@ -83,20 +83,20 @@
       <?php // TOPへ戻るボタン ?>
       <?php if ($goToTop == true) : ?>
         <a href="#" class="btn-floating btn-large waves-effect gototop acc__color">
-          <i class="material-icons">expand_less</i>
+          <i class="fas fa-angle-up"></i>
         </a>
       <?php endif; //END TOPへ戻るボタン ?>
       <?php // SHAREボタン ?>
       <?php if ($shareBtn == true) : ?>
         <div class="fixed-action-btn">
         <a class="btn-floating btn-large sub__color">
-          <i class="large material-icons">share</i>
+          <i class="fas fa-share-alt"></i>
         </a>
         <ul>
           <li><a class="btn-floating red"><i class="fab fa-twitter"></i></a></li>
           <li><a class="btn-floating yellow darken-1"><i class="fab fa-line"></i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+          <li><a class="btn-floating green"><i class="fab fa-line"></i></a></li>
+          <li><a class="btn-floating blue"><i class="fab fa-line"></i></a></li>
         </ul>
       </div>
     <?php endif; //END SHAREボタン ?>
@@ -108,22 +108,22 @@
               <ul>
                 <li>
                   <a href="#" data-target="mobile-demo" class="waves-effect sidenav-trigger">
-                    <i class="material-icons">list</i>
+                    <i class="fas fa-list-ul"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#modalSearch" class="waves-effect modal-trigger">
-                    <i class="material-icons">search</i>
+                    <i class="fas fa-search"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#modalShare" class="waves-effect modal-trigger">
-                    <i class="material-icons">share</i>
+                    <i class="fas fa-share-alt"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="waves-effect">
-                    <i class="material-icons">expand_less</i>
+                    <i class="fas fa-angle-up"></i>
                   </a>
                 </li>
               </ul>
