@@ -679,13 +679,19 @@ li.sidenav-ttl {
   bottom: 10px;
   left: 10px;
   padding: 0 17px;
-  color: white;
+  color: #545454;
+  background: white;
+  border-radius: 30px;
 }
 
 .articleList_wrap .articleList1 .content .title,
 .articleList_wrap .articleList2 .content .title{
   font-size: 1.2em;
   padding: 1em 17px;
+}
+
+.articleList2{
+  border-bottom: 3px solid #ececec;
 }
 
 .articleList_wrap .articleList3 a{
@@ -1230,7 +1236,7 @@ h4.footer_w_title {
   appearance: none;
 }
 
-.widget_archive{
+.widget_archive select{
   width: calc(100% - 2em - 8px);
 }
 
