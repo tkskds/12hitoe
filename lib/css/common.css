@@ -990,9 +990,9 @@ h4.search_result_ttl::before {
   position: absolute;
   content: "";
   display: block;
-  width: 100%;
+  width: calc(100% - 40px);
   height: 5px;
-  bottom: 10px;
+  bottom: 5px;
   background-color: #ECECEC;
   background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
   -webkit-background-size: 5px 5px;
@@ -1136,6 +1136,7 @@ h4.footer_w_title {
 
 .widget_search form,
 .widget_categories ul,
+.widget_categories form,
 .widget_archive ul,
 .widget_archive select,
 .widget_recent_entries ul,
@@ -1229,6 +1230,14 @@ h4.footer_w_title {
   appearance: none;
 }
 
+.widget_archive{
+  width: calc(100% - 2em - 8px);
+}
+
+.widget_categories select{
+  width: 100%;
+}
+
 .widget_archive li,
 .widget_categories li.cat-item{
   position: relative;
@@ -1243,6 +1252,10 @@ h4.footer_w_title {
   text-align: center;
   right: 1em;
   background: whitesmoke;
+}
+
+.widget_calendar table{
+  width: calc(100% - 40px);
 }
 
 /*デフォルトで用意されているウィジェットのaタグ色*/
