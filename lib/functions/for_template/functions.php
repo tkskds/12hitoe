@@ -2,6 +2,8 @@
 
 
 add_filter('widget_tag_cloud_args', 'tag_font_size');
+add_filter('wp_list_categories'   , 'remove_post_count_parentheses' );
+add_filter('get_archives_link'    , 'remove_post_count_parentheses' );
 add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2);
 add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3);
 
@@ -52,6 +54,15 @@ function tag_font_size($args){
   );
   $args = wp_parse_args($args, $org_args);
   return $args;
+}
+
+/////////////////////
+// カテゴリ/タグ数の()削除
+/////////////////////
+
+function remove_post_count_parentheses($output) {
+  $output = preg_replace('/<\/a>.*\((\d+)\)/','<span class="post-count">$1</span></a>',$output);
+  return $output;
 }
 
 /////////////////////

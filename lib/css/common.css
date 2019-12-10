@@ -120,6 +120,8 @@ nav h1 {
 
 select{
   display: block;
+  padding: .5em 1em;
+  color: #545454;
 }
 
 input[type="text"],
@@ -1126,6 +1128,32 @@ h4.footer_w_title {
   font-weight: bold;
   position: absolute;
   left: 0;
+}
+
+.widget_categories form label{
+  display: none;
+}
+
+.widget_categories form{
+  position: relative;
+}
+
+.widget_categories form::before{
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0d7";
+  font-weight: bold;
+  font-size: 15px;
+  height: 15px;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.widget_categories form select{
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 /*デフォルトで用意されているウィジェットのaタグ色*/
