@@ -982,16 +982,17 @@ h4.search_result_ttl::before {
   margin-bottom: 20px;
 }
 
-.aside h4.sidebar_title{
-  padding: .5em;
+.sideType1 h4{
+  position: relative;
 }
 
-.aside h4.sidebar_title::after {
+.sideType1 h4.sidebar_title::after {
+  position: absolute;
   content: "";
   display: block;
-  width: 80%;
-  margin-top: 10px;
+  width: 100%;
   height: 5px;
+  bottom: 10px;
   background-color: #ECECEC;
   background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
   -webkit-background-size: 5px 5px;
@@ -1126,6 +1127,26 @@ h4.sidebar_title,
 h4.footer_w_title {
   font-size: 1.2em;
   margin: 0;
+  padding: 20px 20px 15px 20px;
+}
+
+.widget{
+  overflow: hidden; /*子要素の上下margin適用するため*/
+}
+
+.widget_search form,
+.widget_categories ul,
+.widget_archive ul,
+.widget_archive select,
+.widget_recent_entries ul,
+.widget_recent_comments ul,
+.widget_tag_cloud .tagcloud,
+.widget_media_gallery div,
+.widget_media_image img,
+.widget_nav_menu div,
+.widget_calendar table,
+.widget_meta ul{
+  margin: 10px 20px;
 }
 
 /*** 検索窓 ***/
@@ -1501,13 +1522,13 @@ cursor: pointer;
   input[type="password"],
   textarea{
     font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
-    transform: scale(.95);　/*iOSでfocus時ズームされるのを防ぐ*/
+    transform: scale(.95);
   }
   .articleList_wrap article{
     width: 95%;
     margin: 0 2.5% 20px;
   }
-  .articleList_wrap article:nth-of-type(1),{
+  .articleList_wrap article:nth-of-type(1){
     margin-top: 20px;
   }
   .articleList_wrap article:nth-of-type(2){

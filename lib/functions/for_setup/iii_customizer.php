@@ -1608,7 +1608,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_widgets',array(
         'priority'        => 11,
-        'title'           => '11.サイドバーの設定',
+        'title'           => '11.サイドバー/ウィジェットの設定',
         'panel'           => 'site_builder',
       ));
 
