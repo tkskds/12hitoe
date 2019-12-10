@@ -1,11 +1,12 @@
 <?php
 
 
-add_filter('widget_tag_cloud_args', 'tag_font_size');
-add_filter('wp_list_categories'   , 'remove_post_count_parentheses' );
-add_filter('get_archives_link'    , 'remove_post_count_parentheses' );
-add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2);
-add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3);
+add_filter('widget_tag_cloud_args', 'tag_font_size'); //タグのフォントサイズ修正
+add_filter('wp_list_categories'   , 'remove_post_count_parentheses' ); //カテゴリの()削除
+add_filter('get_archives_link'    , 'remove_post_count_parentheses' ); //アーカイブの()削除
+add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削除
+add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
+add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
 
 
 /////////////////////
@@ -57,11 +58,22 @@ function tag_font_size($args){
 }
 
 /////////////////////
-// カテゴリ/タグ数の()削除
+// カテゴリ数の()削除
 /////////////////////
 
 function remove_post_count_parentheses($output) {
   $output = preg_replace('/<\/a>.*\((\d+)\)/','<span class="post-count">$1</span></a>',$output);
+  return $output;
+}
+
+/////////////////////
+// タグ数の()削除
+/////////////////////
+
+function wp_tag_cloud_custom_ex( $output ) {
+  $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output); //スタイル削除
+  $output = str_replace( ' (', '',  $output); // "("削除
+  $output = str_replace( ')', '',  $output); // ")"削除
   return $output;
 }
 

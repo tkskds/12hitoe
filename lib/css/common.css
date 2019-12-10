@@ -1107,14 +1107,21 @@ h4.footer_w_title {
 .widget_categories ul li,
 .widget_archive ul li,
 .widget_meta ul li{
-  padding: 0 10px 10px 10px;
+  padding: 10px;
+  height: 50px;
+}
+
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_meta ul li a{
+  line-height: 30px;
 }
 
 .widget_tag_cloud ul li{
   display: inline-block;
   position: relative;
-  padding: 0 10px 0 15px;
-  font-size: 80%;
+  padding: 0 10px 0 10px;
+  font-size: 10px;
 }
 
 .widget_tag_cloud ul li a{
@@ -1128,6 +1135,20 @@ h4.footer_w_title {
   font-weight: bold;
   position: absolute;
   left: 0;
+}
+
+.widget_tag_cloud ul li a span.tag-link-count {
+  background: whitesmoke;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .widget_categories form label{
@@ -1145,7 +1166,7 @@ h4.footer_w_title {
   font-weight: bold;
   font-size: 15px;
   height: 15px;
-  right: 10px;
+  right: 15px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -1154,6 +1175,24 @@ h4.footer_w_title {
 .widget_categories form select{
   -webkit-appearance: none;
   appearance: none;
+}
+
+.widget_categories li.cat-item{
+  position: relative;
+}
+
+.widget_categories span.post-count {
+  position: absolute;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  text-align: center;
+  right: 1em;
+  background: whitesmoke;
+}
+
+.widget_categories li:hover ~ .widget_categories span.post-count {
+  background: white;
 }
 
 /*デフォルトで用意されているウィジェットのaタグ色*/
@@ -1165,8 +1204,18 @@ h4.footer_w_title {
 .widget_archive a,
 .widget_meta a {
   color: unset;
-  /* display: block; // blockにすると後から付属するカウント数が二段になってしまう  */
-  width: 100%;
+  display: block;
+}
+
+.widget_categories form select,
+.widget_categories li{
+-webkit-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+
+.widget_categories form select:hover,
+.widget_categories li:hover{
+background: whitesmoke;
 }
 
 
