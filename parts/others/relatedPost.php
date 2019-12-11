@@ -28,14 +28,14 @@ $relatedType = get_option('site_article_related_design') ? get_option('site_arti
       <?php foreach($myposts as $post):setup_postdata($post); ?>
         <li>
           <a href="<?php the_permalink(); ?>">
-            <div class="related-thumb">
+            <div class="related_thumb">
               <?php if( has_post_thumbnail() ): ?>
 	              <?php echo get_the_post_thumbnail($post->ID, 'thumb100'); ?>
               <?php else: ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="関連記事アイキャッチ画像" width="100" height="100">
               <?php endif; ?>
 	          </div>
-	          <div class="related-title">
+	          <div class="related_ttl">
               <?php the_title(); ?>
 	          </div>
           </a>

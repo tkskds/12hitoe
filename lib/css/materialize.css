@@ -1106,6 +1106,21 @@ h3.related_ttl {
   text-align: center;
 }
 
+.related_thumb,
+.related_ttl{
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.related_thumb{
+  overflow: hidden;
+}
+
+.related_thumb:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .relatedType1 ul.related_posts{
   padding: 20px 10px;
   background: #fff;
@@ -1126,7 +1141,7 @@ h3.related_ttl {
   margin-left: 20px;
 }
 
-.relatedType1 .related-thumb img{
+.relatedType1 .related_thumb img{
   width: 100px;
   height: 100px;
 }
