@@ -1108,6 +1108,7 @@ h3.related_ttl {
 
 .relatedType1 ul.related_posts{
   padding: 20px 10px;
+  background: #fff;
 }
 
 .relatedType1 ul.related_posts li{
@@ -1119,6 +1120,10 @@ h3.related_ttl {
   display: flex;
   align-items: center;
   color: unset;
+}
+
+.relatedType1 .related_ttl{
+  margin-left: 20px;
 }
 
 .relatedType1 .related-thumb img{
