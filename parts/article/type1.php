@@ -1,6 +1,9 @@
 <?php //シンプル（普通） ?>
 
-<?php if(have_posts()): the_post(); ?>
+<?php if(have_posts()):the_post(); ?>
+
+  <?php custom_breadcrumb(); ?>
+
   <article <?php post_class('articleType1'); ?>>
     <div class="article_container">
       <div class="article_meta_info">
@@ -10,12 +13,6 @@
               <?php echo get_post_time('Y/m/d'); ?>
             </time>
           </span>
-          <!--カテゴリ-->
-          <?php if(has_category()): ?>
-            <span class="cat_data">
-              <?php echo get_the_category_list(''); ?>
-            </span>
-          <?php endif; ?>
       </div>
       <!--タイトル-->
       <div class="article_title">
@@ -39,4 +36,5 @@
       </div>
     </div>
   </article>
+  
 <?php endif; ?>
