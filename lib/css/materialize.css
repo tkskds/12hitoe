@@ -874,19 +874,16 @@ article h4{
 
 .article_date{
   color: #708090;
-}
-
-.article_date{
-  padding: 3px;
+  font-size: .9em;
 }
 
 .article_date time::before {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
-  margin-right: .5em;
+  margin-right: 5px;
 }
 
-.artcile_content{
+.article_content{
   word-break: break-all;
 }
 
@@ -918,6 +915,22 @@ article h4{
 }
 
 /*articleTypeごとに異なりそうなものはこの下に*/
+
+.articleType1 h1{
+  padding: 10px 0;
+}
+
+.articleType1 .article_thumbnail::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 0px;
+  height: 0px;
+  border: 15px solid;
+  border-color: white transparent transparent transparent;
+}
+
 
 .articleType1 .article_date time::before{
   content:"\f073";
@@ -963,6 +976,8 @@ article h4{
 
 /****************         記事装飾        *******************/
 
+/*検索画面見出し*/
+
 h4.search_result_ttl {
   font-size: 1.5em;
   line-height: 1.2;
@@ -982,6 +997,37 @@ h4.search_result_ttl::before {
   top: 0;
   bottom: 0;
   margin: auto 0;
+}
+
+/*パンくずリスト*/
+
+.breadcrumb{
+  width: 100%;
+  color: unset;
+  font-size: .9em;
+  padding: 0 60px;
+}
+
+.breadcrumb li{
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+
+.breadcrumb li:first-of-type a span::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f015";
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.breadcrumb li:not(:last-of-type)::after{
+  font-family: "Font Awesome 5 Free";
+  content: "\f0da";
+  font-weight: bold;
+  position: absolute;
+  right: .5em;
+  opacity: 0.25;
 }
 
 
@@ -1126,6 +1172,10 @@ a.tohomelink i{
   left: 0;
   bottom: 0;
   margin: auto;
+}
+
+.footer_sp_menu ul li a i{
+  font-size: 1em;
 }
 
 .footerArea nav .sidenav-trigger{
@@ -1540,6 +1590,9 @@ cursor: pointer;
     padding: 0 30px;
     margin: 0 0 10px 0;
   }
+  .breadcrumb{
+    padding: 0 30px;
+  }
   .aside{
     width: 100%;
   }
@@ -1565,6 +1618,9 @@ cursor: pointer;
     font-size: 16px; /*iOSでfocus時ズームされるのを防ぐ*/
     transform: scale(.95);
   }
+  .showPage{
+    padding: 0;
+  }
   .articleList_wrap article{
     width: 95%;
     margin: 0 2.5% 20px;
@@ -1581,6 +1637,9 @@ cursor: pointer;
   #feature5 .container > div{
     width: 100%;
   }
+  .article_container{
+    padding-top: 10px;
+  }
   .article_meta_info,
   .article_title,
   .article_thumbnail,
@@ -1588,6 +1647,9 @@ cursor: pointer;
   .article_tag{
     padding: 0 10px;
     margin: 0 0 10px 0;
+  }
+  .breadcrumb{
+    padding: 0 10px;
   }
   .footer_widgets_wrap {
     display: block;

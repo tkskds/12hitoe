@@ -1,12 +1,8 @@
 <?php get_header(); ?>
-  <div class="row contentArea">
-    <main id="main"
-          class="<?php
-                    //サイト構造がサイドバーを含むものならグリッドクラス付与
-                    if ($siteType == 'value1' || $siteType == 'value3'){
-                      echo 'col l9';
-                      }
-                  ?> main">
+<?php $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ; ?>
+  <div class="row contentArea indexPage">
+    <main id="main" class="main<?php if ($siteType == 'value1' || $siteType == 'value3'){ echo ' columns col l9';}?>">
+      <div class="main__container articleList_wrap">
       <h4 class="search_result_ttl">「<?php the_search_query(); ?>」の検索結果</h4>
       <div class="main__container">
         <?php if (have_posts() && get_search_query()) : while (have_posts()) : the_post();?>
