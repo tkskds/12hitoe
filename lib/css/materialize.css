@@ -1106,7 +1106,7 @@ h3.related_ttl {
   text-align: center;
 }
 
-.related_thumb,
+.related_thumb img,
 .related_ttl{
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -1116,7 +1116,7 @@ h3.related_ttl {
   overflow: hidden;
 }
 
-.related_thumb:hover{
+.related_thumb img:hover{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
