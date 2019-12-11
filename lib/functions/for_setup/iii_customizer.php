@@ -1377,13 +1377,24 @@ function org_customizer($wp_customize){
             'section'     => 'site_article',
           ));
 
+          $wp_customize->add_setting('site_article_related_ttl', array(
+            'default'     => '関連記事',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_related_ttl', array(
+            'label'       => '8-5.関連記事部分のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_article',
+          ));
+
           $wp_customize->add_setting('site_article_related_design', array(
             'default'     => 'value1',
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_article_related_design', array(
-            'label'       => '8-5.関連記事のデザイン',
+            'label'       => '8-6.関連記事のデザイン',
             'type'        => 'radio',
             'choices'     => array(
               'value1'    => 'デザイン1',

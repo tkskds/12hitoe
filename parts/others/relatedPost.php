@@ -16,13 +16,14 @@ $myposts = get_posts(array(
 	'orderby'        => 'rand',
 ));
 
+$relatedTtl  = get_option('site_article_related_ttl')    ? get_option('site_article_related_ttl')    : '関連記事';
 $relatedType = get_option('site_article_related_design') ? get_option('site_article_related_design') : 'value1' ;
 
 ?>
 
 <?php if($myposts): ?>
-  <div class="related <?php if($relatedType=='value1')echo'relatedType1';elseif($relatedType=='value2')echo'relatedType2';endif; ?>">
-    <h3 class="related_ttl">関連記事</h3>
+  <div class="related <?php if($relatedType=='value1'){echo'relatedType1';}elseif($relatedType=='value2'){echo'relatedType2';} ?>">
+    <h3 class="related_ttl"><?php echo $relatedTtl ?></h3>
     <ul class="related_posts">
       <?php foreach($myposts as $post):setup_postdata($post); ?>
         <li>

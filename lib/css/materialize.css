@@ -1098,21 +1098,30 @@ h4.search_result_ttl::before {
 }
 
 /*関連記事*/
-ul.related_posts{
+
+h3.related_ttl {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.relatedType1 ul.related_posts{
   padding: 20px 10px;
 }
 
-ul.related_posts li{
+.relatedType1 ul.related_posts li{
   padding: 10px 0;
   margin-bottom: 10px;
 }
 
-ul.related_posts li a{
+.relatedType1 ul.related_posts li a{
   display: flex;
+  align-items: center;
   color: unset;
 }
 
-.related-thumb img{
+.relatedType1 .related-thumb img{
   width: 100px;
   height: 100px;
 }

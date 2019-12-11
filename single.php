@@ -1,7 +1,7 @@
 <?php
   $siteType    = get_option('site_bone_type')           ? get_option('site_bone_type')            : 'value1' ;
   $articleType = get_option('site_article_type')        ? get_option('site_article_type')         : 'value1' ;
-  $relatedOn   = get_option('site_article_relatedable') ? get_option('site_article_relatedable')  : true;
+  $relatedOn   = get_option('site_article_relatedable') ? get_option('site_article_relatedable')  : true ;
  ?>
 
 <?php get_header(); ?>
