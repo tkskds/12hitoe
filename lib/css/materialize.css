@@ -643,6 +643,9 @@ li.sidenav-ttl {
 .articleList_wrap article .thumbnail img{
   width: 100%;
   height: auto;
+  min-height: 250px;
+  max-height: 300px;
+  object-fit: cover;
 }
 
 /*リストの上2記事は上に余白とる（サイドバーの高さと合わせるため）*/
@@ -758,6 +761,7 @@ li.sidenav-ttl {
 .articleList_wrap .articleList3 .thumbnail img{
   width: 100px;
   height: 70px;
+  min-height: unset;
 }
 
 .articleList_wrap .articleList3 time{
@@ -1112,6 +1116,10 @@ h3.related_ttl {
   transition: all .2s ease-in-out;
 }
 
+.related_ttl:hover{
+  font-weight: bold;
+}
+
 .related_thumb{
   overflow: hidden;
 }
@@ -1121,9 +1129,13 @@ h3.related_ttl {
   transform: scale(1.1);
 }
 
-.relatedType1 ul.related_posts{
+ul.related_posts{
   padding: 20px 10px;
   background: #fff;
+}
+
+ul.related_posts li a{
+  color: unset;
 }
 
 .relatedType1 ul.related_posts li{
@@ -1134,7 +1146,6 @@ h3.related_ttl {
 .relatedType1 ul.related_posts li a{
   display: flex;
   align-items: center;
-  color: unset;
 }
 
 .relatedType1 .related_ttl{
@@ -1144,6 +1155,30 @@ h3.related_ttl {
 .relatedType1 .related_thumb img{
   width: 100px;
   height: 100px;
+}
+
+.relatedType2 ul.related_posts{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.relatedType2 ul.related_posts li{
+  width: 30%;
+  margin: auto;
+}
+
+.relatedType2 .related_ttl{
+  margin: .5em 0 1em 0;
+}
+
+.relatedType2 .related_thumb{
+  border-radius: 5px;
+}
+
+.relatedType2 .related_thumb img{
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
 }
 
 
@@ -1813,6 +1848,12 @@ cursor: pointer;
   }
   .breadcrumb{
     padding: 0 10px;
+  }
+  .relatedType2 ul.related_posts li{
+    width: 100%;
+  }
+  .relatedType2 .related_thumb img{
+    height: 150px;
   }
   .footer_widgets_wrap {
     display: block;
