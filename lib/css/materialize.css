@@ -1097,6 +1097,27 @@ h4.search_result_ttl::before {
   opacity: 0.25;
 }
 
+/*関連記事*/
+ul.related_posts{
+  padding: 20px 10px;
+}
+
+ul.related_posts li{
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+ul.related_posts li a{
+  display: flex;
+  color: unset;
+}
+
+.related-thumb img{
+  width: 100px;
+  height: 100px;
+}
+
+
 /*WPクラス付与された装飾*/
 
 .wp-block-code{

@@ -1321,7 +1321,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_list_type', array(
-            'label'       => '記事一覧のデザイン',
+            'label'       => '8-1.記事一覧のデザイン',
             'description' => 'トップ画面で表示する記事一覧のデザイン。現在4種類からお選びいただけます。',
             'type'        => 'radio',
             'choices'     => array(
@@ -1342,7 +1342,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_type', array(
-            'label'       => '記事ページデザイン',
+            'label'       => '8-2.記事ページデザイン',
             'description' => '記事詳細画面のデザイン設定。（固定ページにも同様のものが適用されます）',
             'type'        => 'radio',
             'choices'     => array(
@@ -1360,9 +1360,35 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_p_margin', array(
-            'label'       => 'pタグ下の余白調整',
+            'label'       => '8-3.pタグ下の余白調整',
             'description' => 'pタグ下の余白を設定します。',
             'type'        => 'number',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_relatedable', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_relatedable', array(
+            'label'       => '8-4.関連記事を非表示にする',
+            'type'        => 'checkbox',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_related_design', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_related_design', array(
+            'label'       => '8-5.関連記事のデザイン',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+            ),
             'section'     => 'site_article',
           ));
 

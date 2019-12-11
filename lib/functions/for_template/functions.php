@@ -1,5 +1,18 @@
 <?php
 
+/***************
+テンプレート用関数
+
+- ページネーション
+- タグ大きさ統一
+- ナビメニュー
+- パンくずリスト
+- 関連記事
+
+***************/
+
+
+
 
 add_filter('widget_tag_cloud_args', 'tag_font_size'); //タグのフォントサイズ修正
 add_filter('wp_list_categories'   , 'remove_post_count_parentheses' ); //カテゴリの()削除

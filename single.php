@@ -1,6 +1,7 @@
 <?php
-  $siteType    = get_option('site_bone_type')     ? get_option('site_bone_type')    : 'value1' ;
-  $articleType = get_option('site_article_type')  ? get_option('site_article_type') : 'value1' ;
+  $siteType    = get_option('site_bone_type')           ? get_option('site_bone_type')            : 'value1' ;
+  $articleType = get_option('site_article_type')        ? get_option('site_article_type')         : 'value1' ;
+  $relatedOn   = get_option('site_article_relatedable') ? get_option('site_article_relatedable')  : true;
  ?>
 
 <?php get_header(); ?>
@@ -19,8 +20,8 @@
           }
          ?>
       </div>
-      <?php get_template_part('parts/others/relatedPost'); ?>
+      <?php if($relatedOn==true){get_template_part('parts/others/relatedPost');} ?>
     </main>
-    <?php if ($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
+    <?php if($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
 <?php get_footer(); ?>
