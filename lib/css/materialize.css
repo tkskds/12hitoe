@@ -133,6 +133,10 @@ nav h1 {
   margin: unset;
 }
 
+nav .sidenav-trigger i{
+  font-size: 1em;
+}
+
 /*追加コンテンツ用*/
 .navbar-fixed {
   min-height: 56px;

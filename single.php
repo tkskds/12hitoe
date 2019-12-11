@@ -19,6 +19,7 @@
           }
          ?>
       </div>
+      <?php get_template_part('parts/others/relatedPost'); ?>
     </main>
     <?php if ($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
