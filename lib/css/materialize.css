@@ -886,6 +886,10 @@ article h4{
   margin-right: .5em;
 }
 
+.artcile_content{
+  word-break: break-all;
+}
+
 .article_content p{
   line-height: 1.75;
   margin-bottom: 1.5em;
