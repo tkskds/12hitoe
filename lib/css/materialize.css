@@ -1,3 +1,24 @@
+/*
+
+MEMO
+
+headingは全記事タイプ共通でカスタマイザーから決定
+いくつかデザイン用意する
+
+- 最初の文字だけ色付き
+- 吹き出し
+- 左ライン
+- FA使用
+- かっこ
+- グラデライン
+- グラデボックス
+- 中央寄せ・太字・余白多め
+
+それとは別にカスタマイザーにCSS入力欄用意
+ユーザーがそこに入力すれば見出しデザイン適用
+
+*/
+
 
 /*
 ====INDEX====
@@ -118,6 +139,18 @@ nav h1 {
   height: auto;
 }
 
+ol{
+  counter-reset: number;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+ol li:before{
+  counter-increment: number;
+  content: counter(number);
+}
+
 select{
   display: block;
   padding: .5em 1em;
@@ -162,8 +195,12 @@ input[type="submit"]{
 }
 
 td{
-  border: 3px solid #ccc;
+  border: 2px solid #efefef;
   padding: .5em;
+}
+
+strong{
+  font-weight: 700;
 }
 
 .gototop {
@@ -893,11 +930,13 @@ article h4{
 }
 
 .article_content ul,
-.article_content ul li{
+.article_content ol,
+.article_content li{
   margin-bottom: 1em;
 }
 
-.article_content li{
+.article_content ul li,
+.article_content ol li{
   position: relative;
   padding-left: calc(1em + 12px);
 }
@@ -906,11 +945,35 @@ article h4{
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: .5em;
   margin: auto;
   content: "";
   width: 12px;
   height: 12px;
+  border-radius: 50%;
+}
+
+.article_content ol{
+  counter-reset: number;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.article_content ol li:before{
+  counter-increment: number;
+  content: counter(number);
+  position: absolute;
+  font-size: .75em;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  padding: 2px;
+  background: whitesmoke;
   border-radius: 50%;
 }
 
@@ -1030,6 +1093,49 @@ h4.search_result_ttl::before {
   opacity: 0.25;
 }
 
+/*WPクラス付与された装飾*/
+
+.wp-block-code{
+  background: #333;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.wp-block-quote{
+  padding: 1em;
+  border: 2px solid #efefef;
+  background: #efefef;
+  position: relative;
+}
+
+.wp-block-quote::before,
+.wp-block-quote::after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 1em;
+  position: absolute;
+  opacity: .25;
+  color: #333;
+}
+
+.wp-block-quote::before{
+  content: "\f10d";
+  left: 2px;
+  top: 2px;
+}
+
+.wp-block-quote::after{
+  content: "\f10e";
+  right: 2px;
+  bottom: 2px;
+}
+
+.wp-block-quote cite{
+  display: block;
+  font-size: .75em;
+  text-align: right;
+}
 
 /****************        サイドバー       *******************/
 
@@ -1636,6 +1742,9 @@ cursor: pointer;
   }
   #feature5 .container > div{
     width: 100%;
+  }
+  nav .sidenav-trigger{
+    margin: 0 10px; /*記事リストとかと余白幅合わせる*/
   }
   .article_container{
     padding-top: 10px;
