@@ -1209,7 +1209,19 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_nav_fixed_top_anime',array(
             'label'       => 'ナビメニューの固定に伴うアニメーション',
-            'description' => 'ナビメニューをサイト上部に固定する際に背景色を白色にし、内部のロゴやメニューボタンが小さくなります。',
+            'description' => 'ナビメニューをサイト上部に固定する際に内部のロゴやメニューボタンが小さくなります。',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_transparentable',array(
+            'default'     => 0,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_transparentable',array(
+            'label'       => 'ナビメニューの背景透明化',
+            'description' => 'ナビメニューを透明化します。',
             'type'        => 'checkbox',
             'section'     => 'site_nav',
           ));
@@ -1766,39 +1778,40 @@ function add_customizerCSS(){
     }
 
   /*** サイトの文字サイズ ***/
-  $titleSize            = get_option('site_font_title_size')  ? get_option('site_font_title_size')  : '200';
-  $pcSize               = get_option('site_font_pc_size')     ? get_option('site_font_pc_size')     : '100';
-  $tabSize              = get_option('site_font_tab_size')    ? get_option('site_font_tab_size')    : '98';
-  $spSize               = get_option('site_font_sp_size')     ? get_option('site_font_sp_size')     : '95';
+  $titleSize  = get_option('site_font_title_size')        ? get_option('site_font_title_size')        : '200';
+  $pcSize     = get_option('site_font_pc_size')           ? get_option('site_font_pc_size')           : '100';
+  $tabSize    = get_option('site_font_tab_size')          ? get_option('site_font_tab_size')          : '98';
+  $spSize     = get_option('site_font_sp_size')           ? get_option('site_font_sp_size')           : '95';
 
 
   /*** ナビメニューの横幅 ***/
-  $nav                  = get_option('site_nav_width');
-  $navEn1               = get_option('site_nav_list1');
-  $navEn2               = get_option('site_nav_list2');
-  $navEn3               = get_option('site_nav_list3');
-  $navEn4               = get_option('site_nav_list4');
-  $navEn5               = get_option('site_nav_list5');
+  $nav        = get_option('site_nav_width');
+  $navEn1     = get_option('site_nav_list1');
+  $navEn2     = get_option('site_nav_list2');
+  $navEn3     = get_option('site_nav_list3');
+  $navEn4     = get_option('site_nav_list4');
+  $navEn5     = get_option('site_nav_list5');
+  $navtp      = get_option('site_nav_transparentable')    ? get_option('site_nav_transparentable')    : false;
 
   /*** 色の設定 ***/
-  $main_c   = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
-  $sub_c    = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
-  $acc_c    = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff5757';
-  $nav_bk   = get_option('site_color_nav_bk')           ? get_option('site_color_nav_bk')           : '#1a2760';
-  $nav_c    = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
-  $body_bk  = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
-  $body_c   = get_option('site_color_body_color')       ? get_option('site_color_body_color')       : '#2b546a';
-  $side_bk  = get_option('site_color_widget_bk')        ? get_option('site_color_widget_bk')        : '#ffffff';
-  $foot_bk  = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
-  $foot_c   = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
+  $main_c     = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
+  $sub_c      = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
+  $acc_c      = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff5757';
+  $nav_bk     = get_option('site_color_nav_bk')           ? get_option('site_color_nav_bk')           : '#1a2760';
+  $nav_c      = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
+  $body_bk    = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
+  $body_c     = get_option('site_color_body_color')       ? get_option('site_color_body_color')       : '#2b546a';
+  $side_bk    = get_option('site_color_widget_bk')        ? get_option('site_color_widget_bk')        : '#ffffff';
+  $foot_bk    = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
+  $foot_c     = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
 
   /*** 記事に関する設定 ***/
-  $p_margin = get_option('site_article_p_margin')       ? get_option('site_article_p_margin')       : '0.5';
+  $p_margin   = get_option('site_article_p_margin')       ? get_option('site_article_p_margin')       : '0.5';
 
   /*** フッターに関する設定 ***/
-  $spOrgNav = get_option('site_footer_sp_menu')         ? get_option('site_footer_sp_menu')         : false;
-  $footShr  = get_option('site_footer_share')           ? get_option('site_footer_share')           : false;
-  $footTop  = get_option('site_footer_gototop')         ? get_option('site_footer_gototop')         : false;
+  $spOrgNav   = get_option('site_footer_sp_menu')         ? get_option('site_footer_sp_menu')         : false;
+  $footShr    = get_option('site_footer_share')           ? get_option('site_footer_share')           : false;
+  $footTop    = get_option('site_footer_gototop')         ? get_option('site_footer_gototop')         : false;
 
   ?>
 <?php // カスタマイザーの値を<head>に出力 ?>
@@ -1842,6 +1855,9 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php endif; ?>
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
+<?php if($navtp == true): ?>
+.headerArea nav{background:transparent;}
+<?php endif; ?>
 #topnav li:nth-of-type(1) a::after{content:"<?php echo $navEn1 ?>";}
 #topnav li:nth-of-type(2) a::after{content:"<?php echo $navEn2 ?>";}
 #topnav li:nth-of-type(3) a::after{content:"<?php echo $navEn3 ?>";}

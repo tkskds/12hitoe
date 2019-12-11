@@ -7,7 +7,7 @@
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
 <?php if ($cssfw != 'value1') : ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/common.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.css">
 <?php endif; ?>
 
 <?php //サードパーティ製css/js呼び出し ?>
