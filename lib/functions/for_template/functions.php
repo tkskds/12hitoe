@@ -245,18 +245,18 @@ if (!function_exists('custom_breadcrumb')){
       } else {
         echo '<li><span>'. esc_html( $year ) .'年</span></li>';
       }
-    } elseif ( is_author() ) {
-      echo '<li><span>'. esc_html( $wp_obj->display_name ) .' の執筆記事</span></li>';
-    } elseif ( is_archive() ) {
+    }elseif(is_author()) {
+      echo '<li><span>'. esc_html($wp_obj->display_name) .' の執筆記事</span></li>';
+    }elseif(is_archive()) {
       $term_id   = $wp_obj->term_id;
       $term_name = $wp_obj->name;
       $tax_name  = $wp_obj->taxonomy;
-      if ( $wp_obj->parent !== 0 ) {
-        $parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
+      if ($wp_obj->parent !== 0){
+        $parent_array = array_reverse(get_ancestors( $term_id, $tax_name));
         foreach( $parent_array as $parent_id ) {
-          $parent_term = get_term( $parent_id, $tax_name );
-          $parent_link = esc_url( get_term_link( $parent_id, $tax_name ) );
-          $parent_name = esc_html( $parent_term->name );
+          $parent_term = get_term($parent_id, $tax_name );
+          $parent_link = esc_url(get_term_link($parent_id, $tax_name));
+          $parent_name = esc_html($parent_term->name );
           echo '<li>'.
                 '<a href="'. $parent_link .'">'.
                   '<span>'. $parent_name .'</span>'.
@@ -306,8 +306,22 @@ function add_index_to_content($content){
   $tocOn      = get_option('site_article_toc');
   if ($tocOn == true){
     $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : '目次';
-    $toc_design = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
-    $toc_wrap   = '<div class="toc'.output_type_class($toc_design,'toc').'"><span>'.$index_ttl.'</span></div>';
+    $toc_type   = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
+    switch ($toc_type) {
+      case 'value1':
+        $toc_class = ' tocType1';
+        break;
+      case 'value2':
+        $toc_class = ' tocType2';
+        break;
+      case 'value3':
+        $toc_class = ' tocType3';
+        break;
+      case 'value4':
+        $toc_class = ' tocType4';
+        break;
+    }
+    $toc_wrap   = '<div class="toc'.$toc_class.'"><span>'.$toc_ttl.'</span></div>';
     $tag        = '/<h2.*?>/i';
     if (preg_match( $tag, $content, $tags)) {
       $content = preg_replace($tag, $toc_wrap.$tags[0], $content, 1);
