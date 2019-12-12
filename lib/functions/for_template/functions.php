@@ -20,7 +20,7 @@ add_filter('get_archives_link'    , 'remove_post_count_parentheses' ); //アー�
 add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削除
 add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
 add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
-
+add_filter('the_content'          , 'add_index_to_content' ); //目次挿入
 
 /////////////////////
 // ページネーション
@@ -302,6 +302,24 @@ if (!function_exists('custom_breadcrumb')){
   }
 }
 
+function add_index_to_content($content){
+
+  $tocOn      = get_option('site_article_toc') ? get_option('site_article_toc') : true ;
+  $index_wrap = '<div class="index_wrap"><span>目次</span></div>';
+  $tag        = '/<h2.*?>/i';
+
+  if ($tocOn == true){
+
+    if (preg_match( $tag, $content, $tags)) {
+      $content = preg_replace($tag, $index_wrap.$tags[0], $content, 1);
+    }
+    return $content;
+    
+  }
+}
+
+
+//
 function output_type_class($type, $n){
   switch ($type) {
     case 'value1':

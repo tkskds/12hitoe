@@ -1460,8 +1460,19 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_share_ttl', array(
-            'label'       => '記事下シェアボタンのタイトル',
+            'label'       => '8-10.記事下シェアボタンのタイトル',
             'type'        => 'text',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_toc', array(
+            'default'     => true,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_toc', array(
+            'label'       => '8-11.目次を表示する',
+            'type'        => 'checkbox',
             'section'     => 'site_article',
           ));
 
