@@ -304,7 +304,7 @@ if (!function_exists('custom_breadcrumb')){
 
 function add_index_to_content($content){
 
-  $tocOn      = get_option('site_article_toc') ? get_option('site_article_toc') : true ;
+  $tocOn      = get_option('site_article_toc');
   $index_wrap = '<div class="index_wrap"><span>目次</span></div>';
   $tag        = '/<h2.*?>/i';
 
@@ -314,10 +314,9 @@ function add_index_to_content($content){
       $content = preg_replace($tag, $index_wrap.$tags[0], $content, 1);
     }
     return $content;
-    
+
   }
 }
-
 
 //
 function output_type_class($type, $n){
