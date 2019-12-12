@@ -5,7 +5,6 @@
 $share    = get_option('site_article_share')        ? get_option('site_article_share')        : 'value1' ;
 $share_bf = get_option('site_article_sharebf_type') ? get_option('site_article_sharebf_type') : 'value1' ;
 $share_af = get_option('site_article_shareaf_type') ? get_option('site_article_shareaf_type') : 'value1' ;
-$n        = 'share'
 
 ?>
 
@@ -37,7 +36,7 @@ $n        = 'share'
       </div>
       <!--シェアアイキャッチ下-->
       <?php if($share=='value1'||$share=='value2'): ?>
-        <div class="article_share before_share<?php output_typeClass($share_bf,$n); ?>">
+        <div class="article_share before_share<?php output_typeClass($share_bf,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
       <?php endif; ?>
@@ -51,7 +50,7 @@ $n        = 'share'
       </div>
       <!--シェア記事下-->
       <?php if($share=='value1'||$share=='value3'): ?>
-        <div class="article_share after_share<?php output_typeClass($share_af,$n); ?>">
+        <div class="article_share after_share<?php output_typeClass($share_af,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
     <?php endif; ?>
