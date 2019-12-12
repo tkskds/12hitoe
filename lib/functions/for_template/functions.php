@@ -305,16 +305,16 @@ if (!function_exists('custom_breadcrumb')){
 function output_type_class($type, $n){
   switch ($type) {
     case 'value1':
-      echo $n.'Type1';
+      echo ' '.$n.'Type1 ';
       break;
     case 'value2':
-      echo $n.'Type2';
+      echo ' '.$n.'Type2 ';
       break;
     case 'value3':
-      echo $n.'Type3';
+      echo ' '.$n.'Type3 ';
       break;
     case 'value4':
-      echo $n.'Type4';
+      echo ' '.$n.'Type4 ';
       break;
   }
 }
