@@ -303,18 +303,18 @@ if (!function_exists('custom_breadcrumb')){
 }
 
 function add_index_to_content($content){
-
   $tocOn      = get_option('site_article_toc');
-  $index_wrap = '<div class="index_wrap"><span>目次</span></div>';
-  $tag        = '/<h2.*?>/i';
-
   if ($tocOn == true){
-
+    $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : '目次';
+    $toc_design = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
+    $toc_wrap   = '<div class="toc'.output_type_class($toc_design,'toc').'"><span>'.$index_ttl.'</span></div>';
+    $tag        = '/<h2.*?>/i';
     if (preg_match( $tag, $content, $tags)) {
-      $content = preg_replace($tag, $index_wrap.$tags[0], $content, 1);
+      $content = preg_replace($tag, $toc_wrap.$tags[0], $content, 1);
     }
     return $content;
-
+  }else{
+    return $content;
   }
 }
 

@@ -1,12 +1,13 @@
 <?php
-  $siteType    = get_option('site_bone_type')     ? get_option('site_bone_type')    : 'value1' ;
-  $articleType = get_option('site_article_type')  ? get_option('site_article_type') : 'value1' ;
+  $siteType    = get_option('site_bone_type')        ? get_option('site_bone_type')         : 'value1' ;
+  $articleType = get_option('site_article_type')     ? get_option('site_article_type')      : 'value1' ;
+  $tocOn       = get_option('site_article_toc_page') ? get_option('site_article_toc_page')  : false    ;
  ?>
 
 <?php get_header(); ?>
   <div class="row contentArea showPage">
     <main id="main" class="main<?php if ($siteType == 'value1' || $siteType == 'value3'){echo ' columns col l9';}?>">
-      <div class="main__container articleShow_wrap">
+      <div class="main__container articleShow_wrap<?php if($tocOn==true){echo ' painttoc';} ?>">
         <?php
           if ($articleType == 'value1'){
             get_template_part('parts/pages/type1');

@@ -1472,7 +1472,47 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_article_toc', array(
             'label'       => '8-11.目次を表示する',
+            'description' => '投稿ページで目次が表示されます',
             'type'        => 'checkbox',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_toc_page', array(
+            'default'     => false,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_toc_page', array(
+            'label'       => '8-12.固定ページでも目次を表示する',
+            'description' => '固定ページでも目次が表示されます。デフォルトはオフです',
+            'type'        => 'checkbox',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_toc_ttl', array(
+            'default'     => '目次',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_toc_ttl', array(
+            'label'       => '8-13.目次のタイトル',
+            'type'        => 'text',
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_toc_design', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_toc_design', array(
+            'label'       => '8-14.目次のデザイン',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+            ),
             'section'     => 'site_article',
           ));
 

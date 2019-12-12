@@ -43,7 +43,7 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
       <?php endif; ?>
       <!--本文-->
       <div class="article_content">
-          <?php the_content(); ?>
+        <?php the_content(); ?>
       </div>
       <!--タグ-->
       <div class="article_tag">
