@@ -309,19 +309,20 @@ function add_index_to_content($content){
     $toc_type   = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
     switch ($toc_type) {
       case 'value1':
-        $toc_class = ' tocType1';
+        $toc_wrap  = '<div class="toc tocType1"><ul class="collapsible"><li><div class="collapsible-header toc_ttl">'.
+                     $toc_ttl.
+                     '</div><div class="collapsible-body toc_body"></div></li></ul></div>';
         break;
       case 'value2':
-        $toc_class = ' tocType2';
+        $toc_wrap  = '<div class="toc tocType2"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
         break;
       case 'value3':
-        $toc_class = ' tocType3';
+        $toc_wrap  = '<div class="toc tocType3"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
         break;
       case 'value4':
-        $toc_class = ' tocType4';
+        $toc_wrap  = '<div class="toc tocType4"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
         break;
     }
-    $toc_wrap   = '<div class="toc'.$toc_class.'"><span>'.$toc_ttl.'</span></div>';
     $tag        = '/<h2.*?>/i';
     if (preg_match( $tag, $content, $tags)) {
       $content = preg_replace($tag, $toc_wrap.$tags[0], $content, 1);
