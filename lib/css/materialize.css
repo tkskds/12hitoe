@@ -910,6 +910,7 @@ article h4{
 .article_meta_info,
 .article_title,
 .article_thumbnail,
+.article_share,
 .article_content,
 .article_tag{
   position: relative;
@@ -1100,6 +1101,56 @@ h4.search_result_ttl::before {
   right: .5em;
   opacity: 0.25;
 }
+
+/*シェアボタン*/
+
+ul.sharebutton_list{
+  display: flex;
+}
+
+ul.sharebutton_list,
+li.share_button{
+  text-align: center;
+}
+
+li.share_button{
+  width: 20%;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+li.share_button:hover{
+  opacity: .9;
+}
+
+li.share_twitter{
+  background: #56ACEE;
+}
+
+li.share_facebook{
+  background: #3B5998;
+}
+
+li.share_hatena{
+  background: #008FDE;
+  font-weight: bold;
+}
+
+li.share_pocket{
+  background: #D3505A;
+}
+
+li.share_line{
+  background: #2CB24C;
+}
+
+li.share_button a{
+ font-size: 1.25em;
+ line-height: 1;
+ color: #fff;
+ display: block;
+ padding: 10px 0;
+ }
 
 /*関連記事*/
 
@@ -1780,6 +1831,7 @@ cursor: pointer;
   .article_meta_info,
   .article_title,
   .article_thumbnail,
+  .article_share,
   .article_content,
   .article_tag{
     padding: 0 30px;
@@ -1841,6 +1893,7 @@ cursor: pointer;
   .article_meta_info,
   .article_title,
   .article_thumbnail,
+  .article_share,
   .article_content,
   .article_tag{
     padding: 0 10px;
