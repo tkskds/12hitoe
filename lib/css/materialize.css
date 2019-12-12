@@ -1107,7 +1107,7 @@ h4.search_result_ttl::before {
   padding-left: 0;
 }
 
-.article_content .toc li::before{
+.article_content .toc ul li::before{
   display: none;
 }
 
