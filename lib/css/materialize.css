@@ -1158,23 +1158,28 @@ li.share_hatena a{
  color: #fff;
  }
 
-.shareType2 li.share_twitter a{
+.shareType2 li.share_twitter a,
+.shareType4 li.share_twitter a{
  color: #56ACEE;
 }
 
-.shareType2 li.share_facebook a{
+.shareType2 li.share_facebook a,
+.shareType4 li.share_facebook a{
  color: #3B5998;
 }
 
-.shareType2 li.share_hatena a{
+.shareType2 li.share_hatena a,
+.shareType4 li.share_hatena a{
  color: #008FDE;
 }
 
-.shareType2 li.share_pocket a{
+.shareType2 li.share_pocket a,
+.shareType4 li.share_pocket a{
  color: #D3505A;
 }
 
-.shareType2 li.share_line a{
+.shareType2 li.share_line a,
+.shareType4 li.share_line a{
  color: #2CB24C;
 }
 
@@ -1186,6 +1191,35 @@ li.share_hatena a{
 
 .shareType3 li a{
   color: #ccc;
+}
+
+.shareType4 li a{
+  width: 60px;
+  line-height: 60px;
+  padding: 0;
+  margin: 0 auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,.19);
+  box-shadow: 0 1px 5px rgba(0,0,0,.19);
+}
+
+.shareType4 li a i{
+  vertical-align: baseline;
+}
+
+.shareType4 li:hover{
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.shareType4 li a:hover{
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.share_af_ttl{
+  text-align: center;
+  font-weight: bold;
 }
 
 /*関連記事*/
@@ -1941,6 +1975,10 @@ cursor: pointer;
   }
   .breadcrumb{
     padding: 0 10px;
+  }
+  .shareType4 li a{
+    width: 50px;
+    line-height: 50px;
   }
   .relatedType2 ul.related_posts li{
     width: 100%;

@@ -1409,7 +1409,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_share', array(
-            'label'       => '記事内シェアボタンの位置',
+            'label'       => '8-7.記事内シェアボタンの位置',
             'type'        => 'radio',
             'choices'     => array(
               'value1'    => 'アイキャッチ下と本文下',
@@ -1426,7 +1426,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_sharebf_type', array(
-            'label'       => 'アイキャッチ下シェアボタンのデザイン',
+            'label'       => '8-8.アイキャッチ下シェアボタンのデザイン',
             'type'        => 'radio',
             'choices'     => array(
               'value1'    => 'デザイン1',
@@ -1443,7 +1443,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_shareaf_type', array(
-            'label'       => 'アイキャッチ下シェアボタンのデザイン',
+            'label'       => '8-9.本文下シェアボタンのデザイン',
             'type'        => 'radio',
             'choices'     => array(
               'value1'    => 'デザイン1',
@@ -1451,6 +1451,17 @@ function org_customizer($wp_customize){
               'value3'    => 'デザイン3',
               'value4'    => 'デザイン4',
             ),
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_share_ttl', array(
+            'default'     => 'SHARE',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_share_ttl', array(
+            'label'       => '記事下シェアボタンのタイトル',
+            'type'        => 'text',
             'section'     => 'site_article',
           ));
 

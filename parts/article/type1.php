@@ -2,9 +2,10 @@
 
 <?php
 
-$share    = get_option('site_article_share')        ? get_option('site_article_share')        : 'value1' ;
-$share_bf = get_option('site_article_sharebf_type') ? get_option('site_article_sharebf_type') : 'value1' ;
-$share_af = get_option('site_article_shareaf_type') ? get_option('site_article_shareaf_type') : 'value1' ;
+$share     = get_option('site_article_share')        ? get_option('site_article_share')        : 'value1' ;
+$share_bf  = get_option('site_article_sharebf_type') ? get_option('site_article_sharebf_type') : 'value1' ;
+$share_af  = get_option('site_article_shareaf_type') ? get_option('site_article_shareaf_type') : 'value1' ;
+$share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_share_ttl')    : 'SHARE'  ;
 
 ?>
 
@@ -50,6 +51,7 @@ $share_af = get_option('site_article_shareaf_type') ? get_option('site_article_s
       </div>
       <!--シェア記事下-->
       <?php if($share=='value1'||$share=='value3'): ?>
+        <h3 class="share_af_ttl"><?php echo $share_ttl ?></h3>
         <div class="article_share after_share<?php output_type_class($share_af,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
