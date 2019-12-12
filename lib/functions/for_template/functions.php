@@ -302,21 +302,20 @@ if (!function_exists('custom_breadcrumb')){
   }
 }
 
-function share_type($type){
+function output_typeClass($type, $n){
   switch ($type) {
     case 'value1':
-      echo ' shareType1';
+      echo ' '.$n.'Type1';
       break;
     case 'value2':
-      echo ' shareType2';
+      echo ' '.$n.'Type2';
       break;
     case 'value3':
-      echo ' shareType3';
+      echo ' '.$n.'Type1';
       break;
     case 'value4':
-      echo ' shareType4';
+      echo ' '.$n.'Type2';
       break;
-  }
 }
 
 ?>
