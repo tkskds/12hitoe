@@ -34,9 +34,12 @@ $share_af = get_option('site_article_shareaf_type') ? get_option('site_article_s
             <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
           <?php endif; ?>
       </div>
-      <div class="article_share before_share<?php if($share_bf=='value1'){echo ' shareType1';}elseif($share_bf=='value2'){echo ' shareType2';} ?>">
-        <?php get_template_part('parts/others/sharebutton') ?>
-      </div>
+      <!--シェアアイキャッチ下-->
+      <?php if($share=='value1'||$share=='value2'): ?>
+        <div class="article_share before_share<?php share_type($share_bf) ?>">
+          <?php get_template_part('parts/others/sharebutton') ?>
+        </div>
+      <?php endif; ?>
       <!--本文-->
       <div class="article_content">
           <?php the_content(); ?>
@@ -45,9 +48,12 @@ $share_af = get_option('site_article_shareaf_type') ? get_option('site_article_s
       <div class="article_tag">
           <?php the_tags('<ul class="tag_list"><li></li></ul>'); ?>
       </div>
-      <div class="article_share after_share<?php if($share_af=='value1'){echo ' shareType1';}elseif($share_af=='value2'){echo ' shareType2';} ?>">
-        <?php get_template_part('parts/others/sharebutton') ?>
-      </div>
+      <!--シェア記事下-->
+      <?php if($share=='value1'||$share=='value3'): ?>
+        <div class="article_share after_share<?php shareType($share_af) ?>">
+          <?php get_template_part('parts/others/sharebutton') ?>
+        </div>
+    <?php endif; ?>
     </div>
   </article>
 

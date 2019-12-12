@@ -301,4 +301,22 @@ if (!function_exists('custom_breadcrumb')){
     echo '</div>'; //https://wemo.tech/356
   }
 }
+
+function share_type($type){
+  switch ($type) {
+    case 'value1':
+      echo ' shareType1';
+      break;
+    case 'value2':
+      echo ' shareType2';
+      break;
+    case 'value3':
+      echo ' shareType3';
+      break;
+    case 'value4':
+      echo ' shareType4';
+      break;
+  }
+}
+
 ?>

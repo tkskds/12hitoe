@@ -1431,7 +1431,10 @@ function org_customizer($wp_customize){
             'choices'     => array(
               'value1'    => 'デザイン1',
               'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+              'value4'    => 'デザイン4',
             ),
+            'section'     => 'site_article',
           ));
 
           $wp_customize->add_setting('site_article_shareaf_type', array(
@@ -1445,7 +1448,10 @@ function org_customizer($wp_customize){
             'choices'     => array(
               'value1'    => 'デザイン1',
               'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+              'value4'    => 'デザイン4',
             ),
+            'section'     => 'site_article',
           ));
 
       $wp_customize->add_section('site_decoration',array(

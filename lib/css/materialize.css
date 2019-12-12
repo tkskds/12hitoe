@@ -1119,38 +1119,67 @@ li.share_button{
   transition: all .2s ease-in-out;
 }
 
-li.share_button:hover{
+li.share_button a{
+ font-size: 1.25em;
+ line-height: 1;
+ display: block;
+ padding: 10px 0;
+ }
+
+.shareType1 li.share_button:hover{
   opacity: .9;
 }
 
-li.share_twitter{
+.shareType1 li.share_twitter{
   background: #56ACEE;
 }
 
-li.share_facebook{
+.shareType1 li.share_facebook{
   background: #3B5998;
 }
 
-li.share_hatena{
+.shareType1 li.share_hatena{
   background: #008FDE;
   font-weight: bold;
 }
 
-li.share_pocket{
+.shareType1 li.share_pocket{
   background: #D3505A;
 }
 
-li.share_line{
+.shareType1 li.share_line{
   background: #2CB24C;
 }
 
-li.share_button a{
- font-size: 1.25em;
- line-height: 1;
+.shareType1 li.share_button a{
  color: #fff;
- display: block;
- padding: 10px 0;
  }
+
+.shareType2 li.share_twitter a{
+ color: #56ACEE;
+}
+
+.shareType2 li.share_facebook a{
+ color: #3B5998;
+}
+
+.shareType2 li.share_hatena a{
+ color: #008FDE;
+ font-weight: bold;
+}
+
+.shareType2 li.share_pocket a{
+ color: #D3505A;
+}
+
+.shareType2 li.share_line a{
+ color: #2CB24C;
+}
+
+.shareType2 li:hover{
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
 
 /*関連記事*/
 
@@ -1165,10 +1194,6 @@ h3.related_ttl {
 .related_ttl{
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-}
-
-.related_ttl:hover{
-  font-weight: bold;
 }
 
 .related_thumb{
