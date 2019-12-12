@@ -6,8 +6,10 @@
 <?php //CSSフレームワークの分岐 （materialize.css/common.css呼び出し） ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
 <?php if ($cssfw != 'value1') : ?>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css" media="all">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.css" media="all">
+  <link href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css" rel="preload" media="all" as="style" type="text/css">
+  <link href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.css" rel="preload" media="all" as="style" type="text/css">
+  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.css" rel="stylesheet" media="print" onload="this.media='all'">
 <?php endif; ?>
 
 <?php //サードパーティ製css/js呼び出し ?>
