@@ -46,9 +46,9 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 
           <?php // img ?>
           <?php if (has_post_thumbnail()): ?>
-            <?php the_post_thumbnail('eyecatch', array('alt' => $ttl,'width' => 520,'height' => 300,)); ?>
+            <?php the_post_thumbnail('eyecatch', array('alt' => $ttl, 'width' => 520, 'height' => 300, 'class' => 'lazyloads')); ?>
           <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300" class="lazyloads">
           <?php endif; ?>
 
           <?php // .category ?>
@@ -96,7 +96,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
       <?php if (has_post_thumbnail()): ?>
         <?php the_post_thumbnail('eyecatch', array(
           'alt'    => $ttl,
-          'class'  => 'activator',
+          'class'  => 'activator lazyloads',
           'width'  => 520,
           'height' => 300,
           ));

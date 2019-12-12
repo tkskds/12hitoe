@@ -11,17 +11,14 @@
 
 ***************/
 
-
-
-
 add_filter('widget_tag_cloud_args', 'tag_font_size'); //タグのフォントサイズ修正
 add_filter('wp_list_categories'   , 'remove_post_count_parentheses'); //カテゴリの()削除
 add_filter('get_archives_link'    , 'remove_post_count_parentheses'); //アーカイブの()削除
 add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削除
 add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
 add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
-add_filter('the_content'          , 'add_index_to_content'); //目次挿入
-add_filter('the_content'          , 'add_lazyload_tag'); //画像遅延読み込み
+add_filter('the_content'          , 'add_index_to_content', 10); //目次挿入
+add_filter('the_content'          , 'add_lazyload_tag'); //lazyloadクラス
 
 /////////////////////
 // ページネーション
@@ -343,46 +340,16 @@ function add_index_to_content($content){
 /////////////////////
 
 function add_lazyload_tag($content){
-	if(empty($content) || is_feed() || is_admin() || is_ktai()){
-		return $content;
-	}
-	$exclude_first_img = true;
-	$exclude_url_img   = array('ad.jp.ap.valuecommerce.com');
-	$include_iframe    = true;
-	if($include_iframe){
-		$tag_pattern = '/<(?:img|iframe)\s+.*?>/';
-	} else {
-		$tag_pattern = '/<img\s+.*?>/';
-	}
-	preg_match_all( $tag_pattern, $content, $matches_img );
-	$pattern_arr = array();
-	foreach ( $matches_img[0] as $img_html ){
-		if(strpos($img_html, '<img ') !== false ){
-			if(empty($exclude_url_img)){
-				$pattern_arr[] = $img_html;
-			} else {
-				foreach($exclude_url_img as $url){
-					if(strpos($img_html, $url) === false){
-						$pattern_arr[] = $img_html;
-					}
-				}
-			}
-		} else {
-			$pattern_arr[] = $img_html;
-		}
-	}
-	if( $exclude_first_img && strpos($pattern_arr[0], '<img ' ) !== false ){
-		array_shift($pattern_arr);
-	}
-	foreach($pattern_arr as $i => $img_html){
-		if(strpos($img_html, ' class=') === false){
-			$subject_arr[] = preg_replace( array( '/ (src|srcset|sizes)/', '/\s?\/?>/' ), array( ' data-$1', ' class="lazyload" />' ), $img_html );
-		} else {
-			$subject_arr[] = preg_replace( array( '/ (src|srcset|sizes)/', '/(\s+?class=(?:"|\').+?)("|\')/' ), array( ' data-$1', '$1 lazyload$2' ), $img_html );
-		}
-	}
-	$content = str_replace($pattern_arr, $subject_arr, $content);
-	return $content;
+  $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+  $document = new DOMDocument();
+  libxml_use_internal_errors(true);
+  $document->loadHTML(utf8_decode($content));
+  $imgs = $document->getElementsByTagName('img');
+  foreach ($imgs as $img) {
+     $img->setAttribute('class','lazyloads');
+  }
+  $html = $document->saveHTML();
+  return $html;
 }
 
 /////////////////////
