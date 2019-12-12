@@ -257,11 +257,11 @@ if (!function_exists('custom_breadcrumb')){
           $parent_term = get_term($parent_id, $tax_name );
           $parent_link = esc_url(get_term_link($parent_id, $tax_name));
           $parent_name = esc_html($parent_term->name );
-          echo '<li>'.
+          echo  '<li>'.
                 '<a href="'. $parent_link .'">'.
-                  '<span>'. $parent_name .'</span>'.
+                '<span>'. $parent_name .'</span>'.
                 '</a>'.
-              '</li>';
+                '</li>';
           $json_array[] = array(
             'id' => $parent_link,
             'name' => $parent_name

@@ -42,7 +42,7 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
         </div>
       <?php endif; ?>
       <!--本文-->
-      <div class="article_content">
+      <div class="article_content painttoc">
         <?php the_content(); ?>
       </div>
       <!--タグ-->
@@ -51,7 +51,7 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
       </div>
       <!--シェア記事下-->
       <?php if($share=='value1'||$share=='value3'): ?>
-        <h3 class="share_af_ttl"><?php echo $share_ttl ?></h3>
+        <p class="share_af_ttl"><?php echo $share_ttl ?></h3>
         <div class="article_share after_share<?php output_type_class($share_af,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
