@@ -1126,6 +1126,10 @@ li.share_button a{
  padding: 10px 0;
  }
 
+li.share_hatena a{
+   font-weight: bold;
+}
+
 .shareType1 li.share_button:hover{
   opacity: .9;
 }
@@ -1140,7 +1144,6 @@ li.share_button a{
 
 .shareType1 li.share_hatena{
   background: #008FDE;
-  font-weight: bold;
 }
 
 .shareType1 li.share_pocket{
@@ -1165,7 +1168,6 @@ li.share_button a{
 
 .shareType2 li.share_hatena a{
  color: #008FDE;
- font-weight: bold;
 }
 
 .shareType2 li.share_pocket a{
@@ -1176,9 +1178,14 @@ li.share_button a{
  color: #2CB24C;
 }
 
-.shareType2 li:hover{
+.shareType2 li:hover,
+.shareType3 li:hover{
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
+}
+
+.shareType3 li a{
+  color: #ccc;
 }
 
 /*関連記事*/
