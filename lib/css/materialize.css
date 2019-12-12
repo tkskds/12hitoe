@@ -1215,7 +1215,7 @@ ul.related_posts li a{
 
 .relatedType2 ul.related_posts li{
   width: 30%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .relatedType2 .related_ttl{
@@ -1275,6 +1275,14 @@ ul.related_posts li a{
   display: block;
   font-size: .75em;
   text-align: right;
+}
+
+/*マークダウンで書けるコード*/
+p > code {
+  background: whitesmoke;
+  font-size: .9em;
+  padding: 2px 3px;
+  border-radius: 3px;
 }
 
 /****************        サイドバー       *******************/

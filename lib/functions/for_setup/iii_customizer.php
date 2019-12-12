@@ -1403,6 +1403,50 @@ function org_customizer($wp_customize){
             'section'     => 'site_article',
           ));
 
+          $wp_customize->add_setting('site_article_share', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_share', array(
+            'label'       => '記事内シェアボタンの位置',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'アイキャッチ下と本文下',
+              'value2'    => 'アイキャッチ下のみ',
+              'value3'    => '本文下のみ',
+              'value4'    => '表示しない',
+            ),
+            'section'     => 'site_article',
+          ));
+
+          $wp_customize->add_setting('site_article_sharebf_type', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_sharebf_type', array(
+            'label'       => 'アイキャッチ下シェアボタンのデザイン',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+            ),
+          ));
+
+          $wp_customize->add_setting('site_article_shareaf_type', array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_shareaf_type', array(
+            'label'       => 'アイキャッチ下シェアボタンのデザイン',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+            ),
+          ));
 
       $wp_customize->add_section('site_decoration',array(
         'priority'        => 9,
