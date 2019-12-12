@@ -30,13 +30,13 @@ $relatedType = get_option('site_article_related_design') ? get_option('site_arti
           <a href="<?php the_permalink(); ?>">
             <div class="related_thumb">
               <?php if(has_post_thumbnail()&&$relatedType=='value1'): ?>
-	              <?php echo get_the_post_thumbnail($post->ID, 'thumb100'); ?>
+	              <?php echo get_the_post_thumbnail($post->ID, 'thumb100', array('class' => 'lazyloads')); ?>
               <?php elseif(has_post_thumbnail()&&$relatedType=='value2'): ?>
-                <?php echo get_the_post_thumbnail($post->ID, 'eyecatch'); ?>
+                <?php echo get_the_post_thumbnail($post->ID, 'eyecatch', array('class' => 'lazyloads')); ?>
               <?php elseif($relatedType=='value1'): ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="関連記事アイキャッチ画像" width="100" height="100">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="関連記事アイキャッチ画像" width="100" height="100" class="lazyloads">
               <?php elseif($relatedType=='value2'): ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="関連記事アイキャッチ画像" width="520" height="300">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="関連記事アイキャッチ画像" width="520" height="300" class="lazyloads">
               <?php endif; ?>
 	          </div>
 	          <div class="related_ttl">
