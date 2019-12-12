@@ -26,6 +26,9 @@
             <img src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300">
           <?php endif; ?>
       </div>
+      <div class="article_share">
+        <?php get_template_part('parts/others/sharebutton') ?>
+      </div>
       <!--本文-->
       <div class="article_content">
           <?php the_content(); ?>
@@ -36,5 +39,5 @@
       </div>
     </div>
   </article>
-  
+
 <?php endif; ?>

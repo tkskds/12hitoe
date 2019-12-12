@@ -1168,7 +1168,7 @@ ul.related_posts li a{
 }
 
 .relatedType2 .related_ttl{
-  margin: .5em 0 1em 0;
+  margin: .5em 0 1.5em 0;
 }
 
 .relatedType2 .related_thumb{
@@ -1854,6 +1854,10 @@ cursor: pointer;
   }
   .relatedType2 .related_thumb img{
     height: 150px;
+  }
+  .relatedType2 li:not(:last-child) .related_ttl {
+    padding: .5em 0 1em 0;
+    border-bottom: 2px solid #efefef;
   }
   .footer_widgets_wrap {
     display: block;
