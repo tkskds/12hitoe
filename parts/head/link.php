@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <?php //サードパーティ製css/js呼び出し ?>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" media="all">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" media="all">
 
 <?php //GoogleFont呼び出し ?>
 <?php $fontTitle = get_option('site_font_title') ? get_option('site_font_title') : 'value1' ; ?>

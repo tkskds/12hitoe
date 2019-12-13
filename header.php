@@ -8,7 +8,7 @@
 
 <?php $fixanm  = get_option('site_nav_fixed_top_anime') ? get_option('site_nav_fixed_top_anime') : false ;?>
 
-  <body <?php body_class(); ?><?php if($fixanm == true){echo ' data-delighter="start:-0.1;end:-99999"';} ?>>
+  <body <?php body_class(); ?><?php if($fixanm == true){echo ' data-delighter="start:-0.01;end:-99999"';} ?>>
     <div class="headerArea">
 
 <?php

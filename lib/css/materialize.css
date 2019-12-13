@@ -59,17 +59,8 @@ body{
   animation: fadeIn 500ms ease-in;
 }
 
-body.delighter{
-  -webkit-transform: none;
-  transform: none;
-}
-
 h1{
   font-size: 2em;
-}
-
-h2{
-
 }
 
 .siteTitle,
@@ -229,6 +220,37 @@ img.lazyloaded{
 
 /****************         ナビバー        *******************/
 
+/*固定に伴うアニメ*/
+body.delighter .headerArea nav,
+body.delighter .headerArea .navbar-fixed h1 a,
+body.delighter .headerArea .navbar-fixed ul#topnav,
+body.delighter .headerArea .navbar-fixed nav ul a,
+body.delighter .headerArea .navbar-fixed a.sidenav-trigger,
+body.delighter .headerArea .navbar-fixed a.sidenav-trigger i{
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+body.delighter.started .headerArea .navbar-fixed nav{
+  height: 40px;
+  background: #fff;
+}
+
+body.delighter.started .headerArea .navbar-fixed h1 a,
+body.delighter.started .headerArea .navbar-fixed ul#topnav,
+body.delighter.started .headerArea .navbar-fixed nav ul a,
+body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger,
+body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger i{
+  height: 40px;
+  line-height: 40px;
+  font-size: .9em;
+}
+
+.headerArea a.sidenav-trigger i:hover{
+  font-size: 1.25em;
+  transform: scaleX(1.5);
+}
+
 #topnav li a{
   position: relative;
 }
@@ -241,8 +263,12 @@ img.lazyloaded{
   left: 0;
   margin: auto;
   text-align: center;
-  font-size: .3em;
+  font-size: .75em;
   opacity: .8;
+}
+
+nav ul li.active{
+  background-color: transparent;
 }
 
 .sidenav li {
