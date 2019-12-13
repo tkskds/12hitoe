@@ -18,7 +18,8 @@ add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削�
 add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
 add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
 add_filter('the_content'          , 'add_index_to_content', 10); //目次挿入
-add_filter('the_content'          , 'add_lazyload_tag'); //lazyloadクラス
+add_filter('the_content'          , 'convert_src_for_lazyload'); //lazyloadクラス
+add_filter('the_content'          , 'add_lazyload_class'); //lazyloadクラス
 
 /////////////////////
 // ページネーション
@@ -184,8 +185,8 @@ if (!function_exists('custom_breadcrumb')){
               );
             }
           }
-          $term_link = esc_url( get_term_link( $term->term_id, $the_tax ) );
-          $term_name = esc_html( $term->name );
+          $term_link = esc_url(get_term_link($term->term_id, $the_tax));
+          $term_name = esc_html($term->name);
           echo  '<li>'.
                 '<a href="'. $term_link .'">'.
                 '<span>'. $term_name .'</span>'.
@@ -196,15 +197,15 @@ if (!function_exists('custom_breadcrumb')){
             'name' => $term_name
           );
         }
-        echo '<li><span>'. esc_html( strip_tags( $post_title ) ) .'</span></li>';
-    } elseif ( is_page() || is_home() ) {
+        echo '<li><span>'. esc_html(strip_tags($post_title)) .'</span></li>';
+    } elseif (is_page() || is_home()){
       $page_id    = $wp_obj->ID;
-      $page_title = apply_filters( 'the_title', $wp_obj->post_title );
-      if ( $wp_obj->post_parent !== 0 ) {
-        $parent_array = array_reverse( get_post_ancestors( $page_id ) );
-        foreach( $parent_array as $parent_id ) {
-          $parent_link = esc_url( get_permalink( $parent_id ) );
-          $parent_name = esc_html( get_the_title( $parent_id ) );
+      $page_title = apply_filters('the_title', $wp_obj->post_title);
+      if ($wp_obj->post_parent !== 0){
+        $parent_array = array_reverse(get_post_ancestors($page_id));
+        foreach($parent_array as $parent_id){
+          $parent_link = esc_url(get_permalink($parent_id));
+          $parent_name = esc_html(get_the_title($parent_id));
           echo  '<li>'.
                 '<a href="'. $parent_link .'">'.
                 '<span>'. $parent_name .'</span>'.
@@ -216,32 +217,32 @@ if (!function_exists('custom_breadcrumb')){
           );
         }
       }
-      echo '<li><span>'. esc_html( strip_tags( $page_title ) ) .'</span></li>';
-    } elseif ( is_post_type_archive() ) {
-      echo '<li><span>'. esc_html( $wp_obj->label ) .'</span></li>';
-    } elseif ( is_date() ) {
+      echo '<li><span>'. esc_html(strip_tags($page_title)) .'</span></li>';
+    } elseif (is_post_type_archive()){
+      echo '<li><span>'. esc_html($wp_obj->label) .'</span></li>';
+    } elseif (is_date()){
       $year  = get_query_var('year');
       $month = get_query_var('monthnum');
       $day   = get_query_var('day');
       if ( $day !== 0 ) {
         echo  '<li>'.
-              '<a href="'. esc_url( get_year_link( $year ) ) .'"><span>'. esc_html( $year ) .'年</span></a>'.
+              '<a href="'. esc_url(get_year_link($year)) .'"><span>'. esc_html($year) .'年</span></a>'.
               '</li>'.
               '<li>'.
-              '<a href="'. esc_url( get_month_link( $year, $month ) ) . '"><span>'. esc_html( $month ) .'月</span></a>'.
+              '<a href="'. esc_url(get_month_link($year, $month)) . '"><span>'. esc_html($month) .'月</span></a>'.
               '</li>'.
               '<li>'.
-              '<span>'. esc_html( $day ) .'日</span>'.
+              '<span>'. esc_html($day) .'日</span>'.
               '</li>';
       } elseif ( $month !== 0 ) {
         echo  '<li>'.
-              '<a href="'. esc_url( get_year_link( $year ) ) .'"><span>'. esc_html( $year ) .'年</span></a>'.
+              '<a href="'. esc_url(get_year_link($year)) .'"><span>'. esc_html($year) .'年</span></a>'.
               '</li>'.
               '<li>'.
-              '<span>'. esc_html( $month ) .'月</span>'.
+              '<span>'. esc_html($month) .'月</span>'.
               '</li>';
       } else {
-        echo '<li><span>'. esc_html( $year ) .'年</span></li>';
+        echo '<li><span>'. esc_html($year) .'年</span></li>';
       }
     }elseif(is_author()) {
       echo '<li><span>'. esc_html($wp_obj->display_name) .' の執筆記事</span></li>';
@@ -250,8 +251,8 @@ if (!function_exists('custom_breadcrumb')){
       $term_name = $wp_obj->name;
       $tax_name  = $wp_obj->taxonomy;
       if ($wp_obj->parent !== 0){
-        $parent_array = array_reverse(get_ancestors( $term_id, $tax_name));
-        foreach( $parent_array as $parent_id ) {
+        $parent_array = array_reverse(get_ancestors($term_id, $tax_name));
+        foreach($parent_array as $parent_id){
           $parent_term = get_term($parent_id, $tax_name );
           $parent_link = esc_url(get_term_link($parent_id, $tax_name));
           $parent_name = esc_html($parent_term->name );
@@ -267,7 +268,7 @@ if (!function_exists('custom_breadcrumb')){
         }
       }
       echo '<li>'.
-            '<span>'. esc_html( $term_name ) .'</span>'.
+            '<span>'. esc_html($term_name) .'</span>'.
           '</li>';
     } elseif (is_search()){
       echo '<li><span>「'.esc_html(get_search_query()).'」で検索した結果</span></li>';
@@ -280,7 +281,7 @@ if (!function_exists('custom_breadcrumb')){
     if (!empty( $json_array)):
       $pos = 1;
       $json = '';
-      foreach ($json_array as $data ) :
+      foreach ($json_array as $data) :
         $json .= '{
           "@type": "ListItem",
           "position": '. $pos++ .',
@@ -340,17 +341,27 @@ function add_index_to_content($content){
 // 画像遅延読み込み
 /////////////////////
 
-function add_lazyload_tag($content){
-  $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-  $document = new DOMDocument();
-  libxml_use_internal_errors(true);
-  $document->loadHTML(utf8_decode($content));
-  $imgs = $document->getElementsByTagName('img');
-  foreach ($imgs as $img) {
-     $img->setAttribute('class','lazyload');
-  }
-  $html = $document->saveHTML();
-  return $html;
+// function add_lazyload_tag($content){
+//   $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+//   $document = new DOMDocument();
+//   libxml_use_internal_errors(true);
+//   $document->loadHTML(utf8_decode($content));
+//   $imgs = $document->getElementsByTagName('img');
+//   foreach ($imgs as $img) {
+//      $img->setAttribute('class','lazyload');
+//   }
+//   $html = $document->saveHTML();
+//   return $html;
+// }
+
+function add_lazyload_class($content){
+  $content = preg_replace('/(<img[^>]*)\s+class="([^"]*)"/', '$1 class="$2 lazyload"', $content);
+  return $content;
+}
+
+function convert_src_for_lazyload($content){
+  $content = preg_replace('/(<img[^>]*)\s+src=/', '$1 data-src=', $content);
+  return $content;
 }
 
 /////////////////////

@@ -1,8 +1,17 @@
 (function(window, factory) {
-	var lazySizes = factory(window, window.document, Date);
-	window.lazySizes = lazySizes;
-	if(typeof module == 'object' && module.exports){
-		module.exports = lazySizes;
+	if( window.addEventListener ){
+		window.addEventListener( 'load', doLazy, false );
+	}else if( window.attachEvent ){
+		window.attachEvent( 'onload', doLazy );
+	}else{
+		window.onload = doLazy;
+	}
+	function doLazy(){
+		var lazySizes = factory(window, window.document, Date);
+		window.lazySizes = lazySizes;
+		if(typeof module == 'object' && module.exports){
+			module.exports = lazySizes;
+		}
 	}
 }(typeof window != 'undefined' ?
       window : {}, function l(window, document, Date) {
