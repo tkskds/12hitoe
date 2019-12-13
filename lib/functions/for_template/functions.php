@@ -307,7 +307,7 @@ if (!function_exists('custom_breadcrumb')){
 function add_index_to_content($content){
   $tocOn      = get_option('site_article_toc');
   if ($tocOn == true){
-    $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : '目次';
+    $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : 'CONTENT';
     $toc_type   = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
     switch ($toc_type) {
       case 'value1':

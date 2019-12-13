@@ -1181,18 +1181,46 @@ div:not(.tocType1) .toc_body{
 }
 
 .tocType3 .toc_ttl{
-  display: block;
+  width: calc(100% + 4px); /*隙間生じるの防ぐため*/
+  margin-left: -2px;
   text-align: center;
   color: white;
 }
 
-.tocType3 .toc_ttl::before{
+.tocType3 .toc_ttl::before,
+.tocType4 .toc_body>ul>li>a::before{
   font-family: "Font Awesome 5 Free";
-  content: "\";
+  font-weight: bold;
+  margin-right: .5em;
 }
 
+.tocType3 .toc_ttl::before{
+  content: "\f02d";
+}
 
+.tocType4,
+.tocType4 .toc_body ul:first-child{
+  border-radius: 8px;
+}
 
+div.tocType4 .toc_ttl{
+  padding-bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+.tocType4 .toc_body ul:first-child{
+  padding: 10px 15px;
+  background: white;
+}
+
+.tocType4 .toc_body>ul>li:not(:last-child){
+  border-bottom: 2px dotted #f2f2f2;
+}
+
+.tocType4 .toc_body>ul>li>a::before{
+  content: "\f058";
+}
 
 /*シェアボタン*/
 
