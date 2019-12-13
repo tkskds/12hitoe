@@ -59,6 +59,10 @@ body{
   animation: fadeIn 500ms ease-in;
 }
 
+body.delighter{
+  -webkit-transform: none;
+  transform: none;
+}
 
 h1{
   font-size: 2em;
@@ -489,8 +493,7 @@ li.sidenav-ttl {
   transform : translate3d(200px, 0, 0);
 }
 
-.delighter.started{
-  will-change: opacity, transform;
+.headerArea .delighter.started{
   opacity : 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform : translate3d(0, 0, 0);

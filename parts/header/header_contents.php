@@ -15,7 +15,6 @@ if(is_home() || is_front_page()) {
 
   $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false    ;
   $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false    ;
-  $fixanm          = get_option('site_nav_fixed_top_anime') ? get_option('site_nav_fixed_top_anime') : false    ;
   $menuIcon        = get_option('site_nav_menu_icon')       ? get_option('site_nav_menu_icon')       : 'value1' ;
   $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false    ;
   $extend_text     = get_option('site_nav_extended_text')   ? get_option('site_nav_extended_text')   : 'SAMPLE' ;
@@ -23,8 +22,8 @@ if(is_home() || is_front_page()) {
 
  ?>
 
-<?php if ($fixed == true){ echo '<div class="navbar-fixed">'; } ?>
-<nav<?php if($extend == true){echo ' class="nav-extended"';} ?><?php if($fixanm == true){echo 'data-delighter="start:-0.1;end:-99999"';} ?>>
+<?php if($fixed  == true){echo '<div class="navbar-fixed">'; } ?>
+<nav<?php if($extend == true){echo ' class="nav-extended"';} ?>>
   <div class="nav-wrapper">
     <?php echo $title_tag_start; ?>
     <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle<?php if ($centering == true) { echo ' center'; } ?>">
