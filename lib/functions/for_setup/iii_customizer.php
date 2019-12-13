@@ -1226,6 +1226,24 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           ));
 
+          $wp_customize->add_setting('site_nav_menu_icon',array(
+            'default'     => 'value1',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_menu_icon',array(
+            'label'       => 'メニューアイコン',
+            'description' => 'スマホ閲覧時のメニューアイコンを変更できます',
+            'type'        => 'radio',
+            'choices'     => array(
+              'value1'    => 'デザイン1',
+              'value2'    => 'デザイン2',
+              'value3'    => 'デザイン3',
+              'value4'    => 'デザイン4',
+            ),
+            'section'     => 'site_nav',
+          ));
+
           $wp_customize->add_setting('site_nav_extended', array(
             'default'     => false,
             'type'        => 'option',

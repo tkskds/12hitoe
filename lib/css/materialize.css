@@ -213,8 +213,8 @@ img.lazyload{
 
 img.lazyloaded{
   opacity: 1;
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
 }
 
 .gototop {
@@ -1358,6 +1358,8 @@ li.share_hatena a{
 .share_af_ttl{
   text-align: center;
   font-weight: bold;
+  font-size: 1.4em;
+  margin: 1em 0;
 }
 
 /*関連記事*/

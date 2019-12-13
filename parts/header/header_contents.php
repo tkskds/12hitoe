@@ -13,10 +13,11 @@ if(is_home() || is_front_page()) {
   $title_tag_end   =  '</p>';
 }// END ishome()||is_front_page()
 
-  $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false ;
-  $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false ;
-  $fixanm          = get_option('site_nav_fixed_top_anime') ? get_option('site_nav_fixed_top_anime') : false ;
-  $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false ;
+  $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false    ;
+  $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false    ;
+  $fixanm          = get_option('site_nav_fixed_top_anime') ? get_option('site_nav_fixed_top_anime') : false    ;
+  $menuIcon        = get_option('site_nav_menu_icon')       ? get_option('site_nav_menu_icon')       : 'value1' ;
+  $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false    ;
   $extend_text     = get_option('site_nav_extended_text')   ? get_option('site_nav_extended_text')   : 'SAMPLE' ;
   $extend_uri      = get_option('site_nav_extended_uri')    ? get_option('site_nav_extended_uri')    : 'https://takasaki.work/12hitoe' ;
 
@@ -33,7 +34,23 @@ if(is_home() || is_front_page()) {
       <?php if ($onlyLogo == false) { bloginfo('name'); } ?>
     </a>
     <?php echo $title_tag_end; ?>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+      <?php switch ($menuIcon) {
+              case 'value1':
+                echo '<i class="fas fa-bars"></i>';
+                break;
+              case 'value2':
+                echo '<i class="fas fa-ellipsis-v"></i>';
+                break;
+              case 'value3':
+                echo '<i class="fas fa-ellipsis-h"></i>';
+                break;
+              case 'value4':
+                echo '<i class="fas fa-hamburger"></i>';
+                break;
+            }
+      ?>
+    </a>
       <?php
           wp_nav_menu(array(
             'theme_location' => 'nav_header',
