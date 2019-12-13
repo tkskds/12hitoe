@@ -316,13 +316,13 @@ function add_index_to_content($content){
                      '</div><div class="collapsible-body toc_body"></div></li></ul></div>';
         break;
       case 'value2':
-        $toc_wrap  = '<div class="toc tocType2"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
+        $toc_wrap  = '<div class="toc tocType2"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
         break;
       case 'value3':
-        $toc_wrap  = '<div class="toc tocType3"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
+        $toc_wrap  = '<div class="toc tocType3"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
         break;
       case 'value4':
-        $toc_wrap  = '<div class="toc tocType4"><span class="toc_ttl">'.$toc_ttl.'</span><div class="toc_body"></div></div>';
+        $toc_wrap  = '<div class="toc tocType4"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
         break;
     }
     $tag        = '/<h2.*?>/i';

@@ -1103,13 +1103,95 @@ h4.search_result_ttl::before {
 }
 
 /*目次*/
+.article_content .toc ul li::before{
+  display: none;
+}
+
 .article_content .toc ul li{
   padding-left: 0;
 }
 
-.article_content .toc ul li::before{
-  display: none;
+.article_content .toc_body ul li a{
+  color: unset;
 }
+
+/*1階層目（h2）*/
+.article_content .toc_body>ul>li>a{
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+/*2階層目（h3）*/
+.article_content .toc_body>ul>li>ul{
+  padding-left: .5em;
+  margin-top: 1em;
+}
+
+.article_content .toc_body>ul>li>ul>li>a::before{
+  content: "・";
+}
+
+/*タイプ1*/
+.tocType1 .collapsible-header.toc_ttl{
+  position: relative;
+  background: transparent;
+}
+
+.tocType1 .collapsible-header.toc_ttl::after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+	content: "\f107";
+  position: absolute;
+  right: 20px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.tocType1 .active .collapsible-header.toc_ttl::after{
+  -webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
+/*タイプ2以降共通*/
+div:not(.tocType1) .toc_ttl,
+div:not(.tocType1) .toc_body{
+  padding: 20px;
+}
+
+.tocType2{
+  background: whitesmoke;
+  box-shadow: 0 1px 3px rgba(0,0,0,.19);
+}
+
+.tocType2 .toc_ttl{
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.tocType3{
+  border: 2px solid;
+}
+
+.tocType3,
+.tocType3 .toc_ttl{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tocType3 .toc_ttl{
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+.tocType3 .toc_ttl::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\";
+}
+
+
 
 
 /*シェアボタン*/

@@ -2018,7 +2018,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 色****************************
 ******************************
 *****************************/
-.main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within,.pagination li span{background:<?php echo $main_c ?>;}
+.main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within,.pagination li span,.tocType3 .toc_ttl{background:<?php echo $main_c ?>;}
 .sub__color,.sub_color:active,.sub_color:focus,.sub_color:hover,.sub_color:visited,.sub_color:focus-within{background:<?php echo $sub_c ?>;}
 .acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 .pagination li a,.articleList_wrap .articleList5 .content .title:hover,div.related_ttl:hover{color:<?php echo $main_c ?>;}
@@ -2026,6 +2026,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
+.tocType3{border-color:<?php echo $main_c ?>;}
 /*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
