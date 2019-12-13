@@ -306,7 +306,8 @@ if (!function_exists('custom_breadcrumb')){
 
 function add_index_to_content($content){
   $tocOn      = get_option('site_article_toc');
-  if ($tocOn == true){
+  $tocOnPage  = get_option('site_article_toc_page');
+  if ($tocOn == true && is_single() || $tocOnPage == true && is_page()){
     $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : 'CONTENT';
     $toc_type   = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
     switch ($toc_type) {
@@ -346,7 +347,7 @@ function add_lazyload_tag($content){
   $document->loadHTML(utf8_decode($content));
   $imgs = $document->getElementsByTagName('img');
   foreach ($imgs as $img) {
-     $img->setAttribute('class','lazyloads');
+     $img->setAttribute('class','lazyload');
   }
   $html = $document->saveHTML();
   return $html;

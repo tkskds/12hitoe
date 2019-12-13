@@ -1222,6 +1222,14 @@ div.tocType4 .toc_ttl{
   content: "\f058";
 }
 
+.article_content .tocType4 .toc_body>ul>li>ul {
+  padding-left: 1.75em;
+}
+
+.article_content .tocType4 .toc_body>ul>li>ul>li>a::before{
+  display: none;
+}
+
 /*シェアボタン*/
 
 ul.sharebutton_list{
