@@ -45,7 +45,7 @@
       </div>
       <?php if ($img != null) : ?>
         <div class="dyheader_imgArea">
-          <img src="<?php echo $img; ?>" alt="ヘッダー画像">
+          <img src="<?php echo $img; ?>" alt="ヘッダー画像" class="lazyload">
         </div>
       <?php endif; ?>
   </div>
