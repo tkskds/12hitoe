@@ -222,7 +222,7 @@ img.lazyloaded{
 
 /*固定に伴うアニメ*/
 body.delighter .headerArea nav,
-body.delighter .headerArea .navbar-fixed h1 a,
+body.delighter .headerArea .navbar-fixed a.siteTitle,
 body.delighter .headerArea .navbar-fixed ul#topnav,
 body.delighter .headerArea .navbar-fixed nav ul a,
 body.delighter .headerArea .navbar-fixed a.sidenav-trigger,
@@ -236,7 +236,7 @@ body.delighter.started .headerArea .navbar-fixed nav{
   background: #fff;
 }
 
-body.delighter.started .headerArea .navbar-fixed h1 a,
+body.delighter.started .headerArea .navbar-fixed a.siteTitle,
 body.delighter.started .headerArea .navbar-fixed ul#topnav,
 body.delighter.started .headerArea .navbar-fixed nav ul a,
 body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger,
@@ -269,6 +269,7 @@ body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger i{
 
 nav ul li.active{
   background-color: transparent;
+  font-weight: 600;
 }
 
 .sidenav li {
@@ -1172,6 +1173,13 @@ h4.search_result_ttl::before {
 }
 
 /*タイプ1*/
+.tocType1 .collapsible{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 3px;
+}
+
 .tocType1 .collapsible-header.toc_ttl{
   position: relative;
   background: transparent;
