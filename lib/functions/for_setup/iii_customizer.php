@@ -1359,6 +1359,17 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           )));
 
+          $wp_customize->add_setting('site_nav_sp_sideauthor_name', array(
+            'default'     => 'たかさき',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_sp_sideauthor_name', array(
+            'label'       => '運営者の名前',
+            'type'        => 'text',
+            'section'     => 'site_nav',
+          ));
+
           $wp_customize->add_setting('site_nav_sp_sideauthor_mail', array(
             'default'     => 'SAMPLE@SAMPLE.COM',
             'type'        => 'option',
