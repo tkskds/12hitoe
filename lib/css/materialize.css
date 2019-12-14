@@ -273,23 +273,45 @@ nav ul li.active{
 }
 
 
-.sidenav li {
+.sidenav li{
   display: block;
 }
 
-.sidenav h3.sidenav_ttl{
+.sidenav>li,
+.sidenav_widget_list>div{
+  margin-bottom: 20px;
+}
+
+.sidenav h3.sidenav_ttl,
+.sidenav h4.sidenav_widget_title{
   font-size: 1.25em;
   margin: 0;
   padding: .5em 0;
   text-align: center;
 }
 
-li.sidenav-ttl {
+li.sidenav-ttl{
   display: block;
   text-align: center;
   font-size: 1.2em;
   padding: .5em;
   font-weight: bold;
+}
+
+.sidenav .sidenav_widget_list ul{
+  margin: 0;
+}
+
+.sidenav .sidenav_widget_list li>a:hover {
+  background-color: unset;
+}
+
+.sidenav .sidenav_widget_list .widget ul li{
+  padding-left: 0;
+}
+
+.sidenav .widget_categories form::before {
+  height: auto;
 }
 
 /****************    ダイナミックヘッダー   *******************/
@@ -1908,7 +1930,7 @@ transition: all .2s ease-in-out;
 .widget_categories li:hover,
 .widget_archive select:hover,
 .widget_archive li:hover{
-background: whitesmoke;
+background: rgba(0,0,0,0.05);
 cursor: pointer;
 }
 

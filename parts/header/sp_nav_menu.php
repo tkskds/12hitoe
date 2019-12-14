@@ -18,15 +18,15 @@
         <div class="background">
           <img data-src="<?php echo $authorBk ?>" class="lazyload">
         </div>
-        <a href="#user">
+        <a href="disabled">
           <img data-src="<?php echo $authorImg ?>" class="lazyload circle">
         </a>
-        <a href="#name">
+        <a href="disabled">
           <span class="white-text name">
             <?php echo $authorName ?>
           </span>
         </a>
-        <a href="#email">
+        <a href="mailto:<?php echo $authorMail ?>">
           <span class="white-text sns">
             <?php echo $authorMail ?>
           </span>
