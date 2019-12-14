@@ -364,8 +364,8 @@ function convert_src_for_lazyload($content){
 function author_profile_box($sns){
    $sns['twitter']    = 'Twitter（twitter.com/以降）';
    $sns['facebook']   = 'Facebook（facebook.com/以降）';
-   $sns['googleplus'] = 'Google+（plus.google.com/以降）';
    $sns['instagram']  = 'Instagram（instagram.com/以降）';
+   $sns['youtube']    = 'Youtube（youtube.com/channel/以降）';
 
    return $sns;
 }

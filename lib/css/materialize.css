@@ -1088,6 +1088,10 @@ article h4{
 
 /****************         記事装飾        *******************/
 
+.article_container > div:last-child{
+  margin-bottom: 30px;
+}
+
 /*検索画面見出し*/
 
 h4.search_result_ttl {
@@ -1283,6 +1287,29 @@ div.tocType4 .toc_ttl{
   font-weight: bold;
   font-size: 1.4em;
   margin: 1em 0;
+}
+
+/*この記事を書いた人*/
+
+.author_box{
+  padding: 20px 10px;
+  background: #fff;
+  display: flex;
+}
+
+.author_thumb img{
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.author_name{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.author_info{
+  padding-left: 20px;
 }
 
 /*シェアボタン*/
