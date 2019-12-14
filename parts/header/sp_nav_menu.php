@@ -20,7 +20,7 @@
   </li>
   <?php if(is_active_sidebar('sidenav_widget')): ?>
     <li>
-      <?php echo dynamic_sidebar('sidenav_widget'); ?>
+      <?php dynamic_sidebar('sidenav_widget'); ?>
     </li>
   <?php endif; ?>
 </ul>
