@@ -1277,6 +1277,14 @@ div.tocType4 .toc_ttl{
   display: none;
 }
 
+/*シェア・関連記事・この記事を書いた人の共通見出しクラス*/
+.article_af_ttl{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 1em 0;
+}
+
 /*シェアボタン*/
 
 ul.sharebutton_list{
@@ -1392,21 +1400,7 @@ li.share_hatena a{
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
-.share_af_ttl{
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin: 1em 0;
-}
-
 /*関連記事*/
-
-h3.related_ttl {
-  font-size: 1.4em;
-  font-weight: bold;
-  padding: 10px 0;
-  text-align: center;
-}
 
 .related_thumb img,
 .related_ttl{

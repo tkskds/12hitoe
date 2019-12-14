@@ -23,7 +23,7 @@ $relatedType = get_option('site_article_related_design') ? get_option('site_arti
 
 <?php if($myposts): ?>
   <div class="related<?php output_type_class($relatedType,'related') ?>">
-    <h3 class="related_ttl"><?php echo $relatedTtl ?></h3>
+    <h3 class="related_ttl article_af_ttl"><?php echo $relatedTtl ?></h3>
     <ul class="related_posts">
       <?php foreach($myposts as $post):setup_postdata($post); ?>
         <li>
