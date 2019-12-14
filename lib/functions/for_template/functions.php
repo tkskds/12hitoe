@@ -357,6 +357,12 @@ function convert_src_for_lazyload($content){
   return $content;
 }
 
+function use_lazyload($content){
+  add_lazyload_class($content);
+  convert_src_for_lazyload($content);
+  return $content;
+}
+
 /////////////////////
 // この記事を書いた人
 /////////////////////

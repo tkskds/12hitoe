@@ -1349,6 +1349,15 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           )));
 
+          $wp_customize->add_setting('site_nav_sp_sideauthor_img', array(
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_nav_sp_sideauthor_img', array(
+            'label'       => '運営者プロフィール画像',
+            'section'     => 'site_nav',
+          )));
+
           $wp_customize->add_setting('site_nav_sp_sideauthor_mail', array(
             'default'     => 'SAMPLE@SAMPLE.COM',
             'type'        => 'option',
