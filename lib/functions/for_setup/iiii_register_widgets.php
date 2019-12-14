@@ -33,6 +33,19 @@ function register_widgets(){
     ));
 
   /****************
+  // サイドメニュー
+  ****************/
+  register_sidebar(array(
+    'name'=>'サイドメニュー',
+    'id' => 'sidenav_widget',
+    'description' => 'スマホでのみ表示されるサイドメニューです',
+    'before_widget'=>'<div id="%1$s" class="widget %2$s">',
+    'after_widget'=>'</div>',
+    'before_title' => '<h4 class="sidenav_widget_title">',
+    'after_title' => '</h4>',
+    ));
+
+  /****************
   // フッター左
   ****************/
   register_sidebar(array(
