@@ -13,10 +13,10 @@ if(is_home() || is_front_page()) {
   $title_tag_end   =  '</p>';
 }// END ishome()||is_front_page()
 
-  $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false    ;
-  $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false    ;
+  $centering       = get_option('site_nav_centering_title') ? get_option('site_nav_centering_title') : false;
+  $fixed           = get_option('site_nav_fixed_top')       ? get_option('site_nav_fixed_top')       : false;
   $menuIcon        = get_option('site_nav_menu_icon')       ? get_option('site_nav_menu_icon')       : 'value1' ;
-  $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false    ;
+  $extend          = get_option('site_nav_extended')        ? get_option('site_nav_extended')        : false;
   $extend_text     = get_option('site_nav_extended_text')   ? get_option('site_nav_extended_text')   : 'SAMPLE' ;
   $extend_uri      = get_option('site_nav_extended_uri')    ? get_option('site_nav_extended_uri')    : 'https://takasaki.work/12hitoe' ;
 

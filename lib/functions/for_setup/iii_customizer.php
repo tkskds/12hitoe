@@ -41,8 +41,8 @@ if (class_exists('WP_Customize_Control')){
 // 3-2 サニタイザー登録
 //////////////////////////////
 
-function sanitize_checkbox($v){
-  return ($v == true);
+function sanitize_checkbox($input){
+  return ($input == true);
 }
 
 //////////////////////////////
@@ -1347,7 +1347,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_nav_sp_sideauthor', array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -1411,7 +1411,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_nav_sp_menu_menu', array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -1481,7 +1481,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_article_authorable', array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -1493,7 +1493,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_article_relatedable', array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -1593,7 +1593,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_article_toc', array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -1942,7 +1942,7 @@ function org_customizer($wp_customize){
       ));
 
           $wp_customize->add_setting('site_anime_body',array(
-            'default'           => true,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
