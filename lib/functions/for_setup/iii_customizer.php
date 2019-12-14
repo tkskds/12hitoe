@@ -1340,6 +1340,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_nav_sp_sideauthor_bkimg', array(
+            'default'     => get_bloginfo('template_directory').'/images/others/author_bk.png',
             'type'        => 'option',
           ));
 
