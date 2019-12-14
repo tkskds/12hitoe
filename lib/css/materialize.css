@@ -272,8 +272,16 @@ nav ul li.active{
   font-weight: 600;
 }
 
+
 .sidenav li {
   display: block;
+}
+
+.sidenav h3.sidenav_ttl{
+  font-size: 1.25em;
+  margin: 0;
+  padding: .5em 0;
+  text-align: center;
 }
 
 li.sidenav-ttl {

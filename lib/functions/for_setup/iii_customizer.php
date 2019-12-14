@@ -1338,6 +1338,18 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           ));
 
+          $wp_customize->add_setting('site_nav_sp_menu_menu', array(
+            'default'     => true,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_sp_menu_menu', array(
+            'label'       => 'スマホで表示されるサイドメニューにメニューを表示',
+            'description' => '詳しくはこちら。',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
+          ));
+
       $wp_customize->add_section('site_article',array(
         'priority'        => 8,
         'title'           => '8.記事の設定',

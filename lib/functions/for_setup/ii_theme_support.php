@@ -45,8 +45,7 @@ function theme_supports(){
   ****************/
   register_nav_menu('nav_header', 'ヘッダーメニュー（PC）');
   register_nav_menu('nav_header_sp', 'ヘッダーメニュー（スマホ）');
-  register_nav_menu('nav_footer', 'フッターメニュー（PC）');
-  register_nav_menu('nav_footer_sp', 'フッターメニュー（スマホ）');
+  register_nav_menu('nav_footer', 'フッターメニュー（PC・スマホ）');
 
   /****************
   //サイドバーの有効化
