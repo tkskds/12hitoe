@@ -71,6 +71,7 @@ if(is_home() || is_front_page()) {
 </nav>
 <?php if ($fixed == true){ echo '</div>'; } ?>
 
+<?php get_template_part('sp_nav_menu') ?>
 <?php
   wp_nav_menu(array(
     'theme_location' => 'nav_header_sp',

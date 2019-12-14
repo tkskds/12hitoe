@@ -1514,6 +1514,10 @@ ul.related_posts li a{
   object-fit: cover;
 }
 
+.relatedType2 .related_post_ttl {
+  margin: 10px 0 15px;
+}
+
 
 /*WPクラス付与された装飾*/
 
