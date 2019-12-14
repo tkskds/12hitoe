@@ -1327,6 +1327,38 @@ function org_customizer($wp_customize){
             'section'     => 'site_nav',
           ));
 
+          $wp_customize->add_setting('site_nav_sp_sideauthor', array(
+            'default'     => true,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_sp_sideauthor', array(
+            'label'       => 'スマホで表示されるメニューに運営者プロフィールの表示',
+            'description' => '詳しくはこちら',
+            'type'        => 'checkbox',
+            'section'     => 'site_nav',
+          ));
+
+          $wp_customize->add_setting('site_nav_sp_sideauthor_bkimg', array(
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_nav_sp_sideauthor_bkimg', array(
+            'label'       => '運営者プロフィールの背景画像',
+            'section'     => 'site_nav',
+          )));
+
+          $wp_customize->add_setting('site_nav_sp_sideauthor_mail', array(
+            'default'     => 'SAMPLE@SAMPLE.COM',
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_nav_sp_sideauthor_mail', array(
+            'label'       => '運営者の連絡先',
+            'type'        => 'text',
+            'section'     => 'site_nav',
+          ));
+
           $wp_customize->add_setting('site_nav_sp_sidemenu', array(
             'default'     => 'MENU',
             'type'        => 'option',
