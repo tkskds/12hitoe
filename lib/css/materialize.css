@@ -1312,6 +1312,28 @@ div.tocType4 .toc_ttl{
   padding-left: 20px;
 }
 
+.author_sns{
+  margin: 20px 0;
+}
+
+.follow_button i{
+  font-size: 1.25em;
+  margin-right: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.follow_button i:hover{
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.follow_button a.twitter{color:#1DA1F2;}
+.follow_button a.facebook{color:#3C5A99;}
+.follow_button a.instagram{color:#CF2E92;}
+.follow_button a.youtube{color:#DA1725;}
+
+
 /*シェアボタン*/
 
 ul.sharebutton_list{
@@ -1463,7 +1485,7 @@ ul.related_posts li a{
   align-items: center;
 }
 
-.relatedType1 .related_ttl{
+.relatedType1 .related_post_ttl{
   margin-left: 20px;
 }
 
@@ -1480,10 +1502,6 @@ ul.related_posts li a{
 .relatedType2 ul.related_posts li{
   width: 30%;
   margin: 0 auto;
-}
-
-.relatedType2 .related_ttl{
-  margin: .5em 0 1.5em 0;
 }
 
 .relatedType2 .related_thumb{

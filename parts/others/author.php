@@ -44,7 +44,7 @@
        <?php endif; ?>
        <?php if(!empty($youtube)) : ?>
        <span class="follow_button">
-       <a class="youtube" href="//youtube.com//channel/<?php echo $youtube; ?>" target="_blank" title="チャンネル登録" rel="nofollow">
+       <a class="youtube" href="//youtube.com/channel/<?php echo $youtube; ?>" target="_blank" title="チャンネル登録" rel="nofollow">
          <i class="fab fa-youtube"></i>
        </a>
        </span>
