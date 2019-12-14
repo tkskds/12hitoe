@@ -1350,6 +1350,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_nav_sp_sideauthor_img', array(
+            'default'     => get_avatar_(get_the_author_meta('ID'), 80),
             'type'        => 'option',
           ));
 

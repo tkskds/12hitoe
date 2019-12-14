@@ -1,11 +1,11 @@
 <?php
 
-  $authorImg    = get_option('site_nav_sp_sideauthor_img');
-  $authorBk     = get_option('site_nav_sp_sideauthor_bkimg');
-  $sideAuthor   = get_option('site_nav_sp_sideauthor')      ? get_option('site_nav_sp_sideauthor')      : true   ;
-  $sidenavTtl   = get_option('site_nav_sp_sidemenu')        ? get_option('site_nav_sp_sidemenu')        : 'MENU' ;
-  $sidenavMenu  = get_option('site_nav_sp_menu_menu')       ? get_option('site_nav_sp_menu_menu')       : true   ;
-  $authorMail   = get_option('site_nav_sp_sideauthor_mail') ? get_option('site_nav_sp_sideauthor_mail') : 'SAMPLE@SAMPLE.COM' ;
+  $authorImg    = get_option('site_nav_sp_sideauthor_img')    ? get_option('site_nav_sp_sideauthor_img')  : get_avatar_url(get_the_author_meta('ID'), 80);
+  $authorBk     = get_option('site_nav_sp_sideauthor_bkimg')  ? get_option('site_nav_sp_sideauthor_bkimg'): get_bloginfo('template_directory').'/images/others/author_bk.png';
+  $sideAuthor   = get_option('site_nav_sp_sideauthor')        ? get_option('site_nav_sp_sideauthor')      : true;
+  $sidenavTtl   = get_option('site_nav_sp_sidemenu')          ? get_option('site_nav_sp_sidemenu')        : 'MENU';
+  $sidenavMenu  = get_option('site_nav_sp_menu_menu')         ? get_option('site_nav_sp_menu_menu')       : true;
+  $authorMail   = get_option('site_nav_sp_sideauthor_mail')   ? get_option('site_nav_sp_sideauthor_mail') : 'SAMPLE@SAMPLE.COM';
 
 ?>
 
@@ -15,10 +15,10 @@
     <li class="sidenav_author_list">
       <div class="user-view">
         <div class="background">
-          <?php echo $authorBk ?>
+          <img data-src="<?php echo $authorBk ?>" class="lazyload">
         </div>
         <a href="#user">
-          <?php echo $authorImg ?>
+          <img data-src="<?php echo $authorImg ?>" class="lazyload circle">
         </a>
         <a href="#name">
           <span class="white-text name">
