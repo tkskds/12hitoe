@@ -1384,13 +1384,24 @@ function org_customizer($wp_customize){
             'section'     => 'site_article',
           ));
 
+          $wp_customize->add_setting('site_article_authorable', array(
+            'default'     => true,
+            'type'        => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_authorable', array(
+            'label'       => '8-4.「この記事を書いた人」を表示',
+            'type'        => 'checkbox',
+            'section'     => 'site_article',
+          ));
+
           $wp_customize->add_setting('site_article_relatedable', array(
-            'default'     => false,
+            'default'     => true,
             'type'        => 'option',
           ));
 
           $wp_customize->add_control('site_article_relatedable', array(
-            'label'       => '8-4.関連記事を非表示にする',
+            'label'       => '8-5.関連記事を表示',
             'type'        => 'checkbox',
             'section'     => 'site_article',
           ));

@@ -1,6 +1,7 @@
 <?php
   $siteType    = get_option('site_bone_type')           ? get_option('site_bone_type')            : 'value1' ;
   $articleType = get_option('site_article_type')        ? get_option('site_article_type')         : 'value1' ;
+  $authorOn    = get_option('site_article_authorable')  ? get_option('site_article_authorable')   : true ;
   $relatedOn   = get_option('site_article_relatedable') ? get_option('site_article_relatedable')  : true ;
  ?>
 
@@ -20,6 +21,7 @@
           }
          ?>
       </div>
+      <?php if($authorOn==true){get_template_part('parts/others/author');} ?>
       <?php if($relatedOn==true){get_template_part('parts/others/relatedPost');} ?>
     </main>
     <?php if($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>

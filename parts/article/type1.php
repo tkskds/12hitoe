@@ -55,7 +55,8 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
         <div class="article_share after_share<?php output_type_class($share_af,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
-    <?php endif; ?>
+      <?php endif; ?>
+      
     </div>
   </article>
 
