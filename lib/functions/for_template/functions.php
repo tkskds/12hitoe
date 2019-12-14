@@ -5,9 +5,13 @@
 
 - ページネーション
 - タグ大きさ統一
-- ナビメニュー
+- カテゴリやタグの()の削除
+- ナビメニューにクラス付与
 - パンくずリスト
+- 目次の出力
 - 関連記事
+- 画像の遅延読み込み
+- SNSフォローボタン（この記事を書いた人）
 
 ***************/
 
@@ -20,6 +24,8 @@ add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラ
 add_filter('the_content'          , 'add_index_to_content', 10); //目次挿入
 add_filter('the_content'          , 'convert_src_for_lazyload'); //lazyloadクラス
 add_filter('the_content'          , 'add_lazyload_class'); //lazyloadクラス
+add_filter('user_contactmethods'  , 'author_profile_box');
+
 
 /////////////////////
 // ページネーション
@@ -95,7 +101,7 @@ function wp_tag_cloud_custom_ex( $output ) {
 
 // メニューに'.active'付与
 function active_nav_class($classes, $item){
-  if( in_array('current-menu-item', $classes) ){
+  if(in_array('current-menu-item', $classes) ){
     $classes[] = 'active';
   }
   return $classes;
@@ -341,19 +347,6 @@ function add_index_to_content($content){
 // 画像遅延読み込み
 /////////////////////
 
-// function add_lazyload_tag($content){
-//   $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-//   $document = new DOMDocument();
-//   libxml_use_internal_errors(true);
-//   $document->loadHTML(utf8_decode($content));
-//   $imgs = $document->getElementsByTagName('img');
-//   foreach ($imgs as $img) {
-//      $img->setAttribute('class','lazyload');
-//   }
-//   $html = $document->saveHTML();
-//   return $html;
-// }
-
 function add_lazyload_class($content){
   $content = preg_replace('/(<img[^>]*)\s+class="([^"]*)"/', '$1 class="$2 lazyload"', $content);
   return $content;
@@ -362,6 +355,19 @@ function add_lazyload_class($content){
 function convert_src_for_lazyload($content){
   $content = preg_replace('/(<img[^>]*)\s+src=/', '$1 data-src=', $content);
   return $content;
+}
+
+/////////////////////
+// この記事を書いた人
+/////////////////////
+
+function author_profile_box($sns){
+   $sns['twitter']    = 'Twitter（twitter.com/以降）';
+   $sns['facebook']   = 'Facebook（facebook.com/以降）';
+   $sns['googleplus'] = 'Google+（plus.google.com/以降）';
+   $sns['instagram']  = 'Instagram（instagram.com/以降）';
+
+   return $sns;
 }
 
 /////////////////////
