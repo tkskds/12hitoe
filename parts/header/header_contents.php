@@ -70,15 +70,4 @@ if(is_home() || is_front_page()) {
   <?php endif; ?>
 </nav>
 <?php if ($fixed == true){ echo '</div>'; } ?>
-
 <?php get_template_part('sp_nav_menu') ?>
-<?php
-  wp_nav_menu(array(
-    'theme_location' => 'nav_header_sp',
-    'container' => 'ul',
-    'menu_id' => 'mobile-demo',
-    'menu_class' => 'sidenav',
-    // 'before' => '<li class="sidenav-ttl">MENU</li>',
-    'fallback' => ''
-  ));
-?>

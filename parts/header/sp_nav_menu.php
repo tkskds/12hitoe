@@ -1,9 +1,7 @@
+<?php
+  $sidenavTtl = get_option('site_nav_sp_sidemenu') ? get_option('site_nav_sp_sidemenu') : 'MENU' ;
+?>
+
 <ul class="sidenav">
-  <?php
-  wp_nav_menu(array(
-    'theme_location' => 'nav_header_sp',
-    'container' => 'ul',
-    'fallback' => ''
-  ));
-  ?>
+  <h3 class="sidenav_ttl"><?php echo $sidenavTtl ?></h3>
 </ul>
