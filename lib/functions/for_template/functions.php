@@ -365,6 +365,20 @@ function use_lazyload($content){
 }
 
 /////////////////////
+//  画像の拡大機能
+/////////////////////
+
+function my_image_tag_class($class){
+  $imageBox = get_option('site_decoration_image_box');
+  if ($imageBox == false){
+    return "{$class} materialboxed";
+  }else{
+    return "{$class}";
+  }
+}
+
+add_filter('get_image_tag_class', 'my_image_tag_class');
+/////////////////////
 // この記事を書いた人
 /////////////////////
 

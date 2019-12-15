@@ -1767,6 +1767,18 @@ function org_customizer($wp_customize){
         'panel'                 => 'site_builder',
       ));
 
+          $wp_customize->add_setting('site_decoration_image_box', array(
+            'default'           => false,
+            'type'              => 'option',
+            'sanitize_callback' => 'sanitize_checkbox',
+          ));
+
+          $wp_customize->add_control('site_decoration_image_box', array(
+            'label'             => '記事内画像のポップアップ機能をオフ',
+            'type'              => 'checkbox',
+            'section'           => 'site_decoration',
+          ));
+
       $wp_customize->add_section('site_footer',array(
         'priority'              => 10,
         'title'                 => '10.フッターの設定',
