@@ -1549,6 +1549,12 @@ ul.related_posts li a{
   margin: 10px 0 15px;
 }
 
+/*見出しとか色々*/
+
+.article_content i.link_icon {
+  vertical-align: baseline;
+  margin: 0 5px;
+}
 
 /*WPクラス付与された装飾*/
 

@@ -28,5 +28,6 @@
           <?php the_content(); ?>
       </div>
     </div>
+    <?php ld_json(); ?>
   </article>
 <?php endif; ?>

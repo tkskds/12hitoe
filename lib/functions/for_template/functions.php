@@ -10,7 +10,9 @@
 - パンくずリスト
 - 目次の出力
 - 関連記事
-- 画像の遅延読み込み
+- 画像遅延読み込み
+- 画像拡大機能
+- aタグにアイコン付与
 - SNSフォローボタン（この記事を書いた人）
 - 構造化データ
 
@@ -376,6 +378,21 @@ $imageBox = get_option('site_decoration_image_box');
 if($imageBox == false){
   add_filter('the_content', 'add_img_box_class');
 }
+
+/////////////////////
+// aタグにアイコン付与
+/////////////////////
+
+function add_a_tag_icon($content){
+  $content = preg_replace('/(<\/a>)/', '<i class="fas fa-external-link-alt link_icon"></i>$1', $content);
+  return $content;
+}
+
+$aTagIcon = get_option('site_decoration_image_box');
+if($aTagIcon == false){
+  add_filter('the_content', 'add_a_tag_icon');
+}
+
 
 /////////////////////
 // この記事を書いた人
