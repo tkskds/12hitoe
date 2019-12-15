@@ -1527,11 +1527,12 @@ ul.related_posts li a{
 .relatedType2 ul.related_posts{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .relatedType2 ul.related_posts li{
   width: 30%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .relatedType2 .related_thumb{

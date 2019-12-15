@@ -407,10 +407,10 @@ function ld_json(){
     },
     "publisher": {
       "@type": "Organization",
-      "name": "<?php get_option('site_pub_name'); ?>",
+      "name": "<?php get_option('site_nav_sp_sideauthor_name'); ?>",
       "logo": {
         "@type": "ImageObject",
-        "url": "<?php get_option('site_pub_img'); ?>"
+        "url": "<?php get_option('site_nav_sp_sideauthor_img'); ?>"
       }
     },
     "description": "<?php echo get_the_excerpt(); ?>"

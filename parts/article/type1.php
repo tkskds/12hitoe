@@ -56,8 +56,8 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
       <?php endif; ?>
-
     </div>
+    <?php ld_json(); ?>
   </article>
 
 <?php endif; ?>
