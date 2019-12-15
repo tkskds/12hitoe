@@ -314,7 +314,7 @@ if (!function_exists('custom_breadcrumb')){
 
 function add_index_to_content($content){
   $tocOff      = get_option('site_article_toc');
-  $tocOnPage  = get_option('site_article_toc_page');
+  $tocOnPage   = get_option('site_article_toc_page');
   if ($tocOff == false && is_single() || $tocOnPage == true && is_page()){
     $toc_ttl    = get_option('site_article_toc_ttl')    ? get_option('site_article_toc_ttl')    : 'CONTENT';
     $toc_type   = get_option('site_article_toc_design') ? get_option('site_article_toc_design') : 'value1';
