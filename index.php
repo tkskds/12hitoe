@@ -1,11 +1,12 @@
 <?php
 
-  $siteType = get_option('site_bone_type') ? get_option('site_bone_type') : 'value1' ;
+  $siteType      = get_option('site_bone_type')   ? get_option('site_bone_type')   : 'value1' ;
+  $carouselType  = get_option('site_carousel_on') ? get_option('site_carousel_on') : 'value1' ;
 
 ?>
 <?php get_header(); ?>
 <?php if($siteType != 'value4'): ?>
-  <?php get_template_part('parts/others/carousel') ?>
+  <?php if($carouselType!='value1'){get_template_part('parts/others/carousel');} ?>
   <div class="row contentArea indexPage">
     <main id="main" class="main<?php if ($siteType == 'value1' || $siteType == 'value3'){ echo ' columns col l9';}?>">
       <div class="main__container articleList_wrap">

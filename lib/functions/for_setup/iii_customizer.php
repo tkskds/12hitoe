@@ -161,6 +161,24 @@ function org_customizer($wp_customize){
             'section'           => 'site_bone',
           ));
 
+          $wp_customize->add_setting('site_cssfw_choice', array(
+            'default'           => 'value2',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_cssfw_choice', array(
+            'label'             => '1-5.サイト全体の雰囲気',
+            'description'       => '現在2種類から選べます。',
+            'type'              => 'radio',
+            'choices'           => array(
+              'value1'          => '開発者・デザイナー向け（CSS適用なし）',
+              'value2'          => 'マテリアル',
+              'value3'          => 'フラット（開発中。選択不可）',
+              'value4'          => 'ライン（開発中。選択不可）',
+            ),
+            'section'           => 'site_bone',
+          ));
+
       $wp_customize->add_section('site_dyheader', array(
         'priority'              => 2,
         'title'                 => '2.ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
@@ -948,28 +966,122 @@ function org_customizer($wp_customize){
             'label'             => '文字色（セクション6）',
           )));
 
-      $wp_customize->add_section('site_cssfw', array(
+      $wp_customize->add_section('site_carousel', array(
         'priority'              => 4,
-        'title'                 => '4.デザインの設定',
+        'title'                 => '4.ピックアップ部分',
         'panel'                 => 'site_builder',
       ));
 
-          $wp_customize->add_setting('site_cssfw_choice', array(
-            'default'           => 'value2',
+          $wp_customize->add_setting('site_carousel_on', array(
+            'default'           => 'value1',
             'type'              => 'option',
           ));
 
-          $wp_customize->add_control('site_cssfw_choice', array(
-            'label'             => '4-1.サイト全体の雰囲気',
-            'description'       => '現在2種類から選べます。',
+          $wp_customize->add_control('site_carousel_on', array(
+            'label'             => 'ピックアップ部分',
+            'description'       => 'ピックアップ欄を表示します。詳しくはこちら。',
             'type'              => 'radio',
             'choices'           => array(
-              'value1'          => '開発者・デザイナー向け（CSS適用なし）',
-              'value2'          => 'マテリアル',
-              'value3'          => 'フラット（開発中）',
-              'value4'          => 'ライン（開発中）',
+              'value1'          => '表示しない',
+              'value2'          => 'デザイン1',
+              'value3'          => 'デザイン2',
             ),
-            'section'           => 'site_cssfw',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_item1_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item1_img', array(
+            'label'             => 'ピックアップ1枚目の画像',
+            'section'           => 'site_carousel',
+          )));
+
+          $wp_customize->add_setting('site_carousel_item1_link', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_item1_link', array(
+            'label'             => 'ピックアップ1枚目のリンクです',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_item2_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item2_img', array(
+            'label'             => 'ピックアップ2枚目の画像',
+            'section'           => 'site_carousel',
+          )));
+
+          $wp_customize->add_setting('site_carousel_item2_link', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_item2_link', array(
+            'label'             => 'ピックアップ2枚目のリンクです',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_item3_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item3_img', array(
+            'label'             => 'ピックアップ3枚目の画像',
+            'section'           => 'site_carousel',
+          )));
+
+          $wp_customize->add_setting('site_carousel_item3_link', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_item3_link', array(
+            'label'             => 'ピックアップ3枚目のリンクです',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_item4_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item4_img', array(
+            'label'             => 'ピックアップ4枚目の画像',
+            'section'           => 'site_carousel',
+          )));
+
+          $wp_customize->add_setting('site_carousel_item4_link', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_item4_link', array(
+            'label'             => 'ピックアップ4枚目のリンクです',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_item5_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item5_img', array(
+            'label'             => 'ピックアップ5枚目の画像',
+            'section'           => 'site_carousel',
+          )));
+
+          $wp_customize->add_setting('site_carousel_item5_link', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_item5_link', array(
+            'label'             => 'ピックアップ5枚目のリンクです',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
           ));
 
       $wp_customize->add_section('site_font',array(
