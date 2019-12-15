@@ -1795,7 +1795,8 @@ h4.footer_w_title {
 .widget_media_image img,
 .widget_nav_menu div,
 .widget_calendar table,
-.widget_meta ul{
+.widget_meta ul,
+.widget_toc_body{
   margin: 10px 20px;
 }
 
@@ -1901,6 +1902,10 @@ h4.footer_w_title {
   text-align: center;
   right: 1em;
   background: whitesmoke;
+}
+
+.widget_toc_body li{
+  padding: 10px;
 }
 
 .widget_calendar table{
