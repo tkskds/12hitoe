@@ -1354,7 +1354,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_sideauthor', array(
-            'label'             => 'スマホで表示されるメニューに運営者プロフィールの表示',
+            'label'             => 'スマホで表示されるメニューに運営者プロフィールを非表示',
             'description'       => '詳しくはこちら',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1418,7 +1418,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_menu_menu', array(
-            'label'             => 'スマホで表示されるサイドメニューにメニューを表示',
+            'label'             => 'スマホで表示されるサイドメニューにメニューを非表示',
             'description'       => '詳しくはこちら。',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1488,7 +1488,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_authorable', array(
-            'label'             => '8-4.「この記事を書いた人」を表示',
+            'label'             => '8-4.「この記事を書いた人」を非表示',
             'type'              => 'checkbox',
             'section'           => 'site_article',
           ));
@@ -1500,7 +1500,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_relatedable', array(
-            'label'             => '8-5.関連記事を表示',
+            'label'             => '8-5.関連記事を非表示',
             'type'              => 'checkbox',
             'section'           => 'site_article',
           ));
@@ -1600,7 +1600,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc', array(
-            'label'             => '8-11.目次を表示する',
+            'label'             => '8-11.目次を非表示',
             'description'       => '投稿ページで目次が表示されます',
             'type'              => 'checkbox',
             'section'           => 'site_article',
@@ -1613,7 +1613,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc_page', array(
-            'label'             => '8-12.固定ページでも目次を表示する',
+            'label'             => '8-12.固定ページでも目次を表示',
             'description'       => '固定ページでも目次が表示されます。デフォルトはオフです',
             'type'              => 'checkbox',
             'section'           => 'site_article',

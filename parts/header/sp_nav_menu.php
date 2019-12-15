@@ -12,16 +12,16 @@
 
 <ul id="mobile-sidenav" class="sidenav">
 
-  <?php if ($sideAuthor == true) : ?>
+  <?php if ($sideAuthor == false) : ?>
     <li class="sidenav_author_list">
       <div class="user-view">
         <div class="background">
           <img data-src="<?php echo $authorBk ?>" class="lazyload">
         </div>
-        <a href="disabled">
+        <a href="#profile">
           <img data-src="<?php echo $authorImg ?>" class="lazyload circle">
         </a>
-        <a href="disabled">
+        <a href="#name">
           <span class="white-text name">
             <?php echo $authorName ?>
           </span>
@@ -35,7 +35,7 @@
     </li>
   <?php endif; ?>
 
-  <?php if ($sidenavMenu == true) : ?>
+  <?php if ($sidenavMenu == false) : ?>
     <li class="sidenav_menu_list">
       <h3 class="sidenav_ttl"><?php echo $sidenavTtl ?></h3>
       <?php wp_nav_menu(array(
