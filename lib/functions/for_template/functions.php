@@ -417,7 +417,6 @@ function ld_json(){
   }
   </script>
 <?php
-
 }
 
 /////////////////////
