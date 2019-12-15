@@ -365,19 +365,18 @@ function use_lazyload($content){
 }
 
 /////////////////////
-//  画像の拡大機能
+//  画像拡大機能
 /////////////////////
 
-function my_image_tag_class($class){
-  $imageBox = get_option('site_decoration_image_box');
-  if ($imageBox == false){
-    return "{$class} materialboxed";
-  }else{
-    return "{$class}";
-  }
+function add_img_box_class($content){
+  $content = preg_replace('/(<img[^>]*)\s+class="([^"]*)"/', '$1 class="$2 materialboxed"', $content);
+  return $content;
+}
+$imageBox = get_option('site_decoration_image_box');
+if($imageBox == false){
+  add_filter('the_content', 'add_img_box_class');
 }
 
-add_filter('get_image_tag_class', 'my_image_tag_class');
 /////////////////////
 // この記事を書いた人
 /////////////////////
