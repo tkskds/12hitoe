@@ -1623,6 +1623,10 @@ p > code {
   margin-bottom: 20px;
 }
 
+.aside .post-count{
+  background: whitesmoke;
+}
+
 .sideType1 h4{
   position: relative;
 }
@@ -1901,25 +1905,34 @@ h4.footer_w_title {
   border-radius: 3px;
   text-align: center;
   right: 1em;
-  background: whitesmoke;
 }
 
 .widget_toc_body li{
   padding: 10px;
 }
 
+.widget_toc_body>ul>li>a{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.widget_toc_body>ul>li>ul {
+  margin-top: 10px;
+}
+
 .widget_calendar table{
   width: calc(100% - 40px);
 }
 
-/*デフォルトで用意されているウィジェットのaタグ色*/
+/*ウィジェットのa色*/
 .widget_recent_comments a,
 .widget_recent_entries a,
 .widget_categories a,
 .widget_tag_cloud a,
+.widget_toc_body a,
 .widget_calendar a,
 .widget_archive a,
-.widget_meta a {
+.widget_meta a{
   color: unset;
   display: block;
 }
