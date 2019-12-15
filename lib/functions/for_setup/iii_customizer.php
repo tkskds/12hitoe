@@ -1971,7 +1971,7 @@ function org_customizer($wp_customize){
 
       $wp_customize->add_section('site_speed',array(
         'priority'              => 1,
-        'title'                 => '1:ページスピード高速化設定',
+        'title'                 => '1.ページスピード高速化設定',
         'panel'                 => 'site_admin',
       ));
 
@@ -1987,6 +1987,34 @@ function org_customizer($wp_customize){
             'type'              => 'checkbox',
             'section'           => 'site_speed',
           ));
+
+      $wp_customize->add_section('site_pub',array(
+        'priority'              => 2,
+        'title'                 => '2.運営者情報',
+        'description'           => '運営者情報を登録するとGoogleにWebページの情報を正確に知らせることができます',
+        'panel'                 => 'site_admin',
+      ));
+
+          $wp_customize->add_setting('site_pub_name', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_pub_name', array(
+            'label'             => '運営者名',
+            'description'       => '会社など組織の場合は会社名を、個人の場合は個人名やサイト名を記入。詳しくはこちら。',
+            'type'              => 'text',
+            'section'           => 'site_pub',
+          ));
+
+          $wp_customize->add_setting('site_pub_img', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_pub_img', array(
+            'label'             => '運営者画像',
+            'description'       => '会社など組織の場合は会社ロゴを、個人の場合はサイトロゴを。詳しくはこちら。',
+            'section'           => 'site_pub',
+          )));
 
 } //END org_customizer()
 

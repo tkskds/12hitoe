@@ -26,4 +26,5 @@
     </main>
     <?php if($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
+  <?php ld_json(); ?>
 <?php get_footer(); ?>
