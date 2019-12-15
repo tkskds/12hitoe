@@ -334,7 +334,7 @@ function add_index_to_content($content){
         $toc_wrap  = '<div class="toc tocType4"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
         break;
     }
-    $tag        = '/<h2.*?>/i';
+    $tag = '/<h2.*?>/i';
     if (preg_match( $tag, $content, $tags)) {
       $content = preg_replace($tag, $toc_wrap.$tags[0], $content, 1);
     }

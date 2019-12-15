@@ -84,4 +84,28 @@ function register_widgets(){
     'after_title' => '</h4>',
   ));
 
+  /****************
+  // 目次
+  ****************/
+  class TOC_Widget extends WP_Widget{
+
+    function __construct(){
+  		parent::__construct('toc_widget','目次',array(
+        'description' => '記事の目次を表示します',
+      ));
+  	}
+
+  	public function widget($args, $instance){
+  	$toc_ttl = get_option('site_article_toc_ttl') ? get_option('site_article_toc_ttl') : 'CONTENT';
+  		echo $args['before_widget'];
+  		echo '<div class="toc tocType2"><div class="toc_ttl">'.$toc_ttl.'</div><div class="aside_toc_body"></div></div>';
+      echo $args['after_widget'];
+  	}
+
+    public function form( $instance ){
+
+    }
+  }
+  register_widget('TOC_Widget');
+
 } //END register_widgets()
