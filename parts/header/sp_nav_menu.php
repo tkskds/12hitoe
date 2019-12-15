@@ -2,9 +2,9 @@
 
   $authorImg    = get_option('site_nav_sp_sideauthor_img')    ? get_option('site_nav_sp_sideauthor_img')  : get_avatar_url(get_the_author_meta('ID'), 80);
   $authorBk     = get_option('site_nav_sp_sideauthor_bkimg')  ? get_option('site_nav_sp_sideauthor_bkimg'): get_bloginfo('template_directory').'/images/others/author_bk.png';
-  $sideAuthor   = get_option('site_nav_sp_sideauthor')        ? get_option('site_nav_sp_sideauthor')      : false;
+  $sideAuthor   = get_option('site_nav_sp_sideauthor');
+  $sidenavMenu  = get_option('site_nav_sp_menu_menu');
   $sidenavTtl   = get_option('site_nav_sp_sidemenu')          ? get_option('site_nav_sp_sidemenu')        : 'MENU';
-  $sidenavMenu  = get_option('site_nav_sp_menu_menu')         ? get_option('site_nav_menu_menu')          : false;
   $authorName   = get_option('site_nav_sp_sideauthor_name')   ? get_option('site_nav_sp_sideauthor_name') : '運営者名';
   $authorMail   = get_option('site_nav_sp_sideauthor_mail')   ? get_option('site_nav_sp_sideauthor_mail') : 'SAMPLE@SAMPLE.COM';
 

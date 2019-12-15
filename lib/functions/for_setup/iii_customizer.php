@@ -1232,7 +1232,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_nav_transparentable',array(
-            'default'           => 0,
+            'default'           => false,
             'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
@@ -2143,6 +2143,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php if($navtp == true): ?>
 .headerArea nav{background:transparent;}
+.headerArea nav a{color:<?php echo $main_c ?>;}
 <?php endif; ?>
 #topnav li:nth-of-type(1) a::after{content:"<?php echo $navEn1 ?>";}
 #topnav li:nth-of-type(2) a::after{content:"<?php echo $navEn2 ?>";}
