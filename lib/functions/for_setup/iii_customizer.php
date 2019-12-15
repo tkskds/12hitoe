@@ -1751,6 +1751,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_article_toc_design', array(
             'label'             => '8-14.目次のデザイン',
+            'description'       => '記事側で表示される目次のデザインです。（サイドバーの目次には適用されません）',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
