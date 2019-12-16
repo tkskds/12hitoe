@@ -61,6 +61,9 @@ function filters(){
   /** 目次挿入 **/
   add_filter('the_content'          , 'add_index_to_content');
 
+  /** 見出しにクラス付与 **/
+  add_filter('the_content'          , 'add_heading_class');
+
   /** lazyloadの適用 **/
   add_filter('the_content'          , 'convert_src_for_lazyload');
   add_filter('the_content'          , 'add_lazyload_class');
