@@ -51,9 +51,22 @@ function register_widgets(){
   最初の見出しの前
   ****************/
   register_sidebar(array(
-    'name'          => '記事内見出し前',
+    'name'          => '記事内の見出し前',
     'id'            => 'ad_before_h2',
     'description'   => '記事内の最初の見出し前です。広告など設置するのにご使用いただけます。（注意：目次は自動挿入されるため設置不要です）',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '',
+    'after_title'   => '',
+  ));
+
+  /****************
+  記事内最後
+  ****************/
+  register_sidebar(array(
+    'name'          => '記事内の最下部',
+    'id'            => 'ad_after_content',
+    'description'   => '記事内の最下部です。広告など設置するのにご使用いただけます。',
     'before_widget' => '',
     'after_widget'  => '',
     'before_title'  => '',

@@ -1177,6 +1177,10 @@ h4.search_result_ttl::before {
 }
 
 /*目次*/
+.article_content .toc{
+  margin: 15px 0;
+}
+
 .article_content .toc ul li::before{
   display: none;
 }
@@ -1551,9 +1555,14 @@ ul.related_posts li a{
 
 /*見出しとか色々*/
 
+
+.article_content a{
+  vertical-align: top;
+}
+
 .article_content i.link_icon {
-  vertical-align: baseline;
-  margin: 0 5px;
+  margin: 0 6px 0 3px;
+  vertical-align: initial;
 }
 
 /*WPクラス付与された装飾*/

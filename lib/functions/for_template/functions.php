@@ -319,10 +319,18 @@ if (!function_exists('custom_breadcrumb')){
 function add_ad_before_h2($content){
   global $post;
   if (is_single() && is_active_sidebar('ad_before_h2')){
-    $ad  = dynamic_sidebar('ad_before_h2');
-    $tag = '/<h2.*?>/i';
-    if (preg_match( $tag, $content, $tags)) {
-      $content = preg_replace($tag, $ad.$tags[0], $content, 1);
+    if (!defined('H2S')) {
+      define('H2S', '/<h2.*?>/i');
+    }
+    preg_match_all(H2S, $content, $matches);
+    ob_start();
+    dynamic_sidebar('ad_before_h2');
+    $ad = ob_get_contents();
+    ob_end_clean();
+    if ($matches) {
+      if (isset($matches[0][0])) {
+        $content = preg_replace(H2S, $ad.$matches[0][0], $content, 1);
+      }
     }
   }
   return $content;
