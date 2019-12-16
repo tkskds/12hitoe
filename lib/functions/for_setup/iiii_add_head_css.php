@@ -160,6 +160,13 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 .main_c,.pagination li a,.articleList_wrap .articleList5 .content .title:hover,div.related_ttl:hover,.tocType4 .toc_body>ul>li>a::before,.started .navbar-fixed.main_c nav a{color:<?php echo $main_c ?>;}
 /*その他個別に設定すべきメイン.サブ.アクセントカラー*/
+.article_content h2.h2type1,.article_content h3.h3type1{border-color:<?php echo $main_c ?>;background:<?php echo $sub_c ?>;}
+.article_content h2.h2type2,.article_content h3.h3type2{background:<?php echo $sub_c ?>;}
+.article_content h2.h2type2::after,.article_content h3.h3type2::after{border-color:<?php echo $sub_c ?>;}
+.article_content h2.h2type3::before,.article_content h3.h3type3::before{background:<?php echo $main_c ?>;}
+.article_content h2.h2type4:first-letter,.article_content h3.h3type4:first-letter{color:<?php echo $main_c ?>;}
+.article_content h2.h2type5,.article_content h3.h3type5{background:<?php echo $main_c ?>;}
+.article_content h2.h2type6::after,.article_content h3.h3type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>);}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}

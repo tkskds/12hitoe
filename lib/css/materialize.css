@@ -1,26 +1,4 @@
 /*
-
-MEMO
-
-headingは全記事タイプ共通でカスタマイザーから決定
-いくつかデザイン用意する
-
-- 最初の文字だけ色付き
-- 吹き出し
-- 左ライン
-- FA使用
-- かっこ
-- グラデライン
-- グラデボックス
-- 中央寄せ・太字・余白多め
-
-それとは別にカスタマイザーにCSS入力欄用意
-ユーザーがそこに入力すれば見出しデザイン適用
-
-*/
-
-
-/*
 ====INDEX====
 
 - 共通
@@ -1011,6 +989,91 @@ article h4{
 
 .article_content{
   word-break: break-all;
+}
+
+/*
+- 最初の文字だけ色付き
+- 吹き出し
+- 左ライン
+- FA使用
+- かっこ
+- グラデライン
+- グラデボックス
+- 中央寄せ・太字・余白多め
+*/
+
+.article_content h2.h2Type1,
+.article_content h3.h3Type1{
+  padding: .25em .5em;
+  border-left: solid 5px;
+}
+
+.article_content h2.h2Type2,
+.article_content h3.h3Type2{
+  position: relative;
+  padding: .5em;
+}
+
+.article_content h2.h2Type2::after,
+.article_content h3.h3Type2::after{
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid;
+  width: 0;
+  height: 0;
+}
+
+.article_content h2.h2Type3,
+.article_content h3.h3Type3{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.article_content h2.h2Type3::before,
+.article_content h3.h3Type3::before{
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 60px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.article_content h2.h2Type4,
+.article_content h3.h3Type4{
+  font-size: .8em;
+}
+
+.article_content h2.h2Type4:first-letter,
+.article_content h3.h3Type4:first-letter{
+  font-size: 2em;
+}
+
+.article_content h2.h2Type5,
+.article_content h3.h3Type5{
+  padding: .5em 1em;
+  color: white;
+}
+
+.article_content h2.h2Type6,
+.article_content h3.h3Type6{
+  position: relative;
+  padding: .25em 0;
+}
+
+.article_content h2.h2Type6::after,
+.article_content h3.h3Type6::after{
+  content: "";
+  display: block;
+  height: 4px;
 }
 
 .article_content p{

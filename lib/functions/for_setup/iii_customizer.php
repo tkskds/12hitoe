@@ -1785,6 +1785,7 @@ function org_customizer($wp_customize){
               'type3'           => 'デザイン3',
               'type4'           => 'デザイン4',
               'type5'           => 'デザイン5',
+              'type6'           => 'デザイン6',
             ),
             'section'           => 'site_decoration',
           ));
@@ -1804,6 +1805,7 @@ function org_customizer($wp_customize){
               'type3'           => 'デザイン3',
               'type4'           => 'デザイン4',
               'type5'           => 'デザイン5',
+              'type6'           => 'デザイン6',
             ),
             'section'           => 'site_decoration',
           ));
