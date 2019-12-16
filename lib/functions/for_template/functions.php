@@ -8,6 +8,7 @@
 - カテゴリやタグの()の削除
 - ナビメニューにクラス付与
 - パンくずリスト
+- 最初の見出し前に広告
 - 目次の出力
 - 関連記事
 - 画像遅延読み込み
@@ -24,6 +25,7 @@ add_filter('get_archives_link'    , 'remove_post_count_parentheses'); //アー�
 add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削除
 add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
 add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
+add_filter('the_content'          , 'add_ad_before_h2'); //最初の見出し前に広告
 add_filter('the_content'          , 'add_index_to_content', 10); //目次挿入
 add_filter('the_content'          , 'convert_src_for_lazyload'); //lazyloadクラス
 add_filter('the_content'          , 'add_lazyload_class'); //lazyloadクラス
@@ -308,6 +310,27 @@ if (!function_exists('custom_breadcrumb')){
       endif;
     echo '</div>'; //https://wemo.tech/356
   }
+}
+
+/////////////////////
+// 最初の目次前に広告
+/////////////////////
+
+function add_ad_before_h2($content){
+  global $post;
+  if (is_single() && is_active_sidebar('ad_before_h2')){
+
+    ob_start();
+    dynamic_sidebar('ad_before_h2');
+    $ad = ob_get_contents();
+    ob_end_clean();
+
+    $tag = '/<h2.*?>/i';
+    if (preg_match( $tag, $content, $tags)) {
+      $content = preg_replace($ta.$ad.$tags[0], $content, 1);
+    }
+  }
+  return $content;
 }
 
 /////////////////////
