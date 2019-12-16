@@ -1159,6 +1159,7 @@ h4.search_result_ttl::before {
 
 .breadcrumb{
   width: 100%;
+  height: 25px;
   color: unset;
   font-size: .9em;
   padding: 0 60px;
@@ -1482,7 +1483,8 @@ li.share_button a{
  }
 
 li.share_hatena a{
-   font-weight: bold;
+  font-weight: bold;
+  padding-top: 12px;
 }
 
 .shareType1 li.share_button:hover{
@@ -2263,6 +2265,9 @@ cursor: pointer;
   }
   .showPage main#main, .showPage aside#aside{
     margin: 0 10px;
+  }
+  .showPage aside#aside.exsist_bread {
+    margin-top: 25px;
   }
 }
 
