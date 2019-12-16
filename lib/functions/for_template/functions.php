@@ -19,19 +19,6 @@
 
 ***************/
 
-add_filter('widget_tag_cloud_args', 'tag_font_size'); //タグのフォントサイズ修正
-add_filter('wp_list_categories'   , 'remove_post_count_parentheses'); //カテゴリの()削除
-add_filter('get_archives_link'    , 'remove_post_count_parentheses'); //アーカイブの()削除
-add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex'); //タグの()削除
-add_filter('nav_menu_css_class'   , 'active_nav_class' , 10 , 2); //navにクラス付与
-add_filter('nav_menu_css_class'   , 'sp_menu_classes'  , 10 , 3); //navにクラス付与
-add_filter('the_content'          , 'add_ad_before_h2'); //最初の見出し前に広告
-add_filter('the_content'          , 'add_index_to_content', 10); //目次挿入
-add_filter('the_content'          , 'convert_src_for_lazyload'); //lazyloadクラス
-add_filter('the_content'          , 'add_lazyload_class'); //lazyloadクラス
-add_filter('user_contactmethods'  , 'author_profile_box');
-
-
 /////////////////////
 // ページネーション
 /////////////////////
@@ -414,9 +401,17 @@ function add_a_tag_icon($content){
   return $content;
 }
 
-$aTagIcon = get_option('site_decoration_image_box');
+$aTagIcon = get_option('site_decoration_a_tag_icon');
 if($aTagIcon == false){
   add_filter('the_content', 'add_a_tag_icon');
+}
+
+/////////////////////
+// コンバーター登録
+/////////////////////
+
+function convert_box($content){
+  return $content;
 }
 
 

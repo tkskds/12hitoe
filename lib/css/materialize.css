@@ -246,9 +246,14 @@ body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger i{
   font-size: .9em;
 }
 
+.headerArea a.sidenav-trigger i{
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
 .headerArea a.sidenav-trigger i:hover{
   font-size: 1.25em;
-  transform: scaleX(1.5);
+  transform: scale(1.2);
 }
 
 #topnav li a{
@@ -1367,7 +1372,7 @@ div.tocType4 .toc_ttl{
   display: inline-block;
   width: 50px;
   text-align: center;
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
