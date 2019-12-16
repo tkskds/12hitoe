@@ -1350,6 +1350,7 @@ div.tocType4 .toc_ttl{
   text-align: center;
   font-size: 1.2em;
   font-weight: 600;
+  margin: 10px 0;
 }
 
 .author_info{
@@ -1489,23 +1490,23 @@ li.share_hatena a{
 }
 
 .shareType1 li.share_twitter{
-  background: #56ACEE;
+  background: linear-gradient(45deg, #1da1f2, #0e71c8);
 }
 
 .shareType1 li.share_facebook{
-  background: #3B5998;
+  background: linear-gradient(45deg, #3b5998, #0078d7);
 }
 
 .shareType1 li.share_hatena{
-  background: #008FDE;
+  background: linear-gradient(45deg, #01a4de, #537be6);
 }
 
 .shareType1 li.share_pocket{
-  background: #D3505A;
+  background: linear-gradient(45deg, #d3505a, #f05924);
 }
 
 .shareType1 li.share_line{
-  background: #2CB24C;
+  background: linear-gradient(45deg, #2CB24C, #009933);
 }
 
 .shareType1 li.share_button a{
