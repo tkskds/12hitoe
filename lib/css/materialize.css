@@ -1331,7 +1331,7 @@ div.tocType4 .toc_ttl{
 /*この記事を書いた人*/
 
 .author_box{
-  padding: 20px 10px;
+  padding: 20px 15px;
   background: #fff;
   display: flex;
 }
@@ -1355,20 +1355,98 @@ div.tocType4 .toc_ttl{
   margin: 20px 0;
 }
 
+.author_sns::before{
+  display: block;
+  content: "Follow Me";
+  margin-bottom: 10px;
+}
+
+.follow_button{
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  margin-right: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.follow_button:hover{
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
 .follow_button i{
   font-size: 1.25em;
+  line-height: 50px;
   color: white;
 }
 
-.follow_button i:hover{
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
+.follow_button_tw{
+  background:linear-gradient(45deg, #1da1f2, #0e71c8);
+  -webkit-box-shadow: 0 1px 3px rgba(19, 127, 212, 0.7);
+  box-shadow: 0 1px 3px rgba(19, 127, 212, 0.7);
 }
 
-.follow_button a.twitter{color:#1DA1F2;}
-.follow_button a.facebook{color:#3C5A99;}
-.follow_button a.instagram{color:#CF2E92;}
-.follow_button a.youtube{color:#DA1725;}
+.follow_button_tw:hover{
+  -webkit-box-shadow: 0 2px 4px rgba(19, 127, 212, 0.6);
+  box-shadow: 0 2px 4px rgba(19, 127, 212, 0.6);
+}
+
+.follow_button_fb{
+  background:linear-gradient(45deg, #3b5998, #0078d7);
+  -webkit-box-shadow: 0 1px 3px rgba(43, 98, 169, 0.5);
+  box-shadow: 0 1px 3px rgba(43, 98, 169, 0.5);
+}
+
+.follow_button_fb:hover{
+  -webkit-box-shadow: 0 2px 4px rgba(43, 98, 169, 0.4);
+  box-shadow: 0 2px 4px rgba(43, 98, 169, 0.4);
+}
+
+.follow_button_is{
+  background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  -webkit-box-shadow: 0 1px 3px rgba(120, 64, 190, 0.6);
+  box-shadow: 0 1px 3px rgba(120, 64, 190, 0.6);
+}
+
+.follow_button_is:hover{
+  -webkit-box-shadow: 0 2px 4px rgba(120, 64, 190, 0.5);
+  box-shadow: 0 2px 4px rgba(120, 64, 190, 0.5);
+}
+
+.follow_button_yt{
+  background:linear-gradient(45deg, #d5135a, #f05924);
+  -webkit-box-shadow: 0 1px 3px rgba(223, 45, 70, 0.6);
+  box-shadow: 0 1px 3px rgba(223, 45, 70, 0.6);
+}
+
+.follow_button_yt:hover{
+  background:linear-gradient(45deg, #d5135a, #f05924);
+  -webkit-box-shadow: 0 2px 4px rgba(223, 45, 70, 0.5);
+  box-shadow: 0 2px 4px rgba(223, 45, 70, 0.5);
+}
+
+.follow_button_gh{
+  background:linear-gradient(45deg, #333333, #626b73);
+  -webkit-box-shadow: 0 1px 3px rgba(63, 65, 67, 0.6);
+  box-shadow: 0 1px 3px rgba(63, 65, 67, 0.6);
+}
+
+.follow_button_gh:hover{
+  -webkit-box-shadow: 0 2px 4px rgba(63, 65, 67, 0.5);
+  box-shadow: 0 2px 4px rgba(63, 65, 67, 0.5);
+}
+
+.follow_button_cp{
+  background:linear-gradient(45deg, #324e63, #414447);
+  -webkit-box-shadow: 0 1px 3px rgba(55, 75, 90, 0.6);
+  box-shadow: 0 1px 3px rgba(55, 75, 90, 0.6);
+}
+
+.follow_button_cp{
+  -webkit-box-shadow: 0 2px 4px rgba(55, 75, 90, 0.5);
+  box-shadow: 0 2px 4px rgba(55, 75, 90, 0.5);
+}
 
 
 /*シェアボタン*/

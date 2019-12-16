@@ -3,6 +3,8 @@
  $facebook    = get_the_author_meta('facebook');
  $instagram   = get_the_author_meta('instagram');
  $youtube     = get_the_author_meta('youtube');
+ $github      = get_the_author_meta('github');
+ $codepen     = get_the_author_meta('codepen');
 ?>
 
 <div class="author">
