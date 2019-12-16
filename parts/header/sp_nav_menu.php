@@ -16,10 +16,10 @@
     <li class="sidenav_author_list">
       <div class="user-view">
         <div class="background">
-          <img data-src="<?php echo $authorBk ?>" class="lazyload">
+          <img data-src="<?php echo $authorBk ?>" class="lazyload" alt="運営者プロフィール背景画像">
         </div>
         <a href="#profile">
-          <img data-src="<?php echo $authorImg ?>" class="lazyload circle">
+          <img data-src="<?php echo $authorImg ?>" class="lazyload circle" alt="運営者画像">
         </a>
         <a href="#name">
           <span class="white-text name">

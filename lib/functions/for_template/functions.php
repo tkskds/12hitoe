@@ -414,6 +414,21 @@ function convert_box($content){
   return $content;
 }
 
+/////////////////////
+// 見出し（h2）のタイプ
+/////////////////////
+
+function add_h2_class($content){
+  $class   = output_type_class(get_option('site_decoration_h2_type'),h2);
+  $content = preg_replace('/(<h2)"/', '$1 class="h2'.$class.'"', $content);
+  return $content;
+}
+
+
+/////////////////////
+// 見出し（h3）のタイプ
+/////////////////////
+
 
 /////////////////////
 // この記事を書いた人
