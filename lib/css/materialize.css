@@ -1352,7 +1352,9 @@ div.tocType4 .toc_ttl{
 }
 
 .author_sns{
-  margin: 20px 0;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 3px solid #efefef;
 }
 
 .author_sns::before{
