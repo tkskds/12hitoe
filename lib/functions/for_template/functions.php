@@ -507,6 +507,12 @@ function output_type_class($type, $n){
     case 'value4':
       echo ' '.$n.'Type4 ';
       break;
+    case 'value5':
+      echo ' '.$n.'Type5 ';
+      break;
+    case 'value6':
+      echo ' '.$n.'Type6 ';
+      break;
   }
 }
 

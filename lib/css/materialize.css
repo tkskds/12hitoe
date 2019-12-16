@@ -1574,6 +1574,53 @@ li.share_hatena a{
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
+.shareType5 li.share_button a{
+  margin: 0 5px;
+  border-radius: 3px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.shareType5 li.share_button a{
+  color: white;
+}
+
+.shareType5 li.share_button a:hover{
+  transform: translateY(2px);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.shareType5 li.share_twitter a{
+ background: #56ACEE;
+ -webkit-box-shadow: 0 2px 0 #0e71c8;
+ box-shadow: 0 2px 0 #0e71c8;
+}
+
+.shareType5 li.share_facebook a{
+ background: #3B5998;
+ -webkit-box-shadow: 0 2px 0 #1a2760;
+ box-shadow: 0 2px 0 #1a2760;
+}
+
+.shareType5 li.share_hatena a{
+ background: #008FDE;
+ -webkit-box-shadow: 0 2px 0 #0e71c8;
+ box-shadow: 0 2px 0 #0e71c8;
+}
+
+.shareType5 li.share_pocket a{
+ background: #D3505A;
+ -webkit-box-shadow: 0 2px 0 #c0392b;
+ box-shadow: 0 2px 0 #c0392b;
+}
+
+.shareType5 li.share_line a{
+ background: #2CB24C;
+ -webkit-box-shadow: 0 2px 0 #213900;
+ box-shadow: 0 2px 0 #213900;
+}
+
 /*関連記事*/
 
 .related_thumb img,
