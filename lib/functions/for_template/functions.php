@@ -425,11 +425,12 @@ if($aTagIcon == false){
 /////////////////////
 
 function author_profile_box($sns){
-   $sns['twitter']    = 'Twitter（twitter.com/以降）';
-   $sns['facebook']   = 'Facebook（facebook.com/以降）';
-   $sns['instagram']  = 'Instagram（instagram.com/以降）';
-   $sns['youtube']    = 'Youtube（youtube.com/channel/以降）';
-
+   $sns['twitter']    = 'Twitter（https://twitter.com/ここの部分）';
+   $sns['facebook']   = 'Facebook（https://facebook.com/ここの部分）';
+   $sns['instagram']  = 'Instagram（https://instagram.com/ここの部分）';
+   $sns['youtube']    = 'Youtube（https://youtube.com/channel/ここの部分）';
+   $sns['github']     = 'Github（https://github.com/ここの部分）';
+   $sns['codepen']    = 'Codepen（https://codepen.io/ここの部分）';
    return $sns;
 }
 

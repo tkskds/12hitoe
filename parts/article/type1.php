@@ -44,6 +44,10 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
       <!--本文-->
       <div class="article_content painttoc">
         <?php the_content(); ?>
+        <!--記事最下部広告エリア-->
+        <?php if(is_active_sidebar('ad_after_content')): ?>
+          <?php dynamic_sidebar('ad_after_content'); ?>
+        <?php endif; ?>
       </div>
       <!--タグ-->
       <div class="article_tag">
@@ -55,10 +59,6 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
         <div class="article_share after_share<?php output_type_class($share_af,'share'); ?>">
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
-      <?php endif; ?>
-      <!--記事最下部広告エリア-->
-      <?php if(is_active_sidebar('ad_after_content')): ?>
-        <?php dynamic_sidebar('ad_after_content'); ?>
       <?php endif; ?>
     </div>
     <?php ld_json(); ?>

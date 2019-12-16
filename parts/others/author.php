@@ -22,32 +22,34 @@
       </p>
       <div class="author_sns">
        <?php if(!empty($twitter)) : ?>
-       <span class="follow_button">
-       <a class="twitter" href="//twitter.com/<?php echo $twitter; ?>" target="_blank" title="Twitterをフォロー" rel="nofollow">
+       <a class="follow_button follow_button_tw circle" href="//twitter.com/<?php echo $twitter; ?>" target="_blank" title="Twitterをフォロー" rel="nofollow">
          <i class="fab fa-twitter"></i>
        </a>
-       </span>
        <?php endif; ?>
        <?php if(!empty($facebook)) : ?>
-       <span class="follow_button">
-       <a class="facebook" href="//facebook.com/<?php echo $facebook; ?>" target="_blank" title="Facebookをフォロー" rel="nofollow">
+       <a class="follow_button follow_button_fb circle" href="//facebook.com/<?php echo $facebook; ?>" target="_blank" title="Facebookをフォロー" rel="nofollow">
          <i class="fab fa-facebook-f"></i>
        </a>
-       </span>
        <?php endif; ?>
        <?php if(!empty($instagram)) : ?>
-       <span class="follow_button">
-       <a class="instagram" href="//instagram.com/<?php echo $instagram; ?>" target="_blank" title="Instagramをフォロー" rel="nofollow">
+       <a class="follow_button follow_button_is circle" href="//instagram.com/<?php echo $instagram; ?>" target="_blank" title="Instagramをフォロー" rel="nofollow">
          <i class="fab fa-instagram"></i>
        </a>
-       </span>
        <?php endif; ?>
        <?php if(!empty($youtube)) : ?>
-       <span class="follow_button">
-       <a class="youtube" href="//youtube.com/channel/<?php echo $youtube; ?>" target="_blank" title="チャンネル登録" rel="nofollow">
+       <a class="follow_button follow_button_yt circle" href="//youtube.com/channel/<?php echo $youtube; ?>" target="_blank" title="チャンネル登録" rel="nofollow">
          <i class="fab fa-youtube"></i>
        </a>
-       </span>
+       <?php endif; ?>
+       <?php if(!empty($github)) : ?>
+       <a class="follow_button follow_button_gh circle" href="//github.com/<?php echo $github; ?>" target="_blank" title="Githubをフォロー" rel="nofollow">
+         <i class="fab fa-github"></i>
+       </a>
+       <?php endif; ?>
+       <?php if(!empty($codepen)) : ?>
+       <a class="follow_button follow_button_cp circle" href="//codepen.io/<?php echo $codepen; ?>" target="_blank" title="Codepenをフォロー" rel="nofollow">
+         <i class="fab fa-codepen"></i>
+       </a>
        <?php endif; ?>
     </div>
   </div>

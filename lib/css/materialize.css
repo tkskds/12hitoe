@@ -732,8 +732,8 @@ li.sidenav-ttl{
 /*タイプごとの異なるスタイル*/
 .articleList_wrap .articleList1{
   border-radius: 2px;
-  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
+  box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
   -webkit-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s;
 }
@@ -741,8 +741,8 @@ li.sidenav-ttl{
 .articleList_wrap .articleList1:hover{
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 2px rgba(45,45,45,.05),0 4px 4px rgba(49,49,49,.05), 0 8px 8px rgba(42,42,42,.05), 0 16px 16px rgba(32,32,32,.05) , 0 32px 32px rgba(49,49,49,.05), 0 64px 64px rgba(35,35,35,.05);
+  box-shadow: 0 2px 2px rgba(45,45,45,.05), 0 4px 4px rgba(49,49,49,.05), 0 8px 8px rgba(42,42,42,.05), 0 16px 16px rgba(32,32,32,.05), 0 32px 32px rgba(49,49,49,.05), 0 64px 64px rgba(35,35,35,.05);
 }
 
 .articleList_wrap .articleList1 .thumbnail time{
@@ -783,6 +783,11 @@ li.sidenav-ttl{
   left: 0;
   padding: 0 17px;
   color: white;
+}
+
+.articleList_wrap .articleList1 .content{
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .articleList_wrap .articleList2 .thumbnail time {
@@ -1352,9 +1357,7 @@ div.tocType4 .toc_ttl{
 
 .follow_button i{
   font-size: 1.25em;
-  margin-right: 20px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  color: white;
 }
 
 .follow_button i:hover{
