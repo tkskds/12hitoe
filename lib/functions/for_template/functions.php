@@ -415,12 +415,15 @@ function convert_box($content){
 }
 
 /////////////////////
-// 見出し（h2）のタイプ
+// 見出しのクラス出力
 /////////////////////
 
-function add_h2_class($content){
-  $class   = output_type_class(get_option('site_decoration_h2_type'),h2);
-  $content = preg_replace('/(<h2)"/', '$1 class="h2'.$class.'"', $content);
+function add_heading_class($content){
+  $h2class   = get_option('site_decoration_h2_type') ? get_option('site_decoration_h2_type') : 'type1';
+  $h3class   = get_option('site_decoration_h3_type') ? get_option('site_decoration_h3_type') : 'type1';
+  $h2replace = '<h2 class="h2'.$h2class.'"';
+  $h3replace = '<h3 class="h3'.$h3class.'"';
+  $content   = str_replace(array('<h2','<h3'),array($h2replace,$h3replace),$content);
   return $content;
 }
 

@@ -1769,7 +1769,7 @@ function org_customizer($wp_customize){
       ));
 
           $wp_customize->add_setting('site_decoration_h2_type', array(
-            'default'           => 'value1',
+            'default'           => 'type1',
             'type'              => 'option',
           ));
 
@@ -1778,17 +1778,17 @@ function org_customizer($wp_customize){
             'description'       => '記事内の見出しを一括で変更できます',
             'type'              => 'radio',
             'choices'           => array(
-              'value1'          => 'デザイン1',
-              'value2'          => 'デザイン2',
-              'value3'          => 'デザイン3',
-              'value4'          => 'デザイン4',
-              'value5'          => 'デザイン5',
+              'type1'           => 'デザイン1',
+              'type2'           => 'デザイン2',
+              'type3'           => 'デザイン3',
+              'type4'           => 'デザイン4',
+              'type5'           => 'デザイン5',
             ),
             'section'           => 'site_decoration',
           ));
 
           $wp_customize->add_setting('site_decoration_h3_type', array(
-            'default'           => 'value1',
+            'default'           => 'type1',
             'type'              => 'option',
           ));
 
@@ -1797,11 +1797,11 @@ function org_customizer($wp_customize){
             'description'       => '記事内の見出しを一括で変更できます',
             'type'              => 'radio',
             'choices'           => array(
-              'value1'          => 'デザイン1',
-              'value2'          => 'デザイン2',
-              'value3'          => 'デザイン3',
-              'value4'          => 'デザイン4',
-              'value5'          => 'デザイン5',
+              'type1'           => 'デザイン1',
+              'type2'           => 'デザイン2',
+              'type3'           => 'デザイン3',
+              'type4'           => 'デザイン4',
+              'type5'           => 'デザイン5',
             ),
             'section'           => 'site_decoration',
           ));
