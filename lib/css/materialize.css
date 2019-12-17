@@ -2429,6 +2429,9 @@ cursor: pointer;
   main.columns .articleList_wrap article:not(.articleList5):nth-child(even){
     margin-right: 20px;
   }
+  main#main{
+    min-width: 590px;
+  }
   .showPage main#main, .showPage aside#aside{
     margin: 0 10px;
   }
@@ -2463,9 +2466,6 @@ cursor: pointer;
 }
 
 @media(min-width:601px){
-  main#main{
-    min-width: 590px;
-  }
   .footer_sp_menu{
     display: none;
   }
