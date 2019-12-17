@@ -145,7 +145,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 <?php endif; //END フューチャーがあるかどうか ?>
 .contentArea{max-width:<?php echo $contentArea ?>px;}
 <?php if ($nav == true): ?>
-.nav-wrapper{max-width:<?php echo $contentArea ?>px;margin: auto;}
+.nav-wrapper,.footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php endif; ?>
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php if($navtp == true): ?>

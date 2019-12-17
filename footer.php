@@ -28,7 +28,7 @@
 ?>
     <div class="footerArea">
       <footer id="footer" class="footer page-footer">
-        <div class="footer_container container">
+        <div class="footer_container">
           <?php // フッターウィジェット
             if(
               is_active_sidebar('footer_left_widget')||
