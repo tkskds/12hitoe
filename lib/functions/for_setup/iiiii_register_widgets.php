@@ -129,7 +129,7 @@ function register_widgets(){
     $tocOnPage  = get_option('site_article_toc_page');
     if ($tocOff == false && is_single() || $tocOnPage == true && is_page()){
     		echo $args['before_widget'];
-    		echo '<h4 class="sidebar_title">'.$toc_ttl.'</h4><div class="widget_toc_body"></div></div>';
+    		echo '<h4 class="sidebar_title">'.$toc_ttl.'</h4><div class="widget_toc_body"></div>';
         echo $args['after_widget'];
       }
   	}

@@ -1,7 +1,7 @@
 <?php //リセットCSS ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//use.fontawesome.com">
+<!-- <link rel="dns-prefetch" href="//use.fontawesome.com"> -->
 
 <?php //CSSフレームワークの分岐 （materialize.css/common.css呼び出し） ?>
 <?php $cssfw = get_option('site_cssfw_choice') ? get_option('site_cssfw_choice') : 'value2' ;?>
@@ -12,8 +12,8 @@
   <link href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.css" rel="stylesheet" media="print" onload="this.media='all'">
 <?php endif; ?>
 
-<?php //サードパーティ製css/js呼び出し ?>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" media="all">
+<!-- <?php //サードパーティ製css/js呼び出し ?>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" media="all"> -->
 
 <?php //GoogleFont呼び出し ?>
 <?php $fontTitle = get_option('site_font_title') ? get_option('site_font_title') : 'value1' ; ?>

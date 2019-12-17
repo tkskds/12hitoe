@@ -161,7 +161,7 @@ input[type="submit"]{
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: transparent;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: background-color .2s ease-out;
@@ -169,6 +169,24 @@ input[type="submit"]{
   cursor: pointer;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #333;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 td{
@@ -619,17 +637,14 @@ li.sidenav-ttl{
   background: transparent;
 }
 
-#feature4 .collapsible-header::after{
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-	content: "\f107";
+#feature4 .collapsible-header svg{
   position: absolute;
   right: 0;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-#feature4 .active .collapsible-header::after{
+#feature4 .active .collapsible-header svg{
   -webkit-transform: rotateX(180deg);
 	transform: rotateX(180deg);
 }
@@ -732,7 +747,7 @@ li.sidenav-ttl{
 
 /*タイプごとの異なるスタイル*/
 .articleList_wrap .articleList1{
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
   box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
   -webkit-transition: all 0.3s linear 0s;
@@ -764,16 +779,16 @@ li.sidenav-ttl{
   line-height: 1.1;
   font-size: 2em;
   display: block;
-  font-family: 'Fredoka One', cursive;
 }
 
+.articleList_wrap .articleList1 .thumbnail time .day,
 .articleList_wrap .articleList1 .thumbnail time .month{
   font-family: 'Fredoka One', cursive;
 }
 
 .articleList_wrap .articleList1 .thumbnail img{
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .articleList_wrap .articleList1 .thumbnail .category {
@@ -1000,7 +1015,7 @@ article h4{
 }
 
 .article_date time::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Solid";
   font-weight: bold;
   margin-right: 5px;
 }
@@ -1212,7 +1227,7 @@ h4.search_result_ttl {
 }
 
 h4.search_result_ttl::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Solid";
   content: "\f002";
   font-weight: bold;
   position: absolute;
@@ -1240,15 +1255,15 @@ h4.search_result_ttl::before {
 }
 
 .breadcrumb li:first-of-type a span::before{
-  font-family: "Font Awesome 5 Free";
-  content: "\f015";
+  font-family: "Font Awesome 5 Solid";
+  content: "\f3c5";
   font-weight: bold;
   margin-right: 5px;
 }
 
 .breadcrumb li:not(:last-of-type)::after{
-  font-family: "Font Awesome 5 Free";
-  content: "\f3c5";
+  font-family: "Font Awesome 5 Solid";
+  content: "\f0da";
   font-weight: bold;
   position: absolute;
   right: .5em;
@@ -1305,17 +1320,14 @@ h4.search_result_ttl::before {
   background: transparent;
 }
 
-.tocType1 .collapsible-header.toc_ttl::after{
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-	content: "\f107";
+.tocType1 .collapsible-header.toc_ttl svg{
   position: absolute;
   right: 20px;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-.tocType1 .active .collapsible-header.toc_ttl::after{
+.tocType1 .active .collapsible-header.toc_ttl svg{
   -webkit-transform: rotateX(180deg);
 	transform: rotateX(180deg);
 }
@@ -1356,7 +1368,7 @@ div:not(.tocType1) .toc_body{
 
 .tocType3 .toc_ttl::before,
 .tocType4 .toc_body>ul>li>a::before{
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Solid";
   font-weight: bold;
   margin-right: .5em;
 }
@@ -1455,9 +1467,10 @@ div.tocType4 .toc_ttl{
   transform: translateY(-1px);
 }
 
-.follow_button i{
+.follow_button svg{
   font-size: 1.25em;
-  line-height: 50px;
+  height: 50px;
+  vertical-align: inherit;
   color: white;
 }
 
@@ -1802,7 +1815,7 @@ ul.related_posts li a{
 
 .wp-block-quote::before,
 .wp-block-quote::after{
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Solid";
   font-weight: bold;
   font-size: 1em;
   position: absolute;
@@ -2004,6 +2017,11 @@ a.tohomelink i{
   text-align: center;
 }
 
+.footerArea .page-footer .footer-copyright{
+  background-color: unset;
+  color: unset;
+}
+
 /****************      ウィジェット       *******************/
 
 h4.sidebar_title,
@@ -2056,38 +2074,22 @@ h4.footer_w_title {
   line-height: 30px;
 }
 
-.widget_tag_cloud ul li{
+.widget_tag_cloud ul li a{
   display: inline-block;
   position: relative;
-  padding: 0 10px 0 10px;
   font-size: 10px;
-}
-
-.widget_tag_cloud ul li a{
-  line-height: 25px;
-}
-
-.widget_tag_cloud ul li a::before{
-  font-family: "Font Awesome 5 Free";
-  content: "\f292";
-  font-size: .85em;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+  display: inline-block;
+  padding: .5em 2em;
+  margin: .5em 1em .5em 0;
+  border-radius: 30px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
 .widget_tag_cloud ul li a .tag-link-count{
-  background: whitesmoke;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  right: 5px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  text-align: center;
-  border-radius: 50%;
+  margin-left: .5em;
+  font-weight: bold;
 }
 
 .widget_archive label,
@@ -2101,7 +2103,7 @@ h4.footer_w_title {
 
 .widget_categories form::before{
   position: absolute;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Solid";
   content: "\f0d7";
   font-weight: bold;
   font-size: 15px;

@@ -122,7 +122,7 @@ if (!function_exists('custom_breadcrumb')){
     echo  '<div class="breadcrumb">'.
           '<ul>'.
           '<li>'.
-          '<a href="'.esc_url(home_url()).'"><span>ホーム</span></a>'.
+          '<a href="'.esc_url(home_url()).'"><i class="fas fa-map-marker-alt"></i><span>ホーム</span></a>'.
           '</li>';
     if (is_attachment()){
       $post_title = apply_filters('the_title', $wp_obj->post_title);
@@ -340,7 +340,7 @@ function add_index_to_content($content){
       case 'value1':
         $toc_wrap  = '<div class="toc tocType1"><ul class="collapsible"><li><div class="collapsible-header toc_ttl">'.
                      $toc_ttl.
-                     '</div><div class="collapsible-body toc_body"></div></li></ul></div>';
+                     '<i class="fas fa-angle-down"></i></div><div class="collapsible-body toc_body"></div></li></ul></div>';
         break;
       case 'value2':
         $toc_wrap  = '<div class="toc tocType2"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';

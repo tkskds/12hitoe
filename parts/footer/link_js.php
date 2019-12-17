@@ -12,3 +12,6 @@
 <?php if ($tocOff == false) : ?>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/lib/js/toc.js" defer></script>
 <?php endif; ?>
+
+<script type="text/javascript">FontAwesomeConfig = { searchPseudoElements: true };</script>
+<script type="text/javascript" src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" defer></script>
