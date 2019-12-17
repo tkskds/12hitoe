@@ -1668,6 +1668,17 @@ function org_customizer($wp_customize){
             'section'           => 'site_article',
           ));
 
+          $wp_customize->add_setting('site_article_author_ttl', array(
+            'default'           => 'この記事を書いた人',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_author_ttl', array(
+            'label'             => '8-5.「この記事を書いた人」のタイトル',
+            'type'              => 'text',
+            'section'           => 'site_article',
+          ));
+
           $wp_customize->add_setting('site_article_relatedable', array(
             'default'           => false,
             'type'              => 'option',

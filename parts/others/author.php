@@ -5,11 +5,12 @@
  $youtube     = get_the_author_meta('youtube');
  $github      = get_the_author_meta('github');
  $codepen     = get_the_author_meta('codepen');
+ $authorTitle = get_option('site_article_author_ttl') ? get_option('site_article_author_ttl') : 'この記事を書いた人' ;
 ?>
 
 <div class="author">
   <h3 class="author_ttl article_af_ttl">
-    この記事を書いた人
+    <?php echo $authorTitle ?>
   </h3>
   <div class="author_box">
     <div class="author_thumb">

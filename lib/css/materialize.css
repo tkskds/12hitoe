@@ -1248,7 +1248,7 @@ h4.search_result_ttl::before {
 
 .breadcrumb li:not(:last-of-type)::after{
   font-family: "Font Awesome 5 Free";
-  content: "\f0da";
+  content: "\f3c5";
   font-weight: bold;
   position: absolute;
   right: .5em;
@@ -1268,6 +1268,10 @@ h4.search_result_ttl::before {
   padding-left: 0;
 }
 
+.article_content .toc_body{
+  font-size: .8em;
+}
+
 .article_content .toc_body ul li a{
   color: unset;
 }
@@ -1282,7 +1286,7 @@ h4.search_result_ttl::before {
 /*2階層目（h3）*/
 .article_content .toc_body>ul>li>ul{
   padding-left: .5em;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 .article_content .toc_body>ul>li>ul>li>a::before{
@@ -1291,9 +1295,8 @@ h4.search_result_ttl::before {
 
 /*タイプ1*/
 .tocType1 .collapsible{
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   border-radius: 3px;
 }
 
@@ -2005,7 +2008,7 @@ a.tohomelink i{
 
 h4.sidebar_title,
 h4.footer_w_title {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 0;
   padding: 20px 20px 15px 20px;
 }
@@ -2136,6 +2139,10 @@ h4.footer_w_title {
   border-radius: 3px;
   text-align: center;
   right: 1em;
+}
+
+.widget_toc_body{
+  font-size: .8em;
 }
 
 .widget_toc_body li{
