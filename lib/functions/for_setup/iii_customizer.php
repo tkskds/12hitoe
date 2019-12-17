@@ -1194,6 +1194,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_main', array(
             'label'             => 'メインカラー',
+            'description'       => '見出しやボタンなど様々な場所で使用されます。濃い色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
 
@@ -1204,6 +1205,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_sub', array(
             'label'             => 'サブカラー',
+            'description'       => '見出しやボタンなど様々な場所で使用されます。濃い色に比べて薄い色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
 
@@ -1214,6 +1216,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(
             'label'             => 'アクセントカラー',
+            'description'       => '見出しやボタンなど様々な場所で使用されます。メインカラーの補色系統の色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
 
