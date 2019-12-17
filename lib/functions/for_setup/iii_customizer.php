@@ -975,13 +975,14 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_carousel_news_on', array(
             'default'           => false,
-            'type'              => 'checkbox',
+            'type'              => 'option',
             'sanitize_callback' => 'sanitize_checkbox',
           ));
 
           $wp_customize->add_control('site_carousel_news_on', array(
             'label'             => 'ニュース欄を表示する',
             'description'       => 'ナビバーの下に表示されるニュース欄です。最新情報や目立たせたい情報などを掲載しましょう',
+            'type'              => 'checkbox',
             'section'           => 'site_carousel',
           ));
 
@@ -1008,6 +1009,27 @@ function org_customizer($wp_customize){
             'section'           => 'site_carousel',
           ));
 
+          $wp_customize->add_setting('site_carousel_news_bk', array(
+            'type'              => 'option',
+            'default'           => '#3bb3fa',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk', array(
+            'label'             => 'ニュース欄の背景色（1色目）',
+            'section'           => 'site_color',
+          )));
+
+          $wp_customize->add_setting('site_carousel_news_bk2', array(
+            'type'              => 'option',
+            'default'           => '#ff5757',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk2', array(
+            'label'             => 'ニュース欄の背景色（2色目）',
+            'description'       => '1色目と異なる色を選択するとグラデーションになります',
+            'section'           => 'site_color',
+          )));
+
           $wp_customize->add_setting('site_carousel_on', array(
             'default'           => 'value1',
             'type'              => 'option',
@@ -1015,7 +1037,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_carousel_on', array(
             'label'             => 'ピックアップ部分',
-            'description'       => 'ピックアップ欄を表示します。詳しくはこちら。',
+            'description'       => 'ピックアップ欄を表示します。目立たせたい記事や画像などを掲載しましょう。詳しくはこちら。',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => '表示しない',

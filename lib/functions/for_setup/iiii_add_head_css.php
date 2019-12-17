@@ -35,6 +35,10 @@ function add_customizerCSS(){
   $featureSec3Color     = get_option('site_feature_section3_color')           ? get_option('site_feature_section3_color')           : '#f9f9f9';
   $featureSec3BkColor   = get_option('site_feature_section3_bk_color')        ? get_option('site_feature_section3_bk_color')        : '#212121';
 
+// ニュース欄
+  $newsBk1  = get_option('site_carousel_news_bk')  ? get_option('site_carousel_news_bk')  : '#3bb3fa' ;
+  $newsBk2  = get_option('site_carousel_news_bk2') ? get_option('site_carousel_news_bk2') : '#ff5757' ;
+
 //フォントの設定
   /*** タイトルフォントの設定 ***/
   $fontTitle = get_option('site_font_title');
@@ -152,6 +156,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 #topnav li:nth-of-type(3) a::after{content:"<?php echo $navEn3 ?>";}
 #topnav li:nth-of-type(4) a::after{content:"<?php echo $navEn4 ?>";}
 #topnav li:nth-of-type(5) a::after{content:"<?php echo $navEn5 ?>";}
+.news{background: linear-gradient(45deg, <?php echo $newsBk1 ?>, <?php echo $newsBk2 ?>);}
 /*****************************
 色
 *****************************/

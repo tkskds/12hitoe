@@ -660,6 +660,18 @@ li.sidenav-ttl{
   width: 100%;
 }
 
+/****************         ニュース        *******************/
+
+.news{
+  display: block;
+  text-align: center;
+}
+
+.news span{
+  color: white;
+  font-size: .85em;
+}
+
 /****************         記事一覧        *******************/
 
 /* indexでの共通記事スタイル */
