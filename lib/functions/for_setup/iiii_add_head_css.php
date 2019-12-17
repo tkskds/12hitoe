@@ -171,7 +171,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .article_content h2.h2type3::before,.article_content h3.h3type3::before{background:<?php echo $main_c ?>;}
 .article_content h2.h2type4:first-letter,.article_content h3.h3type4:first-letter{color:<?php echo $main_c ?>;}
 .article_content h2.h2type5,.article_content h3.h3type5{background:<?php echo $main_c ?>;}
-.article_content h2.h2type6::after,.article_content h3.h3type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>);}
+.article_content h2.h2type6::after,.article_content h3.h3type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
