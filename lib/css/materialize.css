@@ -665,11 +665,17 @@ li.sidenav-ttl{
 .news{
   display: block;
   text-align: center;
+  transition: all .2s ease-in-out;
+}
+
+.news:hover{
+  opacity: .9;
 }
 
 .news span{
   color: white;
   font-size: .85em;
+  padding: .5em;
 }
 
 /****************         記事一覧        *******************/

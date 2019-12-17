@@ -1016,7 +1016,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk', array(
             'label'             => 'ニュース欄の背景色（1色目）',
-            'section'           => 'site_color',
+            'section'           => 'site_carousel',
           )));
 
           $wp_customize->add_setting('site_carousel_news_bk2', array(
@@ -1027,7 +1027,7 @@ function org_customizer($wp_customize){
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk2', array(
             'label'             => 'ニュース欄の背景色（2色目）',
             'description'       => '1色目と異なる色を選択するとグラデーションになります',
-            'section'           => 'site_color',
+            'section'           => 'site_carousel',
           )));
 
           $wp_customize->add_setting('site_carousel_on', array(
