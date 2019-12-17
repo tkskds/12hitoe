@@ -173,6 +173,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .article_content h2.h2type5,.article_content h3.h3type5{background:<?php echo $main_c ?>;}
 .article_content h2.h2type6::after,.article_content h3.h3type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
+.sideType1 h4.sidebar_title::after {background:<?php echo $body_bk ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
 .tocType3{border-color:<?php echo $main_c ?>;}

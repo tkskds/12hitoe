@@ -50,14 +50,15 @@ if(is_home() || is_front_page()) {
             }
       ?>
     </a>
-      <?php
-          wp_nav_menu(array(
-            'theme_location' => 'nav_header',
-            'container' => 'ul',
-            'menu_id' => 'topnav',
-            'menu_class' => 'right hide-on-med-and-down',
-            'fallback' => ''
-          ));
+      <?php if (has_nav_menu('nav_header')){
+              wp_nav_menu(array(
+                'theme_location' => 'nav_header',
+                'container' => 'ul',
+                'menu_id' => 'topnav',
+                'menu_class' => 'right hide-on-med-and-down',
+                'fallback' => '',
+              ));
+            }
       ?>
   </div>
   <?php if($extend == true): ?>
