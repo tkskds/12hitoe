@@ -969,8 +969,44 @@ function org_customizer($wp_customize){
       $wp_customize->add_section('site_carousel', array(
         'priority'              => 4,
         'title'                 => '4.ピックアップ部分',
+        'description'           => 'ニュースや最新情報、ピックアップして掲載したい情報などは本項目をご利用ください。',
         'panel'                 => 'site_builder',
       ));
+
+          $wp_customize->add_setting('site_carousel_news_on', array(
+            'default'           => false,
+            'type'              => 'checkbox',
+            'sanitize_callback' => 'sanitize_checkbox',
+          ));
+
+          $wp_customize->add_control('site_carousel_news_on', array(
+            'label'             => 'ニュース欄を表示する',
+            'description'       => 'ナビバーの下に表示されるニュース欄です。最新情報や目立たせたい情報などを掲載しましょう',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_news', array(
+            'default'           => 'こんな感じで表示されます',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_news', array(
+            'label'             => 'ニュース欄の文章',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
+
+          $wp_customize->add_setting('site_carousel_news_link', array(
+            'default'           => '#',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_carousel_news_link', array(
+            'label'             => 'ニュース欄のリンク先',
+            'description'       => 'ニュース欄をクリックしたリンク先ページのURL',
+            'type'              => 'text',
+            'section'           => 'site_carousel',
+          ));
 
           $wp_customize->add_setting('site_carousel_on', array(
             'default'           => 'value1',
