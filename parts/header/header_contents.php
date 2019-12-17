@@ -28,7 +28,7 @@ if(is_home() || is_front_page()) {
     <?php echo $title_tag_start; ?>
     <a href="<?php echo home_url(); ?>" class="brand-logo siteTitle<?php if ($centering == true) { echo ' center'; } ?>">
       <?php if(has_custom_logo()): ?>
-        <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo lazeload" />
+        <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo fadeinimg lazeload" />
       <?php endif; ?>
       <?php if ($onlyLogo == false) { bloginfo('name'); } ?>
     </a>

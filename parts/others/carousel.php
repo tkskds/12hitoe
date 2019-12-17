@@ -18,27 +18,27 @@
 
   <?php if($carItem1Imag!=null): ?>
     <a class="carousel-item" href="<?php echo $carItem1Link ?>">
-      <img data-src="<?php echo $carItem1Imag ?>" class="lazyload">
+      <img data-src="<?php echo $carItem1Imag ?>" class="fadeinimg lazyload">
     </a>
   <?php endif; ?>
   <?php if($carItem2Imag!=null): ?>
   <a class="carousel-item" href="<?php echo $carItem2Link ?>">
-    <img data-src="<?php echo $carItem2Imag ?>" class="lazyload">
+    <img data-src="<?php echo $carItem2Imag ?>" class="fadeinimg lazyload">
   </a>
   <?php endif; ?>
   <?php if($carItem3Imag!=null): ?>
   <a class="carousel-item" href="<?php echo $carItem3Link ?>">
-    <img data-src="<?php echo $carItem3Imag ?>" class="lazyload">
+    <img data-src="<?php echo $carItem3Imag ?>" class="fadeinimg lazyload">
   </a>
   <?php endif; ?>
   <?php if($carItem4Imag!=null): ?>
   <a class="carousel-item" href="<?php echo $carItem4Link ?>">
-    <img data-src="<?php echo $carItem4Imag ?>" class="lazyload">
+    <img data-src="<?php echo $carItem4Imag ?>" class="fadeinimg lazyload">
   </a>
   <?php endif; ?>
   <?php if($carItem5Imag!=null): ?>
   <a class="carousel-item" href="<?php echo $carItem5Link ?>">
-    <img data-src="<?php echo $carItem5Imag ?>" class="lazyload">
+    <img data-src="<?php echo $carItem5Imag ?>" class="fadeinimg lazyload">
   </a>
   <?php endif; ?>
 

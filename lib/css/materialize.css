@@ -198,14 +198,14 @@ strong{
   font-weight: 700;
 }
 
-img.lazyload{
+.fadeinimg{
   opacity: 0;
-}
-
-img.lazyloaded{
-  opacity: 1;
   -webkit-transition: all .1s ease-in;
   transition: all .1s ease-in;
+}
+
+.fadeinimg.lazyloaded img.lazyloaded{
+  opacity: 1;
 }
 
 .gototop {
@@ -801,8 +801,8 @@ li.sidenav-ttl{
 }
 
 .articleList_wrap .articleList1 .content{
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .articleList_wrap .articleList2 .thumbnail time {

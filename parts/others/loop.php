@@ -46,9 +46,9 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 
           <?php // img ?>
           <?php if (has_post_thumbnail()): ?>
-            <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'eyecatch', array('class' => 'activator lazyload'))); ?>
+            <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'eyecatch', array('class' => 'activator fadeinimg lazyload'))); ?>
           <?php else: ?>
-            <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300" class="lazyload">
+            <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php echo $ttl ?>" width="520" height="300" class="fadeinimg lazyload">
           <?php endif; ?>
 
           <?php // .category ?>
@@ -96,7 +96,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
       <?php if (has_post_thumbnail()): ?>
         <?php the_post_thumbnail('eyecatch', array(
           'alt'    => $ttl,
-          'class'  => 'activator lazyload',
+          'class'  => 'activator fadeinimg lazyload',
           'width'  => 520,
           'height' => 300,
           ));

@@ -367,7 +367,7 @@ function add_index_to_content($content){
 /////////////////////
 
 function add_lazyload_class($content){
-  $content = preg_replace('/(<img[^>]*)\s+class="([^"]*)"/', '$1 class="$2 lazyload"', $content);
+  $content = preg_replace('/(<img[^>]*)\s+class="([^"]*)"/', '$1 class="$2 fadeinimg lazyload"', $content);
   return $content;
 }
 

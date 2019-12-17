@@ -55,7 +55,7 @@
           <?php endif; //END フッターウィジェット ?>
           <a href="<?php echo home_url(); ?>" class="tohomelink">
             <?php if(has_custom_logo()): ?>
-              <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo lazyload" />
+              <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo fadeinimg lazyload" />
             <?php endif; ?>
             <?php if ($onlyLogo == false) { bloginfo('name'); } ?>
           </a>
