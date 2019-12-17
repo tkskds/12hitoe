@@ -106,7 +106,7 @@ nav h1 {
   margin: unset;
 }
 
-nav .sidenav-trigger i{
+nav .sidenav-trigger svg{
   font-size: 1em;
 }
 
@@ -222,7 +222,7 @@ body.delighter .headerArea .navbar-fixed a.siteTitle,
 body.delighter .headerArea .navbar-fixed ul#topnav,
 body.delighter .headerArea .navbar-fixed nav ul a,
 body.delighter .headerArea .navbar-fixed a.sidenav-trigger,
-body.delighter .headerArea .navbar-fixed a.sidenav-trigger i{
+body.delighter .headerArea .navbar-fixed a.sidenav-trigger svg{
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
@@ -236,18 +236,18 @@ body.delighter.started .headerArea .navbar-fixed a.siteTitle,
 body.delighter.started .headerArea .navbar-fixed ul#topnav,
 body.delighter.started .headerArea .navbar-fixed nav ul a,
 body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger,
-body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger i{
+body.delighter.started .headerArea .navbar-fixed a.sidenav-trigger svg{
   height: 40px;
   line-height: 40px;
   font-size: .9em;
 }
 
-.headerArea a.sidenav-trigger i{
+.headerArea a.sidenav-trigger svg{
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-.headerArea a.sidenav-trigger i:hover{
+.headerArea a.sidenav-trigger svg:hover{
   font-size: 1.25em;
   transform: scale(1.2);
 }
@@ -485,7 +485,7 @@ li.sidenav-ttl{
   max-width: 400px;
 }
 
-.f_item i{
+.f_item svg{
   font-size: 2.5em;
   display: block;
   text-align: center;
@@ -1210,7 +1210,7 @@ article h4{
   line-height: 30px;
 }
 
-.pagination li i {
+.pagination li svg {
   font-size: 1rem;
   vertical-align: middle;
 }
@@ -1235,13 +1235,7 @@ h4.search_result_ttl {
 h4.search_result_ttl::before {
   font-family: "Font Awesome 5 Solid";
   content: "\f002";
-  font-weight: bold;
-  position: absolute;
-  height: 1em;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
+  display: none;
 }
 
 /*パンくずリスト*/
@@ -1671,7 +1665,7 @@ li.share_hatena a{
   box-shadow: 0 1px 5px rgba(0,0,0,.19);
 }
 
-.shareType4 li a i{
+.shareType4 li a svg{
   vertical-align: baseline;
 }
 
@@ -1810,7 +1804,7 @@ ul.related_posts li a{
   vertical-align: top;
 }
 
-.article_content i.link_icon {
+.article_content svg.link_icon {
   margin: 0 6px 0 3px;
   vertical-align: initial;
 }
@@ -1835,20 +1829,31 @@ ul.related_posts li a{
 .wp-block-quote::after{
   font-family: "Font Awesome 5 Solid";
   font-weight: bold;
+  display: none;
+}
+
+.wp-block-quote::before{
+  content: "\f10d";
+}
+
+.wp-block-quote::after{
+  content: "\f10e";
+}
+
+.wp-block-quote svg.fa-quote-left,
+.wp-block-quote svg.fa-quote-right{
   font-size: 1em;
   position: absolute;
   opacity: .25;
   color: #333;
 }
 
-.wp-block-quote::before{
-  content: "\f10d";
-  left: 2px;
+.wp-block-quote svg.fa-quote-left{
   top: 2px;
+  left: 2px;
 }
 
-.wp-block-quote::after{
-  content: "\f10e";
+.wp-block-quote svg.fa-quote-right{
   right: 2px;
   bottom: 2px;
 }
@@ -1964,12 +1969,12 @@ a.tohomelink {
   text-align: center;
 }
 
-a.tohomelink i{
+a.tohomelink svg{
   margin-right: .5em;
   margin-left: -.5em;
 }
 
-.footerArea .btn-large i {
+.footerArea .btn-large svg {
   font-size: 1rem;
 }
 
@@ -2000,7 +2005,7 @@ a.tohomelink i{
   width: 100%;
 }
 
-.footer_sp_menu ul li a i{
+.footer_sp_menu ul li a svg{
   line-height: 56px;
 }
 
@@ -2014,7 +2019,7 @@ a.tohomelink i{
   margin: auto;
 }
 
-.footer_sp_menu ul li a i{
+.footer_sp_menu ul li a svg{
   font-size: 1em;
 }
 

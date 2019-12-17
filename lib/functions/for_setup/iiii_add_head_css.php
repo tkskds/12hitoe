@@ -137,9 +137,9 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 .dyheaderBkImgFil5::after{background: url("<?php echo get_template_directory_uri(); ?>/images/dyheader_fil/ruledLine.png") repeat;}
 <?php endif; //END そもそもダイナミックヘッダーがあるかどうか?>
 <?php if ( $siteType == 'value4' ) : //フューチャーがあるかどうか ?>
-.f_item:nth-child(1) i{color:<?php echo $featureIcon1Color ?>;}
-.f_item:nth-child(2) i{color:<?php echo $featureIcon2Color ?>;}
-.f_item:nth-child(3) i{color:<?php echo $featureIcon3Color ?>;}
+.f_item:nth-child(1) svg{color:<?php echo $featureIcon1Color ?>;}
+.f_item:nth-child(2) svg{color:<?php echo $featureIcon2Color ?>;}
+.f_item:nth-child(3) svg{color:<?php echo $featureIcon3Color ?>;}
 #feature2{<?php if ($featureSec2BkImg != null) : ?>background:url("<?php echo $featureSec2BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec2BkColor ?>;color:<?php echo $featureSec2Color ?>;}
 #feature3{<?php if ($featureSec3BkImg != null) : ?>background:url("<?php echo $featureSec3BkImg ?>") no-repeat center/cover;<?php endif; ?>background-color:<?php echo $featureSec3BkColor ?>;color:<?php echo $featureSec3Color ?>;}
 <?php endif; //END フューチャーがあるかどうか ?>

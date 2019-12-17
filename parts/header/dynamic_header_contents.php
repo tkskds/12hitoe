@@ -1,8 +1,7 @@
 <?php
     $dyheaderBkImg    = get_option('site_dyheader_bkimg');
     $dyheaderBkImgFil = get_option('site_dyheader_bkimg_filter')   ? get_option('site_dyheader_bkimg_filter')   : 'value1' ;
-
-    $txt              = get_option('site_dyheader_text');
+    $txt              = get_option('site_dyheader_text')           ? get_option('site_dyheader_text')           : "Let's enjoy self-expression!";
     $txtAnime         = get_option('site_dyheader_text_animation') ? get_option('site_dyheader_text_animation') : 'value0' ;
     $btn              = get_option('site_dyheader_button');
     $btnLink          = get_option('site_dyheader_button_link');

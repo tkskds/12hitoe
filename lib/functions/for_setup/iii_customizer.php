@@ -535,7 +535,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section_item2_ttl', array(
-            'defalut'           => 'SAMPLE2',
+            'default'           => 'SAMPLE2',
             'type'              => 'option',
           ));
 
@@ -546,7 +546,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_feature_section_item2_description', array(
-            'defalut'           => 'SAMPLE2の説明文です。',
+            'default'           => 'SAMPLE2の説明文です。',
             'type'              => 'option',
           ));
 
@@ -579,7 +579,7 @@ function org_customizer($wp_customize){
           )));
 
           $wp_customize->add_setting('site_feature_section_item3_ttl', array(
-            'defalut'           => 'SAMPLE3',
+            'default'           => 'SAMPLE3',
             'type'              => 'option',
           ));
 
