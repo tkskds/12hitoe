@@ -125,6 +125,7 @@
               <div class="collapsible-header">
                 <i class="fas fa-question-circle"></i>
                 <span><?php echo $sec4q1 ?></span>
+                <i class="fas fa-angle-down"></i>
               </div>
               <div class="collapsible-body">
                 <span><?php echo $sec4a1 ?></span>
@@ -135,6 +136,7 @@
               <div class="collapsible-header">
                 <i class="fas fa-question-circle"></i>
                 <span><?php echo $sec4q2 ?></span>
+                <i class="fas fa-angle-down"></i>
               </div>
               <div class="collapsible-body">
                 <span><?php echo $sec4a2 ?></span>
@@ -146,6 +148,7 @@
               <div class="collapsible-header">
                 <i class="fas fa-question-circle"></i>
                 <span><?php echo $sec4q3 ?></span>
+                <i class="fas fa-angle-down"></i>
               </div>
               <div class="collapsible-body">
                 <span><?php echo $sec4a3 ?></span>
@@ -157,6 +160,7 @@
               <div class="collapsible-header">
                 <i class="fas fa-question-circle"></i>
                 <span><?php echo $sec4q4 ?></span>
+                <i class="fas fa-angle-down"></i>
               </div>
               <div class="collapsible-body">
                 <span><?php echo $sec4a4 ?></span>
@@ -168,6 +172,7 @@
               <div class="collapsible-header">
                 <i class="fas fa-question-circle"></i>
                 <span><?php echo $sec4q5 ?></span>
+                <i class="fas fa-angle-down"></i>
               </div>
               <div class="collapsible-body">
                 <span><?php echo $sec4a5 ?></span>

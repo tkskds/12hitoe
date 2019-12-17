@@ -636,14 +636,14 @@ li.sidenav-ttl{
   background: transparent;
 }
 
-#feature4 .collapsible-header svg{
+#feature4 .collapsible-header svg.fa-angle-down{
   position: absolute;
   right: 0;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-#feature4 .active .collapsible-header svg{
+#feature4 .active .collapsible-header svg.fa-angle-down{
   -webkit-transform: rotateX(180deg);
 	transform: rotateX(180deg);
 }
