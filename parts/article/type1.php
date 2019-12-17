@@ -51,7 +51,7 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
       </div>
       <!--タグ-->
       <div class="article_tag">
-        <?php the_tags('<ul class="tag_list"><li></li></ul>'); ?>
+        <?php the_tags('<span>Tag:</span>'); ?>
       </div>
       <!--シェア記事下-->
       <?php if($share=='value1'||$share=='value3'): ?>

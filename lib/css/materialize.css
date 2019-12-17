@@ -956,26 +956,26 @@ article{
   width: 100%;
 }
 
-article{
+.articleShow_wrap article{
   max-width: 960px;
   margin: 20px auto;
-  border-radius: 5px;
+  border-radius: 15px;
   background: white;
 }
 
-article.notFound{
+.articleShow_wrap article.notFound{
   margin-top: 0;
 }
 
-.article_container{
+.articleShow_wrap .article_container{
   padding-top: 20px;
 }
 
-.article_thumbnail{
+.articleShow_wrap .article_thumbnail{
   text-align: center;
 }
 
-.article_thumbnail img {
+.articleShow_wrap .article_thumbnail img {
   width: 100%;
   max-width: 900px;
   height: auto;
@@ -1017,7 +1017,13 @@ article h4{
 .article_date time::before {
   font-family: "Font Awesome 5 Solid";
   font-weight: bold;
-  margin-right: 5px;
+  display: none;
+}
+
+.article_tag span{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .article_content{
@@ -1254,19 +1260,23 @@ h4.search_result_ttl::before {
   position: relative;
 }
 
-.breadcrumb li:first-of-type a span::before{
-  font-family: "Font Awesome 5 Solid";
-  content: "\f3c5";
-  font-weight: bold;
+.breadcrumb li svg.fa-map-marker-alt{
   margin-right: 5px;
 }
 
 .breadcrumb li:not(:last-of-type)::after{
   font-family: "Font Awesome 5 Solid";
   content: "\f0da";
-  font-weight: bold;
+  display: none;
+}
+
+.breadcrumb li svg.fa-caret-right {
   position: absolute;
   right: .5em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   opacity: 0.25;
 }
 
@@ -1304,14 +1314,21 @@ h4.search_result_ttl::before {
   margin-top: .5em;
 }
 
+.article_content .toc_body>ul>li>ul>li{
+  margin-bottom: .5em;
+}
+
 .article_content .toc_body>ul>li>ul>li>a::before{
   content: "・";
 }
 
 /*タイプ1*/
 .tocType1 .collapsible{
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.15);
+  box-shadow: 0 2px 3px rgba(0,0,0,.15);
   border-radius: 3px;
 }
 
@@ -1758,6 +1775,7 @@ ul.related_posts li a{
 .relatedType1 .related_thumb img{
   width: 100px;
   height: 100px;
+  object-fit: cover;
 }
 
 .relatedType2 ul.related_posts{
@@ -2074,17 +2092,31 @@ h4.footer_w_title {
   line-height: 30px;
 }
 
-.widget_tag_cloud ul li a{
+.widget_tag_cloud li{
+  display: inline-block;
+}
+
+.widget_tag_cloud ul li a,
+.article_tag a{
   display: inline-block;
   position: relative;
   font-size: 10px;
   display: inline-block;
+  color: unset;
   padding: .5em 2em;
   margin: .5em 1em .5em 0;
   border-radius: 30px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+.widget_tag_cloud ul li a:hover,
+.article_tag a:hover{
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-box-shadow: 0 2px 7px rgba(0,0,0,.1);
+  box-shadow: 0 2px 7px rgba(0,0,0,.1);
 }
 
 .widget_tag_cloud ul li a .tag-link-count{
@@ -2431,6 +2463,9 @@ cursor: pointer;
 }
 
 @media(min-width:601px){
+  main#main{
+    min-width: 590px;
+  }
   .footer_sp_menu{
     display: none;
   }
@@ -2471,6 +2506,9 @@ cursor: pointer;
   }
   nav .sidenav-trigger{
     margin: 0 10px; /*記事リストとかと余白幅合わせる*/
+  }
+  .articleShow_wrap article{
+    border-radius: 0;
   }
   .article_container{
     padding-top: 10px;
