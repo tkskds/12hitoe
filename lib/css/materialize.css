@@ -200,11 +200,11 @@ strong{
 
 .fadeinimg{
   opacity: 0;
-  -webkit-transition: all .1s ease-in;
-  transition: all .1s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 }
 
-.fadeinimg.lazyloaded img.lazyloaded{
+img.fadeinimg.lazyloaded{
   opacity: 1;
 }
 
@@ -688,7 +688,7 @@ li.sidenav-ttl{
 }
 
 .news span{
-  color: white;
+  color: #fff;
   font-size: .85em;
 }
 
@@ -710,7 +710,7 @@ li.sidenav-ttl{
 .articleList_wrap article:not(.articleList3):not(.articleList6) .thumbnail,
 .articleList_wrap article:not(.articleList5):not(.articleList6) .content{
   position: relative;
-  background: white;
+  background: #fff;
 }
 
 .articleList_wrap article.articleList1 .thumbnail,
@@ -718,7 +718,7 @@ li.sidenav-ttl{
 .articleList_wrap article.articleList5 .thumbnail{
   height: 0;
   padding-bottom: 60%;
-  background-color: white;
+  background-color: #fff;
 }
 
 .articleList_wrap article:not(.articleList2):not(.articleList3) .thumbnail{
@@ -746,6 +746,7 @@ li.sidenav-ttl{
 
 /*タイプごとの異なるスタイル*/
 .articleList_wrap .articleList1{
+  background: #fff;
   border-radius: 4px;
   -webkit-box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
   box-shadow: 0 3px 4px 0 rgba(35,35,35,.1), 0 0 1px 0 rgba(10,31,68,.08);
@@ -769,7 +770,7 @@ li.sidenav-ttl{
   height: 50px;
   padding: 5px 0;
   border-radius: 100%;
-  color: white;
+  color: #fff;
   text-align: center;
   text-transform: uppercase;
 }
@@ -797,7 +798,7 @@ li.sidenav-ttl{
   bottom: 0;
   left: 0;
   padding: 0 17px;
-  color: white;
+  color: #fff;
 }
 
 .articleList_wrap .articleList1 .content{
@@ -812,7 +813,7 @@ li.sidenav-ttl{
   right: -10px;
   width: 70px;
   padding: 5px 0;
-  color: white;
+  color: #fff;
   text-align: center;
   border-left: 3px solid;
   border-bottom: 3px solid;
@@ -826,7 +827,7 @@ li.sidenav-ttl{
   left: 10px;
   padding: 0 17px;
   color: #545454;
-  background: white;
+  background: #fff;
   border: 1px solid #efefef;
   border-radius: 30px;
 }
@@ -845,7 +846,7 @@ li.sidenav-ttl{
   display: flex;
   padding: 10px;
   height: 90px;
-  background: white;
+  background: #fff;
 }
 
 .articleList_wrap .articleList3 .thumbnail img{
@@ -869,7 +870,7 @@ li.sidenav-ttl{
   font-size: .75em;
   top: -5px;
   left: -6px;
-  color: white;
+  color: #fff;
   display: inline-block;
   height: 25px;
   line-height: 25px;
@@ -959,7 +960,7 @@ article{
   max-width: 960px;
   margin: 20px auto;
   border-radius: 15px;
-  background: white;
+  background: #fff;
 }
 
 .articleShow_wrap article.notFound{
@@ -1038,7 +1039,7 @@ article h4{
 .article_content h2.h2type2,
 .article_content h3.h3type2{
   position: relative;
-  color: white;
+  color: #fff;
   padding: .5em;
 }
 
@@ -1058,7 +1059,7 @@ article h4{
 .article_content h3.h3type3{
   position: relative;
   display: block;
-  color: white;
+  color: #fff;
   text-align: center;
   margin-bottom: 60px;
 }
@@ -1085,7 +1086,7 @@ article h4{
 .article_content h2.h2type5,
 .article_content h3.h3type5{
   padding: .5em 10px;
-  color: white;
+  color: #fff;
 }
 
 .article_content h2.h2type6,
@@ -1373,7 +1374,7 @@ div:not(.tocType1) .toc_body{
   width: calc(100% + 4px); /*隙間生じるの防ぐため*/
   margin-left: -2px;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 .tocType3 .toc_ttl::before,
@@ -1395,12 +1396,12 @@ div:not(.tocType1) .toc_body{
 div.tocType4 .toc_ttl{
   padding-bottom: 0;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 .tocType4 .toc_body ul:first-child{
   padding: 10px 15px;
-  background: white;
+  background: #fff;
 }
 
 .tocType4 .toc_body>ul>li:not(:last-child){
@@ -1481,7 +1482,7 @@ div.tocType4 .toc_ttl{
   font-size: 1.25em;
   height: 50px;
   vertical-align: inherit;
-  color: white;
+  color: #fff;
 }
 
 .follow_button_tw{
@@ -1686,7 +1687,7 @@ li.share_hatena a{
 }
 
 .shareType5 li.share_button a{
-  color: white;
+  color: #fff;
 }
 
 .shareType5 li.share_button a:hover{
