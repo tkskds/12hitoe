@@ -69,7 +69,7 @@ function add_customizerCSS(){
     } elseif ($fontBody == 'value3') {
       $fontBody = "'M PLUS Rounded 1c', sans-serif";
     } else {
-      $fontBody = 'Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
+      $fontBody = 'メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
     }
 
   /*** サイトの文字サイズ ***/
