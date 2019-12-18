@@ -17,7 +17,7 @@
       <p>
         <?php the_author_meta('user_description'); ?>
       </p>
-      <?php get_template_part('parts/others/author') ?>
+      <?php get_template_part('parts/others/follow_button') ?>
     </div>
   </div>
 </div>

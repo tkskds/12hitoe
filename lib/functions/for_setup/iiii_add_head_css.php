@@ -180,7 +180,7 @@ nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titl
 /*ナビ*/
 nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
-.aside .widget{background:<?php echo $side_bk ?>;}
+.aside .widget,.profile_widget img{background:<?php echo $side_bk ?>;}
 footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
 a.tohomelink{color:<?php echo $foot_c ?>;}
 /****************************

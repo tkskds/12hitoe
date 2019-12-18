@@ -2219,7 +2219,8 @@ h4.footer_w_title {
 .profile_widget{
   position: relative;
   width: 100%;
-  min-height: 300px;
+  height: auto;
+  padding-bottom: 150px;
 }
 
 .profile_widget img{
@@ -2233,25 +2234,25 @@ h4.footer_w_title {
   margin:auto;
   border-radius:50%;
   box-shadow: 0 -2px 6px -3px rgba(0,0,0,0.1);
-  /* background:<?php echo $sidebar_bk ?>; */
 }
 
-.profile_name,.profile_text{
-  position:relative;
+.profile_info{
+  position: relative;
+  top: 130px;
   width: 100%;
   max-width: 300px;
   margin: auto;
 }
 
 .profile_name{
-  top:130px;
   text-align: center;
   font-size: 1.1em;
   font-weight: bold;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
 }
 
 .profile_text{
-  top: 150px;
 }
 
 /*ウィジェットのa色*/
