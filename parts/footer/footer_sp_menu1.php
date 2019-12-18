@@ -1,21 +1,21 @@
 <ul>
   <li>
-    <a href="#" data-target="mobile-sidenav" class="waves-effect sidenav-trigger">
+    <a href="#" data-target="mobile-sidenav" class="waves-effect sidenav-trigger" aria-label="ナビメニューボタン">
       <i class="fas fa-list-ul"></i>
     </a>
   </li>
   <li>
-    <a href="#modalSearch" class="waves-effect modal-trigger">
+    <a href="#modalSearch" class="waves-effect modal-trigger" aria-label="検索ボタン">
       <i class="fas fa-search"></i>
     </a>
   </li>
   <li>
-    <a href="#modalShare" class="waves-effect modal-trigger">
+    <a href="#modalShare" class="waves-effect modal-trigger" aria-label="シェアボタン">
       <i class="fas fa-share-alt"></i>
     </a>
   </li>
   <li>
-    <a href="#" class="waves-effect">
+    <a href="#" class="waves-effect" aria-label="トップへ戻るボタン">
       <i class="fas fa-angle-up"></i>
     </a>
   </li>

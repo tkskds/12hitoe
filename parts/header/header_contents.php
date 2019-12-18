@@ -33,7 +33,7 @@ if(is_home() || is_front_page()) {
       <?php if ($onlyLogo == false) { bloginfo('name'); } ?>
     </a>
     <?php echo $title_tag_end; ?>
-    <a href="#" data-target="mobile-sidenav" class="sidenav-trigger">
+    <a href="#" data-target="mobile-sidenav" class="sidenav-trigger" aria-label="ナビメニューボタン">
       <?php switch ($menuIcon) {
               case 'value1':
                 echo '<i class="fas fa-bars"></i>';
@@ -64,7 +64,7 @@ if(is_home() || is_front_page()) {
   <?php if($extend == true): ?>
     <div class="nav-content">
       <span><?php echo $extend_text ?></span>
-      <a class="btn-floating btn-large halfway-fab waves-effect" href="<?php echo $extend_uri ?>">
+      <a class="btn-floating btn-large halfway-fab waves-effect" href="<?php echo $extend_uri ?>" aria-label="拡張メニューリンク">
         <i class="fas fa-link"></i>
       </a>
     </div>

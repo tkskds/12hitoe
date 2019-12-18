@@ -1443,9 +1443,14 @@ div.tocType4 .toc_ttl{
   display: flex;
 }
 
+.author_thumb{
+  margin-top: -40px;
+}
+
 .author_thumb img{
   border-radius: 50%;
-  border: 1px solid;
+  padding: 5px;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.09);
 }
 
 .author_name{
@@ -1456,7 +1461,8 @@ div.tocType4 .toc_ttl{
 }
 
 .author_info{
-  padding-left: 20px;
+  padding-left: 25px;
+  flex-grow: 2;
 }
 
 .author_sns{
@@ -1771,6 +1777,11 @@ ul.related_posts li a{
 
 .relatedType1 .related_post_ttl{
   margin-left: 20px;
+  width: calc(100% - 100px);
+}
+
+.relatedType1 .related_thumb{
+  width: 100px;
 }
 
 .relatedType1 .related_thumb img{
@@ -2233,7 +2244,8 @@ h4.footer_w_title {
   right:0;
   margin:auto;
   border-radius:50%;
-  box-shadow: 0 -2px 6px -3px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 -2px 6px rgba(0,0,0,.05);
+  box-shadow: 0 -2px 6px rgba(0,0,0,.05);
 }
 
 .profile_info{
