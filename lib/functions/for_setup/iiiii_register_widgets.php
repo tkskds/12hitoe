@@ -124,32 +124,146 @@ function register_widgets(){
       ));
   	}
   	public function widget($args, $instance){
-  	$toc_ttl    = $instance['toc_ttl'] ? $instance['toc_ttl'] : 'CONTENT' ;
-    $tocOff     = get_option('site_article_toc');
-    $tocOnPage  = get_option('site_article_toc_page');
-    if ($tocOff == false && is_single() || $tocOnPage == true && is_page()){
-    		echo $args['before_widget'];
-    		echo '<h4 class="sidebar_title">'.$toc_ttl.'</h4><div class="widget_toc_body"></div>';
-        echo $args['after_widget'];
-      }
+    	$toc_ttl    = $instance['toc_ttl'] ? $instance['toc_ttl'] : 'CONTENT' ;
+      $tocOff     = get_option('site_article_toc');
+      $tocOnPage  = get_option('site_article_toc_page');
+      if ($tocOff == false && is_single() || $tocOnPage == true && is_page()){
+      		echo $args['before_widget'];
+      		echo '<h4 class="sidebar_title">'.$toc_ttl.'</h4><div class="widget_toc_body"></div>';
+          echo $args['after_widget'];
+        }
   	}
     public function form($instance){
       $toc_ttl  = $instance['toc_ttl'];
+      $toc_name = $this->get_field_name('toc_ttl');
       $toc_id   = $this->get_field_id('toc_ttl');
       ?>
       <p>
         <label for="<?php echo $toc_id; ?>">タイトル:</label>
-        <input class="widefat" id="<?php echo $toc_id; ?>" type="text" value="<?php echo esc_attr($toc_ttl); ?>">
+        <input class="widefat" id="<?php echo $toc_id; ?>" name="<?php echo $toc_name ?>" type="text" value="<?php echo esc_attr($toc_ttl); ?>">
       </p>
       <?php
     }
-    function update($new_instance, $old_instance) {
-      if(!filter_var($new_instance['toc_ttl'],FILTER_VALIDATE_EMAIL)){
-        return false;
-      }
-      return $new_instance;
-}
+    public function update($new_instance, $old_instance) {
+      $instance = array();
+      $instance['toc_ttl'] = (!empty($new_instance['toc_ttl'])) ? $new_instance['toc_ttl'] : '' ;
+      return $instance;
+    }
   }
+  /****************
+  プロフィールボックス
+  ****************/
+  class Prof_Widget extends WP_Widget {
+    function __construct(){
+      parent::__construct('prof_widget','プロフィール（サイドバー用）',array(
+        'description' => 'プロフィールボックスです。サイドバーに追加しましょう',
+      ));
+    }
+    public function widget($args, $instance){
+      $prof_name = $instance['prof_name'] ? $instance['prof_name'] : 'Name' ;
+      $prof_img  = $instance['prof_img']  ? $instance['prof_img']  : '';
+      $prof_text = $instance['prof_text'] ? $instance['prof_text'] : 'SAMPLE TEXT';
+      $prof_sns  = get_template_part('parts/others/follow_button');
+      echo $args['before_widget'];
+      echo '<div class="profile_widget"><img width="150" height="150" src="'.$prof_img.'" alt="'.$prof_name.'のプロフィール画像" class="lazyload fadeinimg">';
+      echo '<p class="profile_name">'.$prof_name.'</p>';
+      echo '<p class="profile_text">'.$prof_text.'</p>'.$prof_sns.'</div>';
+      echo $args['after_widget'];
+    }
+    public function form($instance) {
+      $prof_name = $instance['prof_name'];
+      $prof_img  = $instance['prof_img'];
+      $prof_text = $instance['prof_text'];
+      $name_name = $this->get_field_name('prof_name');
+      $img_name  = $this->get_field_name('prof_img');
+      $text_name = $this->get_field_name('prof_text');
+      $name_id   = $this->get_field_id('prof_name');
+      $img_id    = $this->get_field_id('prof_img');
+      $text_id   = $this->get_field_id('prof_text');
+      ?>
+      <p>
+        <label for="<?php echo $name_id; ?>">名前</label><br>
+        <input class="widefat" id="<?php echo $name_id ?>" name="<?php echo $name_name ?>" type="text" value="<?php echo esc_attr($prof_name); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $img_id; ?>">プロフィール画像</label><br>
+        <?php
+            $show_sml   = '';
+            $show_img = '';
+            if (empty($prof_img)){
+              $show_img = ' style="display: none;" ';
+            }else{
+              $show_sml   = ' style="display: none;" ';
+            }
+        ?>
+        <small class="fixed-image-text " <?php echo $show_sml; ?>>画像が未選択です</small>
+        <p><img class="fixed-image-view" src="<?php echo $prof_img; ?>" width="260" <?php echo $show_img; ?>></p>
+        <input class="fixed-image-url" id="<?php echo $img_id; ?>" name="<?php echo $img_name ?>" type="text" value="<?php echo $prof_img; ?>">
+        <button type="button" class="fixed-select-image">画像を選択</button>
+        <button type="button" class="fixed-delete-image" <?php echo $show_img; ?>>画像を削除</button>
+        <script>
+          jQuery(document).ready(function($) {
+            var frame;
+            const placeholder = jQuery('.fixed-image-text');
+            const imageUrl = jQuery('.fixed-image-url');
+            const imageView = jQuery('.fixed-image-view');
+            const deleteImage = jQuery('.fixed-delete-image');
+            jQuery('.fixed-select-image').on('click', function(e){
+              e.preventDefault();
+              if ( frame ) {
+                frame.open();
+                return;
+              }
+              frame = wp.media({
+                title: '画像を選択',
+                library: {
+                  type: 'image'
+                },
+                button: {
+                  text: '画像を追加する'
+                },
+                multiple: false
+              });
+              frame.on('select', function(){
+                var images = frame.state().get('selection');
+                images.each(function(file) {
+                  placeholder.css('display', 'none');
+                  imageUrl.val(file.toJSON().url);
+                  imageView.attr('src', file.toJSON().url).css('display', 'block');
+                  deleteImage.css('display', 'inline-block');
+                });
+                imageUrl.trigger('change');
+              });
+              frame.open();
+            });
+            jQuery('.fixed-delete-image').off().on('click', function(e){
+              e.preventDefault();
+              imageUrl.val('');
+              imageView.css('display', 'none');
+              deleteImage.css('display', 'none');
+              imageUrl.trigger('change');
+            });
+          });
+        </script>
+      </p>
+      <p>
+        <label for="<?php echo $text_id; ?>">プロフィール文</label><br>
+        <textarea class="widefat" id="<?php echo $text_id; ?>" name="<?php echo $text_name ?>" value="<?php echo esc_attr($prof_text); ?>"><?php echo $prof_text; ?></textarea>
+      </p>
+
+      <?php
+        }
+    function update($new_instance, $old_instance){
+      $instance = array();
+      $instance['prof_name'] = !empty($new_instance['prof_name']) ? $new_instance['prof_name'] : '';
+      $instance['prof_img']  = !empty($new_instance['prof_img'])  ? $new_instance['prof_img']  : '';
+      $instance['prof_text'] = !empty($new_instance['prof_text']) ? $new_instance['prof_text'] : '';
+      return $instance;
+    }
+  }
+
   register_widget('TOC_Widget');
+  register_widget('Prof_Widget');
+
 
 } //END register_widgets()

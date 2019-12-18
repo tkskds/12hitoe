@@ -31,7 +31,7 @@ html{
 }
 
 body{
-  font-family:Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
+  font-family:メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
   color:#333;
   -webkit-animation: fadeIn 500ms ease-in;
   animation: fadeIn 500ms ease-in;
@@ -273,7 +273,6 @@ nav ul li.active{
   font-weight: 600;
 }
 
-
 .sidenav li{
   display: block;
 }
@@ -286,6 +285,7 @@ nav ul li.active{
 .sidenav h3.sidenav_ttl,
 .sidenav h4.sidenav_widget_title{
   font-size: 1.25em;
+  font-weight: bold;
   margin: 0;
   padding: .5em 0;
   text-align: center;
@@ -761,6 +761,11 @@ li.sidenav-ttl{
   box-shadow: 0 2px 2px rgba(45,45,45,.05), 0 4px 4px rgba(49,49,49,.05), 0 8px 8px rgba(42,42,42,.05), 0 16px 16px rgba(32,32,32,.05), 0 32px 32px rgba(49,49,49,.05), 0 64px 64px rgba(35,35,35,.05);
 }
 
+.articleList_wrap .articleList1 .thumbnail{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
 .articleList_wrap .articleList1 .thumbnail time{
   position: absolute;
   font-size: 10px;
@@ -983,6 +988,7 @@ article{
 
 article h1{
   font-size: 1.5em;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -1245,6 +1251,7 @@ h4.search_result_ttl::before {
   height: 25px;
   color: unset;
   font-size: .9em;
+  font-weight: bold;
   padding: 0 60px;
 }
 
@@ -2048,6 +2055,7 @@ a.tohomelink svg{
 h4.sidebar_title,
 h4.footer_w_title {
   font-size: 1.1em;
+  font-weight: bold;
   margin: 0;
   padding: 20px 20px 15px 20px;
 }
@@ -2137,10 +2145,13 @@ h4.footer_w_title {
 }
 
 .widget_categories form::before{
-  position: absolute;
   font-family: "Font Awesome 5 Solid";
   content: "\f0d7";
-  font-weight: bold;
+  display: none;
+}
+
+.widget_categories form svg{
+  position: absolute;
   font-size: 15px;
   height: 15px;
   right: 15px;
@@ -2196,6 +2207,51 @@ h4.footer_w_title {
 
 .widget_calendar table{
   width: calc(100% - 40px);
+}
+
+/*独自ウィジェット*/
+
+.widget_prof_widget{
+  overflow: visible;
+  margin-top: 50px;
+}
+
+.profile_widget{
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+.profile_widget img{
+  position:absolute;
+  width:150px;
+  height: 150px;
+  padding:8px;
+  top:-30px;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius:50%;
+  box-shadow: 0 -2px 6px -3px rgba(0,0,0,0.1);
+  /* background:<?php echo $sidebar_bk ?>; */
+}
+
+.profile_name,.profile_text{
+  position:relative;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
+.profile_name{
+  top:130px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.profile_text{
+  top: 150px;
 }
 
 /*ウィジェットのa色*/
