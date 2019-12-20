@@ -47,6 +47,21 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet" media="all">
 <?php endif; ?>
 
+<?php if (is_home()){
+        $canonical_url = get_bloginfo('url')."/";
+      } elseif (is_category()){
+        $canonical_url = get_category_link(get_query_var('cat'));
+      } elseif (is_page()||is_single()){
+        $canonical_url = get_permalink();
+      }
+      if ($paged >= 2 || $page >= 2){
+        $canonical_url = $canonical_url.'page/'.max( $paged, $page ).'/';
+      }
+?>
+<?php if(!(is_404())):?>
+    <link rel="canonical" href="<?php echo $canonical_url; ?>" />
+<?php endif;?>
+
 <?php //jQueryを使用しない ?>
 <?php $jQueryON = get_option('site_head_jquery') ? get_option('site_head_jquery') : false ?>
 <?php if ($jQueryON == true) : ?>
@@ -54,6 +69,6 @@
 <?php endif; ?>
 
 <?php //ファビコンなど ?>
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
+<link rel="icon" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
+<link rel="icon" type="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
