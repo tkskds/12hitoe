@@ -721,7 +721,7 @@ li.sidenav-ttl{
   background-color: #fff;
 }
 
-.articleList_wrap article:not(.articleList2):not(.articleList3) .thumbnail{
+.articleList_wrap article:not(.articleList3) .thumbnail{
   overflow: hidden;
 }
 
@@ -811,17 +811,18 @@ li.sidenav-ttl{
   border-bottom-right-radius: 4px;
 }
 
+.articleList_wrap .articleList2{
+  background:#fff;
+}
+
 .articleList_wrap .articleList2 .thumbnail time {
   position: absolute;
-  font-size: 10px;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 10px;
   width: 70px;
   padding: 5px 0;
   color: #fff;
   text-align: center;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
 }
 
 .articleList_wrap .articleList2 .thumbnail .category {

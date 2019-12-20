@@ -1203,6 +1203,7 @@ function org_customizer($wp_customize){
             'description'       => 'チェックを入れると、5-2で設定した項目を記事内の見出しにのみ適用します',
             'type'              => 'checkbox',
             'sanitize_callback' => 'sanitize_checkbox',
+            'section'           => 'site_font',
           ));
 
           $wp_customize->add_setting('site_font_title_size', array(
