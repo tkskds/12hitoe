@@ -768,14 +768,14 @@ li.sidenav-ttl{
 
 .articleList_wrap .articleList1 .thumbnail time{
   position: absolute;
-  font-size: 10px;
+  font-size: 12px;
   top: 15px;
   right: 15px;
   width: 50px;
   height: 50px;
   padding: 5px 0;
+  border: 2px solid;
   border-radius: 100%;
-  color: #fff;
   text-align: center;
   text-transform: uppercase;
 }
@@ -1034,7 +1034,7 @@ article h4{
 }
 
 .article_tag span{
-  font-size: 20px;
+  font-size: 1.4em;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -1046,24 +1046,27 @@ article h4{
 .article_content h2,
 .article_content h3,
 .article_content h4{
-  margin: 1em 0 2em 0;  
+  margin: 1em 0 2em 0;
 }
 
 .article_content h2.h2type1,
-.article_content h3.h3type1{
+.article_content h3.h3type1,
+.article_content h4.h4type1{
   padding: .25em .5em;
   border-left: solid 5px;
 }
 
 .article_content h2.h2type2,
-.article_content h3.h3type2{
+.article_content h3.h3type2,
+.article_content h4.h4type2{
   position: relative;
   color: #fff;
   padding: .5em;
 }
 
 .article_content h2.h2type2::after,
-.article_content h3.h3type2::after{
+.article_content h3.h3type2::after,
+.article_content h4.h4type2::after{
   position: absolute;
   content: '';
   top: 100%;
@@ -1075,16 +1078,17 @@ article h4{
 }
 
 .article_content h2.h2type3,
-.article_content h3.h3type3{
+.article_content h3.h3type3,
+.article_content h4.h4type3{
   position: relative;
   display: block;
-  color: #fff;
   text-align: center;
   margin-bottom: 60px;
 }
 
 .article_content h2.h2type3::before,
-.article_content h3.h3type3::before{
+.article_content h3.h3type3::before,
+.article_content h4.h4type3::before{
   content: '';
   position: absolute;
   bottom: -15px;
@@ -1098,24 +1102,28 @@ article h4{
 }
 
 .article_content h2.h2type4:first-letter,
-.article_content h3.h3type4:first-letter{
+.article_content h3.h3type4:first-letter,
+.article_content h4.h4type4:first-letter{
   font-size: 2em;
 }
 
 .article_content h2.h2type5,
-.article_content h3.h3type5{
+.article_content h3.h3type5,
+.article_content h4.h4type5{
   padding: .5em 10px;
   color: #fff;
 }
 
 .article_content h2.h2type6,
-.article_content h3.h3type6{
+.article_content h3.h3type6,
+.article_content h4.h4type6{
   position: relative;
   padding: .25em 0;
 }
 
 .article_content h2.h2type6::after,
-.article_content h3.h3type6::after{
+.article_content h3.h3type6::after,
+.article_content h4.h4type6::after{
   content: "";
   display: block;
   height: 4px;
@@ -2135,7 +2143,7 @@ h4.footer_w_title {
 .article_tag a{
   display: inline-block;
   position: relative;
-  font-size: 10px;
+  font-size: 12px;
   display: inline-block;
   color: unset;
   padding: .5em 2em;

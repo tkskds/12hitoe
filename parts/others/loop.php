@@ -31,7 +31,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
 
           <?php // time ?>
           <?php if ($articleList == 'value1' || $articleList == 'value2' ) : ?>
-            <time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="acc__color">
+            <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
               <span class="day"><?php echo get_the_date('d'); ?></span>
               <span class="month"><?php echo get_post_time('M'); ?></span>
             </time>
@@ -54,7 +54,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
           <?php // .category ?>
           <?php if (!is_category() && has_category()): ?>
             <?php if($articleList == 'value1' || $articleList == 'value2' || $articleList == 'value3') : //デザイン1~3でのみカテゴリ表示 ?>
-              <div class="category acc__color">
+              <div class="category">
                 <?php
                   $post_cat = get_the_category();
                   echo $post_cat[0]->name;

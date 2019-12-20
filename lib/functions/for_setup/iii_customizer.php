@@ -1286,7 +1286,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_acc', array(
             'type'              => 'option',
-            'default'           => '#ff5757',
+            'default'           => '#ff3f3f',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(

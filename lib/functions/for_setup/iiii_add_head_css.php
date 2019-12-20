@@ -37,7 +37,7 @@ function add_customizerCSS(){
 
 // ニュース欄
   $newsBk1              = get_option('site_carousel_news_bk')       ? get_option('site_carousel_news_bk')  : '#3bb3fa' ;
-  $newsBk2              = get_option('site_carousel_news_bk2')      ? get_option('site_carousel_news_bk2') : '#ff5757' ;
+  $newsBk2              = get_option('site_carousel_news_bk2')      ? get_option('site_carousel_news_bk2') : '#ff3f3f' ;
 
 //フォントの設定
   $fontDefault          = "'メイリオ','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
@@ -91,7 +91,7 @@ function add_customizerCSS(){
   /*** 色の設定 ***/
   $main_c     = get_option('site_color_main')             ? get_option('site_color_main')             : '#1a2760';
   $sub_c      = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
-  $acc_c      = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff5757';
+  $acc_c      = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff3f3f';
   $nav_bk     = get_option('site_color_nav_bk')           ? get_option('site_color_nav_bk')           : '#1a2760';
   $nav_c      = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
   $body_bk    = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
