@@ -44,7 +44,7 @@ if( is_single() && !is_home() || is_page() && !is_front_page()) {
     $ogp_img_data = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
     $ogp_img = $ogp_img_data[0];
   }
-} else { //ループのページ(home・カテゴリー・タグなど)
+} else { //投稿ページ以外
   //先に投稿・固定ページ以外の詳細な条件分岐
   if(is_category()) {
     $title = single_cat_title("", false).'の記事一覧';
@@ -74,9 +74,12 @@ if( is_single() && !is_home() || is_page() && !is_front_page()) {
     $author_name = get_the_author_meta( 'display_name', $author_id );
     $title = $author_name.'が投稿した記事一覧';
     $description = '『'.$author_name.'』が書いた記事の一覧ページです。';
-  } else {
+  } else { //home||frontpage
     $title = '';
     $description = get_option( 'meta_description' );
+    if (empty($description)){
+      $description = get_bloginfo('name').'('.home_url().')'.'は見やすく美しいサイトです。©'.date('Y').' '.get_bloginfo('name');
+    }
   }
 
   //キーワード
