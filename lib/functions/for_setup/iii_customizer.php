@@ -1899,6 +1899,26 @@ function org_customizer($wp_customize){
             'section'           => 'site_decoration',
           ));
 
+          $wp_customize->add_setting('site_decoration_h4_type', array(
+            'default'           => 'type1',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_decoration_h4_type', array(
+            'label'             => '記事内の見出し（h4）デザイン',
+            'description'       => '記事内の見出しを一括で変更できます',
+            'type'              => 'radio',
+            'choices'           => array(
+              'type1'           => 'デザイン1',
+              'type2'           => 'デザイン2',
+              'type3'           => 'デザイン3',
+              'type4'           => 'デザイン4',
+              'type5'           => 'デザイン5',
+              'type6'           => 'デザイン6',
+            ),
+            'section'           => 'site_decoration',
+          ));
+
           $wp_customize->add_setting('site_decoration_image_box', array(
             'default'           => false,
             'type'              => 'option',

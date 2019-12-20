@@ -424,9 +424,11 @@ function convert_box($content){
 function add_heading_class($content){
   $h2class   = get_option('site_decoration_h2_type') ? get_option('site_decoration_h2_type') : 'type1';
   $h3class   = get_option('site_decoration_h3_type') ? get_option('site_decoration_h3_type') : 'type1';
+  $h3class   = get_option('site_decoration_h4_type') ? get_option('site_decoration_h4_type') : 'type1';
   $h2replace = '<h2 class="h2'.$h2class.'"';
   $h3replace = '<h3 class="h3'.$h3class.'"';
-  $content   = str_replace(array('<h2','<h3'),array($h2replace,$h3replace),$content);
+  $h4replace = '<h4 class="h4'.$h4class.'"';
+  $content   = str_replace(array('<h2','<h3','<h4'),array($h2replace,$h3replace,$h4replace),$content);
   return $content;
 }
 

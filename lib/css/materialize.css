@@ -1043,6 +1043,12 @@ article h4{
   word-break: break-all;
 }
 
+.article_content h2,
+.article_content h3,
+.article_content h4{
+  margin: 1em 0 2em 0;  
+}
+
 .article_content h2.h2type1,
 .article_content h3.h3type1{
   padding: .25em .5em;
