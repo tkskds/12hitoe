@@ -31,7 +31,7 @@ html{
 }
 
 body{
-  font-family:メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;
+  font-family: 'メイリオ','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
   color:#333;
   -webkit-animation: fadeIn 500ms ease-in;
   animation: fadeIn 500ms ease-in;

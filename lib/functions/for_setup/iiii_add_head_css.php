@@ -36,60 +36,38 @@ function add_customizerCSS(){
   $featureSec3BkColor   = get_option('site_feature_section3_bk_color')        ? get_option('site_feature_section3_bk_color')        : '#212121';
 
 // ニュース欄
-  $newsBk1  = get_option('site_carousel_news_bk')  ? get_option('site_carousel_news_bk')  : '#3bb3fa' ;
-  $newsBk2  = get_option('site_carousel_news_bk2') ? get_option('site_carousel_news_bk2') : '#ff5757' ;
+  $newsBk1              = get_option('site_carousel_news_bk')       ? get_option('site_carousel_news_bk')  : '#3bb3fa' ;
+  $newsBk2              = get_option('site_carousel_news_bk2')      ? get_option('site_carousel_news_bk2') : '#ff5757' ;
 
 //フォントの設定
+  $fontDefault          = "'メイリオ','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
+
   /*** タイトルフォントの設定 ***/
-  $fontTitle = get_option('site_font_title');
-    if ($fontTitle == 'value2') {
-      $fontTitle = "'Luckiest Guy'";
-    } elseif ($fontTitle == 'value3') {
-      $fontTitle = "'Megrim'";
-    } elseif ($fontTitle == 'value4') {
-      $fontTitle = "'Faster One'";
-    } elseif ($fontTitle == 'value5') {
-      $fontTitle = "'Iceland'";
-    } elseif ($fontTitle == 'value6') {
-      $fontTitle = "'Londrina Outline'";
-    } elseif ($fontTitle == 'value7') {
-      $fontTitle = "'Caveat'";
-    } elseif ($fontTitle == 'value8') {
-      $fontTitle = '"Nico Moji"';
-    } elseif ($fontTitle == 'value9') {
-      $fontTitle = '"Hannari"';
-    } elseif ($fontTitle == 'value10') {
-      $fontTitle = '"Nikukyu"';
-    }
+  $titleFont            = get_option('site_font_title');
+  switch ($titleFont) {
+    case 'value1' : $TF = $fontDefault         ; break;
+    case 'value2' : $TF = "'Luckiest Guy'"     ; break;
+    case 'value3' : $TF = "'Megrim'"           ; break;
+    case 'value4' : $TF = "'Faster One'"       ; break;
+    case 'value5' : $TF = "'Iceland'"          ; break;
+    case 'value6' : $TF = "'Londrina Outline'" ; break;
+    case 'value7' : $TF = "'Caveat'"           ; break;
+    case 'value8' : $TF = "'Nico Moji'"        ; break;
+    case 'value9' : $TF = "'Hannari'"          ; break;
+    case 'value10': $TF = "'Nikukyu'"          ; break;
+  }
 
   /*** 本文フォントの設定 ****/
-  $default =
-  $fontBody =  get_option('site_font_body');
+  $fontBody             = get_option('site_font_body');
   switch ($fontBody) {
-    case 'value1': $FF = 'メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif'; break;
-    case 'value2': $FF = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif"; break;
-    case 'value3': $FF = "'M PLUS Rounded 1c', sans-serif"; break;
-    case 'value4': $FF = '"NotoSansCJK",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif'; break;
-    case 'value5': $FF = '"timemachine",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif'; break;
-    case 'value6': $FF = '"Senobi",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif'; break;
-    case 'value7': $FF = '"komorebi",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif'; break;
+    case 'value1' : $FB = $fontDefault; break;
+    case 'value2' : $FB = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif"; break;
+    case 'value3' : $FB = "'M PLUS Rounded 1c', sans-serif"; break;
+    case 'value4' : $FB = "'NotoSansCJK',".$fontDefault; break;
+    case 'value5' : $FB = "'timemachine',".$fontDefault; break;
+    case 'value6' : $FB = "'Senobi',".$fontDefault; break;
+    case 'value7' : $FB = "'komorebi',".$fontDefault; break;
   }
-    // if ($fontBody == 'value1') {
-    //   $FF = 'メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
-    // } elseif ($fontBody == 'value2') {
-    //   $FF = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif";
-    // } elseif ($fontBody == 'value3') {
-    //   $FF = "'M PLUS Rounded 1c', sans-serif";
-    // } elseif ($fontBody == 'value4') {
-    //   $FF = '"NotoSansCJK",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
-    // } elseif ($fontBody == 'value5') {
-    //   $FF = '"time-machine",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
-    // } elseif ($fontBody == 'value6') {
-    //   $FF = '"senobi",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
-    // } elseif ($fontBody == 'value7') {
-    //   $FF = '"time-machine",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
-    // }
-
 
   /*** サイトの文字サイズ ***/
   $titleSize  = get_option('site_font_title_size')        ? get_option('site_font_title_size')        : '200';
@@ -132,27 +110,27 @@ function add_customizerCSS(){
 <style>
 <?php if ($fontBody == 'value4'): ?>
 @font-face{
-font-family: "NotoSansCJK";
-src: url("<?php echo get_template_directory_uri() ?>/lib/fonts/NotoSansCJKjp-Regular.woff") format("woff");
+font-family: 'NotoSansCJK';
+src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/NotoSansCJKjp-Regular.woff") format("woff");
 }
 <?php elseif($fontBody == 'value5'): ?>
 @font-face{
-font-family: "timemachine";
-src: url("<?php echo get_template_directory_uri() ?>/lib/fonts/timemachine-wa.woff") format("woff");
+font-family: 'timemachine';
+src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/timemachine-wa.woff") format("woff");
 }
 <?php elseif($fontBody == 'value6'): ?>
 @font-face{
-font-family: "Senobi";
-src: url("<?php echo get_template_directory_uri() ?>/lib/fonts/Senobi-Gothic-Regular.woff") format("woff");
+font-family: 'Senobi';
+src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/Senobi-Gothic-Regular.woff") format("woff");
 }
 <?php elseif($fontBody == 'value7'): ?>
 @font-face{
-font-family: "komorebi";
-src: url("<?php echo get_template_directory_uri() ?>/lib/fonts/komorebi-gothic.woff") format("woff");
+font-family: 'komorebi';
+src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/komorebi-gothic.woff") format("woff");
 }
 <?php endif; ?>
-body{font-family:<?php echo $FF ?>;color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
-nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
+body{font-family:<?php echo $FB ?>;color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
+nav a.siteTitle{font-family:<?php echo $TF ?>;font-size: <?php echo $titleSize ?>%;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
 @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
 @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
