@@ -844,8 +844,14 @@ li.sidenav-ttl{
   padding: 1em 17px;
 }
 
-.articleList2{
+.articleList_wrap .articleList2{
   border-bottom: 3px solid #ececec;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.articleList_wrap .articleList2:hover{
+  opacity: .95;
 }
 
 .articleList_wrap .articleList3 a{
