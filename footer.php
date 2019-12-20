@@ -53,7 +53,7 @@
               <?php endif; ?>
             </div>
           <?php endif; //END フッターウィジェット ?>
-          <a href="<?php echo home_url(); ?>" class="tohomelink">
+          <a href="<?php echo home_url(); ?>" class="tohomelink" aria-label="サイト名">
             <?php if(has_custom_logo()): ?>
               <img src="<?php echo $logoUrl ?>" alt="ロゴ" class="custom-logo fadeinimg lazyload" />
             <?php endif; ?>
@@ -82,21 +82,21 @@
       </footer>
       <?php // TOPへ戻るボタン ?>
       <?php if ($goToTop == true) : ?>
-        <a href="#" class="btn-floating btn-large waves-effect gototop acc__color">
+        <a href="#" class="btn-floating btn-large waves-effect gototop acc__color" aria-label="トップへ戻るボタン">
           <i class="fas fa-angle-up"></i>
         </a>
       <?php endif; //END TOPへ戻るボタン ?>
       <?php // SHAREボタン ?>
       <?php if ($shareBtn == true) : ?>
         <div class="fixed-action-btn">
-        <a class="btn-floating btn-large sub__color">
+        <a class="btn-floating btn-large sub__color" aria-label="シェアボタン">
           <i class="fas fa-share-alt"></i>
         </a>
         <ul>
-          <li><a class="btn-floating red"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="fab fa-line"></i></a></li>
-          <li><a class="btn-floating green"><i class="fab fa-line"></i></a></li>
-          <li><a class="btn-floating blue"><i class="fab fa-line"></i></a></li>
+          <li><a class="btn-floating footer_share_tw" aria-label="Twitterでシェア"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="btn-floating footer_share_fb" aria-label="Facebookでシェア"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="btn-floating footer_share_hb" aria-label="はてブでシェア">B!</a></li>
+          <li><a class="btn-floating footer_share_ln" aria-label="LINEでシェア"><i class="fab fa-line"></i></a></li>
         </ul>
       </div>
     <?php endif; //END SHAREボタン ?>

@@ -1605,17 +1605,17 @@ li.share_hatena a{
   opacity: .9;
 }
 
-.shareType1 li.share_twitter{
+.shareType1 li.share_twitter,.footer_share_tw{
   background: -webkit-linear-gradient(45deg, #1da1f2, #0e71c8);
   background: linear-gradient(45deg, #1da1f2, #0e71c8);
 }
 
-.shareType1 li.share_facebook{
+.shareType1 li.share_facebook,.footer_share_fb{
   background: -webkit-linear-gradient(45deg, #3b5998, #0078d7);
   background: linear-gradient(45deg, #3b5998, #0078d7);
 }
 
-.shareType1 li.share_hatena{
+.shareType1 li.share_hatena,.footer_share_hb{
   background: -webkit-linear-gradient(45deg, #01a4de, #537be6);
   background: linear-gradient(45deg, #01a4de, #537be6);
 }
@@ -1625,7 +1625,7 @@ li.share_hatena a{
   background: linear-gradient(45deg, #d3505a, #f05924);
 }
 
-.shareType1 li.share_line{
+.shareType1 li.share_line,.footer_share_ln{
   background: -webkit-linear-gradient(45deg, #2CB24C, #009933);
   background: linear-gradient(45deg, #2CB24C, #009933);
 }
