@@ -1179,14 +1179,16 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_font_body', array(
             'label'             => '5-2.全体（記事本文）のフォント',
-            'description'       => '現在3種類からお選びいただけます。日英対応しています。',
+            'description'       => '現在7種類からお選びいただけます。日英対応しています。こちらからフォント製作者へのサンクスページへ飛べます。フォントの変更をする場合はぜひ覗いてみてください。',
             'type'              => 'radio',
             'choices'           => array(
                 'value1'        => 'デフォルト',
                 'value2'        => 'きっちり',
                 'value3'        => '柔らかい',
                 'value4'        => 'ゴシック',
-                'value5'        => 'ユニーク',
+                'value5'        => 'タイムマシーン',
+                'value6'        => 'せのび',
+                'value7'        => '木漏れ日',
             ),
             'section'           => 'site_font',
           ));
