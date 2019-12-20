@@ -69,6 +69,9 @@ function add_customizerCSS(){
     case 'value7' : $FB = "'komorebi',".$fontDefault; break;
   }
 
+  /*** 上のフォントを見出しにのみ適用 ***/
+  $fontOnlyHeading = get_option('site_font_body_only_heading') ? get_option('site_font_body_only_heading') : false ;
+
   /*** サイトの文字サイズ ***/
   $titleSize  = get_option('site_font_title_size')        ? get_option('site_font_title_size')        : '200';
   $pcSize     = get_option('site_font_pc_size')           ? get_option('site_font_pc_size')           : '100';
@@ -106,7 +109,15 @@ function add_customizerCSS(){
   $footTop    = get_option('site_footer_gototop')         ? get_option('site_footer_gototop')         : false;
 
   ?>
-<?php // カスタマイザーの値を<head>に出力 ?>
+
+
+<?php
+
+ //////////////////////////////////////
+ // ここからカスタマイザーの値を<head>に出力
+ //////////////////////////////////////
+
+ ?>
 <style>
 <?php if ($fontBody == 'value4'): ?>
 @font-face{
@@ -129,14 +140,12 @@ font-family: 'komorebi';
 src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/komorebi-gothic.woff") format("woff");
 }
 <?php endif; ?>
-body{font-family:<?php echo $FB ?>;color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
+body{<?php if($fontOnlyHeading == false): ?>font-family:<?php echo $FB ?>;<?php endif; ?>color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
 nav a.siteTitle{font-family:<?php echo $TF ?>;font-size: <?php echo $titleSize ?>%;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
 @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
 @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}
-/*****************************
-ダイナミックヘッダーとフューチャー
-*****************************/
+/*** ダイナミックヘッダーとフューチャー ***/
 <?php if ($siteType == 'value3' || $siteType == 'value4' ) : ?>
 .dyheader{background-color:<?php echo $dyheaderBkColor ?>;
   <?php if ($dyheaderBkImg != null) : ?>background:url("<?php echo $dyheaderBkImg ?>") no-repeat center/cover;<?php endif; ?>
@@ -175,14 +184,12 @@ nav a.siteTitle{font-family:<?php echo $TF ?>;font-size: <?php echo $titleSize ?
 #topnav li:nth-of-type(4) a::after{content:"<?php echo $navEn4 ?>";}
 #topnav li:nth-of-type(5) a::after{content:"<?php echo $navEn5 ?>";}
 .news{background: linear-gradient(45deg, <?php echo $newsBk1 ?>, <?php echo $newsBk2 ?>);}
-/*****************************
-色
-*****************************/
+/*** 色 ***/
 .main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within,.pagination li span,.tocType3 .toc_ttl, .tocType4{background:<?php echo $main_c ?>;}
 .sub__color,.sub_color:active,.sub_color:focus,.sub_color:hover,.sub_color:visited,.sub_color:focus-within{background:<?php echo $sub_c ?>;}
 .acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 .main_c,.pagination li a,.articleList_wrap .articleList5 .content .title:hover,div.related_ttl:hover,.tocType4 .toc_body>ul>li>a::before,.started .navbar-fixed.main_c nav a{color:<?php echo $main_c ?>;}
-/*その他個別に設定すべきメイン.サブ.アクセントカラー*/
+/*** その他個別に設定すべきメイン.サブ.アクセントカラー ***/
 .article_content h2.h2type1,.article_content h3.h3type1{border-color:<?php echo $main_c ?>;}
 .article_content h2.h2type2,.article_content h3.h3type2{background:<?php echo $main_c ?>;}
 .article_content h2.h2type2::after,.article_content h3.h3type2::after{border-top-color:<?php echo $main_c ?>;}
@@ -201,13 +208,12 @@ nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
 .aside .widget,.profile_widget img,.author_thumb img{background:<?php echo $side_bk ?>;}
 footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
 a.tohomelink{color:<?php echo $foot_c ?>;}
-/****************************
-記事
-****************************/
+/*** 記事 ***/
+<?php if ($fontOnlyHeading == true): ?>
+.article_content h2,.article_content h3, .article_content h4{font-family:<?php echo $FB ?>;}
+<?php endif; ?>
 .article_content p{margin-bottom:<?php echo $p_margin ?>em;}
-/*****************************
-フッター
-*****************************/
+/*** フッター ***/
 <?php if($spOrgNav == true) : ?>
 .gototop,.fixed-action-btn{bottom: 60px;}
 <?php endif; ?>

@@ -1178,7 +1178,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_font_body', array(
-            'label'             => '5-2.全体（記事本文）のフォント',
+            'label'             => '5-2.サイト全体のフォント',
             'description'       => '現在7種類からお選びいただけます。日英対応しています。こちらからフォント製作者へのサンクスページへ飛べます。フォントの変更をする場合はぜひ覗いてみてください。',
             'type'              => 'radio',
             'choices'           => array(
@@ -1191,6 +1191,18 @@ function org_customizer($wp_customize){
                 'value7'        => '木漏れ日',
             ),
             'section'           => 'site_font',
+          ));
+
+          $wp_customize->add_setting('site_font_body_only_heading', array(
+            'default'           => false,
+            'type'              => option,
+          ));
+
+          $wp_customize->add_control('site_font_body_only_heading', array(
+            'label'             => '5-3.前項を記事見出しにのみ適用',
+            'description'       => 'チェックを入れると、5-2で設定した項目を記事内の見出しにのみ適用します',
+            'type'              => 'checkbox',
+            'sanitize_callback' => 'sanitize_checkbox',
           ));
 
           $wp_customize->add_setting('site_font_title_size', array(
