@@ -54,7 +54,7 @@ $articleList = get_option('site_article_list_type') ? get_option('site_article_l
           <?php // .category ?>
           <?php if (!is_category() && has_category()): ?>
             <?php if($articleList == 'value1' || $articleList == 'value2' || $articleList == 'value3') : //デザイン1~3でのみカテゴリ表示 ?>
-              <div class="category">
+              <div class="category<?php if($articleList == 'value3'){echo ' acc__color';} ?>">
                 <?php
                   $post_cat = get_the_category();
                   echo $post_cat[0]->name;

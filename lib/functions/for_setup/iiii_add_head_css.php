@@ -99,6 +99,7 @@ function add_customizerCSS(){
   $side_bk    = get_option('site_color_widget_bk')        ? get_option('site_color_widget_bk')        : '#ffffff';
   $foot_bk    = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
   $foot_c     = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
+  $link_c     = get_option('site_color_a_tag_color')      ? get_option('site_color_a_tag_color')      : '#039be5';
 
   /*** 記事に関する設定 ***/
   $p_margin   = get_option('site_article_p_margin')       ? get_option('site_article_p_margin')       : '0.5';
@@ -142,6 +143,7 @@ src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/komorebi-gothic.
 <?php endif; ?>
 body{<?php if($fontOnlyHeading == false): ?>font-family:<?php echo $FB ?>;<?php endif; ?>color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
 nav a.siteTitle{font-family:<?php echo $TF ?>;font-size: <?php echo $titleSize ?>%;}
+a{color:<?php echo $link_c ?>;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
 @media (max-width:960px){body{font-size:<?php echo $tabSize ?>%;}}
 @media (max-width:560px){body{font-size:<?php echo $spSize ?>%;}}

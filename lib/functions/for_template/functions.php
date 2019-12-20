@@ -31,14 +31,15 @@ function m_pagination() {
   if ( $wp_query->max_num_pages <= 1 ) return;
   $big   = 999999999;
   $pages = paginate_links(array(
-    'base'        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'base'        => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
     'format'      => '?paged=%#%',
-    'current'     => max( 1, get_query_var('paged') ),
+    'current'     => max(1, get_query_var('paged')),
     'total'       => $wp_query->max_num_pages,
     'type'        => 'array',
     'prev_text'   => '<i class="fas fa-angle-left"></i>',
-     'next_text'  => '<i class="fas fa-angle-right"></i>',
+    'next_text'   => '<i class="fas fa-angle-right"></i>',
   ));
+  $pages = str_replace('<a', '<a aria-label="戻る/進むボタン"', $pages);
 
   if(is_array($pages)){
     $paged = (get_query_var('paged') == 0) ? 1 : get_query_var('paged');

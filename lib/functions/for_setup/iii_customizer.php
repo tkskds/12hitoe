@@ -1365,6 +1365,16 @@ function org_customizer($wp_customize){
             'section'           => 'site_color',
           )));
 
+          $wp_customize->add_setting('site_color_a_tag_color', array(
+            'type'              => 'option',
+            'default'           => '#039be5;',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_a_tag_color', array(
+            'label'             => 'リンクの文字色',
+            'section'           => 'site_color',
+          )));
+
       $wp_customize->add_section('site_nav',array(
         'priority'              => 7,
         'title'                 => '7.ナビメニューの設定',
