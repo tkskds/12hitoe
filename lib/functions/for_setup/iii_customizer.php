@@ -1179,12 +1179,14 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_font_body', array(
             'label'             => '5-2.全体（記事本文）のフォント',
-            'description'       => '現在3種類からお選びいただけます。',
+            'description'       => '現在3種類からお選びいただけます。日英対応しています。',
             'type'              => 'radio',
             'choices'           => array(
                 'value1'        => 'デフォルト',
                 'value2'        => 'きっちり',
                 'value3'        => '柔らかい',
+                'value4'        => 'ゴシック',
+                'value5'        => 'ユニーク',
             ),
             'section'           => 'site_font',
           ));

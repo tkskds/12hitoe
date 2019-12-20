@@ -64,12 +64,16 @@ function add_customizerCSS(){
 
   /*** 本文フォントの設定 ****/
   $fontBody =  get_option('site_font_body');
-    if ($fontBody == 'value2') {
+    if ($fontBody == 'value1') {
+      $fontbody = 'メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
+    } elseif ($fontBody == 'value2') {
       $fontBody = "'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Yu Gothic UI','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif";
     } elseif ($fontBody == 'value3') {
       $fontBody = "'M PLUS Rounded 1c', sans-serif";
-    } else {
-      $fontBody = 'メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
+    } elseif ($fontBody == 'value4') {
+      $fontBody = '"NotoSansCJK",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
+    } elseif ($fontBody == 'value5') {
+      $fontBody = '"time-machine",メイリオ,Meiryo,Avenir,Helvetica Neue,Helvetica,Arial,Hiragino Sans,ヒラギノ角ゴシック,YuGothic,Yu Gothic,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif';
     }
 
   /*** サイトの文字サイズ ***/
@@ -111,6 +115,17 @@ function add_customizerCSS(){
   ?>
 <?php // カスタマイザーの値を<head>に出力 ?>
 <style>
+<?php if ($fontBody == 'value4'): ?>
+@font-face{
+font-family: "time-machine";
+src: url("<?php get_template_directory_uri() ?>/lib/fonts/timemachine-wa.woff") format("woff"),
+}
+<?php elseif($fontBody == 'value5'): ?>
+@font-face{
+font-family: "NotoSansCJK";
+src: url("<?php get_template_directory_uri() ?>/lib/fonts/NotoSansCJKjp-Regular.woff") format("woff"),
+}
+<?php endif; ?>
 body{font-family:<?php echo $fontBody ?>;color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
 nav a.siteTitle{font-family:<?php echo $fontTitle ?>;font-size: <?php echo $titleSize ?>%;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}
