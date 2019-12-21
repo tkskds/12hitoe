@@ -122,15 +122,10 @@ if (!function_exists('custom_breadcrumb')){
     $json_array = array();
     $breadcrumb = get_option('site_decoration_bread') ? get_option('site_decoration_bread') : 'value1' ;
     $bc_class   = type_class($breadcrumb, 'breadcrumb');
-    echo  '<div class="breadcrumb '.
-          $bc_class.
-          '"><ul>'.
-          '<li>'.
-          '<a href="'.esc_url(home_url()).'"><i class="fas fa-map-marker-alt"></i><span>ホーム</span></a>'.
-          '</li>';
+    echo  '<div class="breadcrumb '.$bc_class.'"><ul class="bread_lists">'.'<li class="bread_list bread_home">'.'<a href="'.esc_url(home_url()).'" aria-labelledby="パンくずリストリンク"><i class="fas fa-home"></i><span>ホーム</span></a>'.'</li>';
     if (is_attachment()){
       $post_title = apply_filters('the_title', $wp_obj->post_title);
-      echo '<li><span>'.esc_html($post_title).'</span></li>';
+      echo '<li class="bread_list"><span>'.esc_html($post_title).'</span></li>';
     } elseif ( is_single() ) {
       $post_id    = $wp_obj->ID;
       $post_type  = $wp_obj->post_type;
@@ -146,11 +141,7 @@ if (!function_exists('custom_breadcrumb')){
         }
         $post_type_link   = esc_url( get_post_type_archive_link($post_type));
         $post_type_label  = esc_html( get_post_type_object($post_type )->label);
-        echo  '<li>'.
-              '<a href="'. $post_type_link .'">'.
-              '<span>'. $post_type_label .'</span>'.
-              '</a>'.
-              '</li>';
+        echo  '<li class="bread_list">'.'<a href="'. $post_type_link .'">'.'<span>'. $post_type_label .'</span>'.'</a>'.'</li>';
         $json_array[] = array(
           'id'   => $post_type_link,
           'name' => $post_type_label
@@ -179,11 +170,7 @@ if (!function_exists('custom_breadcrumb')){
               $parent_term = get_term( $parent_id, $the_tax );
               $parent_link = esc_url( get_term_link( $parent_id, $the_tax ) );
               $parent_name = esc_html( $parent_term->name );
-              echo  '<li>'.
-                    '<a href="'. $parent_link .'">'.
-                    '<span>'. $parent_name .'</span>'.
-                    '</a>'.
-                    '</li>';
+              echo  '<li class="bread_list">'.'<a href="'. $parent_link .'">'.'<span>'. $parent_name .'</span>'.'</a>'.'</li>';
               $json_array[] = array(
                 'id' => $parent_link,
                 'name' => $parent_name
@@ -192,17 +179,13 @@ if (!function_exists('custom_breadcrumb')){
           }
           $term_link = esc_url(get_term_link($term->term_id, $the_tax));
           $term_name = esc_html($term->name);
-          echo  '<li>'.
-                '<a href="'. $term_link .'">'.
-                '<span>'. $term_name .'</span>'.
-                '</a>'.
-                '</li>';
+          echo  '<li class="bread_list">'.'<a href="'. $term_link .'">'.'<span>'. $term_name .'</span>'.'</a>'.'</li>';
           $json_array[] = array(
             'id' => $term_link,
             'name' => $term_name
           );
         }
-        echo '<li><span>'. esc_html(strip_tags($post_title)) .'</span></li>';
+        echo '<li class="bread_list"><span>'. esc_html(strip_tags($post_title)) .'</span></li>';
     } elseif (is_page() || is_home()){
       $page_id    = $wp_obj->ID;
       $page_title = apply_filters('the_title', $wp_obj->post_title);

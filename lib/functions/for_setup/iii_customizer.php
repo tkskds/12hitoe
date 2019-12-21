@@ -1881,6 +1881,7 @@ function org_customizer($wp_customize){
               'value1'          => 'デザイン1',
               'value2'          => 'デザイン2',
             ),
+            'section'           => 'site_decoration',
           ));
 
           $wp_customize->add_setting('site_decoration_h2_type', array(

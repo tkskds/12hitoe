@@ -1310,13 +1310,27 @@ h4.search_result_ttl::before {
   padding: 0 60px;
 }
 
-.breadcrumbType2 li{
+.breadcrumb li{
   display: inline-block;
+}
+
+.breadcrumbType1 li{
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+}
+
+.breadcrumbType1 li svg{
+  line-height: 25px;
+}
+
+.breadcrumbType2 li{
   padding-right: 1.5em;
   position: relative;
 }
 
-.breadcrumbType2 li svg.fa-map-marker-alt{
+.breadcrumbType2 li svg.fa-home{
   margin-right: 5px;
 }
 
