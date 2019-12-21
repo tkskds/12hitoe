@@ -1310,23 +1310,23 @@ h4.search_result_ttl::before {
   padding: 0 60px;
 }
 
-.breadcrumb li{
+.breadcrumbType2 li{
   display: inline-block;
   padding-right: 1.5em;
   position: relative;
 }
 
-.breadcrumb li svg.fa-map-marker-alt{
+.breadcrumbType2 li svg.fa-map-marker-alt{
   margin-right: 5px;
 }
 
-.breadcrumb li:not(:last-of-type)::after{
+.breadcrumbType2 li:not(:last-of-type)::after{
   font-family: "Font Awesome 5 Solid";
   content: "\f0da";
   display: none;
 }
 
-.breadcrumb li svg.fa-caret-right {
+.breadcrumbType2 li svg.fa-caret-right {
   position: absolute;
   right: .5em;
   position: absolute;

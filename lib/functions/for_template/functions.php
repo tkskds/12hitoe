@@ -121,8 +121,9 @@ if (!function_exists('custom_breadcrumb')){
     $wp_obj     = get_queried_object();
     $json_array = array();
     $breadcrumb = get_option('site_decoration_bread') ? get_option('site_decoration_bread') : 'value1' ;
-    echo  '<div class="breadcrumb'.
-          output_type_class($type, 'breadcrumb').
+    $bc_class   = type_class($breadcrumb, 'breadcrumb');
+    echo  '<div class="breadcrumb '.
+          $bc_class.
           '"><ul>'.
           '<li>'.
           '<a href="'.esc_url(home_url()).'"><i class="fas fa-map-marker-alt"></i><span>ホーム</span></a>'.
@@ -494,6 +495,30 @@ function ld_json(){
 /////////////////////
 // クラス付与
 /////////////////////
+
+function type_class($type, $n){
+  switch ($type) {
+    case 'value1':
+      return ' '.$n.'Type1 ';
+      break;
+    case 'value2':
+      return ' '.$n.'Type2 ';
+      break;
+    case 'value3':
+      return ' '.$n.'Type3 ';
+      break;
+    case 'value4':
+      return ' '.$n.'Type4 ';
+      break;
+    case 'value5':
+      return ' '.$n.'Type5 ';
+      break;
+    case 'value6':
+      return ' '.$n.'Type6 ';
+      break;
+  }
+}
+/*出力用*/
 
 function output_type_class($type, $n){
   switch ($type) {
