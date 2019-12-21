@@ -1310,19 +1310,57 @@ h4.search_result_ttl::before {
   padding: 0 60px;
 }
 
+.breadcrumb ul{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .breadcrumb li{
   display: inline-block;
 }
 
 .breadcrumbType1 li{
+  height: 25px;
+  text-align: center;
+  margin-right: 3px;
+}
+
+.breadcrumbType1 li a,
+.breadcrumbType1 li:last-of-type span{
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  line-height: 25px;
+}
+
+.breadcrumbType1 li:not(.bread_home) a,
+.breadcrumbType1 li:last-of-type span{
+  padding: 0 10px 0 15px;
+  margin-left: 15px;
+}
+
+.breadcrumbType1 li:not(.bread_home)::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
   width: 25px;
   height: 25px;
-  background: white;
   border-radius: 50%;
 }
 
-.breadcrumbType1 li svg{
-  line-height: 25px;
+.breadcrumbType1 .bread_home a{
+  width: 25px;
+  border-radius: 50%;
+}
+
+.breadcrumbType1 .bread_home span{
+  display: none;
+}
+
+.breadcrumbType1 li:not(.bread_home) a,
+.breadcrumbType1 li:last-of-type span{
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .breadcrumbType2 li{

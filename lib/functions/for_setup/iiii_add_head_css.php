@@ -201,7 +201,7 @@ a{color:<?php echo $link_c ?>;}
 .article_content h2.h2type6::after,.article_content h3.h3type6::after,.article_content h4.h4type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
 .article_content h2.h2type7::before, .article_content h2.h2type7::after,.article_content h3.h3type7::before, .article_content h3.h3type7::after,.article_content h4.h4type7::before, .article_content h4.h4type7::after{border-color:<?php echo $main_c ?>;}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
-.sideType1 h4.sidebar_title::after {background:<?php echo $body_bk ?>;}
+.sideType1 h4.sidebar_title::after,.breadcrumbType1 li:not(.bread_home)::before{background:<?php echo $body_bk ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
 .tocType3{border-color:<?php echo $main_c ?>;}
