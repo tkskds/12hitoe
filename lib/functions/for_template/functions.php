@@ -120,8 +120,10 @@ if (!function_exists('custom_breadcrumb')){
     if (is_front_page()) return false;
     $wp_obj     = get_queried_object();
     $json_array = array();
-    echo  '<div class="breadcrumb">'.
-          '<ul>'.
+    $breadcrumb = get_option('site_decoration_bread') ? get_option('site_decoration_bread') : 'value1' ;
+    echo  '<div class="breadcrumb'.
+          output_type_class($type, 'breadcrumb').
+          '"><ul>'.
           '<li>'.
           '<a href="'.esc_url(home_url()).'"><i class="fas fa-map-marker-alt"></i><span>ホーム</span></a>'.
           '</li>';

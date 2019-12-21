@@ -1869,6 +1869,20 @@ function org_customizer($wp_customize){
         'panel'                 => 'site_builder',
       ));
 
+          $wp_customize->add_setting('site_decoration_bread', array(
+            'default'           => 'value1',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_decoration_bread', array(
+            'label'             => 'パンくずリストのデザイン',
+            'type'              => 'radio',
+            'choices'           => array(
+              'value1'          => 'デザイン1',
+              'value2'          => 'デザイン2',
+            ),
+          ));
+
           $wp_customize->add_setting('site_decoration_h2_type', array(
             'default'           => 'type1',
             'type'              => 'option',
@@ -1885,6 +1899,8 @@ function org_customizer($wp_customize){
               'type4'           => 'デザイン4',
               'type5'           => 'デザイン5',
               'type6'           => 'デザイン6',
+              'type7'           => 'デザイン7',
+              'type8'           => 'デザイン8',
             ),
             'section'           => 'site_decoration',
           ));
@@ -1905,6 +1921,8 @@ function org_customizer($wp_customize){
               'type4'           => 'デザイン4',
               'type5'           => 'デザイン5',
               'type6'           => 'デザイン6',
+              'type7'           => 'デザイン7',
+              'type8'           => 'デザイン8',
             ),
             'section'           => 'site_decoration',
           ));
@@ -1925,6 +1943,8 @@ function org_customizer($wp_customize){
               'type4'           => 'デザイン4',
               'type5'           => 'デザイン5',
               'type6'           => 'デザイン6',
+              'type7'           => 'デザイン7',
+              'type8'           => 'デザイン8',
             ),
             'section'           => 'site_decoration',
           ));
