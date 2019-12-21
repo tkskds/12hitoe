@@ -1195,7 +1195,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_font_body_only_heading', array(
             'default'           => false,
-            'type'              => option,
+            'type'              => 'option',
           ));
 
           $wp_customize->add_control('site_font_body_only_heading', array(
