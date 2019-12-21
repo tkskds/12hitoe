@@ -1127,6 +1127,42 @@ article h4{
   height: 4px;
 }
 
+.article_content h2.h2type7,
+.article_content h3.h3type7,
+.article_content h4.h4type7{
+  position: relative;
+  padding: .5em 1em;
+  text-align: center;
+}
+
+.article_content h2.h2type7::before, .article_content h2.h2type7::after,
+.article_content h3.h3type7::before, .article_content h3.h3type7::after,
+.article_content h4.h4type7::before, .article_content h4.h4type7::after{
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+}
+
+.article_content h2.h2type7::before,
+.article_content h3.h3type7::before,
+.article_content h4.h4type7::before{
+  border-left: solid 2px;
+  border-top: solid 2px;
+  top: 0;
+  left: 0;
+}
+
+.article_content h2.h2type7::after,
+.article_content h3.h3type7::after,
+.article_content h4.h4type7::after{
+  border-right:  2px solid;
+  border-bottom: 2px solid;
+  right: 0;
+  bottom: 0;
+}
+
 .article_content p{
   line-height: 1.75;
   margin-bottom: 1.5em;
