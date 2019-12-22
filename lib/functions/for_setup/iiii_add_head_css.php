@@ -192,14 +192,11 @@ a{color:<?php echo $link_c ?>;}
 .acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 .main_c,.pagination li a,.articleList_wrap .articleList5 .content .title:hover,div.related_ttl:hover,.tocType4 .toc_body>ul>li>a::before,.started .navbar-fixed.main_c nav a{color:<?php echo $main_c ?>;}
 /*** その他個別に設定すべきメイン.サブ.アクセントカラー ***/
-.article_content h2.h2type1,.article_content h3.h3type1,.article_content h4.h4type1{border-color:<?php echo $main_c ?>;}
-.article_content h2.h2type2,.article_content h3.h3type2,.article_content h4.h4type2{background:<?php echo $main_c ?>;}
+.article_content h2.h2type1,.article_content h3.h3type1,.article_content h4.h4type1,.article_content h2.h2type7::before, .article_content h2.h2type7::after,.article_content h3.h3type7::before, .article_content h3.h3type7::after,.article_content h4.h4type7::before, .article_content h4.h4type7::after,.article_content h2.h2type8,.article_content h3.h3type8,.article_content h4.h4type8{border-color:<?php echo $main_c ?>;}
+.article_content h2.h2type2,.article_content h3.h3type2,.article_content h4.h4type2,.article_content h2.h2type3::before,.article_content h3.h3type3::before,.article_content h4.h4type3::before,.article_content h2.h2type5,.article_content h3.h3type5,.article_content h4.h4type5{background:<?php echo $main_c ?>;}
 .article_content h2.h2type2::after,.article_content h3.h3type2::after,.article_content h4.h4type2::after{border-top-color:<?php echo $main_c ?>;}
-.article_content h2.h2type3::before,.article_content h3.h3type3::before,.article_content h4.h4type3::before{background:<?php echo $main_c ?>;}
 .article_content h2.h2type4:first-letter,.article_content h3.h3type4:first-letter,.article_content h4.h4type4:first-letter{color:<?php echo $main_c ?>;}
-.article_content h2.h2type5,.article_content h3.h3type5,.article_content h4.h4type5{background:<?php echo $main_c ?>;}
 .article_content h2.h2type6::after,.article_content h3.h3type6::after,.article_content h4.h4type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
-.article_content h2.h2type7::before, .article_content h2.h2type7::after,.article_content h3.h3type7::before, .article_content h3.h3type7::after,.article_content h4.h4type7::before, .article_content h4.h4type7::after{border-color:<?php echo $main_c ?>;}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .sideType1 h4.sidebar_title::after,.breadcrumbType1 li:not(.bread_home)::before{background:<?php echo $body_bk ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}

@@ -1129,7 +1129,10 @@ article h4{
 
 .article_content h2.h2type7,
 .article_content h3.h3type7,
-.article_content h4.h4type7{
+.article_content h4.h4type7,
+.article_content h2.h2type8,
+.article_content h3.h3type8,
+.article_content h4.h4type8{
   position: relative;
   padding: .5em 1em;
   text-align: center;
@@ -1161,6 +1164,13 @@ article h4{
   border-bottom: 2px solid;
   right: 0;
   bottom: 0;
+}
+
+.article_content h2.h2type8,
+.article_content h3.h3type8,
+.article_content h4.h4type8{
+  border: 2px solid;
+  border-radius: 3px;
 }
 
 .article_content p{
