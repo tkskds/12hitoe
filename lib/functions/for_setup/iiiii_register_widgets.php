@@ -161,35 +161,107 @@ function register_widgets(){
       ));
   	}
   	public function widget($args, $instance){
-    	$tab_ttl    = $instance['tab_ttl'] ? $instance['tab_ttl'] : 'タブボックス' ;
+    	$tab_ttl     = $instance['tab_ttl']  ? $instance['tab_ttl']  : 'タブボックス' ;
+    	$tab_ttl1    = $instance['tab_ttl1'] ? $instance['tab_ttl1'] : 'タブボックス' ;
+    	$tab_con1    = $instance['tab_con1'] ? $instance['tab_con1'] : 'タブボックス' ;
+    	$tab_ttl2    = $instance['tab_ttl2'] ? $instance['tab_ttl2'] : 'タブボックス' ;
+    	$tab_con2    = $instance['tab_con2'] ? $instance['tab_con2'] : 'タブボックス' ;
+    	$tab_ttl3    = $instance['tab_ttl3'] ? $instance['tab_ttl3'] : 'タブボックス' ;
+    	$tab_con3    = $instance['tab_con3'] ? $instance['tab_con3'] : 'タブボックス' ;
+    	$tab_ttl4    = $instance['tab_ttl4'] ? $instance['tab_ttl4'] : 'タブボックス' ;
+    	$tab_con4    = $instance['tab_con4'] ? $instance['tab_con4'] : 'test' ;
     		echo $args['before_widget'];
     		echo '<h4 class="sidebar_title">'.$tab_ttl.'</h4><div class="widget_tab_body row">'.
              '<div class="col s12"><ul class="tabs">'.
-             '<li class="tab col s3"><a href="#tab1">'.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab2">'.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab3">'.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab4">'.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab1">'.$tab_ttl1.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab2">'.$tab_ttl2.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab3">'.$tab_ttl3.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab4">'.$tab_ttl4.'</a></li>'.
              '</ul></div>'.
-             '<div id="tab1" class="col s12">'.'</div>'.
-             '<div id="tab2" class="col s12">'.'</div>'.
-             '<div id="tab3" class="col s12">'.'</div>'.
-             '<div id="tab4" class="col s12">'.'</div></div>';
+             '<div id="tab1" class="col s12">'.$tab_con1.'</div>'.
+             '<div id="tab2" class="col s12">'.$tab_con2.'</div>'.
+             '<div id="tab3" class="col s12">'.$tab_con3.'</div>'.
+             '<div id="tab4" class="col s12">'.$tab_con4.'</div></div>';
         echo $args['after_widget'];
   	}
     public function form($instance){
-      $tab_ttl  = $instance['tab_ttl'];
-      $tab_name = $this->get_field_name('tab_ttl');
-      $tab_id   = $this->get_field_id('tab_ttl');
+      $tab_ttl    = $instance['tab_ttl'];
+      $tab_name   = $this->get_field_name('tab_ttl');
+      $tab_id     = $this->get_field_id('tab_ttl');
+      $tab_ttl1   = $instance['tab_ttl1'];
+      $tab_ttl1n  = $this->get_field_name('tab_ttl1');
+      $tab_ttl1id = $this->get_field_id('tab_ttl1');
+      $tab_con1   = $instance['tab_con1'];
+      $tab_con1n  = $this->get_field_name('tab_con1');
+      $tab_con1id = $this->get_field_id('tab_con1');
+      $tab_ttl2   = $instance['tab_ttl2'];
+      $tab_ttl2n  = $this->get_field_name('tab_ttl2');
+      $tab_ttl2id = $this->get_field_id('tab_ttl2');
+      $tab_con2   = $instance['tab_con2'];
+      $tab_con2n  = $this->get_field_name('tab_con2');
+      $tab_con2id = $this->get_field_id('tab_con2');
+      $tab_ttl3   = $instance['tab_ttl3'];
+      $tab_ttl3n  = $this->get_field_name('tab_ttl3');
+      $tab_ttl3id = $this->get_field_id('tab_ttl3');
+      $tab_con3   = $instance['tab_con3'];
+      $tab_con3n  = $this->get_field_name('tab_con3');
+      $tab_con3id = $this->get_field_id('tab_con3');
+      $tab_ttl4   = $instance['tab_ttl4'];
+      $tab_ttl4n  = $this->get_field_name('tab_ttl4');
+      $tab_ttl4id = $this->get_field_id('tab_ttl4');
+      $tab_con4   = $instance['tab_con4'];
+      $tab_con4n  = $this->get_field_name('tab_con4');
+      $tab_con4id = $this->get_field_id('tab_con4');
       ?>
       <p>
         <label for="<?php echo $tab_id; ?>">タイトル:</label>
         <input class="widefat" id="<?php echo $tab_id; ?>" name="<?php echo $tab_name ?>" type="text" value="<?php echo esc_attr($tab_ttl); ?>">
       </p>
+      <p>
+        <label for="<?php echo $tab_ttl1id; ?>">タブ1のタイトル:</label>
+        <input class="widefat" id="<?php echo $tab_ttl1id; ?>" name="<?php echo $tab_ttl1n ?>" type="text" value="<?php echo esc_attr($tab_ttl1); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $tab_con1; ?>">タブ1のコンテンツ</label><br>
+        <textarea class="widefat" id="<?php echo $tab_con1id; ?>" name="<?php echo $tab_con1n ?>" value="<?php echo esc_attr($tab_con1); ?>"><?php echo $tab_con1; ?></textarea>
+      </p>
+      <p>
+        <label for="<?php echo $tab_ttl2id; ?>">タブ2のタイトル:</label>
+        <input class="widefat" id="<?php echo $tab_ttl2id; ?>" name="<?php echo $tab_ttl2n ?>" type="text" value="<?php echo esc_attr($tab_ttl2); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $tab_con2; ?>">タブ2のコンテンツ</label><br>
+        <textarea class="widefat" id="<?php echo $tab_con2id; ?>" name="<?php echo $tab_con2n ?>" value="<?php echo esc_attr($tab_con2); ?>"><?php echo $tab_con2; ?></textarea>
+      </p>
+      <p>
+        <label for="<?php echo $tab_ttl3id; ?>">タブ3のタイトル:</label>
+        <input class="widefat" id="<?php echo $tab_ttl3id; ?>" name="<?php echo $tab_ttl3n ?>" type="text" value="<?php echo esc_attr($tab_ttl3); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $tab_con3; ?>">タブ3のコンテンツ</label><br>
+        <textarea class="widefat" id="<?php echo $tab_con3id; ?>" name="<?php echo $tab_con3n ?>" value="<?php echo esc_attr($tab_con3); ?>"><?php echo $tab_con3; ?></textarea>
+      </p>
+      <p>
+        <label for="<?php echo $tab_ttl4id; ?>">タブ4のタイトル:</label>
+        <input class="widefat" id="<?php echo $tab_ttl4id; ?>" name="<?php echo $tab_ttl4n ?>" type="text" value="<?php echo esc_attr($tab_ttl4); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $tab_con4; ?>">タブ4のコンテンツ</label><br>
+        <textarea class="widefat" id="<?php echo $tab_con4id; ?>" name="<?php echo $tab_con4n ?>" value="<?php echo esc_attr($tab_con4); ?>"><?php echo $tab_con4; ?></textarea>
+      </p>
       <?php
     }
     public function update($new_instance, $old_instance) {
       $instance = array();
-      $instance['tab_ttl'] = (!empty($new_instance['tab_ttl'])) ? $new_instance['tab_ttl'] : '' ;
+      $instance['tab_ttl']  = (!empty($new_instance['tab_ttl']))  ? $new_instance['tab_ttl']  : '' ;
+      $instance['tab_ttl1'] = (!empty($new_instance['tab_ttl1'])) ? $new_instance['tab_ttl1'] : '' ;
+      $instance['tab_con1'] = (!empty($new_instance['tab_con1'])) ? $new_instance['tab_con1'] : '' ;
+      $instance['tab_ttl2'] = (!empty($new_instance['tab_ttl2'])) ? $new_instance['tab_ttl2'] : '' ;
+      $instance['tab_con2'] = (!empty($new_instance['tab_con2'])) ? $new_instance['tab_con2'] : '' ;
+      $instance['tab_ttl3'] = (!empty($new_instance['tab_ttl3'])) ? $new_instance['tab_ttl3'] : '' ;
+      $instance['tab_con3'] = (!empty($new_instance['tab_con3'])) ? $new_instance['tab_con3'] : '' ;
+      $instance['tab_ttl4'] = (!empty($new_instance['tab_ttl4'])) ? $new_instance['tab_ttl4'] : '' ;
+      $instance['tab_con4'] = (!empty($new_instance['tab_con4'])) ? $new_instance['tab_con4'] : '' ;
       return $instance;
     }
   }
