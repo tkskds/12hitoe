@@ -1916,6 +1916,7 @@ li.share_hatena a{
 
 .related_thumb{
   overflow: hidden;
+  border: 2px solid #efefef;
 }
 
 .related_thumb img:hover{
@@ -2453,8 +2454,71 @@ h4.footer_w_title {
 .profile_text{
 }
 
-.popular_posts_list a{
+/*人気記事*/
+
+li.popular_posts_list a{
   display: flex;
+  color: unset;
+  align-items: center;
+}
+
+li.popular_posts_list{
+  padding: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.rank_img{
+  position: relative;
+  overflow: hidden;
+  width: 104px;
+  height: 104px;
+  border: 2px solid #efefef;
+}
+
+.rank_img img{
+  object-fit: cover;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.rank_img img:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+span.rank{
+  position: absolute;
+  z-index: 1;
+  background: #fff;
+  border: 1px solid #efefef;
+  width: 30px;
+  height: 30px;
+  top: 1px;
+  left: 1px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.rank svg.fa-crown{
+  height: 28px; /*border分30pxから引いた*/
+}
+
+.rank_count1 svg.fa-crown{
+  color: #daa520;
+}
+
+.rank_count2 svg.fa-crown{
+  color: #708090;
+}
+
+.rank_count3 svg.fa-crown{
+  color: #a0522d;
+}
+
+.rank_ttl {
+  padding-left: 10px;
+  width: calc(100% - 104px);
 }
 
 /*ウィジェットのa色*/
@@ -2465,8 +2529,7 @@ h4.footer_w_title {
 .widget_toc_body a,
 .widget_calendar a,
 .widget_archive a,
-.widget_meta a,
-.widget_popular_posts a{
+.widget_meta a{
   color: unset;
   display: block;
 }
@@ -2482,7 +2545,8 @@ transition: all .2s ease-in-out;
 .widget_categories select:hover,
 .widget_categories li:hover,
 .widget_archive select:hover,
-.widget_archive li:hover{
+.widget_archive li:hover,
+.widget_popular_posts li:hover{
 background: rgba(0,0,0,0.05);
 cursor: pointer;
 }
