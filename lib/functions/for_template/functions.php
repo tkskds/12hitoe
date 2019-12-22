@@ -338,6 +338,9 @@ function add_index_to_content($content){
       case 'value4':
         $toc_wrap  = '<div class="toc tocType4"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
         break;
+      case 'value5':
+        $toc_wrap  = '<div class="toc tocType5"><div class="toc_ttl">'.$toc_ttl.'</div><div class="toc_body"></div></div>';
+        break;
     }
     $tag = '/<h2.*?>/i';
     if (preg_match( $tag, $content, $tags)) {

@@ -1816,7 +1816,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_article_toc', array(
             'label'             => '8-11.目次を非表示',
-            'description'       => '投稿ページで目次が表示されます',
+            'description'       => 'チェックを入れると投稿ページで目次が表示されなくなります',
             'type'              => 'checkbox',
             'section'           => 'site_article',
           ));
@@ -1859,6 +1859,7 @@ function org_customizer($wp_customize){
               'value2'          => 'デザイン2',
               'value3'          => 'デザイン3',
               'value4'          => 'デザイン4',
+              'value5'          => 'デザイン5',
             ),
             'section'           => 'site_article',
           ));
