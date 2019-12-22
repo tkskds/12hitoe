@@ -3,7 +3,7 @@
   $articleType = get_option('site_article_type')        ? get_option('site_article_type')         : 'value1' ;
   $authorOff   = get_option('site_article_authorable') ;
   $relatedOff  = get_option('site_article_relatedable');
-  $popPost     = get_option('site_pv_count')            ? get_option('site_pv_count')             : false ;
+  $pvcountOff  = get_option('site_pv_count')            ? get_option('site_pv_count')             : false ;
 ?>
 
 <?php get_header(); ?>
@@ -29,4 +29,4 @@
   </div>
 <?php get_footer(); ?>
 
-<?php if($popPost==true){if(!is_user_logged_in()&&!is_bot()){set_post_views(get_the_ID());}} ?>
+<?php if($pvcountOff==false){if(!is_user_logged_in()&&!is_bot()){set_post_views(get_the_ID());}} ?>

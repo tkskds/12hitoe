@@ -271,7 +271,7 @@ function register_widgets(){
   class Popular_Posts extends WP_Widget {
   function __construct(){
     parent::__construct('popular_posts','人気記事',array(
-      'description' => 'PV数の多い順で記事を表示',
+      'description' => 'PV数の多い順で記事を表示します。カスタマイザー（運営設定）でPV計測機能のON/OFFが切り替え可能です。（デフォルトはON）オフにするとこのウィジェットはうまく機能しません。',
     ));
    }
   function form($instance) {
