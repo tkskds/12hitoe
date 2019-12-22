@@ -483,89 +483,62 @@ function ld_json(){
 // 人気記事（PV計測）
 /////////////////////
 
-$pvcountOff = get_option('site_pv_count') ? get_option('site_pv_count') : false ;
+function set_post_views($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if($count==''){
+      $count = 0;
+      delete_post_meta($postID, $count_key);
+      add_post_meta($postID, $count_key, '0');
+  }else{
+    $count++;
+    update_post_meta($postID, $count_key, $count);
+  }
+}
 
-if($pvcountOff==false){
-
-  function set_post_views($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-      $count++;
-      update_post_meta($postID, $count_key, $count);
+function is_bot() {
+  $ua = $_SERVER['HTTP_USER_AGENT'];
+  $bot = array(
+    'Googlebot',
+    'Yahoo! Slurp',
+    'Mediapartners-Google',
+    'msnbot',
+    'bingbot',
+    'MJ12bot',
+    'Ezooms',
+    'pirst; MSIE 8.0;',
+    'Google Web Preview',
+    'ia_archiver',
+    'Sogou web spider',
+    'Googlebot-Mobile',
+    'AhrefsBot',
+    'YandexBot',
+    'Purebot',
+    'Baiduspider',
+    'UnwindFetchor',
+    'TweetmemeBot',
+    'MetaURI',
+    'PaperLiBot',
+    'Showyoubot',
+    'JS-Kit',
+    'PostRank',
+    'Crowsnest',
+    'PycURL',
+    'bitlybot',
+    'Hatena',
+    'facebookexternalhit',
+    'NINJA bot',
+    'YahooCacheSystem',
+    'NHN Corp.',
+    'Steeler',
+    'DoCoMo',
+  );
+  foreach( $bot as $bot ) {
+    if (stripos( $ua, $bot ) !== false){
+      return true;
     }
   }
-
-  function is_bot() {
-    $ua = $_SERVER['HTTP_USER_AGENT'];
-    $bot = array(
-      'Googlebot',
-      'Yahoo! Slurp',
-      'Mediapartners-Google',
-      'msnbot',
-      'bingbot',
-      'MJ12bot',
-      'Ezooms',
-      'pirst; MSIE 8.0;',
-      'Google Web Preview',
-      'ia_archiver',
-      'Sogou web spider',
-      'Googlebot-Mobile',
-      'AhrefsBot',
-      'YandexBot',
-      'Purebot',
-      'Baiduspider',
-      'UnwindFetchor',
-      'TweetmemeBot',
-      'MetaURI',
-      'PaperLiBot',
-      'Showyoubot',
-      'JS-Kit',
-      'PostRank',
-      'Crowsnest',
-      'PycURL',
-      'bitlybot',
-      'Hatena',
-      'facebookexternalhit',
-      'NINJA bot',
-      'YahooCacheSystem',
-      'NHN Corp.',
-      'Steeler',
-      'DoCoMo',
-    );
-    foreach( $bot as $bot ) {
-      if (stripos( $ua, $bot ) !== false){
-        return true;
-      }
-    }
-    return false;
-  }
-
-
-  function manage_posts_columns($columns){
-    $columns['post_views_count'] = 'view数';
-    return $columns;
-  }
-
-  function add_column($column_name, $post_id){
-    if ($column_name == 'post_views_count'){
-      $stitle = get_post_meta($post_id, 'post_views_count', true);
-    }
-
-    if (isset($stitle) && $stitle ) {
-      echo attribute_escape($stitle);
-    }else{
-      echo __('None');
-    }
-  }
-
-  add_filter('manage_posts_columns', 'manage_posts_columns');
-  add_action('manage_posts_custom_column', 'add_column');
-
+  return false;
 }
 
 /////////////////////

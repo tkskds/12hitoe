@@ -313,12 +313,12 @@ function register_widgets(){
       if (!empty($title)){
         echo $before_title . $title . $after_title;
       } else {
-        echo '<h4>人気記事</h4>';
+        echo '<h4 class="sidebar_title">今週の人気記事</h4>';
       }
     $number = !empty($instance['number']) ? $instance['number'] : get_option('number');
     ?>
-    <div class="popular_posts">
-      <ul>
+    <div class="widget_popular_posts">
+      <ul class="popular_posts_lists">
         <?php get_the_ID();
           $args = array(
             'meta_key'       => 'post_views_count',
@@ -328,22 +328,18 @@ function register_widgets(){
           );
           $my_query = new WP_Query($args);?>
           <?php while($my_query->have_posts()) : $my_query->the_post(); $loopcounter++; ?>
-          <li>
+          <li class="popular_posts_list">
             <a href="<?php the_permalink(); ?>">
-              <span class="rank rank_count<?php echo $loopcounter; ?>">
-                <?php echo $loopcounter; ?>
-              </span>
-              <?php if( has_post_thumbnail() ): ?>
-                <?php the_post_thumbnail('thumbnail'); ?>
-              <?php endif; ?>
+              <div class="rank_img">
+                <span class="rank rank_count<?php echo $loopcounter; ?>"><?php echo $loopcounter; ?></span>
+                <?php if (has_post_thumbnail()): ?>
+                  <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'thumbnail', array('class' => 'fadeinimg lazyload', 'width' => 100, 'height' => 100))); ?>
+                <?php else: ?>
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php the_title(); ?>" width="100" height="100" class="fadeinimg lazyload">
+                <?php endif; ?>
+              </div>
               <div class="rank_ttl">
-                <?php the_title(); ?>
-                <br>
-                <span class="cat-data">
-                   <?php if( has_category() ): ?>
-                     <?php $postcat=get_the_category(); echo $postcat[0]->name; ?>
-                  <?php endif; ?>
-                </span>
+                <span><?php the_title(); ?></span>
               </div>
             </a>
           </li>
