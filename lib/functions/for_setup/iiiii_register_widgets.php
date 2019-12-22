@@ -317,7 +317,7 @@ function register_widgets(){
       }
     $number = !empty($instance['number']) ? $instance['number'] : get_option('number');
     ?>
-    <div class="widget_popular_posts">
+    <div class="popular_posts">
       <ul class="popular_posts_lists">
         <?php get_the_ID();
           $args = array(
@@ -331,7 +331,7 @@ function register_widgets(){
           <li class="popular_posts_list">
             <a href="<?php the_permalink(); ?>">
               <div class="rank_img">
-                <span class="rank rank_count<?php echo $loopcounter; ?>"><?php echo $loopcounter; ?></span>
+                <span class="rank rank_count<?php echo $loopcounter; ?>"><i class="fas fa-crown"></i></span>
                 <?php if (has_post_thumbnail()): ?>
                   <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'thumbnail', array('class' => 'fadeinimg lazyload', 'width' => 100, 'height' => 100))); ?>
                 <?php else: ?>

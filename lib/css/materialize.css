@@ -2277,7 +2277,7 @@ h4.footer_w_title {
 .widget_calendar table,
 .widget_meta ul,
 .widget_toc_body,
-.widget_popular_posts{
+.widget_popular_posts ul{
   margin: 10px 20px;
 }
 
