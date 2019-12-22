@@ -150,6 +150,49 @@ function register_widgets(){
       return $instance;
     }
   }
+
+  /****************
+  タブボックス
+  ****************/
+  class TAB_Widget extends WP_Widget{
+    function __construct(){
+  		parent::__construct('tab_widget','タブ',array(
+        'description' => 'タブボックスを表示します',
+      ));
+  	}
+  	public function widget($args, $instance){
+    	$tab_ttl    = $instance['tab_ttl'] ? $instance['tab_ttl'] : 'タブボックス' ;
+    		echo $args['before_widget'];
+    		echo '<h4 class="sidebar_title">'.$tab_ttl.'</h4><div class="widget_tab_body row">'.
+             '<div class="col s12"><ul class="tabs">'.
+             '<li class="tab col s3"><a href="#tab1">'.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab2">'.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab3">'.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab4">'.'</a></li>'.
+             '</ul></div>'.
+             '<div id="tab1" class="col s12">'.'</div>'.
+             '<div id="tab2" class="col s12">'.'</div>'.
+             '<div id="tab3" class="col s12">'.'</div>'.
+             '<div id="tab4" class="col s12">'.'</div></div>';
+        echo $args['after_widget'];
+  	}
+    public function form($instance){
+      $tab_ttl  = $instance['tab_ttl'];
+      $tab_name = $this->get_field_name('tab_ttl');
+      $tab_id   = $this->get_field_id('tab_ttl');
+      ?>
+      <p>
+        <label for="<?php echo $tab_id; ?>">タイトル:</label>
+        <input class="widefat" id="<?php echo $tab_id; ?>" name="<?php echo $tab_name ?>" type="text" value="<?php echo esc_attr($tab_ttl); ?>">
+      </p>
+      <?php
+    }
+    public function update($new_instance, $old_instance) {
+      $instance = array();
+      $instance['tab_ttl'] = (!empty($new_instance['tab_ttl'])) ? $new_instance['tab_ttl'] : '' ;
+      return $instance;
+    }
+  }
   /****************
   プロフィールボックス
   ****************/
@@ -352,6 +395,7 @@ function register_widgets(){
   }
 
   register_widget('TOC_Widget');
+  register_widget('TAB_Widget');
   register_widget('Prof_Widget');
   register_widget('Popular_Posts');
 
