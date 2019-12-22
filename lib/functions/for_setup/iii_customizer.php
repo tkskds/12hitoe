@@ -57,11 +57,11 @@ function org_customizer($wp_customize){
   $wp_customize->add_panel('site_conf', array(
     'priority'                  => 1,
     'title'                     => 'STEP1【基本設定】',
-    'description'               => 'サイトの基本設定です。SEOに有効に働く項目もあります。*は設定必須項目です。'
+    'description'               => 'サイトの基本設定です。設定することでSEOに有効に働く項目もあります。'
   ));
 
       $wp_customize->add_section('title_tagline', array(
-        'title'                 => '基本情報とロゴの設定*',
+        'title'                 => '基本情報とロゴの設定',
         'panel'                 => 'site_conf',
       ));
 
@@ -72,7 +72,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('meta_description', array(
             'label'             => 'サイトの説明文',
-            'description'       => '検索結果などに表示されます。（推奨100文字以内）',
+            'description'       => '検索結果などに表示されます。記述がなかった場合、サイト名などを用いて自動で設定されます。（推奨100文字以内）',
             'type'              => 'textarea',
             'section'           => 'title_tagline',
           ));
@@ -85,10 +85,15 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('only_logo', array(
             'label'             => 'タイトルテキストの非表示',
-            'description'       => 'チェックするとタイトル部分がロゴ画像だけになります。',
+            'description'       => 'チェックを入れるとタイトル部分がロゴ画像だけになります。',
             'type'              => 'checkbox',
             'section'           => 'title_tagline',
           ));
+
+      $wp_customize->add_section('static_front_page', array(
+        'title'                 => 'トップページの設定',
+        'panel'                 => 'site_conf',
+      ));
 
   /********
   // STEP2

@@ -69,6 +69,9 @@
 <?php endif; ?>
 
 <?php //ファビコンなど ?>
+<?php $siteIcon = get_option('site_icon'); ?>
+<?php if(empty($siteIcon)): ?>
 <link rel="icon" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
 <link rel="icon" type="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
+<?php endif; ?>
