@@ -2310,5 +2310,17 @@ function org_customizer($wp_customize){
             'section'           => 'site_speed',
           ));
 
+          $wp_customize->add_setting('site_pv_count', array(
+            'default'           => false,
+            'type'              => 'option',
+            'sanitize_callback' => 'sanitize_checkbox',
+          ));
+
+          $wp_customize->add_control('site_pv_count', array(
+            'label'             => 'PV計測をしない',
+            'description'       => 'PVを計測しないことで記事ページの処理速度が向上します。',
+            'type'              => 'checkbox',
+            'section'           => 'site_speed',
+          ));
 
 } //END org_customizer()

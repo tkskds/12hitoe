@@ -263,8 +263,100 @@ function register_widgets(){
     }
   }
 
+  /****************
+  人気記事
+  ****************/
+
+
+  class Popular_Posts extends WP_Widget {
+  function __construct(){
+    parent::__construct('popular_posts','人気記事',array(
+      'description' => 'PV数の多い順で記事を表示',
+    ));
+   }
+  function form($instance) {
+    if(empty($instance['title'])){
+      $instance['title'] = '';
+    }
+    if(empty($instance['number'])){
+      $instance['number'] = 5;
+    }
+  ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('タイトル:'); ?></label>
+      <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+      name="<?php echo $this->get_field_name('title'); ?>"
+      value="<?php echo esc_attr( $instance['title'] ); ?>">
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('記事表示件数:'); ?></label>
+      <input type="text" id="<?php echo $this->get_field_id('limit'); ?>"
+      name="<?php echo $this->get_field_name('number'); ?>"
+      value="<?php echo esc_attr( $instance['number'] ); ?>" size="3">
+    </p>
+  <?php
+  }
+  /*カスタマイズ欄の入力内容が変更された場合の処理*/
+  function update($new_instance, $old_instance) {
+    $instance = $old_instance;
+    $instance['title'] = strip_tags($new_instance['title']);
+    $instance['number'] = is_numeric($new_instance['number']) ? $new_instance['number'] : 5;
+      return $instance;
+  }
+  /*ウィジェットのに出力される要素の設定*/
+  function widget($args, $instance) {
+    extract($args);
+    echo $before_widget;
+      if(!empty($instance['title'])){
+        $title = apply_filters('widget_title', $instance['title'] );
+      }
+      if (!empty($title)){
+        echo $before_title . $title . $after_title;
+      } else {
+        echo '<h4>人気記事</h4>';
+      }
+    $number = !empty($instance['number']) ? $instance['number'] : get_option('number');
+    ?>
+    <div class="popular_posts">
+      <ul>
+        <?php get_the_ID();
+          $args = array(
+            'meta_key'       => 'post_views_count',
+            'orderby'        => 'meta_value_num',
+            'order'          => 'DESC',
+            'posts_per_page' => $number
+          );
+          $my_query = new WP_Query($args);?>
+          <?php while($my_query->have_posts()) : $my_query->the_post(); $loopcounter++; ?>
+          <li>
+            <a href="<?php the_permalink(); ?>">
+              <span class="rank rank_count<?php echo $loopcounter; ?>">
+                <?php echo $loopcounter; ?>
+              </span>
+              <?php if( has_post_thumbnail() ): ?>
+                <?php the_post_thumbnail('thumbnail'); ?>
+              <?php endif; ?>
+              <div class="rank_ttl">
+                <?php the_title(); ?>
+                <br>
+                <span class="cat-data">
+                   <?php if( has_category() ): ?>
+                     <?php $postcat=get_the_category(); echo $postcat[0]->name; ?>
+                  <?php endif; ?>
+                </span>
+              </div>
+            </a>
+          </li>
+          <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+      </ul>
+    </div>
+    <?php echo $after_widget;
+    }
+  }
+
   register_widget('TOC_Widget');
   register_widget('Prof_Widget');
-
+  register_widget('Popular_Posts');
 
 } //END register_widgets()
