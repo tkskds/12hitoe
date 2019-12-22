@@ -1909,17 +1909,20 @@ li.share_hatena a{
 /*関連記事*/
 
 .related_thumb img,
-.related_ttl{
+.related_ttl,
+.rank_img img{
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-.related_thumb{
+.related_thumb,
+.rank_img{
   overflow: hidden;
   border: 2px solid #efefef;
 }
 
-.related_thumb img:hover{
+.related_thumb img:hover,
+.rank_img img:hover{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -1929,30 +1932,38 @@ ul.related_posts{
   background: #fff;
 }
 
-ul.related_posts li a{
+ul.related_posts li a,
+li.popular_posts_list a{
   color: unset;
 }
 
-.relatedType1 ul.related_posts li{
-  padding: 10px 0;
-  margin-bottom: 10px;
+.relatedType1 ul.related_posts li,
+li.popular_posts_list{
+  padding: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-.relatedType1 ul.related_posts li a{
+.relatedType1 ul.related_posts li a,
+li.popular_posts_list a{
   display: flex;
   align-items: center;
 }
 
-.relatedType1 .related_post_ttl{
-  margin-left: 20px;
-  width: calc(100% - 100px);
+.relatedType1 .related_post_ttl,
+.rank_ttl{
+  padding-left: 10px;
+  width: calc(100% - 104px);
 }
 
-.relatedType1 .related_thumb{
-  width: 100px;
+.relatedType1 .related_thumb,
+.rank_img{
+  width: 104px;
+  height: 104px;
 }
 
-.relatedType1 .related_thumb img{
+.relatedType1 .related_thumb img,
+.rank_img img{
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -2059,11 +2070,6 @@ p > code {
 }
 
 /****************        サイドバー       *******************/
-
-/*最初の要素の上に20pxの余白*/
-.aside__container > div:nth-of-type(1) {
-  margin-top: 20px;
-}
 
 .aside__container{
   height: 100%; /* これないとsticky効かない */
@@ -2456,35 +2462,10 @@ h4.footer_w_title {
 
 /*人気記事*/
 
-li.popular_posts_list a{
-  display: flex;
-  color: unset;
-  align-items: center;
-}
-
-li.popular_posts_list{
-  padding: 10px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
+/*関連記事のstyleとほとんど同じだからそっちと統合*/
 
 .rank_img{
   position: relative;
-  overflow: hidden;
-  width: 104px;
-  height: 104px;
-  border: 2px solid #efefef;
-}
-
-.rank_img img{
-  object-fit: cover;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.rank_img img:hover{
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 
 span.rank{
@@ -2516,11 +2497,6 @@ span.rank{
   color: #a0522d;
 }
 
-.rank_ttl {
-  padding-left: 10px;
-  width: calc(100% - 104px);
-}
-
 /*ウィジェットのa色*/
 .widget_recent_comments a,
 .widget_recent_entries a,
@@ -2538,17 +2514,18 @@ span.rank{
 .widget_categories li,
 .widget_archive select,
 .widget_archive li{
--webkit-transition: all .2s ease-in-out;
-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .widget_categories select:hover,
 .widget_categories li:hover,
 .widget_archive select:hover,
 .widget_archive li:hover,
-.widget_popular_posts li:hover{
-background: rgba(0,0,0,0.05);
-cursor: pointer;
+.widget_popular_posts li:hover,
+.relatedType1 ul.related_posts li:hover{
+  background: rgba(0,0,0,0.05);
+  cursor: pointer;
 }
 
 
@@ -2765,6 +2742,10 @@ cursor: pointer;
   .showPage aside#aside.exsist_bread {
     margin-top: 25px;
   }
+  /*最初の要素の上に20pxの余白*/
+  .aside__container > div:nth-of-type(1) {
+    margin-top: 20px;
+  }
 }
 
 
@@ -2789,6 +2770,9 @@ cursor: pointer;
   }
   .aside{
     width: 100%;
+  }
+  .aside__container > div:nth-of-type(1):not(.widget_prof_widget) {
+    margin-top: 20px;
   }
 }
 

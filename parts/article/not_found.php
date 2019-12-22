@@ -6,7 +6,7 @@
     </div>
     <!--アイキャッチ-->
     <div class="article_thumbnail">
-      <img src="<?php echo get_template_directory_uri()?>/images/NotFound/<?php echo rand(1,5)?>.png" alt="NotFound">
+      <img src="<?php echo get_template_directory_uri()?>/images/NotFound/<?php echo rand(1,5)?>.png" alt="NotFound" class="fadeinimg lazyload" width="520" height="300">
     </div>
     <!--本文-->
     <div class="article_content">
