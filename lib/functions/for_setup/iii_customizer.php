@@ -1868,6 +1868,18 @@ function org_customizer($wp_customize){
             'section'           => 'site_article',
           ));
 
+          $wp_customize->add_setting('site_article_comment_ttl', array(
+            'default'           => 'Comment',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_comment_ttl', array(
+            'label'             => '8-15.コメント欄のタイトル',
+            'description'       => 'コメント欄のタイトルです。使用しない場合はWordPress管理画面の設定から非表示にできます。詳しくはこちら',
+            'type'              => 'text',
+            'section'           => 'site_article',
+          ));
+
       $wp_customize->add_section('site_decoration',array(
         'priority'              => 9,
         'title'                 => '9.記事装飾の設定',

@@ -1,30 +1,36 @@
-<div id="comment_area">
-<?php if(have_comments()): ?>
-<h3 id="comments">Comments</h3>
-<ol class="commets-list">
-<?php wp_list_comments('avatar_size=48'); ?>
-</ol>
-<?php endif; ?>
-<?php $args = array(
+<?php
+  $comment_ttl = get_option('csite_article_omment_ttl') ? get_option('site_article_comment_ttl') : 'Comment' ;
+  $args = array(
     'title_reply'          => 'コメントする',
+    'title_reply_to'       => '返信する',
+    'cancel_reply_link'    => 'キャンセル',
     'label_submit'         => '送信する',
     'comment_notes_before' => '<p class="commentNotesBefore">入力エリアすべてが必須項目です。メールアドレスが公開されることはありません。</p>',
     'comment_notes_after'  => '<p class="commentNotesAfter">内容をご確認の上、送信してください。</p>',
     'fields'               => array(
-      'author'             => '<p class="comment-form-author">'.
-                              '<input id="author" name="author" type="text" value="'.
+      'author'             => '<p class="comment_form_author">'.
+                              '<input id="comment_author" name="author" type="text" value="'.
                                esc_attr( $commenter['comment_author'] ).
-                               '" size="30"'.$aria_req.' placeholder="＊your name" /></p>',
-      'email'              => '<p class="comment-form-email">'.
-                              '<input id="email" name="email" '.
+                               '" size="30"'.$aria_req.' placeholder="お名前" /></p>',
+      'email'              => '<p class="comment_form_email">'.
+                              '<input id="comment_email" name="email" '.
                               ($html5 ? 'type="email"' : 'type="text"').
                               ' value="'.esc_attr($commenter['comment_author_email']).
-                              '" size="30"'.$aria_req.'placeholder="＊your email" /></p>',
+                              '" size="30"'.$aria_req.'placeholder="メールアドレス" /></p>',
       'url'                => '',
     ),
-    'comment_field'        => '<p class="comment-form-comment">'.
-                              '<textarea id="comment" name="comment" cols="50" rows="6" aria-required="true"'.
-                              $aria_req.' placeholder="＊COMMENT" /></textarea></p>',
-    );
-comment_form( $args ); ?>
+    'comment_field'        => '<p class="comment_form_comment">'.
+                              '<textarea id="comment_comment" name="comment" cols="50" rows="6" aria-required="true"'.
+                              $aria_req.' placeholder="コメント内容を入力" /></textarea></p>',
+  );
+ ?>
+
+<div class="comment">
+  <?php if(have_comments()): ?>
+    <h3 class="comments_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
+    <ol class="commets_list">
+      <?php wp_list_comments('avatar_size=48'); ?>
+    </ol>
+  <?php endif; ?>
+  <?php comment_form($args); ?>
 </div>

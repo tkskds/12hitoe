@@ -1605,7 +1605,7 @@ div.tocType4 .toc_ttl{
 /*この記事を書いた人*/
 
 .author_box{
-  padding: 20px 15px;
+  padding: 20px;
   background: #fff;
   display: flex;
 }
