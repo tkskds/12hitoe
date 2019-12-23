@@ -10,7 +10,6 @@
 // 3-1 タイプの登録
 // 3-2 サニタイザー登録
 // 3-3 カスタマイザー項目追加
-// 3-4 設定した値の出力
 //
 //  label -> description -> type -> section
 //
@@ -46,7 +45,7 @@ function sanitize_checkbox($input){
 }
 
 //////////////////////////////
-// 3-4 カスタマイザー項目追加
+// 3-3 カスタマイザー項目追加
 //////////////////////////////
 
 function org_customizer($wp_customize){

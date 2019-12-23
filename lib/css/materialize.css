@@ -2498,6 +2498,15 @@ span.rank{
 }
 
 /*タブ*/
+.widget_tab_body.row {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.tabs{
+  margin-bottom: 15px;
+}
+
 .tabs .tab a:not(.active){
   opacity: .5;
 }

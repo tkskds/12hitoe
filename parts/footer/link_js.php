@@ -15,3 +15,6 @@
 
 <script type="text/javascript">FontAwesomeConfig = { searchPseudoElements: true };</script>
 <script defer type="text/javascript" src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+
+<?php //コメント用js ?>
+<?php if (is_singular()) wp_enqueue_script("comment-reply"); ?>

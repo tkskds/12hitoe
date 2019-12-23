@@ -24,6 +24,7 @@
       </div>
       <?php if($authorOff==false){get_template_part('parts/others/author');} ?>
       <?php if($relatedOff==false){get_template_part('parts/others/relatedPost');} ?>
+      <?php comments_template(); ?>
     </main>
     <?php if($siteType == 'value1' || $siteType == 'value3'){ get_sidebar(); } ?>
   </div>
