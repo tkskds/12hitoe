@@ -1716,6 +1716,17 @@ function org_customizer($wp_customize){
             'sanitize_callback' => 'sanitize_checkbox',
           ));
 
+          $wp_customize->add_setting('site_article_author_sns_ttl', array(
+            'default'           => 'Follow Me:)',
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_article_author_sns_ttl', array(
+            'label'             => 'SNSフォロー欄のタイトル',
+            'type'              => 'text',
+            'section'           => 'site_article',
+          ));
+
           $wp_customize->add_control('site_article_relatedable', array(
             'label'             => '8-5.関連記事を非表示',
             'type'              => 'checkbox',

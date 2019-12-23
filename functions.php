@@ -71,7 +71,12 @@ function filters(){
   /** プロフィールボックス拡張 **/
   add_filter('user_contactmethods'  , 'author_profile_box');
 
+  /** コメント欄のタグ制限 **/
+  add_filter('comments_open'        , 'filter_comment_tags');
+  add_filter('pre_comment_approved' , 'filter_comment_tags');
 
+  /** コメント欄でURL無効 **/
+  remove_filter('comment_text'      , 'make_clickable');
 
 }
 

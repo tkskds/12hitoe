@@ -21,6 +21,7 @@
 - 通知欄
 - 人気記事
 - コメント欄コールバック
+- コメント欄関係
 
 ***************/
 
@@ -579,6 +580,30 @@ function callback_comment($comment, $args, $depth) {
     </div>
 <?php
 }
+
+/////////////////////
+// コメント欄関係
+/////////////////////
+
+function filter_comment_tags($data){
+  global $allowedtags;
+  unset($allowedtags['a']);
+  unset($allowedtags['abbr']);
+  unset($allowedtags['acronym']);
+  unset($allowedtags['b']);
+  unset($allowedtags['div']);
+  unset($allowedtags['cite']);
+  unset($allowedtags['code']);
+  unset($allowedtags['del']);
+  unset($allowedtags['em']);
+  unset($allowedtags['i']);
+  unset($allowedtags['q']);
+  unset($allowedtags['strike']);
+  unset($allowedtags['strong']);
+  return $data;
+}
+
+///////////////////// 自分が使う用の関数 /////////////////////
 
 /////////////////////
 // hex　<=> rgba

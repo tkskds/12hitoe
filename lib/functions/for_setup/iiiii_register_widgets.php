@@ -281,7 +281,7 @@ function register_widgets(){
       $prof_img  = $instance['prof_img']  ? $instance['prof_img']  : '';
       $prof_text = $instance['prof_text'] ? $instance['prof_text'] : 'SAMPLE TEXT';
       echo $args['before_widget'];
-      echo '<div class="profile_widget"><img width="150" height="150" src="'.$prof_img.'" alt="'.$prof_name.'のプロフィール画像" class="lazyload fadeinimg">';
+      echo '<div class="profile_widget"><img width="150" height="150" data-src="'.$prof_img.'" alt="'.$prof_name.'のプロフィール画像" class="lazyload fadeinimg">';
       echo '<div class="profile_info"><p class="profile_name">'.$prof_name.'</p>';
       echo '<p class="profile_text">'.$prof_text.'</p>';
       echo get_template_part('parts/others/follow_button');
