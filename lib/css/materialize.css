@@ -1222,7 +1222,7 @@ article h4{
   margin: auto;
   text-align: center;
   padding: 2px;
-  background: whitesmoke;
+  background: #efefef;
   border-radius: 50%;
 }
 
@@ -1240,7 +1240,7 @@ article h4{
   width: 0px;
   height: 0px;
   border: 15px solid;
-  border-color: white transparent transparent transparent;
+  border-color: #fff transparent transparent transparent;
 }
 
 
@@ -1492,7 +1492,7 @@ div:not(.tocType1) .toc_body{
 }
 
 .tocType2{
-  background: whitesmoke;
+  background: #efefef;
   box-shadow: 0 1px 3px rgba(0,0,0,.19);
 }
 
@@ -1595,8 +1595,7 @@ div.tocType4 .toc_ttl{
 }
 
 /*シェア・関連記事・この記事を書いた人・コメント欄の共通見出しクラス*/
-.article_af_ttl,
-.comment-reply-title{
+.article_af_ttl{
   text-align: center;
   font-weight: bold;
   font-size: 1.4em;
@@ -1996,6 +1995,11 @@ li.popular_posts_list a{
 }
 
 /*コメント欄*/
+.comment-reply-title{
+  font-size: 1.2em;
+  text-align: center;
+}
+
 .comment_box {
   padding: 20px;
   background: #fff;
@@ -2022,7 +2026,7 @@ li.popular_posts_list a{
 .comment_text {
   background: #efefef;
   padding: 10px;
-  margin: 10px 0;
+  margin: 15px 0 10px;
   border-radius: 5px;
   position: relative;
 }
@@ -2122,7 +2126,7 @@ li.popular_posts_list a{
 
 /*マークダウンで書けるコード*/
 p > code {
-  background: whitesmoke;
+  background: #efefef;
   font-size: .9em;
   padding: 2px 3px;
   border-radius: 3px;
@@ -2145,7 +2149,7 @@ p > code {
 }
 
 .aside .post-count{
-  background: whitesmoke;
+  background: #efefef;
 }
 
 .sideType1 h4{

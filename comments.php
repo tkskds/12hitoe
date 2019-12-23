@@ -5,8 +5,8 @@
     'title_reply_to'       => '返信する',
     'cancel_reply_link'    => 'キャンセル',
     'label_submit'         => '送信する',
-    'comment_notes_before' => '<p class="commentNotesBefore">入力エリアすべてが必須項目です。メールアドレスが公開されることはありません。</p>',
-    'comment_notes_after'  => '<p class="commentNotesAfter">内容をご確認の上、送信してください。</p>',
+    'comment_notes_before' => '<p class="commentNotesBefore">入力エリアすべてが必須項目です。メールアドレスが公開されることはありません。</p><br>',
+    'comment_notes_after'  => '<p class="commentNotesAfter">内容をご確認の上、送信してください。</p><br>',
     'fields'               => array(
       'author'             => '<p class="comment_form_author">'.
                               '<input id="comment_author" name="author" type="text" value="'.
