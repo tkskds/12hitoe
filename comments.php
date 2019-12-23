@@ -26,10 +26,10 @@
  ?>
 
 <div class="comment">
-  <h3 class="comments_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
+  <h3 class="comment_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
   <div class="comment_box">
     <?php if(have_comments()): ?>
-      <div class="comments_lists">
+      <div class="comment_lists">
         <?php wp_list_comments(array('style'=>'div','callback'=>'callback_comment')); ?>
       </div>
     <?php endif; ?>

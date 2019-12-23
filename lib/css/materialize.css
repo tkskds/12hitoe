@@ -2001,7 +2001,7 @@ li.popular_posts_list a{
   background: #fff;
 }
 
-.comment-author, .comment-metadata{
+.comment-author{
   display: inline-block;
 }
 
@@ -2009,8 +2009,39 @@ li.popular_posts_list a{
   border-radius: 50%;
 }
 
+.comment_lists>.comment_block{
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 2px dashed #efefef;
+}
+
 .comment_block>.comment_block{
-  padding-left: 15px;
+  padding-left: 10px;
+}
+
+.comment_text {
+  background: #efefef;
+  padding: .5em 1em;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.comment_text>p{
+  margin-bottom: 10px;
+}
+
+.comment-meta{
+  text-align: right;
+}
+
+.comment-meta a{
+  color: unset;
+  font-size: 12px;
+}
+
+.reply{
+  text-align: right;
+  margin: 10px;
 }
 
 /*見出しとか色々*/

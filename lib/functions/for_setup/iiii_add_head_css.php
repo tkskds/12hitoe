@@ -190,7 +190,7 @@ a{color:<?php echo $link_c ?>;}
 #topnav li:nth-of-type(5) a::after{content:"<?php echo $navEn5 ?>";}
 .news{background: linear-gradient(45deg, <?php echo $newsBk1 ?>, <?php echo $newsBk2 ?>);}
 /*** 色 ***/
-.main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within,.pagination li span,.tocType3 .toc_ttl, .tocType4{background:<?php echo $main_c ?>;}
+.main__color,.main_color:active,.main_color:focus,.main_color:hover,.main_color:visited,.main_color:focus-within,.pagination li span,.tocType3 .toc_ttl, .tocType4,.btn,.btn:hover{background:<?php echo $main_c ?>;}
 .sub__color,.sub_color:active,.sub_color:focus,.sub_color:hover,.sub_color:visited,.sub_color:focus-within,.tocType5 .toc_ttl::after,.tabs .indicator{background:<?php echo $sub_c ?>;}
 .acc__color,.acc_color:active,.acc_color:focus,.acc_color:hover,.acc_color:visited,.acc_color:focus-within{background:<?php echo $acc_c ?>;}
 .main_c,.pagination li a,.articleList_wrap .articleList5 .content .title:hover,div.related_ttl:hover,.tocType4 .toc_body>ul>li>a::before,.started .navbar-fixed.main_c nav a{color:<?php echo $main_c ?>;}
