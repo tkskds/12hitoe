@@ -71,6 +71,8 @@ function filters(){
   /** プロフィールボックス拡張 **/
   add_filter('user_contactmethods'  , 'author_profile_box');
 
+
+
 }
 
 add_action('init', 'filters');
