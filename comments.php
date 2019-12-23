@@ -19,7 +19,7 @@
                               '" size="30"'.$aria_req.'placeholder="メールアドレス" /></p>',
       'url'                => '',
     ),
-    'comment_field'        => '<p class="comment_form_comment">'.
+    'comment_field'        => '<p class="comment_form_comment"><label for="comment_comment">コメント欄</label>'.
                               '<textarea id="comment_comment" name="comment" cols="50" rows="6" aria-required="true"'.
                               $aria_req.' placeholder="コメント内容を入力" /></textarea></p>',
   );

@@ -173,10 +173,10 @@ function register_widgets(){
     		echo $args['before_widget'];
     		echo '<h4 class="sidebar_title">'.$tab_ttl.'</h4><div class="widget_tab_body row">'.
              '<div class="col s12"><ul class="tabs">'.
-             '<li class="tab col s3"><a href="#tab1">'.$tab_ttl1.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab2">'.$tab_ttl2.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab3">'.$tab_ttl3.'</a></li>'.
-             '<li class="tab col s3"><a href="#tab4">'.$tab_ttl4.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab1" aria-label="タブ1のボタン">'.$tab_ttl1.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab2" aria-label="タブ2のボタン">'.$tab_ttl2.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab3" aria-label="タブ3のボタン">'.$tab_ttl3.'</a></li>'.
+             '<li class="tab col s3"><a href="#tab4" aria-label="タブ4のボタン">'.$tab_ttl4.'</a></li>'.
              '</ul></div>'.
              '<div id="tab1" class="col s12">'.$tab_con1.'</div>'.
              '<div id="tab2" class="col s12">'.$tab_con2.'</div>'.

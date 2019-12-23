@@ -124,7 +124,7 @@ if (!function_exists('custom_breadcrumb')){
     $json_array = array();
     $breadcrumb = get_option('site_decoration_bread') ? get_option('site_decoration_bread') : 'value1' ;
     $bc_class   = type_class($breadcrumb, 'breadcrumb');
-    echo  '<div class="breadcrumb '.$bc_class.'"><ul class="bread_lists">'.'<li class="bread_list bread_home">'.'<a href="'.esc_url(home_url()).'" class="bread_link" aria-labelledby="パンくずリストリンク"><i class="fas fa-home"></i><span>ホーム</span></a>'.'</li>';
+    echo  '<div class="breadcrumb '.$bc_class.'"><ul class="bread_lists">'.'<li class="bread_list bread_home">'.'<a href="'.esc_url(home_url()).'" class="bread_link" aria-label="パンくずリストリンク"><i class="fas fa-home"></i><span>ホーム</span></a>'.'</li>';
     if (is_attachment()){
       $post_title = apply_filters('the_title', $wp_obj->post_title);
       echo '<li class="bread_list"><span class="bread_activepage">'.esc_html($post_title).'</span></li>';
