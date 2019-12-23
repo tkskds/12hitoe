@@ -2497,6 +2497,11 @@ span.rank{
   color: #a0522d;
 }
 
+/*タブ*/
+.tabs .tab a{
+  opacity: .8;
+}
+
 /*ウィジェットのa色*/
 .widget_recent_comments a,
 .widget_recent_entries a,

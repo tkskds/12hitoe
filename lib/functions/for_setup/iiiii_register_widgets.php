@@ -162,13 +162,13 @@ function register_widgets(){
   	}
   	public function widget($args, $instance){
     	$tab_ttl     = $instance['tab_ttl']  ? $instance['tab_ttl']  : 'タブボックス' ;
-    	$tab_ttl1    = $instance['tab_ttl1'] ? $instance['tab_ttl1'] : 'タブボックス' ;
+    	$tab_ttl1    = $instance['tab_ttl1'] ? $instance['tab_ttl1'] : '<i class="fas fa-folder-open"></i>' ;
     	$tab_con1    = $instance['tab_con1'] ? $instance['tab_con1'] : 'タブボックス' ;
-    	$tab_ttl2    = $instance['tab_ttl2'] ? $instance['tab_ttl2'] : 'タブボックス' ;
+    	$tab_ttl2    = $instance['tab_ttl2'] ? $instance['tab_ttl2'] : '<i class="fas fa-pen-nib"></i>' ;
     	$tab_con2    = $instance['tab_con2'] ? $instance['tab_con2'] : 'タブボックス' ;
-    	$tab_ttl3    = $instance['tab_ttl3'] ? $instance['tab_ttl3'] : 'タブボックス' ;
+    	$tab_ttl3    = $instance['tab_ttl3'] ? $instance['tab_ttl3'] : '<i class="fas fa-fire"></i>' ;
     	$tab_con3    = $instance['tab_con3'] ? $instance['tab_con3'] : 'タブボックス' ;
-    	$tab_ttl4    = $instance['tab_ttl4'] ? $instance['tab_ttl4'] : 'タブボックス' ;
+    	$tab_ttl4    = $instance['tab_ttl4'] ? $instance['tab_ttl4'] : '<i class="fas fa-user-circle"></i>' ;
     	$tab_con4    = $instance['tab_con4'] ? $instance['tab_con4'] : 'test' ;
     		echo $args['before_widget'];
     		echo '<h4 class="sidebar_title">'.$tab_ttl.'</h4><div class="widget_tab_body row">'.
@@ -220,10 +220,12 @@ function register_widgets(){
       <p>
         <label for="<?php echo $tab_ttl1id; ?>">タブ1のタイトル:</label>
         <input class="widefat" id="<?php echo $tab_ttl1id; ?>" name="<?php echo $tab_ttl1n ?>" type="text" value="<?php echo esc_attr($tab_ttl1); ?>">
+        <small>タブのタイトル部分です。文字を設定することも可能ですが、文字数が限られているため、FontAwesomeなど設定してください。</small>
       </p>
       <p>
         <label for="<?php echo $tab_con1; ?>">タブ1のコンテンツ</label><br>
         <textarea class="widefat" id="<?php echo $tab_con1id; ?>" name="<?php echo $tab_con1n ?>" value="<?php echo esc_attr($tab_con1); ?>"><?php echo $tab_con1; ?></textarea>
+        <small>タブのコンテンツ部分です。文章のほか、ショートコードやHTMLコードなどもご利用いただけます。</small>
       </p>
       <p>
         <label for="<?php echo $tab_ttl2id; ?>">タブ2のタイトル:</label>
