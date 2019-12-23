@@ -547,33 +547,32 @@ function is_bot() {
 /////////////////////
 
 function callback_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment;
+  $GLOBALS['comment'] = $comment;
 ?>
-   <div class="comment">
-     <div id="comment-<?php comment_ID(); ?>">
+  <div class="comment_block">
+    <div id="comment-<?php comment_ID(); ?>">
       <div class="comment-author vcard">
-         <?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
-         <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+         <?php echo get_avatar($comment,'48'); ?>
+         <?php printf(__('<b class="fn">%s</b>'), get_comment_author_link()) ?>
       </div>
       <?php if ($comment->comment_approved == '0') : ?>
-         <em><?php _e('コメントは承認されてから表示されます') ?></em>
+         <em><?php _e('コメントはサイト運営者による承認後に表示されます') ?></em>
          <br />
       <?php endif; ?>
 
       <div class="comment-meta commentmetadata">
-        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-          <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
+        <a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>">
+          <?php printf(__('%1$s at %2$s'), get_comment_date(), get_comment_time()) ?>
         </a>
         <?php edit_comment_link(__('(編集)'),'  ','') ?>
       </div>
 
-      <?php comment_text() ?>
+      <p class="comment_text"><?php comment_text() ?></p>
 
       <div class="reply">
-         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+         <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
       </div>
-     </div>
-   </div>
+    </div>
 <?php
 }
 
