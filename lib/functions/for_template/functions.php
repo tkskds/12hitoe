@@ -542,6 +542,20 @@ function is_bot() {
 }
 
 /////////////////////
+// hex　<=> rgba
+/////////////////////
+
+function getConversionRgba($color_code, $alpha) {
+  $color_code = preg_replace('/#/', '', $color_code);
+  $rgba_code['red']   = hexdec(substr($color_code, 0, 2));
+  $rgba_code['green'] = hexdec(substr($color_code, 2, 2));
+  $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
+  $rgba_code['alpha'] = $alpha;
+  $rgba_code['full']  = implode(',', $rgba_code);
+  return $rgba_code;
+}
+
+/////////////////////
 // クラス付与
 /////////////////////
 

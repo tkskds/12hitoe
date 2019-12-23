@@ -2498,8 +2498,8 @@ span.rank{
 }
 
 /*タブ*/
-.tabs .tab a{
-  opacity: .8;
+.tabs .tab a:not(.active){
+  opacity: .5;
 }
 
 /*ウィジェットのa色*/
