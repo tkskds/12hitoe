@@ -20,6 +20,7 @@
 - 構造化データ
 - 通知欄
 - 人気記事
+- コメント欄コールバック
 
 ***************/
 
@@ -542,6 +543,41 @@ function is_bot() {
 }
 
 /////////////////////
+// コメント欄コールバック
+/////////////////////
+
+function callback_comment($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment;
+?>
+   <div class="comment">
+     <div id="comment-<?php comment_ID(); ?>">
+      <div class="comment-author vcard">
+         <?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
+         <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+      </div>
+      <?php if ($comment->comment_approved == '0') : ?>
+         <em><?php _e('コメントは承認されてから表示されます') ?></em>
+         <br />
+      <?php endif; ?>
+
+      <div class="comment-meta commentmetadata">
+        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+          <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
+        </a>
+        <?php edit_comment_link(__('(編集)'),'  ','') ?>
+      </div>
+
+      <?php comment_text() ?>
+
+      <div class="reply">
+         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+      </div>
+     </div>
+   </div>
+<?php
+}
+
+/////////////////////
 // hex　<=> rgba
 /////////////////////
 
@@ -552,7 +588,7 @@ function getConversionRgba($color_code, $alpha) {
   $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
   $rgba_code['alpha'] = $alpha;
   $rgba_code['full']  = implode(',', $rgba_code);
-  
+
   return $rgba_code['full'];
 }
 

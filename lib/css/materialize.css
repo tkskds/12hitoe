@@ -1594,8 +1594,9 @@ div.tocType4 .toc_ttl{
   display: none;
 }
 
-/*シェア・関連記事・この記事を書いた人の共通見出しクラス*/
-.article_af_ttl{
+/*シェア・関連記事・この記事を書いた人・コメント欄の共通見出しクラス*/
+.article_af_ttl,
+.comment-reply-title{
   text-align: center;
   font-weight: bold;
   font-size: 1.4em;
@@ -1994,8 +1995,21 @@ li.popular_posts_list a{
   margin: 10px 0 15px;
 }
 
-/*見出しとか色々*/
+/*コメント欄*/
+ol.commets_list {
+  padding: 20px;
+  background: #fff;
+}
 
+.comment-author, .comment-metadata{
+  display: inline-block;
+}
+
+.comment-author img {
+  border-radius: 50%;
+}
+
+/*見出しとか色々*/
 
 .article_content a{
   vertical-align: top;

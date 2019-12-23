@@ -1869,7 +1869,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_article_comment_ttl', array(
-            'default'           => 'Comment',
+            'default'           => 'COMMENT',
             'type'              => 'option',
           ));
 

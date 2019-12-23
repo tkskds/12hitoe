@@ -1,6 +1,6 @@
 <?php
-  $comment_ttl = get_option('csite_article_omment_ttl') ? get_option('site_article_comment_ttl') : 'Comment' ;
-  $args = array(
+  $comment_ttl = get_option('csite_article_omment_ttl') ? get_option('site_article_comment_ttl') : 'COMMENT' ;
+  $args_form   = array(
     'title_reply'          => 'コメントする',
     'title_reply_to'       => '返信する',
     'cancel_reply_link'    => 'キャンセル',
@@ -28,9 +28,9 @@
 <div class="comment">
   <?php if(have_comments()): ?>
     <h3 class="comments_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
-    <ol class="commets_list">
-      <?php wp_list_comments('avatar_size=48'); ?>
-    </ol>
+    <div class="commets_lists">
+      <?php wp_list_comments('callback=callback_comment'); ?>
+    </div>
   <?php endif; ?>
-  <?php comment_form($args); ?>
+  <?php comment_form($args_form); ?>
 </div>
