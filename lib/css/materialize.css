@@ -2021,9 +2021,19 @@ li.popular_posts_list a{
 
 .comment_text {
   background: #efefef;
-  padding: .5em 1em;
+  padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
+  position: relative;
+}
+
+.comment_text::before{
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 15px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #efefef;
 }
 
 .comment_text>p{
