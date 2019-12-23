@@ -26,12 +26,13 @@
  ?>
 
 <div class="comment">
-  <?php if(have_comments()): ?>
-    <h3 class="comments_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
-    <div class="commets_lists">
-      <?php wp_list_comments(array('style'=>'div','callback'=>'callback_comment')); ?>
+  <h3 class="comments_ttl article_af_ttl"><?php echo $comment_ttl ?></h3>
+  <div class="comment_box">
+    <?php if(have_comments()): ?>
+      <div class="comments_lists">
+        <?php wp_list_comments(array('style'=>'div','callback'=>'callback_comment')); ?>
       </div>
-    </div>
-  <?php endif; ?>
-  <?php comment_form($args_form); ?>
+    <?php endif; ?>
+    <?php comment_form($args_form); ?>
+  </div>
 </div>

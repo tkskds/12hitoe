@@ -968,7 +968,7 @@ article{
 
 .articleShow_wrap article{
   max-width: 960px;
-  margin: 20px auto;
+  margin: 20px auto 0;
   border-radius: 15px;
   background: #fff;
 }
@@ -1996,7 +1996,7 @@ li.popular_posts_list a{
 }
 
 /*コメント欄*/
-ol.commets_list {
+.comment_box {
   padding: 20px;
   background: #fff;
 }
@@ -2007,6 +2007,10 @@ ol.commets_list {
 
 .comment-author img {
   border-radius: 50%;
+}
+
+.comment_block>.comment_block{
+  padding-left: 15px;
 }
 
 /*見出しとか色々*/
