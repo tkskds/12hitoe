@@ -1953,19 +1953,19 @@ li.popular_posts_list a{
 .relatedType1 .related_post_ttl,
 .rank_ttl{
   padding-left: 10px;
-  width: calc(100% - 104px);
+  width: calc(100% - 84px);
 }
 
 .relatedType1 .related_thumb,
 .rank_img{
-  width: 104px;
-  height: 104px;
+  width: 84px;
+  height: 84px;
 }
 
 .relatedType1 .related_thumb img,
 .rank_img img{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }
 

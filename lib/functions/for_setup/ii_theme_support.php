@@ -27,7 +27,8 @@ function theme_supports(){
   //アイキャッチ画像使用可能に
   ****************/
   add_theme_support('post-thumbnails');
-  add_image_size('eyecatch', 520, 300, true );
+  add_image_size('eyecatch', 520, 300, true);//アイキャッチ用
+  add_image_size('minimum', 80, 80, true);//関連記事、人気記事用
 
 
   /****************
