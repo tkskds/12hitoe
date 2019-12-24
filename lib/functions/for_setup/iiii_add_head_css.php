@@ -210,6 +210,7 @@ a{color:<?php echo $link_c ?>;}
 .articleList_wrap .articleList3 .category::before{border-top-color:<?php echo $acc_c ?>;border-right-color:<?php echo $acc_c ?>;}
 .tocType3{border-color:<?php echo $main_c ?>;}
 .tabs .tab a:focus, .tabs .tab a:focus.active{background:rgba(<?php echo $sub_rgba ?>);}
+.sc_marker{background: linear-gradient(transparent 70%, <?php echo $sub_c ?> 70%);}
 /*ナビ*/
 nav{background: linear-gradient(45deg, <?php echo $nav_bk ?>, <?php echo $nav_bk_grad ?>);color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
@@ -233,11 +234,11 @@ a.tohomelink{color:<?php echo $foot_c ?>;}
 <?php if($darkModeOn==true): ?>
 @media (prefers-color-scheme: dark){
 .dark_theme,.dark_theme .articleShow_wrap article,.dark_theme .author_box,.dark_theme ul.related_posts,.dark_theme .comment_box{background:#444;color:#e4e4e4;}
-.dark_theme .aside .widget,.dark_theme .profile_widget img,.dark_theme .author_thumb img,.dark_theme ul.tabs,.dark_theme .breadcrumbType1 li a,.dark_theme .breadcrumbType1 li:last-of-type span{background: #555;}
+.dark_theme .aside .widget,.dark_theme .profile_widget img,.dark_theme .author_thumb img,.dark_theme ul.tabs,.dark_theme .breadcrumbType1 li a,.dark_theme .breadcrumbType1 li:last-of-type span,
+.dark_theme .articleList_wrap article:not(.articleList3):not(.articleList6) .thumbnail,.dark_theme .articleList_wrap article:not(.articleList5):not(.articleList6) .content, .dark_theme .articleList_wrap .articleList2{background: #555;}
 .dark_theme .sideType1 h4.sidebar_title::after,.dark_theme .breadcrumbType1 li:not(.bread_home)::before{background:#444;}
-.dark_theme nav,.dark_theme footer,.dark_theme .page-footer, .dark_theme .btn,.dark_theme .btn-floating,.dark_theme .comment_text{background:#333;}
+.dark_theme nav,.dark_theme footer,.dark_theme .page-footer, .dark_theme .btn,.dark_theme .btn-floating,.dark_theme .comment_text,.dark_theme .sidenav{background:#333;}
 .dark_theme .comment_text::before{border-bottom:10px solid #333;}
-.dark_theme .sidenav{background:#222;}
 .dark_theme a{color: #e39777;}
 .dark_theme img{filter: grayscale(30%);}
 }

@@ -273,6 +273,8 @@ nav ul li.active{
   font-weight: 600;
 }
 
+/*サイドメニュー*/
+
 .sidenav li{
   display: block;
 }
@@ -313,6 +315,10 @@ li.sidenav-ttl{
 
 .sidenav .widget_categories form::before {
   height: auto;
+}
+
+.side_nav_dark_switch .switch{
+  text-align: center;
 }
 
 /****************    ダイナミックヘッダー   *******************/
@@ -2387,10 +2393,12 @@ h4.footer_w_title {
   display: inline-block;
   position: relative;
   font-size: 12px;
+  line-height: 12px;
+  height: 24px;
   display: inline-block;
   color: unset;
-  padding: .5em 2em;
-  margin: .5em 1em .5em 0;
+  padding: 6px 24px;
+  margin: 6px 12px 6px 0;
   border-radius: 30px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
