@@ -2285,7 +2285,7 @@ a.tohomelink svg{
   flex-grow: 2;
 }
 
-.footer_sp_menu ul li a{
+.footer_sp_menu ul li a.footer_sp_menu_li{
   position: relative;
   height: 56px;
   padding: 0;
