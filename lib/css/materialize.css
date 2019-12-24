@@ -1599,6 +1599,72 @@ div.tocType4 .toc_ttl{
   display: none;
 }
 
+/*CTA*/
+.cta{
+  display: block;
+}
+
+.cta_body.delighter{
+  -webkit-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.cta_body.delighter.started{
+  width: 100%;
+  opacity: 1;
+}
+
+.cta_img_area {
+  display: block;
+  width: 230px;
+  padding: 15px;
+  margin: auto;
+}
+
+.cta_text_area {
+  padding: 10px;
+  color: #efefef;
+  flex-grow: 2;
+  min-width: 300px;
+}
+
+.cta_text_area h4.cta_ttl{
+  font-size: 1.5em;
+  margin: 0 0 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cta_text {
+  max-width: 300px;
+  margin: 0 auto 20px;
+}
+
+.cta_btn.delighter{
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  display: block;
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.cta_btn.delighter.started{
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+}
+
 /*シェア・関連記事・この記事を書いた人・コメント欄の共通見出しクラス*/
 .article_af_ttl{
   text-align: center;

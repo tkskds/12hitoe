@@ -106,7 +106,12 @@ function add_customizerCSS(){
   $link_c     = get_option('site_color_a_tag_color')      ? get_option('site_color_a_tag_color')      : '#2d6eef';
 
   $main_rgba  = getConversionRgba($main_c, 0.2);
-  $sub_rgba   = getConversionRgba($sub_c, 0.2);
+  $sub_rgba   = getConversionRgba($sub_c , 0.2);
+
+  $cta_rgba1  = getConversionRgba($acc_c , 0.9);
+  $cta_rgba2  = getConversionRgba($main_c, 0.9);
+  $cta_rgba3  = getConversionRgba($main_c, 0.8);
+  $cta_rgba4  = getConversionRgba($main_c, 0.7);
 
   /*** 記事に関する設定 ***/
   $p_margin   = get_option('site_article_p_margin')       ? get_option('site_article_p_margin')       : '0.5';
@@ -211,6 +216,7 @@ a{color:<?php echo $link_c ?>;}
 .tocType3{border-color:<?php echo $main_c ?>;}
 .tabs .tab a:focus, .tabs .tab a:focus.active{background:rgba(<?php echo $sub_rgba ?>);}
 .sc_marker{background: linear-gradient(transparent 70%, <?php echo $sub_c ?> 70%);}
+.cta_body{background: linear-gradient(45deg,rgba(<?php echo $cta_rgba1 ?>),rgba(<?php echo $cta_rgba2 ?>),rgba(<?php echo $cta_rgba3 ?>),rgba(<?php echo $cta_rgba4 ?>));}
 /*ナビ*/
 nav{background: linear-gradient(45deg, <?php echo $nav_bk ?>, <?php echo $nav_bk_grad ?>);color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}

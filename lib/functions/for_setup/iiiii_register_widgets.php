@@ -64,8 +64,18 @@ function register_widgets(){
   記事内最後
   ****************/
   register_sidebar(array(
-    'name'          => '記事内の最下部',
+    'name'          => '記事内の下部（シェアボタン前）',
     'id'            => 'ad_after_content',
+    'description'   => '記事内の最下部です。広告など設置するのにご使用いただけます。',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '',
+    'after_title'   => '',
+  ));
+
+  register_sidebar(array(
+    'name'          => '記事内の下部（シェアボタン後）',
+    'id'            => 'ad_bottom_content',
     'description'   => '記事内の最下部です。広告など設置するのにご使用いただけます。',
     'before_widget' => '',
     'after_widget'  => '',
@@ -152,6 +162,144 @@ function register_widgets(){
   }
 
   /****************
+  CTA
+  ****************/
+  class CTA_Widget extends WP_Widget{
+    function __construct(){
+  		parent::__construct('cta_widget','CTA',array(
+        'description' => 'CTA（call to action）を表示します',
+      ));
+  	}
+  	public function widget($args, $instance){
+      $cta_img  = $instance['cta_img'];
+      $cta_ttl  = $instance['cta_ttl'] ? $instance['cta_ttl']  : 'CTA TITLE';
+      $cta_text = $instance['cta_text']? $instance['cta_text'] : 'CTAはこんな感じで表示されます。';
+      $cta_btn  = $instance['cta_btn'] ? $instance['cta_btn']  : 'CLICK ME' ;
+      $cta_url  = $instance['cta_url'] ? $instance['cta_url']  : '#' ;
+
+  		echo $args['before_widget'];
+  		echo '<div class="cta">'.
+           '<div class="cta_body delighter">';
+      if(!empty($cta_img)){
+      echo '<div class="cta_img_area">'.
+           '<img width="200" data-src="'.$cta_img.'" alt="CTAエリアイメージ" class="lazyload fadeinimg">'.
+           '</div>';
+      }
+      echo '<div class="cta_text_area">'.
+           '<h4 class="cta_ttl">'.$cta_ttl.'</h4>'.
+           '<div class="cta_text">'.$cta_text.'</div>'.
+           '<a href="'.$cta_url.'" class="btn waves-effect cta_btn delighter" data-delighter="start:0.6">'.$cta_btn.'</a>'.
+           '</div></div></div>';
+      echo $args['after_widget'];
+  	}
+    public function form($instance){
+      $cta_img  = $instance['cta_img'];
+      $img_name = $this->get_field_name('cta_img');
+      $img_id   = $this->get_field_id('cta_img');
+      $cta_ttl  = $instance['cta_ttl'] ? $instance['cta_ttl']  : 'CTA TITLE';
+      $cta_n1   = $this->get_field_name('cta_ttl');
+      $cta_id1  = $this->get_field_id('cta_ttl');
+      $cta_text = $instance['cta_text']? $instance['cta_text'] : 'CTAはこんな感じで表示されます。';
+      $cta_n2   = $this->get_field_name('cta_text');
+      $cta_id2  = $this->get_field_id('cta_text');
+      $cta_btn  = $instance['cta_btn'] ? $instance['cta_btn']  : 'CLICK ME' ;
+      $cta_n3   = $this->get_field_name('cta_btn');
+      $cta_id3  = $this->get_field_id('cta_btn');
+      $cta_url  = $instance['cta_url'] ? $instance['cta_url']  : '#' ;
+      $cta_n4   = $this->get_field_name('cta_url');
+      $cta_id4  = $this->get_field_id('cta_url');
+      ?>
+      <p>
+        <label for="<?php echo $img_id; ?>">イメージ画像</label><br>
+        <?php
+            $show_sml   = '';
+            $show_img = '';
+            if (empty($cta_img)){
+              $show_img = ' style="display: none;" ';
+            }else{
+              $show_sml = ' style="display: none;" ';
+            }
+        ?>
+        <small class="fixed-image-text " <?php echo $show_sml; ?>>画像が未選択です</small>
+        <p><img class="fixed-image-view" src="<?php echo $cta_img; ?>" width="260" <?php echo $show_img; ?>></p>
+        <input class="fixed-image-url" id="<?php echo $img_id; ?>" name="<?php echo $img_name ?>" type="text" value="<?php echo $cta_img; ?>">
+        <button type="button" class="fixed-select-image">画像を選択</button>
+        <button type="button" class="fixed-delete-image" <?php echo $show_img; ?>>画像を削除</button>
+        <script>
+          jQuery(document).ready(function($) {
+            var frame;
+            const placeholder = jQuery('.fixed-image-text');
+            const imageUrl = jQuery('.fixed-image-url');
+            const imageView = jQuery('.fixed-image-view');
+            const deleteImage = jQuery('.fixed-delete-image');
+            jQuery('.fixed-select-image').on('click', function(e){
+              e.preventDefault();
+              if ( frame ) {
+                frame.open();
+                return;
+              }
+              frame = wp.media({
+                title: '画像を選択',
+                library: {
+                  type: 'image'
+                },
+                button: {
+                  text: '画像を追加する'
+                },
+                multiple: false
+              });
+              frame.on('select', function(){
+                var images = frame.state().get('selection');
+                images.each(function(file) {
+                  placeholder.css('display', 'none');
+                  imageUrl.val(file.toJSON().url);
+                  imageView.attr('src', file.toJSON().url).css('display', 'block');
+                  deleteImage.css('display', 'inline-block');
+                });
+                imageUrl.trigger('change');
+              });
+              frame.open();
+            });
+            jQuery('.fixed-delete-image').off().on('click', function(e){
+              e.preventDefault();
+              imageUrl.val('');
+              imageView.css('display', 'none');
+              deleteImage.css('display', 'none');
+              imageUrl.trigger('change');
+            });
+          });
+        </script>
+      </p>
+      <p>
+        <label for="<?php echo $cta_id1; ?>">タイトル:</label>
+        <input class="widefat" id="<?php echo $cta_id1; ?>" name="<?php echo $cta_n1 ?>" type="text" value="<?php echo esc_attr($cta_ttl); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $cta_id2; ?>">タイトル下のテキスト:</label>
+        <input class="widefat" id="<?php echo $cta_id2; ?>" name="<?php echo $cta_n2 ?>" type="text" value="<?php echo esc_attr($cta_text); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $cta_id3; ?>">ボタン内のテキスト:</label>
+        <input class="widefat" id="<?php echo $cta_id3; ?>" name="<?php echo $cta_n3 ?>" type="text" value="<?php echo esc_attr($cta_btn); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $cta_id4; ?>">ボタンのリンク先:</label>
+        <input class="widefat" id="<?php echo $cta_id4; ?>" name="<?php echo $cta_n4 ?>" type="text" value="<?php echo esc_attr($cta_url); ?>">
+      </p>
+      <?php
+    }
+    public function update($new_instance, $old_instance) {
+      $instance = array();
+      $instance['cta_ttl']  = (!empty($new_instance['cta_ttl']))  ? $new_instance['cta_ttl']  : '' ;
+      $instance['cta_text'] = (!empty($new_instance['cta_text'])) ? $new_instance['cta_text'] : '' ;
+      $instance['cta_btn']  = (!empty($new_instance['cta_btn']))  ? $new_instance['cta_btn']  : '' ;
+      $instance['cta_url']  = (!empty($new_instance['cta_url']))  ? $new_instance['cta_url']  : '' ;
+      $instance['cta_img']  = (!empty($new_instance['cta_img']))  ? $new_instance['cta_img']  : '' ;
+      return $instance;
+    }
+  }
+
+  /****************
   タブボックス
   ****************/
   class TAB_Widget extends WP_Widget{
@@ -185,31 +333,31 @@ function register_widgets(){
         echo $args['after_widget'];
   	}
     public function form($instance){
-      $tab_ttl    = $instance['tab_ttl'];
+      $tab_ttl    = $instance['tab_ttl']  ? $instance['tab_ttl']  : 'タブボックス' ;
       $tab_name   = $this->get_field_name('tab_ttl');
       $tab_id     = $this->get_field_id('tab_ttl');
-      $tab_ttl1   = $instance['tab_ttl1'];
+      $tab_ttl1   = $instance['tab_ttl1'] ? $instance['tab_ttl1'] : '<i class="fas fa-folder-open"></i>';
       $tab_ttl1n  = $this->get_field_name('tab_ttl1');
       $tab_ttl1id = $this->get_field_id('tab_ttl1');
-      $tab_con1   = $instance['tab_con1'];
+      $tab_con1   = $instance['tab_con1'] ? $instance['tab_con1'] : 'タブボックス';
       $tab_con1n  = $this->get_field_name('tab_con1');
       $tab_con1id = $this->get_field_id('tab_con1');
-      $tab_ttl2   = $instance['tab_ttl2'];
+      $tab_ttl2   = $instance['tab_ttl2'] ? $instance['tab_ttl2'] : '<i class="fas fa-pen-nib"></i>';
       $tab_ttl2n  = $this->get_field_name('tab_ttl2');
       $tab_ttl2id = $this->get_field_id('tab_ttl2');
-      $tab_con2   = $instance['tab_con2'];
+      $tab_con2   = $instance['tab_con2'] ? $instance['tab_con2'] : 'タブボックス';
       $tab_con2n  = $this->get_field_name('tab_con2');
       $tab_con2id = $this->get_field_id('tab_con2');
-      $tab_ttl3   = $instance['tab_ttl3'];
+      $tab_ttl3   = $instance['tab_ttl3'] ? $instance['tab_ttl3'] : '<i class="fas fa-fire"></i>';
       $tab_ttl3n  = $this->get_field_name('tab_ttl3');
       $tab_ttl3id = $this->get_field_id('tab_ttl3');
-      $tab_con3   = $instance['tab_con3'];
+      $tab_con3   = $instance['tab_con3'] ? $instance['tab_con3'] : 'タブボックス';
       $tab_con3n  = $this->get_field_name('tab_con3');
       $tab_con3id = $this->get_field_id('tab_con3');
-      $tab_ttl4   = $instance['tab_ttl4'];
+      $tab_ttl4   = $instance['tab_ttl4'] ? $instance['tab_ttl4'] : '<i class="fas fa-user-circle"></i>';
       $tab_ttl4n  = $this->get_field_name('tab_ttl4');
       $tab_ttl4id = $this->get_field_id('tab_ttl4');
-      $tab_con4   = $instance['tab_con4'];
+      $tab_con4   = $instance['tab_con4'] ? $instance['tab_con4'] : 'test';
       $tab_con4n  = $this->get_field_name('tab_con4');
       $tab_con4id = $this->get_field_id('tab_con4');
       ?>
@@ -469,6 +617,7 @@ function register_widgets(){
   }
 
   register_widget('TOC_Widget');
+  register_widget('CTA_Widget');
   register_widget('TAB_Widget');
   register_widget('Prof_Widget');
   register_widget('Popular_Posts');

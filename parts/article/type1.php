@@ -60,6 +60,10 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
           <?php get_template_part('parts/others/sharebutton') ?>
         </div>
       <?php endif; ?>
+      <!--シェア記事下の下広告エリア-->
+      <?php if(is_active_sidebar('ad_bottom_content')): ?>
+        <?php dynamic_sidebar('ad_bottom_content'); ?>
+      <?php endif; ?>
     </div>
     <?php ld_json(); ?>
   </article>
