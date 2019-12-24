@@ -55,14 +55,17 @@
   <?php endif; ?>
 
   <?php if($darkModeOn==true): ?>
-    <div class="switch">
-      <label for="mode_switch">
-        Off
-        <input id="mode_switch" type="checkbox">
-        <span class="lever"></span>
-        On
-      </label>
-    </div>
+    <li class="side_nav_dark_switch">
+      <h3 class="sidenav_ttl">Light → Dark</h3>
+      <div class="switch">
+        <label for="mode_switch">
+          Off
+          <input id="mode_switch" type="checkbox">
+          <span class="lever"></span>
+          On
+        </label>
+      </div>
+    </li>
   <?php endif; ?>
 
 </ul>

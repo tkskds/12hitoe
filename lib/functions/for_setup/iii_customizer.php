@@ -1395,7 +1395,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_setting('site_color_a_tag_color', array(
             'type'              => 'option',
-            'default'           => '#039be5;',
+            'default'           => '#2d6eef;',
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_a_tag_color', array(

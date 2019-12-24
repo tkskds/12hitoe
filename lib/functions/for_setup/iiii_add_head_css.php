@@ -103,7 +103,7 @@ function add_customizerCSS(){
   $side_bk    = get_option('site_color_widget_bk')        ? get_option('site_color_widget_bk')        : '#ffffff';
   $foot_bk    = get_option('site_color_footer_bk_color')  ? get_option('site_color_footer_bk_color')  : '#1a2760';
   $foot_c     = get_option('site_color_footer_color')     ? get_option('site_color_footer_color')     : '#ffffff';
-  $link_c     = get_option('site_color_a_tag_color')      ? get_option('site_color_a_tag_color')      : '#039be5';
+  $link_c     = get_option('site_color_a_tag_color')      ? get_option('site_color_a_tag_color')      : '#2d6eef';
 
   $main_rgba  = getConversionRgba($main_c, 0.2);
   $sub_rgba   = getConversionRgba($sub_c, 0.2);
@@ -215,6 +215,7 @@ nav{background: linear-gradient(45deg, <?php echo $nav_bk ?>, <?php echo $nav_bk
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
 .aside .widget,.profile_widget img,.author_thumb img{background:<?php echo $side_bk ?>;}
 footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
+.footer_widgets_wrap .search_form_wrap input,.footer_widgets_wrap .search_form_wrap svg{color:<?php echo $foot_c ?>;}
 a.tohomelink{color:<?php echo $foot_c ?>;}
 /*** 記事 ***/
 <?php if ($fontOnlyHeading == true): ?>
@@ -231,9 +232,14 @@ a.tohomelink{color:<?php echo $foot_c ?>;}
 
 <?php if($darkModeOn==true): ?>
 @media (prefers-color-scheme: dark){
-body.dark_theme{background-color: #444;color: #e4e4e4;}
-body.dark_theme a{color: #e39777;}
-body.dark_theme img{filter: grayscale(30%);}
+.dark_theme,.dark_theme .articleShow_wrap article,.dark_theme .author_box,.dark_theme ul.related_posts,.dark_theme .comment_box{background:#444;color:#e4e4e4;}
+.dark_theme .aside .widget,.dark_theme .profile_widget img,.dark_theme .author_thumb img,.dark_theme ul.tabs,.dark_theme .breadcrumbType1 li a,.dark_theme .breadcrumbType1 li:last-of-type span{background: #555;}
+.dark_theme .sideType1 h4.sidebar_title::after,.dark_theme .breadcrumbType1 li:not(.bread_home)::before{background:#444;}
+.dark_theme nav,.dark_theme footer,.dark_theme .page-footer, .dark_theme .btn,.dark_theme .btn-floating,.dark_theme .comment_text{background:#333;}
+.dark_theme .comment_text::before{border-bottom:10px solid #333;}
+.dark_theme .sidenav{background:#222;}
+.dark_theme a{color: #e39777;}
+.dark_theme img{filter: grayscale(30%);}
 }
 <?php endif; ?>
 </style>

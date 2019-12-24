@@ -1021,7 +1021,6 @@ article h4{
 }
 
 .article_date{
-  color: #708090;
   font-size: .9em;
 }
 
@@ -1617,7 +1616,6 @@ div.tocType4 .toc_ttl{
 .author_thumb img{
   border-radius: 50%;
   padding: 5px;
-  box-shadow: 0 -1px 3px rgba(0,0,0,.09);
 }
 
 .author_name{
@@ -2190,13 +2188,7 @@ p > code {
 
 .input_placeholder{
   position: absolute;
-  font-size: 1em;
-  line-height: 3rem;
-  left: 10px;
-}
-
-input#s:focus ~ .input_placeholder{
-  display: none;
+  font-size: 12px;
 }
 
 /****************         フッター        *******************/
