@@ -2190,11 +2190,15 @@ p > code {
 
 .search_form_wrap{
   position: relative;
+  padding-top: 12px;
 }
 
 .input_placeholder{
   position: absolute;
+  top: 0;
+  left: 10px;
   font-size: 12px;
+  line-height: 1;
 }
 
 /****************         フッター        *******************/

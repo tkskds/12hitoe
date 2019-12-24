@@ -93,10 +93,26 @@
           <i class="fas fa-share-alt"></i>
         </a>
         <ul>
-          <li><a class="btn-floating footer_share_tw" aria-label="Twitterでシェア"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="btn-floating footer_share_fb" aria-label="Facebookでシェア"><i class="fab fa-facebook"></i></a></li>
-          <li><a class="btn-floating footer_share_hb" aria-label="はてブでシェア">B!</a></li>
-          <li><a class="btn-floating footer_share_ln" aria-label="LINEでシェア"><i class="fab fa-line"></i></a></li>
+          <li>
+            <a class="btn-floating footer_share_tw" href="http://twitter.com/intent/tweet?text=<?php echo urlencode(the_title("","",0)); ?>&amp;<?php echo urlencode(get_permalink()); ?>&amp;url=<?php echo urlencode(get_permalink()); ?>" target="_blank" rel="nofollow noopener noreferrer" title="Twitterで共有" aria-label="Twitterで共有">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="btn-floating footer_share_fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&t=<?php the_title() ?>" target="blank" rel="nofollow noopener noreferrer" aria-label="Facebookで共有">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="btn-floating footer_share_hb" href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(the_title("","",0)); ?>" target="_blank" rel="nofollow noopener noreferrer" data-hatena-bookmark-title="<?php the_permalink(); ?>" title="このエントリーをはてなブックマークに追加" aria-label="はてブで共有">
+              B!
+            </a>
+          </li>
+          <li>
+            <a class="btn-floating footer_share_ln" href="https://social-plugins.line.me/lineit/share?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" rel="nofollow noopener noreferrer" title="Lineで共有" aria-label="LINEで共有">
+              <i class="fab fa-line"></i>
+            </a>
+          </li>
         </ul>
       </div>
     <?php endif; //END SHAREボタン ?>
@@ -111,7 +127,7 @@
             <ul>
               <?php if ($li1icon != null) : ?>
                 <li>
-                  <a href="<?php echo $li1uri ?>" class="waves-effect">
+                  <a href="<?php echo $li1uri ?>" class="waves-effect footer_sp_menu_li">
                     <?php echo $li1icon ?>
                     <span><?php echo $li1text ?></span>
                   </a>
@@ -119,7 +135,7 @@
               <?php endif; ?>
               <?php if ($li2icon != null) : ?>
                 <li>
-                  <a href="<?php echo $li2uri ?>" class="waves-effect">
+                  <a href="<?php echo $li2uri ?>" class="waves-effect footer_sp_menu_li">
                     <?php echo $li2icon ?>
                     <span><?php echo $li2text ?></span>
                   </a>
@@ -127,7 +143,7 @@
               <?php endif; ?>
               <?php if ($li3icon != null) : ?>
                 <li>
-                  <a href="<?php echo $li3uri ?>" class="waves-effect">
+                  <a href="<?php echo $li3uri ?>" class="waves-effect footer_sp_menu_li">
                     <?php echo $li3icon ?>
                     <span><?php echo $li3text ?></span>
                   </a>
@@ -135,7 +151,7 @@
               <?php endif; ?>
               <?php if ($li4icon != null) : ?>
                 <li>
-                  <a href="<?php echo $li4uri ?>" class="waves-effect">
+                  <a href="<?php echo $li4uri ?>" class="waves-effect footer_sp_menu_li">
                     <?php echo $li4icon ?>
                     <span><?php echo $li4text ?></span>
                   </a>
@@ -143,7 +159,7 @@
               <?php endif; ?>
               <?php if ($li5icon != null) : ?>
                 <li>
-                  <a href="<?php echo $li5uri ?>" class="waves-effect">
+                  <a href="<?php echo $li5uri ?>" class="waves-effect footer_sp_menu_li">
                     <?php echo $li5icon ?>
                     <span><?php echo $li5text ?></span>
                   </a>
