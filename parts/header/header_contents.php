@@ -22,7 +22,7 @@ if(is_home() || is_front_page()) {
 
  ?>
 
-<?php if($fixed  == true){echo '<div class="navbar-fixed main_c">'; } ?>
+<?php if($fixed  == true){echo '<div class="navbar-fixed">'; } ?>
 <nav<?php if($extend == true){echo ' class="nav-extended"';} ?>>
   <div class="nav-wrapper">
     <?php echo $title_tag_start; ?>

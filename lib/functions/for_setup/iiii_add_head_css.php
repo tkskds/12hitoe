@@ -5,6 +5,9 @@ function add_customizerCSS(){
 //サイトの骨組み
   $siteType             = get_option('site_bone_type');
 
+//ダークモード
+  $darkModeOn           = get_option('site_bone_dark')              ? get_option('site_bone_dark')            : false;
+
 //コンテンツエリア横幅
   $contentArea          = get_option('site_bone_content_area')      ? get_option('site_bone_content_area')    : '1200';
 
@@ -93,6 +96,7 @@ function add_customizerCSS(){
   $sub_c      = get_option('site_color_sub')              ? get_option('site_color_sub')              : '#3bb3fa';
   $acc_c      = get_option('site_color_acc')              ? get_option('site_color_acc')              : '#ff3f3f';
   $nav_bk     = get_option('site_color_nav_bk')           ? get_option('site_color_nav_bk')           : '#1a2760';
+  $nav_bk_grad= get_option('site_color_nav_bk_grad')      ? get_option('site_color_nav_bk_grad')      : '#9287e5';
   $nav_c      = get_option('site_color_nav_color')        ? get_option('site_color_nav_color')        : '#ffffff';
   $body_bk    = get_option('site_color_body_bk')          ? get_option('site_color_body_bk')          : '#f5f5f5';
   $body_c     = get_option('site_color_body_color')       ? get_option('site_color_body_color')       : '#2b546a';
@@ -181,7 +185,7 @@ a{color:<?php echo $link_c ?>;}
 <?php endif; ?>
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php if($navtp == true): ?>
-.headerArea nav{background:transparent;}
+.headerArea nav{background:transparent;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
 <?php endif; ?>
 #topnav li:nth-of-type(1) a::after{content:"<?php echo $navEn1 ?>";}
 #topnav li:nth-of-type(2) a::after{content:"<?php echo $navEn2 ?>";}
@@ -199,7 +203,7 @@ a{color:<?php echo $link_c ?>;}
 .article_content h2.h2type2,.article_content h3.h3type2,.article_content h4.h4type2,.article_content h2.h2type3::before,.article_content h3.h3type3::before,.article_content h4.h4type3::before,.article_content h2.h2type5,.article_content h3.h3type5,.article_content h4.h4type5{background:<?php echo $main_c ?>;}
 .article_content h2.h2type2::after,.article_content h3.h3type2::after,.article_content h4.h4type2::after{border-top-color:<?php echo $main_c ?>;}
 .article_content h2.h2type4:first-letter,.article_content h3.h3type4:first-letter,.article_content h4.h4type4:first-letter,.tabs .tab a:hover,.tabs .tab a.active,.tabs .tab a{color:<?php echo $main_c ?>;}
-.article_content h2.h2type6::after,.article_content h3.h3type6::after,.article_content h4.h4type6::after{background:-webkit-linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
+.article_content h2.h2type6::after,.article_content h3.h3type6::after,.article_content h4.h4type6::after{background: linear-gradient(to right, <?php echo $main_c ?>, <?php echo $sub_c ?>, #fff);}
 .article_content ul li::before{background:<?php echo $sub_c ?>;}
 .sideType1 h4.sidebar_title::after,.breadcrumbType1 li:not(.bread_home)::before{background:<?php echo $body_bk ?>;}
 .btn-floating:hover{background-color:<?php echo $acc_c ?>;}
@@ -207,7 +211,7 @@ a{color:<?php echo $link_c ?>;}
 .tocType3{border-color:<?php echo $main_c ?>;}
 .tabs .tab a:focus, .tabs .tab a:focus.active{background:rgba(<?php echo $sub_rgba ?>);}
 /*ナビ*/
-nav{background:<?php echo $nav_bk ?>;color:<?php echo $nav_c ?>;}
+nav{background: linear-gradient(45deg, <?php echo $nav_bk ?>, <?php echo $nav_bk_grad ?>);color:<?php echo $nav_c ?>;}
 nav .brand-logo,nav a,nav ul a{color:<?php echo $nav_c ?>;}
 .aside .widget,.profile_widget img,.author_thumb img{background:<?php echo $side_bk ?>;}
 footer, .page-footer{background:<?php echo $foot_bk ?>;color:<?php echo $foot_c ?>;}
@@ -223,6 +227,14 @@ a.tohomelink{color:<?php echo $foot_c ?>;}
 <?php endif; ?>
 <?php if($footTop == true && $footShr == true) : ?>
 .fixed-action-btn{margin-bottom:61px;}
+<?php endif; ?>
+
+<?php if($darkModeOn==true): ?>
+@media (prefers-color-scheme: dark){
+body.dark_theme{background-color: #444;color: #e4e4e4;}
+body.dark_theme a{color: #e39777;}
+body.dark_theme img{filter: grayscale(30%);}
+}
 <?php endif; ?>
 </style>
 

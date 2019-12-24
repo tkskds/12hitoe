@@ -183,6 +183,19 @@ function org_customizer($wp_customize){
             'section'           => 'site_bone',
           ));
 
+          $wp_customize->add_setting('site_bone_dark', array(
+            'default'           => false,
+            'type'              => 'option',
+            'sanitize_callback' => 'sanitize_checkbox'
+          ));
+
+          $wp_customize->add_control('site_bone_dark', array(
+            'label'             => 'ダークモード有効化',
+            'description'       => 'チェックを入れるとダークモードを有効化できます。サイドメニューの最下部にボタンが表示されます。詳しくはこちら',
+            'type'              => 'checkbox',
+            'section'           => 'site_bone',
+          ));
+
       $wp_customize->add_section('site_dyheader', array(
         'priority'              => 2,
         'title'                 => '2.ダイナミックヘッダー（『1:骨組みの設定』で選択した場合のみ）',
@@ -1309,6 +1322,17 @@ function org_customizer($wp_customize){
             'section'           => 'site_color',
           )));
 
+          $wp_customize->add_setting('site_color_nav_bk_grad', array(
+            'type'              => 'option',
+            'default'           => '#9287e5',
+          ));
+
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk_grad', array(
+            'label'             => 'ナビバーの背景色（2色目）',
+            'description'       => '2色目を選択するとグラデーション仕様になります。',
+            'section'           => 'site_color',
+          )));
+
           $wp_customize->add_setting('site_color_nav_color', array(
             'type'              => 'option',
             'default'           => '#ffffff'
@@ -1444,7 +1468,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_nav_transparentable',array(
             'label'             => 'ナビメニューの背景透明化',
-            'description'       => 'ナビメニューを透明化します。透明化すると自動的に文字色はメインカラーになります',
+            'description'       => 'ナビメニューを透明化します。透明化すると背景が擦りガラス風になります（一部のブラウザでは適用されません）。色項目で設定した色は反映されなくなります',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
           ));

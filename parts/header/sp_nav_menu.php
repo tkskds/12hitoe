@@ -7,6 +7,7 @@
   $sidenavTtl   = get_option('site_nav_sp_sidemenu')          ? get_option('site_nav_sp_sidemenu')        : 'MENU';
   $authorName   = get_option('site_nav_sp_sideauthor_name')   ? get_option('site_nav_sp_sideauthor_name') : '運営者名';
   $authorMail   = get_option('site_nav_sp_sideauthor_mail')   ? get_option('site_nav_sp_sideauthor_mail') : 'SAMPLE@SAMPLE.COM';
+  $darkModeOn   = get_option('site_bone_dark')                ? get_option('site_bone_dark')              : false;
 
 ?>
 
@@ -51,6 +52,17 @@
     <li class="sidenav_widget_list">
       <?php dynamic_sidebar('sidenav_widget'); ?>
     </li>
+  <?php endif; ?>
+
+  <?php if($darkModeOn==true): ?>
+    <div class="switch">
+      <label for="mode_switch">
+        Off
+        <input id="mode_switch" type="checkbox">
+        <span class="lever"></span>
+        On
+      </label>
+    </div>
   <?php endif; ?>
 
 </ul>
