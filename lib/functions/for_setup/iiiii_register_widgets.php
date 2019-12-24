@@ -450,9 +450,9 @@ function register_widgets(){
               <div class="rank_img">
                 <span class="rank rank_count<?php echo $loopcounter; ?>"><i class="fas fa-crown"></i></span>
                 <?php if (has_post_thumbnail()): ?>
-                  <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'thumbnail', array('class' => 'fadeinimg lazyload', 'width' => 100, 'height' => 100))); ?>
+                  <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'minimum', array('class' => 'fadeinimg lazyload', 'width' => 80, 'height' => 80))); ?>
                 <?php else: ?>
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php the_title(); ?>" width="100" height="100" class="fadeinimg lazyload">
+                  <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php the_title(); ?>" width="80" height="80" class="fadeinimg lazyload">
                 <?php endif; ?>
               </div>
               <div class="rank_ttl">
