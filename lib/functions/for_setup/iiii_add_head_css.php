@@ -235,11 +235,13 @@ a.tohomelink{color:<?php echo $foot_c ?>;}
 @media (prefers-color-scheme: dark){
 .dark_theme,.dark_theme .articleShow_wrap article,.dark_theme .author_box,.dark_theme ul.related_posts,.dark_theme .comment_box{background:#444;color:#e4e4e4;}
 .dark_theme .aside .widget,.dark_theme .profile_widget img,.dark_theme .author_thumb img,.dark_theme ul.tabs,.dark_theme .breadcrumbType1 li a,.dark_theme .breadcrumbType1 li:last-of-type span,
-.dark_theme .articleList_wrap article:not(.articleList3):not(.articleList6) .thumbnail,.dark_theme .articleList_wrap article:not(.articleList5):not(.articleList6) .content, .dark_theme .articleList_wrap .articleList2{background: #555;}
+.dark_theme .articleList_wrap article:not(.articleList3):not(.articleList6) .thumbnail,.dark_theme .articleList_wrap article:not(.articleList5):not(.articleList6) .content, .dark_theme .articleList_wrap .articleList2,
+.dark_theme .articleList_wrap .articleList2 .thumbnail time,.dark_theme .articleList_wrap .articleList1 .thumbnail .category,.dark_theme .articleList_wrap .articleList2 .thumbnail .category{background: #555;}
 .dark_theme .sideType1 h4.sidebar_title::after,.dark_theme .breadcrumbType1 li:not(.bread_home)::before{background:#444;}
 .dark_theme nav,.dark_theme footer,.dark_theme .page-footer, .dark_theme .btn,.dark_theme .btn-floating,.dark_theme .comment_text,.dark_theme .sidenav{background:#333;}
 .dark_theme .comment_text::before{border-bottom:10px solid #333;}
-.dark_theme a{color: #e39777;}
+.dark_theme .modal .modal-footer,.dark_theme .modal .modal-content,.dark_theme .pagination li span{background:#222;}
+.dark_theme a,.dark_theme .sidenav li>a, .dark_theme .pagination li a{color: #e39777;}
 .dark_theme img{filter: grayscale(30%);}
 }
 <?php endif; ?>
