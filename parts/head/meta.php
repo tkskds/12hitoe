@@ -120,6 +120,19 @@ if(!empty($title)) {
   $output_title = get_bloginfo('name');
 }
 
+//SNS OGP
+$tw_account = get_option('site_ogp_tw_account');
+
+if (get_option('site_ogp_tw_card'=='value1')){
+  $tw_card = 'summary_large_image';
+} else {
+  $tw_card = 'summary';
+}
+
+$fb_appid = get_option('site_ogp_fb_appid');
+
+$main_c = get_option('site_color_main');
+
 ?>
 
 <meta charset="utf-8">
@@ -138,9 +151,20 @@ if(!empty($title)) {
   <meta name="robots" content="noindex">
 <?php endif; ?>
 
-<!--TWITTER-->
-<meta name="twitter:site" content="@twitterアカウント">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:creator" content="@twitterアカウント">
+<?php //TWITTER ?>
+<?php if(!empty($tw_account)): ?>
+  <meta name="twitter:site" content="@<?php echo $tw_account ?>">
+<?php endif; ?>
+<meta name="twitter:card" content="<?php echo $tw_card ?>">
 <meta name="twitter:description" content="<?php echo $description; ?>">
 <meta name="twitter:image:src" content="<?php echo $ogp_img; ?>">
+
+<?php //FACEBOOK ?>
+<?php if (!empty($fb_appid)): ?>
+  <meta property="fb:app_id" content="<?php echo $fb_appid ?>" />
+<?php endif; ?>
+
+<?php //その他 ?>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-tilecolor" content="<?php echo $main_c ?>">
+<meta name="theme-color" content="<?php echo $main_c ?>">

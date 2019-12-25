@@ -1,6 +1,7 @@
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+
 <?php //リセットCSS ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
 <!-- <link rel="dns-prefetch" href="//use.fontawesome.com"> -->
 
 <?php //CSSフレームワークの分岐 （materialize.css/common.css呼び出し） ?>
@@ -42,7 +43,7 @@
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" media="all">
 <?php endif ?>
 
-<?php $articleList = get_option('site_articleList_card') ? get_option('site_articleList_card') : 'value1' ; ?>
+<?php $articleList = get_option('site_articleList_card'); ?>
 <?php if ($articleList == 'value1'): ?>
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet" media="all">
 <?php endif; ?>
@@ -71,7 +72,7 @@
 <?php //ファビコンなど ?>
 <?php $siteIcon = get_option('site_icon'); ?>
 <?php if(empty($siteIcon)): ?>
-<link rel="icon" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
-<link rel="icon" type="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
+  <link rel="icon" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
+  <link rel="icon" type="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <?php endif; ?>

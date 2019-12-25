@@ -2374,4 +2374,47 @@ function org_customizer($wp_customize){
             'section'           => 'site_speed',
           ));
 
+      $wp_customize->add_section('site_ogp', array(
+        'priority'              => 2,
+        'title'                 => "OGP設定",
+        'panel'                 => 'site_admin'
+      ));
+
+          $wp_customize->add_setting('site_ogp_tw_account', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_ogp_tw_account', array(
+            'label'             => 'シェアに表示するTwitterアカウント',
+            'description'       => 'Twitterでシェアされたときに表示されるアカウントです。@の後から入力してください。不要な場合は空欄で問題ありません。',
+            'type'              => 'text',
+            'section'           => 'site_ogp',
+          ));
+
+          $wp_customize->add_setting('site_ogp_tw_card', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_ogp_tw_card', array(
+            'label'             => 'シェアのカードタイプ',
+            'description'       => 'シェアされたときに表示するカードのタイプを設定できます',
+            'type'              => 'radio',
+            'choices'           => array(
+              'value1'          => '大きなカード',
+              'value2'          => '小さいカード',
+            ),
+            'section'           => 'site_ogp',
+          ));
+
+          $wp_customize->add_setting('site_ogp_fb_appid', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_ogp_fb_appid', array(
+            'label'             => 'Facebook AppID',
+            'description'       => 'Facebook用OGPタグに出力されます。必要な場合は設定しましょう。',
+            'type'              => 'text',
+            'section'           => 'site_ogp',
+          ));
+
 } //END org_customizer()
