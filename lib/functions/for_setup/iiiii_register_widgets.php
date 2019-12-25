@@ -179,7 +179,7 @@ function register_widgets(){
 
   		echo $args['before_widget'];
   		echo '<div class="cta">'.
-           '<div class="cta_body delighter">';
+           '<div class="cta_body delighter" data-delighter="start:0.8">';
       if(!empty($cta_img)){
       echo '<div class="cta_img_area">'.
            '<img width="200" data-src="'.$cta_img.'" alt="CTAエリアイメージ" class="lazyload fadeinimg">'.
