@@ -40,10 +40,11 @@
 
 <?php $fontBody = get_option('site_font_body'); ?>
 <?php if ($fontBody ==  'value3' ): ?>
+
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" media="all">
 <?php endif ?>
 
-<?php $articleList = get_option('site_articleList_card'); ?>
+<?php $articleList = get_option('site_article_list_type'); ?>
 <?php if ($articleList == 'value1'): ?>
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet" media="all">
 <?php endif; ?>
