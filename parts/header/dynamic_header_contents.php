@@ -36,10 +36,10 @@
         endswitch;
         ?>><?php echo $txt ?></p>
         <?php if ($btn != null ): ?>
-          <a href="<?php echo $btnLink ?>" class="waves-effect btn"><?php echo $btn ?></a>
+          <a href="<?php echo $btnLink ?>" class="waves-effect btn-large"><?php echo $btn ?></a>
         <?php endif; ?>
         <?php if ($btn2 != null ): ?>
-          <a href="<?php echo $btn2Link ?>" class="waves-effect btn"><?php echo $btn2 ?></a>
+          <a href="<?php echo $btn2Link ?>" class="waves-effect btn-large"><?php echo $btn2 ?></a>
         <?php endif; ?>
       </div>
       <?php if ($img != null) : ?>
