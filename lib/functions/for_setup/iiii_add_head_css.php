@@ -76,7 +76,7 @@ function add_customizerCSS(){
   $fontOnlyHeading = get_option('site_font_body_only_heading') ? get_option('site_font_body_only_heading') : false ;
 
   /*** サイトの文字サイズ ***/
-  $titleSize  = get_option('site_font_title_size')        ? get_option('site_font_title_size')        : '200';
+  $titleSize  = get_option('site_font_title_size')        ? get_option('site_font_title_size')        : '160';
   $pcSize     = get_option('site_font_pc_size')           ? get_option('site_font_pc_size')           : '100';
   $tabSize    = get_option('site_font_tab_size')          ? get_option('site_font_tab_size')          : '98';
   $spSize     = get_option('site_font_sp_size')           ? get_option('site_font_sp_size')           : '95';

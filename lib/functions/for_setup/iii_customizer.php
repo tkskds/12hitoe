@@ -1224,13 +1224,13 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_font_title_size', array(
-            'default'           => 200,
+            'default'           => 160,
             'type'              => 'option',
           ));
 
           $wp_customize->add_control('site_font_title_size', array(
             'label'             => '5-3.サイトタイトルの文字サイズ',
-            'description'       => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:200）',
+            'description'       => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:160）',
             'type'              => 'number',
             'section'           => 'site_font',
           ));
@@ -1959,7 +1959,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_decoration_h3_type', array(
-            'default'           => 'type1',
+            'default'           => 'type2',
             'type'              => 'option',
           ));
 
@@ -1981,7 +1981,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_setting('site_decoration_h4_type', array(
-            'default'           => 'type1',
+            'default'           => 'type3',
             'type'              => 'option',
           ));
 

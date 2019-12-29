@@ -44,7 +44,7 @@
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" media="all">
 <?php endif ?>
 
-<?php $articleList = get_option('site_article_list_type'); ?>
+<?php $articleList = get_option('site_article_list_type') ? get_option('site_article_list_type') : 'value1' ; ?>
 <?php if ($articleList == 'value1'): ?>
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet" media="all">
 <?php endif; ?>
