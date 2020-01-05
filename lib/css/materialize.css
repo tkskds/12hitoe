@@ -2284,13 +2284,33 @@ li.popular_posts_list a{
   z-index: 1;
 }
 
+.wp-embedded-content {
+  max-width: 100%;
+}
+
 .wp-block-media-text,
 .wp-block-table,
 .cp_embed_wrapper{
   margin-bottom: 15px;
 }
 
+.material-placeholder{
+  position: relative;
+}
 
+.material-placeholder::before {
+  font-family: "Font Awesome 5 Solid";
+  content: "\f00e";
+  display: none;
+}
+
+.material-placeholder .fa-search-plus {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  font-size: 2em;
+}
 
 /*マークダウンで書けるコード*/
 p > code {

@@ -2417,4 +2417,49 @@ function org_customizer($wp_customize){
             'section'           => 'site_ogp',
           ));
 
+      $wp_customize->add_section('site_google', array(
+        'priority'              => 3,
+        'title'                 => "Googleツール",
+        'panel'                 => 'site_admin'
+      ));
+
+          $wp_customize->add_setting('site_google_analytics', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_google_analytics', array(
+            'label'             => 'アナリティクスの設定',
+            'description'       => 'アナリティクスのトラッキングIDを入力してください',
+            'type'              => 'text',
+            'section'           => 'site_google',
+          ));
+
+          $wp_customize->add_setting('site_google_adsense', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_google_adsense', array(
+            'label'             => 'アドセンスの設定',
+            'description'       => 'Adsenseコードを入力してください。',
+            'type'              => 'text',
+            'section'           => 'site_google',
+          ));
+
+      $wp_customize->add_section('site_head', array(
+        'priority'              => 4,
+        'title'                 => "headに挿入",
+        'panel'                 => 'site_admin'
+      ));
+
+          $wp_customize->add_setting('site_head_addcode', array(
+            'type'              => 'option',
+          ));
+
+          $wp_customize->add_control('site_head_addcode', array(
+            'label'             => 'headにコードを挿入する',
+            'description'       => 'サードパーティ製のツールなど必要に応じ、ここに入力したコードをheadに追記できます（上級者向け）',
+            'type'              => 'textarea',
+            'section'           => 'site_head',
+          ));
+
 } //END org_customizer()

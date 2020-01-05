@@ -77,3 +77,24 @@
   <link rel="icon" type="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <?php endif; ?>
+
+<?php //アナリティクス ?>
+<?php $analytics = get_option('site_google_analytics') ?>
+<?php if ($analytics != null) : ?>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $analytics ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<?php echo $analytics ?>');
+  </script>
+<?php endif; ?>
+
+<?php $adsense = get_option('site_google_adsense') ?>
+<?php echo $adsense ?>
+
+<?php //head ?>
+<?php $head_add = get_option('site_head_addcode') ?>
+<?php echo $head_add ?>
