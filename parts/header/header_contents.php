@@ -20,6 +20,10 @@ if(is_home() || is_front_page()) {
   $extend_text     = get_option('site_nav_extended_text')   ? get_option('site_nav_extended_text')   : 'SAMPLE' ;
   $extend_uri      = get_option('site_nav_extended_uri')    ? get_option('site_nav_extended_uri')    : 'https://takasaki.work/12hitoe' ;
 
+  $news     = get_option('site_carousel_news_on')   ? get_option('site_carousel_news_on')   : false    ;
+  $newstext = get_option('site_carousel_news')      ? get_option('site_carousel_news')      : 'SAMPLE' ;
+  $newsurl  = get_option('site_carousel_news_link') ? get_option('site_carousel_news_link') : '#';
+
  ?>
 
 <?php if($fixed  == true){echo '<div class="navbar-fixed">'; } ?>
@@ -72,3 +76,8 @@ if(is_home() || is_front_page()) {
 </nav>
 <?php if ($fixed == true){ echo '</div>'; } ?>
 <?php get_template_part('parts/header/sp_nav_menu') ?>
+<?php if($news == true): ?>
+  <a  href="<?php echo $newsurl ?>" class="news">
+    <span><?php echo $newstext ?></span>
+  </a>
+<?php endif; ?>

@@ -248,6 +248,7 @@ a.tohomelink{color:<?php echo $foot_c ?>;}
 .dark_theme .comment_text::before{border-bottom:10px solid #333;}
 .dark_theme .modal .modal-footer,.dark_theme .modal .modal-content,.dark_theme .pagination li span{background:#222;}
 .dark_theme a,.dark_theme .sidenav li>a, .dark_theme .pagination li a{color: #e39777;}
+.dark_theme .toc{color:#333}
 .dark_theme img{filter: grayscale(30%);}
 }
 <?php endif; ?>

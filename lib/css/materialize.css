@@ -135,6 +135,10 @@ select{
   color: #545454;
 }
 
+button{
+  border:none;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -337,6 +341,7 @@ li.sidenav-ttl{
   min-height: 400px;
   padding: 20px;
   overflow: hidden;
+  z-index:-1;
 }
 
 .dyheader_container{
@@ -644,6 +649,14 @@ li.sidenav-ttl{
 #feature4 .collapsible-header{
   position: relative;
   background: transparent;
+  line-height: 1;
+}
+
+#feature4 .collapsible-header svg.fa-question-circle {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #feature4 .collapsible-header svg.fa-angle-down{
@@ -673,7 +686,7 @@ li.sidenav-ttl{
 }
 
 #feature5 .container > div{
-  width: 50%;
+  width: 49%;
   padding: 20px 0;
   display: inline-block;
   vertical-align: top;

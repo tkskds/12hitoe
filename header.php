@@ -17,9 +17,6 @@ $priority = get_option('site_bone_priority')      ? get_option('site_bone_priori
 $cssfw    = get_option('site_cssfw_choice')       ? get_option('site_cssfw_choice')       : 'value2' ;
 $sitetype = get_option('site_bone_type')          ? get_option('site_bone_type')          : 'value1' ;
 $nothome  = get_option('site_dyheader_notTop')    ? get_option('site_dyheader_notTop')    : false    ;
-$news     = get_option('site_carousel_news_on')   ? get_option('site_carousel_news_on')   : false    ;
-$newstext = get_option('site_carousel_news')      ? get_option('site_carousel_news')      : 'SAMPLE' ;
-$newsurl  = get_option('site_carousel_news_link') ? get_option('site_carousel_news_link') : '#';
 
       //ナビメニューより先にダイナミックヘッダー呼び出す設定で、
       if ($sitetype == 'value3' && $priority == true || $sitetype == 'value4' && $priority == true ){
@@ -49,8 +46,3 @@ $newsurl  = get_option('site_carousel_news_link') ? get_option('site_carousel_ne
 ?>
 
     </div>
-    <?php if($news == true): ?>
-      <a  href="<?php echo $newsurl ?>" class="news">
-        <span><?php echo $newstext ?></span>
-      </a>
-    <?php endif; ?>
