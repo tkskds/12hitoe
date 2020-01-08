@@ -99,20 +99,20 @@ function wp_tag_cloud_custom_ex( $output ) {
 /////////////////////
 
 // メニューに'.active'付与
-function active_nav_class($classes, $item){
-  if(in_array('current-menu-item', $classes) ){
-    $classes[] = 'active';
-  }
-  return $classes;
-}
+// function active_nav_class($classes, $item){
+//   if(in_array('current-menu-item', $classes) ){
+//     $classes[] = 'active';
+//   }
+//   return $classes;
+// }
 
-// モバイルメニューに'.waves-effect'付与
-function sp_menu_classes($classes, $item, $args) {
-  if($args->theme_location == 'nav_header_sp') {
-    $classes[] = 'waves-effect';
-  }
-  return $classes;
-}
+// // モバイルメニューに'.waves-effect'付与
+// function sp_menu_classes($classes, $item, $args) {
+//   if($args->theme_location == 'nav_header_sp') {
+//     $classes[] = 'waves-effect';
+//   }
+//   return $classes;
+// }
 
 /////////////////////
 // パンくずリスト

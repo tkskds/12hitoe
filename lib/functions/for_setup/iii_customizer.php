@@ -134,7 +134,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_bone_content_area', array(
             'label'             => '1-2.コンテンツエリアの最大横幅',
-            'description'       => 'コンテンツ部分の最大横幅を設定します。（デフォルト:1200）',
+            'description'       => 'コンテンツ部分の最大横幅を設定します（デフォルト:1200）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m1-2" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_bone',
           ));
@@ -147,7 +147,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_bone_sidebar', array(
             'label'             => '1-3.サイドバーを左側に表示',
-            'description'       => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。',
+            'description'       => 'サイトバーがある構造の場合、チェックを入れるとサイドバーが左側に表示されます。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m1-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_bone',
           ));
@@ -160,7 +160,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_bone_priority', array(
             'label'             => '1-4.ダイナミックヘッダーを画面最上部に表示',
-            'description'       => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます。（『トップページのタイプ』でコーポレートまたはランディングを選択した場合のみ適用）',
+            'description'       => 'チェックを入れると画面最上部にダイナミックヘッダーが表示され、その下にナビバーが表示されます（1-1でデザイン3/4を選択した場合のみ適用）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m1-4" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_bone',
           ));
@@ -171,8 +171,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_cssfw_choice', array(
-            'label'             => '1-5.サイト全体の雰囲気',
-            'description'       => '現在2種類から選べます。',
+            'label'             => '1-5.サイト全体の雰囲気（開発中）',
+            'description'       => '現在2種類から選べます。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m1-5" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => '開発者・デザイナー向け（CSS適用なし）',
@@ -190,8 +190,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_bone_dark', array(
-            'label'             => '1-6.ダークモード有効化',
-            'description'       => 'チェックを入れるとダークモードを有効化できます。サイドメニューの最下部にボタンが表示されます。詳しくはこちら',
+            'label'             => '1-6.ダークモード有効化（開発中）',
+            'description'       => 'チェックを入れるとダークモードを有効化できます。サイドメニューの最下部にボタンが表示されます。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m1-6" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_bone',
           ));
@@ -210,6 +210,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_text', array(
             'label'             => '2-1.ヘッダー部分のテキスト',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_dyheader',
           ));
@@ -221,6 +222,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_text_size', array(
             'label'             => '2-2.ヘッダー部分のテキストサイズ',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-2" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
           ));
@@ -232,6 +234,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_text_color', array(
             'label'             => '2-3.ヘッダー部分のテキスト色',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_dyheader',
           )));
 
@@ -241,7 +244,7 @@ function org_customizer($wp_customize){
           ));
           $wp_customize->add_control('site_dyheader_text_animation', array(
             'label'             => '2-4.テキストへ適用するアニメーション',
-            'description'       => '現在4種類から選択できます。',
+            'description'       => '現在4種類から選択できます。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-4" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -259,7 +262,7 @@ function org_customizer($wp_customize){
           ));
           $wp_customize->add_control('site_dyheader_button', array(
             'label'             => '2-5.ヘッダー部分のボタン',
-            'description'       => 'ヘッダー部分に適用されるCTA的に使用可能なボタンです。（空白の場合ボタンは表示されません。）',
+            'description'       => 'ヘッダー部分に適用されるCTA的に使用可能なボタンです（空白の場合ボタンは表示されません）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-5" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_dyheader',
           ));
@@ -270,7 +273,7 @@ function org_customizer($wp_customize){
           ));
           $wp_customize->add_control('site_dyheader_button_link', array(
             'label'             => '2-6.ボタンのリンク先URL',
-            'description'       => 'リンク先のURLを入力してください。',
+            'description'       => 'リンク先のURLを入力してください。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-6" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_dyheader',
             'type'              => 'text',
           ));
@@ -304,7 +307,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_img', array(
       			'label'             => '2-9.ヘッダー部分の画像（文字の隣）',
-            'description'       => 'ヘッダー部分のテキストの隣に画像を挿入します。',
+            'description'       => 'ヘッダー部分のテキストの隣に画像を挿入します。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-9" rel="noreferrer noopener" target="_blank">こちら</a>',
       			'section'           => 'site_dyheader',
         	)));
 
@@ -315,7 +318,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_img_width', array(
       			'label'             => '2-10.ヘッダー部分の画像のサイズ',
-            'description'       => 'ヘッダー部分の画像のサイズの調整ができます。（デフォルト:100,最大:100）',
+            'description'       => 'ヘッダー部分の画像のサイズの調整ができます（デフォルト:100,最大:100）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-10" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
         	));
@@ -327,6 +330,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_img_position', array(
             'label'             => '2-11.ヘッダー部分の画像を左側へ移動',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-11" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_dyheader',
           ));
@@ -337,7 +341,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_dyheader_bkimg', array(
             'label'             => '2-12.ヘッダー部分の画像（背景）',
-            'description'       => 'ヘッダー部分の背景に画像を挿入します。',
+            'description'       => 'ヘッダー部分の背景に画像を挿入します。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-12" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_dyheader',
           )));
 
@@ -348,7 +352,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_bkimg_filter', array(
             'label'             => '2-13.ヘッダー部分の背景画像フィルター',
-            'description'       => 'ヘッダーの背景画像にフィルターをかけることができます。文字が見づらい背景画像を使用する場合に有効です。',
+            'description'       => 'ヘッダーの背景画像にフィルターをかけることができます。文字が見づらい背景画像を使用する場合に有効です。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-13" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'select',
             'choices'           => array(
               'value1'          => 'フィルターなし',
@@ -369,7 +373,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_dyheader_bkcolor', array(
             'label'             => '2-14.ヘッダー部分の背景色',
-            'description'       => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。',
+            'description'       => 'ヘッダー部分の背景の色を設定します（画像がある場合は画像が優先されます）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-14" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_dyheader',
           )));
 
@@ -380,7 +384,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_width', array(
             'label'             => '2-15.ヘッダー部分の最大横幅',
-            'description'       => 'ヘッダー部分の最大横幅を設定できます。『1:骨組みの設定』で設定した数値と同じものがオススメです。（デフォルト:1200,最大3000）',
+            'description'       => 'ヘッダー部分の最大横幅を設定できます。1-2で設定した数値と同じものがオススメです（デフォルト:1200,最大3000）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-15" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
           ));
@@ -392,7 +396,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_height', array(
             'label'             => '2-16.ヘッダー部分の高さ',
-            'description'       => 'ヘッダー部分の高さを調整できます（デフォルト:50,最大:100）',
+            'description'       => 'ヘッダー部分の高さを調整できます（デフォルト:50,最大:100）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-16" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
           ));
@@ -404,7 +408,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_margin-top', array(
             'label'             => '2-17.ヘッダー部分の上部の余白',
-            'description'       => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）',
+            'description'       => 'ヘッダー部分の上部に余白を設け、調整できます（デフォルト:0,推奨:0または20）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-17" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
           ));
@@ -416,7 +420,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_padding', array(
             'label'             => '2-18.ヘッダー部分の下部の余白',
-            'description'       => 'ヘッダー部分の下部に余白を設け、調整できます（デフォルト:20）。',
+            'description'       => 'ヘッダー部分の下部に余白を設け、調整できます（デフォルト:20）。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-18" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_dyheader',
           ));
@@ -429,7 +433,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_dyheader_notTop', array(
             'label'             => '2-19.トップ（ホーム）画面以外でも表示',
-            'description'       => '通常はトップページのみで表示するようになっているダイナミックヘッダーを記事ページやカテゴリページでも表示するようにします。',
+            'description'       => '通常はトップページのみで表示するようになっているダイナミックヘッダーを記事ページやカテゴリページでも表示するようにします。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m2-19" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_dyheader',
           ));
@@ -447,7 +451,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section_animation', array(
             'label'             => '3-1.セクション1にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -469,6 +473,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section_ttl', array(
             'label'             => '3-2.タイトル（セクション1）',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-2_3-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_feature',
           ));
@@ -479,7 +484,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section_description', array(
             'label'             => '3-3.説明文（セクション1）',
-            'description'       => 'HTMLを使用することも可能です。',
+            'description'       => 'HTMLを使用することも可能です。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-2_3-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'textarea',
             'section'           => 'site_feature',
           ));
@@ -492,7 +497,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section_item1_icon', array(
             'label'             => '3-4.アイテム1のアイコン（セクション1）',
-            'description'       => '<pre><code>&lt;i class=&quot;fas fa-mobile&quot;&gt;&lt;/i&gt;</code></pre>のようなコードを貼り付けてください。',
+            'description'       => '<pre><code>&lt;i class=&quot;fas fa-mobile&quot;&gt;&lt;/i&gt;</code></pre>のようなコードを貼り付けてください。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-4" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_feature',
           ));
@@ -624,7 +629,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section2_animation', array(
             'label'             => '3-16.セクション2にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -698,7 +703,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section3_animation', array(
             'label'             => '3-22.セクション3にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -770,7 +775,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section4_animation', array(
             'label'             => '3-28.セクション4にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -792,7 +797,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_q1', array(
             'label'             => '3-29.質問1（セクション4）',
-            'description'       => '空白にした場合、セクション4は表示されません。詳しくはこちら',
+            'description'       => '空白にした場合、セクション4は表示されません。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-29" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_feature',
           ));
@@ -894,7 +899,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section5_animation', array(
             'label'             => '3-39.セクション5にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -916,7 +921,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section5_info', array(
             'label'             => '3-40.フリースペース（セクション5）',
-            'description'       => '会社情報や商品情報など',
+            'description'       => '会社情報や商品情報など。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-40" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'textarea',
             'section'           => 'site_feature',
           ));
@@ -928,7 +933,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section5_map', array(
             'label'             => '3-41.地図スペース（セクション5）',
-            'description'       => 'GoogleMapの埋め込み機能など利用できます。詳しくはこちら',
+            'description'       => 'GoogleMapの埋め込み機能など利用できます。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-41" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'textarea',
             'section'           => 'site_feature',
           ));
@@ -940,7 +945,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_feature_section6_animation', array(
             'label'             => '3-42.セクション6にアニメーションを使用',
-            'description'       => '詳しくはこちら',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m3-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value0'          => 'アニメーションなし',
@@ -998,8 +1003,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_news_on', array(
-            'label'             => 'ニュース欄を表示する',
-            'description'       => 'ナビバーの下に表示されるニュース欄です。最新情報や目立たせたい情報などを掲載しましょう',
+            'label'             => '4-1.ニュース欄を表示する',
+            'description'       => 'ナビバーの下に表示されるニュース欄です。最新情報や目立たせたい情報などを掲載しましょう。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'section'           => 'site_carousel',
           ));
@@ -1010,7 +1015,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_news', array(
-            'label'             => 'ニュース欄の文章',
+            'label'             => '4-2.ニュース欄の文章',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-2" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1021,8 +1027,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_news_link', array(
-            'label'             => 'ニュース欄のリンク先',
-            'description'       => 'ニュース欄をクリックしたリンク先ページのURL',
+            'label'             => '4-3.ニュース欄のリンク先',
+            'description'       => 'ニュース欄をクリックしたリンク先ページのURL。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1033,7 +1039,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk', array(
-            'label'             => 'ニュース欄の背景色（1色目）',
+            'label'             => '4-4.ニュース欄の背景色（1色目）',
+            'description'       => '詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-4_4-5" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_carousel',
           )));
 
@@ -1043,8 +1050,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_carousel_news_bk2', array(
-            'label'             => 'ニュース欄の背景色（2色目）',
-            'description'       => '1色目と異なる色を選択するとグラデーションになります',
+            'label'             => '4-5.ニュース欄の背景色（2色目）',
+            'description'       => '1色目と異なる色を選択するとグラデーションになります。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-4_4-5" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_carousel',
           )));
 
@@ -1054,8 +1061,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_on', array(
-            'label'             => 'ピックアップ部分',
-            'description'       => 'ピックアップ欄を表示します。目立たせたい記事や画像などを掲載しましょう。詳しくはこちら。',
+            'label'             => '4-6.ピックアップ部分',
+            'description'       => 'ピックアップ欄を表示します。目立たせたい記事や画像などを掲載しましょう。1-1でデザイン4を選択していると表示されません。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m4-6" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => '表示しない',
@@ -1070,7 +1077,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item1_img', array(
-            'label'             => 'ピックアップ1枚目の画像',
+            'label'             => '4-7.ピックアップ1枚目の画像',
             'section'           => 'site_carousel',
           )));
 
@@ -1079,7 +1086,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_item1_link', array(
-            'label'             => 'ピックアップ1枚目のリンクです',
+            'label'             => '4-8.ピックアップ1枚目のリンクです',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1089,7 +1096,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item2_img', array(
-            'label'             => 'ピックアップ2枚目の画像',
+            'label'             => '4-9.ピックアップ2枚目の画像',
             'section'           => 'site_carousel',
           )));
 
@@ -1098,7 +1105,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_item2_link', array(
-            'label'             => 'ピックアップ2枚目のリンクです',
+            'label'             => '4-10.ピックアップ2枚目のリンクです',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1108,7 +1115,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item3_img', array(
-            'label'             => 'ピックアップ3枚目の画像',
+            'label'             => '4-11.ピックアップ3枚目の画像',
             'section'           => 'site_carousel',
           )));
 
@@ -1117,7 +1124,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_item3_link', array(
-            'label'             => 'ピックアップ3枚目のリンクです',
+            'label'             => '4-12.ピックアップ3枚目のリンクです',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1127,7 +1134,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item4_img', array(
-            'label'             => 'ピックアップ4枚目の画像',
+            'label'             => '4-13.ピックアップ4枚目の画像',
             'section'           => 'site_carousel',
           )));
 
@@ -1136,7 +1143,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_item4_link', array(
-            'label'             => 'ピックアップ4枚目のリンクです',
+            'label'             => '4-14.ピックアップ4枚目のリンクです',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1146,7 +1153,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_carousel_item5_img', array(
-            'label'             => 'ピックアップ5枚目の画像',
+            'label'             => '4-15.ピックアップ5枚目の画像',
             'section'           => 'site_carousel',
           )));
 
@@ -1155,7 +1162,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_carousel_item5_link', array(
-            'label'             => 'ピックアップ5枚目のリンクです',
+            'label'             => '4-16.ピックアップ5枚目のリンクです',
             'type'              => 'text',
             'section'           => 'site_carousel',
           ));
@@ -1173,7 +1180,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_font_title', array(
             'label'             => '5-1.サイトタイトルのフォント',
-            'description'       => '現在10種類からお選びいただけます。[注意：（）内の言語にしか適用されません]',
+            'description'       => '現在10種類からお選びいただけます。[注意：（）内の言語にしか適用されません]。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-1" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
                 'value1'        => 'デフォルト',
@@ -1197,7 +1204,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_font_body', array(
             'label'             => '5-2.サイト全体のフォント',
-            'description'       => '現在7種類からお選びいただけます。日英対応しています。こちらからフォント製作者へのサンクスページへ飛べます。フォントの変更をする場合はぜひ覗いてみてください。',
+            'description'       => '現在7種類からお選びいただけます。日英対応しています。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-2" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'radio',
             'choices'           => array(
                 'value1'        => 'デフォルト',
@@ -1218,7 +1225,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_font_body_only_heading', array(
             'label'             => '5-3.前項を記事見出しにのみ適用',
-            'description'       => 'チェックを入れると、5-2で設定した項目を記事内の見出しにのみ適用します',
+            'description'       => 'チェックを入れると、5-2で設定した項目を記事内の見出しにのみ適用します。詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-3" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'checkbox',
             'sanitize_callback' => 'sanitize_checkbox',
             'section'           => 'site_font',
@@ -1230,8 +1237,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_font_title_size', array(
-            'label'             => '5-3.サイトタイトルの文字サイズ',
-            'description'       => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:160）',
+            'label'             => '5-4.サイトタイトルの文字サイズ',
+            'description'       => '文字サイズが調節できます。あまり大きくし過ぎてしまうとヘッダーからはみ出てしまうのでご注意ください。（デフォルト:160）詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-4" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_font',
           ));
@@ -1242,8 +1249,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_font_pc_size', array(
-            'label'             => '5-4.【PC】サイトの文字サイズ',
-            'description'       => '961px以上の画面幅で適用されます。（デフォルト:100）',
+            'label'             => '5-5.【PC】サイトの文字サイズ',
+            'description'       => '961px以上の画面幅で適用されます。（デフォルト:100）詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-5_5-6_5-7" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_font',
           ));
@@ -1254,8 +1261,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_font_tab_size', array(
-            'label'             => '5-5.【タブレット】サイトの文字サイズ',
-            'description'       => '561〜960pxまでの画面幅で適用されます。（デフォルト:98）',
+            'label'             => '5-6.【タブレット】サイトの文字サイズ',
+            'description'       => '561〜960pxまでの画面幅で適用されます。（デフォルト:98）詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-5_5-6_5-7" rel="noreferrer noopener" target="_blank">こちら</a>',
             'type'              => 'number',
             'section'           => 'site_font',
           ));
@@ -1266,8 +1273,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_font_sp_size', array(
-            'label'             => '5-6.【スマホ】サイトの文字サイズ',
-            'description'       => '320〜560pxまでの画面幅で適用されます。（デフォルト:95）',
+            'label'             => '5-7.【スマホ】サイトの文字サイズ',
+            'description'       => '320〜560pxまでの画面幅で適用されます。（デフォルト:95）詳しくは<a href="https://withdiv.com/12hitoe/12hitoe-customize/#m5-5_5-6_5-7" rel="noreferrer noopener" target="_blank">こちら</a>',
             'section'           => 'site_font',
             'type'              => 'number',
           ));
@@ -1286,7 +1293,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_main', array(
-            'label'             => 'メインカラー',
+            'label'             => '6-1.メインカラー',
             'description'       => '見出しやボタンなど様々な場所で使用されます。濃い色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
@@ -1297,7 +1304,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_sub', array(
-            'label'             => 'サブカラー',
+            'label'             => '6-2.サブカラー',
             'description'       => '見出しやボタンなど様々な場所で使用されます。濃い色に比べて薄い色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
@@ -1308,7 +1315,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_acc', array(
-            'label'             => 'アクセントカラー',
+            'label'             => '6-3.アクセントカラー',
             'description'       => '見出しやボタンなど様々な場所で使用されます。メインカラーの補色系統の色を設定しましょう。詳しい適用箇所や決め方に迷っている方はこちら',
             'section'           => 'site_color',
           )));
@@ -1319,7 +1326,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk', array(
-            'label'             => 'ナビバーの背景色',
+            'label'             => '6-4.ナビバーの背景色',
             'section'           => 'site_color',
           )));
 
@@ -1329,7 +1336,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_bk_grad', array(
-            'label'             => 'ナビバーの背景色（2色目）',
+            'label'             => '6-5.ナビバーの背景色（2色目）',
             'description'       => '2色目を選択するとグラデーション仕様になります。',
             'section'           => 'site_color',
           )));
@@ -1340,7 +1347,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_nav_color', array(
-            'label'             => 'ナビバーの文字色',
+            'label'             => '6-6.ナビバーの文字色',
             'section'           => 'site_color',
           )));
 
@@ -1350,7 +1357,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_bk', array(
-            'label'             => 'コンテンツエリア全体の背景色',
+            'label'             => '6-7.コンテンツエリア全体の背景色',
             'section'           => 'site_color',
           )));
 
@@ -1360,7 +1367,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_body_color', array(
-            'label'             => 'コンテンツエリア全体の文字色',
+            'label'             => '6-8.コンテンツエリア全体の文字色',
             'section'           => 'site_color',
           )));
 
@@ -1370,7 +1377,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_widget_bk', array(
-            'label'             => 'サイドバーのウィジェット背景色',
+            'label'             => '6-9.サイドバーのウィジェット背景色',
             'section'           => 'site_color',
           )));
 
@@ -1380,7 +1387,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_bk_color', array(
-            'label'             => 'フッターの背景色',
+            'label'             => '6-10.フッターの背景色',
             'section'           => 'site_color',
           )));
 
@@ -1390,7 +1397,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_footer_color', array(
-            'label'             => 'フッターの文字色',
+            'label'             => '6-11.フッターの文字色',
             'section'           => 'site_color',
           )));
 
@@ -1400,7 +1407,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_color_a_tag_color', array(
-            'label'             => 'リンクの文字色',
+            'label'             => '6-12.リンクの文字色',
             'section'           => 'site_color',
           )));
 
@@ -1417,7 +1424,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_width',array(
-            'label'             => 'ナビメニューの横幅に上限を設ける',
+            'label'             => '7-1.ナビメニューの横幅に上限を設ける',
             'description'       => 'コンテンツエリア（記事とサイドバーの部分）に設けている横幅とナビメニューの横幅を合わせます。',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1430,7 +1437,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_centering_title', array(
-            'label'             => 'サイトタイトルを中央寄せにする',
+            'label'             => '7-2.サイトタイトルを中央寄せにする',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
           ));
@@ -1442,8 +1449,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_fixed_top', array(
-            'label'             => 'ナビメニューをサイト上部に固定する',
-            'description'       => '固定時は背景が白色になるため文字色はメインカラーになります',
+            'label'             => '7-3.ナビメニューをサイト上部に固定する',
+            'description'       => '',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
           ));
@@ -1455,7 +1462,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_fixed_top_anime',array(
-            'label'             => 'ナビメニューの固定に伴うアニメーション',
+            'label'             => '7-4.ナビメニューの固定に伴うアニメーション',
             'description'       => 'ナビメニューをサイト上部に固定する際に内部のロゴやメニューボタンが小さくなります。',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1468,7 +1475,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_transparentable',array(
-            'label'             => 'ナビメニューの背景透明化',
+            'label'             => '7-5.ナビメニューの背景透明化',
             'description'       => 'ナビメニューを透明化します。透明化すると背景が擦りガラス風になります（一部のブラウザでは適用されません）。色項目で設定した色は反映されなくなります',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1480,7 +1487,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_menu_icon',array(
-            'label'             => 'メニューアイコン',
+            'label'             => '7-6.メニューアイコン',
             'description'       => 'スマホ閲覧時のメニューアイコンを変更できます',
             'type'              => 'radio',
             'choices'           => array(
@@ -1499,7 +1506,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_extended', array(
-            'label'             => 'ナビメニューにコンテンツを追加する',
+            'label'             => '7-7.ナビメニューにコンテンツを追加する（開発中）',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
           ));
@@ -1510,7 +1517,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_extended_text', array(
-            'label'             => '追加するコンテンツのテキスト',
+            'label'             => '7-8.追加するコンテンツのテキスト（開発中）',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1521,7 +1528,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_extended_uri', array(
-            'label'             => '追加するコンテンツのボタンリンク先（URL）',
+            'label'             => '7-9.追加するコンテンツのボタンリンク先（URL）',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1531,7 +1538,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list1', array(
-            'label'             => 'メニューの下の英文字1',
+            'label'             => '7-10.メニューの下の英文字1',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1541,7 +1548,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list2', array(
-            'label'             => 'メニューリストの下の英文字2',
+            'label'             => '7-11.メニューリストの下の英文字2',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1551,7 +1558,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list3', array(
-            'label'             => 'メニューリストの下の英文字3',
+            'label'             => '7-12.メニューリストの下の英文字3',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1561,7 +1568,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list4', array(
-            'label'             => 'メニューリストの下の英文字4',
+            'label'             => '7-13.メニューリストの下の英文字4',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1571,7 +1578,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_list5', array(
-            'label'             => 'メニューリストの下の英文字5',
+            'label'             => '7-14.メニューリストの下の英文字5',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1583,7 +1590,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_sideauthor', array(
-            'label'             => 'スマホで表示されるメニューに運営者プロフィールを非表示',
+            'label'             => '7-15.スマホで表示されるメニューで運営者プロフィールを非表示',
             'description'       => '詳しくはこちら',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1594,7 +1601,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_nav_sp_sideauthor_bkimg', array(
-            'label'             => '運営者プロフィールの背景画像',
+            'label'             => '7-16.運営者プロフィールの背景画像',
             'section'           => 'site_nav',
           )));
 
@@ -1603,7 +1610,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_nav_sp_sideauthor_img', array(
-            'label'             => '運営者プロフィール画像',
+            'label'             => '7-17.運営者プロフィール画像',
             'description'       => 'SEOに効果があるとされる構造化データでも使用されます。',
             'section'           => 'site_nav',
           )));
@@ -1614,7 +1621,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_sideauthor_name', array(
-            'label'             => '運営者の名前',
+            'label'             => '7-18.運営者の名前',
             'description'       => 'SEOに効果があるとされる構造化データでも使用されます。',
             'type'              => 'text',
             'section'           => 'site_nav',
@@ -1626,7 +1633,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_sideauthor_mail', array(
-            'label'             => '運営者の連絡先',
+            'label'             => '7-19.運営者の連絡先',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1637,7 +1644,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_sidemenu', array(
-            'label'             => 'スマホで表示されるサイドメニュータイトル',
+            'label'             => '7-20.スマホで表示されるサイドメニューのタイトル',
             'type'              => 'text',
             'section'           => 'site_nav',
           ));
@@ -1649,7 +1656,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_nav_sp_menu_menu', array(
-            'label'             => 'スマホで表示されるサイドメニューにメニューを非表示',
+            'label'             => '7-21.スマホで表示されるサイドメニューでメニューを非表示',
             'description'       => '詳しくはこちら。',
             'type'              => 'checkbox',
             'section'           => 'site_nav',
@@ -1688,8 +1695,8 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_type', array(
-            'label'             => '8-2.記事ページデザイン',
-            'description'       => '記事詳細画面のデザイン設定。（固定ページにも同様のものが適用されます）',
+            'label'             => '8-2.記事ページデザイン（開発中）',
+            'description'       => '記事詳細画面のデザイン設定。',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
@@ -1747,13 +1754,13 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_author_sns_ttl', array(
-            'label'             => 'SNSフォロー欄のタイトル',
+            'label'             => '8-6.SNSフォロー欄のタイトル',
             'type'              => 'text',
             'section'           => 'site_article',
           ));
 
           $wp_customize->add_control('site_article_relatedable', array(
-            'label'             => '8-5.関連記事を非表示',
+            'label'             => '8-7.関連記事を非表示',
             'type'              => 'checkbox',
             'section'           => 'site_article',
           ));
@@ -1764,7 +1771,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_related_ttl', array(
-            'label'             => '8-5.関連記事部分のタイトル',
+            'label'             => '8-8.関連記事部分のタイトル',
             'type'              => 'text',
             'section'           => 'site_article',
           ));
@@ -1775,7 +1782,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_related_design', array(
-            'label'             => '8-6.関連記事のデザイン',
+            'label'             => '8-9.関連記事のデザイン',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
@@ -1790,7 +1797,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_share', array(
-            'label'             => '8-7.記事内シェアボタンの位置',
+            'label'             => '8-10.記事内シェアボタンの位置',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'アイキャッチ下と本文下',
@@ -1807,7 +1814,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_sharebf_type', array(
-            'label'             => '8-8.アイキャッチ下シェアボタンのデザイン',
+            'label'             => '8-11.アイキャッチ下シェアボタンのデザイン',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
@@ -1825,7 +1832,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_shareaf_type', array(
-            'label'             => '8-9.本文下シェアボタンのデザイン',
+            'label'             => '8-12.本文下シェアボタンのデザイン',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
@@ -1843,7 +1850,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_share_ttl', array(
-            'label'             => '8-10.記事下シェアボタンのタイトル',
+            'label'             => '8-13.記事下シェアボタンのタイトル',
             'type'              => 'text',
             'section'           => 'site_article',
           ));
@@ -1855,7 +1862,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc', array(
-            'label'             => '8-11.目次を非表示',
+            'label'             => '8-14.目次を非表示',
             'description'       => 'チェックを入れると投稿ページで目次が表示されなくなります',
             'type'              => 'checkbox',
             'section'           => 'site_article',
@@ -1868,7 +1875,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc_page', array(
-            'label'             => '8-12.固定ページでも目次を表示',
+            'label'             => '8-15.固定ページでも目次を表示',
             'description'       => '固定ページでも目次が表示されます。デフォルトはオフです',
             'type'              => 'checkbox',
             'section'           => 'site_article',
@@ -1880,7 +1887,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc_ttl', array(
-            'label'             => '8-13.目次のタイトル',
+            'label'             => '8-16.目次のタイトル',
             'type'              => 'text',
             'section'           => 'site_article',
           ));
@@ -1891,7 +1898,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_toc_design', array(
-            'label'             => '8-14.目次のデザイン',
+            'label'             => '8-17.目次のデザイン',
             'description'       => '記事側で表示される目次のデザインです。（サイドバーの目次には適用されません）',
             'type'              => 'radio',
             'choices'           => array(
@@ -1910,7 +1917,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_article_comment_ttl', array(
-            'label'             => '8-15.コメント欄のタイトル',
+            'label'             => '8-18.コメント欄のタイトル',
             'description'       => 'コメント欄のタイトルです。使用しない場合はWordPress管理画面の設定から非表示にできます。詳しくはこちら',
             'type'              => 'text',
             'section'           => 'site_article',
@@ -1928,7 +1935,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_bread', array(
-            'label'             => 'パンくずリストのデザイン',
+            'label'             => '9-1.パンくずリストのデザイン',
             'type'              => 'radio',
             'choices'           => array(
               'value1'          => 'デザイン1',
@@ -1943,7 +1950,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_h2_type', array(
-            'label'             => '記事内の見出し（h2）デザイン',
+            'label'             => '9-2.記事内の見出し（h2）デザイン',
             'description'       => '記事内の見出しを一括で変更できます',
             'type'              => 'radio',
             'choices'           => array(
@@ -1965,7 +1972,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_h3_type', array(
-            'label'             => '記事内の見出し（h3）デザイン',
+            'label'             => '9-3.記事内の見出し（h3）デザイン',
             'description'       => '記事内の見出しを一括で変更できます',
             'type'              => 'radio',
             'choices'           => array(
@@ -1987,7 +1994,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_h4_type', array(
-            'label'             => '記事内の見出し（h4）デザイン',
+            'label'             => '9-4.記事内の見出し（h4）デザイン',
             'description'       => '記事内の見出しを一括で変更できます',
             'type'              => 'radio',
             'choices'           => array(
@@ -2010,7 +2017,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_image_box', array(
-            'label'             => '記事内画像のポップアップ機能をオフ',
+            'label'             => '9-5.記事内画像のポップアップ機能をオフ',
             'type'              => 'checkbox',
             'section'           => 'site_decoration',
           ));
@@ -2022,7 +2029,7 @@ function org_customizer($wp_customize){
           ));
 
           $wp_customize->add_control('site_decoration_a_tag_icon', array(
-            'label'             => '記事内リンクに自動でアイコンをつける機能をオフ',
+            'label'             => '9-6.記事内リンクに自動でアイコンをつける機能をオフ',
             'type'              => 'checkbox',
             'section'           => 'site_decoration',
           ));

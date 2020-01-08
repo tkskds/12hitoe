@@ -901,7 +901,8 @@ li.sidenav-ttl{
 .articleList_wrap .articleList3 .category{
   position: absolute;
   font-size: .75em;
-  top: -5px;
+  z-index: 1;
+  top: -16px;
   left: -6px;
   color: #fff;
   display: inline-block;
@@ -2324,6 +2325,12 @@ li.popular_posts_list a{
   left: 10px;
   z-index: 1;
   font-size: 2em;
+}
+
+.wp-block-image figcaption {
+  text-align: center;
+  font-size: .9em;
+  color: #9e9e9e;
 }
 
 /*マークダウンで書けるコード*/

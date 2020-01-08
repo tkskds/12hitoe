@@ -51,9 +51,9 @@ function filters(){
   add_filter('get_archives_link'    , 'remove_post_count_parentheses');
   add_filter('wp_tag_cloud'         , 'wp_tag_cloud_custom_ex');
 
-  /** ナビメニューのあれこれ **/
-  add_filter('nav_menu_css_class'   , 'active_nav_class');
-  add_filter('nav_menu_css_class'   , 'sp_menu_classes');
+  // /** ナビメニューのあれこれ **/
+  // add_filter('nav_menu_css_class'   , 'active_nav_class');
+  // add_filter('nav_menu_css_class'   , 'sp_menu_classes');
 
   /** 最初の見出し前に広告 **/
   add_filter('the_content'          , 'add_ad_before_h2');
