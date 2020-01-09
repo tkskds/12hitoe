@@ -5,6 +5,9 @@ function add_customizerCSS(){
 //サイトの骨組み
   $siteType             = get_option('site_bone_type');
 
+//ヘッダー
+  $navShadow            = get_option('site_others_nav_shadow')      ? get_option('site_others_nav_shadow')    : false;
+
 //ダークモード
   $darkModeOn           = get_option('site_bone_dark')              ? get_option('site_bone_dark')            : false;
 
@@ -154,6 +157,7 @@ src: url("<?php echo get_template_directory_uri(); ?>/lib/fonts/komorebi-gothic.
 }
 <?php endif; ?>
 body{<?php if($fontOnlyHeading == false): ?>font-family:<?php echo $FB ?>;<?php endif; ?>color:<?php echo $body_c ?>;background:<?php echo $body_bk ?>;}
+<?php if($navShadow == true): ?>nav{-webkit-box-shadow:none;box-shadow:none;}<?php endif; ?>
 nav a.siteTitle{font-family:<?php echo $TF ?>;font-size: <?php echo $titleSize ?>%;}
 a{color:<?php echo $link_c ?>;}
 @media (min-width: 961px){body{font-size:<?php echo $pcSize ?>%;<?php if ($sidebarLeft == true): ?>}.contentArea{flex-direction: row-reverse;-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse;}<?php endif; ?>}}

@@ -2309,6 +2309,12 @@ li.popular_posts_list a{
   margin-bottom: 15px;
 }
 
+.wp-block-table thead tr th,
+.wp-block-table tbody tr td {
+  padding: .5em;
+  border: 2px solid #efefef;
+}
+
 .material-placeholder{
   position: relative;
 }
@@ -2492,12 +2498,14 @@ a.tohomelink svg{
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 5px;
   margin: auto;
 }
 
 .footer_sp_menu ul li a svg{
-  font-size: 1em;
+  height: 56px;
+  padding-bottom: 5px;
+  font-size: 20px;
 }
 
 .footerArea nav .sidenav-trigger{
