@@ -451,38 +451,38 @@ function ld_json(){
   $pub_image    = get_option('site_nav_sp_sideauthor_img');
 
 ?>
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage":{
-      "@type":"WebPage",
-      "@id":"<?php the_permalink(); ?>"
-    },
-    "headline":"<?php the_title(); ?>",
-    "image": [
-      "<?php echo $imageobject[0]; ?>"
-    ],
-    "datePublished": "<?php echo get_date_from_gmt(get_post_time('c', true), 'c');?>",
-    "dateModified": "<?php echo get_date_from_gmt(get_post_modified_time('c', true), 'c');?>",
-    "author": {
-      "@type": "Person",
-      "name": "<?php the_author();?>",
-    },
-    <?php if($pub_name != null): ?>
-    "publisher": {
-      "@type": "Organization",
-      "name": "<?php echo $pub_name ; ?>",
-      <?php if ($pub_image != null): ?>
-      "logo": {
-        "@type": "ImageObject",
-        "url": "<?php echo $pub_image ; ?>"
-      }
-      <?php endif; ?>
-    },
-    <?php endif; ?>
-    "description": "<?php echo get_the_excerpt(); ?>"
-  }
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"<?php the_permalink(); ?>"
+  },
+  "headline":"<?php the_title(); ?>",
+  "image": [
+    "<?php echo $imageobject[0]; ?>"
+  ],
+  "datePublished": "<?php echo get_date_from_gmt(get_post_time('c', true), 'c');?>",
+  "dateModified": "<?php echo get_date_from_gmt(get_post_modified_time('c', true), 'c');?>",
+  "author": {
+    "@type": "Person",
+    "name": "<?php the_author();?>",
+  },
+<?php if($pub_name != null): ?>
+  "publisher": {
+    "@type": "Organization",
+    "name": "<?php echo $pub_name ; ?>",
+<?php if ($pub_image != null): ?>
+    "logo": {
+      "@type": "ImageObject",
+      "url": "<?php echo $pub_image ; ?>"
+    }
+<?php endif; ?>
+  },
+<?php endif; ?>
+  "description": "<?php echo get_the_excerpt(); ?>"
+}
   </script>
 <?php
 }
