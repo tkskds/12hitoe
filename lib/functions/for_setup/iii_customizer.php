@@ -2474,7 +2474,7 @@ function org_customizer($wp_customize){
 
           $wp_customize->add_control('site_google_adsense', array(
             'label'             => '3-2.アドセンスの設定',
-            'description'       => 'Adsenseコードを入力してください。',
+            'description'       => 'Adsenseコードを入力してください。（『ca-pub-XXXXXXXXXXXXXXXX』の部分のみ貼り付けてください）',
             'type'              => 'text',
             'section'           => 'site_google',
           ));

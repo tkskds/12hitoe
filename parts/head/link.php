@@ -93,7 +93,9 @@
 <?php endif; ?>
 
 <?php $adsense = get_option('site_google_adsense') ?>
-<?php echo $adsense ?>
+<?php if($adsense != null): ?>
+  <script data-ad-client="<?php echo $adsense ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<?php endif; ?>
 
 <?php //head ?>
 <?php $head_add = get_option('site_head_addcode') ?>

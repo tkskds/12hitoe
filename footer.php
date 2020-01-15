@@ -73,8 +73,8 @@
           <div class="container">
             <span>© <?php echo date('Y'); ?></span><span> <?php echo bloginfo('name'); ?></span>
             <?php if ($credit == false) : ?>
-              <a class="right" href="https://takasaki.work/12hitoe" target="_blank" rel="noopener">
-                CreatedBy12hitoe
+              <a class="right" href="https://withdiv.com/12hitoe" target="_blank" rel="noopener noreferrer">
+                👘CreatedBy十二単
               </a>
             <?php endif; ?>
           </div>
