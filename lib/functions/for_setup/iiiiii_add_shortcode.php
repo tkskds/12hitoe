@@ -33,25 +33,4 @@ function add_shortcodes(){
     return '<span class="sc_marker">'.$content.'</span>';
   }
 
-//
-// function hogeFunc( $atts, $content = null ) {
-//     extract( shortcode_atts( array(
-//         'class' => 'default',
-//     ), $atts ) );
-//
-//     return '<p class="' . $class. '"><span>' . $content . '</span></p>';
-// }
-// add_shortcode('hoge', 'hogeFunc');
-//
-//
-// function sng_rate_box($atts, $content = null)
-// {
-//   $title = isset($atts['title']) ? '<div class="rate-title has-fa-before dfont main-c-b">' . esc_attr($atts['title']) . '</div>' : '';
-//   $content = do_shortcode(shortcode_unautop($content));
-//   if ($content) {
-//     return $title . '<div class="rate-box">' . $content . '</div>';
-//   }
-// }
-
-
 }

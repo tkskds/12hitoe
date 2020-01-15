@@ -447,6 +447,8 @@ function ld_json(){
 
   $thumbnail_id = get_post_thumbnail_id($post);
   $imageobject  = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+  $pub_name     = get_option('site_nav_sp_sideauthor_name');
+  $pub_image    = get_option('site_nav_sp_sideauthor_img');
 
 ?>
   <script type="application/ld+json">
@@ -467,14 +469,18 @@ function ld_json(){
       "@type": "Person",
       "name": "<?php the_author();?>",
     },
+    <?php if($pub_name != null): ?>
     "publisher": {
       "@type": "Organization",
-      "name": "<?php get_option('site_nav_sp_sideauthor_name'); ?>",
+      "name": "<?php echo $pub_name ; ?>",
+      <?php if ($pub_image != null): ?>
       "logo": {
         "@type": "ImageObject",
-        "url": "<?php get_option('site_nav_sp_sideauthor_img'); ?>"
+        "url": "<?php echo $pub_image ; ?>"
       }
+      <?php endif; ?>
     },
+    <?php endif; ?>
     "description": "<?php echo get_the_excerpt(); ?>"
   }
   </script>

@@ -8,9 +8,7 @@ function register_widgets(){
 
 /*****  ウィジェットエリア登録  ******/
 
-  /****************
-  通常のサイドバー
-  ****************/
+  //通常のサイドバー
   register_sidebar(array(
     'name'          => 'サイドバー',
     'id'            => 'side_widget',
@@ -21,9 +19,7 @@ function register_widgets(){
     'after_title'   => '</h4>',
     ));
 
-  /****************
-  固定サイドバー
-  ****************/
+  //固定サイドバー
   register_sidebar(array(
     'name'          => '固定サイドバー',
     'id'            => 'fixed_side_widget',
@@ -34,9 +30,7 @@ function register_widgets(){
     'after_title'   => '</h4>',
     ));
 
-  /****************
-  サイドメニュー
-  ****************/
+  //サイドメニュー
   register_sidebar(array(
     'name'          => 'サイドメニュー',
     'id'            => 'sidenav_widget',
@@ -47,9 +41,7 @@ function register_widgets(){
     'after_title'   => '</h4>',
     ));
 
-  /****************
-  最初の見出しの前
-  ****************/
+  //最初の見出しの前
   register_sidebar(array(
     'name'          => '記事内の見出し前',
     'id'            => 'ad_before_h2',
@@ -60,9 +52,7 @@ function register_widgets(){
     'after_title'   => '',
   ));
 
-  /****************
-  記事内最後
-  ****************/
+  //記事内最後
   register_sidebar(array(
     'name'          => '記事内の下部（シェアボタン前）',
     'id'            => 'ad_after_content',
@@ -83,9 +73,7 @@ function register_widgets(){
     'after_title'   => '',
   ));
 
-  /****************
-  フッター左
-  ****************/
+  //フッター左
   register_sidebar(array(
     'name'          => 'フッターウィジェット（左）',
     'id'            => 'footer_left_widget',
@@ -96,9 +84,7 @@ function register_widgets(){
     'after_title'   => '</h4>',
   ));
 
-  /****************
-  フッター真ん中
-  ****************/
+  //フッター真ん中
   register_sidebar(array(
     'name'          => 'フッターウィジェット（真ん中）',
     'id'            => 'footer_center_widget',
@@ -109,9 +95,7 @@ function register_widgets(){
     'after_title'   => '</h4>',
   ));
 
-  /****************
-  フッター右
-  ****************/
+  //フッター右
   register_sidebar(array(
     'name'          => 'フッターウィジェット（右）',
     'id'            => 'footer_right_widget',
