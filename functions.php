@@ -78,6 +78,11 @@ function filters(){
   /** コメント欄でURL無効 **/
   remove_filter('comment_text'      , 'make_clickable');
 
+  /** 記事埋め込み embed **/
+  remove_action('embed_head'        , 'print_embed_styles');
+  remove_action('embed_footer'      , 'print_embed_sharing_dialog');
+  add_action('embed_head'           , 'my_embed_styles');
+
 }
 
 add_action('init', 'filters');

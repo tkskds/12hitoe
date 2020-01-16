@@ -22,6 +22,7 @@
 - 人気記事
 - コメント欄コールバック
 - コメント欄関係
+- 記事埋め込み
 
 ***************/
 
@@ -607,6 +608,14 @@ function filter_comment_tags($data){
   unset($allowedtags['strike']);
   unset($allowedtags['strong']);
   return $data;
+}
+
+/////////////////////
+// 記事埋め込み
+/////////////////////
+
+function my_embed_styles() {
+  wp_enqueue_style('wp-oembed-embed','/wp-content/themes/12hitoe-master/lib/css/wp-embed.css');
 }
 
 ///////////////////// 自分が使う用の関数 /////////////////////
