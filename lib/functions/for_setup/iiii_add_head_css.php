@@ -194,7 +194,7 @@ a{color:<?php echo $link_c ?>;}
 <?php endif; ?>
 .footer_container{max-width:<?php echo $contentArea ?>px;margin: auto;}
 <?php if($navtp == true): ?>
-.headerArea nav{background:transparent;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+body.started .headerArea nav{background:transparent;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
 <?php endif; ?>
 #topnav li:nth-of-type(1) a::after{content:"<?php echo $navEn1 ?>";}
 #topnav li:nth-of-type(2) a::after{content:"<?php echo $navEn2 ?>";}
