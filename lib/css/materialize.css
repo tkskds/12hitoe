@@ -2339,10 +2339,20 @@ li.popular_posts_list a{
 }
 
 .wp-block-video figcaption,
-.wp-block-image figcaption {
+.wp-block-image figcaption{
   text-align: center;
   font-size: .9em;
   color: #9e9e9e;
+}
+
+a.wp-block-button__link {
+  box-shadow: 0 1px 2px rgba(0,0,0,.29);
+  transition: all .2s ease-in-out;
+}
+
+a.wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0,0,0,.19);
 }
 
 /*マークダウンで書けるコード*/
@@ -2355,9 +2365,12 @@ p > code {
 
 /****************        サイドバー       *******************/
 
+/*
 .aside__container{
-  height: 100%; /* これないとsticky効かない*/
+  height: 100%;
 }
+*/
+ /* これないとsticky効かない*/
 
 .aside .fixed_side_widget_wrap{
   position: -webkit-sticky;
