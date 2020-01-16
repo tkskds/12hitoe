@@ -14,18 +14,18 @@
   }
 ?>
 ">
-  <div class="aside__container">
+
+  <!--<div class="aside__container" height="100%"> adsenseによって高さ調整されてしまうため削除 -->
 
     <?php if(is_active_sidebar('side_widget')) :?>
       <?php dynamic_sidebar('side_widget'); ?>
     <?php endif; ?>
 
-    <?php //固定サイドバーはスマホで非表示 ?>
-    <?php if(is_active_sidebar('fixed_side_widget') && !wp_is_mobile()) :?>
+    <?php if(is_active_sidebar('fixed_side_widget')) :?>
       <div class="fixed_side_widget_wrap">
          <?php dynamic_sidebar('fixed_side_widget'); ?>
       </div>
     <?php endif; ?>
 
-  </div>
+  <!--</div>-->
 </aside>

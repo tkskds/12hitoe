@@ -2356,7 +2356,7 @@ p > code {
 /****************        サイドバー       *******************/
 
 .aside__container{
-  height: 100%; /* これないとsticky効かない */
+  height: 100%; /* これないとsticky効かない*/
 }
 
 .aside .fixed_side_widget_wrap{
@@ -3036,7 +3036,7 @@ span.rank{
     margin-top: 25px;
   }
   /*最初の要素の上に20pxの余白*/
-  .aside__container > div:nth-of-type(1) {
+  .aside > div:nth-of-type(1) {
     margin-top: 20px;
   }
 }
@@ -3064,7 +3064,7 @@ span.rank{
   .aside{
     width: 100%;
   }
-  .aside__container > div:nth-of-type(1):not(.widget_prof_widget) {
+  .aside > div:nth-of-type(1):not(.widget_prof_widget) {
     margin-top: 20px;
   }
 }
