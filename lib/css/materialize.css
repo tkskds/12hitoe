@@ -2183,6 +2183,17 @@ li.popular_posts_list a{
 
 /*WPクラス付与された装飾*/
 
+.wp-block-button,
+.wp-block-video,
+.wp-block-quote,
+.wp-block-code,
+.wp-block-image,
+.wp-block-media-text,
+.wp-block-table,
+.cp_embed_wrapper{
+  margin-bottom: 20px;
+}
+
 .wp-block-code{
   background: #333;
   padding: .5em 1em;
@@ -2303,12 +2314,6 @@ li.popular_posts_list a{
   max-width: 100%;
 }
 
-.wp-block-media-text,
-.wp-block-table,
-.cp_embed_wrapper{
-  margin-bottom: 15px;
-}
-
 .wp-block-table thead tr th,
 .wp-block-table tbody tr td {
   padding: .5em;
@@ -2333,6 +2338,7 @@ li.popular_posts_list a{
   font-size: 2em;
 }
 
+.wp-block-video figcaption,
 .wp-block-image figcaption {
   text-align: center;
   font-size: .9em;
