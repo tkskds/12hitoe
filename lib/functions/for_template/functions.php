@@ -614,6 +614,10 @@ function filter_comment_tags($data){
 // 記事埋め込み
 /////////////////////
 
+function set_thumbnail_size(){
+  return 'minimum';
+}
+
 function my_embed_styles() {
   wp_enqueue_style('wp-oembed-embed','/wp-content/themes/12hitoe-master/lib/css/wp-embed.css');
 }
