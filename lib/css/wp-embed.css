@@ -9,14 +9,13 @@
 
 .wp-embed-featured-image {
   display: table-cell;
-  width: 100px;
 }
 
 .wp-embed-featured-image img {
-  vertical-align: bottom;
-  width: 100px;
-  max-width: 100%;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #efefef;
+  margin: 9px;
 }
 
 .wp-embed-heading {
