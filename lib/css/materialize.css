@@ -2834,6 +2834,11 @@ span.rank{
   cursor: pointer;
 }
 
+/*アドセンス用ブロック*/
+.adsense_code {
+  width: 100%;
+  overflow: scroll;
+}
 
 /****************      ショートコード     *******************/
 

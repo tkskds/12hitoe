@@ -194,7 +194,7 @@ function register_widgets(){
       $cta_id4  = $this->get_field_id('cta_url');
       ?>
       <p>
-        <label for="<?php echo $img_id; ?>">イメージ画像</label><br>
+        <label for="<?php echo $img_id; ?>">CTA画像:</label><br>
         <?php
             $show_sml   = '';
             $show_img = '';
@@ -355,7 +355,7 @@ function register_widgets(){
         <small>タブのタイトル部分です。文字を設定することも可能ですが、文字数が限られているため、FontAwesomeなど設定してください。</small>
       </p>
       <p>
-        <label for="<?php echo $tab_con1; ?>">タブ1のコンテンツ</label><br>
+        <label for="<?php echo $tab_con1; ?>">タブ1のコンテンツ:</label><br>
         <textarea class="widefat" id="<?php echo $tab_con1id; ?>" name="<?php echo $tab_con1n ?>" value="<?php echo esc_attr($tab_con1); ?>"><?php echo $tab_con1; ?></textarea>
         <small>タブのコンテンツ部分です。文章のほか、ショートコードやHTMLコードなどもご利用いただけます。</small>
       </p>
@@ -364,7 +364,7 @@ function register_widgets(){
         <input class="widefat" id="<?php echo $tab_ttl2id; ?>" name="<?php echo $tab_ttl2n ?>" type="text" value="<?php echo esc_attr($tab_ttl2); ?>">
       </p>
       <p>
-        <label for="<?php echo $tab_con2; ?>">タブ2のコンテンツ</label><br>
+        <label for="<?php echo $tab_con2; ?>">タブ2のコンテンツ:</label><br>
         <textarea class="widefat" id="<?php echo $tab_con2id; ?>" name="<?php echo $tab_con2n ?>" value="<?php echo esc_attr($tab_con2); ?>"><?php echo $tab_con2; ?></textarea>
       </p>
       <p>
@@ -372,7 +372,7 @@ function register_widgets(){
         <input class="widefat" id="<?php echo $tab_ttl3id; ?>" name="<?php echo $tab_ttl3n ?>" type="text" value="<?php echo esc_attr($tab_ttl3); ?>">
       </p>
       <p>
-        <label for="<?php echo $tab_con3; ?>">タブ3のコンテンツ</label><br>
+        <label for="<?php echo $tab_con3; ?>">タブ3のコンテンツ:</label><br>
         <textarea class="widefat" id="<?php echo $tab_con3id; ?>" name="<?php echo $tab_con3n ?>" value="<?php echo esc_attr($tab_con3); ?>"><?php echo $tab_con3; ?></textarea>
       </p>
       <p>
@@ -380,7 +380,7 @@ function register_widgets(){
         <input class="widefat" id="<?php echo $tab_ttl4id; ?>" name="<?php echo $tab_ttl4n ?>" type="text" value="<?php echo esc_attr($tab_ttl4); ?>">
       </p>
       <p>
-        <label for="<?php echo $tab_con4; ?>">タブ4のコンテンツ</label><br>
+        <label for="<?php echo $tab_con4; ?>">タブ4のコンテンツ:</label><br>
         <textarea class="widefat" id="<?php echo $tab_con4id; ?>" name="<?php echo $tab_con4n ?>" value="<?php echo esc_attr($tab_con4); ?>"><?php echo $tab_con4; ?></textarea>
       </p>
       <?php
@@ -432,14 +432,15 @@ function register_widgets(){
       $text_id   = $this->get_field_id('prof_text');
       ?>
       <p>
-        <label for="<?php echo $name_id; ?>">名前</label><br>
+        <label for="<?php echo $name_id; ?>">名前:</label><br>
         <input class="widefat" id="<?php echo $name_id ?>" name="<?php echo $name_name ?>" type="text" value="<?php echo esc_attr($prof_name); ?>">
       </p>
       <p>
-        <label for="<?php echo $img_id; ?>">プロフィール画像</label><br>
+        <label for="<?php echo $img_id; ?>">プロフィール画像:</label><br>
         <?php
             $show_sml   = '';
             $show_img = '';
+
             if (empty($prof_img)){
               $show_img = ' style="display: none;" ';
             }else{
@@ -497,7 +498,7 @@ function register_widgets(){
         </script>
       </p>
       <p>
-        <label for="<?php echo $text_id; ?>">プロフィール文</label><br>
+        <label for="<?php echo $text_id; ?>">プロフィール文:</label><br>
         <textarea class="widefat" id="<?php echo $text_id; ?>" name="<?php echo $text_name ?>" value="<?php echo esc_attr($prof_text); ?>"><?php echo $prof_text; ?></textarea>
       </p>
 
@@ -600,10 +601,58 @@ function register_widgets(){
     }
   }
 
+  /****************
+  Adsenseブロック
+  ****************/
+  class Adsense_Widget extends WP_Widget {
+    function __construct(){
+      parent::__construct('adsense_widget','アドセンス用広告ウィジェット',array(
+        'description' => '通常カスタムHTMLウィジェットにて広告の追加はできますが、横幅などがはみ出てしまった場合などはこちらをご利用ください',
+      ));
+    }
+    public function widget($args, $instance){
+      $adsense_name = $instance['adsense_name'];
+      $adsense_code = $instance['adsense_code'];
+      echo $args['before_widget'];
+      if($adsense_name != null){
+        echo '<p class="adsense_name">'.$adsense_name.'</p>';
+      }
+      echo '<div class="adsense_code">'.$adsense_code.'</div>';
+      echo $args['after_widget'];
+    }
+    public function form($instance) {
+      $adsense_name = $instance['adsense_name'];
+      $adsense_code = $instance['adsense_code'];
+      $name_name = $this->get_field_name('adsense_name');
+      $code_name = $this->get_field_name('adsense_code');
+      $name_id   = $this->get_field_id('adsense_name');
+      $code_id   = $this->get_field_id('adsense_code');
+      ?>
+      <p>
+        <label for="<?php echo $name_id; ?>">タイトル:</label><br>
+        <input class="widefat" id="<?php echo $name_id ?>" name="<?php echo $name_name ?>" type="text" value="<?php echo esc_attr($adsense_name); ?>">
+      </p>
+      <p>
+        <label for="<?php echo $code_id; ?>">広告コード:</label><br>
+        <textarea class="widefat" id="<?php echo $code_id; ?>" name="<?php echo $code_name ?>" value="<?php echo esc_attr($adsense_code); ?>"><?php echo $adsense_code; ?></textarea>
+      </p>
+
+      <?php
+        }
+    function update($new_instance, $old_instance){
+      $instance = array();
+      $instance['adsense_name'] = !empty($new_instance['adsense_name']) ? $new_instance['adsense_name'] : '';
+      $instance['adsense_code'] = !empty($new_instance['adsense_code']) ? $new_instance['adsense_code'] : '';
+      return $instance;
+    }
+  }
+
+
   register_widget('TOC_Widget');
   register_widget('CTA_Widget');
   register_widget('TAB_Widget');
   register_widget('Prof_Widget');
   register_widget('Popular_Posts');
+  register_widget('Adsense_Widget');
 
 } //END register_widgets()
