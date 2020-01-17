@@ -9,8 +9,8 @@
 <?php if ($cssfw != 'value1') : ?>
   <link href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css" rel="preload" media="all" as="style" type="text/css">
   <link href="<?php echo get_template_directory_uri(); ?>/vendor/materialize/css/materialize.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.min.css" rel="preload" media="all" as="style" type="text/css">
-  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/materialize.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/material.min.css" rel="preload" media="all" as="style" type="text/css">
+  <link href="<?php echo get_template_directory_uri(); ?>/lib/css/material.min.css" rel="stylesheet" media="print" onload="this.media='all'">
 <?php endif; ?>
 
 <!-- <?php //サードパーティ製css/js呼び出し ?>
