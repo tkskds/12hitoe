@@ -122,8 +122,9 @@ if(!empty($title)) {
 
 //SNS OGP
 $tw_account = get_option('site_ogp_tw_account');
+$tw_cardtype = get_option('site_ogp_tw_card');
 
-if (get_option('site_ogp_tw_card'=='value1')){
+if ($tw_cardtype == 'value1'){
   $tw_card = 'summary_large_image';
 } else {
   $tw_card = 'summary';
