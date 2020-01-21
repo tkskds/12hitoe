@@ -447,7 +447,7 @@ function author_profile_box($sns){
 function ld_json(){
 
   $thumbnail_id = get_post_thumbnail_id($post);
-  $imageobject  = wp_get_attachment_image_src( $thumbnail_id, 'eyecatch' );
+  $imageobject  = wp_get_attachment_image_src( $thumbnail_id, 'full');
   $pub_name     = get_option('site_nav_sp_sideauthor_name') ? get_option('site_nav_sp_sideauthor_name') : get_the_author() ;
   $pub_image    = get_option('site_nav_sp_sideauthor_img') ? get_option('site_nav_sp_sideauthor_img') : get_avatar_url(get_the_author_meta('ID'));
 
@@ -464,8 +464,8 @@ function ld_json(){
   "image": {
   "@type": "ImageObject",
   "url": "<?php echo $imageobject[0]; ?>",
-  "width": 520,
-  "height": 300
+  "width": <?php echo $imageobject[1]; ?>,
+  "height": <?php echo $imageobject[2]; ?>
   },
   "datePublished": "<?php echo get_date_from_gmt(get_post_time('c', true), 'c');?>",
   "dateModified": "<?php echo get_date_from_gmt(get_post_modified_time('c', true), 'c');?>",
