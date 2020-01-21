@@ -447,9 +447,9 @@ function author_profile_box($sns){
 function ld_json(){
 
   $thumbnail_id = get_post_thumbnail_id($post);
-  $imageobject  = wp_get_attachment_image_src( $thumbnail_id, 'full' );
-  $pub_name     = get_option('site_nav_sp_sideauthor_name');
-  $pub_image    = get_option('site_nav_sp_sideauthor_img');
+  $imageobject  = wp_get_attachment_image_src( $thumbnail_id, 'eyecatch' );
+  $pub_name     = get_option('site_nav_sp_sideauthor_name') ? get_option('site_nav_sp_sideauthor_name') : get_the_author() ;
+  $pub_image    = get_option('site_nav_sp_sideauthor_img') ? get_option('site_nav_sp_sideauthor_img') : get_avatar_url(get_the_author_meta('ID'));
 
 ?>
 <script type="application/ld+json">
@@ -461,27 +461,26 @@ function ld_json(){
     "@id":"<?php the_permalink(); ?>"
   },
   "headline":"<?php the_title(); ?>",
-  "image": [
-    "<?php echo $imageobject[0]; ?>"
-  ],
+  "image": {
+  "@type": "ImageObject",
+  "url": "<?php echo $imageobject[0]; ?>",
+  "width": 520,
+  "height": 300
+  },
   "datePublished": "<?php echo get_date_from_gmt(get_post_time('c', true), 'c');?>",
   "dateModified": "<?php echo get_date_from_gmt(get_post_modified_time('c', true), 'c');?>",
   "author": {
     "@type": "Person",
-    "name": "<?php the_author();?>",
+    "name": "<?php the_author();?>"
   },
-<?php if($pub_name != null): ?>
   "publisher": {
     "@type": "Organization",
-    "name": "<?php echo $pub_name ; ?>",
-<?php if ($pub_image != null): ?>
+    "name": "<?php echo $pub_name; ?>",
     "logo": {
       "@type": "ImageObject",
-      "url": "<?php echo $pub_image ; ?>"
+      "url": "<?php echo $pub_image; ?>"
     }
-<?php endif; ?>
   },
-<?php endif; ?>
   "description": "<?php echo get_the_excerpt(); ?>"
 }
   </script>
