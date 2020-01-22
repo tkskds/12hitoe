@@ -88,7 +88,7 @@
       <?php endif; //END TOPへ戻るボタン ?>
       <?php // SHAREボタン ?>
       <?php if ($shareBtn == true) : ?>
-        <div class="fixed-action-btn">
+      <div class="fixed-action-btn">
         <a class="btn-floating btn-large sub__color" aria-label="シェアボタン">
           <i class="fas fa-share-alt"></i>
         </a>
