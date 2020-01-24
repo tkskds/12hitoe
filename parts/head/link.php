@@ -93,6 +93,10 @@
 
 <?php $adsense = get_option('site_google_adsense') ?>
 <?php if($adsense != null): ?>
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+  <link rel="dns-prefetch" href="//www.gstatic.com">
   <script data-ad-client="<?php echo $adsense ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <?php endif; ?>
 
