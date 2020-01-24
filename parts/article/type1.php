@@ -21,6 +21,11 @@ $share_ttl = get_option('site_article_share_ttl')    ? get_option('site_article_
             <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
               <?php echo get_post_time('Y/m/d'); ?>
             </time>
+            <?php if(get_the_date('Y/m/d') != get_the_modified_date('Y/m/d')): ?>
+              <time datetime="<?php echo the_modified_date('Y-m-d'); ?>">
+                <?php echo the_modified_date('Y/m/d'); ?>
+              </time>
+            <?php endif; ?>
           </span>
       </div>
       <!--タイトル-->

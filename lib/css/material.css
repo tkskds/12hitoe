@@ -1046,6 +1046,10 @@ article h4{
   font-size: .9em;
 }
 
+.article_date time{
+  margin-right: .5em;
+}
+
 .article_date time::before {
   font-family: "Font Awesome 5 Solid";
   font-weight: bold;
@@ -1278,6 +1282,9 @@ article h4{
 
 .articleType1 .article_date time::before{
   content:"\f073";
+}
+.articleType1 .article_date time:nth-of-type(2)::before{
+  content:"\f2f1";
 }
 .articleType2 .article_date time::before{
   content:"あとで入れる";
