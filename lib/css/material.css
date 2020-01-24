@@ -1066,6 +1066,10 @@ article h4{
   word-break: break-all;
 }
 
+.artcile_content > *{
+  margin-top: 10px; /*自動広告などの予期せぬコンテンツ用に最低限の余白確保*/
+}
+
 .article_content h2,
 .article_content h3,
 .article_content h4{
