@@ -79,7 +79,7 @@
 
 <?php //アナリティクス ?>
 <?php $analytics = get_option('site_google_analytics') ?>
-<?php if ($analytics != null) : ?>
+<?php if ( $analytics != null && !(is_user_logged_in()) ) : ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $analytics ?>"></script>
   <script>

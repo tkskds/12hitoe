@@ -1,5 +1,5 @@
 <?php
-  $comment_ttl = get_option('csite_article_omment_ttl') ? get_option('site_article_comment_ttl') : 'COMMENT' ;
+  $comment_ttl = get_option('site_article_omment_ttl') ? get_option('site_article_comment_ttl') : 'COMMENT' ;
   $args_form   = array(
     'title_reply'          => 'コメントする',
     'title_reply_to'       => '返信する',
