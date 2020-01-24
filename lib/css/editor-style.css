@@ -1,5 +1,5 @@
 /* Gutenberg用のCSSファイル */
 
-body{
+body,.components-modal__frame input::-webkit-input-placeholder, .components-modal__frame textarea::-webkit-input-placeholder, .components-popover input::-webkit-input-placeholder, .components-popover textarea::-webkit-input-placeholder, .edit-post-header input::-webkit-input-placeholder, .edit-post-header textarea::-webkit-input-placeholder, .edit-post-sidebar input::-webkit-input-placeholder, .edit-post-sidebar textarea::-webkit-input-placeholder, .edit-post-text-editor input::-webkit-input-placeholder, .edit-post-text-editor textarea::-webkit-input-placeholder, .edit-post-visual-editor input::-webkit-input-placeholder, .edit-post-visual-editor textarea::-webkit-input-placeholder, .editor-post-publish-panel input::-webkit-input-placeholder, .editor-post-publish-panel textarea::-webkit-input-placeholder{
   font-family: 'メイリオ','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 }
