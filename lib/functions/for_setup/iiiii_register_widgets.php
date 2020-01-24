@@ -516,8 +516,6 @@ function register_widgets(){
   /****************
   人気記事
   ****************/
-
-
   class Popular_Posts extends WP_Widget {
   function __construct(){
     parent::__construct('popular_posts','人気記事',array(
@@ -647,6 +645,62 @@ function register_widgets(){
     }
   }
 
+  /****************
+  新着記事ウィジェット
+  ****************/
+  class RecentPosts_Widget extends WP_Widget_Recent_Posts{
+    public function widget($args, $instance){
+    if (!isset($args['widget_id'])) {
+      $args['widget_id'] = $this->id;
+    }
+
+    $title = (!empty($instance['title'])) ? $instance['title'] : '最新の記事';
+    $number = (!empty($instance['number'])) ? absint($instance['number']) : 5;
+    if(!$number){
+      $number = 5;
+    }
+    $show_date = isset($instance['show_date']) ? $instance['show_date'] : false;
+    $getposts = new WP_Query(apply_filters('widget_posts_args', array(
+      'posts_per_page' => $number,
+      'no_found_rows' => true,
+      'post_status' => 'publish',
+      'ignore_sticky_posts' => true,
+    )));
+    if ($getposts->have_posts()) {
+      echo $args['before_widget'];
+      if ($title) {
+        echo $args['before_title'].$title.$args['after_title'];
+      }
+    ?>
+    <ul class="recent_posts_lists">
+    <?php while ($getposts->have_posts()): $getposts->the_post();?>
+      <li class="recent_posts_list">
+        <a href="<?php the_permalink();?>">
+          <div class="recent_img">
+            <?php if (has_post_thumbnail()): ?>
+              <?php echo convert_src_for_lazyload(get_the_post_thumbnail($post->ID, 'minimum', array('class' => 'fadeinimg lazyload', 'width' => 80, 'height' => 80))); ?>
+            <?php else: ?>
+              <img data-src="<?php echo get_template_directory_uri(); ?>/images/default_thumbnail.png" alt="<?php the_title(); ?>" width="80" height="80" class="fadeinimg lazyload">
+            <?php endif; ?>
+          </div>
+          <div class="recent_ttl">
+            <?php if ($show_date): ?>
+              <span class="recent_date"><?php echo get_the_date('Y/m/d'); ?></span>
+            <?php endif;?>
+            <span><?php the_title(); ?></span>
+          </div>
+        </a>
+      </li>
+    <?php endwhile;?>
+    </ul>
+    <?php echo $args['after_widget']; ?>
+    <?php
+    wp_reset_postdata();
+    }
+  }
+}
+
+  unregister_widget('WP_Widget_Recent_Posts');
 
   register_widget('TOC_Widget');
   register_widget('CTA_Widget');
@@ -654,5 +708,7 @@ function register_widgets(){
   register_widget('Prof_Widget');
   register_widget('Popular_Posts');
   register_widget('Adsense_Widget');
+  register_widget('RecentPosts_Widget');
+
 
 } //END register_widgets()

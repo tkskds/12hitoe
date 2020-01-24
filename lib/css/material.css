@@ -2008,18 +2008,21 @@ li.share_hatena a{
 
 .related_thumb img,
 .related_ttl,
+.recent_img img,
 .rank_img img{
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
 .related_thumb,
+.recent_img,
 .rank_img{
   overflow: hidden;
   border: 2px solid #efefef;
 }
 
 .related_thumb img:hover,
+.recent_img img:hover,
 .rank_img img:hover{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
@@ -2031,11 +2034,13 @@ ul.related_posts{
 }
 
 ul.related_posts li a,
+li.recent_posts_list a,
 li.popular_posts_list a{
   color: unset;
 }
 
 .relatedType1 ul.related_posts li,
+li.recent_posts_list,
 li.popular_posts_list{
   padding: 10px;
   -webkit-transition: all .2s ease-in-out;
@@ -2043,15 +2048,18 @@ li.popular_posts_list{
 }
 
 .relatedType1 ul.related_posts li a,
+li.recent_posts_list a,
 li.popular_posts_list a{
   display: flex;
   align-items: center;
 }
 
 .relatedType1 .related_post_ttl,
+.recent_ttl,
 .rank_ttl{
   padding-left: 10px;
   width: calc(100% - 84px);
+  word-break: break-all;
 }
 
 .relatedType1 .related_thumb,
@@ -2061,10 +2069,16 @@ li.popular_posts_list a{
 }
 
 .relatedType1 .related_thumb img,
+.recent_img img,
 .rank_img img{
   width: 80px;
   height: 80px;
   object-fit: cover;
+}
+
+.recent_ttl span.recent_date {
+  font-size: .5em;
+  display: block;
 }
 
 .relatedType2 ul.related_posts{
@@ -2830,6 +2844,7 @@ span.rank{
 .widget_categories li:hover,
 .widget_archive select:hover,
 .widget_archive li:hover,
+.widget_recent_entries li:hover,
 .widget_popular_posts li:hover,
 .relatedType1 ul.related_posts li:hover{
   background: rgba(0,0,0,0.05);
