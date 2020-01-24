@@ -1200,6 +1200,10 @@ article h4{
   margin-bottom: 1.5em;
 }
 
+.article_content p span {
+  vertical-align: baseline;
+}
+
 .article_content img{
   max-width: 100%;
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.19);
