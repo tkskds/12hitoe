@@ -36,4 +36,10 @@ function theme_supports(){
   register_nav_menu('nav_header_sp', 'ヘッダーメニュー（スマホ）');
   register_nav_menu('nav_footer', 'フッターメニュー（PC・スマホ）');
 
+  //Gutenberg系
+  add_theme_support('align-wide');
+  add_theme_support('responsive-embeds');
+  add_editor_style('editor-style.css');
+  add_theme_support('editor-styles');
+
 }//END theme_supports();
